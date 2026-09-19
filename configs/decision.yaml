@@ -1,0 +1,84 @@
+# L4 Decision Engine — expected-loss Bayes verdict.
+#
+# The rule is FROZEN. The loss grid and consequence tiers are UNVERIFIED and are
+# the only free quantities in the frozen decision layer, which is exactly why
+# they may not be defaulted: any value chosen here silently IS REM's policy.
+
+decision:
+  mechanism:
+    value: expected_loss_bayes
+    meaning: The decision rule, resolved to rem.algorithms.decision.expected_loss.
+    default: expected_loss_bayes
+    source: CLAUDE.md, MATHEMATICAL LOCK -> Decision.
+    justification: Frozen. Implemented exactly.
+    status: FROZEN
+
+  conditional_risk_form:
+    value: "R_t(v) = (1-p_t) L(v,0,k_t) + p_t L(v,1,k_t)"
+    meaning: The frozen conditional-risk equation.
+    default: null
+    source: CLAUDE.md, MATHEMATICAL LOCK -> Decision.
+    justification: Quoted verbatim from the frozen specification.
+    status: FROZEN
+
+  verdict_rule:
+    value: "v*_t = argmin_v R_t(v)"
+    meaning: The frozen verdict selection rule.
+    default: null
+    source: CLAUDE.md, MATHEMATICAL LOCK -> Decision.
+    justification: Quoted verbatim from the frozen specification.
+    status: FROZEN
+
+  verdict_set:
+    value: [allow, modify, escalate, block]
+    meaning: The four frozen REM verdicts.
+    default: [allow, modify, escalate, block]
+    source: CLAUDE.md, FROZEN REM PIPELINE.
+    justification: >-
+      An adaptation of cost-sensitive expected-loss decision theory. Elkan (2001)
+      supports the expected-cost principle and Chow (1970) is conceptual support
+      for reject/abstain escalation; neither invented REM's four-action
+      architecture.
+    status: FROZEN
+
+  loss_grid:
+    value: REQUIRED_FROM_DESIGN
+    meaning: >-
+      L(v, y, k) for every verdict, true label and consequence tier. Without it
+      no verdict can be computed.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK ("loss values /
+      loss grid"). See DESIGN BLOCKED in RECONCILIATION.md.
+    status: UNVERIFIED
+
+  consequence_tiers:
+    value: REQUIRED_FROM_DESIGN
+    meaning: The tiers k_t indexing the loss function.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK.
+    status: UNVERIFIED
+
+  policy_predicates:
+    value: REQUIRED_FROM_DESIGN
+    meaning: >-
+      The predicates evaluated between tiering and the Bayes verdict, and what
+      they do to the outcome.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      Named in the frozen pipeline but never defined. A firing predicate that is
+      ignored would silently drop a policy control, so the engine stops instead.
+    status: UNVERIFIED
+
+  tie_breaking_rule:
+    value: REQUIRED_FROM_DESIGN
+    meaning: Which verdict wins when two attain the minimum conditional risk.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      Not frozen. Picking one silently would be an invented decision policy, so
+      an exact tie raises VerdictTieError.
+    status: UNVERIFIED

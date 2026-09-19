@@ -1,0 +1,108 @@
+# Experiment configuration.
+#
+# CLAUDE.md DATA / EVALUATION LOCK: AgentDojo is an executable environment, not a
+# set of independent i.i.d. rows. Repeated runs of the same task pairing must
+# never be described as independent observations without explicit statistical
+# justification, which is why the grouping scheme is a blocking item.
+
+experiment:
+  random_seed:
+    value: 42
+    meaning: Seed applied to every random source before a run.
+    default: 42
+    source: >-
+      Engineering convention for reproducibility, not a modelling parameter.
+    justification: >-
+      The seed fixes execution, not the science. No result may depend on the
+      specific value; runs are repeated across seeds and dispersion reported.
+    status: FROZEN
+
+  dataset:
+    value: REQUIRED_FROM_DESIGN
+    meaning: Benchmark identifier.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      No dataset is present. AgentDojo is named in the contract's lock list but
+      no version is frozen.
+    status: UNVERIFIED
+
+  agentdojo_version:
+    value: REQUIRED_FROM_DESIGN
+    meaning: Exact AgentDojo version / commit.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK.
+    status: UNVERIFIED
+
+  grouping_scheme:
+    value: REQUIRED_FROM_DESIGN
+    meaning: >-
+      How observations are grouped for statistical aggregation, given that runs
+      of the same task pairing are not independent.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK. Without it no
+      interval or test may be reported.
+    status: UNVERIFIED
+
+  llm_backbones:
+    value: REQUIRED_FROM_DESIGN
+    meaning: Which agent backbones are evaluated.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK.
+    status: UNVERIFIED
+
+  number_of_repeats:
+    value: REQUIRED_FROM_DESIGN
+    meaning: Repeats per configuration.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK. Do not invent
+      sample counts.
+    status: UNVERIFIED
+
+  external_benchmarks:
+    value: REQUIRED_FROM_DESIGN
+    meaning: Additional benchmarks used for comparison.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK.
+    status: UNVERIFIED
+
+  split_unit:
+    value: trajectory
+    meaning: >-
+      The unit partitioned across splits. Splitting by trajectory keeps all
+      steps of one execution inside a single split.
+    default: trajectory
+    source: >-
+      Standard practice for sequential data; prevents leakage between steps of
+      the same execution.
+    justification: >-
+      Splitting by step would place steps of one trajectory in both train and
+      test, letting the model exploit within-trajectory correlation.
+    status: FROZEN
+
+  splits:
+    value: REQUIRED_FROM_DESIGN
+    meaning: >-
+      Train / validation / test proportions. Calibration and any operating-point
+      selection use validation only; test is touched once.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      The three-way structure is required to prevent leakage, but the specific
+      proportions should come from the evaluation protocol.
+    status: UNVERIFIED
+
+  output_directory:
+    value: experiments/results
+    meaning: Where run artefacts are written.
+    default: experiments/results
+    source: Engineering convention; no academic content.
+    justification: Keeps run artefacts alongside the code that produced them.
+    status: FROZEN

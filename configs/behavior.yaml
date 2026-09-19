@@ -1,0 +1,47 @@
+# L3 Behavioral Analysis.
+#
+# The frozen pipeline's evidence stage covers "context / behavioral / action
+# evidence", so behavioural analysis feeds the evidence vector rather than
+# bypassing it into the verdict.
+
+behavior:
+  cusum_status:
+    value: optional_observe_only
+    meaning: >-
+      Status of CUSUM. Optional, observe-only, and must never enter the core
+      verdict path.
+    default: optional_observe_only
+    source: CLAUDE.md, FROZEN REM PIPELINE.
+    justification: >-
+      Frozen: "CUSUM is OPTIONAL and OBSERVE-ONLY. CUSUM MUST NOT enter the core
+      verdict path." Risk-based CUSUM is a forbidden reintroduction.
+    status: FROZEN
+
+  trajectory_model:
+    value: none
+    meaning: >-
+      Neural trajectory models are excluded from the frozen design.
+    default: none
+    source: CLAUDE.md, FORBIDDEN REINTRODUCTIONS.
+    justification: >-
+      "GRU/LSTM/Transformer trajectory model" and "counterfactual prefix-
+      branching controller" are explicitly removed.
+    status: FROZEN
+
+  behavioral_evidence_features:
+    value: REQUIRED_FROM_DESIGN
+    meaning: Which behavioural quantities become features in x_t.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      Part of the unresolved final feature set (CLAUDE.md DATA / EVALUATION
+      LOCK).
+    status: UNVERIFIED
+
+  optional_cusum_scenarios:
+    value: REQUIRED_FROM_DESIGN
+    meaning: Which scenarios the observe-only CUSUM analysis covers, if any.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK.
+    status: UNVERIFIED
