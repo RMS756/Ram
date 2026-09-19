@@ -520,9 +520,19 @@ Forbidden: GRU/LSTM/Transformer trajectory models. CUSUM is observe-only.
 ### Test-count discrepancy in the brief
 
 The brief states "139 contract-compliance tests pass". Verified actual:
-**154 total**, of which `test_contract_compliance.py` contributes **20**. 139 was
-the whole-suite total at an intermediate commit before `test_config.py` was
-added. **Documentation discrepancy only — no code implication.**
+**154 total**, of which `test_contract_compliance.py` contributes **20**.
+
+Audited in full (see BASELINE TEST-COUNT RECONCILIATION in the Stage 2 report).
+139 is reproducible **exactly and uniquely** as the full suite minus
+`tests/test_config.py` (15 tests) — i.e. a **full-suite** count from an
+uncommitted working state, never a contract-compliance count. It is a *superset*
+of the 43 frozen-math tests, which is why `43 + 139 = 182` exceeds 154 by
+exactly 28 (`+43` double-counted, `−15` absent).
+
+All three commits contain all eight test files and yield 154/154.
+
+**Verdict: BASELINE COUNTS RECONCILED.** Category mislabel of a reproducible
+number — no test-suite defect. **No code implication.**
 
 ### Operating-point baseline is not implementable
 

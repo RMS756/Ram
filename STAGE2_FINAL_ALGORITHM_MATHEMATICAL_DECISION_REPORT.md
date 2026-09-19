@@ -26,8 +26,10 @@ Stage 2**.
 > **Discrepancy noted, not corrected in code.** The brief's "139
 > contract-compliance tests" does not match the repository: `154` is the whole
 > suite, of which `tests/test_contract_compliance.py` contributes `20`. The
-> figure 139 was the total suite size at an intermediate commit before
-> `tests/test_config.py` (15 tests) was added. Per-file counts:
+> figure 139 is reproducible as the **full suite minus `tests/test_config.py`**
+> (15 tests) — a full-suite count from an *uncommitted* working state, not a
+> category count, and not matching any commit. Fully audited in
+> **BASELINE TEST-COUNT RECONCILIATION** at the end of this report. Per-file counts:
 > `test_frozen_math` 43, `test_metrics` 25, `test_pipeline` 21,
 > `test_contract_compliance` 20, `test_config` 15, `test_trajectory` 12,
 > `test_mitigation` 9, `test_reproducibility` 9.
@@ -1015,3 +1017,285 @@ unchanged. Stage 2's substantive findings are:
 Five supervisor decisions and two gating experimental decisions are outstanding.
 Four narrowly-scoped Stage 3 items are newly GREEN and may proceed once the gate
 is formally opened.
+
+---
+
+# BASELINE TEST-COUNT RECONCILIATION
+
+**Audit date:** 2026-09-19
+**Baseline commit audited:** `f45ac2e` (tree identical to `afc1137` for all code and tests)
+**Runner:** pytest 9.1.1, Python 3.11.15, platform linux
+**Nature of this section:** read-only audit. No test was added, deleted, renamed
+or modified; no pytest configuration was changed; no source code was altered.
+
+---
+
+## Why an audit was required
+
+Previous project reporting stated three figures that cannot describe three
+disjoint suites:
+
+```text
+ 43 frozen-math tests
+139 contract-compliance tests
+154 tests overall
+
+ 43 + 139 = 182 ≠ 154
+```
+
+The excess is **28**. This section establishes each figure independently from
+the repository and the test runner, and determines the exact origin of the
+discrepancy.
+
+---
+
+## Configuration facts established first
+
+| Fact | Finding |
+| ---- | ------- |
+| Test files | **8** `test_*.py` under `tests/`, plus `tests/__init__.py` |
+| `conftest.py` | **None anywhere in the repository** |
+| `pytest.ini` / `tox.ini` / `setup.cfg` | **None** |
+| Configuration source | `pyproject.toml` → `[tool.pytest.ini_options]`, confirmed by pytest's own `configfile: pyproject.toml` line |
+| `testpaths` | `["tests"]` |
+| `addopts` | `-q --strict-markers` |
+| Registered custom markers | **None** |
+| Marker usage in tests | **One** — `@pytest.mark.parametrize` in `tests/test_pipeline.py` |
+| CI configuration | **None** (`.github/` does not exist) |
+| Test-count documentation in repo | **None** |
+
+**Consequence of `--strict-markers` with no registered markers:** no
+marker-based test selection exists in this project. No figure can have been
+produced by `-m <marker>`. Category membership is therefore determined **solely
+by file**.
+
+**Reporting artefact worth noting:** because `addopts` already contains `-q`,
+adding `--collect-only -q` yields doubled quiet mode and prints a per-file
+summary rather than node IDs. All counts below were therefore taken with
+`-o addopts=""`, which overrides the option on the command line **without
+modifying any configuration file**.
+
+---
+
+## A. Total unique tests
+
+```console
+$ python3 -m pytest -o addopts="" --collect-only -q
+154 tests collected in 0.13s
+
+$ python3 -m pytest -o addopts="" --collect-only -q | grep "::" | sort -u | wc -l
+154
+```
+
+**154 collected items; 154 unique node IDs after deduplication.** Collection and
+unique-ID counts agree, so no node is collected twice.
+
+### Per-file distribution
+
+| File | Tests |
+| ---- | ----: |
+| `tests/test_frozen_math.py` | 43 |
+| `tests/test_metrics.py` | 25 |
+| `tests/test_pipeline.py` | 21 |
+| `tests/test_contract_compliance.py` | 20 |
+| `tests/test_config.py` | 15 |
+| `tests/test_trajectory.py` | 12 |
+| `tests/test_reproducibility.py` | 9 |
+| `tests/test_mitigation.py` | 9 |
+| **Total** | **154** |
+
+`43 + 25 + 21 + 20 + 15 + 12 + 9 + 9 = 154` ✓
+
+### Parametrisation
+
+Four collected items are parametrised expansions of a single function,
+`test_pipeline.py::test_unresolved_components_report_design_blocked[component0..3]`.
+These are four distinct node IDs and are counted as four tests by pytest, which
+is why the file-level count (21) exceeds the number of `def test_` statements in
+that file. This is normal pytest behaviour, not a duplication.
+
+---
+
+## B. Frozen-math tests
+
+```console
+$ python3 -m pytest -o addopts="" tests/test_frozen_math.py
+43 passed in 0.14s
+```
+
+**43 collected, 43 executed, 43 passed.** Matches the historical figure exactly.
+
+---
+
+## C. Contract-compliance tests
+
+```console
+$ python3 -m pytest -o addopts="" tests/test_contract_compliance.py
+20 passed in 0.11s
+```
+
+**20 collected, 20 executed, 20 passed.**
+
+> **The historical figure of 139 is NOT the contract-compliance count.** The
+> contract-compliance suite contains **20** tests. The origin of 139 is
+> established in the analysis below.
+
+---
+
+## D. Overlap between categories
+
+**Zero overlap.** Two independent checks:
+
+1. **Node-ID disjointness.** Node IDs are file-qualified
+   (`tests/<file>.py::<test>`), so a test in `test_frozen_math.py` cannot also
+   be a member of `test_contract_compliance.py`. The per-file counts sum to
+   exactly the deduplicated total (154), which is only possible if the file
+   partitions are disjoint.
+2. **No duplicate test names across files.** Stripping the file prefix from all
+   154 node IDs and searching for repeats returned **no duplicates**, so not even
+   a same-named test exists in two files.
+
+`43 (frozen-math) + 20 (contract-compliance) = 63`; the remaining **91** tests
+live in the other six files. The three categories *frozen-math*,
+*contract-compliance* and *everything else* are a genuine partition of the 154.
+
+---
+
+## E. Current pass count
+
+```console
+$ python3 -m pytest -o addopts="" -rA
+154 passed in 0.53s
+```
+
+Outcome tally parsed from the `-rA` short summary: **154 PASSED**, and no
+`FAILED`, `SKIPPED`, `XFAIL`, `XPASS` or `ERROR` lines.
+
+### Confirmed at every committed state
+
+Each commit was extracted with `git archive` into a scratch directory
+(read-only with respect to the repository) and the suite run there:
+
+| Commit | Collected | Passed |
+| ------ | --------: | -----: |
+| `1c18cdf` | 154 | 154 |
+| `afc1137` | 154 | 154 |
+| `f45ac2e` | 154 | 154 |
+
+**All three commits contain all eight test files and yield 154.**
+
+---
+
+## F. Collection vs execution breakdown
+
+| Category | Collected | Executed | Passed | Failed | Skipped/XFail | Source/Command |
+| -------- | --------: | -------: | -----: | -----: | ------------: | -------------- |
+| Frozen-math | 43 | 43 | 43 | 0 | 0 | `pytest -o addopts="" tests/test_frozen_math.py` |
+| Contract-compliance | 20 | 20 | 20 | 0 | 0 | `pytest -o addopts="" tests/test_contract_compliance.py` |
+| Full suite | 154 | 154 | 154 | 0 | 0 | `pytest -o addopts="" -rA` |
+| *(reference)* Full suite − `test_config.py` | 139 | 139 | 139 | 0 | 0 | `pytest -o addopts="" --ignore=tests/test_config.py` |
+
+Collected equals executed in every row: nothing is deselected, skipped or
+xfailed in the current baseline.
+
+---
+
+## Why `43 + 139 ≠ 154`
+
+### The 139 figure is reproducible — but as a full-suite count, not a category
+
+```console
+$ python3 -m pytest -o addopts="" --ignore=tests/test_config.py
+139 passed in 0.34s
+```
+
+**139 is exactly the full suite minus `tests/test_config.py` (15 tests).**
+`154 − 15 = 139`.
+
+### This decomposition is unique
+
+An exhaustive search over all 255 non-empty subsets of the eight test files
+found **exactly one** subset summing to 139: the seven files excluding
+`tests/test_config.py`. No other file-level selection produces 139. (This
+follows from `154 − 139 = 15` and `test_config.py` being the only file with 15
+tests; no combination of the other files sums to 15.)
+
+### The arithmetic of the 28-test excess
+
+The three reported figures do not partition the suite because **139 is a
+superset of 43, not a sibling of it**. The 139-test set is the whole suite
+minus one file, and it *contains* all 43 frozen-math tests. Adding the two
+therefore double-counts the frozen-math suite:
+
+```text
+  43 + 139                                      = 182
+  minus the true total                          = 154
+  excess                                        =  28
+
+  frozen-math counted twice (once alone, once inside 139)   = +43
+  test_config.py absent from the 139-test selection         = −15
+  net                                                        =  28   ✓ exact match
+```
+
+The excess decomposes exactly, with no residual.
+
+### What the label error was
+
+The figure **139** was reported as *"contract-compliance tests"*. It is not.
+It is a **full-suite pass count** from a working state in which
+`tests/test_config.py` did not yet exist. The contract-compliance suite has
+always contained **20** tests.
+
+### Provenance of the 139 state
+
+| Question | Finding |
+| -------- | ------- |
+| Does 139 match any committed state? | **No.** All three commits contain `test_config.py` and yield 154 |
+| Was it produced by a different pytest version? | **No.** Same runner (9.1.1) reproduces 139 under the file exclusion |
+| Was it produced by marker selection? | **Impossible.** No markers are registered and `--strict-markers` is active |
+| Was it produced by a different repository? | No evidence of one |
+| Most consistent account | 139 was the whole-suite count in an **uncommitted intermediate working-tree state**, recorded before `tests/test_config.py` (15 tests) was written, and later mislabelled as a contract-compliance figure |
+
+That account is supported by the exact and unique arithmetic reconstruction
+above. It is stated as the most consistent explanation of the evidence rather
+than as an observed event, because no commit, log or CI record of that
+intermediate state exists in the repository.
+
+### Corrected figures
+
+| Figure | Previously reported | **Verified** |
+| ------ | ------------------- | ------------ |
+| Full suite | 154 | **154** ✓ |
+| Frozen-math | 43 | **43** ✓ |
+| Contract-compliance | 139 | **20** ✗ corrected |
+| — | — | *(139 = full suite − `test_config.py`, a full-suite count)* |
+
+---
+
+## Baseline integrity confirmation
+
+- [x] No test added, deleted or renamed — 8 files before and after, `git status` clean for `tests/`
+- [x] No pytest configuration changed — `pyproject.toml` untouched; `-o addopts=""` is a command-line override only
+- [x] No source code altered
+- [x] All commands were read-only; historical states were inspected via `git archive` into a scratch directory, never by checkout
+- [x] `git status --porcelain` shows no modification to any tracked file
+
+---
+
+### BASELINE COUNTS RECONCILED
+
+All three historical figures are independently reproducible from the current
+baseline with the documented runner, and their relationship is fully
+established:
+
+- **154** — full suite; confirmed by collection, deduplicated node IDs, execution, and at all three commits.
+- **43** — frozen-math; confirmed exactly.
+- **139** — reproducible exactly and uniquely, but as **the full suite minus `tests/test_config.py`**, never as a contract-compliance count. It is a superset of the 43, which is why `43 + 139` double-counts by 43 and under-counts by 15, for a net excess of exactly 28.
+
+The true contract-compliance count is **20**. The discrepancy was a **category
+mislabel of a reproducible number**, not a missing, phantom or unreproducible
+test count, and no test-suite defect was found.
+
+**`154 tests pass` is confirmed as an authoritative project-status claim** for
+commits `1c18cdf`, `afc1137` and `f45ac2e`, with the composition
+**43 frozen-math + 20 contract-compliance + 91 other = 154**.
