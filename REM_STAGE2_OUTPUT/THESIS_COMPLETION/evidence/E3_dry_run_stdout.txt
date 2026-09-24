@@ -1,0 +1,38 @@
+Experiment: evidence-dryrun
+Loaded 7 configuration file(s) from /home/user/Ram/configs
+Environment manifest: REM_STAGE2_OUTPUT/THESIS_COMPLETION/evidence/E3_dry_run/evidence-dryrun/manifest.json
+Frozen design digest (CLAUDE.md): 6fef971e0d752eb9800693548940c43a5694131c5b31849c547eb068f6f98e9d
+
+FROZEN parameters:      27
+UNVERIFIED parameters:  19
+  - attribution.background_mean: E[x] per feature, the reference against which attributions are computed.
+  - behavior.behavioral_evidence_features: Which behavioural quantities become features in x_t.
+  - behavior.optional_cusum_scenarios: Which scenarios the observe-only CUSUM analysis covers, if any.
+  - decision.loss_grid: L(v, y, k) for every verdict, true label and consequence tier. Without it no ver
+  - decision.consequence_tiers: The tiers k_t indexing the loss function.
+  - decision.policy_predicates: The predicates evaluated between tiering and the Bayes verdict, and what they do
+  - decision.tie_breaking_rule: Which verdict wins when two attain the minimum conditional risk.
+  - detection.ridge_penalty_lambda: The L2 penalty lambda in the penalised objective. Required before the estimator 
+  - detection.feature_set: Ordered list of evidence features forming x_t.
+  - detection.injection_classifier: The classifier producing the injection/provenance evidence feature.
+  - detection.attacker_induced_read_labeling: Whether attacker-induced read operations count as positive.
+  - experiment.dataset: Benchmark identifier.
+  - experiment.agentdojo_version: Exact AgentDojo version / commit.
+  - experiment.grouping_scheme: How observations are grouped for statistical aggregation, given that runs of the
+  - experiment.llm_backbones: Which agent backbones are evaluated.
+  - experiment.number_of_repeats: Repeats per configuration.
+  - experiment.external_benchmarks: Additional benchmarks used for comparison.
+  - experiment.splits: Train / validation / test proportions. Calibration and any operating-point selec
+  - mitigation.modify_mechanism: The ONE declared modification applied under the Modify verdict.
+
+Unattached components:  7
+  - context
+  - detection
+  - behavior
+  - decision
+  - mitigation
+  - calibration
+  - attribution
+
+Dry run complete. Readiness report: REM_STAGE2_OUTPUT/THESIS_COMPLETION/evidence/E3_dry_run/evidence-dryrun/readiness.json
+dry-run exit: 0

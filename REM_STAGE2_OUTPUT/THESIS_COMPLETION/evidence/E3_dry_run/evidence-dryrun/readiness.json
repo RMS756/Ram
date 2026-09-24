@@ -1,0 +1,120 @@
+{
+  "experiment_id": "evidence-dryrun",
+  "seed": 42,
+  "contract_digest": "6fef971e0d752eb9800693548940c43a5694131c5b31849c547eb068f6f98e9d",
+  "frozen_parameters": 27,
+  "unresolved_parameters": [
+    {
+      "name": "attribution.background_mean",
+      "status": "UNVERIFIED",
+      "meaning": "E[x] per feature, the reference against which attributions are computed."
+    },
+    {
+      "name": "behavior.behavioral_evidence_features",
+      "status": "UNVERIFIED",
+      "meaning": "Which behavioural quantities become features in x_t."
+    },
+    {
+      "name": "behavior.optional_cusum_scenarios",
+      "status": "UNVERIFIED",
+      "meaning": "Which scenarios the observe-only CUSUM analysis covers, if any."
+    },
+    {
+      "name": "decision.loss_grid",
+      "status": "UNVERIFIED",
+      "meaning": "L(v, y, k) for every verdict, true label and consequence tier. Without it no verdict can be computed."
+    },
+    {
+      "name": "decision.consequence_tiers",
+      "status": "UNVERIFIED",
+      "meaning": "The tiers k_t indexing the loss function."
+    },
+    {
+      "name": "decision.policy_predicates",
+      "status": "UNVERIFIED",
+      "meaning": "The predicates evaluated between tiering and the Bayes verdict, and what they do to the outcome."
+    },
+    {
+      "name": "decision.tie_breaking_rule",
+      "status": "UNVERIFIED",
+      "meaning": "Which verdict wins when two attain the minimum conditional risk."
+    },
+    {
+      "name": "detection.ridge_penalty_lambda",
+      "status": "UNVERIFIED",
+      "meaning": "The L2 penalty lambda in the penalised objective. Required before the estimator can be fitted."
+    },
+    {
+      "name": "detection.feature_set",
+      "status": "UNVERIFIED",
+      "meaning": "Ordered list of evidence features forming x_t."
+    },
+    {
+      "name": "detection.injection_classifier",
+      "status": "UNVERIFIED",
+      "meaning": "The classifier producing the injection/provenance evidence feature."
+    },
+    {
+      "name": "detection.attacker_induced_read_labeling",
+      "status": "UNVERIFIED",
+      "meaning": "Whether attacker-induced read operations count as positive."
+    },
+    {
+      "name": "experiment.dataset",
+      "status": "UNVERIFIED",
+      "meaning": "Benchmark identifier."
+    },
+    {
+      "name": "experiment.agentdojo_version",
+      "status": "UNVERIFIED",
+      "meaning": "Exact AgentDojo version / commit."
+    },
+    {
+      "name": "experiment.grouping_scheme",
+      "status": "UNVERIFIED",
+      "meaning": "How observations are grouped for statistical aggregation, given that runs of the same task pairing are not independent."
+    },
+    {
+      "name": "experiment.llm_backbones",
+      "status": "UNVERIFIED",
+      "meaning": "Which agent backbones are evaluated."
+    },
+    {
+      "name": "experiment.number_of_repeats",
+      "status": "UNVERIFIED",
+      "meaning": "Repeats per configuration."
+    },
+    {
+      "name": "experiment.external_benchmarks",
+      "status": "UNVERIFIED",
+      "meaning": "Additional benchmarks used for comparison."
+    },
+    {
+      "name": "experiment.splits",
+      "status": "UNVERIFIED",
+      "meaning": "Train / validation / test proportions. Calibration and any operating-point selection use validation only; test is touched once."
+    },
+    {
+      "name": "mitigation.modify_mechanism",
+      "status": "UNVERIFIED",
+      "meaning": "The ONE declared modification applied under the Modify verdict."
+    }
+  ],
+  "unattached_components": [
+    "context",
+    "detection",
+    "behavior",
+    "decision",
+    "mitigation",
+    "calibration",
+    "attribution"
+  ],
+  "planned_ablations": [
+    "Full REM",
+    "REM - Context",
+    "REM - Behavior",
+    "REM - Attribution",
+    "REM - Mitigation"
+  ],
+  "ready": false
+}
