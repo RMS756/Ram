@@ -107,7 +107,7 @@ Candidates considered and not added, to avoid reference bloat: SecAlign (redunda
 | 7 | DOCX: Y. Wang et al. "higher capability can correlate with worse safety scores" | Metric-validity failure and small-panel instability | Abstract |
 | 8 | v2.0: FinVault's "up to 50.0% residual ASR" used as evidence | Not used; cited only as withdrawn | Withdrawal confirmed |
 | 9 | DOCX: FinHarness results reported without noting their substrate | The dependency on the withdrawn FinVault is stated | Evidence integrity |
-| 10 | v2.0: LlamaFirewall 83% / 96%; ASB memory poisoning 7.92%; MI9 99.81%; Thought-Aligner sub-100 ms; the Chen–Sra "ten categories incl. interpretability" | Removed or reworded | Not re-confirmed in this pass (Source Rule 9) |
+| 10 | v2.0: LlamaFirewall 83% / 96%; ASB memory poisoning 7.92%; MI9 99.81% (later **restored** after primary-source verification, §7 #9); Thought-Aligner sub-100 ms; the Chen–Sra "ten categories incl. interpretability" | Removed or reworded | Not re-confirmed in this pass (Source Rule 9) |
 | 11 | v2.0: Jackson "no documented calibration; no attribution; no ablation" | Not repeated; recorded as NOT VERIFIED | Only the abstract was accessible |
 | 12 | v2.0: Jackson's pipeline "near-isomorphic", and at the same time REM novelty in attribution + calibration + ablation | Jackson recorded as verdict-set prior art; REM's claim is integrative and empirical only | Consistency with the prior-art evidence |
 | 13 | DOCX: AgentSpec "95.56% precision / 70.96% recall" for LLM-generated rules | Omitted | Not re-confirmed in this pass; not needed |
@@ -127,3 +127,26 @@ Candidates considered and not added, to avoid reference bloat: SecAlign (redunda
 - The REM architecture: five layers, the Allow / Modify / Escalate / Block verdict set, tier-indexed losses, provenance features in the Behavioral Analysis Layer, and linear attribution restricted to the audit record.
 - **SC-1** (mitigation semantics) and **SC-2** (tie-breaking): **SUPERVISOR DECISION REQUIRED**.
 - The primary algorithm: the per-step calibrated estimator with the expected-loss decision, as described in the DOCX. CUSUM and the alternative calibration methods (beta, isotonic) are reviewed as *established alternatives* and are not presented as replacements. **The identity of the designated "backup algorithm" could not be confirmed**, because the REM Algorithm Selection Study was not available to this merge.
+
+---
+
+## 7. Source-control revision (25 September 2026)
+
+This revision applies the Source-Use Priority Rules. The full rule-by-rule record is in `CHAPTER2_SOURCE_CONTROL_CHECK.md`.
+
+| # | Section | Change | Rule |
+|---|---|---|---|
+| 1 | §2.1.1 | Added a "primary evidence" convention and clarified that *not reported* refers to the consulted material for abstract-only preprints | 3, 9, 16 |
+| 2 | §2.7.2 | ECE origin attributed to Naeini et al. (2015); Eq. 2.3 attributed to the confidence-based form of Guo et al. (2017) | 2, 10 |
+| 3 | §2.7.2 | Niculescu-Mizil & Caruana: replaced the "rule of thumb" with the paper's verified finding (Platt better with small calibration sets), without a numeric cut-off | 9, 15 |
+| 4 | §2.7.2 | Kull et al.: the a = b reduction stated as derived from the published functional form | 10, 15 |
+| 5 | §2.7.4 | Eq. 2.4 described as Page's (1954) procedure in the recursive form of Basseville & Nikiforov (1993); Lorden's result stated precisely (first-order asymptotic minimax; i.i.d. pre/post change) | 2, 10 |
+| 6 | §2.7.5, §2.8.4, Tables 2.6–2.7, §2.10, §2.11, Gap 1, §2.12.3 | **NEXUS re-characterized from the primary source:** expected-loss objective with fixed costs sets loss-optimal thresholds inside a rule-first cascade; the authors' upper-bound caveat and OOD results added; consequence enters through plan annotations and rules. REM's stated difference revised accordingly | 3, 14, 16 |
+| 7 | §2.8.3, Table 2.7 | **AgentTrust:** unverified aggregation description removed; verified mechanism, five judge dimensions and ~1.72 ms latency added | 3, 9, 16 |
+| 8 | §2.8.2, Tables 2.5–2.7 | **SafeAgent:** recovery actions and ablation verified (footnote removed); calibration and latency changed to NOT VERIFIED | 3, 16 |
+| 9 | §2.8.2, Table 2.7 | **MI9:** verified result (99.81%, 1,033 synthetic scenarios) and the authors' stated limitations added; **PRISM:** "preliminary" status added | 9, 16 |
+| 10 | Table 2.7 | ProvenanceGuard latency/cost reported as higher than baselines (verified) | 9 |
+| 11 | §2.6.3 | Sommer & Paxson wording limited to verified themes; Arp et al. pitfall list and prevalence stated from the primary text | 9, 15 |
+| 12 | §§2.2, 2.3, 2.5, 2.6.2, 2.8, 2.11 | Seven claim-strength edits (e.g., "consistently", "decisive", "substantially solved", "most informative") | 15 |
+| 13 | Evidence matrix | Verification statuses updated (64 FULLY / 4 PARTIALLY); conflicts C13–C16 added | 14, 20 |
+| 14 | Gap map | Gap 1 evidence rows updated; explicit statement that Gap 1 is narrower than in earlier drafts | 14, 15 |

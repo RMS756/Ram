@@ -38,8 +38,8 @@
 | New sources reviewed (candidates considered this session) | 21 (13 retained; 8 considered and not added — see change log §4) |
 | Final retained sources | 68 (66 academic + 2 official) |
 | Peer-reviewed / book / preprint / working paper / withdrawn / official | 40 / 2 / 22 / 1 / 1 / 2 |
-| FULLY VERIFIED | 60 |
-| PARTIALLY VERIFIED | 8 (AgentTrust, NEXUS, SafeAgent, Jackson, H.-H. Chen, Cordon, Lundberg & Lee, Basseville & Nikiforov) |
+| FULLY VERIFIED | 64 (after the 25 Sep source-control pass; was 60) |
+| PARTIALLY VERIFIED | 4 (Jackson, H.-H. Chen, Cordon, Basseville & Nikiforov) |
 | Excluded existing sources | 25 |
 | Duplicate/variant entries merged | 8 |
 
@@ -52,6 +52,7 @@
 - `chapter2/CHAPTER2_RESEARCH_GAP_MAP.md`: File 5
 - `chapter2/CHAPTER2_CURRENT_STATE_AUDIT.md`: the pre-rewrite audit (Step 2)
 - `chapter2/CHAPTER2_VERIFICATION_LOG.md`: raw verification notes
+- `chapter2/CHAPTER2_SOURCE_CONTROL_CHECK.md`: rule-by-rule compliance with the Source-Use Priority Rules (25 Sep pass), including the prior-art 8-dimension verification table, the algorithm-origin table and the numeric-provenance table
 - `chapter2/tools/`: scripts that regenerate the DOCX and the matrix
 
 ## 4. Known limitations of this pass
@@ -59,3 +60,17 @@
 1. **Network restrictions.** Direct access to arXiv, publisher and mirror pages was blocked. Verification relied on Crossref/OpenAlex metadata and on abstracts and passages retrieved through web search. Details visible only in full texts are marked PARTIALLY VERIFIED.
 2. **DOCX visual rendering.** LibreOffice could not run in the container, not even on a plain text file, so the DOCX was checked structurally (XSD validation; headings, tables, sections and equations inspected programmatically) but not rendered to page images. Open it in Word once to check table layout on the landscape pages.
 3. **Missing project documents.** Chapter 3, CLAUDE.md, the Decision Ledger, Research Memory, the reference database, the prior audit reports and the Algorithm Selection Study were not available. Statements about them are taken from the September DOCX.
+
+## 5. Source-control pass (25 September 2026)
+
+After the Source-Use Priority Rules were re-issued, a dedicated compliance pass was run (`CHAPTER2_SOURCE_CONTROL_CHECK.md`):
+
+- **Primary-domain re-verification** of every central claim and number.
+- **NEXUS characterization corrected.** Its expected-loss objective, with fixed intervention costs 0 / 0.1 / 0.3 / 1, sets loss-optimal score thresholds inside a rule-first cascade, and the authors call their in-distribution results upper bounds. **Gap 1 is narrower than earlier drafts implied**, and this is stated explicitly.
+- **AgentTrust.** The unverified "max-severity / step-function confidence" description was removed and replaced by the verified mechanism.
+- **SafeAgent.** The recovery actions and ablation are now verified. Calibration and latency cells were changed to NOT VERIFIED.
+- **MI9.** The verified limitations and the 99.81% / 1,033-scenario result are now included.
+- **ECE.** Now attributed to Naeini et al. (2015) as the original source (Rule 2).
+- **Sommer & Paxson, Niculescu-Mizil & Caruana, Kull et al.** Wording limited to the verified content.
+- **Claim strength.** Seven wording edits under Rule 15.
+- **Verification status.** Now 64 of 68 FULLY VERIFIED; 4 PARTIALLY VERIFIED.

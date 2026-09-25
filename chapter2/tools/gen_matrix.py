@@ -44,5 +44,5 @@ L.append("| ID | Authors | Venue / source | Identifier | Source type | Origin | 
 L.append("|---|---|---|---|---|---|---|---|")
 for s in S:
     L.append("| "+" | ".join(esc(x) for x in [s['id'],s['authors'],s['venue'],s['ident'],s['type'],s['origin'],s['sec'],s['use']])+" |")
-open('/home/user/Ram/chapter2/CHAPTER2_REFERENCE_EVIDENCE_MATRIX.md','w').write("\n".join(L)+"\n")
+open(__import__('os').path.join(__import__('os').path.dirname(__file__),'..','CHAPTER2_REFERENCE_EVIDENCE_MATRIX.md'),'w').write("\n".join(L)+"\n")
 print(len(S),c,v,typ)

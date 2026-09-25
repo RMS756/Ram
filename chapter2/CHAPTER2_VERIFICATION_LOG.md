@@ -83,3 +83,21 @@ Raw working log of the checks behind the evidence matrix. Tools: Crossref (via a
 - AgentHarm authors confirmed (14 authors incl. Winsor, Wynne).
 - Thought-Aligner authors confirmed: Changyue Jiang, Wenqi Zhang, Xudong Pan, Geng Hong, Min Yang; v1 abstract: latency below 100 ms; current abstract: 'low per-step latency'.
 - InjecAgent re-checked (24 Sep): 1,054 cases; 17 user tools; ReAct GPT-4 24%; nearly doubles with hacking prompt. One secondary summary says '62 attacker instructions' where the abstract says '62 attacker tools' — chapter keeps 'attacker tools'.
+
+## Source-control pass (25 Sep 2026): primary-domain re-verification
+- FinHarness numbers re-confirmed on arxiv.org only; advanced calls 646 -> 138.
+- NEXUS (arXiv HTML): top-down intervention cascade (rules first; multiple critical violations -> block; exactly one critical violation -> calibrated score decides block vs confirm); expected-loss objective costs c(ALLOW)=0, c(REVISE)=0.1, c(CONFIRM)=0.3, c(BLOCK)=1; loss-optimal thresholds deployed uniformly; limitation: no medium-severity signal for REVISE when no rule fires; 'in-distribution results should be viewed as upper bounds rather than deployment estimates'; OOD F1 R-Judge 0.861, NEXUS-Stress 0.881; organic traces future work; plan tool specs carry side-effect category, irreversibility flag, sensitivity flag, permissions, estimated cost; nine deterministic rules incl. irreversible actions, sensitive access, network, budget. '99 features' NOT confirmed (not used).
+- AgentTrust (arXiv): worst-case verdict over normalized variants; bulk of performance from analyzer + 170 rules; latency 1.72 ms vs 1.35 s DeepSeek-V3 zero-shot judge. Max-severity aggregation and step-function confidence NOT confirmed -> removed from chapter.
+- SafeAgent (arXiv HTML): sanitization of inputs/responses/observations; constrained replan; human-in-the-loop escalation; automatic rollback; session termination; tool-argument rewriting; ablation: recovery confidence and policy weighting define operating points. Calibration/latency absence NOT confirmable.
+- MI9 (arXiv v1 HTML / OpenReview): 1,033 synthetic scenarios; 99.81% detection; limitations: instrumentation dependence, synthetic-to-production gap, computational overhead, adversarial evaluation future work.
+- PRISM (arXiv): results 'preliminary benchmark evidence'; per-hook p50/p95/p99 profiling.
+- ProvenanceGuard (arXiv HTML): ~3.6 LLM calls; 3,979 input tokens avg; $0.011/case; higher latency than baselines.
+- H.-H. Chen (arXiv HTML): Capital@50 range 289-6457 (22x); live panel prevents realized loss at low budget.
+- Lundberg & Lee: Corollary 1 (Linear SHAP) confirmed; previously noted by Strumbelj & Kononenko.
+- Naeini et al. 2015: ECE and MCE definitions (origin of ECE).
+- Niculescu-Mizil & Caruana 2005 (authors' PDF): Platt better when calibration set small; isotonic as good or better with larger sets (retrieved thresholds inconsistent: ~1000 vs ~2000).
+- Kull et al. 2017: functional form confirmed; a=b reduction derived.
+- Forrest 1996; Schneider 2000; Chandola 2012; Lorden 1971; Arp 2022 (pitfall list, 90%/73%): claims confirmed.
+- Sommer & Paxson 2010: themes confirmed (cost of errors, semantic gap, diversity, evaluation); 'rarity of attacks' wording removed.
+- EU AI Act: Art. 12 and Art. 14(4)(a)-(d) on the official AI Act Service Desk; 14(4)(e) stop-button wording via secondary reproductions only.
+- Basseville & Nikiforov book PDF exists at irisa.fr but was not fetchable; Eq. 2.4 remains PARTIALLY VERIFIED as to presentation source.

@@ -12,16 +12,18 @@ Verification status (from `CHAPTER2_REFERENCE_EVIDENCE_MATRIX.md`) is shown wher
 
 | Prior literature | Limitation relative to the REM problem | Evidence (as reported) | Verification |
 |---|---|---|---|
-| NEXUS (Hossain et al., 2026) | Calibrated LR score and four interventions, but evaluated at the **plan** level on **synthetic** instances; deployed policy described as a **rule cascade** gated by the score, not per-decision expected-loss minimization | F1 0.949; 4-class accuracy 0.6406; ECE 0.085 → 0.013; 128-instance synthetic test; median 0.205 ms | Metrics FULLY VERIFIED; cascade detail PARTIALLY VERIFIED |
-| AgentTrust (C. Yang, 2026) | Pre-execution interception and four verdicts, but evidence aggregated by rules; **no calibrated probability reported**; reversibility only as a judge dimension | 95.0% verdict / 73.7% risk-level accuracy; 96.7% on 630 external scenarios (patched rules) | Headline FULLY VERIFIED; aggregation detail PARTIALLY VERIFIED |
+| NEXUS (Hossain et al., 2026) | Calibrated LR score and four interventions, but evaluated at the **plan** level, mainly on **author-generated templates** (authors: in-distribution results are upper bounds). The expected-loss objective uses **fixed intervention costs** (0 / 0.1 / 0.3 / 1) to set score thresholds inside a **rule-first cascade**; the costs do not vary with the consequence of the particular action | F1 0.949; 4-class accuracy 0.6406; ECE 0.085 → 0.013; median 0.205 ms; OOD F1 0.861 / 0.881 | FULLY VERIFIED (primary HTML) |
+| AgentTrust (C. Yang, 2026) | Pre-execution interception and four verdicts; verdicts from analyzer + rules (worst case over normalized variants) and an LLM judge; **no calibrated probability reported**; reversibility is one judge dimension | 95.0% verdict / 73.7% risk-level accuracy; ~1.72 ms; 96.7% on 630 external scenarios (patched rules) | FULLY VERIFIED |
 | H.-H. Chen (2026) | Prices consequence deterministically; **does not estimate adversarial induction** | Actuarial Action Interface; Authority Frontier | Abstract verified; author given name PARTIALLY VERIFIED |
-| SafeAgent (H. Liu et al., 2026) | Consequence modeling and arbitration realized by **LLM reasoning**; calibration not reported | Improves robustness on ASB and InjecAgent | PARTIALLY VERIFIED (calibration/latency absence) |
+| SafeAgent (H. Liu et al., 2026) | Consequence modeling and arbitration realized by **LLM reasoning**; calibration reporting not verifiable | Improves robustness on ASB and InjecAgent; ablation over recovery confidence / policy weighting | FULLY VERIFIED (calibration/latency: NOT VERIFIED) |
 | Jackson (2025) | Risk score → allow/deny/sanitize/escalate; **unrefereed; full text not accessible** | Qualitative claims only | PARTIALLY VERIFIED (abstract) |
 | Elkan (2001); Chow (1970) | Established theory; not evaluated for agent action gating | — | FULLY VERIFIED |
 
 **Gap 1.** The reviewed literature provides limited evidence on selecting among graduated responses by minimizing expected loss **per proposed tool call**, using a **calibrated probability of adversarial induction** together with **losses declared per consequence tier**.
 
-**REM positioning.** This is REM's Decision Engine. REM claims no novelty for calibration, the verdict set, the expected-loss formulation or consequence awareness (NEXUS, AgentTrust, Jackson, H.-H. Chen). The claim is limited to the combination at the action boundary and its evaluation.
+**REM positioning.** This is REM's Decision Engine. REM claims no novelty for calibration, the verdict set, the expected-loss formulation, loss-optimal thresholds or consequence awareness (NEXUS, AgentTrust, Jackson, H.-H. Chen). The claim is limited to the combination at the action boundary (losses indexed by each action's declared consequence tier, per proposed tool call, on an executable benchmark) and its evaluation.
+
+**Strength note (Rule 14, conflict C13).** Primary-source verification in the 25 September pass showed that NEXUS uses its expected-loss objective more directly than earlier drafts stated. It sets loss-optimal thresholds on the calibrated score. Gap 1 is therefore **narrower** than the July and early-September drafts implied, and it rests on three differences: per-tool-call evaluation during execution, consequence-indexed rather than fixed intervention losses, and an executable financial benchmark.
 
 ---
 
@@ -94,7 +96,7 @@ Verification status (from `CHAPTER2_REFERENCE_EVIDENCE_MATRIX.md`) is shown wher
 
 ## Remaining prior-art risks to monitor
 
-1. **NEXUS**: if a later version reports per-tool-call evaluation on an executable benchmark, or per-decision expected-loss minimization, the Gap 1 differentiation narrows substantially. Re-check the full text for the cascade description (currently PARTIALLY VERIFIED).
+1. **NEXUS**: the cascade and fixed-cost threshold design are now verified. If a later version evaluates per tool call on an executable benchmark, or makes intervention losses depend on the consequence of each action, Gap 1 largely closes.
 2. **AgentTrust**: if a later version adds calibrated probabilities or consequence-weighted decisions, Gap 1 narrows. Note the name collision with arXiv 2606.08539.
 3. **FinHarness**: if re-evaluated on an open executable benchmark with a probabilistic decision layer, Gap 3 narrows.
 4. **Jackson (2025)**: the full text was not accessible. If it documents calibrated, consequence-weighted selection with evaluation, Gaps 1 and 4 narrow.
