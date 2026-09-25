@@ -44,5 +44,11 @@ L.append("| ID | Authors | Venue / source | Identifier | Source type | Origin | 
 L.append("|---|---|---|---|---|---|---|---|")
 for s in S:
     L.append("| "+" | ".join(esc(x) for x in [s['id'],s['authors'],s['venue'],s['ident'],s['type'],s['origin'],s['sec'],s['use']])+" |")
-open(__import__('os').path.join(__import__('os').path.dirname(__file__),'..','CHAPTER2_REFERENCE_EVIDENCE_MATRIX.md'),'w').write("\n".join(L)+"\n")
+import os
+_out=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','CHAPTER2_REFERENCE_EVIDENCE_MATRIX.md')
+_partc=''
+if os.path.exists(_out):
+    _prev=open(_out).read()
+    if '## Part C' in _prev: _partc='\n'+_prev[_prev.index('## Part C'):]
+open(_out,'w').write("\n".join(L)+"\n"+_partc)
 print(len(S),c,v,typ)
