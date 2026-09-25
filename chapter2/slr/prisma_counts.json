@@ -1,0 +1,165 @@
+{
+ "search_date": "2026-09-25",
+ "databases_searched": [
+  "OpenAlex (via FastTrack Literature MCP search_papers)"
+ ],
+ "query_pages": 13,
+ "query_meta": [
+  {
+   "file": "Q1",
+   "total_estimate": 1366,
+   "page": 1,
+   "returned": 25,
+   "query_used": "LLM agent indirect prompt injection runtime defense tool use"
+  },
+  {
+   "file": "Q1p2",
+   "total_estimate": 1366,
+   "page": 2,
+   "returned": 25,
+   "query_used": "LLM agent indirect prompt injection runtime defense tool use"
+  },
+  {
+   "file": "Q2",
+   "total_estimate": 1123,
+   "page": 1,
+   "returned": 24,
+   "query_used": "LLM agent security runtime monitoring guardrail tool call"
+  },
+  {
+   "file": "Q2p2",
+   "total_estimate": 1123,
+   "page": 2,
+   "returned": 25,
+   "query_used": "LLM agent security runtime monitoring guardrail tool call"
+  },
+  {
+   "file": "Q3",
+   "total_estimate": 5572,
+   "page": 1,
+   "returned": 24,
+   "query_used": "tool-using language model agent behavioral trajectory monitoring anomaly detection safety"
+  },
+  {
+   "file": "Q4",
+   "total_estimate": 484,
+   "page": 1,
+   "returned": 25,
+   "query_used": "LLM agent provenance goal alignment tool call misalignment detection"
+  },
+  {
+   "file": "Q5",
+   "total_estimate": 2950,
+   "page": 1,
+   "returned": 24,
+   "query_used": "prompt injection benchmark tool-integrated LLM agents attacks defenses evaluation"
+  },
+  {
+   "file": "Q6",
+   "total_estimate": 579,
+   "page": 1,
+   "returned": 24,
+   "query_used": "LLM agent memory poisoning goal hijacking multi-step attack"
+  },
+  {
+   "file": "Q7",
+   "total_estimate": 1368,
+   "page": 1,
+   "returned": 24,
+   "query_used": "financial LLM agent security prompt injection tool misuse"
+  },
+  {
+   "file": "Q8",
+   "total_estimate": 536,
+   "page": 1,
+   "returned": 25,
+   "query_used": "banking agent safety benchmark financial transaction LLM"
+  },
+  {
+   "file": "Q9",
+   "total_estimate": 880,
+   "page": 1,
+   "returned": 25,
+   "query_used": "calibrated risk score intervention policy LLM agent runtime safety"
+  },
+  {
+   "file": "Q10",
+   "total_estimate": 1380,
+   "page": 1,
+   "returned": 25,
+   "query_used": "privilege control policy enforcement LLM agents tool calls prompt injection"
+  },
+  {
+   "file": "Q11",
+   "total_estimate": 744,
+   "page": 1,
+   "returned": 25,
+   "query_used": "pre-execution action validation guardrail autonomous LLM agent unsafe"
+  }
+ ],
+ "db_records_identified": 320,
+ "db_duplicates_removed": 101,
+ "db_records_screened": 219,
+ "db_ta_excluded": 174,
+ "db_ta_included": 45,
+ "db_ta_exclusion_reasons": {
+  "secondary study": 71,
+  "outside scope": 81,
+  "outside scope (multi-agent channel)": 7,
+  "wrong threat": 7,
+  "wrong population/system": 4,
+  "official taxonomy report": 1,
+  "official framework": 1,
+  "wrong outcome": 1,
+  "duplicate": 1
+ },
+ "db_reports_sought": 45,
+ "db_reports_fulltext_not_retrieved": 45,
+ "db_reports_assessed_record_level": 45,
+ "db_ft_excluded": 5,
+ "db_ft_exclusion_reasons": {
+  "wrong population/system": 1,
+  "metadata conflict": 1,
+  "insufficient technical evidence": 1,
+  "wrong outcome": 1,
+  "insufficient information": 1
+ },
+ "db_included": 40,
+ "om_records_identified": 70,
+ "om_cross_stream_duplicates": 11,
+ "om_records_assessed": 59,
+ "om_background": 6,
+ "om_foundational": 21,
+ "om_excluded_withdrawn": 1,
+ "om_included": 31,
+ "om_fulltext_not_retrieved": 59,
+ "total_included_studies": 71,
+ "db_background": 3,
+ "evidence_levels": {
+  "HIGH EVIDENCE": 10,
+  "MODERATE EVIDENCE": 36,
+  "LIMITED EVIDENCE": 25
+ },
+ "peer_review": {
+  "Peer-reviewed": 36,
+  "Preprint/working paper": 35
+ },
+ "verification": {
+  "FULLY VERIFIED": 62,
+  "PARTIALLY VERIFIED": 9
+ },
+ "roles": {
+  "Defense": 38,
+  "Attack": 11,
+  "Threat analysis": 4,
+  "Analysis": 6,
+  "Design": 4,
+  "Benchmark": 8
+ },
+ "financial_context_yes": [
+  "P32",
+  "P67",
+  "P70",
+  "P71"
+ ]
+}

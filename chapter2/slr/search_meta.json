@@ -1,0 +1,93 @@
+[
+ {
+  "q": "Q1",
+  "total": 1366,
+  "page": 1,
+  "n": 25,
+  "used": "LLM agent indirect prompt injection runtime defense tool use"
+ },
+ {
+  "q": "Q1p2",
+  "total": 1366,
+  "page": 2,
+  "n": 25,
+  "used": "LLM agent indirect prompt injection runtime defense tool use"
+ },
+ {
+  "q": "Q2",
+  "total": 1123,
+  "page": 1,
+  "n": 24,
+  "used": "LLM agent security runtime monitoring guardrail tool call"
+ },
+ {
+  "q": "Q2p2",
+  "total": 1123,
+  "page": 2,
+  "n": 25,
+  "used": "LLM agent security runtime monitoring guardrail tool call"
+ },
+ {
+  "q": "Q3",
+  "total": 5572,
+  "page": 1,
+  "n": 24,
+  "used": "tool-using language model agent behavioral trajectory monitoring anomaly detection safety"
+ },
+ {
+  "q": "Q4",
+  "total": 484,
+  "page": 1,
+  "n": 25,
+  "used": "LLM agent provenance goal alignment tool call misalignment detection"
+ },
+ {
+  "q": "Q5",
+  "total": 2950,
+  "page": 1,
+  "n": 24,
+  "used": "prompt injection benchmark tool-integrated LLM agents attacks defenses evaluation"
+ },
+ {
+  "q": "Q6",
+  "total": 579,
+  "page": 1,
+  "n": 24,
+  "used": "LLM agent memory poisoning goal hijacking multi-step attack"
+ },
+ {
+  "q": "Q7",
+  "total": 1368,
+  "page": 1,
+  "n": 24,
+  "used": "financial LLM agent security prompt injection tool misuse"
+ },
+ {
+  "q": "Q8",
+  "total": 536,
+  "page": 1,
+  "n": 25,
+  "used": "banking agent safety benchmark financial transaction LLM"
+ },
+ {
+  "q": "Q9",
+  "total": 880,
+  "page": 1,
+  "n": 25,
+  "used": "calibrated risk score intervention policy LLM agent runtime safety"
+ },
+ {
+  "q": "Q10",
+  "total": 1380,
+  "page": 1,
+  "n": 25,
+  "used": "privilege control policy enforcement LLM agents tool calls prompt injection"
+ },
+ {
+  "q": "Q11",
+  "total": 744,
+  "page": 1,
+  "n": 25,
+  "used": "pre-execution action validation guardrail autonomous LLM agent unsafe"
+ }
+]

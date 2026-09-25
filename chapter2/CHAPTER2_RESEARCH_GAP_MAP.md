@@ -1,103 +1,143 @@
-# Chapter 2: Research Gap Map
+# Chapter 2: Research Gap Map (systematic review version, 25 September 2026)
 
-This file traces how each part of the research gap in §2.12 follows from the reviewed evidence, using the chain:
+This map replaces the gap map of the earlier integrated narrative review. The gap was rebuilt **after** screening, extraction, appraisal and synthesis (`CHAPTER2_SYSTEMATIC_REVIEW.md`, §2.13).
 
-**Prior literature → Limitation → Evidence → Gap → REM positioning**
+Each gap is traced through the chain: **Prior literature → Limitation → Evidence (study ID, evidence level, verification) → Gap → REM positioning.**
 
-Verification status (from `CHAPTER2_REFERENCE_EVIDENCE_MATRIX.md`) is shown where a link in the chain rests on a PARTIALLY VERIFIED source. No gap depends *solely* on a partially verified detail.
+- **Study IDs** (P01–P71) refer to `CHAPTER2_SYSTEMATIC_EVIDENCE_MATRIX.csv`.
+- **Evidence levels** are HIGH, MOD (moderate) and LIM (limited) (`CHAPTER2_QUALITY_APPRAISAL.md`).
+- **PV** marks a PARTIALLY VERIFIED study.
+- No gap depends solely on a PV detail.
+
+The protocol's candidate gaps A–E were assessed against the evidence:
+
+| Candidate gap | Decision |
+|---|---|
+| A. Integration | **Retained, narrowed** |
+| B. Runtime action-boundary evaluation combining signals | **Not retained as stated** (contradicted by evidence); residue merged into A |
+| C. Behavioral/provenance contribution | **Retained, narrowed** |
+| D. Financial-agent evidence | **Retained** |
+| E. Evaluation decomposition | **Retained, narrowed** |
 
 ---
 
-## Gap 1: Integration of a calibrated probability with declared consequences at the action boundary
+## Gap A: Integration of a calibrated probability of adversarial induction with consequence-indexed losses at the action boundary
 
-| Prior literature | Limitation relative to the REM problem | Evidence (as reported) | Verification |
+| Prior literature | Limitation relative to the REM problem | Evidence as reported | Level / verification |
 |---|---|---|---|
-| NEXUS (Hossain et al., 2026) | Calibrated LR score and four interventions, but evaluated at the **plan** level, mainly on **author-generated templates** (authors: in-distribution results are upper bounds). The expected-loss objective uses **fixed intervention costs** (0 / 0.1 / 0.3 / 1) to set score thresholds inside a **rule-first cascade**; the costs do not vary with the consequence of the particular action | F1 0.949; 4-class accuracy 0.6406; ECE 0.085 → 0.013; median 0.205 ms; OOD F1 0.861 / 0.881 | FULLY VERIFIED (primary HTML) |
-| AgentTrust (C. Yang, 2026) | Pre-execution interception and four verdicts; verdicts from analyzer + rules (worst case over normalized variants) and an LLM judge; **no calibrated probability reported**; reversibility is one judge dimension | 95.0% verdict / 73.7% risk-level accuracy; ~1.72 ms; 96.7% on 630 external scenarios (patched rules) | FULLY VERIFIED |
-| H.-H. Chen (2026) | Prices consequence deterministically; **does not estimate adversarial induction** | Actuarial Action Interface; Authority Frontier | Abstract verified; author given name PARTIALLY VERIFIED |
-| SafeAgent (H. Liu et al., 2026) | Consequence modeling and arbitration realized by **LLM reasoning**; calibration reporting not verifiable | Improves robustness on ASB and InjecAgent; ablation over recovery confidence / policy weighting | FULLY VERIFIED (calibration/latency: NOT VERIFIED) |
-| Jackson (2025) | Risk score → allow/deny/sanitize/escalate; **unrefereed; full text not accessible** | Qualitative claims only | PARTIALLY VERIFIED (abstract) |
-| Elkan (2001); Chow (1970) | Established theory; not evaluated for agent action gating | — | FULLY VERIFIED |
+| NEXUS (Hossain et al., 2026) [P65] | Calibrated LR score, four interventions and consequence annotations, all at the **plan** level on **author templates** (in-distribution results called upper bounds by the authors). Expected-loss objective uses **fixed** intervention costs to set thresholds in a **rule-first cascade**. | F1 0.949; 4-class accuracy 0.6406; ECE 0.085→0.013; median 0.205 ms; OOD F1 0.861/0.881 | MOD; PV (costs, cascade, ECE) |
+| AgentTrust (C. Yang, 2026) [P64] | Pre-execution interception with four verdicts from rules and analysers plus an LLM judge; **no calibrated probability** reported; reversibility is one judge dimension | 95.0% verdict / 73.7% risk-level accuracy; ~1.72 ms (PV); 96.7% on 630 external scenarios (patched rules) | MOD; PV |
+| LATTICE (Calboreanu, 2026) [P40] | Deterministic policy verdicts with confidence-based human escalation; **no probability of induction combined with consequence** | Confidence-threshold baseline false-allow 0.03–0.998 across planners; zero unsafe actions at an operating point that auto-allowed no action | HIGH |
+| MCP policy-enforcement point (S. Wang et al., 2026) [P37] | Rules over cross-step provenance labels at the tool-call boundary; **binary** rule verdicts | ASR 40.0%→5.0%; task-level FP 30.0%; sub-ms | HIGH |
+| H.-H. Chen (2026) [P67] | Deterministic consequence pricing; **no estimate of adversarial induction** | Design framework | LIM |
+| SafeAgent (H. Liu et al., 2026) [P63] | Consequence modelling and arbitration by **LLM reasoning**; calibration not verifiable | Improves robustness on ASB and InjecAgent | LIM; PV |
+| Jackson (2025) [P66] | Risk score to allow/deny/sanitize/escalate; **unrefereed; full text not accessed** | Qualitative | LIM; PV |
+| Kaptein et al. (2026) [P19] | Formalises path-conditioned violation probability; **risk calibration left open**; not evaluated | Formal framework | LIM |
+| Elkan (2001); Chow (1970) | Foundational decision theory; not evaluated for agent action gating | — | Foundational source |
 
-**Gap 1.** The reviewed literature provides limited evidence on selecting among graduated responses by minimizing expected loss **per proposed tool call**, using a **calibrated probability of adversarial induction** together with **losses declared per consequence tier**.
+**Gap A.** Among the 71 included studies, none reports selecting among graduated responses per proposed tool call by minimising expected loss that combines two things: a **calibrated probability of adversarial induction**, and **losses declared per consequence tier**.
 
-**REM positioning.** This is REM's Decision Engine. REM claims no novelty for calibration, the verdict set, the expected-loss formulation, loss-optimal thresholds or consequence awareness (NEXUS, AgentTrust, Jackson, H.-H. Chen). The claim is limited to the combination at the action boundary (losses indexed by each action's declared consequence tier, per proposed tool call, on an executable benchmark) and its evaluation.
+**Why narrowed.** NEXUS combines calibration, costs and graduated responses. The difference therefore lies in the point of evaluation (per call during execution, not the plan), the loss structure (consequence-indexed, not fixed per intervention), and the setting (executable benchmark under indirect injection).
 
-**Strength note (Rule 14, conflict C13).** Primary-source verification in the 25 September pass showed that NEXUS uses its expected-loss objective more directly than earlier drafts stated. It sets loss-optimal thresholds on the calibrated score. Gap 1 is therefore **narrower** than the July and early-September drafts implied, and it rests on three differences: per-tool-call evaluation during execution, consequence-indexed rather than fixed intervention losses, and an executable financial benchmark.
+**REM positioning.** This is REM's Decision Engine. REM claims none of the individual elements: calibration, verdict set, expected-loss rule, consequence awareness or interception.
 
 ---
 
-## Gap 2: The measured value of behavioral and provenance evidence under indirect injection
+## Candidate Gap B (not retained as stated)
 
-| Prior literature | Limitation | Evidence | Verification |
+**Candidate.** "Limited evidence combining multiple signals at the point of action."
+
+**Contrary evidence.** Several included studies combine signals at or near the tool call:
+
+- AgentTrust [P64]: normalizer, analysers, rules, session chains and an LLM judge;
+- MCP policy-enforcement point [P37]: rules with cross-step labels and audit;
+- ToolSafe [P33]: request plus interaction history;
+- DRIFT [P38]: plan, privilege and intent validation with injection isolation;
+- SafeAgent [P63];
+- FinHarness [P71].
+
+**Decision.** The candidate is contradicted and is **not retained**. Its defensible residue, combining signals *into a calibrated probability*, is part of Gap A.
+
+---
+
+## Gap C: The contribution of behavioural and provenance evidence as inputs to a calibrated estimator under indirect injection
+
+| Prior literature | Limitation | Evidence | Level / verification |
 |---|---|---|---|
-| AgentTrust session tracker (C. Yang, 2026) | Trajectory component with **no measurable effect** in the author's own ablation | Disabling it left verdict accuracy unchanged on both benchmarks | FULLY VERIFIED |
-| MI9 (C. L. Wang et al., 2025) | Trajectory governance evaluated on **synthetic** scenarios; agent-level risk index | >1,000 synthetic scenarios | FULLY VERIFIED (abstract) |
-| ProbGuard (H. Wang et al., 2025); DreamGuard (Lin et al., 2026) | Sequence-level models evaluated in **non-financial** settings (AV, embodied; general agent benchmarks) | ProbGuard: up to 65.37% unsafe reduction; DreamGuard: ~25 ms per call | FULLY VERIFIED |
-| PRISM (F. Li, 2026); FinHarness (H. Jia et al., 2026) | **Heuristic** accumulation (TTL decay; cascade thresholds) | — | FULLY VERIFIED |
-| ProvenanceGuard (She et al., 2026); Task Shield (F. Jia et al., 2025); MELON (Zhu et al., 2025) | Provenance and goal consistency used as **detectors producing interventions**, not as inputs to a calibrated estimator; not evaluated on financial actions | ProvenanceGuard error 44.3% → 2.1%, intervention 10.9% → 14.5%; Task Shield ASR 2.07%, utility 69.79% | FULLY VERIFIED |
-| Forrest et al. (1996); Chandola et al. (2009, 2012); Sommer & Paxson (2010); Arp et al. (2022) | Classical requirements (benign workload, base rates, semantic interpretation) are **unevenly applied** in agent studies | — | FULLY VERIFIED |
-| M. Q. Li et al. (2026); Y. Wang et al. (2026) | Benchmark results unstable; genuinely multi-step attacks may be scarce | No ranking concordance; small-panel artefacts | FULLY VERIFIED |
+| AgentTrust session tracker [P64] | **Null** effect in the author's ablation | Disabling it left verdict accuracy unchanged | MOD; PV |
+| MCP policy-enforcement point [P37] | **Positive** effect of cross-step labels, but inside a **rule-based** enforcer on a **controlled** dataset | Removing label propagation raised call-level false negatives by 26.4 points | HIGH |
+| ProvenanceGuard [P58] | Provenance used as a **detector** producing interventions | Error 44.3%→2.1% (Agent-SafetyBench), 32.4%→18.7% (WorkBench) versus an LLM judge | MOD; PV (intervention rates, cost) |
+| MI9 [P59]; ProbGuard [P61]; DreamGuard [P62] | Trajectory models evaluated on **synthetic** data (MI9) or in **non-financial** settings (ProbGuard, DreamGuard) | 99.81% on 1,033 synthetic scenarios (MI9, PV); up to 65.37% unsafe reduction (ProbGuard, embodied); ~25 ms per call (DreamGuard) | MOD |
+| Constitutional monitors [P34] | Trajectory monitors **saturate** and overfit | Qualitative in the record | LIM |
+| Forrest et al. (1996); Chandola et al. (2009, 2012); Sommer & Paxson (2010); Arp et al. (2022) | Classical requirements (benign workload, base rates, interpretation) applied unevenly | — | Foundational / methodological |
 
-**Gap 2.** The reviewed literature provides limited evidence on how much **behavioral and action-provenance evidence contributes** to a runtime decision for a financial tool-using agent under indirect injection, when that evidence feeds a calibrated estimator rather than a detector verdict.
+**Gap C.** The evidence on the contribution of behavioural and provenance evidence is **limited and conflicting**: a null effect for a session tracker, and a large effect for cross-step labels in a rule-based enforcer. No included study tests either kind of evidence as **input to a calibrated estimator**, and none tests it on **financial actions** under indirect injection.
 
-**REM positioning.** REM's Behavioral Analysis Layer uses action-provenance features as estimator inputs (Chapter 3, §3.6). REM claims no novelty for provenance or trajectory analysis. The chapter commits the evaluation to report the component's contribution rather than assume it (§2.6.5). CUSUM is reviewed as an established alternative for sequential accumulation (§2.7.4), not as a contribution.
+**Why narrowed.** One HIGH-evidence study does separate a provenance component's contribution, but only for rule-based enforcement.
+
+**REM positioning.** REM's Behavioral Analysis Layer uses action-provenance features as estimator inputs. REM claims neither provenance nor trajectory analysis. Its evaluation must report the contribution through ablation (RQ4 [PD]) and must show that the benchmark contains the targeted behaviour.
 
 ---
 
-## Gap 3: Financial execution
+## Gap D: Verified financial-agent evidence in an open executable setting
 
-| Prior literature | Limitation | Evidence | Verification |
+| Prior literature | Limitation | Evidence | Level |
 |---|---|---|---|
-| ASB (H. Zhang et al., 2025); AgentDojo (Debenedetti et al., 2024) | Finance is **one scenario among many**; results reported in aggregate | ASB 10 scenarios incl. finance; AgentDojo Banking suite | FULLY VERIFIED |
-| FinHarness (H. Jia et al., 2026) | Closest domain system; **LLM-judge** routing; evaluated on a **withdrawn** benchmark | ASR 38.3% → 15.0%; benign approval 41.1% → 39.3% | FULLY VERIFIED |
-| FinVault (Z. Yang et al., 2026) | **Withdrawn**; cannot serve as evidence | — | Withdrawal FULLY VERIFIED |
-| Z. Chen, J. Chen, et al. (2025) | Position paper; argues for risk-first evaluation; no runtime defense | Audit of six agents on three tasks | FULLY VERIFIED |
-| Mao et al. (2026) | Systematization of commerce-agent threats; **no empirical evaluation** of a defense | Five dimensions; 12 attack vectors | FULLY VERIFIED (abstract) |
-| H.-H. Chen (2026) | Actuarial consequence framing; no estimate of adversarial induction | — | PARTIALLY VERIFIED (name) |
+| AgentDojo [P44]; ASB [P27]; AgentHarm [P42]; ClawSafety [P15] | Finance is **one suite, scenario, category or domain** among several; no finance-specific analysis in the verified record | Banking suite; finance scenario; fraud category; finance domain | MOD / HIGH (ASB) |
+| FinHarness [P71] | Closest financial runtime harness; **LLM-judge** routing; all figures on the **withdrawn** FinVault benchmark | ASR 38.3%→15.0%; benign approval 41.1%→39.3% (not usable as affirmative evidence) | LIM (override) |
+| Castro-Maldonado et al. (2026) [P32] | Banking agentic-RAG chatbot firewall; threat model and results not verifiable from the record | — | LIM |
+| Z. Chen, J. Chen, et al. (2025) [P70] | Position paper; audit of six agents on three tasks; no runtime defense | — | LIM |
+| H.-H. Chen (2026) [P67] | Actuarial framing; no estimate of adversarial induction | — | LIM |
+| FinVault (Z. Yang et al., 2026) | **Withdrawn**; cited only to record that status | — | Excluded (withdrawn) |
+| Mao et al. (2026) | Systematisation of commerce threats; secondary study | — | Background source |
 
-**Gap 3.** The reviewed literature provides limited **verified** evidence on runtime protection evaluated at the level of **individual financial actions and their consequences** in an open, executable environment.
+**Gap D.** All financial-context studies are LIMITED EVIDENCE, and the only quantitative financial runtime results rest on a withdrawn benchmark. There is limited verified evidence on runtime protection evaluated at the level of **individual financial actions and their consequences** in an open, executable environment.
 
-**REM positioning.** REM is evaluated on AgentDojo's Banking environment (planned), with consequence tiers declared per financial action type. REM does not claim to be the first runtime protection for financial agents (FinHarness).
+**REM positioning.** REM is evaluated on AgentDojo's Banking suite (planned), with consequence tiers declared per financial action type. REM does not claim to be the first financial runtime protection.
 
 ---
 
-## Gap 4: Evaluation that separates the parts
+## Gap E: Evaluation that separates the parts
 
-| Prior literature | Limitation | Evidence | Verification |
+| Prior literature | Limitation | Evidence | Level / verification |
 |---|---|---|---|
-| C. Zhang et al. (2026) | Calibration improves prediction but **not control**; the two must be measured separately | ECE 0.463 → 0.006 while regret unchanged at 0.318 | FULLY VERIFIED |
-| Table 2.7 (all systems) | Latency, benign utility, calibration and intervention behavior reported **unevenly** | Latency reported by AgentSpec, AgentTrust, NEXUS and DreamGuard; not reported or not verified for most others | Per-row labels |
-| M. Q. Li et al. (2026); Y. Wang et al. (2026); Arp et al. (2022) | Results must be reported per benchmark, with benign workloads | — | FULLY VERIFIED |
-| (No reviewed study) | No comparison of a consequence-aware decision against a **consequence-independent baseline that uses the same estimator** | — | Bounded negative over the reviewed corpus |
+| C. Zhang et al. (2026) [P69] | Calibration improved but **control did not** | ECE 0.463→0.006; regret unchanged at 0.318 | MOD; PV |
+| LATTICE [P40] | A confidence threshold was **unstable across planners**; zero false-allow achieved only at an operating point that auto-allowed no action | 0.03–0.998 false-allow | HIGH |
+| MCP policy-enforcement point [P37]; NEXUS [P65]; ToolSafe [P33] | Report several dimensions (ASR, false positives or negatives, utility, latency, calibration) but **not a same-estimator consequence-independent comparison** | See matrix | HIGH / MOD |
+| M. Q. Li et al. (2026) [P45]; Y. Wang et al. (2026) [P46] | Benchmark results do not transfer; metric artefacts | No ranking concordance; an always-positive baseline outranks models | MOD |
+| (None of the 71 included studies) | **No comparison** of a consequence-aware decision against a consequence-independent baseline sharing its estimator | — | Bounded negative over the included corpus |
 
-**Gap 4.** Few reviewed studies report attack success, benign utility, intervention behavior, calibration and latency **separately**, and none reviewed compares a consequence-aware decision with a consequence-independent baseline that shares its estimator. That comparison is needed to attribute any effect to the use of consequences.
+**Gap E.** Calibration is reported for one deployed scorer, intervention rates by few studies, and no included study compares a consequence-aware decision with a **consequence-independent baseline that uses the same estimator**. That comparison is needed to attribute any effect to the use of consequences, with calibration reported separately from control.
 
-**REM positioning.** REM's evaluation design (Chapter 3, §§3.11–3.12) reports these quantities separately, together with the same-estimator baseline. Losses are reported across a declared grid rather than as fixed truths.
+**REM positioning.** REM's evaluation design (Chapter 3, §§3.11–3.12) reports attack success, benign utility, utility under attack, intervention rates, calibration and latency separately. It compares against baseline B1: the same estimator with a consequence-independent threshold policy. Losses are reported across a declared grid.
 
 ---
 
-## Consolidated gap (as stated in §2.12.2)
+## Consolidated gap statement (as in §2.13.2)
 
-> Among the studies reviewed in this chapter, none reports an empirical evaluation of a non-invasive runtime layer for a financial tool-using agent that combines (i) provenance-based evidence about proposed financial actions, (ii) a calibrated per-step probability that the proposed action is adversarially induced, (iii) a decision that minimizes expected loss over Allow, Modify, Escalate and Block using losses declared per consequence tier, and (iv) deterministic mitigation, with attack success, benign utility, intervention behavior, calibration and latency measured separately and compared against a consequence-independent baseline that uses the same estimator.
+> Among the 71 studies included in this systematic review (search date 25 September 2026), none reports an empirical evaluation of a non-invasive runtime layer for a financial tool-using agent that combines (i) provenance-based evidence about proposed financial actions, (ii) a calibrated per-step probability that the proposed action is adversarially induced, (iii) a decision that minimizes expected loss over Allow, Modify, Escalate and Block using losses declared per consequence tier, and (iv) deterministic mitigation whose effectiveness is measured and used in the loss structure. None reports attack success, benign utility, utility under attack, intervention behavior and latency separately, with calibration reported separately from control outcomes, and results compared against a consequence-independent baseline that uses the same estimator.
 
-| Clause | Supported by gap | Closest prior art (not claimed by REM) |
+| Clause | Supported by | Closest prior art (not claimed by REM) |
 |---|---|---|
-| (i) provenance evidence | Gap 2 | ProvenanceGuard; Task Shield; MELON |
-| (ii) calibrated per-step probability | Gap 1 | NEXUS (plan-level) |
-| (iii) expected loss over four responses with tier-indexed losses | Gap 1 | NEXUS objective; Jackson; AgentTrust verdicts; H.-H. Chen pricing |
-| (iv) deterministic mitigation | — (adopted) | Progent; AgentSpec; Cordon |
-| financial tool-using agent; open executable benchmark | Gap 3 | FinHarness; AgentDojo Banking |
-| separate measurement + same-estimator baseline | Gap 4 | C. Zhang et al. (analysis); AgentTrust/NEXUS ablations |
+| (i) provenance evidence | Gap C | ProvenanceGuard; MCP policy-enforcement point; CaMeL; ACE; RTBAS |
+| (ii) calibrated per-step probability | Gap A | NEXUS (plan level) |
+| (iii) expected loss over four responses with tier-indexed losses | Gap A | NEXUS objective; Jackson; AgentTrust verdicts; H.-H. Chen pricing; LATTICE escalation |
+| (iv) deterministic mitigation, effectiveness measured and used in the loss structure | Gap E | Progent; AgentSpec; Cordon; GoEX |
+| Financial tool-using agent; open executable benchmark | Gap D | FinHarness; AgentDojo Banking |
+| Separate measurement; same-estimator baseline | Gap E | C. Zhang et al. (analysis); MCP policy-enforcement point and NEXUS ablations; LATTICE baseline |
 
-**Nature of the gap.** Integrative and empirical, bounded by the reviewed corpus and the September 2026 verification pass. It is falsifiable: a study reporting this combination and evaluation would require the thesis contribution to be revised.
+**Nature of the gap.**
+- **Integrative and empirical.** It concerns combining established mechanisms and evaluating them, not a missing mechanism.
+- **Bounded.** By the search (one database, retrieval cap, a partly non-independent second stream) and by record-level appraisal.
+- **Falsifiable.** A study reporting this combination and evaluation would require the contribution to be revised.
 
 ---
 
-## Remaining prior-art risks to monitor
+## Prior-art risks
 
-1. **NEXUS**: the cascade and fixed-cost threshold design are now verified. If a later version evaluates per tool call on an executable benchmark, or makes intervention losses depend on the consequence of each action, Gap 1 largely closes.
-2. **AgentTrust**: if a later version adds calibrated probabilities or consequence-weighted decisions, Gap 1 narrows. Note the name collision with arXiv 2606.08539.
-3. **FinHarness**: if re-evaluated on an open executable benchmark with a probabilistic decision layer, Gap 3 narrows.
-4. **Jackson (2025)**: the full text was not accessible. If it documents calibrated, consequence-weighted selection with evaluation, Gaps 1 and 4 narrow.
-5. **Rapid preprint turnover** (2026 preprints: DreamGuard, SafeAgent, Cordon, ProvenanceGuard, C. Zhang et al.): re-run the search immediately before submission.
+1. **NEXUS.** Per-call evaluation on an executable benchmark, or consequence-dependent intervention losses, would largely close Gap A.
+2. **AgentTrust.** Calibrated probabilities or consequence-weighted decisions would narrow Gap A. Do not confuse it with the different arXiv paper 2606.08539.
+3. **MCP policy-enforcement point / LATTICE (HIGH).** A probabilistic extension would narrow Gaps A, C and E.
+4. **FinHarness.** Re-evaluation on an open benchmark with a probabilistic decision layer would narrow Gap D.
+5. **Jackson.** If the full text documents calibrated, consequence-weighted selection with evaluation, Gaps A and E narrow.
+6. **Unsearched databases.** The libraries reported as DATABASE ACCESS UNAVAILABLE must be searched directly before submission.

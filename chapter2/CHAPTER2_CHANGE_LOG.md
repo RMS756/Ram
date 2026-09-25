@@ -150,3 +150,49 @@ This revision applies the Source-Use Priority Rules. The full rule-by-rule recor
 | 12 | §§2.2, 2.3, 2.5, 2.6.2, 2.8, 2.11 | Seven claim-strength edits (e.g., "consistently", "decisive", "substantially solved", "most informative") | 15 |
 | 13 | Evidence matrix | Verification statuses updated (64 FULLY / 4 PARTIALLY); conflicts C13–C16 added | 14, 20 |
 | 14 | Gap map | Gap 1 evidence rows updated; explicit statement that Gap 1 is narrower than in earlier drafts | 14, 15 |
+
+## 8. Partial-sources verification pass (25 September 2026, interrupted request)
+
+This pass edited `CHAPTER2_LITERATURE_REVIEW_INTEGRATED.md` and rebuilt its DOCX, and it added `CHAPTER2_PARTIAL_SOURCES_REVIEW.md`. The changes:
+
+- **Re-classification under the thesis tier-7 rule.** AgentTrust, NEXUS and SafeAgent are back to PARTIALLY VERIFIED.
+- **Ridge penalty source.** Added le Cessie & van Houwelingen (1992).
+- **Naive Bayes.** Ng & Jordan (2002) is noted as an alternative estimator, not part of REM.
+- **CUSUM.** Worded as optional, offline and observe-only.
+- **Table 2.8.** Split so that Platt is adopted, and beta and isotonic are reviewed but not adopted.
+- **Gap statement.** Aligned with Chapter 3 §3.13.
+- **Other wording.** Unverified Arp percentages removed; Lorden wording made cautious.
+
+The evidence matrix now records 61 sources as FULLY VERIFIED and 9 as PARTIALLY VERIFIED.
+
+Parts E–R of that request were interrupted and not completed:
+- numerical claims audit;
+- final consistency audit file;
+- backup-algorithm package;
+- export ZIP and manifest;
+- repository visibility.
+
+## 9. Conversion to a systematic literature review (25 September 2026)
+
+`CHAPTER2_SYSTEMATIC_REVIEW.md` and its `.docx` are a new chapter version, following PRISMA 2020 and PRISMA-S. They do not overwrite the integrated narrative version, which is retained for comparison.
+
+**What was done:**
+- one database (OpenAlex) searched on 25 September 2026, using 11 queries across 13 result pages (320 records);
+- 101 duplicates removed; 219 records screened; 45 assessed at record level;
+- 40 studies included from the database and 31 through other methods, for 71 in total;
+- Q1–Q10 appraisal: 10 HIGH, 36 MODERATE and 25 LIMITED EVIDENCE;
+- 21-field extraction;
+- structured synthesis across 11 themes.
+
+**How the gap changed.** The gap was rebuilt from the evidence:
+- candidate B was not retained;
+- candidates A, C and E were narrowed;
+- candidate D was retained.
+
+**Supporting files.** `CHAPTER2_SYSTEMATIC_SEARCH_STRATEGY.md`, `CHAPTER2_SCREENING_LOG.csv`, `CHAPTER2_SYSTEMATIC_EVIDENCE_MATRIX.csv`, `CHAPTER2_QUALITY_APPRAISAL.md`, `CHAPTER2_PRISMA_FLOW_DIAGRAM.png`, `CHAPTER2_PRISMA_CHECKLIST.md`, `CHAPTER2_SYSTEMATIC_REVIEW_AUDIT.md`, and a rebuilt `CHAPTER2_RESEARCH_GAP_MAP.md` (earlier version kept in git history).
+
+**Raw search output and scripts.** These are in `slr/`; `slr/tools/build_slr.py` recomputes every count.
+
+**Unchanged:**
+- Chapter 3 was not modified.
+- SC-1 and SC-2 remain SUPERVISOR DECISION REQUIRED.
