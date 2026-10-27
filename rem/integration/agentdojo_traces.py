@@ -114,7 +114,14 @@ def _call(raw: Mapping[str, Any]) -> ToolCall:
     return ToolCall(str(raw.get("function", "")), dict(raw.get("args") or {}), raw.get("id"))
 
 
-def load_episode(path: str) -> Episode:
+def load_episode(path: str, pipeline: Optional[str] = None) -> Episode:
+    """Load one recorded trace.
+
+    Args:
+        pipeline: Pipeline identifier to use instead of the trace's
+            ``pipeline_name`` field (some traces record a generic value such as
+            ``"local"``; the runs/ directory name is then authoritative).
+    """
     with open(path, "r", encoding="utf-8") as fh:
         d = json.load(fh)
     msgs = []
@@ -125,7 +132,7 @@ def load_episode(path: str) -> Episode:
         msgs.append(Message(role, _text(m.get("content")), tcs, tc, m.get("error")))
     return Episode(
         path=path,
-        pipeline=str(d.get("pipeline_name")),
+        pipeline=pipeline or str(d.get("pipeline_name")),
         suite=str(d.get("suite_name")),
         user_task_id=str(d.get("user_task_id")),
         injection_task_id=d.get("injection_task_id"),

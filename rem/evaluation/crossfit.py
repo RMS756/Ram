@@ -60,6 +60,7 @@ class FoldFit:
     n_train_pos: int
     n_test_pos: int
     xbar: List[float] = field(default_factory=list)
+    benign_oof_p: List[float] = field(default_factory=list)   # for Eq. 3.14 at other alphas
 
 
 @dataclass
@@ -165,10 +166,11 @@ def nested_crossfit(
         logit[test] = _logit(model, X_out[test])
 
         theta_blk = theta_mod = None
+        benign_oof = np.array([])
         if not failed:
             p_cal[test] = sigmoid(g1 * logit[test] + g0)
+            benign_oof = sigmoid(g1 * oof[lam_star][train & (y == 0)] + g0)
             if alpha_blk is not None and alpha_mod is not None:
-                benign_oof = sigmoid(g1 * oof[lam_star][train & (y == 0)] + g0)
                 th = A1Thresholds.fit(benign_oof, alpha_blk, alpha_mod)
                 theta_blk, theta_mod = th.theta_blk, th.theta_mod
 
@@ -188,6 +190,7 @@ def nested_crossfit(
             n_train_pos=int(y[train].sum()),
             n_test_pos=int(y[test].sum()),
             xbar=[float(v) for v in X_out[train & (y == 0)].mean(axis=0)],
+            benign_oof_p=[float(v) for v in benign_oof],
         )
 
     return CrossFitResult(logit=logit, p_raw=sigmoid(logit), p_cal=p_cal, fold_of=outer, fits=fits)

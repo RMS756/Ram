@@ -41,7 +41,7 @@ from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence, Set, 
 import numpy as np
 
 from rem.algorithms.attribution.linear_shapley import LinearShapleyAttributor
-from rem.algorithms.behavior.evidence import FEATURE_ORDER, BenignReference, EpisodeTracker, EvidenceSpec
+from rem.algorithms.behavior.evidence import BenignReference, EpisodeTracker, EvidenceSpec
 from rem.algorithms.decision.consequence import ConsequenceTierMap
 from rem.algorithms.detection.instruction_patterns import InstructionPatternDetector
 from rem.algorithms.detection.ridge_logistic import sigmoid
@@ -117,6 +117,7 @@ class GuardConfig:
     mitigation_variant: str
     escalation_model: str
     observe_only: bool = False
+    single_tier: Optional[int] = None   # ablation 5: one tier for every action
 
     def __post_init__(self) -> None:
         if self.mitigation_variant not in MITIGATION_VARIANTS:
@@ -158,7 +159,7 @@ class RemGuard:
         t0 = time.perf_counter()
         cfg = self.config
         feats, avail = self.tracker.features(tool, args)
-        tier = cfg.tier_map.tier(tool, args)
+        tier = cfg.tier_map.tier(tool, args) if cfg.single_tier is None else int(cfg.single_tier)
         label = self.labeler.label(self.episode.injection_task_id, tool, args)
         if self.scorer is not None:
             s = self.scorer.logit(feats)
@@ -179,7 +180,7 @@ class RemGuard:
         phi0 = None
         additivity = None
         if self._attr is not None:
-            phi = {n: self._attr.shapley_value(i, feats[n]) for i, n in enumerate(FEATURE_ORDER)}
+            phi = {n: self._attr.shapley_value(i, feats[n]) for i, n in enumerate(self.scorer.feature_order)}
             phi0 = self._attr.base_value()
             additivity = abs(phi0 + sum(phi.values()) - s)
         self.audit.append(
