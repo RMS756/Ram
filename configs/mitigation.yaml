@@ -1,0 +1,62 @@
+# L5 Mitigation — canonical semantics.
+#
+# The verdict-to-mechanism mapping is FROZEN by CLAUDE.md MITIGATION LOCK and is
+# therefore NOT configurable; it is recorded here for traceability only. Only the
+# Modify mechanism is a free choice, and it is UNVERIFIED.
+
+mitigation:
+  allow_semantics:
+    value: release the current action
+    meaning: What the Allow verdict does.
+    default: release the current action
+    source: CLAUDE.md, MITIGATION LOCK.
+    justification: Frozen canonical semantics.
+    status: FROZEN
+
+  modify_semantics:
+    value: apply ONE declared modification mechanism to the current action or execution context
+    meaning: What the Modify verdict does.
+    default: null
+    source: CLAUDE.md, MITIGATION LOCK.
+    justification: Frozen canonical semantics.
+    status: FROZEN
+
+  escalate_semantics:
+    value: withhold the current action pending review
+    meaning: What the Escalate verdict does.
+    default: null
+    source: CLAUDE.md, MITIGATION LOCK.
+    justification: Frozen canonical semantics.
+    status: FROZEN
+
+  block_semantics:
+    value: prevent execution of the current proposed action
+    meaning: What the Block verdict does.
+    default: null
+    source: CLAUDE.md, MITIGATION LOCK.
+    justification: >-
+      Frozen canonical semantics. Explicitly NOT "disable all state-changing
+      tools for the rest of the episode".
+    status: FROZEN
+
+  scope:
+    value: step_level
+    meaning: >-
+      All four mechanisms act on the current step only. Any episode-level
+      restriction is a separate experimental policy requiring explicit
+      specification.
+    default: step_level
+    source: CLAUDE.md, MITIGATION LOCK.
+    justification: Frozen. Enforced by tests that assert no episode-level flags are set.
+    status: FROZEN
+
+  modify_mechanism:
+    value: REQUIRED_FROM_DESIGN
+    meaning: The ONE declared modification applied under the Modify verdict.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK ("Modify
+      mechanism"). Rewriting an agent action changes system behaviour and may
+      not be improvised.
+    status: UNVERIFIED

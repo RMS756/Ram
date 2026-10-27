@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rem-framework"
+version = "0.2.0"
+description = "REM — Runtime Evaluation and Mitigation Framework for Securing LLM-based AI Agents"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.24",
+    "PyYAML>=6.0",
+]
+
+# NumPy is required by the frozen estimator (ridge logistic regression, fitted by
+# Newton-Raphson). No machine-learning framework is pinned: the frozen design
+# names no model that requires one, and GRU/LSTM/Transformer trajectory models
+# are forbidden reintroductions (CLAUDE.md).
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+
+[tool.setuptools.packages.find]
+include = ["rem*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"

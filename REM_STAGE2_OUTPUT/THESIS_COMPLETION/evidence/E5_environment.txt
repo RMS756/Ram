@@ -1,0 +1,9 @@
+python: Python 3.11.15
+numpy 2.4.6
+PyYAML 6.0.1
+pytest 9.1.1
+agentdojo import: ModuleNotFoundError: No module named 'agentdojo'
+rem package version: 0.2.0
+os: Linux 6.18.44-fc-v37 x86_64
+cpus: 4
+memory_total_GiB: 15

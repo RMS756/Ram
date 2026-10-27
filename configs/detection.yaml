@@ -1,0 +1,89 @@
+# L2 Detection — ridge logistic regression.
+#
+# The estimator is FROZEN (CLAUDE.md MATHEMATICAL LOCK). Its penalty and feature
+# set are UNVERIFIED and must not be defaulted.
+
+detection:
+  algorithm:
+    value: ridge_logistic_regression
+    meaning: The probability estimator, resolved to rem.algorithms.detection.ridge_logistic.
+    default: ridge_logistic_regression
+    source: CLAUDE.md, MATHEMATICAL LOCK -> Probability estimation.
+    justification: >-
+      Frozen: "Ridge logistic regression is the estimator." Implemented exactly.
+    status: FROZEN
+
+  runtime_form:
+    value: "s_t = beta_0 + beta^T x_t ; p_tilde_t = sigmoid(s_t)"
+    meaning: The frozen runtime scoring equations.
+    default: null
+    source: CLAUDE.md, MATHEMATICAL LOCK -> Probability estimation.
+    justification: Quoted verbatim from the frozen specification.
+    status: FROZEN
+
+  ridge_penalty_lambda:
+    value: REQUIRED_FROM_DESIGN
+    meaning: >-
+      The L2 penalty lambda in the penalised objective. Required before the
+      estimator can be fitted.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      Not frozen in CLAUDE.md nor in any supplied document. A library default
+      must not be adopted; see DESIGN BLOCKED in RECONCILIATION.md.
+    status: UNVERIFIED
+    experimental: true
+
+  feature_set:
+    value: REQUIRED_FROM_DESIGN
+    meaning: Ordered list of evidence features forming x_t.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK ("final feature
+      set"). The feature definition determines what the coefficients mean.
+    status: UNVERIFIED
+
+  injection_classifier:
+    value: REQUIRED_FROM_DESIGN
+    meaning: The classifier producing the injection/provenance evidence feature.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK.
+    status: UNVERIFIED
+
+  operating_point_policy:
+    value: baseline_only
+    meaning: >-
+      Status of the threshold-on-probability policy. It is a BASELINE for
+      comparison, never a second primary methodology.
+    default: baseline_only
+    source: CLAUDE.md, FROZEN REM PIPELINE.
+    justification: >-
+      Frozen: "The operating-point threshold policy is a BASELINE ONLY. It is
+      NOT a second primary methodology."
+    status: FROZEN
+
+  positive_class_label:
+    value: attack
+    meaning: >-
+      Name of the positive class, fixing metric orientation: a true positive is
+      a correctly detected attack.
+    default: attack
+    source: >-
+      Fawcett, T. (2006). An introduction to ROC analysis. Pattern Recognition
+      Letters, 27(8), 861-874, Section 2, p. 862.
+    justification: >-
+      An orientation convention, recorded because reversing it would silently
+      invert FPR and FNR.
+    status: FROZEN
+
+  attacker_induced_read_labeling:
+    value: REQUIRED_FROM_DESIGN
+    meaning: Whether attacker-induced read operations count as positive.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      Listed as unresolved in CLAUDE.md DATA / EVALUATION LOCK. It changes the
+      positive class and therefore every reported metric.
+    status: UNVERIFIED

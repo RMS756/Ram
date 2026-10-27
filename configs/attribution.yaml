@@ -1,0 +1,52 @@
+# Audit-only — linear Shapley attribution.
+#
+# Attribution is NOT a layer. It is audit-only and MUST NOT affect the verdict.
+
+attribution:
+  method:
+    value: linear_shapley
+    meaning: The attribution method, resolved to rem.algorithms.attribution.linear_shapley.
+    default: linear_shapley
+    source: CLAUDE.md, MATHEMATICAL LOCK -> Attribution.
+    justification: >-
+      Frozen — "Linear Shapley attribution is audit-only."
+    status: FROZEN
+
+  role:
+    value: audit_only
+    meaning: >-
+      Attribution output is recorded in the audit trail and never reaches the
+      decision engine.
+    default: audit_only
+    source: >-
+      CLAUDE.md, MATHEMATICAL LOCK -> Attribution, and FORBIDDEN
+      REINTRODUCTIONS ("SHAP as a decision input").
+    justification: >-
+      Frozen and enforced structurally: attribution runs after the verdict, the
+      decide() signature has no attribution parameter, and the engine rejects any
+      object flagged audit_only.
+    status: FROZEN
+
+  closed_form:
+    value: "phi_i = beta_i * (x_i - E[x_i]) ; phi_0 = f(E[x])"
+    meaning: The exact Shapley values for a linear model.
+    default: null
+    source: >-
+      Lundberg, S. M., & Lee, S.-I. (2017). A Unified Approach to Interpreting
+      Model Predictions. NeurIPS 30, pp. 4765-4774 ("Linear SHAP"); Shapley,
+      L. S. (1953). A Value for n-Person Games.
+    justification: >-
+      The closed form is exact for a linear model under feature independence,
+      which is what the frozen detector is. Computed on the logit scale, where
+      the model is linear.
+    status: FROZEN
+
+  background_mean:
+    value: REQUIRED_FROM_DESIGN
+    meaning: E[x] per feature, the reference against which attributions are computed.
+    default: null
+    source: REQUIRED_FROM_DESIGN
+    justification: >-
+      Must be estimated on the training split once the feature set exists.
+      Changing the reference changes every attribution, so it is not invented.
+    status: UNVERIFIED

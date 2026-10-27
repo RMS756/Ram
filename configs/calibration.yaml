@@ -1,0 +1,71 @@
+# Cross-cutting — Platt calibration on the logit.
+#
+# The calibrator is FROZEN. Beta, isotonic and temperature calibration are
+# FORBIDDEN REINTRODUCTIONS and are absent from the codebase.
+
+calibration:
+  method:
+    value: platt_on_logit
+    meaning: The adopted calibrator, resolved to rem.algorithms.calibration.platt.
+    default: platt_on_logit
+    source: CLAUDE.md, MATHEMATICAL LOCK -> Calibration.
+    justification: >-
+      Frozen: "Platt/logistic calibration on the logit". Implemented exactly.
+    status: FROZEN
+
+  runtime_form:
+    value: "p_t = sigmoid(gamma_1 * s_t + gamma_0)"
+    meaning: The frozen calibration equation.
+    default: null
+    source: CLAUDE.md, MATHEMATICAL LOCK -> Calibration.
+    justification: Quoted verbatim from the frozen specification.
+    status: FROZEN
+
+  monotonicity_constraint:
+    value: "gamma_1 > 0"
+    meaning: >-
+      Required sign of the slope. A fitted gamma_1 <= 0 is refused, because it
+      would map higher detector scores to lower attack probabilities.
+    default: "gamma_1 > 0"
+    source: CLAUDE.md, MATHEMATICAL LOCK -> Calibration.
+    justification: >-
+      Frozen: "gamma_1 > 0 is required for the monotone interpretation."
+    status: FROZEN
+
+  target_smoothing:
+    value: "t+ = (N+ + 1)/(N+ + 2) ; t- = 1/(N- + 2)"
+    meaning: Platt's regularised targets, used when fitting gamma.
+    default: null
+    source: >-
+      Platt, J. C. (1999). Probabilistic Outputs for Support Vector Machines and
+      Comparisons to Regularized Likelihood Methods. In Advances in Large Margin
+      Classifiers, MIT Press, pp. 61-74.
+    justification: >-
+      Part of the published method rather than an addition: the smoothing is
+      what keeps the fit finite when held-out scores are separable. Recorded
+      explicitly so the sub-choice is visible and can be challenged.
+    status: FROZEN
+
+  fitting_split:
+    value: validation
+    meaning: The split the calibration map is fitted on. Never the test split.
+    default: validation
+    source: >-
+      Standard held-out calibration practice; Platt (1999) fits the sigmoid on
+      data held out from the classifier's own training set.
+    justification: >-
+      Fitting on training data reproduces the model's optimistic bias; fitting
+      on test data invalidates the evaluation outright.
+    status: FROZEN
+
+  evaluation_metric:
+    value: brier_score
+    meaning: Metric used to assess calibration quality.
+    default: brier_score
+    source: >-
+      Brier, G. W. (1950). Verification of forecasts expressed in terms of
+      probability. Monthly Weather Review, 78(1), 1-3, Equation (1).
+    justification: >-
+      A proper scoring rule, so it cannot be improved by misreporting one's true
+      belief. Applied only to calibrated probabilities.
+    status: FROZEN
