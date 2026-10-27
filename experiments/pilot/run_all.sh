@@ -9,6 +9,7 @@ $PY build_dataset.py
 $PY e0_pilot.py
 $PY run_main.py crossfit rmod observe replay a2 xt
 $PY sensitivity_ut15.py
+$PY benign_release_breakdown.py
 $PY label_audit.py > /dev/null
 $PY memory_profile.py
 $PY figures.py

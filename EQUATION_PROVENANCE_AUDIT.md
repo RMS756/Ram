@@ -18,7 +18,7 @@ passes).
   - DER: derived in Chapter 3;
   - DEF: design definition.
 - *Implementation* means the code exists **and** a test executes it; the test results come from the run of
-  27 Oct 2026 (192 passed with AgentDojo installed, 189 passed and 3 skipped without it).
+  27 Oct 2026 (192 passed with AgentDojo installed, 189 passed and 1 skipped (the replay module) without it).
 
 ---
 

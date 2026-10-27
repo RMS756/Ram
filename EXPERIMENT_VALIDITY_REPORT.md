@@ -18,6 +18,30 @@ A complete second run from commit `aa66f22` reproduced every reported number exa
 
 ---
 
+## 0. CONFLICT WITH THE CHAPTER 3 SCOPE — SUPERVISOR DECISION REQUIRED
+
+**Affected specification (Chapter 3 Sec. 3.1.4, "Out of scope"):**
+> "Counterfactual estimation of intervention value by replaying agent trajectories."
+
+**Conflict.**
+- The enforcement results in this report (E4, the enforcement half of E5, the cross-template ASR) were produced by replaying recorded agent trajectories under REM. That is the method Chapter 3 places out of scope.
+- The measured r_mod(k) values were also produced by replay, and they enter REM's loss grid through Eq. 3.5. The observe-only verdicts (E2, E5-observe, E6) therefore depend on replay too, although only through r_mod. With r_mod = 1 (the pre-registered value for unmeasured tiers), Modify would be priced as ineffective.
+- Chapter 3 Sec. 3.11.1 specifies enforcing-mode runs with a live LLM agent. These are **BLOCKED** in this environment, because no LLM API is available.
+- The substitution was made to obtain any enforcement evidence at all. It was not authorised by the Chapter 3 scope, and it was identified only after the runs.
+
+**Consequence.**
+- No replay-derived number may be presented as a Chapter 3 enforcing-mode result.
+- The discrimination and calibration results (E0, E1) and the A2 analysis (E3) do not depend on replay.
+
+**Options for the supervisor:**
+- (a) Discard the replay results.
+- (b) Report them only as an exploratory, explicitly out-of-scope sensitivity analysis.
+- (c) Amend the Chapter 3 scope to admit replay with the NO-ADAPT assumption stated.
+
+Until a decision is made, every replay-derived number in this repository is labelled accordingly.
+
+---
+
 ## 1. What was actually done
 
 ### 1.1 Data — real agent traces, not synthetic data
@@ -202,7 +226,10 @@ The grid cell α_blk = 0.05 is not evaluable, because the pre-registered α_mod 
 - **Strict reference matching misses alternative routes.** 2 episodes have recorded attack success without a positive step. One reaches the attacker through `schedule_transaction` instead of the reference tool; one has no attacker call at all, which looks like a benchmark recording inconsistency.
   - 105 steps carry an attacker value but are labelled 0; most are legitimate `user_task_15` actions.
   - The label-audit sample of 30 episodes (`results/pilot/label_audit_sample.md`) was inspected by the AI assistant, **not a human**. 29/30 labels matched the trace; one (#29) is a likely false negative of this kind. **A human audit is still required.**
-- **AM-1 (pre-run) and the post-hoc finding.** In AgentDojo banking v1, `user_task_15` asks the agent to pay the new landlord at `US133000000121212121212`, the same IBAN every injection task uses as the attacker account.
+- **AM-1 (pre-run) and the post-hoc finding.** In AgentDojo banking suite versions v1 and v1.1, `user_task_15` asks the agent to pay the new landlord at `US133000000121212121212`, the same IBAN every injection task uses as the attacker account. This was changed upstream from v1.1.1 (landlord IBAN `CA133012400231215421872`), so it is a known and fixed benchmark issue, not a new finding.
+  - 16 of the 21 recorded backbones used the colliding prompt.
+  - 5 used the corrected one: claude-3-7-sonnet, gemini-1.5-pro-002, gemini-2.0-flash-001, gemini-2.0-flash-exp, Llama-3.3-70B.
+  - The label-relevant ground truths of all nine injection tasks are identical in every suite version from v1 to v1.2.2 (checked), so labels are consistent across the mixed versions.
   - The pre-run amendment excluded only the pair whose *reference* actions collide.
   - After results were computed, 29 positive steps in `user_task_15` episodes were found to be ambiguous, 19 of them without any injected content in context.
   - All of REM's residual replay ASR (0.4%) comes from these episodes. A disclosed **post-hoc** sensitivity analysis that excludes `user_task_15` gives REM ASR 0.000 and held-out ROC-AUC 0.952 (`sensitivity_post_hoc_exclude_user_task_15.json`).
