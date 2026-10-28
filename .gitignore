@@ -25,3 +25,5 @@ results/pilot/steps.pkl
 results/pilot_R2/state/
 results/pilot_R2/steps.pkl
 revision_R2/build/render/
+!revision_R2/build/
+revision_R2/build/render/
