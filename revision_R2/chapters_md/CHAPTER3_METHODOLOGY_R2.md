@@ -339,7 +339,7 @@ where D~cal~ is a set of steps whose logits s~i~ were produced by a model that w
 
 *Status:* established from source (Guo et al., 2017).
 
-**Fitting target.** Equation 3.4 fits the calibration map to the observed labels y_i. Platt's original procedure instead fits against smoothed targets, t₊ = (N₊ + 1)/(N₊ + 2) and t₋ = 1/(N₋ + 2), to reduce overfitting on small calibration sets. This thesis takes Equation 3.4 as the reference definition and evaluates Platt's smoothed targets as a sensitivity analysis.
+**Fitting target.** Equation 3.4 fits the calibration map to the observed labels y~i~. Platt's original procedure instead fits against smoothed targets, t₊ = (N₊ + 1)/(N₊ + 2) and t₋ = 1/(N₋ + 2), to reduce overfitting on small calibration sets. This thesis takes Equation 3.4 as the reference definition and evaluates Platt's smoothed targets as a sensitivity analysis.
 
 Four properties of this choice are stated.
 
@@ -394,7 +394,7 @@ Two deterministic predicates are evaluated before verdict selection.
 
 **Order of evaluation and unavailable evidence.** Availability of each feature is determined first, from the proposed action alone. D1 and then D2 are applied *before* any probability enters the decision, so no verdict that a predicate fixes depends on a value computed from unavailable evidence. Two cases follow:
 
-- **A predicate fixes the verdict.** s_t and p_t may still be computed and stored for audit, but they are marked as not used, and the audit record contains no risk table: the field is recorded as *not applicable* (Section 3.7.6).
+- **A predicate fixes the verdict.** s~t~ and p~t~ may still be computed and stored for audit, but they are marked as not used, and the audit record contains no risk table: the field is recorded as *not applicable* (Section 3.7.6).
 - **No predicate applies, but a feature is unavailable** (possible only below k~D2~). The feature takes its "not observed" value 0, and the audit record flags the imputation. This is a design definition: an unavailable indicator is treated as not fired, which can only lower the estimated probability. It is therefore used only below the tier at which missing evidence forces escalation.
 
 ### 3.7.5 Expected-loss verdict selection
@@ -527,7 +527,7 @@ The targets satisfy α~mod~ > α~blk~. Predicates D1 and D2 apply as in Section 
 
 *Status:* design definition.
 
-**What the comparison isolates.** REM and the baseline share the estimator, the calibration and the predicates. They differ in two respects: REM's losses depend on the consequence tier, and REM's expected-loss rule can choose Escalate, whereas the baseline can escalate only through D2. A difference between them therefore reflects both consequence tiers and the extra escalation opportunity, not tiers alone. A third configuration separates the two: **REM without expected-loss Escalate**, in which Escalate is removed from the set 𝒱(a_t) used by Equation 3.7 but D2 is kept, gives REM exactly the baseline's opportunity to escalate.
+**What the comparison isolates.** REM and the baseline share the estimator, the calibration and the predicates. They differ in two respects: REM's losses depend on the consequence tier, and REM's expected-loss rule can choose Escalate, whereas the baseline can escalate only through D2. A difference between them therefore reflects both consequence tiers and the extra escalation opportunity, not tiers alone. A third configuration separates the two: **REM without expected-loss Escalate**, in which Escalate is removed from the set 𝒱(a~t~) used by Equation 3.7 but D2 is kept, gives REM exactly the baseline's opportunity to escalate.
 
 Because Equation 3.14 selects thresholds by ranking, a strictly increasing recalibration re-selects equivalent thresholds and leaves the baseline's verdicts unchanged. Cost-derived thresholds such as Equation 3.9 are fixed in probability units and can change after recalibration. This contrast is used in the ablation of Section 3.11.7 and is consistent with the finding of C. Zhang et al. (2026) that recalibration need not change threshold-routed control.
 
@@ -634,7 +634,7 @@ Output:                      verdict v_t; released or withheld call; audit recor
 23  released calls execute; their results enter line 1 at the next decision point
 ```
 
-Line 8 computes the probability for every step so that the audit record is complete; when line 9 or line 10 applies, the record marks p_t as not used. Lines 16–20 implement both mitigation semantics of Table 3.14. Attribution (line 21) is computed after the verdict and cannot reach it.
+Line 8 computes the probability for every step so that the audit record is complete; when line 9 or line 10 applies, the record marks p~t~ as not used. Lines 16–20 implement both mitigation semantics of Table 3.14. Attribution (line 21) is computed after the verdict and cannot reach it.
 
 ## 3.11 Experimental Methodology
 
@@ -707,7 +707,7 @@ Estimation, calibration, and threshold selection use nested grouped cross-fittin
 - λ, selected by grouped inner cross-validation;
 - (γ₁, γ₀), fitted on out-of-fold logits from the inner folds;
 - the baseline thresholds θ(α), selected on out-of-fold calibrated benign steps;
-- r_mod(k), estimated from episodes outside fold f;
+- r~mod~(k), estimated from episodes outside fold f;
 - the feature set: the Pilot E0 rule (Section 3.11.8) is applied to each fold's fitting portion. If the folds disagreed, each fold would use its own set. In this thesis they agree (Chapter 5).
 4. **Deployment model.** A model fitted on all data is used only for runtime demonstrations and latency measurement, never for reported accuracy or calibration.
 
@@ -743,7 +743,7 @@ Because the injection tasks in the banking suite share a small number of templat
 6. Predicates D1 and D2 disabled.
 7. Observe-only (no mitigation).
 
-**Mitigation-effectiveness runs.** Enforcing-mode runs in which Modify is applied to adversarial steps estimate r~mod~(k) per tier and the utility impact of Modify on benign steps. These estimates feed Equation 3.5 and are fitted within the outer folds so that no held-out episode informs its own loss values. In this thesis, live enforcing-mode runs were not available. r_mod(k) was therefore estimated by replaying recorded attack episodes with Modify applied to every labelled attack step (Section 3.11.11). Under the no-adaptation assumption these estimates are close to zero by construction, and they are reported as such. The utility impact of Modify on benign steps was not estimated separately.
+**Mitigation-effectiveness runs.** Enforcing-mode runs in which Modify is applied to adversarial steps estimate r~mod~(k) per tier and the utility impact of Modify on benign steps. These estimates feed Equation 3.5 and are fitted within the outer folds so that no held-out episode informs its own loss values. In this thesis, live enforcing-mode runs were not available. r~mod~(k) was therefore estimated by replaying recorded attack episodes with Modify applied to every labelled attack step (Section 3.11.11). Under the no-adaptation assumption these estimates are close to zero by construction, and they are reported as such. The utility impact of Modify on benign steps was not estimated separately.
 
 **Escalation in experiments.** No human reviewer is available in the benchmark. Escalation is resolved in two ways:
 - by an idealized reviewer who releases the action if y~t~ = 0 and prevents it if y~t~ = 1;

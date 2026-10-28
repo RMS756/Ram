@@ -56,6 +56,8 @@ The names A1, A2 and A3 come from the project brief and do not denote three meth
 - **A1** is the consequence-independent baseline B1 (Chapter 3, Section 3.7.7);
 - **A2** is the optional observe-only CUSUM (Chapter 3, Section 3.11.10).
 
+**Layer of the estimator.** In this thesis the ridge estimator and the calibration map belong to the Decision Engine (Layer 4), as in Chapter 3 and Figure 3.1. The comments and layer constants of the frozen pipeline's code label the estimator as part of Detection (Layer 2). The label does not affect any computation, and the frozen code was not edited to change it.
+
 **Two execution paths exist, and the experiments use only one of them.**
 
 1. **The frozen pipeline** (`rem/core/pipeline.py`, `RemPipeline.evaluate_step`) chains injected components through the five layers. It is exercised by unit and contract tests. It is **not** the path that produced any result in Chapter 5.
@@ -111,7 +113,7 @@ A declared matching rule (`value_occurs_in`) links an argument value to the text
 
 **x^ctx₂ (instruction-pattern indicator)** is implemented by `InstructionPatternDetector`. It fires if a declared regular expression, or the name of a tool, occurs in new untrusted segments. The pattern set is declared in the pilot configuration, and the detector refuses to run without one. The configuration discloses that the author of the patterns knew the benchmark's templates.
 
-**x^ctx₁ (pre-trained injection classifier) is not implemented.** The classifier choice is pending, and the candidate model's host was unreachable from the execution environment. The feature is absent from x_t; it is not replaced by a substitute. The context evidence tested in Chapter 5 is therefore the instruction-pattern indicator only.
+**x^ctx₁ (pre-trained injection classifier) is not implemented.** The classifier choice is pending, and the candidate model's host was unreachable from the execution environment. The feature is absent from x~t~; it is not replaced by a substitute. The context evidence tested in Chapter 5 is therefore the instruction-pattern indicator only.
 
 ## 4.6 Layer 3 — Behavioral and Action Evidence
 
