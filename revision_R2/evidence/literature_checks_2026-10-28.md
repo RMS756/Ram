@@ -21,3 +21,9 @@ Access:
 | AgentDojo, Debenedetti et al. 2024 | NeurIPS 2024 proceedings doi:10.52202/079017-2636 (confirmed 27 Oct) | — | — | Use proceedings citation |
 
 No record above carries an OpenAlex retraction flag. Absence of a flag is not proof of non-retraction.
+
+**Re-check after the user reported allowing arxiv.org (28 Oct, later the same day):**
+- arxiv.org and export.arxiv.org still refused in this session (proxy CONNECT 403; WebFetch: host not resolvable).
+- A change to the environment's network policy may only apply to sessions started after the change.
+- Retrieving the PDFs through the Elicit connector was attempted and refused by this session's permission controls.
+- No full text was read; every status above is unchanged.
