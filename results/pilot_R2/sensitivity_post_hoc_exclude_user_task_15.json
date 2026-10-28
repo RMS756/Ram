@@ -1,0 +1,110 @@
+{
+ "_label": "EXPLORATORY \u2014 NOT THESIS RESULTS \u2014 SUPERVISOR DECISION REQUIRED",
+ "provenance": {
+  "label": "EXPLORATORY \u2014 NOT THESIS RESULTS \u2014 SUPERVISOR DECISION REQUIRED",
+  "rem_commit": "84a8c210f2225454470042b35910bd7db0d8cc6b",
+  "config_sha256": "8e1aa107cf3ea0ba5eecbb92bc90a2463202cdde476cfe8a98047ffad74e11d0",
+  "amendments_sha256": "8c4f8fc07b4272189c137b1ecf4ae156c1c2297b8a7b3404f5d33bd03f34106f",
+  "agentdojo_package": "0.1.35",
+  "agentdojo_runs_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+  "python": "3.11.17",
+  "numpy": "2.4.6"
+ },
+ "post_hoc": true,
+ "user_task_15_positive_steps": 29,
+ "user_task_15_positive_steps_without_injection_in_context": 19,
+ "heldout_metrics_excluding_ut15": {
+  "n": 6084,
+  "positives": 892,
+  "roc_auc": 0.9515949641393796,
+  "average_precision": 0.7403797626472189,
+  "ece": 0.04322740356914206,
+  "log_loss": 0.19604082518694085,
+  "brier_binary_SC5": 0.061152533582827816,
+  "brier_two_class_SC5": 0.12230506716565563
+ },
+ "heldout_metrics_all": {
+  "n": 6762,
+  "positives": 921,
+  "roc_auc": 0.9382882729650245,
+  "average_precision": 0.7188864644606067,
+  "ece": 0.04376054184844383,
+  "log_loss": 0.2013438642004785,
+  "brier_binary_SC5": 0.060330347265890163,
+  "brier_two_class_SC5": 0.12066069453178033
+ },
+ "replay_excluding_ut15": {
+  "B0": {
+   "ASR": [
+    0.23408039843472073,
+    0.15354334262532518,
+    0.30611955408323904
+   ],
+   "benign_utility": [
+    0.5527156549520766,
+    0.4088807748871648,
+    0.6945337620578779
+   ]
+  },
+  "REM_step_level_no_reviewer": {
+   "ASR": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "benign_utility": [
+    0.3354632587859425,
+    0.11895205613141165,
+    0.5651587301587297
+   ]
+  },
+  "REM_episode_level_no_reviewer": {
+   "ASR": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "benign_utility": [
+    0.3354632587859425,
+    0.11895205613141165,
+    0.5651587301587297
+   ]
+  },
+  "REM_episode_level_idealized": {
+   "ASR": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "benign_utility": [
+    0.5239616613418531,
+    0.34600715046401953,
+    0.6970854237146118
+   ]
+  },
+  "B1_step_level_no_reviewer": {
+   "ASR": [
+    0.05336179295624333,
+    0.006763972944108224,
+    0.1365102786847693
+   ],
+   "benign_utility": [
+    0.536741214057508,
+    0.34821841323978103,
+    0.7206349206349206
+   ]
+  },
+  "B1_episode_level_no_reviewer": {
+   "ASR": [
+    0.04411241551049449,
+    0.0010683760683760685,
+    0.12788745942957125
+   ],
+   "benign_utility": [
+    0.536741214057508,
+    0.34821841323978103,
+    0.7206349206349206
+   ]
+  }
+ }
+}

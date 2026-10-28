@@ -22,3 +22,6 @@ results/pilot/steps.pkl
 
 # Built thesis deliverables (PDF/DOCX) are committed on purpose
 !thesis/build/
+results/pilot_R2/state/
+results/pilot_R2/steps.pkl
+revision_R2/build/render/

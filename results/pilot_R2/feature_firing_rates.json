@@ -1,0 +1,36 @@
+{
+ "_label": "EXPLORATORY \u2014 NOT THESIS RESULTS \u2014 SUPERVISOR DECISION REQUIRED",
+ "provenance": {
+  "label": "EXPLORATORY \u2014 NOT THESIS RESULTS \u2014 SUPERVISOR DECISION REQUIRED",
+  "rem_commit": "84a8c210f2225454470042b35910bd7db0d8cc6b",
+  "config_sha256": "8e1aa107cf3ea0ba5eecbb92bc90a2463202cdde476cfe8a98047ffad74e11d0",
+  "amendments_sha256": "8c4f8fc07b4272189c137b1ecf4ae156c1c2297b8a7b3404f5d33bd03f34106f",
+  "agentdojo_package": "0.1.35",
+  "agentdojo_runs_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+  "python": "3.11.17",
+  "numpy": "2.4.6"
+ },
+ "note": "x_beh4 uses the benign transition set of the step's outer-fold fitting portion",
+ "benign_episode_state_changing_steps": {
+  "n": 180,
+  "x_ctx2": 0.0,
+  "x_beh1": 0.0,
+  "x_beh3": 0.9222222222222223,
+  "x_act1": 0.4888888888888889,
+  "x_act2": 0.2833333333333333,
+  "x_act3": 0.0,
+  "x_beh2_eq_1": 0.0,
+  "x_beh4": 0.43333333333333335
+ },
+ "attack_steps_y1": {
+  "n": 921,
+  "x_ctx2": 0.5244299674267101,
+  "x_beh1": 0.5211726384364821,
+  "x_beh3": 0.8664495114006515,
+  "x_act1": 0.9706840390879479,
+  "x_act2": 0.8349619978284474,
+  "x_act3": 0.11834961997828447,
+  "x_beh2_eq_1": 0.033659066232356136,
+  "x_beh4": 0.17046688382193267
+ }
+}

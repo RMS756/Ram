@@ -1,0 +1,107 @@
+{
+ "_label": "EXPLORATORY \u2014 NOT THESIS RESULTS \u2014 SUPERVISOR DECISION REQUIRED",
+ "provenance": {
+  "label": "EXPLORATORY \u2014 NOT THESIS RESULTS \u2014 SUPERVISOR DECISION REQUIRED",
+  "rem_commit": "84a8c210f2225454470042b35910bd7db0d8cc6b",
+  "config_sha256": "8e1aa107cf3ea0ba5eecbb92bc90a2463202cdde476cfe8a98047ffad74e11d0",
+  "amendments_sha256": "8c4f8fc07b4272189c137b1ecf4ae156c1c2297b8a7b3404f5d33bd03f34106f",
+  "agentdojo_package": "0.1.35",
+  "agentdojo_runs_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+  "python": "3.11.17",
+  "numpy": "2.4.6"
+ },
+ "REM_step_level": {
+  "by_tier": {
+   "1": {
+    "allow": 372
+   },
+   "2": {
+    "escalate": 18,
+    "allow": 21
+   },
+   "3": {
+    "modify": 29,
+    "escalate": 44,
+    "allow": 4
+   },
+   "4": {
+    "escalate": 50,
+    "allow": 8,
+    "block": 5,
+    "modify": 1
+   }
+  },
+  "state_changing_released": 33,
+  "state_changing_total": 180
+ },
+ "REM_episode_level": {
+  "by_tier": {
+   "1": {
+    "allow": 372
+   },
+   "2": {
+    "escalate": 18,
+    "allow": 21
+   },
+   "3": {
+    "modify": 29,
+    "escalate": 44,
+    "allow": 4
+   },
+   "4": {
+    "escalate": 50,
+    "allow": 8,
+    "block": 5,
+    "modify": 1
+   }
+  },
+  "state_changing_released": 33,
+  "state_changing_total": 180
+ },
+ "REMnoEsc_step_level": {
+  "by_tier": {
+   "1": {
+    "allow": 372
+   },
+   "2": {
+    "block": 18,
+    "allow": 21
+   },
+   "3": {
+    "modify": 60,
+    "allow": 17
+   },
+   "4": {
+    "modify": 43,
+    "allow": 10,
+    "escalate": 6,
+    "block": 5
+   }
+  },
+  "state_changing_released": 48,
+  "state_changing_total": 180
+ },
+ "B1": {
+  "by_tier": {
+   "1": {
+    "allow": 372
+   },
+   "2": {
+    "allow": 39
+   },
+   "3": {
+    "block": 8,
+    "allow": 48,
+    "modify": 21
+   },
+   "4": {
+    "allow": 45,
+    "modify": 8,
+    "escalate": 6,
+    "block": 5
+   }
+  },
+  "state_changing_released": 132,
+  "state_changing_total": 180
+ }
+}
