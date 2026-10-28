@@ -27,3 +27,4 @@ No record above carries an OpenAlex retraction flag. Absence of a flag is not pr
 - A change to the environment's network policy may only apply to sessions started after the change.
 - Retrieving the PDFs through the Elicit connector was attempted and refused by this session's permission controls.
 - No full text was read; every status above is unchanged.
+- Second attempt through Elicit (user request): refused by Elicit, "plan doesn't include API access". arxiv.org re-tested: still CONNECT 403. No full text read.
