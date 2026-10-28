@@ -9,7 +9,7 @@ from run_main import load_state
 data = build("primary")
 res = load_state("observe_verdicts")
 out = {"provenance": provenance()}
-for name in ("REM_step_level", "REM_episode_level", "B1"):
+for name in ("REM_step_level", "REM_episode_level", "REMnoEsc_step_level", "B1"):
     vs = res[name][0]
     by = collections.defaultdict(collections.Counter)
     for i, s in enumerate(data.steps):

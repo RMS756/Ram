@@ -45,6 +45,7 @@ from rem.algorithms.behavior.evidence import BenignReference, EpisodeTracker, Ev
 from rem.algorithms.decision.consequence import ConsequenceTierMap
 from rem.algorithms.detection.instruction_patterns import InstructionPatternDetector
 from rem.algorithms.detection.ridge_logistic import sigmoid
+from rem.core.audit import content_digest
 from rem.core.results import Verdict
 from rem.integration.agentdojo_traces import Episode, ReferenceLabeler
 
@@ -183,12 +184,17 @@ class RemGuard:
             phi = {n: self._attr.shapley_value(i, feats[n]) for i, n in enumerate(self.scorer.feature_order)}
             phi0 = self._attr.base_value()
             additivity = abs(phi0 + sum(phi.values()) - s)
+        forced = source in ("D1", "D2")
         self.audit.append(
             {
                 "episode_id": self.episode.episode_id,
                 "step": len(self.tracker.proposed) + 1,
                 "decision_point": self.tracker.decision_point,
                 "tool": tool,
+                # Identity of the proposed action is kept even when it is not
+                # released: digest only, raw argument values are not logged.
+                "arguments_digest": content_digest(dict(args) or None),
+                "argument_keys": sorted(args),
                 "features": feats,
                 "available": dict(avail),
                 "logit": s,
@@ -198,6 +204,10 @@ class RemGuard:
                 "label": label,
                 "verdict": verdict.value,
                 "verdict_source": source,
+                # When D1 or D2 fixes the verdict, p is computed for the record
+                # but is not used, and no risk table exists (not applicable).
+                "probability_used_for_verdict": not forced and source != "allow_all",
+                "risk_table": (dict(details.get("risks", {})) if not forced else "not_applicable"),
                 "details": dict(details),
                 "mechanism": mech,
                 "released": release,

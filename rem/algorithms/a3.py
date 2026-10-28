@@ -61,17 +61,34 @@ class A3Policy:
 
     name = "A3_expected_loss_rem"
 
-    def __init__(self, loss_grid: LossGrid, predicates: PredicatePolicy, *, tie_mode: str = "raise") -> None:
+    def __init__(
+        self,
+        loss_grid: LossGrid,
+        predicates: PredicatePolicy,
+        *,
+        tie_mode: str = "raise",
+        exclude_from_expected_loss: Tuple[Verdict, ...] = (),
+    ) -> None:
+        """
+        Args:
+            exclude_from_expected_loss: Verdicts removed from the expected-loss
+                choice (predicates are unaffected). Used only for the
+                comparison variant "REM without expected-loss Escalate", which
+                gives REM the same escalation opportunity as B1 (D2 only).
+        """
         if tie_mode not in ("raise", "record_chapter3_order"):
             raise ValueError(f"Unknown tie_mode {tie_mode!r}.")
+        if Verdict.ALLOW in exclude_from_expected_loss or Verdict.BLOCK in exclude_from_expected_loss:
+            raise ValueError("Allow and Block must remain available.")
         self.engine = ExpectedLossDecisionEngine(loss_grid)
         self.predicates = predicates
         self.tie_mode = tie_mode
+        self.excluded = tuple(exclude_from_expected_loss)
 
     def decide(self, p: float, tier: int, tool: str, available: Mapping[str, bool]) -> A3Decision:
         """Return the A3 verdict for one proposed call."""
         forced = self.predicates.evaluate(tool, tier, available)
-        feasible = self.predicates.feasible(tool)
+        feasible = tuple(v for v in self.predicates.feasible(tool) if v not in self.excluded)
         if forced.verdict is not None:
             return A3Decision(forced.verdict, forced.source or "predicate", float(p), int(tier),
                               feasible=tuple(v.value for v in feasible))

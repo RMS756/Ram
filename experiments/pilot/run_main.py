@@ -113,6 +113,22 @@ def run_crossfit(data, feature_order, calibrator, outer=None, alphas=True):
 def stage_crossfit():
     data = build("primary")
     out = {"provenance": provenance()}
+    # R2: fold-specific feature selection check. Pilot E0 computed each group's
+    # ROC-AUC on the fitting portion of every outer fold only; the selection
+    # rule is applied per fold here, so no fold's held-out data informs its own
+    # feature set. The pipeline supports one shared feature set, so it stops if
+    # any fold would retain a different set.
+    import json as _json
+    with open(os.path.join(RESULTS, "e0_pilot.json"), encoding="utf-8") as fh:
+        e0 = _json.load(fh)
+    thr = CFG["pilot_E0_decision_values"]["min_group_roc_auc"]
+    fold_sets = {}
+    for f in sorted(set(data.fold.tolist()), key=str):
+        fold_sets[f] = [g for g in ("ctx", "beh", "act")
+                        if e0["group_auc"][g]["per_outer_fold_fitting_auc"][f] >= thr]
+    if any(v != ["ctx", "beh", "act"] for v in fold_sets.values()):
+        raise RuntimeError(f"Fold-specific E0 selection differs across folds: {fold_sets}")
+    out["e0_fold_specific_feature_groups"] = fold_sets
     fits = {}
     for name, cal in (("label_nll_primary", LabelNLLLogitCalibrator), ("platt_smoothed_secondary", PlattLogitCalibrator)):
         res = run_crossfit(data, FEATURE_ORDER, cal)
@@ -127,6 +143,7 @@ def stage_crossfit():
         for f, ff in res.fits.items():
             mk = (data.fold == f) & ok
             m["per_fold"][f] = {**prob_metrics(data.y[mk], res.p_cal[mk]), "lambda": ff.lam,
+                                "lambda_chapter3_eq3_2_scale": ff.lam / 2.0,
                                 "gamma_1": ff.gamma_1, "gamma_0": ff.gamma_0, "theta_blk": ff.theta_blk,
                                 "theta_mod": ff.theta_mod, "n_train_pos": ff.n_train_pos,
                                 "coefficients": dict(zip(FEATURE_ORDER, ff.coefficients)), "intercept": ff.intercept}
@@ -312,6 +329,10 @@ def build_policies(fits, rmod, tie_mode="record_chapter3_order"):
             grid = build_loss_grid(loss_spec(rmod[v][f]), f"pilot_e0 fold {f} variant {v}")
             pol[f][f"A3_{v}"] = A3Policy(grid, predicates(), tie_mode=tie_mode)
             pol[f][f"A3_nopred_{v}"] = A3Policy(grid, predicates(False), tie_mode=tie_mode)
+            # R2 comparison: REM with the same escalation opportunity as B1
+            # (Escalate only through D2), declared after R1 results (post hoc).
+            pol[f][f"A3_noesc_{v}"] = A3Policy(grid, predicates(), tie_mode=tie_mode,
+                                               exclude_from_expected_loss=(Verdict.ESCALATE,))
             pol[f][f"grid_{v}"] = grid
         pol[f]["B1"] = A1Policy(A1Thresholds(ff.theta_blk, ff.theta_mod, CFG["baseline_B1"]["alpha_blk"],
                                              CFG["baseline_B1"]["alpha_mod"]), predicates())
@@ -377,6 +398,7 @@ def stage_observe():
     for v in VARIANTS:
         vs, ties, srcs = decide_all(f"A3_{v}", p)
         res[f"REM_{v}"] = (vs, ties, srcs)
+        res[f"REMnoEsc_{v}"] = decide_all(f"A3_noesc_{v}", p)
     vs, ties, srcs = decide_all("B1", p)
     res["B1"] = (vs, ties, srcs)
     # ablations (observe-only); each changes one element
@@ -459,7 +481,8 @@ def _mk_decide(policy_key):
 
         def decide(c):
             d = P.decide(c.p, c.tier, c.tool, c.available)
-            return d.verdict, d.source, {"tie": bool(getattr(d, "tie", False))}
+            return d.verdict, d.source, {"tie": bool(getattr(d, "tie", False)),
+                                         "risks": dict(getattr(d, "risks", {}) or {})}
         return decide
     return factory
 
@@ -479,6 +502,8 @@ def replay_configs():
             e2 = ESC_MAP[e]
             C[f"REM_{v}_{e2}"] = {"variant": v, "esc": e2, "decide": _mk_decide(f"A3_{v}"), "scorer": _mk_scorer("label_nll_primary")}
             C[f"B1_{v}_{e2}"] = {"variant": v, "esc": e2, "decide": _mk_decide("B1"), "scorer": _mk_scorer("label_nll_primary")}
+            C[f"REMnoEsc_{v}_{e2}"] = {"variant": v, "esc": e2, "decide": _mk_decide(f"A3_noesc_{v}"),
+                                       "scorer": _mk_scorer("label_nll_primary")}
             for g in ("ctx", "beh", "act"):
                 C[f"abl_no_{g}_{v}_{e2}"] = {"variant": v, "esc": e2, "decide": _mk_decide(f"A3_{v}"), "scorer": _mk_scorer(f"no_{g}")}
             C[f"abl_no_calibration_{v}_{e2}"] = {"variant": v, "esc": e2, "decide": _mk_decide(f"A3_{v}"),
@@ -551,8 +576,8 @@ def stage_replay():
     for v in VARIANTS:
         for e in ESC:
             e2 = ESC_MAP[e]
-            for other in (f"B1_{v}_{e2}", "B0"):
-                a = f"REM_{v}_{e2}"
+            for a, other in ((f"REM_{v}_{e2}", f"B1_{v}_{e2}"), (f"REM_{v}_{e2}", "B0"),
+                             (f"REMnoEsc_{v}_{e2}", f"B1_{v}_{e2}"), (f"REM_{v}_{e2}", f"REMnoEsc_{v}_{e2}")):
                 diffs[f"{a}_minus_{other}"] = {
                     "ASR": grouped_bootstrap(att, lambda x: data.episodes[x].injection_task_id,
                                              lambda s: float(np.mean([by[x][a][1] - by[x][other][1] for x in s])), **kw),

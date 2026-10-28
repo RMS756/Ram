@@ -113,3 +113,16 @@ def test_loss_spec_validation():
         LossSpec({1: 1.0}, {1: 1.0}, {1: 1.0}, 0.1, {1: 1.5})
     with pytest.raises(ValueError):
         LossSpec({1: 1.0}, {1: 1.0, 2: 1.0}, {1: 1.0}, 0.1, {1: 0.5})
+
+
+def test_rem_without_expected_loss_escalate_keeps_d2():
+    """R2 comparison variant: Escalate only through D2 (same opportunity as B1)."""
+    grid = build_loss_grid(spec(C_esc=0.01), "t")
+    full = A3Policy(grid, preds())
+    noesc = A3Policy(grid, preds(), exclude_from_expected_loss=(Verdict.ESCALATE,))
+    assert full.decide(0.5, 4, "get_balance", AVAIL).verdict is Verdict.ESCALATE
+    d = noesc.decide(0.5, 4, "get_balance", AVAIL)
+    assert d.verdict is not Verdict.ESCALATE and "escalate" not in d.feasible
+    assert noesc.decide(0.0, 3, "send_money", {"x_act1": False}).verdict is Verdict.ESCALATE  # D2 unchanged
+    with pytest.raises(ValueError):
+        A3Policy(grid, preds(), exclude_from_expected_loss=(Verdict.BLOCK,))

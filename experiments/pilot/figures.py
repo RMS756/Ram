@@ -75,7 +75,61 @@ def enforcement():
     fig.savefig(os.path.join(FIG, "fig_enforcement_replay.png"), dpi=200)
 
 
+def architecture():
+    """REM runtime architecture as implemented (five layers; offline fitting cross-cutting)."""
+    from matplotlib.patches import FancyBboxPatch
+
+    fig, ax = plt.subplots(figsize=(10, 5.6))
+    ax.set_xlim(0, 100), ax.set_ylim(0, 60), ax.axis("off")
+
+    def box(x, y, w, h, title, body="", fill="#eef4fc", edge=BLUE, ls="-"):
+        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.4,rounding_size=1.2",
+                                    fc=fill, ec=edge, lw=1.3, ls=ls))
+        ax.text(x + w / 2, y + h - 2.2, title, ha="center", va="top", fontsize=8.5, weight="bold", color=INK)
+        if body:
+            ax.text(x + w / 2, y + h - 6.2, body, ha="center", va="top", fontsize=6.8, color=INK2, linespacing=1.35)
+
+    def arrow(x1, y1, x2, y2, ls="-"):
+        ax.annotate("", xy=(x2, y2), xytext=(x1, y1),
+                    arrowprops=dict(arrowstyle="-|>", color=INK2, lw=1.1, ls=ls))
+
+    box(2, 47, 26, 10, "LLM agent (unmodified)", "proposes tool call a_t\nreceives tool results", fill="#f4f3f0", edge=INK2)
+    box(72, 47, 26, 10, "Tool environment", "AgentDojo banking sandbox\n(simulated accounts)", fill="#f4f3f0", edge=INK2)
+    ax.text(50, 58.5, "REM sits at the tool-execution boundary (guarded ToolsExecutor)", ha="center", fontsize=8, color=INK2)
+    layers = [
+        ("1 Input & Context", "provenance labels\ninvisible-char removal\n(analysis copy only)\nentity extraction"),
+        ("2 Detection", "x_ctx2 instruction\npatterns\n(x_ctx1 classifier:\nnot available)"),
+        ("3 Behavioral\nAnalysis", "x_beh1-4 history\nx_act1-3 action /\nargument provenance"),
+        ("4 Decision Engine", "ridge LR: s_t\nPlatt on logit: p_t\ntier k_t, D1/D2\nargmin expected loss"),
+        ("5 Mitigation", "Allow / Modify /\nEscalate / Block\n(step- or episode-\nlevel variant)"),
+    ]
+    for i, (t, b) in enumerate(layers):
+        x = 2 + i * 19.6
+        box(x, 22, 17, 19, t, b)
+        if i:
+            arrow(x - 2.4, 31.5, x - 0.2, 31.5)
+    arrow(15, 47, 10, 41.5)
+    arrow(88, 41.5, 85, 47)
+    ax.text(90, 44, "released\ncalls only", fontsize=6.5, color=INK2, ha="left")
+    arrow(80, 44.6, 24, 44.6, ls=(0, (2, 2)))
+    ax.text(52, 42.4, "tool results return to the agent and enter Layer 1 as untrusted context", fontsize=6.5, color=INK2, ha="center")
+    box(52, 2, 46, 13, "Audit record (append-only, per step)",
+        "x_t, s_t, p_t, k_t, risk table or 'not applicable' (D1/D2), verdict + source,\n"
+        "mitigation, tool name + argument digest; linear attribution (audit-only,\ncomputed after the verdict, cannot reach it)",
+        fill="#fbfbf9", edge=INK2)
+    box(2, 2, 47, 13, "Offline fitting & recalibration (not at runtime)",
+        "grouped cross-fitting: lambda, beta, Platt (gamma_1>0), B1 thresholds,\n"
+        "benign transition set, x-bar, r_mod(k); optional CUSUM (observe-only,\nnever in the verdict path)",
+        fill="#fdf1ec", edge=ORANGE, ls=(0, (4, 2)))
+    arrow(40, 15.4, 68, 21.5, ls=(0, (4, 2)))
+    arrow(90, 21.5, 90, 15.4)
+    stamp(fig)
+    fig.tight_layout(rect=(0, 0.02, 1, 1))
+    fig.savefig(os.path.join(FIG, "fig_architecture.png"), dpi=200)
+
+
 if __name__ == "__main__":
     reliability()
     enforcement()
+    architecture()
     print(os.listdir(FIG))

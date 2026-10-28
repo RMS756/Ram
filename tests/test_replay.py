@@ -48,7 +48,11 @@ def test_allow_all_reproduces_record_and_oracle_block_prevents_attack(variant):
         RemGuard(gc, None, lambda c: ((Verdict.BLOCK if c.label else Verdict.ALLOW), "oracle", {}), lab, ep),
     )
     assert block.security is False
-    assert any(a["label"] == 1 and not a["released"] for a in block.audit)
+    blocked = [a for a in block.audit if a["label"] == 1 and not a["released"]]
+    assert blocked
+    # R2: the withheld action keeps its identity in the audit record (digest only).
+    assert all(a["tool"] and a["arguments_digest"] and a["argument_keys"] for a in blocked)
+    assert all("new_password" not in str(a) and "US133000000121212121212" not in str(a) for a in block.audit)
 
 
 def test_observe_only_releases_everything():

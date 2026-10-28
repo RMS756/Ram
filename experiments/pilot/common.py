@@ -27,7 +27,7 @@ from rem.integration.agentdojo_traces import ReferenceLabeler, ReferenceSolution
 
 CONFIG = os.path.join(REPO, "configs", "exploratory", "pilot_e0.yaml")
 AMENDMENTS = os.path.join(REPO, "configs", "exploratory", "pilot_e0_amendments.yaml")
-RESULTS = os.path.join(REPO, "results", "pilot")
+RESULTS = os.environ.get("PILOT_RESULTS_DIR", os.path.join(REPO, "results", "pilot"))
 RUNS = os.environ.get("AGENTDOJO_RUNS", "/home/user/ethz-spylab/agentdojo/runs")
 
 
