@@ -247,6 +247,10 @@ def test_block_withholds_the_tool_call_at_step_level(fitted_detector, fitted_cal
     # No episode-level flags may be set.
     assert "privilege_reduced" not in trajectory.steps[0].metadata
     assert "terminated" not in trajectory.steps[0].metadata
+    # R2 fix: the audit record keeps the identity of the blocked action.
+    record = evaluation.audit_record
+    assert record.tool_name == "http_post"
+    assert record.tool_arguments_digest is not None
 
 
 def test_attribution_runs_after_the_verdict(pipeline, injection_trajectory):

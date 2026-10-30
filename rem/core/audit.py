@@ -170,8 +170,16 @@ class AuditLog:
             experiment_id=self._experiment_id,
             agent_state=step.agent_state.value if step.agent_state else None,
             action=step.action,
-            tool_name=step.tool_call.name if step.tool_call else None,
-            tool_arguments_digest=content_digest(dict(step.tool_arguments) or None),
+            tool_name=(
+                step.tool_call.name
+                if step.tool_call
+                else step.metadata.get("rem_original_tool_name")
+            ),
+            tool_arguments_digest=(
+                content_digest(dict(step.tool_arguments) or None)
+                if step.tool_call
+                else step.metadata.get("rem_original_arguments_digest")
+            ),
             prompt_digest=content_digest(step.prompt),
             model_output_digest=content_digest(step.model_output),
             evidence=[

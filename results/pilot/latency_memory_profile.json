@@ -1,0 +1,18 @@
+{
+ "_label": "EXPLORATORY \u2014 NOT THESIS RESULTS \u2014 SUPERVISOR DECISION REQUIRED",
+ "provenance": {
+  "label": "EXPLORATORY \u2014 NOT THESIS RESULTS \u2014 SUPERVISOR DECISION REQUIRED",
+  "rem_commit": "aa66f229baf828c72446c3e1163b3437860927f5",
+  "config_sha256": "8e1aa107cf3ea0ba5eecbb92bc90a2463202cdde476cfe8a98047ffad74e11d0",
+  "amendments_sha256": "8c4f8fc07b4272189c137b1ecf4ae156c1c2297b8a7b3404f5d33bd03f34106f",
+  "agentdojo_package": "0.1.35",
+  "agentdojo_runs_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+  "python": "3.11.17",
+  "numpy": "2.4.6"
+ },
+ "steps_measured": 611,
+ "episodes": 300,
+ "peak_bytes_per_step_median": 2865.0,
+ "peak_bytes_per_step_p95": 12419.5,
+ "peak_bytes_per_step_max": 13528.0
+}

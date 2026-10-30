@@ -29,6 +29,7 @@ from types import MappingProxyType
 from typing import Any, Callable, Mapping, Optional
 
 from rem.agent.trajectory import TrajectoryStep
+from rem.core.audit import content_digest
 from rem.core.interfaces import DesignNotSpecifiedError, MitigationEngine
 from rem.core.results import Decision, MitigationAction, MitigationOutcome, Verdict
 
@@ -101,6 +102,13 @@ class DeterministicMitigationEngine(MitigationEngine):
 
         if action is MitigationAction.PREVENT_EXECUTION:
             target = step.tool_call.name if step.tool_call else (step.action or "step")
+            # Keep the identity of the prevented action for the audit record
+            # (name and argument digest only; raw arguments are not copied).
+            if step.tool_call is not None:
+                step.metadata["rem_original_tool_name"] = step.tool_call.name
+                step.metadata["rem_original_arguments_digest"] = content_digest(
+                    dict(step.tool_arguments) or None
+                )
             step.tool_call = None
             step.action = None
             step.metadata["rem_blocked_step"] = True
