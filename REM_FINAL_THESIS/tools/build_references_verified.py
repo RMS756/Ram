@@ -39,6 +39,8 @@ R3 = {('kekatos', '2026'): 'R3 (30 Oct): Crossref DOI registered; title, 8 autho
       ('liu', '2026b'): '', ('ray', '2026'): 'R3 (30 Oct): OpenAlex record; 1 author; abstract read (level A); preprint',
       ('xin', '2026'): 'R3 (30 Oct): Crossref DOI registered; journal, vol 2(2), 1 author match. Abstract read via OpenAlex (level A)',
       ('yan', '2026'): 'R3 (30 Oct): OpenAlex record; 5 authors, 3 listed in the record (list abbreviated); abstract read (level A); preprint'}
+R3_DOI = {('hevner', '2004'): 'R3 (30 Oct): Crossref DOI 10.2307/25148625 registered; title, 4 authors, MIS Quarterly 28(1), 75–106, 2004 match. Content: metadata only (CF-04)',
+          ('peffers', '2007'): 'R3 (30 Oct): Crossref DOI 10.2753/MIS0742-1222240302 registered; title, 4 authors, JMIS 24(3), 45–77, 2007 match. Content: metadata only (CF-05)'}
 rows = []; counts = {}
 for e in refs:
     ent = e['entry']
@@ -49,6 +51,8 @@ for e in refs:
         recs = [R3[k]]
     if k == ('liu', '2026') and 'R3' in e['chapters']:
         recs = ['R3 (30 Oct): OpenAlex record; 1 author; abstract read (level A); preprint']
+    if k in R3_DOI:
+        recs.append(R3_DOI[k])
     if 'Withdrawn' in ent:
         recs.append('WITHDRAWN PREPRINT (withdrawal recorded 25 Sep 2026; not re-confirmable 28–30 Oct)')
     if 'Platt' in ent:
