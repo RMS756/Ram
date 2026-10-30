@@ -74,6 +74,7 @@ Severity for formal submission:
 | University thesis template and formatting rules | Not available | Formatting is provisional (A4, Times New Roman 12, 1.5 spacing) |
 | Examination committee, approval page, declaration, acknowledgements, dates | Not supplied | Omitted rather than invented (front matter, "Status of This Document") |
 | Arabic abstract (if the university requires one) | Not supplied; requirement unknown | Not included |
+| Declaration of AI use (if the university requires one) | Only the author can make it. The project used an AI coding assistant for screening records, code, analyses, the AI-only label inspection and drafting (repository history; `chapter2/CHAPTER2_SYSTEMATIC_SEARCH_STRATEGY.md`) | Factual note in the front matter ("Status of This Document"); Ch. 2 §2.2.5 and §2.13.4 corrected in R3 to state the AI assistance the review record names |
 | Human label audit | Package prepared (`results/pilot_R2/label_audit_human_package.csv`); no annotators | Ch. 5 §5.10; Ch. 6 §6.5 item 4 |
 | Live LLM access | None | Ch. 5 §5.1; Ch. 6 §6.4 |
 | Injection classifier x_ctx1 | Not chosen; model host unreachable earlier | Ch. 4 §4.5 and Table 4.6; Ch. 5 |

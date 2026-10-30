@@ -46,7 +46,7 @@ All numbers come from `results/pilot_R2/`, produced at commit `84a8c21` by `expe
 - one attacker account;
 - one environment.
 
-All intervals are 95% percentile intervals from a bootstrap that resamples attacked items by injection task and benign items by user task. With nine injection-task groups the intervals are wide. Where a category contains a single injection task, no interval can be formed and none is reported.
+All intervals are 95% percentile intervals from a bootstrap that resamples attacked items by injection task and benign items by user task. With nine injection-task groups the intervals are wide. Bootstrap coverage is an asymptotic property, and with so few groups the intervals are not guaranteed to reach their nominal 95% coverage; a narrow interval, such as that of REM's replay ASR, is not evidence of precision. The intervals are therefore descriptive, and no hypothesis test is based on them. Where a category contains a single injection task, no interval can be formed and none is reported.
 
 ### 5.2.2 Protocol
 

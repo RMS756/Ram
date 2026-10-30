@@ -43,6 +43,8 @@ This is the R3 verification draft. It was produced for **supervisor review**. It
 - The university's thesis template and the approved proposal were not available. The formatting is therefore provisional, and the title, student name, committee and approval pages are left to be completed from official records.
 - Open decisions are listed in `UNRESOLVED_ITEMS_AND_SUPERVISOR_DECISIONS.md`.
 
+- An AI coding assistant (Claude Code) was used in this project, as recorded in the project files and the repository history. It assisted with the literature screening records, the software and tests, the execution of the analyses, the AI-only label inspection (Chapter 5, Section 5.10), and the drafting and verification of this text. The university's declaration of AI use, if one is required, must be completed by the author. This note is a factual record, not that declaration.
+
 No acknowledgment, declaration, approval or signature page is included. These pages require information and statements that only the author and the university can provide.
 
 # List of Abbreviations {.unnumbered}

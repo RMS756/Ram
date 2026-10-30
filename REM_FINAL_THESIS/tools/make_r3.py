@@ -118,6 +118,21 @@ rep(6, '5. **Feature revision.** Revise the behavioral features, for example by 
     '§6.6 classifier', 'Grounds the classifier-selection future work in the update record.')
 
 
+# ---------------------------------------------------------------- Chapter 2: disclosure of AI assistance in the review, as recorded
+rep(2, 'Selection had two stages, both carried out by a single reviewer.',
+    'Selection had two stages, both carried out by a single reviewer: the thesis author, assisted by an AI coding assistant (Claude Code), as recorded in the search-strategy file (`CHAPTER2_SYSTEMATIC_SEARCH_STRATEGY.md`).',
+    '§2.2.5 reviewer', 'Aligns the text with the review record, which names AI assistance; the chapter did not disclose it.')
+rep(2, '5. **Single reviewer.** Screening, extraction and appraisal were each done by one person, with no second screener and no agreement statistic.',
+    '5. **Single reviewer, AI-assisted.** Screening, extraction and appraisal were each done by one reviewer, assisted by an AI coding assistant, with no independent second screener and no agreement statistic.',
+    '§2.13.4 item 5', 'Same correction in the limitations; "one person" did not state the AI assistance recorded in the review files.')
+
+
+# ---------------------------------------------------------------- Chapter 5: interval interpretation (examiner review, R3)
+rep(5, 'With nine injection-task groups the intervals are wide. Where a category contains a single injection task, no interval can be formed and none is reported.',
+    'With nine injection-task groups the intervals are wide. Bootstrap coverage is an asymptotic property, and with so few groups the intervals are not guaranteed to reach their nominal 95% coverage; a narrow interval, such as that of REM\'s replay ASR, is not evidence of precision. The intervals are therefore descriptive, and no hypothesis test is based on them. Where a category contains a single injection task, no interval can be formed and none is reported.',
+    '§5.2 intervals', 'States that percentile intervals over nine groups need not reach nominal coverage (examiner review finding).')
+
+
 # ---------------------------------------------------------------- equation encodings (rendering only; mathematics unchanged)
 rep(2, r'$$a^{*}(x) = \arg\min_{a}', r'$$a^{\text{*}}(x) = \arg\min_{a}', 'Eq. 2.3 encoding', 'Same mathematics; the superscript asterisk is encoded so that it renders in both Word and LibreOffice.')
 rep(3, r'$$ p^{*}_k = \frac{C_{\mathrm{FA}}(k)}', r'$$ p^{\text{*}}_k = \frac{C_{\mathrm{FA}}(k)}', 'Eq. 3.9 encoding', 'Same mathematics; rendering fix as for Eq. 2.3.')

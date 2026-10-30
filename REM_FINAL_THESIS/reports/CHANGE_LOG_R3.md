@@ -19,6 +19,9 @@ Base: `revision_R2/chapters_md/*_R2.md` (commit `3b15dc8`). Every change below w
 | 6 | §6.3 new prior art | Adds the closest records from the currency update. |
 | 6 | §6.5 limitation | Adds the literature-currency limitation. |
 | 6 | §6.6 classifier | Grounds the classifier-selection future work in the update record. |
+| 2 | §2.2.5 reviewer | Aligns the text with the review record, which names AI assistance; the chapter did not disclose it. |
+| 2 | §2.13.4 item 5 | Same correction in the limitations; "one person" did not state the AI assistance recorded in the review files. |
+| 5 | §5.2 intervals | States that percentile intervals over nine groups need not reach nominal coverage (examiner review finding). |
 | 2 | Eq. 2.3 encoding | Same mathematics; the superscript asterisk is encoded so that it renders in both Word and LibreOffice. |
 | 3 | Eq. 3.9 encoding | Same mathematics; rendering fix as for Eq. 2.3. |
 | 3 | Eq. 3.20 encoding | Same mathematics; absolute-value bars encoded so that they render in LibreOffice. |
