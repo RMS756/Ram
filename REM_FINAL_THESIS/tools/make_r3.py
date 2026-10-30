@@ -75,6 +75,10 @@ rep(3, 'Both are implemented and evaluated, and step-level semantics is the refe
 rep(4, '| Code version of the reported results |',
     '| Independent re-execution (R3) | 30 Oct 2026, merged repository state, Python 3.11.17, NumPy 2.4.6, AgentDojo 0.1.35, Intel Xeon @ 2.10 GHz, 4 vCPU; see Section 4.11.2 |\n| Code version of the reported results |',
     'Table 4.1', 'Records the environment of the independent re-execution.')
+r12 = json.load(open(os.path.join(ROOT, 'REM_FINAL_THESIS', 'verification', 'r1_vs_r2_comparison.json')))['totals']
+rep(4, 'An automated comparison of the 5,121 values the two runs share found 93 differences, all of them wall-clock time or memory measurements; every analytical value was identical.',
+    f'An automated comparison of the 5,121 values the two runs share found 93 differences, all of them wall-clock time or memory measurements; every analytical value was identical. A second comparison with a different leaf-matching method (`compare_reproduction.py`, R3) counted {r12["shared"]:,} shared values and {r12["diff_volatile"]} differences, all in time, memory or provenance fields, and {r12["diff_analytical"]} analytical differences.',
+    '§4.11.2 R1–R2', 'Independent re-check of the R1–R2 comparison; counts differ with the matching method, the conclusion does not.')
 rep(4, '- **Attribution additivity.**',
     f'- **Independent re-execution (R3, 30 October 2026).** The complete pipeline (`run_all.sh`) was executed again, from the merged repository state, on a different processor and with the AgentDojo repository obtained afresh at commit `089ed468`. Of the {T["shared"]:,} numeric values that the re-run shares with `results/pilot_R2/`, {T["equal"]:,} were identical. The {T["diff_volatile"]:,} that differed are all time or memory measurements, and {T["diff_analytical"]} analytical values differed (`RESULTS_PROVENANCE_REPORT.md`).\n- **Attribution additivity.**',
     '§4.11.2', 'Adds the independent re-execution and its exact outcome.')
@@ -99,6 +103,8 @@ rep(5, 'across configurations and the two runs.',
     'across REM configurations and the two runs; the independent re-execution of 30 October gave values within these ranges for REM configurations.',
     '§5.6 latency', 'Records that the third execution stays within the reported range (REM configurations: median 0.137–0.156 ms, p95 0.400–0.476 ms; reproduction_comparison.json).')
 
+rep(5, '# EXPLORATORY EVALUATION', '# EXPERIMENTAL RESULTS AND EVALUATION: AN EXPLORATORY STUDY', 'Ch5 title', 'Aligns the chapter title with the six-chapter structure requested by the author while keeping its exploratory status in the title.')
+
 # ---------------------------------------------------------------- Chapter 6
 rep(6, 'Each mechanism in REM has precedent. The distinguishing elements are the combination and the evaluation design; neither',
     'Records found in the currency update of 30 October 2026, examined at abstract level only, narrow the distance further (Chapter 2, Section 2.13.6): a controller that commits the proposed or an alternative action by a calibrated value learned from outcomes, with provenance-typed evidence (Yan et al., 2026); a three-way execute–confirm–block router with calibrated probabilities (Xin, 2026); and an offline evaluation of runtime monitors on AgentDojo\'s recorded traces (Kekatos et al., 2026).\n\n'
@@ -110,6 +116,12 @@ rep(6, '9. **Runtime figures.**',
 rep(6, '5. **Feature revision.** Revise the behavioral features, for example by conditioning privilege escalation on provenance, and add the injection classifier.',
     '5. **Feature revision.** Revise the behavioral features, for example by conditioning privilege escalation on provenance, and add the injection classifier, selected on the agent\'s own tool outputs at a low false-positive rate (Z. Liu, 2026).',
     '§6.6 classifier', 'Grounds the classifier-selection future work in the update record.')
+
+
+# ---------------------------------------------------------------- equation encodings (rendering only; mathematics unchanged)
+rep(2, r'$$a^{*}(x) = \arg\min_{a}', r'$$a^{\text{*}}(x) = \arg\min_{a}', 'Eq. 2.3 encoding', 'Same mathematics; the superscript asterisk is encoded so that it renders in both Word and LibreOffice.')
+rep(3, r'$$ p^{*}_k = \frac{C_{\mathrm{FA}}(k)}', r'$$ p^{\text{*}}_k = \frac{C_{\mathrm{FA}}(k)}', 'Eq. 3.9 encoding', 'Same mathematics; rendering fix as for Eq. 2.3.')
+rep(3, r'\frac{|B_m|}{N} \left| \bar{y}(B_m) - \bar{p}(B_m) \right|', r'\frac{\left\vert B_m \right\vert}{N} \left\vert \bar{y}(B_m) - \bar{p}(B_m) \right\vert', 'Eq. 3.20 encoding', 'Same mathematics; absolute-value bars encoded so that they render in LibreOffice.')
 
 # ---------------------------------------------------------------- references: strip per-chapter lists, consolidate
 NEW_REFS = [

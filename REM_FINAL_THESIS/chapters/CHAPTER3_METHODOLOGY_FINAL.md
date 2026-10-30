@@ -455,7 +455,7 @@ Derivation: R(v) − R(v′) = −Δ~0~ + p(Δ~0~ + Δ~1~). This is zero at p = 
 
 For v = Allow and v′ = Block, Δ~0~ = C~FA~(k) and Δ~1~ = C~miss~(k), so:
 
-$$ p^{*}_k = \frac{C_{\mathrm{FA}}(k)}{C_{\mathrm{FA}}(k) + C_{\mathrm{miss}}(k)} \qquad (3.9) $$
+$$ p^{\text{*}}_k = \frac{C_{\mathrm{FA}}(k)}{C_{\mathrm{FA}}(k) + C_{\mathrm{miss}}(k)} \qquad (3.9) $$
 
 *Status:* derived from Equation 3.8. It has the form of the standard two-class cost-sensitive threshold for zero-cost correct decisions, which Elkan (2001) obtains from the same expected-cost criterion; the printed threshold expression in that paper could not be inspected directly during verification, so the derivation above stands on Equation 3.8 alone.
 
@@ -853,7 +853,7 @@ ASR is never reported without benign utility and utility under attack. A low ASR
 
 **Calibration error.** For binary outcomes, calibration error is measured on the positive-class probability (Naeini et al., 2015) with M equal-width bins (Guo et al., 2017):
 
-$$ \mathrm{ECE} = \sum_{m=1}^{M} \frac{|B_m|}{N} \left| \bar{y}(B_m) - \bar{p}(B_m) \right|, \qquad B_m = \{ i : (m-1)/M < p_i \le m/M \} \qquad (3.20) $$
+$$ \mathrm{ECE} = \sum_{m=1}^{M} \frac{\left\vert B_m \right\vert}{N} \left\vert \bar{y}(B_m) - \bar{p}(B_m) \right\vert, \qquad B_m = \{ i : (m-1)/M < p_i \le m/M \} \qquad (3.20) $$
 
 where N is the number of held-out steps, ȳ(B~m~) is the fraction of positive steps in bin m, p̄(B~m~) is the mean calibrated probability in bin m, and M is declared in advance (steps with p~i~ = 0 are assigned to the first bin).
 

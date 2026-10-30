@@ -1,0 +1,12 @@
+reference entries: 112 | distinct cited author-year keys resolved: 91
+UNRESOLVED citations: 6
+   ('Houwelingen', '1992') … ed, using ridge logistic regression (Cox, 1958; le Cessie & van Houwelingen, 1992);   
+   ('Lee', '2017') …  linear case of Shapley-value attribution given by Lundberg and Lee (2017):  $
+   ('Nikiforov', '1993') … kelihood ratio of one observation, as defined by Basseville and Nikiforov (1993), sp
+   ('Project', '2025') … avior without any access to the user channel (OWASP Gen AI Security Project, 2025; Gre
+   ('Stoumbos', '1999') … sum chart for Bernoulli observations is treated by Reynolds and Stoumbos (1999).  T
+   ('Union', '2024') … ability to intervene (European Parliament & Council of the European Union, 2024). Wh
+reference keys never matched by an in-text citation: 3
+   ('Chandola', '2012')
+   ('Project.', '2025')
+   ('Union.', '2024')

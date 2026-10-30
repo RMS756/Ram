@@ -1,0 +1,100 @@
+{
+ "files": {
+  "benign_release_breakdown.json": {
+   "shared": 44,
+   "only_committed": 11,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "dataset_summary.json": {
+   "shared": 548,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e0_pilot.json": {
+   "shared": 95,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e1_crossfit.json": {
+   "shared": 1071,
+   "only_committed": 45,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e2_e5_e6_observe_only.json": {
+   "shared": 1379,
+   "only_committed": 40,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e3_a2_cusum_observe_only.json": {
+   "shared": 115,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e4_cross_template_and_defenses.json": {
+   "shared": 129,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e4_e5_enforcement_replay.json": {
+   "shared": 1642,
+   "only_committed": 156,
+   "only_rerun": 0,
+   "diff_volatile": 93,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e4_rmod_and_replay_validity.json": {
+   "shared": 119,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "feature_firing_rates.json": "MISSING IN RE-RUN",
+  "latency_memory_profile.json": {
+   "shared": 14,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 2,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "r2_breakdowns.json": "MISSING IN RE-RUN",
+  "sensitivity_post_hoc_exclude_user_task_15.json": {
+   "shared": 64,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  }
+ },
+ "totals": {
+  "shared": 5220,
+  "equal": 5116,
+  "diff_volatile": 104,
+  "diff_analytical": 0
+ }
+}

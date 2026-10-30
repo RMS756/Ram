@@ -1,0 +1,16 @@
+      5 tests/test_a1.py
+      5 tests/test_a2.py
+     10 tests/test_a3.py
+     15 tests/test_config.py
+     20 tests/test_contract_compliance.py
+      2 tests/test_crossfit.py
+      7 tests/test_evidence.py
+     43 tests/test_frozen_math.py
+     25 tests/test_metrics.py
+      9 tests/test_mitigation.py
+     21 tests/test_pipeline.py
+      5 tests/test_probabilistic.py
+      3 tests/test_replay.py
+      9 tests/test_reproducibility.py
+      2 tests/test_traces.py
+     12 tests/test_trajectory.py

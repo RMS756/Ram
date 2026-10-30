@@ -218,7 +218,7 @@ An A2-driven enforcement policy and a retrained "A3 + A2" variant are not implem
 ### 4.11.2 Integration verification
 
 - **Replay fidelity.** With every call allowed, the replay reproduced the recorded utility and security outcome of 3,313 of 3,334 episodes (99.4%). The 21 exceptions are analyzed in Chapter 5.
-- **Determinism and regression.** The complete pilot was run at commit `aa66f22` (R1) and again at commit `84a8c21` (R2), after the corrections of this revision. An automated comparison of the 5,121 values the two runs share found 93 differences, all of them wall-clock time or memory measurements; every analytical value was identical.
+- **Determinism and regression.** The complete pilot was run at commit `aa66f22` (R1) and again at commit `84a8c21` (R2), after the corrections of this revision. An automated comparison of the 5,121 values the two runs share found 93 differences, all of them wall-clock time or memory measurements; every analytical value was identical. A second comparison with a different leaf-matching method (`compare_reproduction.py`, R3) counted 5,220 shared values and 104 differences, all in time, memory or provenance fields, and 0 analytical differences.
 - **Independent re-execution (R3, 30 October 2026).** The complete pipeline (`run_all.sh`) was executed again, from the merged repository state, on a different processor and with the AgentDojo repository obtained afresh at commit `089ed468`. Of the 6,057 numeric values that the re-run shares with `results/pilot_R2/`, 5,943 were identical. The 114 that differed are all time or memory measurements, and 0 analytical values differed (`RESULTS_PROVENANCE_REPORT.md`).
 - **Attribution additivity.** The audit record carries |φ₀ + Σφᵢ − s| for every replayed step.
 
