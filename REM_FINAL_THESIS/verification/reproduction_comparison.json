@@ -1,0 +1,139 @@
+{
+ "files": {
+  "benign_release_breakdown.json": {
+   "shared": 55,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "dataset_summary.json": {
+   "shared": 548,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e0_pilot.json": {
+   "shared": 95,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e1_crossfit.json": {
+   "shared": 1116,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e2_e5_e6_observe_only.json": {
+   "shared": 1419,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e3_a2_cusum_observe_only.json": {
+   "shared": 115,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e4_cross_template_and_defenses.json": {
+   "shared": 129,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e4_e5_enforcement_replay.json": {
+   "shared": 1798,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 101,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e4_rmod_and_replay_validity.json": {
+   "shared": 119,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "feature_firing_rates.json": {
+   "shared": 28,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "latency_memory_profile.json": {
+   "shared": 14,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "r2_breakdowns.json": {
+   "shared": 557,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 2,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "sensitivity_post_hoc_exclude_user_task_15.json": {
+   "shared": 64,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  }
+ },
+ "totals": {
+  "shared": 6057,
+  "equal": 5943,
+  "diff_volatile": 114,
+  "diff_analytical": 0
+ },
+ "memory_rerun": {
+  "peak_bytes_per_step_median": 4364.0,
+  "peak_bytes_per_step_p95": 12419.5,
+  "steps_measured": 611,
+  "episodes": 300
+ },
+ "latency_rerun_ms": {
+  "median_range": [
+   0.059935000024324836,
+   0.15977150002299823
+  ],
+  "p95_range": [
+   0.33007820002239824,
+   0.48867524998286155
+  ]
+ },
+ "rerun_environment": {
+  "commit": "4a286a5",
+  "python": "3.11.17",
+  "numpy": "2.4.6",
+  "agentdojo": "0.1.35",
+  "runs_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz, 4 vCPU",
+  "date": "2026-10-30"
+ }
+}
