@@ -86,3 +86,19 @@ The check reviewed the checkpoint `b943843`. The branch head at the time of thes
 | — | Earlier valid corrections | Both timers, their boundaries, the semantics and timer tests, the step-level reference with D-2 pending, the five layers, audit-only attribution and observe-only CUSUM | Unchanged | Tests pass; Ch. 4 §4.14 unchanged | Retained |
 
 No new pilot run was needed: `results/pilot_R4/` (from commit `ea621c3`) is unchanged, and the code changed after it touches only the thesis build (`REM_FINAL_THESIS/tools/`) and tests.
+
+## 6. Fresh-clone verification (1 November 2026, commit `4e44e24`)
+
+The branch was cloned afresh from GitHub (`git clone --branch claude/rem-r4-corrections-3ktvze`) into an empty directory, and these checks were run there:
+
+| Check | Result |
+|---|---|
+| Advertised files present | All present: `R4/REM_THESIS_R4.docx`, `.pdf`, the six chapter DOCX files, `chapters_R4/` (8 files), `results/pilot_R4/` (17 files + 3 figures), this log, the readiness report, the verification records |
+| Committed DOCX/PDF | Byte-identical to the local build (SHA-256 `6c57d994…bf3e4` DOCX, `b4281ff3…6186c` PDF, at `4e44e24`) |
+| `pytest` | 205 passed |
+| `make_r3.py` then `make_r4.py` | Regenerated `chapters/`, `chapters_R4/` and the change logs identical to the committed files (`git status` clean) |
+| `trace_cells_R4.py` | 126 PASS, 0 FAIL |
+| `verify_equations.py` | 21 PASS, ALL PASS |
+| `REM_VERSION=R4 build_thesis.py` | Exit 0; 212 pages; extracted PDF text identical to the committed PDF; `check_docx_structure_R4.py` 7/7 PASS on the rebuilt files |
+
+**External input.** The pilot re-execution and the three replay tests also need the public AgentDojo repository `runs/` at commit `089ed468cf3ed0322acc66b0211f26d9d90dbf60` (about 525 MB, not stored in this repository; `EXPERIMENT_REPRODUCTION_GUIDE.md` §2). It was present at `/home/user/ethz-spylab/agentdojo/runs` for these checks. Without it the replay tests skip, and the thesis can still be regenerated and built from the committed results.
