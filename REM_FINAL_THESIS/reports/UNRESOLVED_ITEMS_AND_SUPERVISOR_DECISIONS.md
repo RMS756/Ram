@@ -1,5 +1,7 @@
 # Unresolved Items and Supervisor Decisions (R3, 30 October 2026)
 
+> **Updated in R4 (1 November 2026).** D-2's stated effect is corrected below. No decision has been recorded since R3; every item remains open. New R4 items are in `CORRECTION_LOG_R4.md` §3.
+
 This register merges, without resolving any item:
 - `SUPERVISOR_DECISIONS_REQUIRED.md` (root; consolidated 27 Oct);
 - the R2 memo `revision_R2/reports_ar/05_مذكرة_قرارات_المشرف.md` (D-1 to D-15, 28 Oct);
@@ -18,7 +20,7 @@ Severity for formal submission:
 | ID | Item | Old codes | Options (R2 memo) | Current text | Effect on results if changed | Severity |
 |---|---|---|---|---|---|---|
 | **D-1** | Recorded-trace replay versus the Chapter 3 scope, which excluded replay-based estimation | SC-7 | (a) keep replay as a labelled NO-ADAPT sensitivity analysis and amend §3.1.4; (b) drop replay results; (c) run live experiments | (a), proposed amendment §3.11.11, labelled pending | (b) removes every ASR, utility and r_mod number in Ch. 5 §5.6 and the observe-only numbers that use r_mod through Eq. 3.5 | **CRITICAL** |
-| **D-2** | Mitigation semantics: step-level (`CLAUDE.md` lock) versus episode-level (original Ch. 3) | SC-1, SD-3, AM-3 | (a) step-level reference, episode-level as a separate experimental policy; (b) episode-level | (a), stated as awaiting confirmation | None under NO-ADAPT replay (both give the same numbers); changes the justification of the restrictiveness and tie orders | **CRITICAL** (design meaning) |
+| **D-2** | Mitigation semantics: step-level (`CLAUDE.md` lock) versus episode-level (original Ch. 3) | SC-1, SD-3, AM-3 | (a) step-level reference, episode-level as a separate experimental policy; (b) episode-level | (a), stated as awaiting confirmation | R4 correction: the R3 entry said both give the same numbers; they do not. Under replay, episode-level semantics lowers B1's ASR (0.055 → 0.046) and utility under attack in every configuration, because restrictions also refuse later, different calls; benign utility coincided (Ch. 5 Table 5.11 in R4). The choice also changes the justification of the restrictiveness and tie orders | **CRITICAL** (design meaning) |
 | **D-3** | Calibration fitting target: labels (Eq. 3.4) versus Platt smoothed targets | SC-4 | (a) labels; (b) Platt targets | Both reported (Table 5.3) | ECE 0.0438 vs 0.0436 | MAJOR (spec–code conflict), negligible numerically |
 | **D-4** | Tie rule: Ch. 3 order versus `VerdictTieError` in the frozen code | SC-2 | (a) Ch. 3 order with tie counts; (b) refuse ties | 0 ties in 6,762 steps reported | None in the pilot | MINOR |
 | D-5 | Features unavailable under k_D2 (set to 0 with an audit flag) | — | (a) keep; (b) escalate; (c) fitting mean | (a), with counts | (b) raises escalation | MINOR |

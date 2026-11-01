@@ -1,0 +1,22 @@
+PASS Eq 3.5  E[loss|Modify,y=1] = r*C_miss
+PASS Eq 3.6  R(v) affine in p for every v
+PASS Eq 3.8  pi = D0/(D0+D1)
+PASS Eq 3.8  R(v)-R(v') = -D0 + p(D0+D1)
+PASS Eq 3.9  p* = C_FA/(C_FA+C_miss)
+PASS Eq 3.10 max_p min(R_A,R_B) = C_FA*C_miss/(C_FA+C_miss)
+PASS Eq 3.10 Escalate selectable iff C_esc < C_FA C_miss/(C_FA+C_miss) (2000 random structures)
+PASS Eq 3.10 symmetric case reduces to C_esc < C/2
+PASS Sec 3.7.5 R(Mod)-R(Block) = (1-p)(C_mod-C_FA) + p r C_miss
+PASS Eq 3.3  d p/d s = g1 p(1-p) > 0 when g1 > 0
+PASS Kull eq. beta(a=b) on sigmoid(s) == sigmoid(a s + c)
+PASS Eq 3.12 phi0 + sum phi_i = s_t
+PASS Eq 3.20 ECE implementation == formula (M=10, random data)
+PASS Eq 3.21 log-loss implementation == formula (clip 1e-6)
+PASS Eq 3.14 theta(alpha=0.01) implementation == min over observed values
+PASS Eq 3.14 theta(alpha=0.05) implementation == min over observed values
+PASS Eq 3.14 theta(alpha=0.2) implementation == min over observed values
+PASS Eq 3.2  lambda = lambda_impl/2 maps the two objectives
+PASS Ch5 tier-3 Allow-Block point 1/11
+PASS Ch5 tier-4 Allow-Block point 1/21
+PASS Eq 3.15 Bernoulli LLR (e=0,1)
+ALL PASS

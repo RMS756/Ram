@@ -1,5 +1,8 @@
 # Experiment Reproduction Guide
 
+> **Updated in R4 (1 November 2026)** after the independent review of the R3 draft. Corrected passages are marked "R4". The R3 version is in the repository history at commit `181a38c`.
+
+
 These steps were executed in full on 30 October 2026 and reproduced every analytical value of `results/pilot_R2/` (see `RESULTS_PROVENANCE_REPORT.md` §3). Commands are given exactly as run.
 
 ## 1. Environment
@@ -22,7 +25,7 @@ python3 -m pip install -e ".[dev]" agentdojo==0.1.35 matplotlib
 git clone https://github.com/ethz-spylab/agentdojo.git /home/user/ethz-spylab/agentdojo
 git -C /home/user/ethz-spylab/agentdojo checkout 089ed468cf3ed0322acc66b0211f26d9d90dbf60
 
-# 1. tests (expected: 193 passed; per-file counts in verification/pytest_per_file_2026-10-30.txt)
+# 1. tests (expected on the R4 branch: 199 passed; per-file counts in verification/pytest_per_file_R4.txt)
 python3 -m pytest -o addopts="" -q
 
 # 2. pilot, written OUTSIDE the repository so that committed results are not overwritten (about 12 minutes on 4 vCPU on 30 October)
@@ -35,7 +38,7 @@ python3 REM_FINAL_THESIS/verification/compare_reproduction.py /path/to/rerun res
 # 4. check the numbers printed in the chapters against the result files
 python3 REM_FINAL_THESIS/verification/check_chapter_numbers.py REM_FINAL_THESIS/chapters/CHAPTER5_RESULTS_FINAL.md results/pilot_R2
 
-# 5. mathematical checks of the derived equations (expected: 22 PASS)
+# 5. mathematical checks of the derived equations (expected: 21 PASS lines and a final ALL PASS)
 python3 REM_FINAL_THESIS/verification/verify_equations.py
 
 # 6. Chapter 2 PRISMA counts (run on a copy; the script rewrites its outputs)

@@ -1,5 +1,8 @@
 # Methodology-to-Code Traceability (R3, 30 October 2026)
 
+> **Updated in R4 (1 November 2026)** after the independent review of the R3 draft. Corrected passages are marked "R4". The R3 version is in the repository history at commit `181a38c`.
+
+
 **Basis:**
 - Chapter 3 (final) and the code at merge commit `4a286a5`;
 - the test run of 30 October (193 passed; `verification/pytest_2026-10-30.txt`);
@@ -28,7 +31,7 @@ Runtime verification (tests and pilot execution) is distinguished from static in
 | Eqs. 3.8–3.10 | `loss_matrix.indifference_threshold`, `allow_block_threshold`, `escalation_feasible` | `test_a3.py`; `verify_equations.py` | Runtime and symbolic | — | Consistent |
 | Eqs. 3.11–3.13 attribution, audit-only | `attribution/linear_shapley.py`; `evidence.FEATURE_GROUPS` | `test_frozen_math`, `test_contract_compliance::test_decision_engine_signature_excludes_attribution` | Runtime | `additivity_error` in the replay audit | Consistent |
 | Eq. 3.14, baseline B1 | `a1.operating_threshold`, `A1Policy` | `test_a1.py` | Runtime; `verify_equations.py` | `theta_blk`, `theta_mod` | Consistent; α grid cell 0.05 not evaluable (D-14) |
-| Mitigation, Table 3.14, step and episode level | `integration/agentdojo_replay.py` `RemGuard._mitigate` | `test_replay.py` | Runtime | `e4_e5_enforcement_replay.json` | Consistent. **SC-1 / D-2**: step level is the reference; confirmation pending |
+| Mitigation, Table 3.14, step and episode level | `integration/agentdojo_replay.py` `RemGuard._mitigate` | `test_replay.py`; `test_mitigation_semantics.py` (R4) | Runtime | `e4_e5_enforcement_replay.json` | Consistent. **SC-1 / D-2**: step level is the reference; confirmation pending |
 | Escalate with a human reviewer | — | — | — | — | **Not implemented**: replaced by two bounds (idealized reviewer, no reviewer) |
 | Procedure 3.1 nested grouped cross-fitting | `rem/evaluation/crossfit.py` | `test_crossfit.py` (held-out predictions independent of held-out labels) | Runtime | `e1_crossfit.json` | Consistent |
 | Pilot E0 | `experiments/pilot/e0_pilot.py` | Pilot run | Runtime | `e0_pilot.json` | Consistent; fold-specific retention checked |
@@ -38,7 +41,7 @@ Runtime verification (tests and pilot execution) is distinguished from static in
 | Grouped bootstrap (§3.11.9) | `evaluation/bootstrap.py` | `test_probabilistic.py` | Runtime | Every interval | Consistent |
 | Observe-only and enforcing modes (§3.11.1) with live agents | `integration/agentdojo_replay.py` (replay only) | `test_replay.py` | Runtime (replay) | — | **Live mode not executed**. Replay is a proposed scope amendment (SC-7 / D-1) |
 | Audit record (§3.7.6) | `RemGuard.evaluate`; `core/audit.py` | `test_replay.py`, `test_pipeline.py` | Runtime | — | Consistent; raw argument values not logged |
-| Latency (Table 3.15) | `time.perf_counter` around `RemGuard.evaluate` | Pilot run | Runtime | `e4_e5_enforcement_replay.json` | Excludes LLM and tool time, as Chapter 3 specifies |
+| Latency (Table 3.15) | Two timers inside `RemGuard.evaluate`: partial (`rem_latency_ms`, stops before attribution, audit construction and history) and complete-call (`rem_latency_full_ms`, added in R4) | `test_latency_instrumentation.py` (fake clock); pilot run | Runtime | `results/pilot_R4/e4_e5_enforcement_replay.json` | R4: R3 described the partial timer as covering attribution and audit construction; corrected (Ch. 4 §4.14) |
 
 ## 2. Two execution paths
 
@@ -48,7 +51,7 @@ The frozen pipeline (`rem/core/pipeline.py`) is exercised only by unit and contr
 
 | ID | Mismatch | Where documented | Decision |
 |---|---|---|---|
-| SC-1 | Mitigation scope: step-level reference vs episode-level variant (cannot differ under replay) | Ch. 3 §3.8; Ch. 4 §4.8 | D-2 |
+| SC-1 | Mitigation scope: step-level reference vs episode-level variant. R4: the R3 entry said they "cannot differ under replay"; that was wrong. Episode-level restrictions refuse later, different calls, and the stored replay results differ (Ch. 5 Table 5.11 in R4) | Ch. 3 §3.8; Ch. 4 §4.8; Ch. 5 §5.6 | D-2 |
 | SC-2 | Tie rule: frozen code raises vs Chapter 3 order (0 ties observed) | Ch. 4 §4.7 | D-4 |
 | SC-3 | "Calibration removed" ablation refused by the frozen pipeline; run in the evaluation path as p̃ in Eq. 3.6 | Ch. 5 Table 5.11 | Open |
 | SC-4 | Calibration target: labels (Eq. 3.4) vs Platt smoothed targets | Ch. 5 Table 5.3 (both reported) | D-3 |

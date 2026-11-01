@@ -1,0 +1,17 @@
+{
+ "random_drawn": 30,
+ "random_with_steps": 25,
+ "random_items": 70,
+ "package_random_items": 70,
+ "package_random_episodes": 25,
+ "package_matches_generator": true,
+ "package_items_total": 145,
+ "strata": {
+  "random_episode": 70,
+  "ambiguous_user_task_15_positive": 29,
+  "attacker_value_but_label_0": 19,
+  "recorded_success_without_positive": 4,
+  "positive_without_recorded_success": 23
+ },
+ "human_annotations_present": 0
+}

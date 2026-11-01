@@ -11,8 +11,14 @@ from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-CH = os.path.join(ROOT, 'REM_FINAL_THESIS', 'chapters')
-OUT = os.path.join(ROOT, 'REM_FINAL_THESIS')
+# REM_VERSION=R4 builds the R4 set from chapters_R4/ into REM_FINAL_THESIS/R4/ (R3 outputs untouched);
+# the default rebuilds R3 exactly as before. R4 adds layout-only improvements (column widths from
+# cell content, compact table text, short tables kept on one page, abstract on its own page).
+VERSION = os.environ.get('REM_VERSION', 'R3')
+R4 = VERSION == 'R4'
+CH = os.path.join(ROOT, 'REM_FINAL_THESIS', 'chapters_R4' if R4 else 'chapters')
+OUT = os.path.join(ROOT, 'REM_FINAL_THESIS', 'R4') if R4 else os.path.join(ROOT, 'REM_FINAL_THESIS')
+SUF = '_R4' if R4 else '_FINAL'
 BUILD = os.path.join(OUT, 'build'); os.makedirs(BUILD, exist_ok=True)
 P = pypandoc.get_pandoc_path()
 FMT = 'markdown+lists_without_preceding_blankline'
@@ -58,6 +64,9 @@ for n in ('Table Caption', 'Image Caption', 'Caption'):
         font(st[n], 11, bold=(n == 'Table Caption'), italic=(n != 'Table Caption'))
     except KeyError:
         pass
+if R4:
+    st['Abstract Title'].paragraph_format.page_break_before = True
+    st['Table Caption'].paragraph_format.keep_with_next = True
 for n in ('Source Code', 'Verbatim Char'):
     try:
         st[n].font.size = Pt(9.5)
@@ -99,13 +108,36 @@ def prepare(md):
                 cap = (m.group(1) + m.group(2)).strip()
                 out.append(f'Table: {cap}'); out.append(''); i += 1; continue
         out.append(L[i]); i += 1
-    return '\n'.join(out)
+    md = '\n'.join(out)
+    return widths(md) if R4 else md
+
+def widths(md):
+    """R4: relative column widths from cell content (pandoc reads them from the separator dashes)."""
+    L = md.split('\n'); i = 0
+    while i < len(L):
+        if L[i].startswith('|') and i + 1 < len(L) and re.match(r'^\|(\s*:?-+:?\s*\|)+\s*$', L[i + 1]):
+            j = i + 2
+            while j < len(L) and L[j].startswith('|'): j += 1
+            rows = [[c.strip() for c in r.strip().strip('|').split('|')] for r in [L[i]] + L[i + 2:j]]
+            n = len(rows[0])
+            if n >= 2 and all(len(r) == n for r in rows):
+                w = []
+                for k in range(n):
+                    cells = [r[k] for r in rows]
+                    word = max((len(x) for c in cells for x in c.split()), default=1)
+                    w.append(max(word + 1, min(max(len(c) for c in cells), 60) * 0.55, 4))
+                tot = sum(w)
+                L[i + 1] = '|' + '|'.join('-' * max(3, round(100 * x / tot)) for x in w) + '|'
+            i = j
+        else:
+            i += 1
+    return '\n'.join(L)
 
 tmp = os.path.join(BUILD, 'src'); os.makedirs(tmp, exist_ok=True)
 srcs = []
-for name in ['FRONT_MATTER'] + [c + '_FINAL' for c in CHAPTERS] + ['REFERENCES']:
+for name in ['FRONT_MATTER' + ('_R4' if R4 else '')] + [c + SUF for c in CHAPTERS] + ['REFERENCES' + ('_R4' if R4 else '')]:
     t = open(os.path.join(CH, name + '.md'), encoding='utf-8').read()
-    if name == 'REFERENCES':
+    if name.startswith('REFERENCES'):
         t = t.replace('# REFERENCES', '# References', 1)
     p = os.path.join(tmp, name + '.md'); open(p, 'w', encoding='utf-8').write(prepare(t)); srcs.append(p)
 
@@ -113,8 +145,8 @@ def pandoc(inputs, out, extra=()):
     subprocess.run([P, '-f', FMT, *inputs, '--resource-path', ROOT, '--reference-doc', REF, '-o', out, *extra], check=True, cwd=ROOT)
 
 for c, s in zip(CHAPTERS, srcs[1:7]):
-    pandoc([s, srcs[-1]], os.path.join(OUT, c + '_FINAL.docx'))
-FULL = os.path.join(OUT, 'REM_FINAL_THESIS.docx')
+    pandoc([s, srcs[-1]], os.path.join(OUT, c + SUF + '.docx'))
+FULL = os.path.join(OUT, 'REM_THESIS_R4.docx' if R4 else 'REM_FINAL_THESIS.docx')
 pandoc(srcs, FULL, ['--toc', '--toc-depth=2', '--lof', '--lot'])
 
 # Word: refresh fields (TOC, lists, page numbers) on open
@@ -126,13 +158,50 @@ F['word/settings.xml'] = s.encode()
 with zipfile.ZipFile(FULL, 'w', zipfile.ZIP_DEFLATED) as zo:
     for n in sorted(F, key=lambda n: (n != '[Content_Types].xml', n)): zo.writestr(n, F[n])
 
+# ------------------------------------------------------------------ R4 table layout (DOCX post-processing)
+AFTER_SZ = ('highlight', 'u', 'effect', 'bdr', 'shd', 'fitText', 'vertAlign', 'rtl', 'cs', 'em', 'lang', 'eastAsianLayout', 'specVanish', 'oMath')
+SZ = '<w:sz w:val="20" /><w:szCs w:val="20" />'
+
+def _rpr(m):
+    body = re.sub(r'<w:szCs? w:val="\d+" ?/>', '', m.group(1))
+    k = min((body.find('<w:' + t + ' ') for t in AFTER_SZ if body.find('<w:' + t + ' ') >= 0), default=-1)
+    k2 = min((body.find('<w:' + t + '>') for t in AFTER_SZ if body.find('<w:' + t + '>') >= 0), default=-1)
+    k = min(x for x in (k, k2, len(body)) if x >= 0)
+    return '<w:rPr>' + body[:k] + SZ + body[k:] + '</w:rPr>'
+
+def _table(t):
+    t = re.sub(r'<w:rPr>(.*?)</w:rPr>', _rpr, t, flags=re.S)
+    t = t.replace('<w:r>', '<w:r><w:rPr>' + SZ + '</w:rPr>')
+    t = re.sub(r'<w:tr>(?!<w:trPr>)', '<w:tr><w:trPr><w:cantSplit /></w:trPr>', t)
+    t = t.replace('<w:tr><w:trPr>', '<w:tr><w:trPr><w:cantSplit />').replace('<w:cantSplit /><w:cantSplit />', '<w:cantSplit />')
+    rows = re.findall(r'<w:tr>.*?</w:tr>', t, flags=re.S)
+    if len(rows) <= 25:                       # keep short tables on one page
+        for r in rows[:-1]:
+            r2 = re.sub(r'(<w:pStyle w:val="[^"]+" />)(?!<w:keepNext)', r'\1<w:keepNext />', r)
+            r2 = re.sub(r'<w:p>(?!<w:pPr>)', '<w:p><w:pPr><w:keepNext /></w:pPr>', r2)
+            t = t.replace(r, r2, 1)
+    return t
+
+def r4_tables(path):
+    z = zipfile.ZipFile(path); F = {n: z.read(n) for n in z.namelist()}; z.close()
+    X = F['word/document.xml'].decode()
+    X = re.sub(r'<w:tbl>.*?</w:tbl>', lambda m: _table(m.group(0)), X, flags=re.S)
+    F['word/document.xml'] = X.encode()
+    with zipfile.ZipFile(path, 'w', zipfile.ZIP_DEFLATED) as zo:
+        for n in sorted(F, key=lambda n: (n != '[Content_Types].xml', n)): zo.writestr(n, F[n])
+
+if R4:
+    for c in CHAPTERS:
+        r4_tables(os.path.join(OUT, c + SUF + '.docx'))
+    r4_tables(FULL)
+
 # ------------------------------------------------------------------ PDF via LibreOffice, lists of figures/tables filled
 import html, json
 import uno
 from com.sun.star.beans import PropertyValue
 def pv(n, v):
     p = PropertyValue(); p.Name = n; p.Value = v; return p
-PDF = os.path.join(OUT, 'REM_FINAL_THESIS.pdf')
+PDF = FULL[:-5] + '.pdf'
 
 def export_pdf():
     prof = os.path.join(BUILD, 'lo_profile')
