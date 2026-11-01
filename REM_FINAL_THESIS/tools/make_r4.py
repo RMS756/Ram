@@ -95,9 +95,9 @@ for old, new in (('Table 5.12', 'Table 5.13'), ('Table 5.11', 'Table 5.12')):
     log.append((NAMES[5], f'renumber {old}', f'{n} occurrence(s) → {new}, to make room for the new Table 5.11.'))
 
 rows = []
-for cfg, label in (('B1', 'B1'), ('REM', 'REM'), ('REMnoEsc', 'REM w/o expected-loss Escalate')):
+for cfg, label in (('B1', 'B1'), ('REM', 'REM'), ('REMnoEsc', 'REM w/o Esc.')):
     for rev, rlabel in (('no_reviewer', 'no reviewer'), ('idealized', 'idealized reviewer')):
-        for sem, slabel in (('step_level', 'step-level (reference)'), ('episode_level', 'episode-level')):
+        for sem, slabel in (('step_level', 'step-level (ref.)'), ('episode_level', 'episode-level')):
             v = REPLAY[f'{cfg}_{sem}_{rev}']
             rows.append(f'| {label}, {rlabel} | {slabel} | {ci(v["ASR"])} | {ci(v["benign_utility"])} | {ci(v["utility_under_attack"])} |')
 b1s, b1e = REPLAY['B1_step_level_no_reviewer'], REPLAY['B1_episode_level_no_reviewer']
@@ -112,7 +112,7 @@ d_ep = re_['ASR'][0] - b1e['ASR'][0]
 SAME = 'identical' if rs['ASR'][0] == re_['ASR'][0] else 'equal to three decimals'
 SEM_TABLE = (
     '\n#### Sensitivity to the mitigation semantics\n\n'
-    '**Table 5.11. Replay results under the two mitigation semantics** (same episodes, same verdicts, same reviewer treatment for REM and B1; '
+    '**Table 5.11. Replay results under the two mitigation semantics** (same episodes, same verdicts, same reviewer treatment for REM and B1; ref. = the reference semantics; REM w/o Esc. = REM without expected-loss Escalate; '
     'attacked n = 2,979; benign n = 334; `e4_e5_enforcement_replay.json`, `configs.<configuration>_<semantics>_<reviewer>`)\n\n'
     '| Configuration | Semantics | ASR | Benign utility | Utility under attack |\n|---|---|---|---|---|\n' + '\n'.join(rows) + '\n\n'
     'What differs, within NO-ADAPT:\n'
@@ -172,6 +172,11 @@ rep(5, '- **Processing time.** REM\'s processing time per step, measured as desc
 rep(5, 'REM processing below 0.6 ms per step at p95 in this configuration',
     f'REM complete-call processing per step: median {TIMING["full_med"]}, 95th percentile {TIMING["full_p95"]} in this configuration (R4); earlier values are partial',
     'Table 5.13 RQ3', 'Summary uses the complete-call measurement (review Finding 2).')
+
+MEM2, MEM4 = load(R2, 'latency_memory_profile.json'), load(R4, 'latency_memory_profile.json')
+rep(5, 'The independent re-execution of 30 October measured the same value.',
+    f'The independent re-execution of 30 October measured the same value. In the R4 re-execution, where `evaluate` also records the complete-call timer, the median was {MEM4["peak_bytes_per_step_median"]:,.0f} bytes against {MEM2["peak_bytes_per_step_median"]:,.0f} bytes, with the same 95th percentile ({MEM4["peak_bytes_per_step_p95"]:,.1f} bytes; `results/pilot_R4/latency_memory_profile.json`). The memory boundary is the complete `evaluate` call in both.',
+    '§5.6 memory R4', 'Reports the R4 memory value exactly instead of claiming reproduction.')
 
 # ================================================================ other review items
 rep(5, 'An independent re-execution on 30 October 2026 reproduced every analytical value; only time and memory measurements differed (Chapter 4, Section 4.11.2).',

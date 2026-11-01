@@ -20,7 +20,7 @@ Every chapter edit is made by `tools/make_r4.py` from the R3 sources and logged 
 | — | Ch. 5 §5.1 said only time and memory differed in the R3 reproduction | Ch. 5 §5.1 | `verification/reproduction_all_differences.json`: 100 latency, 13 commit, 1 file path; no memory value | **FIXED AND VERIFIED** |
 | — | `check_chapter_numbers.py` accepts a number found anywhere in the results | New `verification/trace_cells_R4.py` → `trace_cells_R4.txt` | Each of 116 entries names table, row, column and one JSON field (file, configuration, semantics, reviewer, metric); interval cells check point and both bounds. 116 PASS. Planted swap of the episode-level B1 ASR into the step-level cell → detected (1 FAIL); the old checker would accept it. Coverage: Tables 5.3, 5.5, 5.7, 5.8, 5.11, 5.12 and the abstract's numbers. Other tables (5.2, 5.4, 5.6, 5.9, 5.10, Ch. 6 text) remain checked by the older occurrence check only | **PARTIALLY ADDRESSED** (principal tables traced; not every number in the thesis) |
 | — | Architecture figure drew Detection → Behavioral Analysis in sequence; Ch. 3 said "in parallel" | `experiments/pilot/figures.py` (figure redrawn: Layers 2 and 3 as independent branches from Layer 1 into Layer 4, labelled "independent computations; run in sequence"; no EXPLORATORY stamp on the design diagram); Ch. 3 §3.2.2 text; Figure 3.1 now from `results/pilot_R4/figures/` | Code check: `EpisodeTracker.features` computes the Layer-2 and Layer-3 features one after the other; no behavioral feature reads x_ctx2 (they share the declared pattern set). Five layers; no layer added | **FIXED AND VERIFIED** |
-| — | Narrow table headers split inside words; tables continuing with a single row (PDF pp. 183, 191 of R3) | `tools/build_thesis.py` (R4 mode: column widths from cell content; 10-pt table text; rows not split; tables of ≤ 25 rows kept with their caption) | Rendered and inspected (§4) | See §4 |
+| — | Narrow table headers split inside words; tables continuing with a single row (PDF pp. 183, 191 of R3) | `tools/build_thesis.py` (R4 mode: column widths from a character budget per column; 10-pt left-aligned table text; rows not split; tables of ≤ 25 rows kept with their caption) | Rendered and inspected (§4); Table 5.4 on one page; no headers split inside words on the inspected pages | **FIXED AND VERIFIED** (on the inspected pages) |
 | — | Title page combines title and abstract; name placeholder | Abstract moved to its own page (R4 build). Name placeholder retained | Official name, title and template not supplied | **PARTIALLY ADDRESSED** (layout); **OPEN** (official content) |
 | — | RemPipeline vs evaluation path; x_ctx1 absent | Unchanged disclosures (Ch. 4 §4.3, §4.5, Table 4.7) | Re-read in R4 | **FIXED AND VERIFIED** (already disclosed; retained) |
 | — | Platt 1999/2000 | Platt entry and every in-text "Platt (1999)" in Ch. 1–3 | The entry cites the MIT Press chapter (editors, pp. 61–74); Crossref (1 Nov) registers that chapter as 2000, DOI 10.7551/mitpress/1113.003.0008, title "Probabilities for SV Machines". Year corrected, DOI added, title discrepancy disclosed in the entry. The chapter was never read, so Eq. 3.3's source code stays NC | **PARTIALLY ADDRESSED** (year resolved by record; printed title and content not checked) |
@@ -31,9 +31,20 @@ Every chapter edit is made by `tools/make_r4.py` from the R3 sources and logged 
 | — | Comparators: O3 partly achieved; no superiority claims | Unchanged (Ch. 6 Table 6.2, §6.4) | Re-read | **FIXED AND VERIFIED** (already stated) |
 | — | Official front-matter material | Unchanged placeholders | Not supplied | **OPEN** |
 
-## 2. Executions in R4
+## 2. Executions in R4 (all on 1 November 2026; Python 3.11.17, NumPy 2.4.6, AgentDojo 0.1.35, Intel Xeon @ 2.80 GHz, 4 vCPU)
 
-See §2 of `CORRECTION_LOG_R4_RUNS.md` (generated after the clean re-execution).
+| Check | Command | Result | Record |
+|---|---|---|---|
+| Test suite | `python3 -m pytest -o addopts="" -q` | **199 passed**, 0 failed, 0 skipped (pytest 9.2.0) | `verification/pytest_R4.txt`, `pytest_per_file_R4.txt` |
+| Equation checks | `python3 REM_FINAL_THESIS/verification/verify_equations.py` | 21 PASS lines, then ALL PASS; exit 0 | `verification/verify_equations_output_R4.txt` |
+| Full pilot re-execution | `PILOT_RESULTS_DIR=… bash experiments/pilot/run_all.sh` from commit `ea621c3` | Exit 0; 11 min 6 s; outputs in `results/pilot_R4/` (state files not committed). A first run from the uncommitted working tree gave the same analytical values and was discarded for provenance reasons | `verification/pilot_R4_run.log`; `results/pilot_R4/PROVENANCE_R4.md` |
+| R4 vs reported R2 results | `compare_reproduction.py` + per-value listing | 6,057 shared values: 5,942 identical; **0 analytical differences**; 115 differing values = 50 `latency_ms_median`, 50 `latency_ms_p95`, 13 `rem_commit`, 1 `file`, 1 `peak_bytes_per_step_median` (4,364 → 4,349 bytes, reported in Ch. 5); 150 new fields (`latency_full_ms_*`, `latency_steps`) | `verification/reproduction_comparison_R4.json`, `reproduction_all_differences_R4.json` |
+| Complete-call timing (new) | from the run above | Across the 8 REM configurations, 6,684 steps each: complete call median 0.21–0.28 ms, p95 0.49–0.70 ms; partial timer in the same run median 0.18–0.24 ms, p95 0.46–0.64 ms | `results/pilot_R4/e4_e5_enforcement_replay.json` (`latency_full_ms_*`, `latency_ms_*`) |
+| Cell-level traceability | `python3 REM_FINAL_THESIS/verification/trace_cells_R4.py` | **120 PASS, 0 FAIL** (116 cells and sentences plus 4 timing ranges); negative control detected | `verification/trace_cells_R4.txt` |
+| PRISMA reconstruction | `build_slr.py` on a copy of `chapter2/` | `prisma_counts.json` identical (320 identified, 101 duplicates, 219 screened, 71 included) | `verification/prisma_reconstruction_R4.txt` |
+| Label-audit package | `check_label_audit_package_R4.py` | 145 items; 0 human annotations; random stratum matches its generator | `verification/label_audit_package_check_R4.json` |
+| Citations | `check_citations.py` on the R4 chapters | Every citation resolves (same six parser artifacts as R3) | `verification/citation_check_R4.txt` |
+| Live-evaluation config | `check_live_config.py live_config_TEMPLATE.yaml` | Exit 2: 16 inputs REQUIRED_FROM_DESIGN | — |
 
 ## 3. Items newly recorded in R4
 
@@ -43,6 +54,21 @@ See §2 of `CORRECTION_LOG_R4_RUNS.md` (generated after the clean re-execution).
 | NEXUS figures differ between abstract and README | Recorded in Ch. 2 §2.9.3; needs a version-specific full-text check |
 | Platt chapter title | Registered title differs from the cited title; printed title not checked |
 
-## 4. Rendering
+## 4. Rendering (R4 build)
 
-See `CORRECTION_LOG_R4_RUNS.md` §4.
+- **Build:** `REM_VERSION=R4 python3 REM_FINAL_THESIS/tools/build_thesis.py` produces `R4/REM_THESIS_R4.docx`, `R4/REM_THESIS_R4.pdf` (211 pages A4) and the six chapter DOCX files.
+- **Generated lists:** contents; 4 figures and 53 tables, each with a page number.
+- **Schema validation:** all 7 DOCX files pass the Office XML validator (`verification/docx_validation_R4.txt`). Three defects found during validation were fixed in the build: duplicate run properties from the table post-processing (introduced and fixed in R4); the position of `updateFields` in settings.xml and the incompatible `m:nor`/`m:sty` pair in equations (both inherited from R3); and missing page-margin attributes.
+- **PDF text:** 0 U+FFFD and 0 "¿" characters; no "cannot differ" and no "Platt (1999)".
+- **Pages inspected visually:**
+  - 1–3: title page; the abstract now on its own page — pandoc's default abstract style chained the paragraphs and pushed half the abstract to the next page, so it was restyled to body size;
+  - 8: list of figures;
+  - 113: Figure 3.1, redrawn;
+  - 126: Eqs. 3.6–3.8;
+  - 149: Table 3.17 — equation numbers no longer split;
+  - 167: Table 4.8;
+  - 175: Table 5.4 — on one page, headers no longer split inside words;
+  - 180: Tables 5.8–5.10;
+  - 182: Table 5.11;
+  - 184: Table 5.12.
+- **Inspection limits:** the inspection was a sample, not a certification of every page. Word recomputes page fields when the file is opened.

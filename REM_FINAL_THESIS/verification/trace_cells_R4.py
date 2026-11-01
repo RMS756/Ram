@@ -102,7 +102,7 @@ for row, key in (('REM − B1, no reviewer', 'REM_step_level_no_reviewer_minus_B
     SPEC += [(f'5.8-{key}-asr', 'Table 5.8', ['| ' + row], 'ΔASR', 'ci', [f'R2:e4_e5_enforcement_replay.json:paired_differences.{key}.ASR'], S),
              (f'5.8-{key}-bu', 'Table 5.8', ['| ' + row], 'ΔBenign', 'ci', [f'R2:e4_e5_enforcement_replay.json:paired_differences.{key}.benign_utility'], S)]
 # Table 5.11: both semantics, matched reviewer assumptions
-for cfg, label in (('B1', 'B1'), ('REM', 'REM'), ('REMnoEsc', 'REM w/o expected-loss Escalate')):
+for cfg, label in (('B1', 'B1'), ('REM', 'REM'), ('REMnoEsc', 'REM w/o Esc.')):
     for rev, rl in (('no_reviewer', 'no reviewer'), ('idealized', 'idealized reviewer')):
         for sem, sl in (('step_level', 'step-level'), ('episode_level', 'episode-level')):
             for col, m in (('ASR', 'ASR'), ('Benign utility', 'benign_utility'), ('Utility under attack', 'utility_under_attack')):
@@ -171,6 +171,16 @@ def check():
             printed = ' / '.join(m.groups())
             status = 'PASS' if [round(float(g), d) for g in m.groups()] == expect else 'FAIL'
         res.append((status, sid, f, rx[:40], printed, expect, ' ; '.join(paths), ''))
+    # timing ranges in Chapter 5 against the min/max over the REM configurations of results/pilot_R4
+    cfg = field('R4:e4_e5_enforcement_replay.json:configs')
+    rem = sorted(k for k in cfg if k.startswith(('REM_', 'REMnoEsc_')))
+    for key, label in (('latency_full_ms_median', 'Complete call median'), ('latency_full_ms_p95', 'Complete call p95'),
+                       ('latency_ms_median', 'Partial median'), ('latency_ms_p95', 'Partial p95')):
+        v = [cfg[k][key] for k in rem]
+        want = f'{min(v):.2f}–{max(v):.2f} ms'
+        ok = want in md['CHAPTER5_RESULTS_R4.md']
+        res.append(('PASS' if ok else 'FAIL', 'timing-' + key, 'CHAPTER5_RESULTS_R4.md', label, want if ok else '', want,
+                    f'R4:e4_e5_enforcement_replay.json:configs.<{len(rem)} REM configs>.{key}', 'min–max over REM configurations'))
     return res
 
 

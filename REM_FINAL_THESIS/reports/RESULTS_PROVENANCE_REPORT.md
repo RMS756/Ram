@@ -100,3 +100,14 @@ These are not made in the thesis, and they must not be added:
 - that the labels are correct, because the human label audit has not been performed.
 
 **Paired differences** (Table 5.8) are reported with grouped-bootstrap intervals over nine injection-task groups. No hypothesis test was performed, and no correction for multiple comparisons was applied.
+
+## 7. R4 addendum (1 November 2026)
+
+- **Second result set.** `results/pilot_R4/` comes from a full re-execution from commit `ea621c3`, which adds a complete-call timer and leaves every analytical computation unchanged. Compared with `results/pilot_R2/`:
+  - 0 analytical differences in 6,057 shared values;
+  - the 115 differing values are latency (100), commit stamps (13), one file path, and the median memory per step (4,364 → 4,349 bytes);
+  - see `verification/reproduction_all_differences_R4.json` and `results/pilot_R4/PROVENANCE_R4.md`.
+- **What the R4 thesis takes from where.** Analytical values come from `results/pilot_R2/`, as before. Complete-call timing and the R4 memory value come from `results/pilot_R4/`. Figure 3.1 is the redrawn design diagram in `results/pilot_R4/figures/`.
+- **Mitigation semantics.** Chapter 5 (R4) adds Table 5.11, built from the episode-level configurations that were always present in `e4_e5_enforcement_replay.json`. The R3 statement that they equalled the step-level results was wrong. No new experiment was needed.
+- **Timing labels.** Every timing value from R1–R3 is a partial-timer value (it excludes attribution, audit-record construction and history recording). See Chapter 4 §4.14 (R4).
+- **Semantic tracing.** `verification/trace_cells_R4.py` checks 120 printed values against named fields (file, configuration, semantics, reviewer, metric); all pass.

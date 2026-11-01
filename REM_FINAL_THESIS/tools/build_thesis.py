@@ -66,6 +66,11 @@ for n in ('Table Caption', 'Image Caption', 'Caption'):
         pass
 if R4:
     st['Abstract Title'].paragraph_format.page_break_before = True
+    font(st['Abstract Title'], 14, bold=True)
+    font(st['Abstract'], 12)
+    ab = st['Abstract'].paragraph_format       # pandoc's default chains every abstract paragraph (keep-with-next)
+    ab.keep_with_next = False; ab.keep_together = False; ab.line_spacing = 1.5
+    ab.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY; ab.space_before = Pt(0); ab.space_after = Pt(6)
     st['Table Caption'].paragraph_format.keep_with_next = True
 for n in ('Source Code', 'Verbatim Char'):
     try:
@@ -81,6 +86,7 @@ except KeyError:
 sec = doc.sections[0]
 sec.page_width, sec.page_height = Cm(21.0), Cm(29.7)
 sec.left_margin = Cm(3.0); sec.right_margin = Cm(2.5); sec.top_margin = Cm(2.5); sec.bottom_margin = Cm(2.5)
+sec.header_distance = Cm(1.25); sec.footer_distance = Cm(1.25); sec.gutter = Cm(0)   # pgMar requires all seven attributes
 fp = sec.footer.paragraphs[0]; fp.text = ''; fp.alignment = WD_ALIGN_PARAGRAPH.CENTER
 for kind, txt in (('begin', None), ('instr', ' PAGE '), ('separate', None), ('text', '1'), ('end', None)):
     r = fp.add_run()
@@ -121,11 +127,33 @@ def widths(md):
             rows = [[c.strip() for c in r.strip().strip('|').split('|')] for r in [L[i]] + L[i + 2:j]]
             n = len(rows[0])
             if n >= 2 and all(len(r) == n for r in rows):
-                w = []
+                # character budget of the text width at 10 pt (about 88 characters):
+                # numeric columns get their full width (no wrap); text columns at least their longest
+                # word, plus a share of the remainder in proportion to their length
+                BUDGET = 88
+                need, lo, floor, want = [], [], [], []
                 for k in range(n):
                     cells = [r[k] for r in rows]
+                    body, head = cells[1:], cells[0]
                     word = max((len(x) for c in cells for x in c.split()), default=1)
-                    w.append(max(word + 1, min(max(len(c) for c in cells), 60) * 0.55, 4))
+                    longest = max(len(c) for c in cells)
+                    numeric = all(re.fullmatch(r'[\s\d.,\[\]+\-−–/%—()≈<>×]*', c) for c in body)
+                    need.append(numeric)
+                    if numeric:
+                        lo.append(max(max(len(c) for c in body), max((len(x) for x in head.split()), default=1)) + 2)
+                        floor.append(word + 2)
+                        want.append(0)
+                    else:
+                        lo.append(word + 2); floor.append(word + 2)
+                        want.append(max(min(longest, 60) - word, 0))
+                over = sum(lo) - BUDGET
+                if over > 0:                      # shrink numeric columns towards their longest token
+                    room = sum(l - f for l, f in zip(lo, floor))
+                    if room:
+                        lo = [l - (l - f) * min(1, over / room) for l, f in zip(lo, floor)]
+                spare = max(BUDGET - sum(lo), 0)
+                tw = sum(want) or 1
+                w = [lo[k] + spare * want[k] / tw for k in range(n)]
                 tot = sum(w)
                 L[i + 1] = '|' + '|'.join('-' * max(3, round(100 * x / tot)) for x in w) + '|'
             i = j
@@ -153,8 +181,16 @@ pandoc(srcs, FULL, ['--toc', '--toc-depth=2', '--lof', '--lot'])
 z = zipfile.ZipFile(FULL); F = {n: z.read(n) for n in z.namelist()}; z.close()
 s = F['word/settings.xml'].decode()
 if 'w:updateFields' not in s:
-    s = s.replace('</w:settings>', '<w:updateFields w:val="true"/></w:settings>')
+    # schema order: updateFields precedes hdrShapeDefaults, footnotePr, endnotePr, compat, docVars, rsids, ...
+    k = min((s.find(t) for t in ('<w:hdrShapeDefaults', '<w:footnotePr', '<w:endnotePr', '<w:compat', '<w:docVars', '<w:rsids',
+                                 '<m:mathPr', '<w:attachedSchema', '<w:themeFontLang', '<w:clrSchemeMapping', '<w:decimalSymbol',
+                                 '<w:listSeparator') if s.find(t) >= 0), default=s.index('</w:settings>'))
+    s = s[:k] + '<w:updateFields w:val="true"/>' + s[k:]
 F['word/settings.xml'] = s.encode()
+ct = F['[Content_Types].xml'].decode()
+if 'Extension="png"' not in ct:
+    ct = ct.replace('<Default Extension="xml"', '<Default Extension="png" ContentType="image/png" /><Default Extension="xml"', 1)
+F['[Content_Types].xml'] = ct.encode()
 with zipfile.ZipFile(FULL, 'w', zipfile.ZIP_DEFLATED) as zo:
     for n in sorted(F, key=lambda n: (n != '[Content_Types].xml', n)): zo.writestr(n, F[n])
 
@@ -171,9 +207,11 @@ def _rpr(m):
 
 def _table(t):
     t = re.sub(r'<w:rPr>(.*?)</w:rPr>', _rpr, t, flags=re.S)
-    t = t.replace('<w:r>', '<w:r><w:rPr>' + SZ + '</w:rPr>')
+    t = re.sub(r'<w:r>(?!<w:rPr>)', '<w:r><w:rPr>' + SZ + '</w:rPr>', t)   # runs without properties only
     t = re.sub(r'<w:tr>(?!<w:trPr>)', '<w:tr><w:trPr><w:cantSplit /></w:trPr>', t)
     t = t.replace('<w:tr><w:trPr>', '<w:tr><w:trPr><w:cantSplit />').replace('<w:cantSplit /><w:cantSplit />', '<w:cantSplit />')
+    # cell text left-aligned (the Compact style inherits justification from Body Text)
+    t = re.sub(r'(<w:pPr>(?:(?!</w:pPr>|<w:jc |<w:rPr>).)*?)</w:pPr>', r'\1<w:jc w:val="left" /></w:pPr>', t, flags=re.S)
     rows = re.findall(r'<w:tr>.*?</w:tr>', t, flags=re.S)
     if len(rows) <= 25:                       # keep short tables on one page
         for r in rows[:-1]:
@@ -186,7 +224,13 @@ def r4_tables(path):
     z = zipfile.ZipFile(path); F = {n: z.read(n) for n in z.namelist()}; z.close()
     X = F['word/document.xml'].decode()
     X = re.sub(r'<w:tbl>.*?</w:tbl>', lambda m: _table(m.group(0)), X, flags=re.S)
+    # pandoc writes <m:nor/> and <m:sty/> together for \\text{}; the schema allows one (nor already means upright)
+    X = re.sub(r'(<m:nor ?/>)<m:sty m:val="[a-z]+" ?/>', r'\1', X)
     F['word/document.xml'] = X.encode()
+    ct = F['[Content_Types].xml'].decode()
+    if 'Extension="png"' not in ct:
+        ct = ct.replace('<Default Extension="xml"', '<Default Extension="png" ContentType="image/png" /><Default Extension="xml"', 1)
+    F['[Content_Types].xml'] = ct.encode()
     with zipfile.ZipFile(path, 'w', zipfile.ZIP_DEFLATED) as zo:
         for n in sorted(F, key=lambda n: (n != '[Content_Types].xml', n)): zo.writestr(n, F[n])
 

@@ -1,0 +1,7 @@
+CHAPTER1_INTRODUCTION_R4.docx: All validations PASSED! 
+CHAPTER2_LITERATURE_REVIEW_R4.docx: All validations PASSED! 
+CHAPTER3_METHODOLOGY_R4.docx: All validations PASSED! 
+CHAPTER4_IMPLEMENTATION_R4.docx: All validations PASSED! 
+CHAPTER5_RESULTS_R4.docx: All validations PASSED! 
+CHAPTER6_DISCUSSION_CONCLUSION_R4.docx: All validations PASSED! 
+REM_THESIS_R4.docx: All validations PASSED! 

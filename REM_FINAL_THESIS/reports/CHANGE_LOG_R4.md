@@ -17,28 +17,29 @@ Source: R3 chapters in `chapters/`. Output: `chapters_R4/`.
 | 11 | CHAPTER4_IMPLEMENTATION | §4.14 timers | States the actual boundaries of the partial timer, adds the complete-call timer and its test (review Finding 2). |
 | 12 | CHAPTER5_RESULTS | §5.6 processing time | Reports the measured complete-call timing and labels the earlier values as partial (review Finding 2). |
 | 13 | CHAPTER5_RESULTS | Table 5.13 RQ3 | Summary uses the complete-call measurement (review Finding 2). |
-| 14 | CHAPTER5_RESULTS | §5.1 reproduction wording | Harmonizes with the comparison record (review, smaller corrections). |
-| 15 | CHAPTER3_METHODOLOGY | §3.2.2 topology | Distinguishes independent computation from concurrent execution (review, smaller corrections). |
-| 16 | CHAPTER3_METHODOLOGY | Figure 3.1 file | Redrawn figure: Layers 2 and 3 as independent branches from Layer 1 into Layer 4; no EXPLORATORY stamp on the design diagram. |
-| 17 | CHAPTER4_IMPLEMENTATION | Table 4.5 | Updates the test count from the R4 log and lists the two R4 regression tests. |
-| 18 | CHAPTER4_IMPLEMENTATION | §4.15 tests | Test count from the R4 log. |
-| 19 | CHAPTER6_DISCUSSION_CONCLUSION | §6.4 tests | Test count from the R4 log. |
-| 20 | FRONT_MATTER | abstract tests | Test count from the R4 log. |
-| 21 | CHAPTER4_IMPLEMENTATION | Table 4.1 R4 row | Records the environment of the R4 re-execution. |
-| 22 | CHAPTER4_IMPLEMENTATION | §4.11.2 R4 re-run | Reports the R4 re-execution against the reported result set. |
-| 23 | CHAPTER5_RESULTS | §5.10 audit package | States how the 70 random-stratum items arise (checked against the generator and the file). |
-| 24 | CHAPTER2_LITERATURE_REVIEW | §2.9.3 NEXUS level R | Adds what the authors' repository README states; keeps the paper-version figures and records the discrepancy (review, source checks). |
-| 25 | CHAPTER2_LITERATURE_REVIEW | §2.9.3 calibration | ECE figures supported by the README; the isotonic comparison is not. |
-| 26 | CHAPTER2_LITERATURE_REVIEW | §2.9.3 costs | The loss-based threshold selection is supported by the README; the cost values are not. |
-| 27 | CHAPTER2_LITERATURE_REVIEW | §2.9.3 policy | The cascade is now supported at level R (stated above), so it leaves the unverified list. |
-| 28 | CHAPTER2_LITERATURE_REVIEW | §2.9.3 difference | The decision-rule difference now rests on level-R evidence for the cascade. |
-| 29 | CHAPTER2_LITERATURE_REVIEW | §2.8.4 NEXUS | Same upgrade where the objective is first mentioned. |
-| 30 | CHAPTER6_DISCUSSION_CONCLUSION | Table 6.3 NEXUS | Same upgrade in the comparison table. |
-| 31 | CHAPTER6_DISCUSSION_CONCLUSION | Table 6.3 NEXUS 2 | Same. |
-| 32 | CHAPTER1_INTRODUCTION | Platt year | 1 × 'Platt, 1999' → 'Platt, 2000': the cited version is the 2000 MIT Press chapter. |
-| 33 | CHAPTER2_LITERATURE_REVIEW | Platt year | 3 × 'Platt (1999)' → 'Platt (2000)': the cited version is the 2000 MIT Press chapter. |
-| 34 | CHAPTER3_METHODOLOGY | Platt year | 2 × 'Platt (1999)' → 'Platt (2000)': the cited version is the 2000 MIT Press chapter. |
-| 35 | CHAPTER3_METHODOLOGY | Platt year | 1 × 'Platt, 1999' → 'Platt, 2000': the cited version is the 2000 MIT Press chapter. |
-| 36 | REFERENCES | Platt entry | The entry cites the edited-volume chapter; its registered year is 2000 (Crossref, checked 1 Nov 2026). The title discrepancy is disclosed, not resolved. |
-| 37 | FRONT_MATTER | date | R4 version label. |
-| 38 | FRONT_MATTER | status R4 | R4 version label. |
+| 14 | CHAPTER5_RESULTS | §5.6 memory R4 | Reports the R4 memory value exactly instead of claiming reproduction. |
+| 15 | CHAPTER5_RESULTS | §5.1 reproduction wording | Harmonizes with the comparison record (review, smaller corrections). |
+| 16 | CHAPTER3_METHODOLOGY | §3.2.2 topology | Distinguishes independent computation from concurrent execution (review, smaller corrections). |
+| 17 | CHAPTER3_METHODOLOGY | Figure 3.1 file | Redrawn figure: Layers 2 and 3 as independent branches from Layer 1 into Layer 4; no EXPLORATORY stamp on the design diagram. |
+| 18 | CHAPTER4_IMPLEMENTATION | Table 4.5 | Updates the test count from the R4 log and lists the two R4 regression tests. |
+| 19 | CHAPTER4_IMPLEMENTATION | §4.15 tests | Test count from the R4 log. |
+| 20 | CHAPTER6_DISCUSSION_CONCLUSION | §6.4 tests | Test count from the R4 log. |
+| 21 | FRONT_MATTER | abstract tests | Test count from the R4 log. |
+| 22 | CHAPTER4_IMPLEMENTATION | Table 4.1 R4 row | Records the environment of the R4 re-execution. |
+| 23 | CHAPTER4_IMPLEMENTATION | §4.11.2 R4 re-run | Reports the R4 re-execution against the reported result set. |
+| 24 | CHAPTER5_RESULTS | §5.10 audit package | States how the 70 random-stratum items arise (checked against the generator and the file). |
+| 25 | CHAPTER2_LITERATURE_REVIEW | §2.9.3 NEXUS level R | Adds what the authors' repository README states; keeps the paper-version figures and records the discrepancy (review, source checks). |
+| 26 | CHAPTER2_LITERATURE_REVIEW | §2.9.3 calibration | ECE figures supported by the README; the isotonic comparison is not. |
+| 27 | CHAPTER2_LITERATURE_REVIEW | §2.9.3 costs | The loss-based threshold selection is supported by the README; the cost values are not. |
+| 28 | CHAPTER2_LITERATURE_REVIEW | §2.9.3 policy | The cascade is now supported at level R (stated above), so it leaves the unverified list. |
+| 29 | CHAPTER2_LITERATURE_REVIEW | §2.9.3 difference | The decision-rule difference now rests on level-R evidence for the cascade. |
+| 30 | CHAPTER2_LITERATURE_REVIEW | §2.8.4 NEXUS | Same upgrade where the objective is first mentioned. |
+| 31 | CHAPTER6_DISCUSSION_CONCLUSION | Table 6.3 NEXUS | Same upgrade in the comparison table. |
+| 32 | CHAPTER6_DISCUSSION_CONCLUSION | Table 6.3 NEXUS 2 | Same. |
+| 33 | CHAPTER1_INTRODUCTION | Platt year | 1 × 'Platt, 1999' → 'Platt, 2000': the cited version is the 2000 MIT Press chapter. |
+| 34 | CHAPTER2_LITERATURE_REVIEW | Platt year | 3 × 'Platt (1999)' → 'Platt (2000)': the cited version is the 2000 MIT Press chapter. |
+| 35 | CHAPTER3_METHODOLOGY | Platt year | 2 × 'Platt (1999)' → 'Platt (2000)': the cited version is the 2000 MIT Press chapter. |
+| 36 | CHAPTER3_METHODOLOGY | Platt year | 1 × 'Platt, 1999' → 'Platt, 2000': the cited version is the 2000 MIT Press chapter. |
+| 37 | REFERENCES | Platt entry | The entry cites the edited-volume chapter; its registered year is 2000 (Crossref, checked 1 Nov 2026). The title discrepancy is disclosed, not resolved. |
+| 38 | FRONT_MATTER | date | R4 version label. |
+| 39 | FRONT_MATTER | status R4 | R4 version label. |
