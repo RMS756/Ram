@@ -23,7 +23,7 @@ abstract: |
 
   Each constituent mechanism is established in prior work. The contribution is the combination and its evaluation.
 
-  The framework was implemented in Python and verified by 199 automated tests. It was evaluated in an exploratory study on recorded traces of 21 real LLM agents in the AgentDojo banking environment: 3,334 episodes and 6,762 proposed tool calls. The evaluation used nested grouped cross-fitting, which holds out whole attacker objectives. An independent re-execution reproduced every analytical result.
+  The framework was implemented in Python and verified by 205 automated tests. It was evaluated in an exploratory study on recorded traces of 21 real LLM agents in the AgentDojo banking environment: 3,334 episodes and 6,762 proposed tool calls. The evaluation used nested grouped cross-fitting, which holds out whole attacker objectives. An independent re-execution reproduced every analytical result.
 
   On held-out attacker objectives, the evidence available at the tool boundary separated attack attempts from legitimate calls (pooled ROC-AUC 0.938). Most of this separation came from evidence about the action's arguments. Calibration produced no observed improvement. The behavioral features were not specific to attacks in this benchmark.
 

@@ -16,7 +16,7 @@ This chapter interprets the exploratory evaluation of Chapter 5. Each conclusion
 | 2 | Evidence available at the tool boundary separates attack attempts from legitimate calls on attacker objectives, templates and backbones not seen in fitting | Held-out ROC-AUC 0.938 [0.908, 0.961]; 0.92–0.96 on other templates; 0.74–1.00 per held-out backbone (Section 5.4) | One benchmark, one attacker account, labels that are a proxy; destination novelty is easier here than in practice |
 | 3 | Action evidence carries most of this separation | Without action evidence, ROC-AUC falls to 0.799 and AP to 0.367 (Section 5.7) | Single benchmark; nine attacked groups |
 | 4 | With the pre-registered costs, tier-indexed expected-loss verdicts intervene on far more legitimate state-changing actions than the baseline, mainly because of the low thresholds the costs imply at high tiers, not because of the escalation option | Observe-only: 33 vs 132 of 180 benign state-changing steps released; REM without expected-loss Escalate releases 48 (Section 5.5) | Costs are declared, not elicited; another cost structure gives another trade-off (Section 5.9) |
-| 5 | Within the replay assumption, REM withholds more recorded attack attempts than the baseline, at a utility cost that depends on how escalations are resolved | ΔASR −0.051 [−0.130, −0.007] under step-level semantics (−0.043, point difference, under the episode-level variant); Δbenign utility −0.195 without a reviewer and +0.003 with an oracle reviewer (Section 5.6, Tables 5.8 and 5.11) | NO-ADAPT; replay is a proposed scope amendment; most of the ASR difference comes from two single-task attack categories |
+| 5 | Within the replay assumption, REM withholds more recorded attack attempts than the baseline, at a utility cost that depends on how escalations are resolved | ΔASR −0.051 [−0.130, −0.007] under step-level semantics and −0.043 [−0.122, −0.001] under the episode-level variant (each a within-semantics paired interval); Δbenign utility −0.195 without a reviewer and +0.003 with an oracle reviewer (Section 5.6, Tables 5.8 and 5.11) | NO-ADAPT; replay is a proposed scope amendment; most of the ASR difference comes from two single-task attack categories |
 
 ### 6.1.2 Why benign utility falls
 
@@ -95,7 +95,7 @@ Each mechanism in REM has precedent. The distinguishing elements are the combina
    - deterministic mitigation under two stated semantics;
    - an audit record whose attribution cannot reach the verdict.
 
-   Undeclared design values stop the software. *Evidence:* Chapters 3–4; 199 tests.
+   Undeclared design values stop the software. *Evidence:* Chapters 3–4; 205 tests.
 2. **An evaluation protocol that isolates the decision rule.** REM, the baseline and the same-escalation variant share the estimator, calibration and predicates. Grouped cross-fitting holds out whole attacker objectives, and every fitted quantity, including the feature set, is fitted within the fold. *Evidence:* Chapter 5 and its exact reproduction.
 3. **Exploratory evidence on recorded real-agent traces.** The evidence covers:
    - discrimination on unseen attacker objectives;

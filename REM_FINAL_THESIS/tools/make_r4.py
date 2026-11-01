@@ -110,25 +110,39 @@ ua_lower = all(REPLAY[f'{c}_episode_level_{r}']['utility_under_attack'][0] <= RE
 assert bu_equal and ua_lower, 'the prose below states both observations; re-check the data'
 d_ep = re_['ASR'][0] - b1e['ASR'][0]
 SAME = 'identical' if rs['ASR'][0] == re_['ASR'][0] else 'equal to three decimals'
+PAIRED = load(R2, 'e4_e5_enforcement_replay.json')['paired_differences']
+PD_S = PAIRED['REM_step_level_no_reviewer_minus_B1_step_level_no_reviewer']['ASR']
+PD_E = PAIRED['REM_episode_level_no_reviewer_minus_B1_episode_level_no_reviewer']['ASR']
+PD_EI = PAIRED['REM_episode_level_idealized_minus_B1_episode_level_idealized']['ASR']
+assert [round(x, 3) for x in PD_E] == [round(x, 3) for x in PD_EI], 'the prose says the idealized-reviewer interval is the same'
+VR_S, VR_E = rs['verdict_rates']['0'], re_['verdict_rates']['0']
+VI_S, VI_E = REPLAY['REM_step_level_idealized']['verdict_rates']['0'], REPLAY['REM_episode_level_idealized']['verdict_rates']['0']
+B1_SAME = REPLAY['B1_step_level_no_reviewer']['verdict_rates'] == REPLAY['B1_episode_level_no_reviewer']['verdict_rates']
+assert VR_S != VR_E and B1_SAME, 'the prose below states that REM verdict counts differ and B1 counts do not'
+cii = lambda v: f'{f3(v[0])} [{f3(v[1])}, {f3(v[2])}]'
 SEM_TABLE = (
     '\n#### Sensitivity to the mitigation semantics\n\n'
-    '**Table 5.11. Replay results under the two mitigation semantics** (same episodes, same verdicts, same reviewer treatment for REM and B1; ref. = the reference semantics; REM w/o Esc. = REM without expected-loss Escalate; '
+    '**Table 5.11. Replay results under the two mitigation semantics** (same episodes; same estimator, calibration, costs, predicates and thresholds; '
+    'matching reviewer treatment for REM and B1; only the mitigation semantics varies. Verdict sequences are not fixed: see the notes below. '
+    'ref. = the reference semantics; REM w/o Esc. = REM without expected-loss Escalate; '
     'attacked n = 2,979; benign n = 334; `e4_e5_enforcement_replay.json`, `configs.<configuration>_<semantics>_<reviewer>`)\n\n'
     '| Configuration | Semantics | ASR | Benign utility | Utility under attack |\n|---|---|---|---|---|\n' + '\n'.join(rows) + '\n\n'
-    'What differs, within NO-ADAPT:\n'
-    f'- **B1\'s ASR is lower under episode-level semantics** ({f3(b1s["ASR"][0])} → {f3(b1e["ASR"][0])}), The two runs differ only in the persistent restriction set, so the change comes from later state-changing calls that an earlier Block or Modify had restricted. REM\'s ASR is {SAME} ({f3(rs["ASR"][0])}); REM without expected-loss Escalate changes from {f3(ns["ASR"][0])} to {f3(ne["ASR"][0])} (unrounded {ns["ASR"][0]:.4f} → {ne["ASR"][0]:.4f}).\n'
-    f'- **Utility under attack is lower or equal under episode-level semantics** in every configuration: the same restriction set also refuses legitimate later calls.\n'
+    'What is fixed and what differs, within NO-ADAPT:\n'
+    '- **What is fixed and what varies.** Both runs of each configuration use the same recorded episodes, the same fitted parameters, costs, predicates and thresholds, and the same reviewer treatment. They differ in the mitigation semantics: under the episode-level variant, an earlier Block or Modify adds tools to a restriction set that refuses later calls.\n'
+    f'- **The verdicts are not identical.** For REM without a reviewer, the y = 0 steps received {VR_S["modify"]:,} Modify and {VR_S["escalate"]:,} Escalate verdicts under step-level semantics, against {VR_E["modify"]:,} and {VR_E["escalate"]:,} under episode-level semantics (`verdict_rates` of the two REM configurations). With the idealized reviewer the counts are {VI_S["modify"]:,} / {VI_S["escalate"]:,} against {VI_E["modify"]:,} / {VI_E["escalate"]:,}. A call refused only under the episode-level variant returns no tool output, so the evidence for later steps can differ. B1\'s verdict counts are the same under both semantics.\n'
+    f'- **B1\'s ASR is lower under episode-level semantics** ({f3(b1s["ASR"][0])} → {f3(b1e["ASR"][0])}): later state-changing calls are refused by the restriction set left by an earlier Block or Modify. REM\'s ASR is {SAME} ({f3(rs["ASR"][0])}). REM without expected-loss Escalate changes from {f3(ns["ASR"][0])} to {f3(ne["ASR"][0])} (unrounded {ns["ASR"][0]:.4f} → {ne["ASR"][0]:.4f}).\n'
+    '- **Utility under attack is lower or equal under episode-level semantics** in every configuration: the restriction set also refuses legitimate later calls.\n'
     '- **Benign utility coincides** between the two semantics in every configuration of this replay. This is an observation about these episodes, not a property of the semantics.\n'
-    f'- **The REM − B1 ASR difference narrows** from {f3(rs["ASR"][0] - b1s["ASR"][0])} (step-level, Table 5.8) to {f3(d_ep)} (episode-level, point difference; no paired interval was computed for the episode-level variant).\n\n'
+    f'- **REM − B1 ASR within each semantics** (paired grouped bootstrap, no reviewer): {cii(PD_S)} under step-level semantics (Table 5.8) and {cii(PD_E)} under episode-level semantics (`paired_differences`, episode-level REM − B1 entry). The idealized-reviewer interval under episode-level semantics is the same to three decimals. These are two within-semantics contrasts. No interval was computed for the difference between them, so none is reported. As for every interval in this chapter, the bootstrap over nine attacked groups need not reach nominal coverage, and no hypothesis test is based on these intervals (Section 5.2).\n\n'
     'Step-level semantics remains the declared reference (Chapter 3, Section 3.8), pending the supervisor\'s decision D-2. The episode-level rows are a sensitivity analysis, not a replacement for Tables 5.7–5.10.\n')
 rep(5, '\n**RQ3 quantities:**', SEM_TABLE + '\n**RQ3 quantities:**', 'new Table 5.11',
-    'Adds the compact table of both semantics from the stored results, with matched reviewer assumptions for REM and B1 (review Finding 1).')
+    'Adds the compact table of both semantics from the stored results, with matched reviewer assumptions for REM and B1 (review Finding 1); caption states what is fixed and what varies, and reports the existing episode-level paired interval (independent check, Findings 3–4).')
 rep(5, 'In replay, REM\'s ASR was lower than B1\'s (mostly credential and payment attacks)',
     'In replay, REM\'s ASR was lower than B1\'s under both mitigation semantics (mostly credential and payment attacks; Table 5.11)',
     'Table 5.13 RQ2', 'Summary states that the comparison holds under both semantics, with the table reference.')
 rep(6, 'ΔASR −0.051 [−0.130, −0.007]; Δbenign utility −0.195 without a reviewer and +0.003 with an oracle reviewer (Section 5.6)',
-    f'ΔASR −0.051 [−0.130, −0.007] under step-level semantics ({f3(d_ep)}, point difference, under the episode-level variant); Δbenign utility −0.195 without a reviewer and +0.003 with an oracle reviewer (Section 5.6, Tables 5.8 and 5.11)',
-    'Table 6.1 row 5', 'Conclusion reports the step-level result as the reference and the episode-level point difference.')
+    f'ΔASR −0.051 [−0.130, −0.007] under step-level semantics and {cii(PD_E)} under the episode-level variant (each a within-semantics paired interval); Δbenign utility −0.195 without a reviewer and +0.003 with an oracle reviewer (Section 5.6, Tables 5.8 and 5.11)',
+    'Table 6.1 row 5', 'Conclusion reports the step-level result as the reference and the existing episode-level paired interval (independent check, Finding 4).')
 rep(0, 'REM\'s attack success rate was 0.004, against 0.055 for the baseline.',
     f'REM\'s attack success rate was 0.004, against 0.055 for the baseline (step-level mitigation; {f3(b1e["ASR"][0])} for the baseline under the episode-level variant).',
     'abstract semantics', 'The abstract names the semantics of the quoted replay numbers.')
@@ -194,8 +208,9 @@ rep(4, T45, T45.replace(
     '**Table 4.5. Test suite (executed on 28 Oct 2026: 193 passed with AgentDojo installed; 189 passed and 1 module skipped without it)**',
     f'**Table 4.5. Test suite (executed on 1 Nov 2026: {NTEST} passed with AgentDojo installed; log `verification/pytest_R4.txt`)**')
     + f'\n| `test_mitigation_semantics.py` | {TESTS["test_mitigation_semantics.py"]} | Step-level and episode-level policies on a fixed sequence (Block `send_money`, then Allow `update_password`): different release outcomes, neither policy altered (added in R4) |'
-    + f'\n| `test_latency_instrumentation.py` | {TESTS["test_latency_instrumentation.py"]} | Fake-clock check that the partial timer stops before attribution, audit construction and history recording, and the complete-call timer after them (added in R4) |',
-    'Table 4.5', 'Updates the test count from the R4 log and lists the two R4 regression tests.')
+    + f'\n| `test_latency_instrumentation.py` | {TESTS["test_latency_instrumentation.py"]} | Fake-clock check that the partial timer stops before attribution, audit construction and history recording, and the complete-call timer after them (added in R4) |'
+    + f'\n| `test_docx_tables.py` | {TESTS["test_docx_tables.py"]} | Thesis build tooling, not REM: the Word table transformation keeps exactly one run-property container per run, preserves hyperlinks and equations, and is idempotent (added in R4) |',
+    'Table 4.5', 'Updates the test count from the R4 log and lists the three R4 test files.')
 rep(4, 'The software is verified by 193 tests', f'The software is verified by {NTEST} tests', '§4.15 tests', 'Test count from the R4 log.')
 rep(6, 'Chapters 3–4; 193 tests.', f'Chapters 3–4; {NTEST} tests.', '§6.4 tests', 'Test count from the R4 log.')
 rep(0, 'verified by 193 automated tests', f'verified by {NTEST} automated tests', 'abstract tests', 'Test count from the R4 log.')

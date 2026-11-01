@@ -10,9 +10,9 @@ Source: R3 chapters in `chapters/`. Output: `chapters_R4/`.
 | 4 | CHAPTER6_DISCUSSION_CONCLUSION | §6.6 semantics | The two semantics are not distinguishable only with live agents (review Finding 1). |
 | 5 | CHAPTER5_RESULTS | renumber Table 5.12 | 1 occurrence(s) → Table 5.13, to make room for the new Table 5.11. |
 | 6 | CHAPTER5_RESULTS | renumber Table 5.11 | 2 occurrence(s) → Table 5.12, to make room for the new Table 5.11. |
-| 7 | CHAPTER5_RESULTS | new Table 5.11 | Adds the compact table of both semantics from the stored results, with matched reviewer assumptions for REM and B1 (review Finding 1). |
+| 7 | CHAPTER5_RESULTS | new Table 5.11 | Adds the compact table of both semantics from the stored results, with matched reviewer assumptions for REM and B1 (review Finding 1); caption states what is fixed and what varies, and reports the existing episode-level paired interval (independent check, Findings 3–4). |
 | 8 | CHAPTER5_RESULTS | Table 5.13 RQ2 | Summary states that the comparison holds under both semantics, with the table reference. |
-| 9 | CHAPTER6_DISCUSSION_CONCLUSION | Table 6.1 row 5 | Conclusion reports the step-level result as the reference and the episode-level point difference. |
+| 9 | CHAPTER6_DISCUSSION_CONCLUSION | Table 6.1 row 5 | Conclusion reports the step-level result as the reference and the existing episode-level paired interval (independent check, Finding 4). |
 | 10 | FRONT_MATTER | abstract semantics | The abstract names the semantics of the quoted replay numbers. |
 | 11 | CHAPTER4_IMPLEMENTATION | §4.14 timers | States the actual boundaries of the partial timer, adds the complete-call timer and its test (review Finding 2). |
 | 12 | CHAPTER5_RESULTS | §5.6 processing time | Reports the measured complete-call timing and labels the earlier values as partial (review Finding 2). |
@@ -21,7 +21,7 @@ Source: R3 chapters in `chapters/`. Output: `chapters_R4/`.
 | 15 | CHAPTER5_RESULTS | §5.1 reproduction wording | Harmonizes with the comparison record (review, smaller corrections). |
 | 16 | CHAPTER3_METHODOLOGY | §3.2.2 topology | Distinguishes independent computation from concurrent execution (review, smaller corrections). |
 | 17 | CHAPTER3_METHODOLOGY | Figure 3.1 file | Redrawn figure: Layers 2 and 3 as independent branches from Layer 1 into Layer 4; no EXPLORATORY stamp on the design diagram. |
-| 18 | CHAPTER4_IMPLEMENTATION | Table 4.5 | Updates the test count from the R4 log and lists the two R4 regression tests. |
+| 18 | CHAPTER4_IMPLEMENTATION | Table 4.5 | Updates the test count from the R4 log and lists the three R4 test files. |
 | 19 | CHAPTER4_IMPLEMENTATION | §4.15 tests | Test count from the R4 log. |
 | 20 | CHAPTER6_DISCUSSION_CONCLUSION | §6.4 tests | Test count from the R4 log. |
 | 21 | FRONT_MATTER | abstract tests | Test count from the R4 log. |

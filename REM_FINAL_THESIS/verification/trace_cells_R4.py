@@ -137,6 +137,31 @@ TEXT = [
      ['R2:e4_e5_enforcement_replay.json:configs.REM_step_level_no_reviewer.ASR[0]', 'R2:e4_e5_enforcement_replay.json:configs.B1_step_level_no_reviewer.ASR[0]',
       'R2:e4_e5_enforcement_replay.json:configs.B1_episode_level_no_reviewer.ASR[0]'], 1, 3),
 ]
+PD = 'R2:e4_e5_enforcement_replay.json:paired_differences.'
+N = r'(−?\d\.\d+)'
+TEXT += [
+    ('ch5-paired-step', 'CHAPTER5_RESULTS_R4.md', rf'no reviewer\): {N} \[{N}, {N}\] under step-level semantics',
+     [PD + f'REM_step_level_no_reviewer_minus_B1_step_level_no_reviewer.ASR[{i}]' for i in range(3)], 1, 3),
+    ('ch5-paired-episode', 'CHAPTER5_RESULTS_R4.md', rf'and {N} \[{N}, {N}\] under episode-level semantics',
+     [PD + f'REM_episode_level_no_reviewer_minus_B1_episode_level_no_reviewer.ASR[{i}]' for i in range(3)], 1, 3),
+    ('ch5-paired-episode-ideal', 'CHAPTER5_RESULTS_R4.md', rf'and {N} \[{N}, {N}\] under episode-level semantics',
+     [PD + f'REM_episode_level_idealized_minus_B1_episode_level_idealized.ASR[{i}]' for i in range(3)], 1, 3),
+    ('ch6-paired-episode', 'CHAPTER6_DISCUSSION_CONCLUSION_R4.md', rf'and {N} \[{N}, {N}\] under the episode-level variant',
+     [PD + f'REM_episode_level_no_reviewer_minus_B1_episode_level_no_reviewer.ASR[{i}]' for i in range(3)], 1, 3),
+    ('ch5-verdicts-no-reviewer', 'CHAPTER5_RESULTS_R4.md',
+     r'received ([\d,]+) Modify and ([\d,]+) Escalate verdicts under step-level semantics, against ([\d,]+) and ([\d,]+) under',
+     ['R2:e4_e5_enforcement_replay.json:configs.REM_step_level_no_reviewer.verdict_rates.0.modify',
+      'R2:e4_e5_enforcement_replay.json:configs.REM_step_level_no_reviewer.verdict_rates.0.escalate',
+      'R2:e4_e5_enforcement_replay.json:configs.REM_episode_level_no_reviewer.verdict_rates.0.modify',
+      'R2:e4_e5_enforcement_replay.json:configs.REM_episode_level_no_reviewer.verdict_rates.0.escalate'], 1, 0),
+    ('ch5-verdicts-idealized', 'CHAPTER5_RESULTS_R4.md',
+     r'idealized reviewer the counts are ([\d,]+) / ([\d,]+) against ([\d,]+) / ([\d,]+)',
+     ['R2:e4_e5_enforcement_replay.json:configs.REM_step_level_idealized.verdict_rates.0.modify',
+      'R2:e4_e5_enforcement_replay.json:configs.REM_step_level_idealized.verdict_rates.0.escalate',
+      'R2:e4_e5_enforcement_replay.json:configs.REM_episode_level_idealized.verdict_rates.0.modify',
+      'R2:e4_e5_enforcement_replay.json:configs.REM_episode_level_idealized.verdict_rates.0.escalate'], 1, 0),
+]
+
 
 
 def check():
@@ -169,7 +194,7 @@ def check():
         status, printed, expect = 'FAIL', '', [round(float(field(p)) * scale, d) for p in paths]
         if m:
             printed = ' / '.join(m.groups())
-            status = 'PASS' if [round(float(g), d) for g in m.groups()] == expect else 'FAIL'
+            status = 'PASS' if [round(float(g.replace('−', '-').replace(',', '')), d) for g in m.groups()] == expect else 'FAIL'
         res.append((status, sid, f, rx[:40], printed, expect, ' ; '.join(paths), ''))
     # timing ranges in Chapter 5 against the min/max over the REM configurations of results/pilot_R4
     cfg = field('R4:e4_e5_enforcement_replay.json:configs')

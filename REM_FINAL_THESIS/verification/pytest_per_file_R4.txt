@@ -4,6 +4,7 @@ test_a3.py 10
 test_config.py 15
 test_contract_compliance.py 20
 test_crossfit.py 2
+test_docx_tables.py 6
 test_evidence.py 7
 test_frozen_math.py 43
 test_latency_instrumentation.py 2

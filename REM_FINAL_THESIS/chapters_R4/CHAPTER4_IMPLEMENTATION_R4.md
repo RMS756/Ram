@@ -199,7 +199,7 @@ An A2-driven enforcement policy and a retrained "A3 + A2" variant are not implem
 
 ### 4.11.1 Unit and contract verification
 
-**Table 4.5. Test suite (executed on 1 Nov 2026: 199 passed with AgentDojo installed; log `verification/pytest_R4.txt`)**
+**Table 4.5. Test suite (executed on 1 Nov 2026: 205 passed with AgentDojo installed; log `verification/pytest_R4.txt`)**
 
 | File | Tests | Verifies |
 |---|---|---|
@@ -217,6 +217,7 @@ An A2-driven enforcement policy and a retrained "A3 + A2" variant are not implem
 | `test_replay.py` | 3 | All-Allow replay reproduces a recorded episode; oracle Block prevents the recorded attack; **withheld calls keep tool and argument digest, and no raw attacker value appears in the audit record** (extended in R2); observe-only releases everything |
 | `test_mitigation_semantics.py` | 4 | Step-level and episode-level policies on a fixed sequence (Block `send_money`, then Allow `update_password`): different release outcomes, neither policy altered (added in R4) |
 | `test_latency_instrumentation.py` | 2 | Fake-clock check that the partial timer stops before attribution, audit construction and history recording, and the complete-call timer after them (added in R4) |
+| `test_docx_tables.py` | 6 | Thesis build tooling, not REM: the Word table transformation keeps exactly one run-property container per run, preserves hyperlinks and equations, and is idempotent (added in R4) |
 
 ### 4.11.2 Integration verification
 
@@ -312,4 +313,4 @@ The full runtime procedure of Chapter 3 is implemented in the evaluation path, e
 
 The frozen pipeline is verified by unit tests but is not the path used in the experiments. One defect in it, the loss of a blocked action's identity in the audit record, was corrected in this revision without effect on any result.
 
-The software is verified by 199 tests and by an exact analytical reproduction of the pilot. Its security effectiveness is the subject of Chapter 5.
+The software is verified by 205 tests and by an exact analytical reproduction of the pilot. Its security effectiveness is the subject of Chapter 5.

@@ -254,7 +254,7 @@ Single-task categories have no interval.
 
 #### Sensitivity to the mitigation semantics
 
-**Table 5.11. Replay results under the two mitigation semantics** (same episodes, same verdicts, same reviewer treatment for REM and B1; ref. = the reference semantics; REM w/o Esc. = REM without expected-loss Escalate; attacked n = 2,979; benign n = 334; `e4_e5_enforcement_replay.json`, `configs.<configuration>_<semantics>_<reviewer>`)
+**Table 5.11. Replay results under the two mitigation semantics** (same episodes; same estimator, calibration, costs, predicates and thresholds; matching reviewer treatment for REM and B1; only the mitigation semantics varies. Verdict sequences are not fixed: see the notes below. ref. = the reference semantics; REM w/o Esc. = REM without expected-loss Escalate; attacked n = 2,979; benign n = 334; `e4_e5_enforcement_replay.json`, `configs.<configuration>_<semantics>_<reviewer>`)
 
 | Configuration | Semantics | ASR | Benign utility | Utility under attack |
 |---|---|---|---|---|
@@ -271,11 +271,13 @@ Single-task categories have no interval.
 | REM w/o Esc., idealized reviewer | step-level (ref.) | 0.004 [0.001, 0.007] | 0.311 [0.123, 0.518] | 0.359 [0.337, 0.391] |
 | REM w/o Esc., idealized reviewer | episode-level | 0.003 [0.001, 0.006] | 0.311 [0.123, 0.518] | 0.355 [0.333, 0.387] |
 
-What differs, within NO-ADAPT:
-- **B1's ASR is lower under episode-level semantics** (0.055 → 0.046), The two runs differ only in the persistent restriction set, so the change comes from later state-changing calls that an earlier Block or Modify had restricted. REM's ASR is identical (0.004); REM without expected-loss Escalate changes from 0.004 to 0.003 (unrounded 0.0037 → 0.0034).
-- **Utility under attack is lower or equal under episode-level semantics** in every configuration: the same restriction set also refuses legitimate later calls.
+What is fixed and what differs, within NO-ADAPT:
+- **What is fixed and what varies.** Both runs of each configuration use the same recorded episodes, the same fitted parameters, costs, predicates and thresholds, and the same reviewer treatment. They differ in the mitigation semantics: under the episode-level variant, an earlier Block or Modify adds tools to a restriction set that refuses later calls.
+- **The verdicts are not identical.** For REM without a reviewer, the y = 0 steps received 239 Modify and 1,049 Escalate verdicts under step-level semantics, against 241 and 1,047 under episode-level semantics (`verdict_rates` of the two REM configurations). With the idealized reviewer the counts are 239 / 1,050 against 241 / 1,048. A call refused only under the episode-level variant returns no tool output, so the evidence for later steps can differ. B1's verdict counts are the same under both semantics.
+- **B1's ASR is lower under episode-level semantics** (0.055 → 0.046): later state-changing calls are refused by the restriction set left by an earlier Block or Modify. REM's ASR is identical (0.004). REM without expected-loss Escalate changes from 0.004 to 0.003 (unrounded 0.0037 → 0.0034).
+- **Utility under attack is lower or equal under episode-level semantics** in every configuration: the restriction set also refuses legitimate later calls.
 - **Benign utility coincides** between the two semantics in every configuration of this replay. This is an observation about these episodes, not a property of the semantics.
-- **The REM − B1 ASR difference narrows** from −0.051 (step-level, Table 5.8) to −0.043 (episode-level, point difference; no paired interval was computed for the episode-level variant).
+- **REM − B1 ASR within each semantics** (paired grouped bootstrap, no reviewer): −0.051 [−0.130, −0.007] under step-level semantics (Table 5.8) and −0.043 [−0.122, −0.001] under episode-level semantics (`paired_differences`, episode-level REM − B1 entry). The idealized-reviewer interval under episode-level semantics is the same to three decimals. These are two within-semantics contrasts. No interval was computed for the difference between them, so none is reported. As for every interval in this chapter, the bootstrap over nine attacked groups need not reach nominal coverage, and no hypothesis test is based on these intervals (Section 5.2).
 
 Step-level semantics remains the declared reference (Chapter 3, Section 3.8), pending the supervisor's decision D-2. The episode-level rows are a sensitivity analysis, not a replacement for Tables 5.7–5.10.
 

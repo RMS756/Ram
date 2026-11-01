@@ -110,4 +110,4 @@ These are not made in the thesis, and they must not be added:
 - **What the R4 thesis takes from where.** Analytical values come from `results/pilot_R2/`, as before. Complete-call timing and the R4 memory value come from `results/pilot_R4/`. Figure 3.1 is the redrawn design diagram in `results/pilot_R4/figures/`.
 - **Mitigation semantics.** Chapter 5 (R4) adds Table 5.11, built from the episode-level configurations that were always present in `e4_e5_enforcement_replay.json`. The R3 statement that they equalled the step-level results was wrong. No new experiment was needed.
 - **Timing labels.** Every timing value from R1–R3 is a partial-timer value (it excludes attribution, audit-record construction and history recording). See Chapter 4 §4.14 (R4).
-- **Semantic tracing.** `verification/trace_cells_R4.py` checks 120 printed values against named fields (file, configuration, semantics, reviewer, metric); all pass.
+- **Semantic tracing.** `verification/trace_cells_R4.py` checks 126 printed values against named fields (file, configuration, semantics, reviewer, metric); all pass.

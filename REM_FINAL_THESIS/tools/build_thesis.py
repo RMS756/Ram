@@ -195,44 +195,9 @@ with zipfile.ZipFile(FULL, 'w', zipfile.ZIP_DEFLATED) as zo:
     for n in sorted(F, key=lambda n: (n != '[Content_Types].xml', n)): zo.writestr(n, F[n])
 
 # ------------------------------------------------------------------ R4 table layout (DOCX post-processing)
-AFTER_SZ = ('highlight', 'u', 'effect', 'bdr', 'shd', 'fitText', 'vertAlign', 'rtl', 'cs', 'em', 'lang', 'eastAsianLayout', 'specVanish', 'oMath')
-SZ = '<w:sz w:val="20" /><w:szCs w:val="20" />'
-
-def _rpr(m):
-    body = re.sub(r'<w:szCs? w:val="\d+" ?/>', '', m.group(1))
-    k = min((body.find('<w:' + t + ' ') for t in AFTER_SZ if body.find('<w:' + t + ' ') >= 0), default=-1)
-    k2 = min((body.find('<w:' + t + '>') for t in AFTER_SZ if body.find('<w:' + t + '>') >= 0), default=-1)
-    k = min(x for x in (k, k2, len(body)) if x >= 0)
-    return '<w:rPr>' + body[:k] + SZ + body[k:] + '</w:rPr>'
-
-def _table(t):
-    t = re.sub(r'<w:rPr>(.*?)</w:rPr>', _rpr, t, flags=re.S)
-    t = re.sub(r'<w:r>(?!<w:rPr>)', '<w:r><w:rPr>' + SZ + '</w:rPr>', t)   # runs without properties only
-    t = re.sub(r'<w:tr>(?!<w:trPr>)', '<w:tr><w:trPr><w:cantSplit /></w:trPr>', t)
-    t = t.replace('<w:tr><w:trPr>', '<w:tr><w:trPr><w:cantSplit />').replace('<w:cantSplit /><w:cantSplit />', '<w:cantSplit />')
-    # cell text left-aligned (the Compact style inherits justification from Body Text)
-    t = re.sub(r'(<w:pPr>(?:(?!</w:pPr>|<w:jc |<w:rPr>).)*?)</w:pPr>', r'\1<w:jc w:val="left" /></w:pPr>', t, flags=re.S)
-    rows = re.findall(r'<w:tr>.*?</w:tr>', t, flags=re.S)
-    if len(rows) <= 25:                       # keep short tables on one page
-        for r in rows[:-1]:
-            r2 = re.sub(r'(<w:pStyle w:val="[^"]+" />)(?!<w:keepNext)', r'\1<w:keepNext />', r)
-            r2 = re.sub(r'<w:p>(?!<w:pPr>)', '<w:p><w:pPr><w:keepNext /></w:pPr>', r2)
-            t = t.replace(r, r2, 1)
-    return t
-
-def r4_tables(path):
-    z = zipfile.ZipFile(path); F = {n: z.read(n) for n in z.namelist()}; z.close()
-    X = F['word/document.xml'].decode()
-    X = re.sub(r'<w:tbl>.*?</w:tbl>', lambda m: _table(m.group(0)), X, flags=re.S)
-    # pandoc writes <m:nor/> and <m:sty/> together for \\text{}; the schema allows one (nor already means upright)
-    X = re.sub(r'(<m:nor ?/>)<m:sty m:val="[a-z]+" ?/>', r'\1', X)
-    F['word/document.xml'] = X.encode()
-    ct = F['[Content_Types].xml'].decode()
-    if 'Extension="png"' not in ct:
-        ct = ct.replace('<Default Extension="xml"', '<Default Extension="png" ContentType="image/png" /><Default Extension="xml"', 1)
-    F['[Content_Types].xml'] = ct.encode()
-    with zipfile.ZipFile(path, 'w', zipfile.ZIP_DEFLATED) as zo:
-        for n in sorted(F, key=lambda n: (n != '[Content_Types].xml', n)): zo.writestr(n, F[n])
+# XML-aware (lxml); see docx_tables.py, tests/test_docx_tables.py and verification/check_docx_structure_R4.py
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from docx_tables import process_docx as r4_tables  # noqa: E402
 
 if R4:
     for c in CHAPTERS:
@@ -284,7 +249,7 @@ def write_docx(F):
 F = read_docx(); X = F['word/document.xml'].decode()
 def captions(style):
     out = []
-    for m in re.finditer(r'<w:p>(?:(?!</w:p>).)*?<w:pStyle w:val="%s" />.*?</w:p>' % style, X, flags=re.S):
+    for m in re.finditer(r'<w:p>(?:(?!</w:p>).)*?<w:pStyle w:val="%s" ?/>.*?</w:p>' % style, X, flags=re.S):
         out.append(html.unescape(''.join(re.findall(r'<w:t[^>]*>([^<]*)</w:t>', m.group(0)))).strip())
     return out
 CAPS = {'Image Caption': captions('ImageCaption'), 'Table Caption': captions('TableCaption')}
@@ -311,7 +276,7 @@ def fill(pages):
             end = '<w:r><w:fldChar w:fldCharType="end" /></w:r>' if k == len(CAPS[style]) - 1 else ''
             paras.append('<w:p><w:pPr><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="%d" /></w:tabs><w:spacing w:after="60" w:line="240" w:lineRule="auto" /><w:ind w:left="0" w:hanging="0" /></w:pPr>%s<w:r><w:rPr><w:sz w:val="22" /></w:rPr><w:t xml:space="preserve">%s</w:t></w:r><w:r><w:tab /></w:r><w:r><w:rPr><w:sz w:val="22" /></w:rPr><w:t>%s</w:t></w:r>%s</w:p>'
                          % (TW, start, html.escape(c, quote=False), pg if pg else '', end))
-        pat = re.compile(r'<w:p>(?:(?!<w:p>).)*?TOC \\h \\z \\t &quot;%s&quot; \\c.*?</w:p>(?:<w:p><w:pPr><w:tabs>.*?</w:p>)*' % field.replace(' ', ' '), flags=re.S)
+        pat = re.compile(r'<w:p>(?:(?!<w:p>).)*?TOC \\h \\z \\t (?:&quot;|")%s(?:&quot;|") \\c.*?</w:p>(?:<w:p><w:pPr><w:tabs>.*?</w:p>)*' % field.replace(' ', ' '), flags=re.S)
         m = pat.search(X)
         assert m, field
         # replace the field paragraph and any previously filled entries up to the end of the sdtContent

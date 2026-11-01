@@ -13,7 +13,7 @@
 | Kind | Meaning | Evidence |
 |---|---|---|
 | **M: mathematical** | The derivation or identity is correct, checked symbolically or numerically | `verification/verify_equations.py`, run 30 Oct 2026 and again 1 Nov 2026: **21 individual checks, each PASS, followed by a summary line "ALL PASS"** (`verify_equations_output.txt`, `verify_equations_output_R4.txt`). R4: the R3 report counted the summary line and gave 22 |
-| **I: implementation** | The code computes the printed formula, and a test executes it | `EQUATION_PROVENANCE_AUDIT.md` (27 Oct) and the test runs of 30 Oct (193 passed) and 1 Nov (199 passed, `pytest_R4.txt`); for Eqs. 3.14, 3.20 and 3.21, also a direct comparison of the code with a transcription of the formula in `verify_equations.py` |
+| **I: implementation** | The code computes the printed formula, and a test executes it | `EQUATION_PROVENANCE_AUDIT.md` (27 Oct) and the test runs of 30 Oct (193 passed) and 1 Nov (205 passed, `pytest_R4.txt`); for Eqs. 3.14, 3.20 and 3.21, also a direct comparison of the code with a transcription of the formula in `verify_equations.py` |
 | **S: source** | The cited source states what is attributed to it | Chapter 3 Table 3.17 codes: FV = checked against the source; IV = identity only; NC = not accessed; DER = derived; DEF = definition. Metadata re-checked 27–30 Oct. **No full text was read in any 27–30 October session, so no S code was upgraded** |
 
 No equation identifiers (EQUATION_ID) were created. The authoritative registry is missing (RG-1), and `CLAUDE.md` § EQUATION-ID LOCK forbids provisional identifiers. Equation numbers are document references only.

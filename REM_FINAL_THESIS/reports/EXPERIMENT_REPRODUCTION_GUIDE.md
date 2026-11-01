@@ -25,7 +25,7 @@ python3 -m pip install -e ".[dev]" agentdojo==0.1.35 matplotlib
 git clone https://github.com/ethz-spylab/agentdojo.git /home/user/ethz-spylab/agentdojo
 git -C /home/user/ethz-spylab/agentdojo checkout 089ed468cf3ed0322acc66b0211f26d9d90dbf60
 
-# 1. tests (expected on the R4 branch: 199 passed; per-file counts in verification/pytest_per_file_R4.txt)
+# 1. tests (expected on the R4 branch: 205 passed; per-file counts in verification/pytest_per_file_R4.txt)
 python3 -m pytest -o addopts="" -q
 
 # 2. pilot, written OUTSIDE the repository so that committed results are not overwritten (about 12 minutes on 4 vCPU on 30 October)

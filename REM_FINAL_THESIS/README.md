@@ -13,8 +13,10 @@
 | Readiness verdict | `reports/FINAL_SUBMISSION_READINESS_REPORT_R4.md` |
 | Live-evaluation procedure (NOT EXECUTED) | `../experiments/live/` |
 | R4 result set (re-execution with the complete-call timer) | `../results/pilot_R4/` |
+| Verification records (R4) | `verification/pytest_R4.txt` (205 passed), `verify_equations_output_R4.txt` (21 PASS + ALL PASS), `trace_cells_R4.txt` (126 PASS), `docx_structure_R4.txt` and `docx_validation_R4.txt` (7/7 pass), `build_R4.log`, `reproduction_comparison_R4.json`, `reproduction_all_differences_R4.json`, `prisma_reconstruction_R4.txt`, `label_audit_package_check_R4.json` |
 
-Rebuild R4: `python3 REM_FINAL_THESIS/tools/make_r3.py && python3 REM_FINAL_THESIS/tools/make_r4.py && REM_VERSION=R4 python3 REM_FINAL_THESIS/tools/build_thesis.py`
+Rebuild R4 (from the repository root; needs `results/pilot_R2/`, `results/pilot_R4/` and `verification/pytest_per_file_R4.txt`, all committed; the DOCX/PDF build also needs pandoc ≥ 3.5, python-docx, lxml and LibreOffice with `libreoffice-math`):
+`python3 REM_FINAL_THESIS/tools/make_r3.py && python3 REM_FINAL_THESIS/tools/make_r4.py && python3 REM_FINAL_THESIS/verification/trace_cells_R4.py && REM_VERSION=R4 python3 REM_FINAL_THESIS/tools/build_thesis.py && python3 REM_FINAL_THESIS/verification/check_docx_structure_R4.py`
 
 ## R3 deliverables (30 October 2026; kept unchanged as the reviewed baseline)
 

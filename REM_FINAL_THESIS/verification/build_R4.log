@@ -1,0 +1,3 @@
+/home/user/Ram/REM_FINAL_THESIS/tools/build_thesis.py:64: UserWarning: style lookup by style_id is deprecated. Use style name as key instead.
+  font(st[n], 11, bold=(n == 'Table Caption'), italic=(n != 'Table Caption'))
+built: /home/user/Ram/REM_FINAL_THESIS/R4/REM_THESIS_R4.docx 981108 bytes; PDF 3497908 bytes; figures 4 tables 53 captions without page {'Image Caption': 0, 'Table Caption': 0}

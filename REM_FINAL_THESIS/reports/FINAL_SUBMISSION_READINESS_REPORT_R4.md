@@ -10,7 +10,7 @@ Supersedes the R3 report (`FINAL_SUBMISSION_READINESS_REPORT.md`, kept unchanged
 | **2. Ready for formal academic submission** | **NO** | Five CRITICAL findings are still open (Section 3). None can be closed by revising text, rebuilding files or passing tests |
 | **3. Not yet ready due to unresolved critical issues** | **YES**, as regards formal submission | Supervisor decisions, a human label audit, a live evaluation (or an explicit decision to submit without one) and official information are outstanding |
 
-Rebuilding the documents and passing 199 tests do not change this verdict.
+Rebuilding the documents and passing 205 tests do not change this verdict.
 
 ## 2. Per-chapter assessment (R4)
 
@@ -20,8 +20,8 @@ Rebuilding the documents and passing 199 tests do not change this verdict.
 | 1. Introduction | YES | **NO** | RQs unconfirmed (MAJOR, D-10); contribution statement depends on the live-run decision (CRITICAL) | D-10, D-12; revise §1.11 after D-15/D-1 |
 | 2. Literature Review | YES | **NO** | Record-level review, one index, no full text (MAJOR); closest prior work at levels A/R only (MAJOR). NEXUS cascade now supported at level R | Full-text reading once arxiv.org and publisher hosts are reachable; extend the search if required |
 | 3. Methodology | YES | **NO** | Specification not approved (CRITICAL, SD-FREEZE); replay scope amendment unapproved (CRITICAL, D-1); D-2 pending. R4 corrected the false invariance claim and the topology wording | Decisions SD-FREEZE, D-1, D-2, D-9 |
-| 4. Implementation | YES | **NO**, nearest to ready | No known accuracy defect after R4 (timing boundaries and semantics corrected; 199 tests pass). Wording depends on SC-2 to SC-4; x_ctx1 absent (MAJOR, disclosed) | D-3, D-4, SC-3; D-8 |
-| 5. Results | YES | **NO** | No live enforcement; unapproved design values; labels not audited by a human; replay outside the approved scope (all CRITICAL); thin statistical basis (MAJOR). R4 added the semantics table and complete-call timing; 120 checks traced to named fields | Human label audit → D-6; D-1, D-9, PILOT-AUTH; D-15 |
+| 4. Implementation | YES | **NO**, nearest to ready | No known accuracy defect after R4 (timing boundaries and semantics corrected; 205 tests pass). Wording depends on SC-2 to SC-4; x_ctx1 absent (MAJOR, disclosed) | D-3, D-4, SC-3; D-8 |
+| 5. Results | YES | **NO** | No live enforcement; unapproved design values; labels not audited by a human; replay outside the approved scope (all CRITICAL); thin statistical basis (MAJOR). R4 added the semantics table and complete-call timing; 126 checks traced to named fields | Human label audit → D-6; D-1, D-9, PILOT-AUTH; D-15 |
 | 6. Discussion and Conclusion | YES | **NO** | Inherits C-1 to C-4; text consistent with the evidence after R4 | Revise after the decisions |
 | References | YES | **NO** | No entry verified against full text; Platt title discrepancy disclosed (year corrected) | Full-text checks |
 
@@ -39,10 +39,10 @@ Rebuilding the documents and passing 199 tests do not change this verdict.
 
 | Check | Result | Record |
 |---|---|---|
-| Tests | 199 passed (193 earlier + 4 mitigation-semantics + 2 timer-boundary) | `verification/pytest_R4.txt`, `pytest_per_file_R4.txt` |
+| Tests | 205 passed (193 earlier + 4 mitigation-semantics + 2 timer-boundary + 6 Word-transformation) | `verification/pytest_R4.txt`, `pytest_per_file_R4.txt` |
 | Equation checks | 21 individual PASS checks and a final ALL PASS line | `verification/verify_equations_output_R4.txt` |
 | Pilot re-execution from commit `ea621c3` | 0 analytical differences in 6,057 shared values; complete-call median 0.21–0.28 ms, p95 0.49–0.70 ms | `verification/reproduction_comparison_R4.json`, `reproduction_all_differences_R4.json` |
-| Cell-level traceability | 120 checks (116 cells and sentences, 4 timing ranges), each against named fields; 120 PASS. A planted semantics swap was detected | `verification/trace_cells_R4.py`, `trace_cells_R4.txt` |
+| Cell-level traceability | 126 checks (116 cells and sentences, 4 timing ranges, 6 semantics-comparison sentences), each against named fields; 126 PASS. A planted semantics swap was detected | `verification/trace_cells_R4.py`, `trace_cells_R4.txt` |
 | PRISMA reconstruction | Identical counts (320 / 219 / 71) | `verification/prisma_reconstruction_R4.txt` |
 | Label-audit package | 145 items; random stratum = 30 drawn episodes, 25 with proposed calls, 70 items, matching the generator; 0 human annotations | `verification/label_audit_package_check_R4.json` |
-| Rendering | 211 pages; all 7 DOCX pass schema validation; sampled pages inspected | `R4/REM_THESIS_R4.pdf`; `CORRECTION_LOG_R4.md` §4 |
+| Rendering | 212 pages; all 7 DOCX pass schema validation and the structural run-property check; sampled pages inspected | `R4/REM_THESIS_R4.pdf`; `CORRECTION_LOG_R4.md` §4 |
