@@ -96,23 +96,27 @@ def architecture():
     box(2, 47, 26, 10, "LLM agent (unmodified)", "proposes tool call a_t\nreceives tool results", fill="#f4f3f0", edge=INK2)
     box(72, 47, 26, 10, "Tool environment", "AgentDojo banking sandbox\n(simulated accounts)", fill="#f4f3f0", edge=INK2)
     ax.text(50, 58.5, "REM sits at the tool-execution boundary (guarded ToolsExecutor)", ha="center", fontsize=8, color=INK2)
-    layers = [
-        ("1 Input & Context", "provenance labels\ninvisible-char removal\n(analysis copy only)\nentity extraction"),
-        ("2 Detection", "x_ctx2 instruction\npatterns\n(x_ctx1 classifier:\nnot available)"),
-        ("3 Behavioral\nAnalysis", "x_beh1-4 history\nx_act1-3 action /\nargument provenance"),
-        ("4 Decision Engine", "ridge LR: s_t\nPlatt on logit: p_t\ntier k_t, D1/D2\nargmin expected loss"),
-        ("5 Mitigation", "Allow / Modify /\nEscalate / Block\n(step- or episode-\nlevel variant)"),
-    ]
-    for i, (t, b) in enumerate(layers):
-        x = 2 + i * 19.6
-        box(x, 22, 17, 19, t, b)
-        if i:
-            arrow(x - 2.4, 31.5, x - 0.2, 31.5)
+    # R4 (review of 1 Nov 2026): Layers 2 and 3 are drawn as two independent branches from
+    # Layer 1 into Layer 4. They are independent computations (neither uses the other's
+    # output); the implementation evaluates them one after the other, not concurrently.
+    box(2, 22, 18, 19, "1 Input & Context",
+        "provenance labels\ninvisible-char removal\n(analysis copy only)\nentity extraction")
+    box(25, 30.5, 18, 10, "2 Detection", "x_ctx2 instruction patterns\n(x_ctx1 classifier: absent)")
+    box(25, 17, 18, 10.5, "3 Behavioral Analysis", "x_beh1-4 history\nx_act1-3 action evidence")
+    ax.text(34, 28.9, "independent computations; run in sequence", ha="center", va="center", fontsize=6, color=INK2)
+    box(48, 22, 20, 19, "4 Decision Engine", "ridge LR: s_t\nPlatt on logit: p_t\ntier k_t, D1/D2\nargmin expected loss")
+    box(73, 22, 20, 19, "5 Mitigation",
+        "Allow / Modify /\nEscalate / Block\n(step-level reference;\nepisode-level variant)")
+    arrow(20.2, 34, 24.8, 35.5)
+    arrow(20.2, 29, 24.8, 23)
+    arrow(43.2, 35.5, 47.8, 34)
+    arrow(43.2, 23, 47.8, 29)
+    arrow(68.2, 31.5, 72.8, 31.5)
     arrow(15, 47, 10, 41.5)
-    arrow(88, 41.5, 85, 47)
-    ax.text(90, 44, "released\ncalls only", fontsize=6.5, color=INK2, ha="left")
+    arrow(85, 41.5, 85, 47)
+    ax.text(87, 44, "released\ncalls only", fontsize=6.5, color=INK2, ha="left")
     arrow(80, 44.6, 24, 44.6, ls=(0, (2, 2)))
-    ax.text(52, 42.4, "tool results return to the agent and enter Layer 1 as untrusted context", fontsize=6.5, color=INK2, ha="center")
+    ax.text(52, 45.6, "tool results return to the agent and enter Layer 1 as untrusted context", fontsize=6.5, color=INK2, ha="center")
     box(52, 2, 46, 13, "Audit record (append-only, per step)",
         "x_t, s_t, p_t, k_t, risk table or 'not applicable' (D1/D2), verdict + source,\n"
         "mitigation, tool name + argument digest; linear attribution (audit-only,\ncomputed after the verdict, cannot reach it)",
@@ -121,9 +125,9 @@ def architecture():
         "grouped cross-fitting: lambda, beta, Platt (gamma_1>0), B1 thresholds,\n"
         "benign transition set, x-bar, r_mod(k); optional CUSUM (observe-only,\nnever in the verdict path)",
         fill="#fdf1ec", edge=ORANGE, ls=(0, (4, 2)))
-    arrow(40, 15.4, 68, 21.5, ls=(0, (4, 2)))
-    arrow(90, 21.5, 90, 15.4)
-    stamp(fig)
+    arrow(40, 15.4, 56, 21.5, ls=(0, (4, 2)))
+    arrow(83, 21.5, 83, 15.4)
+    # no EXPLORATORY stamp: this is the design diagram, not a result
     fig.tight_layout(rect=(0, 0.02, 1, 1))
     fig.savefig(os.path.join(FIG, "fig_architecture.png"), dpi=200)
 

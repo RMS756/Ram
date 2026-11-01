@@ -1,0 +1,27 @@
+# Live enforcing-mode evaluation: configuration TEMPLATE (R4, 1 Nov 2026).
+# STATUS: NOT EXECUTED. Every value marked REQUIRED_FROM_DESIGN must be supplied by a recorded
+# supervisor or author decision before any run. check_live_config.py refuses to proceed otherwise.
+meta:
+  status: NOT_EXECUTED
+  preregistration_commit: REQUIRED_FROM_DESIGN      # commit that freezes hypotheses, metrics and analysis (D-15)
+  authorization_record: REQUIRED_FROM_DESIGN        # reference to the written authorization for paid API use (D-15)
+  budget_limit: REQUIRED_FROM_DESIGN                # maximum spend (D-15)
+benchmark:
+  agentdojo_package: "0.1.35"                       # as used for the recorded-trace study
+  suite: banking
+  suite_version: REQUIRED_FROM_DESIGN               # v1 / v1.1 / v1.1.1 / v1.2.x; affects user_task_15 (D-6, OI-14)
+  attacks: REQUIRED_FROM_DESIGN                     # e.g. important_instructions only, or more
+  user_tasks: REQUIRED_FROM_DESIGN                  # all 16, or a pre-registered subset
+  injection_tasks: REQUIRED_FROM_DESIGN             # all 9, or a pre-registered subset
+models:
+  backbones: REQUIRED_FROM_DESIGN                   # provider + exact model version strings
+  decoding: REQUIRED_FROM_DESIGN                    # temperature, max tokens, seed where supported
+  repeats_per_configuration: REQUIRED_FROM_DESIGN   # Chapter 3 Sec. 3.11.9: at least three, pending approval
+rem:
+  configurations: [B0, B1, REM, REMnoEsc]           # as in the recorded-trace study (Chapter 3 Sec. 3.11.7)
+  mitigation_semantics: REQUIRED_FROM_DESIGN        # step_level reference and/or episode_level (D-2, SC-1)
+  costs_and_tiers: REQUIRED_FROM_DESIGN             # approved values or the declared exploratory values (D-9)
+  feature_set: REQUIRED_FROM_DESIGN                 # incl. whether x_ctx1 classifier is used (D-8)
+  label_rule: REQUIRED_FROM_DESIGN                  # after the human label audit (D-6)
+  reviewer_model: REQUIRED_FROM_DESIGN              # bounds only, or a declared reviewer model (D-7)
+  fitted_parameters_source: REQUIRED_FROM_DESIGN    # which fitted model is frozen for the live run (no refit on live data)

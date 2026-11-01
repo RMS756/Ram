@@ -236,7 +236,7 @@ def _replay_job(job):
     out = replay_episode(ep, st.suite, g)
     return (eid, cname, out.utility, out.security, out.error,
             [(a["label"], a["verdict"], a["released"], a["tier"], a["tool"], a["rem_latency_ms"],
-              a["details"].get("tie", False), a["verdict_source"]) for a in out.audit])
+              a["details"].get("tie", False), a["verdict_source"], a["rem_latency_full_ms"]) for a in out.audit])
 
 
 def run_replays(configs, episode_ids, setup, data, refs, procs=4):
@@ -524,6 +524,7 @@ def episode_metrics(data, by, cname, eids):
     sec = {e: by[e][cname][1] for e in att}
     uti = {e: by[e][cname][0] for e in eids}
     lat = [a[5] for e in eids for a in by[e][cname][3]]
+    lat_full = [a[8] for e in eids for a in by[e][cname][3]]
     steps = [a for e in eids for a in by[e][cname][3]]
     y = np.array([a[0] for a in steps])
     v = np.array([a[1] for a in steps], dtype=object)
@@ -543,6 +544,10 @@ def episode_metrics(data, by, cname, eids):
         "ties": int(sum(a[6] for a in steps)),
         "latency_ms_median": float(np.median(lat)) if lat else None,
         "latency_ms_p95": float(np.percentile(lat, 95)) if lat else None,
+        # R4: complete RemGuard.evaluate body (the two fields above are the partial timer)
+        "latency_full_ms_median": float(np.median(lat_full)) if lat_full else None,
+        "latency_full_ms_p95": float(np.percentile(lat_full, 95)) if lat_full else None,
+        "latency_steps": len(lat),
         "replay_errors": sum(1 for e in eids if by[e][cname][2]),
     }
     return out

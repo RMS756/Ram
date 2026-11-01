@@ -140,6 +140,7 @@ class RemGuard:
     restricted: Set[str] = field(default_factory=set)
     audit: List[Dict[str, Any]] = field(default_factory=list)
     latencies_ms: List[float] = field(default_factory=list)
+    full_latencies_ms: List[float] = field(default_factory=list)
     _attr: Optional[LinearShapleyAttributor] = field(default=None, init=False)
 
     def __post_init__(self) -> None:
@@ -156,7 +157,15 @@ class RemGuard:
     # -- per-step evaluation ---------------------------------------------------
 
     def evaluate(self, tool: str, args: Mapping[str, Any]) -> Tuple[bool, str]:
-        """Return (release?, notice) for one proposed call and write its audit record."""
+        """Return (release?, notice) for one proposed call and write its audit record.
+
+        Two timers share the start t0 (R4, review of 1 Nov 2026, Finding 2):
+        ``rem_latency_ms`` (partial, the historical measure) stops after mitigation and
+        before attribution, audit-record construction and history recording;
+        ``rem_latency_full_ms`` stops after the history update, so it covers the whole
+        body of this method. Both include the reference-label lookup, which is
+        evaluation bookkeeping (it feeds the audit record and the idealized reviewer).
+        """
         t0 = time.perf_counter()
         cfg = self.config
         feats, avail = self.tracker.features(tool, args)
@@ -174,7 +183,7 @@ class RemGuard:
         release, notice, mech = self._mitigate(verdict, tool, label)
         if cfg.observe_only:
             release, notice, mech = True, "", "observe_only_release"
-        elapsed = (time.perf_counter() - t0) * 1e3
+        elapsed = (time.perf_counter() - t0) * 1e3   # partial: excludes everything below
         self.latencies_ms.append(elapsed)
 
         phi = {}
@@ -219,6 +228,9 @@ class RemGuard:
             }
         )
         self.tracker.record_proposal(tool, args)
+        full = (time.perf_counter() - t0) * 1e3      # complete method body
+        self.full_latencies_ms.append(full)
+        self.audit[-1]["rem_latency_full_ms"] = full
         return release, notice
 
     def _mitigate(self, verdict: Verdict, tool: str, label: int) -> Tuple[bool, str, str]:
