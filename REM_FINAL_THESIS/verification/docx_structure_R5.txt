@@ -1,0 +1,7 @@
+PASS CHAPTER1_INTRODUCTION_R5.docx {'runs': 786, 'table_runs': 0, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
+PASS CHAPTER2_LITERATURE_REVIEW_R5.docx {'runs': 3835, 'table_runs': 1509, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
+PASS CHAPTER3_METHODOLOGY_R5.docx {'runs': 2627, 'table_runs': 682, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
+PASS CHAPTER4_IMPLEMENTATION_R5.docx {'runs': 1516, 'table_runs': 543, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
+PASS CHAPTER5_RESULTS_R5.docx {'runs': 1528, 'table_runs': 578, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
+PASS CHAPTER6_DISCUSSION_CONCLUSION_R5.docx {'runs': 796, 'table_runs': 69, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
+PASS REM_THESIS_R5.docx {'runs': 8619, 'table_runs': 3419, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
