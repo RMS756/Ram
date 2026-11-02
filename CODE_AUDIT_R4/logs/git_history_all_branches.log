@@ -1,0 +1,48 @@
+1c18cdf|2026-09-19 05:02|Claude|Implement the FROZEN REM design under the CLAUDE.md hard design lock
+afc1137|2026-09-19 05:04|Claude|Add experiment runner, README and architecture/experiment documentation
+f45ac2e|2026-09-19 06:13|Claude|Stage 2: final algorithm & mathematical decision report (documentation only)
+f46c126|2026-09-19 06:19|Claude|Stage 2: baseline test-count reconciliation audit (documentation only)
+78cb0e3|2026-09-19 06:53|Claude|Stage 3: prior-art analysis, Chapter 2/3 design, implementation plan (docs only)
+ffa8efc|2026-09-19 07:03|Claude|Stage 2.5: prior-art reconciliation and gap options (documentation only)
+0f29ac3|2026-09-21 07:37|Claude|V-1: NEXUS direct verification attempt — NOT RESOLVED (documentation only)
+ac2b5ab|2026-09-21 12:55|Claude|Chapter 2/3 audit — Phase 1 workspace inventory; BLOCKED at Phase 1 of 13
+276c0a5|2026-09-22 12:22|Claude|Stage 2: resolution pass on Chapter 2/3 audit (documentation only)
+7559cc3|2026-09-22 12:27|Claude|Relocate Stage 2 input package to repo root as REM_STAGE2_INPUT_PACKAGE/
+87c6c3a|2026-09-22 17:06|Claude|Add read-only thesis reading index for Chapters 2 and 3
+c206c7e|2026-09-22 17:22|Claude|Add read-only paper reading pack for the 18 core papers
+52ab952|2026-09-22 17:42|Claude|Record paper download status: no PDFs retrievable in this environment
+c22a97d|2026-09-23 08:47|Claude|Add Chapter 3 technical summary for supervisor review (DOCX + Markdown source)
+e05cb6b|2026-09-24 14:01|Claude|Add Chapters 4, 5 and 1 with audits, traceability and evidence (documentation only)
+511e9ff|2026-09-24 14:23|Claude|Add Arabic supervisor brief on specification conflicts SC-1 to SC-6
+56ee607|2026-09-24 14:39|Claude|Add integrated Chapter 2 literature review with evidence matrix, change log and gap map
+ebc44da|2026-09-25 17:30|Claude|Apply source-use priority rules to Chapter 2
+e9f9e01|2026-09-25 18:30|Claude|Chapter 2: partial-sources verification pass (tier-7 rule, ridge source, calibrator table)
+06ee182|2026-09-25 18:31|Claude|Chapter 2: convert to a PRISMA 2020 systematic literature review
+5e8cf3e|2026-10-27 16:33|Claude|Merge implementation branch into thesis working branch
+1037325|2026-10-27 16:37|Claude|Add project audit and progress tracker (Phase 1)
+48bef90|2026-10-27 16:40|Claude|Declare exploratory pilot E0 design (pre-registration, before any run)
+7a707a7|2026-10-27 16:57|Claude|Phase 3: REM evidence layers, A1/A2/A3, cross-fitting, AgentDojo trace and replay harness
+aa66f22|2026-10-27 17:16|Claude|Pilot experiment pipeline (E0-E6, replay, A2, sensitivity, figures)
+4281468|2026-10-27 17:28|Claude|Exploratory pilot results and experiment validity report
+ddcfd15|2026-10-27 17:32|Claude|Phase 2: equation provenance audit and foundational source verification
+b28d498|2026-10-27 17:45|Claude|Thesis draft (six chapters), audits, decisions register and defense materials
+f13f113|2026-10-27 20:53|Claude|Commit built thesis files (PDF, DOCX) previously excluded by the build/ ignore rule
+84a8c21|2026-10-28 13:49|Claude|R2 fixes: keep blocked-action identity in audit; N/A risk fields; REM-noEsc comparison; fold-specific E0 check; breakdowns, replay-failure analysis, label-audit package
+0f45527|2026-10-28 14:10|Claude|R2 revision: revised chapters 1-6, R2 results, formatting fixes
+cad298f|2026-10-28 14:10|Claude|Track R2 built thesis files (DOCX, PDF)
+3b15dc8|2026-10-28 14:22|Claude|R2 revision: Arabic reports, tracking table, Ch3/Ch4 subscript fixes, rebuilt DOCX/PDF
+09b6d14|2026-10-28 16:07|Claude|Record arxiv.org re-check: still refused in this session; no full text read
+7e19265|2026-10-28 20:05|Claude|Record Elicit full-text attempt: no API access on the plan; no full text read
+0729abe|2026-10-28 20:08|Claude|Add DOCX version of the Arabic supervisor brief (SC-1 to SC-6)
+4a286a5|2026-10-30 16:36|Claude|Merge remote-tracking branch 'origin/claude/rem-thesis-revision-r2-j1px4f' into claude/rem-algorithm-implementation-3ktvze
+bb78241|2026-10-30 17:02|Claude|R3 checkpoint: inventory, independent reproduction comparison, equation checks, currency update, scripted chapter corrections, consolidated references
+a2a41b0|2026-10-30 17:02|Claude|R3: reference verification log
+b81171c|2026-10-30 17:10|Claude|R3: full thesis DOCX/PDF build with generated contents, lists of figures and tables; equation encoding fixes
+a241429|2026-10-30 17:18|Claude|R3: verification reports (traceability, provenance, reproduction guide, equations, sources, unresolved items, cross-chapter consistency); per-value listing of reproduct
+181a38c|2026-10-30 17:22|Claude|R3: examiner review, submission-readiness verdict, AI-assistance disclosure aligned with the review record, interval-coverage caveat in Ch. 5, rebuilt DOCX/PDF, deliver
+ea621c3|2026-11-01 13:19|Claude|R4 code: complete-call timer beside the historical partial timer; regression tests for mitigation semantics and timer boundaries; architecture figure redrawn; fail-clos
+b943843|2026-11-01 13:23|Claude|R4 checkpoint: make_r4 generator, cell-level trace checker, R4 build mode, source log, correction log draft, corrected reports (D-2 effect, 21 equation checks, timer bo
+6fc0952|2026-11-01 13:41|Claude|R4: corrected thesis (chapters_R4, combined DOCX/PDF), R4 result set with complete-call timing, cell-level tracing, correction log and readiness verdict
+4e44e24|2026-11-01 14:11|Claude|R4: XML-aware Word table transformation with structural checks; Table 5.11 caption states fixed vs varied elements; existing episode-level paired interval reported; reb
+9ab3f9e|2026-11-01 14:13|Claude|R4: record fresh-clone verification of the pushed deliverables
+bec4d1c|2026-11-01 22:54|Claude|Supervisor/examiner evaluation of the R4 thesis (audit reports only)

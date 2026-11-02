@@ -1,0 +1,114 @@
+{
+ "files": {
+  "benign_release_breakdown.json": {
+   "shared": 55,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "dataset_summary.json": {
+   "shared": 548,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e0_pilot.json": {
+   "shared": 95,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e1_crossfit.json": {
+   "shared": 1116,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e2_e5_e6_observe_only.json": {
+   "shared": 1419,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e3_a2_cusum_observe_only.json": {
+   "shared": 115,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e4_cross_template_and_defenses.json": {
+   "shared": 129,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e4_e5_enforcement_replay.json": {
+   "shared": 1948,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 201,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e4_rmod_and_replay_validity.json": {
+   "shared": 119,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "feature_firing_rates.json": {
+   "shared": 28,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "latency_memory_profile.json": {
+   "shared": 14,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "r2_breakdowns.json": {
+   "shared": 557,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 2,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "sensitivity_post_hoc_exclude_user_task_15.json": {
+   "shared": 64,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 1,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  }
+ },
+ "totals": {
+  "shared": 6207,
+  "equal": 5993,
+  "diff_volatile": 214,
+  "diff_analytical": 0
+ }
+}

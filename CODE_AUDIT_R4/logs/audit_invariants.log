@@ -1,0 +1,15 @@
+[PASS] attribution_completeness_phi0_plus_sum_phi_equals_logit: max |phi0+sum(phi)-s| = 2.22e-15 over 9 folds x 200 vectors
+[PASS] a3_verdict_equals_bruteforce_argmin: 0 mismatches on 4 tiers x 2 tools x 20001 p values
+[INFO] a3_verdict_order_along_p_vs_ch3_restrictiveness_order: 2 places where the verdict moves DOWN the Ch.3 restrictiveness order Block>Escalate>Modify>Allow as p increases (pilot costs, r_mod=(1,1,0,0.01)): [(3, 'send_money', 0.4001, 'escalate', 'modify'), (4, 'send_money', 0.6667, 'escalate', 'modify')]. Expected-loss puts Escalate in a middle band (Chow-style reject); no monotone-restrictiveness property is claimed, so this is informational
+[PASS] allow_block_threshold_eq_3_9: p*_k = [0.5, 0.166667, 0.090909, 0.047619]
+[INFO] escalation_feasible_eq_3_10: {1: True, 2: True, 3: True, 4: True}
+[INFO] reachable_verdicts_send_money: {1: {'allow': True, 'modify': False, 'escalate': True, 'block': True}, 2: {'allow': True, 'modify': False, 'escalate': True, 'block': True}, 3: {'allow': True, 'modify': True, 'escalate': True, 'block': False}, 4: {'allow': True, 'modify': True, 'escalate': True, 'block': True}}
+[PASS] calibration_label_nll_recovers_parameters: true (0.8,-0.5) -> fitted (0.802,-0.511); |grad| = 2.84e-13
+[PASS] calibration_rejects_negative_slope: MonotonicityViolationError raised for an anti-monotone score
+[PASS] ridge_kkt_sum_loss_lambda_over_2: fold injection_task_0, lambda_impl=10.0: |dJ/db0|=7.1e-14, max|dJ/db|=1.2e-13; converged=True
+[PASS] ridge_refit_matches_committed_coefficients: max |refit - committed| = 0.00e+00 (n_train=5938; loss is a SUM, so lambda is not scaled by n)
+[FAIL] coefficient_signs_all_positive: negative coefficients: {'injection_task_6': {'x_beh2': -0.04275437260417512}, 'injection_task_7': {'x_ctx2': -0.0034939153250123692}}
+[INFO] provenance_matcher_boundary_cases: {"amount 3 vs date '2022-03-10'": True, "amount 100 vs 'Total 100.00'": True, "amount 10 vs '1,000'": False, 'IBAN case/space insensitive': True, 'IBAN split by space is missed': False, '2-char string never matches': False, "'new_password' vs 'new password'": False}
+[INFO] tier_boundaries: {'amount=1000': 3, 'amount=1000.01': 4, 'amount missing': 4, "amount='abc'": 4, 'amount=-5000': 4}
+[INFO] label_semantics: {'y1_steps': 921, 'y1_before_injected_content_entered_context': 19, 'y1_in_episodes_where_attack_recorded_unsuccessful': 179, 'y1_with_x_act1_0': 27, 'y0_steps_carrying_attacker_value': 116, 'y1_by_tool': {'send_money': 662, 'update_password': 124, 'update_scheduled_transaction': 135}}
+[PASS] features_precede_result_ingestion_in_build_steps: tracker.features(...) is called on the proposed call before any later tool result is added
