@@ -1,0 +1,5 @@
+ID,Boundary,Direction,Treatment in REM
+TB-1,User input,User → agent context,Labeled semi-trusted
+TB-2,Observation,Tool outputs and retrieved content → agent context,Labeled untrusted; primary observation point
+TB-3,Action,Agent → tools and external systems,Primary enforcement point
+TB-4,Memory,Context ↔ persistent store,Provenance retained on read and write (design scope only)

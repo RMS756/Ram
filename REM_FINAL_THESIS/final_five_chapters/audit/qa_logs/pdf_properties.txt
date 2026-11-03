@@ -1,0 +1,16 @@
+Creator:         Writer
+Producer:        LibreOffice 24.2
+Pages:           237
+Page size:       595.304 x 841.89 pts (A4)
+fonts embedded: DejaVuSans, DejaVuSansMono, DejaVuSansMono-Bold, DejaVuSansMono-Oblique, DejaVuSerif, FreeMono, FreeSerif, FreeSerifBold, LiberationMono, LiberationSerif, LiberationSerif-Bold, LiberationSerif-BoldItalic, LiberationSerif-Italic, OpenSymbol
+physical page 1: last line "Draft for supervisor review — not approved"
+physical page 2: last line "ii"
+physical page 5: last line "v"
+physical page 10: last line "x"
+physical page 20: last line "xx"
+physical page 23: last line "1"
+physical page 24: last line "2"
+physical page 25: last line "3"
+physical page 60: last line "38"
+physical page 120: last line "98"
+physical page 237: last line "215"

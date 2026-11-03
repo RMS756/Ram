@@ -1,0 +1,25 @@
+Symbol,Meaning
+"t, T",Step index within an episode; episode length
+g,User objective of the episode
+c_t,"Context at step t, as segments with provenance labels"
+a_t,Proposed action (tool name and arguments) at step t
+H_t,Episode history up to step t
+"y_t ∈ {0, 1}",Latent label: 1 if a_t is adversarially induced
+"x_t ∈ [0, 1]^d^","Evidence vector; groups x^ctx^, x^beh^, x^act^ with index sets I_ctx, I_beh, I_act"
+"β_0, β, λ","Logistic intercept, coefficient vector, ridge strength"
+s_t,Logit (linear predictor)
+"p̃_t, p_t",Uncalibrated probability; calibrated probability
+"γ_1, γ_0",Calibration slope and intercept
+"z_t, k_t, κ",Consequence descriptors; consequence tier; tier map
+𝒱,"Verdict set {Allow, Modify, Escalate, Block}"
+𝒱(a_t),Verdicts feasible for a_t
+v_t,Verdict issued at step t
+"L(v, y, k)",Loss of verdict v when the label is y and the tier is k
+"C_miss(k), C_FA(k), C_mod(k), C_esc","Declared costs of a missed attack, a false intervention by Block, Modify on a legitimate action, and escalation"
+r_mod(k),Residual attack-success rate after Modify at tier k (measured)
+R_t(v),Conditional risk of verdict v at step t
+"π_v,v′(k), p^\*^_k",Indifference threshold between verdicts v and v′; Allow–Block threshold
+σ(·),"Logistic function, σ(u) = 1 / (1 + exp(−u))"
+"Π, k_D2",Set of prohibited actions; minimum tier for predicate D2
+"θ(α), α_blk, α_mod",Baseline threshold for false-positive target α; targets for Block and Modify
+𝒯_R,Set of tools to which the Modify mechanism applies

@@ -1,0 +1,13 @@
+Configuration,Semantics,ASR,Benign utility,Utility under attack
+"B1, no reviewer",step-level (ref.),"0.055 [0.011, 0.134]","0.509 [0.334, 0.702]","0.514 [0.501, 0.527]"
+"B1, no reviewer",episode-level,"0.046 [0.004, 0.125]","0.509 [0.334, 0.702]","0.485 [0.474, 0.496]"
+"B1, idealized reviewer",step-level (ref.),"0.055 [0.011, 0.134]","0.494 [0.329, 0.677]","0.499 [0.487, 0.511]"
+"B1, idealized reviewer",episode-level,"0.046 [0.004, 0.125]","0.494 [0.329, 0.677]","0.470 [0.460, 0.481]"
+"REM, no reviewer",step-level (ref.),"0.004 [0.001, 0.007]","0.314 [0.110, 0.548]","0.364 [0.345, 0.389]"
+"REM, no reviewer",episode-level,"0.004 [0.001, 0.007]","0.314 [0.110, 0.548]","0.363 [0.344, 0.388]"
+"REM, idealized reviewer",step-level (ref.),"0.004 [0.001, 0.007]","0.497 [0.333, 0.680]","0.496 [0.483, 0.506]"
+"REM, idealized reviewer",episode-level,"0.004 [0.001, 0.007]","0.497 [0.333, 0.680]","0.481 [0.468, 0.492]"
+"REM w/o Esc., no reviewer",step-level (ref.),"0.004 [0.001, 0.007]","0.329 [0.126, 0.551]","0.374 [0.351, 0.407]"
+"REM w/o Esc., no reviewer",episode-level,"0.003 [0.001, 0.006]","0.329 [0.126, 0.551]","0.370 [0.347, 0.403]"
+"REM w/o Esc., idealized reviewer",step-level (ref.),"0.004 [0.001, 0.007]","0.311 [0.123, 0.518]","0.359 [0.337, 0.391]"
+"REM w/o Esc., idealized reviewer",episode-level,"0.003 [0.001, 0.006]","0.311 [0.123, 0.518]","0.355 [0.333, 0.387]"

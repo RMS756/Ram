@@ -1,0 +1,5 @@
+RQ,Objectives,Principal components,Principal metrics
+RQ1,"O1, O2",Detection and Behavioral Analysis evidence; estimator; calibration,"ROC-AUC, PR-AUC, ECE, log-loss"
+RQ2,"O2, O3",Consequence tiers; expected-loss decision; baseline policy,"ASR, benign utility, utility under attack, intervention rates, realized loss"
+RQ3,O2,Mitigation Layer; Escalate; runtime pipeline,"Residual ASR under Modify, escalation rate, latency"
+RQ4,O2,All components (ablation),Change in the metrics above

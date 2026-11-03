@@ -1,0 +1,10 @@
+ID,Question,Interpretation
+I-1,"What is a ""step"" when the agent proposes several calls at once?",Each proposed call is a step; calls in one assistant message share one decision point
+I-2,Does x^beh₂ count refused calls?,"Yes, because the methodology (Sections 3.1–3.15) states that retries raise x^beh₂"
+I-3,x^beh₃ at the first call,"""Highest level so far"" is the lowest level (0)"
+I-4,x^beh₄ at the first call,Previous tool is a start symbol; start transitions belong to the reference set
+I-5,"x^act₂ ""transactions before first untrusted ingestion""","Observable only through untrusted tool outputs, so it reduces to ""recipient not in the objective"""
+I-6,"x^act₃ ""external recipient"", ""sensitive values""",Recipient differs from the user's own IBAN; sensitive values are identifiers and profile values from sensitive reads
+I-7,Availability of x^act₁ for predicate D2,Unavailable when the tool has key arguments but the call carries none
+I-8,"""Tool class"" in episode-level Modify",The tool's action category (Table 3.7) within 𝒯_R
+I-9,Unavailable feature below k_D2,"Takes the value 0 (""not observed"") and is flagged in the audit record"

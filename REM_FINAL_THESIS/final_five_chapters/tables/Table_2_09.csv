@@ -1,0 +1,21 @@
+System,Decision basis,Calibrated probability,Consequence used in decision,Human review / graduated response,Benign utility or false interventions reported,Latency reported,Financial focus,Evidence level
+Progent,Privilege policy (solver-checked updates),NA,NR,Approval for privilege expansion,Yes (functionality maintained),NR,NR,MOD
+AgentSpec,Deterministic rules,NA,NR,NV,NV,Yes (ms),NR,MOD
+RTBAS,Information-flow screeners,NR,NR,User confirmation when integrity/confidentiality not ensured,Yes (2% utility loss under attack),NR,NR,MOD
+MCP policy-enforcement point,Declarative rules over cross-step labels,NA,NR,NR,Yes (task-level FP 30.0%; 0/30 rule FPs),Yes (sub-ms),NR,HIGH
+LATTICE,Policy-as-code; deterministic verdicts; confidence-based escalation,NR (confidence baseline analysed),NR,Yes (human escalation),Yes (operating point auto-allowed no action),Yes (µs–ms),NR,HIGH
+Task Shield,LLM verification of task alignment,NR,NR,NR,Yes (69.79% utility),NR,NR,HIGH
+VIGIL,Intent-grounded verification before commit,NR,NR,NR,Yes (utility under attack),NR,NR,HIGH (PV)
+ToolSafe,Learned step-level guardrail with feedback,NR,NR,Feedback to agent,Yes (benign completion),NR,NR,MOD
+ProvenanceGuard,Evidence support for tool calls,NR,NR,Intervention,Yes (aligned-trace intervention rate; PV),Yes (higher than baselines; PV),NR,MOD (PV)
+MI9,Governance components; agency-risk index,NR,NR,Graduated containment,NV,Overhead noted (PV),NV,MOD (PV)
+ProbGuard,Probability of remaining safe (learned DTMC) vs threshold,NR (PAC-style bounds on learned model),NR,NR,Yes (task completion),NV,NR,MOD
+DreamGuard,Calibrated fusion of hazard and prefix-risk scores,"Partial (""calibrated fusion""; no calibration metric verified)",NR,HOLD,NV,Yes (~25 ms),NR,MOD
+SafeAgent,LLM operators; policy arbitration,NV,Yes (LLM consequence modelling; PV),Yes,NV,NV,NR,LIM (PV)
+AgentTrust,Rules and analysers; worst-case over normalized variants; LLM judge for ambiguity,NR,Partial (reversibility as a judge dimension; PV),Yes (warn; review),NR,Yes (~1.72 ms; PV),NR,MOD (PV)
+NEXUS,Rule-first cascade; calibrated logistic score with loss-optimal thresholds,Yes (Platt; ECE 0.085→0.013; PV),Yes (plan annotations used by rules); intervention costs fixed (PV),Yes (confirm; revise),Yes (paired benign cases),Yes (0.205 ms median),NR,MOD (PV)
+FinHarness,Monitors and LLM-judge cascade,NR,NR,Escalation to an advanced LLM judge,Yes (benign approval; benchmark withdrawn for non-scientific reasons),NR (judge-call counts),Yes,LIM
+H.-H. Chen,Deterministic pricing against reserve capital,NA,Yes,NR,NR,NR,Partial,LIM
+Jackson,Multi-dimensional risk score; enforcement state machine,NV,NV,Yes (escalate; sanitize),NV,Qualitative only,NR,LIM (PV)
+C. Zhang et al. (analysis),Action-conditioned intervention value,Analysed (calibration did not reduce regret; PV),Yes (recoverability),NA,Regret reported,NR,NR,MOD (PV)
+"REM (this thesis; design, Chapter 3)",Calibrated per-step probability with consequence-tier losses in an expected-loss rule,Designed,Designed (declared tiers),Designed (Escalate; Modify),Exploratory evaluation (Chapter 4),Measured (Chapter 4),AgentDojo Banking,—

@@ -1,0 +1,14 @@
+Element,Established by prior research (included or foundational sources),Role in REM
+Runtime interception of each proposed tool call,Progent; AgentSpec; AgentTrust; RTBAS; MCP policy-enforcement point; LATTICE; PRISM; SafeAgent; Task Shield,"Adopted, not claimed"
+Provenance / goal–action consistency evidence,ProvenanceGuard; Task Shield; MELON; CaMeL; ACE; RTBAS; MCP policy-enforcement point,"Adopted as estimator input, not claimed"
+Behavioral / trajectory monitoring,"MI9; ProbGuard; DreamGuard; PRISM; AgentTrust; ToolSafe; Forrest et al. (1996); Chandola et al. (2009, 2012)","Adopted, not claimed"
+Ridge logistic risk scoring,Cox (1958); le Cessie & van Houwelingen (1992); NEXUS,"Adopted, not claimed"
+Platt calibration on the logit,Platt (2000); Guo et al. (2017); NEXUS,"Adopted, not claimed. Beta, isotonic and temperature calibration are reviewed and not adopted"
+Minimum expected-cost decision; reject option,Elkan (2001); Chow (1970); NEXUS objective,"Adopted, not claimed. Neither source proposed REM's four-action architecture"
+Consequence-dependent control,H.-H. Chen (2026); NEXUS; SafeAgent; AgentTrust,"Adopted as declared consequence tiers, not claimed"
+Graduated responses including human review,AgentTrust; NEXUS; RTBAS; LATTICE; SafeAgent; Jackson; MI9,"Adopted, not claimed"
+Deterministic mitigation; reversible and staged effects,Progent; AgentSpec; Cordon; GoEX,"Adopted, not claimed"
+Sequential change detection (CUSUM),Page (1954); Basseville & Nikiforov (1993); Lorden (1971),"Optional, offline, observe-only analysis outside the verdict path; not claimed"
+Additive attribution for audit,"Lundberg & Lee (2017); audit traces in NEXUS, AgentTrust, PRISM, LATTICE",Audit record only; never used for the verdict; not claimed
+"Combination of provenance evidence, a calibrated per-step probability, tier-indexed expected-loss verdicts and deterministic mitigation at the action boundary, on an open executable banking benchmark",Not reported in the examined records (record-level; weak evidence of absence),Proposed by this thesis (integrative design)
+"Evaluation that separates attack success, benign utility, intervention behavior, calibration and latency, against a consequence-independent baseline with the same estimator",Not reported in the examined records,Proposed by this thesis (empirical)

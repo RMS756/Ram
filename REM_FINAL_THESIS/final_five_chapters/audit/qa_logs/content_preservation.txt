@@ -1,0 +1,26 @@
+[numbers] distinct values in R5 Ch1-6: 360; occurrences 627; in 5ch: 642
+[numbers] values with fewer occurrences in 5ch than in R5: 0 
+[headings] R5 headings: 177; not found verbatim in 5ch: 3
+    - Purpose and Scope of the Chapter
+    - Summary by Research Question
+    - Future Work, Ordered by Dependency
+[words] R5 Ch1-6: 51778; 5ch Ch1-5: 54525 (+2747)
+    CHAPTER1_INTRODUCTION.md: 2910 words
+    CHAPTER2_LITERATURE_REVIEW.md: 23122 words
+    CHAPTER3_METHODOLOGY.md: 19082 words
+    CHAPTER4_RESULTS_DISCUSSION.md: 7994 words
+    CHAPTER5_CONCLUSIONS.md: 1417 words
+[citations]
+reference entries: 113 | distinct cited author-year keys resolved: 92
+UNRESOLVED citations: 6
+   ('Houwelingen', '1992') … ed, using ridge logistic regression (Cox, 1958; le Cessie & van Houwelingen, 1992);   
+   ('Lee', '2017') …  linear case of Shapley-value attribution given by Lundberg and Lee (2017):  $
+   ('Nikiforov', '1993') … kelihood ratio of one observation, as defined by Basseville and Nikiforov (1993), sp
+   ('Project', '2025') … ats as an instruction (Greshake et al., 2023; OWASP Gen AI Security Project, 2025). Be
+   ('Stoumbos', '1999') … sum chart for Bernoulli observations is treated by Reynolds and Stoumbos (1999).  T
+   ('Union', '2024') … ability to intervene (European Parliament & Council of the European Union, 2024). Wh
+reference keys never matched by an in-text citation: 3
+   ('Chandola', '2012')
+   ('Project.', '2025')
+   ('Union.', '2024')
+[structure] chapters: 5 (R5: 6); equations: 25 (R5: 25); tables: 58 (R5: 55); figures: 10 (R5: 4)

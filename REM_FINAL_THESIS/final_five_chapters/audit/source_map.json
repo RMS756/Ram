@@ -1,0 +1,671 @@
+{
+ "sections": [
+  {
+   "new": "1.1",
+   "title": "Background (expanded: 1.1.1-1.1.4)",
+   "old_chapter": 1,
+   "old_section": "1.1"
+  },
+  {
+   "new": "1.2",
+   "title": "Problem Statement",
+   "old_chapter": 1,
+   "old_section": "1.2"
+  },
+  {
+   "new": "1.3",
+   "title": "Motivation",
+   "old_chapter": 1,
+   "old_section": "1.3"
+  },
+  {
+   "new": "1.4",
+   "title": "Research Gap",
+   "old_chapter": 1,
+   "old_section": "1.4"
+  },
+  {
+   "new": "1.5",
+   "title": "Research Aim",
+   "old_chapter": 1,
+   "old_section": "1.5"
+  },
+  {
+   "new": "1.6",
+   "title": "Research Objectives",
+   "old_chapter": 1,
+   "old_section": "1.6"
+  },
+  {
+   "new": "1.7",
+   "title": "Research Questions",
+   "old_chapter": 1,
+   "old_section": "1.7"
+  },
+  {
+   "new": "1.8",
+   "title": "Proposed Approach",
+   "old_chapter": 1,
+   "old_section": "1.8"
+  },
+  {
+   "new": "1.9",
+   "title": "Research Methodology",
+   "old_chapter": 1,
+   "old_section": "1.9"
+  },
+  {
+   "new": "1.10",
+   "title": "Scope",
+   "old_chapter": 1,
+   "old_section": "1.10"
+  },
+  {
+   "new": "1.11",
+   "title": "Contributions: Proposed and Achieved",
+   "old_chapter": 1,
+   "old_section": "1.11"
+  },
+  {
+   "new": "1.12",
+   "title": "Thesis Organization",
+   "old_chapter": null,
+   "old_section": "NEW"
+  },
+  {
+   "new": "2.1-2.14, Appendix 2A",
+   "title": "Literature Review (numbering unchanged)",
+   "old_chapter": 2,
+   "old_section": "all"
+  },
+  {
+   "new": "3.1",
+   "title": "Research Methodology and System Scope",
+   "old_chapter": 3,
+   "old_section": "3.1"
+  },
+  {
+   "new": "3.2",
+   "title": "REM Architecture",
+   "old_chapter": 3,
+   "old_section": "3.2"
+  },
+  {
+   "new": "3.3",
+   "title": "Threat Model and Financial Action Boundary",
+   "old_chapter": 3,
+   "old_section": "3.3"
+  },
+  {
+   "new": "3.4",
+   "title": "Input & Context Layer",
+   "old_chapter": 3,
+   "old_section": "3.4"
+  },
+  {
+   "new": "3.5",
+   "title": "Detection Layer",
+   "old_chapter": 3,
+   "old_section": "3.5"
+  },
+  {
+   "new": "3.6",
+   "title": "Behavioral Analysis Layer",
+   "old_chapter": 3,
+   "old_section": "3.6"
+  },
+  {
+   "new": "3.7",
+   "title": "Decision Engine Layer",
+   "old_chapter": 3,
+   "old_section": "3.7"
+  },
+  {
+   "new": "3.8",
+   "title": "Mitigation Layer",
+   "old_chapter": 3,
+   "old_section": "3.8"
+  },
+  {
+   "new": "3.9",
+   "title": "Offline Fitting and Recalibration",
+   "old_chapter": 3,
+   "old_section": "3.9"
+  },
+  {
+   "new": "3.10",
+   "title": "Algorithm 1: REM Runtime Evaluation and Mitigation",
+   "old_chapter": 3,
+   "old_section": "3.10"
+  },
+  {
+   "new": "3.11",
+   "title": "Experimental Methodology",
+   "old_chapter": 3,
+   "old_section": "3.11"
+  },
+  {
+   "new": "3.12",
+   "title": "Evaluation Metrics",
+   "old_chapter": 3,
+   "old_section": "3.12"
+  },
+  {
+   "new": "3.13",
+   "title": "Contribution and Novelty Boundaries",
+   "old_chapter": 3,
+   "old_section": "3.13"
+  },
+  {
+   "new": "3.14",
+   "title": "Threats to Validity",
+   "old_chapter": 3,
+   "old_section": "3.14"
+  },
+  {
+   "new": "3.15",
+   "title": "Equation Provenance Summary",
+   "old_chapter": 3,
+   "old_section": "3.15"
+  },
+  {
+   "new": "3.16",
+   "title": "System Implementation",
+   "old_chapter": null,
+   "old_section": "NEW"
+  },
+  {
+   "new": "3.16.1",
+   "title": "Purpose and Scope",
+   "old_chapter": 4,
+   "old_section": "4.1"
+  },
+  {
+   "new": "3.16.2",
+   "title": "Software Environment",
+   "old_chapter": 4,
+   "old_section": "4.2"
+  },
+  {
+   "new": "3.16.3",
+   "title": "Code Organization and Execution Paths",
+   "old_chapter": 4,
+   "old_section": "4.3"
+  },
+  {
+   "new": "3.16.4",
+   "title": "Layer 1 \u2014 Input and Context",
+   "old_chapter": 4,
+   "old_section": "4.4"
+  },
+  {
+   "new": "3.16.5",
+   "title": "Layer 2 \u2014 Detection",
+   "old_chapter": 4,
+   "old_section": "4.5"
+  },
+  {
+   "new": "3.16.6",
+   "title": "Layer 3 \u2014 Behavioral and Action Evidence",
+   "old_chapter": 4,
+   "old_section": "4.6"
+  },
+  {
+   "new": "3.16.7",
+   "title": "Layer 4 \u2014 Decision Engine",
+   "old_chapter": 4,
+   "old_section": "4.7"
+  },
+  {
+   "new": "3.16.8",
+   "title": "Layer 5 \u2014 Mitigation, and What Happens at the Tool Boundary",
+   "old_chapter": 4,
+   "old_section": "4.8"
+  },
+  {
+   "new": "3.16.9",
+   "title": "Non-Invasive Placement and Its Limits",
+   "old_chapter": 4,
+   "old_section": "4.9"
+  },
+  {
+   "new": "3.16.10",
+   "title": "Optional Sequential Analysis (A2)",
+   "old_chapter": 4,
+   "old_section": "4.10"
+  },
+  {
+   "new": "3.16.11",
+   "title": "Verification",
+   "old_chapter": 4,
+   "old_section": "4.11"
+  },
+  {
+   "new": "3.16.12",
+   "title": "Correspondence Between Requirements, Equations, Code, Tests and Results",
+   "old_chapter": 4,
+   "old_section": "4.12"
+  },
+  {
+   "new": "3.16.13",
+   "title": "Logging of Sensitive Values",
+   "old_chapter": 4,
+   "old_section": "4.13"
+  },
+  {
+   "new": "3.16.14",
+   "title": "Runtime Measurement",
+   "old_chapter": 4,
+   "old_section": "4.14"
+  },
+  {
+   "new": "3.17",
+   "title": "Closed-Loop Evaluation with Live Agents: Design and Implementation Status",
+   "old_chapter": null,
+   "old_section": "NEW"
+  },
+  {
+   "new": "3.18",
+   "title": "Chapter Summary (old 3.16 + old 4.15 merged)",
+   "old_chapter": "3+4",
+   "old_section": "3.16, 4.15"
+  },
+  {
+   "new": "4.1",
+   "title": "Purpose, Status and Kinds of Evidence",
+   "old_chapter": 5,
+   "old_section": "5.1"
+  },
+  {
+   "new": "4.2",
+   "title": "Data, Protocol and Chronology",
+   "old_chapter": 5,
+   "old_section": "5.2"
+  },
+  {
+   "new": "4.3",
+   "title": "Pilot E0: Feasibility and Feature Retention",
+   "old_chapter": 5,
+   "old_section": "5.3"
+  },
+  {
+   "new": "4.4",
+   "title": "RQ1 \u2014 Offline Classification (Held-Out Predictions)",
+   "old_chapter": 5,
+   "old_section": "5.4"
+  },
+  {
+   "new": "4.5",
+   "title": "RQ2 \u2014 Observe-Only Decisions",
+   "old_chapter": 5,
+   "old_section": "5.5"
+  },
+  {
+   "new": "4.6",
+   "title": "RQ2 and RQ3 \u2014 Replay Sensitivity Analysis",
+   "old_chapter": 5,
+   "old_section": "5.6"
+  },
+  {
+   "new": "4.7",
+   "title": "RQ4 \u2014 Ablations",
+   "old_chapter": 5,
+   "old_section": "5.7"
+  },
+  {
+   "new": "4.8",
+   "title": "Optional Sequential Analysis (CUSUM, observe-only)",
+   "old_chapter": 5,
+   "old_section": "5.8"
+  },
+  {
+   "new": "4.9",
+   "title": "Realized Loss across the Declared Grid",
+   "old_chapter": 5,
+   "old_section": "5.9"
+  },
+  {
+   "new": "4.10",
+   "title": "Labels, the user_task_15 Collision and Benchmark Versions",
+   "old_chapter": 5,
+   "old_section": "5.10"
+  },
+  {
+   "new": "4.11",
+   "title": "Distributed Defenses (Recorded Outcomes Only)",
+   "old_chapter": 5,
+   "old_section": "5.11"
+  },
+  {
+   "new": "4.12",
+   "title": "Closed-Loop Evaluation with Live Agents: Status",
+   "old_chapter": null,
+   "old_section": "NEW"
+  },
+  {
+   "new": "4.13",
+   "title": "Replay Versus Live Evaluation",
+   "old_chapter": null,
+   "old_section": "NEW"
+  },
+  {
+   "new": "4.14",
+   "title": "Interpretation of the Findings",
+   "old_chapter": 6,
+   "old_section": "6.1"
+  },
+  {
+   "new": "4.15",
+   "title": "Comparison with Prior Work",
+   "old_chapter": 6,
+   "old_section": "6.3"
+  },
+  {
+   "new": "4.16",
+   "title": "Threats to Validity and Limitations",
+   "old_chapter": 6,
+   "old_section": "6.5"
+  },
+  {
+   "new": "4.17",
+   "title": "Chapter Summary",
+   "old_chapter": null,
+   "old_section": "NEW"
+  },
+  {
+   "new": "5.1",
+   "title": "Introduction",
+   "old_chapter": null,
+   "old_section": "NEW"
+  },
+  {
+   "new": "5.2",
+   "title": "Answers to the Research Questions",
+   "old_chapter": 5,
+   "old_section": "5.12"
+  },
+  {
+   "new": "5.3",
+   "title": "Achievement of the Objectives",
+   "old_chapter": 6,
+   "old_section": "6.2"
+  },
+  {
+   "new": "5.4",
+   "title": "Contributions",
+   "old_chapter": 6,
+   "old_section": "6.4"
+  },
+  {
+   "new": "5.5",
+   "title": "Limitations",
+   "old_chapter": null,
+   "old_section": "NEW"
+  },
+  {
+   "new": "5.6",
+   "title": "Recommendations and Future Work, Ordered by Dependency",
+   "old_chapter": 6,
+   "old_section": "6.6"
+  },
+  {
+   "new": "5.7",
+   "title": "Conclusion",
+   "old_chapter": 6,
+   "old_section": "6.7"
+  }
+ ],
+ "section_map": {
+  "1.1": "1.1",
+  "1.2": "1.2",
+  "1.3": "1.3",
+  "1.4": "1.4",
+  "1.5": "1.5",
+  "1.6": "1.6",
+  "1.7": "1.7",
+  "1.8": "1.8",
+  "1.9": "1.9",
+  "1.10": "1.10",
+  "1.11": "1.11",
+  "1.12": "1.12",
+  "2.1": "2.1",
+  "2.2": "2.2",
+  "2.2.1": "2.2.1",
+  "2.2.2": "2.2.2",
+  "2.2.3": "2.2.3",
+  "2.2.4": "2.2.4",
+  "2.2.5": "2.2.5",
+  "2.2.6": "2.2.6",
+  "2.2.7": "2.2.7",
+  "2.2.8": "2.2.8",
+  "2.3": "2.3",
+  "2.3.1": "2.3.1",
+  "2.3.2": "2.3.2",
+  "2.3.3": "2.3.3",
+  "2.4": "2.4",
+  "2.4.1": "2.4.1",
+  "2.4.2": "2.4.2",
+  "2.4.3": "2.4.3",
+  "2.4.4": "2.4.4",
+  "2.4.5": "2.4.5",
+  "2.5": "2.5",
+  "2.6": "2.6",
+  "2.6.1": "2.6.1",
+  "2.6.2": "2.6.2",
+  "2.6.3": "2.6.3",
+  "2.6.4": "2.6.4",
+  "2.6.5": "2.6.5",
+  "2.7": "2.7",
+  "2.7.1": "2.7.1",
+  "2.7.2": "2.7.2",
+  "2.7.3": "2.7.3",
+  "2.7.4": "2.7.4",
+  "2.8": "2.8",
+  "2.8.1": "2.8.1",
+  "2.8.2": "2.8.2",
+  "2.8.3": "2.8.3",
+  "2.8.4": "2.8.4",
+  "2.8.5": "2.8.5",
+  "2.9": "2.9",
+  "2.9.1": "2.9.1",
+  "2.9.2": "2.9.2",
+  "2.9.3": "2.9.3",
+  "2.9.4": "2.9.4",
+  "2.10": "2.10",
+  "2.10.1": "2.10.1",
+  "2.10.2": "2.10.2",
+  "2.10.3": "2.10.3",
+  "2.10.4": "2.10.4",
+  "2.11": "2.11",
+  "2.12": "2.12",
+  "2.13": "2.13",
+  "2.13.1": "2.13.1",
+  "2.13.2": "2.13.2",
+  "2.13.3": "2.13.3",
+  "2.13.4": "2.13.4",
+  "2.13.5": "2.13.5",
+  "2.13.6": "2.13.6",
+  "2.13.7": "2.13.7",
+  "2.14": "2.14",
+  "3.1": "3.1",
+  "3.1.1": "3.1.1",
+  "3.1.2": "3.1.2",
+  "3.1.3": "3.1.3",
+  "3.1.4": "3.1.4",
+  "3.1.5": "3.1.5",
+  "3.1.6": "3.1.6",
+  "3.2": "3.2",
+  "3.2.1": "3.2.1",
+  "3.2.2": "3.2.2",
+  "3.2.3": "3.2.3",
+  "3.3": "3.3",
+  "3.3.1": "3.3.1",
+  "3.3.2": "3.3.2",
+  "3.3.3": "3.3.3",
+  "3.3.4": "3.3.4",
+  "3.3.5": "3.3.5",
+  "3.3.6": "3.3.6",
+  "3.3.7": "3.3.7",
+  "3.4": "3.4",
+  "3.4.1": "3.4.1",
+  "3.4.2": "3.4.2",
+  "3.4.3": "3.4.3",
+  "3.5": "3.5",
+  "3.6": "3.6",
+  "3.6.1": "3.6.1",
+  "3.6.2": "3.6.2",
+  "3.7": "3.7",
+  "3.7.1": "3.7.1",
+  "3.7.2": "3.7.2",
+  "3.7.3": "3.7.3",
+  "3.7.4": "3.7.4",
+  "3.7.5": "3.7.5",
+  "3.7.6": "3.7.6",
+  "3.7.7": "3.7.7",
+  "3.8": "3.8",
+  "3.9": "3.9",
+  "3.10": "3.10",
+  "3.11": "3.11",
+  "3.11.1": "3.11.1",
+  "3.11.2": "3.11.2",
+  "3.11.3": "3.11.3",
+  "3.11.4": "3.11.4",
+  "3.11.5": "3.11.5",
+  "3.11.6": "3.11.6",
+  "3.11.7": "3.11.7",
+  "3.11.8": "3.11.8",
+  "3.11.9": "3.11.9",
+  "3.11.10": "3.11.10",
+  "3.11.11": "3.11.11",
+  "3.12": "3.12",
+  "3.12.1": "3.12.1",
+  "3.12.2": "3.12.2",
+  "3.12.3": "3.12.3",
+  "3.13": "3.13",
+  "3.14": "3.14",
+  "3.15": "3.15",
+  "3.16": "3.18",
+  "4.1": "3.16.1",
+  "4.2": "3.16.2",
+  "4.3": "3.16.3",
+  "4.4": "3.16.4",
+  "4.5": "3.16.5",
+  "4.6": "3.16.6",
+  "4.7": "3.16.7",
+  "4.8": "3.16.8",
+  "4.9": "3.16.9",
+  "4.10": "3.16.10",
+  "4.11": "3.16.11",
+  "4.11.1": "3.16.11.1",
+  "4.11.2": "3.16.11.2",
+  "4.11.3": "3.16.11.3",
+  "4.12": "3.16.12",
+  "4.13": "3.16.13",
+  "4.14": "3.16.14",
+  "4.15": "3.18",
+  "5.1": "4.1",
+  "5.2": "4.2",
+  "5.2.1": "4.2.1",
+  "5.2.2": "4.2.2",
+  "5.2.3": "4.2.3",
+  "5.3": "4.3",
+  "5.4": "4.4",
+  "5.5": "4.5",
+  "5.6": "4.6",
+  "5.6.1": "4.6.1",
+  "5.6.2": "4.6.2",
+  "5.7": "4.7",
+  "5.8": "4.8",
+  "5.9": "4.9",
+  "5.10": "4.10",
+  "5.11": "4.11",
+  "5.12": "5.2",
+  "6.1": "4.14",
+  "6.1.1": "4.14.1",
+  "6.1.2": "4.14.2",
+  "6.1.3": "4.14.3",
+  "6.1.4": "4.14.4",
+  "6.2": "5.3",
+  "6.3": "4.15",
+  "6.4": "5.4",
+  "6.5": "4.16",
+  "6.6": "5.6",
+  "6.7": "5.7"
+ },
+ "table_map": {
+  "2.1": "2.1",
+  "2.2": "2.2",
+  "2.3": "2.3",
+  "2.4": "2.4",
+  "2.5": "2.5",
+  "2.6": "2.6",
+  "2.7": "2.7",
+  "2.9": "2.9",
+  "2.10": "2.10",
+  "2.11": "2.11",
+  "2.12": "2.12",
+  "2.13": "2.13",
+  "2.8": "2.8",
+  "3.1": "3.1",
+  "3.2": "3.2",
+  "3.3": "3.3",
+  "3.4": "3.4",
+  "3.5": "3.5",
+  "3.6": "3.6",
+  "3.7": "3.7",
+  "3.8": "3.8",
+  "3.9": "3.9",
+  "3.10": "3.10",
+  "3.11": "3.11",
+  "3.12": "3.12",
+  "3.13": "3.13",
+  "3.14": "3.14",
+  "3.15": "3.15",
+  "3.16": "3.16",
+  "3.17": "3.17",
+  "4.1": "3.18",
+  "4.2": "3.19",
+  "4.3": "3.20",
+  "4.4": "3.21",
+  "4.5": "3.22",
+  "4.6": "3.23",
+  "4.7": "3.24",
+  "4.8": "3.25",
+  "5.1": "4.1",
+  "5.2": "4.2",
+  "5.3": "4.3",
+  "5.4": "4.4",
+  "5.5": "4.5",
+  "5.6": "4.6",
+  "5.7": "4.7",
+  "5.8": "4.8",
+  "5.9": "4.9",
+  "5.10": "4.10",
+  "5.11": "4.11",
+  "5.12": "4.12",
+  "5.13": "5.1",
+  "6.1": "4.15",
+  "6.3": "4.16",
+  "6.2": "5.2"
+ },
+ "figure_map": {
+  "2.1": "2.1",
+  "3.1": "3.1",
+  "5.1": "4.1",
+  "5.2": "4.2",
+  "1.1": "1.1",
+  "3.2": "3.2",
+  "3.3": "3.3",
+  "3.4": "3.4",
+  "3.5": "3.5",
+  "4.3": "4.3"
+ },
+ "chapter_map": {
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 3,
+  "5": 4,
+  "6": 5
+ }
+}

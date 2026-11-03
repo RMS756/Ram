@@ -1,4 +1,12 @@
-# REM Thesis — Deliverables (current version: R5, 2 November 2026)
+# REM Thesis — Deliverables (current version: five-chapter thesis, 3 November 2026)
+
+## Five-chapter thesis and live-integration status (3 November 2026)
+
+**Current version:** `final_five_chapters/REM_THESIS_5CH_FINAL.docx` / `.pdf` (237 pages). It reorganizes R5 into five chapters (Introduction; Literature Review; Methodology, Design and Implementation; Results and Discussion; Conclusions and Recommendations) with university-style preliminary pages (placeholders where only the student or the university can complete them), an Arabic abstract (draft), six new figures, and new sections on the closed-loop live-agent integration. **No numerical result was changed.** The live AgentDojo experiment is implemented and tested with scripted agents but **was not executed** (no credential; design inputs D-15 undecided). Status: ready for supervisor review; formal submission blocked. See `final_five_chapters/README.md` and `final_five_chapters/audit/FINAL_SUBMISSION_READINESS.md`.
+
+---
+
+# R5 (2 November 2026)
 
 ## R5: supplementary literature integration (2 November 2026)
 

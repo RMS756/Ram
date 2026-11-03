@@ -1,0 +1,7 @@
+Problem,Method (original source),Why relevant,Main limitation,Use among included studies
+Probabilistic risk scoring,"Logistic regression (Cox, 1958); ridge penalty (le Cessie & van Houwelingen, 1992); naive Bayes as alternative (Ng & Jordan, 2002)","Fast, inspectable, probabilistic output",Linear log-odds; distribution shift,NEXUS (plan level)
+Calibration,"Platt (2000); temperature (Guo et al., 2017); isotonic (Zadrozny & Elkan, 2002); beta (Kull et al., 2017)",Makes scores usable with costs,Calibration does not imply good control,"NEXUS (Platt, isotonic evaluated); C. Zhang et al. (analysis); DreamGuard (calibrated fusion)"
+Calibration measurement,"ECE (Naeini et al., 2015; Guo et al., 2017)",Quantifies miscalibration,Bin-dependent; unstable with small sets,NEXUS; C. Zhang et al.
+Sequential accumulation,"CUSUM (Page, 1954; Basseville & Nikiforov, 1993); optimality (Lorden, 1971)",Statistically grounded accumulation,Assumptions not met by agent trajectories; evadable by pacing,"Heuristic analogues only (PRISM; FinHarness). In REM: optional, observe-only"
+Response selection,"Minimum expected cost (Elkan, 2001); reject option (Chow, 1970)",Uses consequences explicitly; human-review region,Costs uncertain; recoverability omitted,"NEXUS objective (fixed costs, cascade); consequence pricing (H.-H. Chen)"
+Audit decomposition,"Additive attribution (Lundberg & Lee, 2017)",Exact for linear scores; cheap,Not a novel explanation mechanism,"Rule/evidence/audit traces in NEXUS, AgentTrust, ShieldAgent, ProvenanceGuard, PRISM, LATTICE"

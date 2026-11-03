@@ -1,0 +1,5 @@
+Verdict v,"L(v, 0, k): legitimate action","L(v, 1, k): adversarially induced action"
+Allow,0,C_miss(k)
+Modify,C_mod(k),r_mod(k) · C_miss(k)
+Escalate,C_esc,C_esc
+Block,C_FA(k),0

@@ -1,0 +1,11 @@
+ID,Assumption,Type,Status
+AS-1,REM can intercept each proposed tool call and each tool result without modifying the agent's internals.,Architectural,To be demonstrated on the chosen platform (Section 3.16)
+AS-2,Context segments can be attributed to their source channel reliably enough to assign a provenance label.,Architectural,To be demonstrated
+AS-3,"The adversary cannot modify REM's code, parameters, policy, or logs.",Architectural,Assumed; stated as a limitation
+AS-4,The user's objective is legitimate; REM protects the user against external manipulation.,Scoping,Stated choice
+AS-5,Tool outputs and retrieved content are untrusted by default.,Scoping,"Follows from the indirect injection threat (Greshake et al., 2023)"
+AS-6,Adversaries do not adapt to REM's parameters in the primary evaluation.,Scoping,Declared limitation
+AS-7,Observable evidence separates adversarially induced from benign proposed actions.,Empirical,Tested in pilot E0 (Section 3.11.8)
+AS-8,The benign reference data are representative of the evaluated workload.,Empirical,Threatened by benchmark scope (Section 3.14)
+AS-9,LLM non-determinism is bounded enough for repeated runs to characterize variance.,Empirical,Measured through repeated runs
+AS-10,"The agent's internal reasoning is not used; REM relies only on observable inputs, proposed actions, and tool results.",Architectural,Design constraint

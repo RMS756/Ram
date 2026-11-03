@@ -1,0 +1,2 @@
+pages scanned: 237 ; pages with ink inside the outer 2.2 cm of the right margin: []
+pages with almost no content above the footer (possible blank pages; (page, dark pixels at 40 dpi)): []

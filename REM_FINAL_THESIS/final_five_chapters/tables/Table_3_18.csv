@@ -1,0 +1,10 @@
+Item,Value
+Language,Python 3.11.17
+Numerical library,NumPy 2.4.6
+Benchmark,"AgentDojo 0.1.35 (PyPI), banking suite; suite version v1 for execution"
+Recorded traces,"AgentDojo repository `runs/`, commit `089ed468cf3ed0322acc66b0211f26d9d90dbf60`"
+Test framework,pytest 9.1.1
+Hardware,"Linux container, 4 vCPU (Intel Xeon @ 2.80 GHz), 15 GB RAM"
+Re-execution in a fresh environment (R3),"30 Oct 2026, merged repository state, Python 3.11.17, NumPy 2.4.6, AgentDojo 0.1.35, Intel Xeon @ 2.10 GHz, 4 vCPU; see Section 3.16.11.2"
+Re-execution with the complete-call timer (R4),"1 Nov 2026, branch `claude/rem-r4-corrections-3ktvze`, Python 3.11.17, NumPy 2.4.6, AgentDojo 0.1.35, Intel Xeon @ 2.80 GHz, 4 vCPU; results in `results/pilot_R4/`; see Section 3.16.11.2"
+Code version of the reported results,git commit `84a8c21` (revision R2). The first run (commit `aa66f22`) gave identical analytical results; see Section 3.16.11

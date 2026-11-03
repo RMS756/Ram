@@ -1,0 +1,8 @@
+Configuration,Held-out ROC-AUC,"Observe-only intervention, y = 0","Observe-only intervention, y = 1",Replay ASR,Replay benign utility
+Full REM,0.938,0.227,0.973,0.004,0.314
+− context evidence (x^ctx₂),0.938,0.228,0.973,0.004,0.314
+− behavioral evidence,0.938,0.174,0.973,0.004,0.419
+− action evidence,0.799,0.242,0.921,0.006,0.314
+− calibration (p̃ in Eq. 3.6),—,0.213,0.973,0.004,0.329
+one tier for all actions: 1 / 2 / 3 / 4,—,0.093 / 0.157 / 0.233 / 0.336,0.757 / 0.909 / 0.972 / 0.976,0.051 / 0.022 / 0.004 / 0.003,0.440 / 0.353 / 0.338 / 0.314
+"− predicates D1, D2",—,0.226,0.973,0.004,0.314

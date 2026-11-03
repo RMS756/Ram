@@ -1,0 +1,17 @@
+Requirement (the methodology (Sections 3.1–3.15)),Equation,Function,Test,Result artifact (`results/pilot_R2/`)
+Logit and uncalibrated probability,3.1,`ridge_logistic.RidgeLogisticRegression.decision_function`,`test_frozen_math`,`e1_crossfit.json` (`pooled_uncalibrated`)
+Ridge fit (λ = λ_impl/2),3.2,`RidgeLogisticRegression.fit`,`test_frozen_math`,"`e1_crossfit.json` (`per_fold.*.lambda`, `lambda_chapter3_eq3_2_scale`)"
+"Calibration map, γ₁ > 0",3.3,`PlattLogitCalibrator.calibrate`,`test_frozen_math`,`e1_crossfit.json` (`gamma_1`)
+Calibration fit on labels,3.4,`logit_nll.LabelNLLLogitCalibrator.fit`,`test_crossfit`,`e1_crossfit.json` (`label_nll_primary`)
+Adversarial Modify loss,3.5,`loss_matrix.build_loss_grid`,`test_a3`,`e4_rmod_and_replay_validity.json` (r_mod)
+Conditional risk,3.6,`expected_loss.ExpectedLossDecisionEngine.conditional_risk`,"`test_frozen_math`, `test_a3`",`e2_e5_e6_observe_only.json`
+"Verdict over 𝒱(aₜ), ties",3.7,`a3.A3Policy.decide`,`test_a3`,`e2_e5_e6_observe_only.json` (`ties`)
+"Thresholds, feasibility, dominance",3.8–3.10,`loss_matrix.*`,`test_a3`,`e2_e5_e6_observe_only.json` (`dominance`)
+"Attribution, additivity",3.11–3.13,`linear_shapley.LinearShapleyAttributor`,`test_frozen_math`,replay audit field `additivity_error`
+Baseline thresholds,3.14,`a1.operating_threshold`,`test_a1`,"`e1_crossfit.json` (`theta_blk`, `theta_mod`)"
+CUSUM,3.15–3.19,"`cusum.BernoulliCusum`, `a2.*`",`test_a2`,`e3_a2_cusum_observe_only.json`
+"ECE, log-loss",3.20–3.21,`probabilistic.*`,`test_probabilistic`,`e1_crossfit.json`
+Realized loss,3.22,`run_main.stage_observe`,— (script),`e2_e5_e6_observe_only.json` (`e6_grid`)
+D1/D2 before expected loss,—,"`PredicatePolicy.evaluate`, `A3Policy.decide`",`test_a3`,`e2_e5_e6_observe_only.json` (`sources`)
+Step- and episode-level mitigation,Table 3.14,`RemGuard._mitigate`,`test_replay`,`e4_e5_enforcement_replay.json`
+Audit identity of withheld actions,Section 3.7.6,"`RemGuard.evaluate`; `mitigation.py`, `audit.py`","`test_replay`, `test_pipeline`",—

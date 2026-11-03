@@ -1,0 +1,16 @@
+File,Tests,Verifies
+`test_frozen_math.py`,43,"Eqs. 3.1–3.3, 3.6; fail-closed fitting; γ₁ > 0; a tie raises"
+`test_contract_compliance.py`,20,"Five layers, no sixth; frozen mitigation mapping; no equation IDs; forbidden components absent; attribution excluded from the decision signature"
+"`test_metrics.py`, `test_probabilistic.py`",25 + 5,ROC-AUC against the pairwise definition; average precision; ECE binning (Eq. 3.20); log-loss; Brier conventions; grouped bootstrap
+`test_pipeline.py`,21,Frozen pipeline order; step-level Block; the blocked action's identity is kept in the audit record (added in R2)
+"`test_mitigation.py`, `test_trajectory.py`, `test_config.py`, `test_reproducibility.py`",9 + 12 + 15 + 9,"Step-level mitigation, configuration fail-closed, seeds"
+`test_a3.py`,10,Table 3.13; Eqs. 3.8–3.10; argmin over the feasible set; D1 and D2; ties; dominance check; REM without expected-loss Escalate keeps D2 (added in R2)
+`test_a1.py`,5,Eq. 3.14 minimality; α = 0; invariance under monotone recalibration; verdict rule
+`test_a2.py`,5,Eqs. 3.15–3.17; indicator set; false-alarm target; no verdict
+`test_evidence.py`,7,Trust order; hygiene; features on an injected and a legitimate transfer; availability; tier map
+`test_crossfit.py`,2,Procedure 3.1 outputs; held-out predictions independent of held-out labels
+`test_traces.py`,2,Label rule including induced reads and ambiguity; fold-specific x^beh₄
+`test_replay.py`,3,"All-Allow replay reproduces a recorded episode; oracle Block prevents the recorded attack; withheld calls keep tool and argument digest, and no raw attacker value appears in the audit record (extended in R2); observe-only releases everything"
+`test_mitigation_semantics.py`,4,"Step-level and episode-level policies on a fixed sequence (Block `send_money`, then Allow `update_password`): different release outcomes, neither policy altered (added in R4)"
+`test_latency_instrumentation.py`,2,"Fake-clock check that the partial timer stops before attribution, audit construction and history recording, and the complete-call timer after them (added in R4)"
+`test_docx_tables.py`,6,"Thesis build tooling, not REM: the Word table transformation keeps exactly one run-property container per run, preserves hyperlinks and equations, and is idempotent (added in R4)"

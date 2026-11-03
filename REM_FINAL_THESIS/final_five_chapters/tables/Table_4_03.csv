@@ -1,0 +1,6 @@
+Metric,"Calibrated p, label-NLL fit (reference)","Calibrated p, Platt smoothed targets",Uncalibrated p̃
+ROC-AUC,"0.938 [0.908, 0.961]",0.938,0.939
+Average precision (PR-AUC estimate),"0.719 [0.559, 0.827]",0.719,0.721
+ECE (M = 10),"0.044 [0.033, 0.084]",0.044,0.042
+Log-loss,"0.201 [0.149, 0.294]",0.201,0.201
+Brier score (binary convention),0.060,0.060,0.060

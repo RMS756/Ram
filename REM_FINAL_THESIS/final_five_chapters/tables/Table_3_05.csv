@@ -1,0 +1,6 @@
+Layer,Consumes,Produces
+L1 Input & Context,"Objective, system prompt, user messages, tool results, proposed action",Labeled context c_t; entities with provenance; held action a_t
+L2 Detection,Untrusted segments of c_t,Context evidence x^ctx^
+L3 Behavioral Analysis,"H_t, a_t, entities, benign reference transitions, privilege map",Behavioral evidence x^beh^; action evidence x^act^
+L4 Decision Engine,"x_t, consequence descriptors z_t, frozen parameters, declared policy","p_t, k_t, R_t(·), verdict v_t, audit record"
+L5 Mitigation,"v_t, a_t, episode restrictions","Released, restricted, withheld, or refused action"

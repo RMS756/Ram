@@ -1,0 +1,11 @@
+Package,Content
+`rem/core/`,"Frozen pipeline skeleton (`RemPipeline`), interfaces, step-level mitigation engine, append-only audit log, result types"
+`rem/algorithms/detection/`,Ridge logistic regression (Eqs. 3.1–3.2); instruction-pattern indicator x^ctx₂
+`rem/algorithms/calibration/`,"Platt calibration on the logit: smoothed-target fit (`PlattLogitCalibrator`) and label-NLL fit (`LabelNLLLogitCalibrator`, Eq. 3.4)"
+`rem/algorithms/context/`,"Provenance labels, hygiene, entity extraction"
+`rem/algorithms/behavior/`,Evidence features (Tables 3.8–3.9); Bernoulli CUSUM (observe-only)
+`rem/algorithms/decision/`,Expected-loss engine; consequence tiers; loss structure and dominance check; predicates and feasible set
+"`rem/algorithms/a3.py`, `a1.py`, `a2.py`",REM verdict rule; baseline B1; observe-only CUSUM analysis
+`rem/evaluation/`,Discrimination and calibration metrics; grouped bootstrap; nested grouped cross-fitting
+`rem/integration/`,"AgentDojo trace loader, labeller, step builder, replay harness with the REM guard"
+`experiments/pilot/`,Experiment scripts and the reproduction script `run_all.sh`

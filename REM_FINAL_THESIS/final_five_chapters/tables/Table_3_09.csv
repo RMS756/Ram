@@ -1,0 +1,8 @@
+Feature,Definition,Type,Availability
+x^beh^_1,Post-observation shift: 1 if the most recent tool result was untrusted and had x^ctx^_2 = 1; otherwise 0,Binary,Derived from H_t
+x^beh^_2,"Repeated calls: min(n_rep, n_max) / n_max, where n_rep is the number of consecutive calls with the same tool and key arguments and n_max is declared","[0, 1]",Derived from H_t
+x^beh^_3,Privilege escalation: 1 if the privilege level of a_t's tool exceeds the highest level used so far in the episode; otherwise 0,Binary,Derived; privilege map declared
+x^beh^_4,"Transition deviation: 1 if the pair (previous tool, current tool) does not occur in the benign reference transition set; otherwise 0",Binary,Derived; reference set estimated on benign fitting data
+x^act^_1,"Argument provenance: 1 if a key argument of a_t (recipient account identifier, amount, password, or profile value) occurs in untrusted content but not in g or trusted content; otherwise 0",Binary,Derived from L1 entities
+x^act^_2,Destination novelty: 1 if the recipient of a_t appears neither in g nor among the transactions observed before the episode's first untrusted ingestion; otherwise 0,Binary,Derived; applicable to value-transfer and payment-modification tools
+x^act^_3,"Sensitive egress: 1 if a_t sends to an external recipient a value obtained from a sensitive read (account identifier, profile value, or credential); otherwise 0",Binary,Derived from L1 entities and H_t

@@ -1,0 +1,6 @@
+Category,Tools,Consequence if adversarially induced
+Read,"get_balance, get_iban, get_most_recent_transactions, get_scheduled_transactions, get_user_info, read_file",No direct external effect; may expose data later sent elsewhere
+Value transfer,"send_money, schedule_transaction",Money sent to an attacker-controlled account
+Payment modification,update_scheduled_transaction,Redirection or alteration of a recurring payment
+Credential change,update_password,Loss of control over the account
+Profile change,update_user_info,Alteration of account holder information

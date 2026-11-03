@@ -1,0 +1,5 @@
+Evidence group,ROC-AUC: mean over folds; minimum,Retained in every fold (≥ 0.55)
+Context (x^ctx₂ only),0.582; 0.554,"Yes, marginally"
+Behavioral,0.802; 0.787,Yes
+Action,0.929; 0.923,Yes
+All,0.938; 0.930,—

@@ -1,0 +1,7 @@
+,REM,REM w/o expected-loss Escalate,B1
+Any intervention on y = 1 steps,"0.973 [0.957, 0.987]",0.973,"0.740 [0.473, 0.922]"
+Any intervention on y = 0 steps (step false-positive rate),"0.227 [0.213, 0.239]",0.198,"0.056 [0.047, 0.066]"
+Escalate share of all steps,0.196,0.009,0.009
+y = 0 steps withheld if an idealized reviewer resolves escalations,0.040,0.188,0.046
+Ties,0,0,0
+Verdicts fixed by D2,58,58,58

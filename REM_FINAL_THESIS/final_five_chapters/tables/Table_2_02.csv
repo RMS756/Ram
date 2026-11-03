@@ -1,0 +1,11 @@
+Stage,Unit,Databases (OpenAlex),Other methods
+Identified,records,320,70
+Removed before screening (duplicates; same study as a database record),records,101,11
+Screened (title/abstract),records,219,—
+Excluded at screening,records,174,—
+Sought for retrieval (full text),reports,45,59
+Not retrieved (network policy),reports,45,59
+Assessed for eligibility at record level (no full-text report available),records,45,59
+Excluded at eligibility,records,5,"28 (6 background, 21 foundational/methodological, 1 withdrawn)"
+Included,studies,40,31
+Total included studies (each represented by its index record),studies,71,

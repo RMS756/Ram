@@ -1,0 +1,13 @@
+Query,Exact search string,Blocks,Records screened,Index estimate
+Q1 (pages 1–2),LLM agent indirect prompt injection runtime defense tool use,A+B+C,50,"1,366"
+Q2 (pages 1–2),LLM agent security runtime monitoring guardrail tool call,A+B+C,49,"1,123"
+Q3,tool-using language model agent behavioral trajectory monitoring anomaly detection safety,A+B+C,24,"5,572"
+Q4,LLM agent provenance goal alignment tool call misalignment detection,A+B+C,25,484
+Q5,prompt injection benchmark tool-integrated LLM agents attacks and defenses evaluation,A+B+C,24,"2,950"
+Q6,LLM agent memory poisoning goal hijacking multi-step attack,A+B,24,579
+Q7,financial LLM agent security prompt injection tool misuse,Fin+A+B+C,24,"1,368"
+Q8,banking agent safety benchmark financial transaction LLM agent,Fin+A+B,25,536
+Q9,calibrated risk score intervention policy LLM agent runtime safety,A+B+C,25,880
+Q10,privilege control policy enforcement LLM agents tool calls prompt injection,A+B+C,25,"1,380"
+Q11,pre-execution action validation guardrail autonomous LLM agent unsafe actions,A+B+C,25,744
+Total,,,320,—

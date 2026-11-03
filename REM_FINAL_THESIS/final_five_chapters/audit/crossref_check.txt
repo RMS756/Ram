@@ -1,0 +1,5 @@
+chapters: 5 ({'CHAPTER1_INTRODUCTION': 1, 'CHAPTER2_LITERATURE_REVIEW': 1, 'CHAPTER3_METHODOLOGY': 1, 'CHAPTER4_RESULTS_DISCUSSION': 1, 'CHAPTER5_CONCLUSIONS': 1})
+numbered headings: 193; tables: 57; figures: 10; equations: 25
+unmapped old references during rewriting: 1
+  UNMAPPED ('old Ch2', 'sec', '1')
+unresolved references in the output: 0

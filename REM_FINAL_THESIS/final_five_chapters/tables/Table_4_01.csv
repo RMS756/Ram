@@ -1,0 +1,11 @@
+Item,Value
+Features,"x^ctx₂, x^beh₁₋₄, x^act₁₋₃ (x^ctx₁ absent)"
+Tiers,"read 1; profile 2; transfer ≤ 1000: 3; transfer > 1000, payment modification, credential change: 4"
+Costs,"C_FA = 1; C_miss = 1, 5, 10, 20 by tier; C_mod = 0.5; C_esc = 0.3"
+r_mod(k),Measured; 1.0 where unmeasured
+Predicates,Π = ∅; k_D2 = 3; required evidence x^act₁
+Baseline,"α_blk = 0.01, α_mod = 0.05"
+λ grid,"λ_impl ∈ {0.01, 0.1, 1, 10, 100}, i.e. λ ∈ {0.005, 0.05, 0.5, 5, 50} on the scale of Eq. 3.2"
+Inner folds; ECE bins; clip,4; 10; 10⁻⁶
+Pilot E0 decision values,≥ 50 positive steps; group ROC-AUC ≥ 0.55
+Bootstrap,"2,000 resamples, seed 20261027"

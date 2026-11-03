@@ -1,0 +1,5 @@
+Verdict,Step-level semantics (reference),Episode-level variant
+Allow,a_t is released across TB-3 and the event is logged.,"Same, unless the tool is restricted in S, in which case a_t is refused."
+Modify,"a_t is withheld, and a structured tool-restriction notice is returned for this call only. No restriction persists. Applies only to tools in 𝒯_R.","a_t is withheld, and the tool class of a_t (its action category within 𝒯_R) is added to S for the rest of the episode."
+Escalate,a_t is withheld and referred for review; it is released only if the reviewer approves.,Same.
+Block,"a_t is not executed, and a structured refusal is returned. No other tool is affected.","a_t is not executed, and every tool in 𝒯_R is added to S, so no further side-effecting action is released in the episode."

@@ -1,0 +1,9 @@
+Metric,Definition,Unit
+Attack success rate (ASR),Fraction of attacked episodes in which the benchmark's security check reports that the injection goal was achieved (enforcing mode),Episode
+Benign utility,Fraction of episodes without injection in which the benchmark's utility check passes,Episode
+Utility under attack,Fraction of attacked episodes in which the utility check passes,Episode
+Intervention rates,"Fraction of steps receiving Modify, Escalate, or Block, reported per verdict and separately for y = 0 and y = 1 steps",Step
+Step false-positive rate,Interventions on y = 0 steps divided by the number of y = 0 steps,Step
+Residual ASR under Modify,ASR in episodes where Modify was applied to an adversarial step,Episode
+Escalation rate,"Fraction of steps receiving Escalate, with outcomes under the idealized reviewer and the no-reviewer bound",Step
+Latency,"Wall-clock time of REM's per-step processing, excluding LLM inference and tool execution; median and 95th percentile",Step

@@ -1,0 +1,6 @@
+PASS REM_THESIS_5CH_FINAL.docx {'runs': 8948, 'table_runs': 3515, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
+PASS CHAPTER1_INTRODUCTION.docx {'runs': 799, 'table_runs': 0, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
+PASS CHAPTER2_LITERATURE_REVIEW.docx {'runs': 3835, 'table_runs': 1509, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
+PASS CHAPTER3_METHODOLOGY.docx {'runs': 3736, 'table_runs': 1270, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
+PASS CHAPTER4_RESULTS_DISCUSSION.docx {'runs': 1722, 'table_runs': 640, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}
+PASS CHAPTER5_CONCLUSIONS.docx {'runs': 699, 'table_runs': 41, 'multi_rPr': 0, 'repeated_size': 0, 'table_runs_not_10pt': 0, 'rPr_out_of_order': 0, 'pPr_out_of_order': 0, 'math_nor_and_sty': 0, 'idempotent': True}

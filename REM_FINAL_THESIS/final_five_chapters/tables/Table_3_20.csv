@@ -1,0 +1,11 @@
+Experiment (Chapter 4),Entry point,Call path
+Dataset,`experiments/pilot/build_dataset.py`,`load_episode` → `build_steps` → `EpisodeTracker.features` → `ReferenceLabeler.label` → `ConsequenceTierMap.tier`
+Pilot E0,`e0_pilot.py`,`nested_crossfit` on each fold's fitting portion → `roc_auc`
+E1 discrimination and calibration; ablation refits; grouping sensitivity,`run_main.py crossfit`,`Designer` (fold-specific x^beh₄) → `nested_crossfit` → `RidgeLogisticRegression.fit` → calibrator `fit` → `A1Thresholds.fit`
+r_mod and replay validity,`run_main.py rmod`,`replay_episode` → `GuardedToolsExecutor.query` → `RemGuard.evaluate` (oracle Modify)
+"E2, E5 and E6 observe-only",`run_main.py observe`,`A3Policy.decide` / `A1Policy.decide` on held-out recorded steps
+"E4, E5 replay",`run_main.py replay`,`replay_episode` → `RemGuard.evaluate` → `A3Policy.decide` → `RemGuard._mitigate`
+E3 CUSUM,`run_main.py a2`,`fit_a2` → `evaluate_episode`
+Cross-template; recorded defenses,`run_main.py xt`,"as E1 scoring, and as E4 replay"
+"Breakdowns, replay failures, label-audit package",`r2_analyses.py`,stored state from the stages above
+All of the above,`run_all.sh`,in order; writes `results/pilot_R2/` when `PILOT_RESULTS_DIR` is set

@@ -1,0 +1,4 @@
+Class,Quantities,How determined
+Learned,"β_0, β, γ_1, γ_0",Fitted on labeled data by Equations 3.2 and 3.4
+Measured,r_mod(k); benign reference mean x̄; benign transition set; utility impact of Modify,Estimated from observe-only and enforcing-mode runs
+Policy,"κ, amount limits, C_miss(k), C_FA(k), C_mod(k), C_esc, Π, k_D2, privilege map, tie-breaking order",Declared before evaluation; varied over a declared grid where they affect outcomes

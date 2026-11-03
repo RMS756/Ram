@@ -1,0 +1,43 @@
+Study,Threat,Entry Point,Observation Unit,Runtime,Behavior,Tool/Action,Multi-Step,Provenance,Decision,Mitigation,Financial Context,Evidence Level
+C. L. Wang et al. (2025) [P59],Emergent/unsafe agent behaviour (governance),NA,Agent state and actions over time,Yes,Yes,Yes,Yes,NR,Yes,Yes (graduated containment),NV,MOD
+C. Yang (2026) [P64],Unsafe tool-use side effects,Proposed tool call,Each proposed tool call (plus session chains),Yes,Yes (seven chain detectors),Yes,Yes (session tracker; no measurable effect in ablation),NR,Yes,Yes (allow/warn/block/review; safer alternatives),NR,MOD
+Calboreanu (2026) [P40],Unauthorised actions,NA,Proposed action at gated execution path,Yes,NR,Yes,NR,NR,Yes,Yes,NR,HIGH
+Castro-Maldonado et al. (2026) [P32],Customer-data protection / security (threat model not specified in abstract),User queries and retrieved content,Query/response,Yes,NR,NV,NR,NR,Yes,NV,Yes,LIM
+Chennabasappa et al. (2025) [P16],Prompt injection; jailbreak; agent misalignment; insecure code,Untrusted inputs; agent reasoning; generated code,Inputs and chain-of-thought,Yes,Yes,NV,NV,NR,Yes,NV,NR,LIM
+Debenedetti et al. (2025) [P52],Prompt injection; data exfiltration,Untrusted data,Program control and data flow,Yes,NR,Yes,Yes (data flow across steps),Yes,Yes,Yes,NR,MOD
+E. Li et al. (2026) [P12],Malicious apps; indirect prompt injection; planning/execution integrity and availability,Third-party apps and their outputs,"Abstract plan, concrete plan and execution",Yes,NR,Yes,Yes,Yes,Yes,Yes,NR,MOD
+F. Jia et al. (2025) [P01],Indirect prompt injection,External data returned by tools,Each instruction and tool call,Yes,NR,Yes,NV,NR,Yes,NV,NR,HIGH
+F. Li (2026) [P60],"IPI, unsafe tools, credential leakage, tampering",Tool inputs/outputs; files; credentials,Lifecycle hook events within a session,Yes,Yes (session risk accumulation),Yes,Yes,NR,Yes,Yes,NR,LIM
+"F. Wu, Cecchetti, & Xiao (2024) [P08]",Indirect prompt injection,Any untrusted source feeding the planner,Planning inputs and structured plans,Yes,NR,Yes,Yes,Yes,Yes,Yes,NR,LIM
+H. Jia et al. (2026) [P71],Prompt-induced unauthorised financial actions,User queries; tool calls,Query and tool call with cross-turn state,Yes,"Yes (partial: cross-turn drift, accumulated risk)",Yes,Yes,NR,Yes,Yes (block/approve; escalation to advanced judge),Yes,LIM
+H. Li et al. (2025) [P38],Prompt injection via external tools,Tool outputs; memory stream,Function trajectory vs. planned trajectory,Yes,Yes,Yes,Yes,NR,Yes,Yes,NR,MOD
+H. Liu et al. (2026) [P63],Prompt injection propagating through workflows,Inputs and intermediate context,Stateful workflow,Yes,Yes,Yes,Yes,NR,Yes,Yes,NR,LIM
+H. Wang et al. (2025) [P61],Safety-specification violations,NA,Abstract state sequence,Yes,Yes,Yes,Yes,NR,Yes,Yes,No (non-financial),MOD
+"H. Wang, Poskitt, & Sun (2026) [P50]",Unsafe actions,NA,Triggered action vs. rule predicate,Yes,NR,Yes,NV,NR,Yes,Yes,NR,MOD
+H.-H. Chen (2026) [P67],Consequences of side-effecting actions,NA,Each priced action,Yes,NR,Yes,NR,NR,Yes (consequence pricing vs. reserve),Yes (gating),"Yes (partial: payments, refunds as examples)",LIM
+Hines et al. (2024) [P47],Indirect prompt injection,Untrusted documents,Input text,Yes,NA,NA,NA,Yes,NA,NA,NR,MOD
+Hossain et al. (2026) [P65],Unsafe plans,Proposed plan and arguments,Plan (with cross-turn session state),Yes,Yes (partial: session manager),Yes (argument-level),Yes (partial: plan-level),NR,Yes,Yes (allow/block/confirm/revise),NR,MOD
+Hua et al. (2024) [P55],Unsafe planning,NA,Plan,Yes (planning stage),NR,Yes (plan-level),Yes (plan-level),NR,NV,Yes (plan revision),NR,LIM
+Jackson (2025) [P66],Governance violations,NA,Governed action,Yes,NV,Yes,NV,NR,Yes (multi-dimensional risk score),Yes (allow/deny/sanitize/escalate),NR,LIM
+Jacob et al. (2025) [P23],Prompt injection,Conversational and application-structured inputs,Input text,Yes,NR,NR,NR,NR,Yes,NR,NR,MOD
+Jiang et al. (2025) [P56],Unsafe intermediate thoughts,NA,Intermediate thought before action,Yes,Yes (thought-level),NR,Yes (partial),NR,NV,Yes (thought correction),NR,MOD
+J. Lin et al. (2026) [P11],Tool-stream injection (manipulated tool metadata and runtime feedback),Tool metadata and tool feedback,Speculative action before commit,Yes,NR,Yes,NV,NR,Yes,Yes,NR,HIGH
+W. Lin et al. (2026) [P62],Long-horizon hazardous drift,NA,Each call with trajectory prefix,Yes,Yes,Yes,Yes,NR,Yes,Yes (PASS/HOLD/BLOCK),NR,MOD
+Luo et al. (2025) [P39],Task-specific and systemic risks,NV,Agent actions,Yes,NV,Yes,NR,NR,Yes,NV,NR,LIM
+Mou et al. (2026) [P33],Unsafe tool invocations incl. prompt injection,Requests and tool interaction history,Each tool invocation with history,Yes,Yes,Yes,Yes,NR,Yes,Yes,NR,MOD
+Patil et al. (2024) [P10],Incorrect or unsafe LLM-generated actions (non-adversarial),NA,Executed action,Yes,NR,Yes,NR,NR,NV,Yes,NR,LIM
+S. Chen et al. (2025) [P48],Prompt injection,Data channel,Model input,NA,NA,NA,NA,Yes,NA,NA,NR,LIM
+"S. Wang, Zhu, & Li (2026) [P37]","Indirect prompt injection (path traversal, exfiltration, high-frequency tool abuse)",Externally retrieved data,Each tool call with cross-step labels,Yes,NR,Yes,Yes,Yes,Yes,Yes,NR,HIGH
+She et al. (2026) [P58],Misaligned tool calls incl. IPI,Tool outputs; context,Each tool call and its evidence provenance,Yes,Yes (partial),Yes,NR,Yes,Yes,Yes,NR,MOD
+T. Shi et al. (2025) [P49],Indirect prompt injection; tool misuse,Tool outputs,Each tool call vs. privilege policy,Yes,NR,Yes,Yes (policy updates during task),NR,Yes,Yes,NR,MOD
+Storf et al. (2026) [P34],Scheming (covert pursuit of misaligned goals),NA,Externally observable trajectory,Yes,Yes,Yes,Yes,NR,Yes,NR,NR,LIM
+Tsai & Bagdasarian (2025) [P51],Context-inappropriate actions,NA,Proposed action vs. task-context policy,Yes,NR,Yes,NR,NR,Yes,Yes,NR,LIM
+Wen et al. (2025) [P03],Indirect prompt injection,Retrieved external content,Model hidden states and gradients for an input,Yes,NR,NR,NR,NR,Yes,NR,NR,MOD
+Xiang et al. (2025) [P53],Violations of safety guard requests,NA,Target agent actions,Yes,NR,Yes,NR,NR,Yes,Yes,NR,LIM
+Y. Chen et al. (2025) [P24],Prompt injection in retrieved data,Retrieved content,Input prompt,Yes,NR,NR,NR,NR,NR,NR,NR,LIM
+Y. Wu et al. (2025) [P36],"Untrusted apps; cross-app security, privacy and safety issues",Third-party apps,App interactions,Yes,NR,Yes,NR,NR,NV,Yes,NR,MOD
+Z. Chen et al. (2026) [P68],Irreversible effects; cross-step violations,NA,Task-level transaction,Yes,NR,Yes,Yes,NR,NR,"Yes (staging, rollback, recovery)",NR,LIM
+"Z. Chen, Kang, & Li (2025) [P54]",Policy violations over trajectories,NA,Action trajectory,Yes,Yes (trajectory-level),Yes,Yes,NR,Yes,Yes,NR,LIM
+Zhong et al. (2025) [P06],Prompt injection; privacy leakage,Tool outputs / external content,Each tool call and its data dependencies,Yes,NR,Yes,NV,Yes,Yes,Yes,NR,MOD
+"Zhu, Yang, et al. (2025) [P57]",Indirect prompt injection,Tool outputs,Tool calls under original vs. masked re-execution,Yes,Yes,Yes,Yes,NR,Yes,NV,NR,LIM
+"Zhu, Zhang, et al. (2025) [P18]",High-risk or unethical tasks; adversarial attacks,Task prompts; tool use; agent collaboration,"Prompts, agent messages and tool use",Yes,Yes,Yes,NV,NR,Yes,Yes,NR,MOD

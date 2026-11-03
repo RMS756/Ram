@@ -1,0 +1,7 @@
+"Activity (Peffers et al., 2007)",Realization in this thesis,Location
+Problem identification and motivation,Runtime compromise of tool-using financial agents through indirect prompt injection,Chapter 1; Chapter 2
+Definition of objectives for a solution,Objectives O1–O3; research questions RQ1–RQ4; security objectives SO-1 to SO-6,"Sections 3.1.2, 3.1.3, 3.3.7"
+Design and development,Five-layer REM architecture and its runtime pipeline,Sections 3.2–3.10
+Demonstration,Integration of REM with the AgentDojo banking environment,Section 3.16
+Evaluation,"Controlled experiments, baseline comparison, and ablation",Sections 3.11–3.12; Chapter 4
+Communication,Thesis and derived publications,Chapter 5

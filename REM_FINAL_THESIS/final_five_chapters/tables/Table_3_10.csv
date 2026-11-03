@@ -1,0 +1,6 @@
+Descriptor,Meaning,How obtained,Availability
+Action category,"Read, value transfer, payment modification, credential change, profile change (Table 3.7)",Tool name,Available
+Amount,Monetary amount of a value-transfer or payment-modification call,Action arguments,Available where the tool takes an amount
+Recurring-payment change,Whether the action alters a scheduled or recurring payment,Tool name,Available
+Credential change,Whether the action changes account credentials,Tool name,Available
+Irreversibility,Whether the effect is treated as irreversible once executed,Declared per tool,Proposed (policy); the benchmark does not simulate settlement

@@ -1,0 +1,18 @@
+System,Allow,Block,Modify / sanitize / revise,Escalate / human review,Restrict tools or privileges,Interrupt / terminate,Stage / roll back / undo,Decision granularity
+Progent,Yes,Yes,Not Reported,Yes (approval for privilege expansion),Yes,Not Reported,Not Reported,Per tool call
+AgentSpec,Yes,Yes,Rule-defined,Not Verified,Not Reported,Not Verified,Not Reported,Per triggered event
+RTBAS,Yes (auto-execute),Not Verified,Not Reported,Yes (user confirmation),Not Reported,Not Reported,Not Reported,Per tool call
+MCP policy-enforcement point,Yes,Yes (deny),Not Reported,Not Reported,Yes (capability tokens),Not Reported,Not Reported,Per tool call with cross-step labels
+LATTICE,Yes,Yes,Not Reported,Yes (confidence-based escalation to humans),Not Reported,Not Reported,Not Reported,Per gated action
+VIGIL,Yes (commit),Yes (no commit),Not Verified,Not Reported,Not Reported,Not Reported,Not Reported,Per speculative action
+ToolSafe,Yes,Not Verified,Yes (guardrail feedback to agent),Not Reported,Not Reported,Not Reported,Not Reported,Per tool invocation
+MI9,Yes,Yes,Not Verified,Not Verified,Yes (graduated containment),Yes,Not Reported,"Continuous, agent-level"
+PRISM,Yes,Yes,Not Verified,Not Verified,Yes (policy controls),Not Verified,Not Reported,"Per hook, session accumulation"
+SafeAgent,Yes,Yes,"Yes (sanitization, replanning, argument rewriting)",Yes (human escalation),Not Verified,Yes,Yes (rollback),Per step over session state (PARTLY UNVERIFIED)
+AgentTrust,Yes,Yes,Yes (safer alternatives),Yes (warn; review),Not Reported,Not Reported,Not Reported,"Per tool call, session chains"
+NEXUS,Yes,Yes,Yes (request revision),Yes (request confirmation),Not Reported,Not Reported,Not Reported,"Per plan, before execution"
+DreamGuard,Yes (PASS),Yes (BLOCK),Not Reported,HOLD (semantics Not Verified),Not Reported,Not Reported,Not Reported,Per action with trajectory state
+FinHarness,Yes (approve),Yes,Not Reported,Escalation to an advanced LLM judge (not a human),Not Reported,Not Reported,Not Reported,"Per step, cross-turn"
+Jackson,Yes,Yes (deny),Yes (sanitize),Yes (escalate),Not Verified,Not Verified,Not Verified,Not Verified
+Cordon,Not Applicable,Not Applicable,Not Applicable,Not Verified,Not Applicable,Not Applicable,Yes (shadow state; effect outbox),Per task transaction
+GoEX,Not Applicable,Not Applicable,Not Applicable,Post-facto human validation,Not Reported,Not Reported,Yes (undo; damage confinement),Per executed action

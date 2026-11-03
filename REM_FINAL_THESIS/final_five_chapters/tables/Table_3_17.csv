@@ -1,0 +1,23 @@
+Eq.,Content,Status,Source,Verification
+3.1,Logistic model,Established,Cox (1958),IV
+3.2,Ridge-penalized log-likelihood,Established,le Cessie & van Houwelingen (1992),IV (penalty constant pending)
+3.3,"Logistic calibration on the logit, γ_1 > 0",Adapted,Platt (2000); Guo et al. (2017); Kull et al. (2017),Platt NC; Guo FV; Kull FV
+3.4,Calibration fit by negative log-likelihood,Established,Guo et al. (2017),FV
+3.5,Adversarial loss of Modify,Derived (assumption A-Mod),Law of total expectation,DER
+3.6,Conditional risk,Adapted,Elkan (2001),FV (Eq. 1 form)
+3.7,Bayes verdict with tie-breaking,Adapted,Elkan (2001),FV; tie order DEF
+3.8,Pairwise indifference threshold,Derived,From Eq. 3.6,DER
+3.9,Allow–Block threshold,Derived,From Eq. 3.8; consistent with Elkan (2001),DER
+3.10,Escalation feasibility condition,Derived,"From Eqs. 3.6, 3.7, 3.9; Chow (1970) conceptual basis",DER; Chow IV
+3.11,Linear attribution,Adapted,Lundberg & Lee (2017),FV
+3.12,Completeness identity,Derived,Lundberg & Lee (2017) local accuracy,FV + DER
+3.13,Group attribution,Definition,—,DEF
+3.14,Baseline operating-point threshold,Definition,—,DEF
+3.15,Bernoulli log-likelihood ratio (optional),Derived,Basseville & Nikiforov (1993); Reynolds & Stoumbos (1999),FV; R&S IV
+3.16,CUSUM recursion (optional),Established,Basseville & Nikiforov (1993); Page (1954),FV; Page IV
+3.17,Alarm time (optional),Established,Basseville & Nikiforov (1993),FV
+3.18,Per-episode false-alarm rate (optional),Definition,—,DEF
+3.19,Detection delay (optional),Definition,—,DEF
+3.20,Expected calibration error,Adapted,Naeini et al. (2015); Guo et al. (2017),FV
+3.21,Log-loss,Derived,From Eq. 3.2,DER
+3.22,Realized loss,Definition,—,DEF

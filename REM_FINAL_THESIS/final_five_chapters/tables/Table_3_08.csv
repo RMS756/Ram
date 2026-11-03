@@ -1,0 +1,3 @@
+Feature,Definition,Type,Availability
+x^ctx^_1,"Maximum score of a fixed, pre-trained prompt-injection classifier over untrusted segments added since the previous step","[0, 1]",Derived (classifier choice pending supervisor approval)
+x^ctx^_2,1 if an untrusted segment added since the previous step matches the declared instruction-pattern set; otherwise 0,Binary,Derived (pattern set declared before evaluation)

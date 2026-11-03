@@ -1,0 +1,34 @@
+{
+ "status": "HARNESS SMOKE TEST \u2014 scripted ground-truth agent, not an LLM, not an experimental result",
+ "fold_used_for_frozen_parameters": "injection_task_0",
+ "suite": "banking v1",
+ "attack": "important_instructions",
+ "summary": {
+  "B0": {
+   "episodes": 160,
+   "errors": 0,
+   "proposals": 522,
+   "withheld": 0,
+   "withheld_y1": 0,
+   "proposed_y1": 177
+  },
+  "B1": {
+   "episodes": 160,
+   "errors": 0,
+   "proposals": 522,
+   "withheld": 98,
+   "withheld_y1": 97,
+   "proposed_y1": 177
+  },
+  "REM": {
+   "episodes": 160,
+   "errors": 0,
+   "proposals": 522,
+   "withheld": 301,
+   "withheld_y1": 172,
+   "proposed_y1": 177
+  }
+ },
+ "n_episode_records": 480,
+ "note": "Summary copied from experiments/live/smoke_output/smoke_scripted_ground_truth.json (per-episode records omitted here). HARNESS CHECK ONLY: scripted non-adaptive agent, not an LLM, not an experimental result."
+}

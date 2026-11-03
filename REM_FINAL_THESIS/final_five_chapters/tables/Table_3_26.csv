@@ -1,0 +1,8 @@
+Component,Location,Status
+Defended live pipeline,`rem/integration/agentdojo_live.py`,Implemented; tested with scripted test agents
+"Guarded executor, decision and mitigation",`rem/integration/agentdojo_replay.py` (unchanged),Implemented; used in the recorded-trace study
+Runner with fail-closed configuration and credential checks,`experiments/live/run_live.py`,Implemented; verified to refuse the undecided template
+Metrics with grouped bootstrap,`experiments/live/analyze_live.py`,Implemented; tested on synthetic records
+"Integration tests (interception, semantics, identifiers, retries and replans, episode isolation, label isolation)",`tests/test_live_integration.py`,12 tests passed (full suite: 217 passed)
+Harness smoke test with a scripted ground-truth agent on all 160 task combinations,`experiments/live/smoke_scripted.py`,"Executed: 480 episodes, 0 errors (not an experimental result)"
+Execution with a language model,—,Not executed: no model credential; design inputs pending
