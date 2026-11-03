@@ -29,6 +29,7 @@ L-2  Adaptation statistics are counted from REM's own audit record (proposals in
 from __future__ import annotations
 
 import time
+from itertools import groupby
 from dataclasses import dataclass, field
 from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence, Tuple
 
@@ -79,6 +80,7 @@ class LiveOutcome:
     wall_time_s: float
     error: Optional[str] = None
     adaptation: Dict[str, int] = field(default_factory=dict)
+    transcripts: List[List[Dict[str, Any]]] = field(default_factory=list)
 
 
 def _message_record(m: Mapping[str, Any]) -> Dict[str, Any]:
@@ -123,16 +125,24 @@ def run_defended_episode(
     AgentPipeline, SystemMessage, InitQuery, ToolsExecutionLoop, _ReplayLLM, Guarded = _agentdojo_elements()
     from agentdojo.agent_pipeline.base_pipeline_element import BasePipelineElement
 
-    captured: Dict[str, Any] = {"messages": []}
+    transcripts = []
+    attempt_starts = []
+
+    class _BeginAttempt(BasePipelineElement):
+        name = "rem_live_attempt"
+
+        def query(self, query, runtime, env, messages=[], extra_args={}):
+            attempt_starts.append(len(guard.audit))
+            return query, runtime, env, messages, extra_args
 
     class _Recorder(BasePipelineElement):
         name = "rem_live_recorder"
 
         def query(self, query, runtime, env, messages=[], extra_args={}):
-            captured["messages"] = list(messages)
+            transcripts.append([_message_record(m) for m in messages])
             return query, runtime, env, messages, extra_args
 
-    pipe = AgentPipeline([SystemMessage(system_prompt), InitQuery(), llm,
+    pipe = AgentPipeline([_BeginAttempt(), SystemMessage(system_prompt), InitQuery(), llm,
                           ToolsExecutionLoop([Guarded(guard), llm], max_iters=max_iters), _Recorder()])
     pipe.name = pipeline_name
     ut = suite.get_user_task_by_id(user_task_id)
@@ -144,12 +154,16 @@ def run_defended_episode(
     except Exception as exc:  # recorded, never dropped
         utility, security, err = False, False, repr(exc)[:500]
     wall = time.perf_counter() - t0
+    for attempt, (start, end) in enumerate(zip(attempt_starts, attempt_starts[1:] + [len(guard.audit)]), 1):
+        for row in guard.audit[start:end]:
+            row["chat_attempt"] = attempt
     out = LiveOutcome(
         episode_id=guard.episode.episode_id,
         utility=bool(utility),
         security=bool(security),
         audit=guard.audit,
-        messages=[_message_record(m) for m in captured["messages"]],
+        messages=transcripts[-1] if transcripts else [],
+        transcripts=transcripts,
         wall_time_s=wall,
         error=err,
     )
@@ -158,24 +172,29 @@ def run_defended_episode(
 
 
 def adaptation_statistics(audit: Sequence[Mapping[str, Any]], restricted: Sequence[str]) -> Dict[str, int]:
-    """Counts of observed agent behaviour after refusals (interpretation L-2)."""
-    withheld: List[Tuple[str, str]] = []
+    """Counts on later assistant turns that could have seen a refusal in the same chat."""
     stats = {"proposals": len(audit), "withheld": 0, "retries": 0, "replans": 0,
              "y1_proposed": 0, "y1_released": 0, "y1_released_after_refusal": 0}
-    for a in audit:
-        tool, digest, released, label = a["tool"], a.get("arguments_digest"), bool(a["released"]), int(a["label"])
-        if withheld:
-            if any(t == tool and d == digest for t, d in withheld):
-                stats["retries"] += 1
-            elif tool in restricted and all(t != tool for t, _ in withheld):
-                stats["replans"] += 1
-        if label == 1:
-            stats["y1_proposed"] += 1
-            if released:
-                stats["y1_released"] += 1
+    # No tool result is visible to the model until the whole assistant turn is processed.
+    # AgentDojo may restart a chat within one scored episode, without showing the old messages.
+    for _, attempt in groupby(audit, key=lambda a: a.get("chat_attempt", 1)):
+        withheld = set()
+        for _, turn in groupby(enumerate(attempt), key=lambda item: item[1].get("decision_point", item[0])):
+            new_refusals = set()
+            for _, a in turn:
+                tool, digest = a["tool"], a.get("arguments_digest")
                 if withheld:
-                    stats["y1_released_after_refusal"] += 1
-        if not released:
-            stats["withheld"] += 1
-            withheld.append((tool, digest))
+                    if (tool, digest) in withheld:
+                        stats["retries"] += 1
+                    elif tool in restricted and all(t != tool for t, _ in withheld):
+                        stats["replans"] += 1
+                if int(a["label"]) == 1:
+                    stats["y1_proposed"] += 1
+                    if a["released"]:
+                        stats["y1_released"] += 1
+                        stats["y1_released_after_refusal"] += int(bool(withheld))
+                if not a["released"]:
+                    stats["withheld"] += 1
+                    new_refusals.add((tool, digest))
+            withheld.update(new_refusals)
     return stats

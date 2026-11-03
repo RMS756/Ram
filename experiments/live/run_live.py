@@ -118,6 +118,19 @@ def frozen_components(fold: str):
     return pol, scorer, ref
 
 
+def make_decider(pol, name, variant):
+    from rem.core.results import Verdict
+    if name == "B0":
+        return lambda c: (Verdict.ALLOW, "allow_all", {})
+    key = {"B1": "B1", "REM": f"A3_{variant}", "REMnoEsc": f"A3_noesc_{variant}"}[name]
+    P = pol[key]
+
+    def decide(c):
+        d = P.decide(c.p, c.tier, c.tool, c.available)       # the label is never passed
+        return d.verdict, d.source, {"tie": bool(getattr(d, "tie", False)), "risks": dict(getattr(d, "risks", {}) or {})}
+    return decide
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", required=True)
@@ -131,7 +144,6 @@ def main() -> None:
     from agentdojo.attacks.attack_registry import load_attack
     from agentdojo.task_suite.load_suites import get_suites
     from rem.algorithms.decision.consequence import ConsequenceTierMap  # noqa: F401  (via common.make_setup)
-    from rem.core.results import Verdict
     from rem.integration.agentdojo_live import live_episode_stub, run_defended_episode
     from rem.integration.agentdojo_replay import GuardConfig, RemGuard
 
@@ -144,24 +156,15 @@ def main() -> None:
     users = [t.ID for t in suite.user_tasks.values()] if B["user_tasks"] == "all" else as_list(B["user_tasks"])
     injs = [t.ID for t in suite.injection_tasks.values()] if B["injection_tasks"] == "all" else as_list(B["injection_tasks"])
 
-    def decider(name, variant):
-        if name == "B0":
-            return lambda c: (Verdict.ALLOW, "allow_all", {})
-        key = {"B1": "B1", "REM": f"A3_{variant}", "REMnoEsc": f"A3_noesc_{variant}"}[name]
-        P = pol[key]
-
-        def decide(c):
-            d = P.decide(c.p, c.tier, c.tool, c.available)       # the label is never passed
-            return d.verdict, d.source, {"tie": bool(getattr(d, "tie", False)), "risks": dict(getattr(d, "risks", {}) or {})}
-        return decide
-
-    os.makedirs(args.out, exist_ok=True)
+    if os.path.exists(args.out):
+        fail(4, "Output already exists. Use a new directory for each run.")
+    os.makedirs(args.out, exist_ok=False)
     commit = subprocess.check_output(["git", "-C", REPO, "rev-parse", "HEAD"], text=True).strip()
     manifest = {"started_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "rem_commit": commit,
                 "config_sha256": hashlib.sha256(open(args.config, "rb").read()).hexdigest(), "config": cfg,
-                "frozen_fold": fold, "status": "LIVE RUN (real LLM calls)"}
+                "frozen_fold": fold, "status": "started", "episodes_recorded": 0, "episodes_without_error": 0}
     json.dump(manifest, open(os.path.join(args.out, "manifest.json"), "w"), indent=1, default=str)
-    res_f = open(os.path.join(args.out, "episodes.jsonl"), "a", encoding="utf-8")
+    res_f = open(os.path.join(args.out, "episodes.jsonl"), "x", encoding="utf-8")
     for backbone in as_list(M["backbones"]):
         llm = make_llm(backbone, M["decoding"])
         for attack in as_list(B["attacks"]):
@@ -182,7 +185,7 @@ def main() -> None:
                                                        injections=injections, system_prompt=system_prompt,
                                                        user_prompt=suite.get_user_task_by_id(u).PROMPT, repeat=rep)
                                 gc = GuardConfig(st.spec, st.detector, ref, st.tier_map, st.restricted, variant, reviewer)
-                                g = RemGuard(gc, None if conf == "B0" else scorer, decider(conf, variant), st.labeler, ep)
+                                g = RemGuard(gc, None if conf == "B0" else scorer, make_decider(pol, conf, variant), st.labeler, ep)
                                 out = run_defended_episode(suite=suite, llm=llm, guard=g, user_task_id=u,
                                                            injection_task_id=i, injections=injections,
                                                            system_prompt=system_prompt, pipeline_name=backbone["model"])
@@ -193,7 +196,16 @@ def main() -> None:
                                        "adaptation": out.adaptation, "audit": out.audit, "messages": out.messages}
                                 res_f.write(json.dumps(rec, default=str) + "\n")
                                 res_f.flush()
+                                manifest["episodes_recorded"] += 1
+                                manifest["episodes_without_error"] += int(out.error is None)
     res_f.close()
+    n = manifest["episodes_without_error"]
+    manifest["status"] = ("completed" if n and n == manifest["episodes_recorded"]
+                          else "completed_with_errors" if n else "no_successful_episodes")
+    with open(os.path.join(args.out, "manifest.json"), "w", encoding="utf-8") as fh:
+        json.dump(manifest, fh, indent=1, default=str)
+    if manifest["status"] != "completed":
+        fail(5, f"Run ended with status {manifest['status']}; inspect the per-episode records.")
     print("done:", args.out)
 
 

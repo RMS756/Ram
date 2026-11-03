@@ -320,23 +320,27 @@ def stage_rmod():
 # fold policies (shared by observe and replay)
 # ---------------------------------------------------------------------------
 
+def build_fold_policies(fold, theta_blk, theta_mod, rmod, tie_mode="record_chapter3_order"):
+    """Build the existing policies from a single frozen fold's thresholds and residuals."""
+    policies = {}
+    for variant in VARIANTS:
+        grid = build_loss_grid(loss_spec(rmod[variant][fold]), f"pilot_e0 fold {fold} variant {variant}")
+        policies[f"A3_{variant}"] = A3Policy(grid, predicates(), tie_mode=tie_mode)
+        policies[f"A3_nopred_{variant}"] = A3Policy(grid, predicates(False), tie_mode=tie_mode)
+        policies[f"A3_noesc_{variant}"] = A3Policy(grid, predicates(), tie_mode=tie_mode,
+                                                   exclude_from_expected_loss=(Verdict.ESCALATE,))
+        policies[f"grid_{variant}"] = grid
+    thresholds = A1Thresholds(theta_blk, theta_mod, CFG["baseline_B1"]["alpha_blk"], CFG["baseline_B1"]["alpha_mod"])
+    policies["B1"] = A1Policy(thresholds, predicates())
+    return policies
+
+
 def build_policies(fits, rmod, tie_mode="record_chapter3_order"):
-    """Per fold: A3 per variant, B1 thresholds, scorers; plus ablation policies."""
-    pol = collections.defaultdict(dict)
-    prim = fits["label_nll_primary"]
-    for f, ff in prim.fits.items():
-        for v in VARIANTS:
-            grid = build_loss_grid(loss_spec(rmod[v][f]), f"pilot_e0 fold {f} variant {v}")
-            pol[f][f"A3_{v}"] = A3Policy(grid, predicates(), tie_mode=tie_mode)
-            pol[f][f"A3_nopred_{v}"] = A3Policy(grid, predicates(False), tie_mode=tie_mode)
-            # R2 comparison: REM with the same escalation opportunity as B1
-            # (Escalate only through D2), declared after R1 results (post hoc).
-            pol[f][f"A3_noesc_{v}"] = A3Policy(grid, predicates(), tie_mode=tie_mode,
-                                               exclude_from_expected_loss=(Verdict.ESCALATE,))
-            pol[f][f"grid_{v}"] = grid
-        pol[f]["B1"] = A1Policy(A1Thresholds(ff.theta_blk, ff.theta_mod, CFG["baseline_B1"]["alpha_blk"],
-                                             CFG["baseline_B1"]["alpha_mod"]), predicates())
-    return pol
+    """Per-fold policies for the observe and replay experiments."""
+    policies = collections.defaultdict(dict)
+    for fold, fitted in fits["label_nll_primary"].fits.items():
+        policies[fold] = build_fold_policies(fold, fitted.theta_blk, fitted.theta_mod, rmod, tie_mode)
+    return policies
 
 
 # ---------------------------------------------------------------------------
