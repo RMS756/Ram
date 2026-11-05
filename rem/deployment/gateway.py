@@ -158,6 +158,7 @@ class RemGateway:
 def make_handler(gw: RemGateway):
     class Handler(BaseHTTPRequestHandler):
         protocol_version = "HTTP/1.1"
+        disable_nagle_algorithm = True     # TCP_NODELAY: avoids the ~40 ms Nagle/delayed-ACK stall per response
 
         def log_message(self, *a):          # quiet
             pass

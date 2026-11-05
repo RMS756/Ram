@@ -69,6 +69,7 @@ class Store:
 def handler(store):
     class H(BaseHTTPRequestHandler):
         protocol_version = "HTTP/1.1"
+        disable_nagle_algorithm = True     # TCP_NODELAY: avoids the ~40 ms Nagle/delayed-ACK stall per response
 
         def log_message(self, *a):
             pass
