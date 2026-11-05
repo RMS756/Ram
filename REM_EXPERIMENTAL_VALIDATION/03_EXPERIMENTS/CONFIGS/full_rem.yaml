@@ -1,0 +1,12 @@
+# Full REM — frozen exploratory configuration (values are DECLARED in configs/exploratory/pilot_e0.yaml;
+# not supervisor-approved, D-9). This file records the configuration; it does not override any value.
+name: full_rem
+estimator: ridge_logistic_regression          # per outer fold; lambda by inner 4-fold CV
+calibration: logit_calibration_label_nll      # p = sigmoid(gamma_1 s + gamma_0), gamma_1 > 0 (D-3 open)
+decision: expected_loss_A3                    # argmin over {allow, modify, escalate, block}; tier-indexed losses
+losses: {C_FA: 1.0, C_miss: {1: 1.0, 2: 5.0, 3: 10.0, 4: 20.0}, C_mod: 0.5, C_esc: 0.3, r_mod: per fold (measured)}
+predicates: {Pi: [], k_D2: 3, required_evidence: [x_act1_argument_provenance]}
+tie_rule: record_chapter3_order               # D-4 open
+mitigation_semantics: step_level
+reviewer_model: no_reviewer
+fitted_parameters: frozen nested cross-fit state (crossfit.pkl sha256 27464b4d...)

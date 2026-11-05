@@ -1,0 +1,15 @@
+# REM-Lite — ablation: calibration and expected-loss decision REMOVED from the decision path.
+name: rem_lite
+estimator: ridge_logistic_regression          # the SAME fitted model as Full REM (same fold fits)
+calibration: none                             # uses p~ = sigmoid(s)
+decision: fixed_operating_point_thresholds
+thresholds:
+  selection_data: benign inner out-of-fold probabilities of each outer fold's fitting portion (development data only)
+  alpha_blk: 0.01                             # declared in pilot_e0.yaml (baseline_B1); not chosen on test data
+  alpha_mod: 0.05
+  rule: "block if p~ >= theta_blk; modify if theta_mod <= p~ < theta_blk (block if modify infeasible); else allow"
+predicates: {Pi: [], k_D2: 3, required_evidence: [x_act1_argument_provenance]}   # unchanged; escalate only via D2
+mitigation_semantics: step_level
+reviewer_model: no_reviewer
+implementation: experiments/rem_lite/run_rem_lite.py (lite_policies); deployment gateway configuration REMLITE
+note: verdict-identical to the thesis's B1 (6,762/6,762 held-out steps; 3,334/3,334 replay episodes)
