@@ -1,0 +1,1 @@
+gateway ready {"crossfit_pkl_sha256": "27464b4d6c3752b5ad3be62e721b0264671c2ede85190fc611568cfe73b68b2e", "rmod_pkl_sha256": "29c2c78ea5628783825e18699f321bc8d3e308ae8723a533d11dd99e59a88ba7", "pilot_config_sha256": "8e1aa107cf3ea0ba5eecbb92bc90a2463202cdde476cfe8a98047ffad74e11d0", "variant": "step_level", "reviewer": "no_reviewer", "configurations": ["B0", "B1", "REM"]}

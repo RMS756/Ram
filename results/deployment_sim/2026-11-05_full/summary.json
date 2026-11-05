@@ -1,0 +1,295 @@
+{
+ "configs": {
+  "B0": {
+   "episodes": 3334,
+   "wall_s": 24.6336626599998,
+   "episodes_per_s": 135.34325146920833,
+   "errors": 0,
+   "latency": {
+    "calls": 6756,
+    "batches": 6496,
+    "batch_rtt_ms": {
+     "median": 5.578290499897776,
+     "p95": 12.970561749909848
+    },
+    "rem_ms_per_call": {
+     "median": 0.09290250000049127,
+     "p95": 0.29801774996940367
+    },
+    "backend_ms_per_executed_call": {
+     "median": 2.4703375000854066,
+     "p95": 9.087203749913897
+    },
+    "episode_wall_ms": {
+     "median": 27.771889500058933,
+     "p95": 49.4209652999416
+    }
+   }
+  },
+  "B1": {
+   "episodes": 3334,
+   "wall_s": 24.572285556999987,
+   "episodes_per_s": 135.68131431104229,
+   "errors": 0,
+   "latency": {
+    "calls": 6756,
+    "batches": 6496,
+    "batch_rtt_ms": {
+     "median": 5.34201150003355,
+     "p95": 12.705253750027623
+    },
+    "rem_ms_per_call": {
+     "median": 0.1728055000285167,
+     "p95": 0.3740729999890391
+    },
+    "backend_ms_per_executed_call": {
+     "median": 2.657281499978126,
+     "p95": 9.584318250142589
+    },
+    "episode_wall_ms": {
+     "median": 27.394826999966426,
+     "p95": 48.123451100070724
+    }
+   }
+  },
+  "REM": {
+   "episodes": 3334,
+   "wall_s": 23.50250478199996,
+   "episodes_per_s": 141.85722036544104,
+   "errors": 0,
+   "latency": {
+    "calls": 6756,
+    "batches": 6496,
+    "batch_rtt_ms": {
+     "median": 4.8019290001093395,
+     "p95": 12.249480249977296
+    },
+    "rem_ms_per_call": {
+     "median": 0.1885434999167046,
+     "p95": 0.3958847500484808
+    },
+    "backend_ms_per_executed_call": {
+     "median": 3.064228499965793,
+     "p95": 9.660046699946173
+    },
+    "episode_wall_ms": {
+     "median": 26.269691500033332,
+     "p95": 45.31837439989203
+    }
+   }
+  }
+ },
+ "sweep": {
+  "1": {
+   "episodes": 400,
+   "wall_s": 4.011789047000093,
+   "episodes_per_s": 99.70613990760783,
+   "calls_per_s": 208.88436310643843,
+   "errors": 0,
+   "latency": {
+    "calls": 838,
+    "batches": 792,
+    "batch_rtt_ms": {
+     "median": 1.4823530000285245,
+     "p95": 2.8432311000074146
+    },
+    "rem_ms_per_call": {
+     "median": 0.16580900012286293,
+     "p95": 0.3682431000811447
+    },
+    "backend_ms_per_executed_call": {
+     "median": 0.7811694999872998,
+     "p95": 1.5514135001239993
+    },
+    "episode_wall_ms": {
+     "median": 9.56778500017208,
+     "p95": 15.188526650001675
+    }
+   }
+  },
+  "2": {
+   "episodes": 400,
+   "wall_s": 3.6156478820000757,
+   "episodes_per_s": 110.63024195230292,
+   "calls_per_s": 231.77035689007462,
+   "errors": 0,
+   "latency": {
+    "calls": 838,
+    "batches": 792,
+    "batch_rtt_ms": {
+     "median": 2.8583375001289824,
+     "p95": 7.589676700047221
+    },
+    "rem_ms_per_call": {
+     "median": 0.19610000003922323,
+     "p95": 0.41388339998320584
+    },
+    "backend_ms_per_executed_call": {
+     "median": 1.496637500054021,
+     "p95": 5.717321249903762
+    },
+    "episode_wall_ms": {
+     "median": 17.211773499980154,
+     "p95": 29.797548399847063
+    }
+   }
+  },
+  "4": {
+   "episodes": 400,
+   "wall_s": 2.890355772000021,
+   "episodes_per_s": 138.39126791066784,
+   "calls_per_s": 289.9297062728491,
+   "errors": 0,
+   "latency": {
+    "calls": 838,
+    "batches": 792,
+    "batch_rtt_ms": {
+     "median": 4.995426500045141,
+     "p95": 12.679033800077374
+    },
+    "rem_ms_per_call": {
+     "median": 0.1881834999721832,
+     "p95": 0.4110632499418898
+    },
+    "backend_ms_per_executed_call": {
+     "median": 3.1648369999857096,
+     "p95": 10.48568725008181
+    },
+    "episode_wall_ms": {
+     "median": 26.783811000086644,
+     "p95": 45.943727750079674
+    }
+   }
+  },
+  "8": {
+   "episodes": 400,
+   "wall_s": 2.407306091999999,
+   "episodes_per_s": 166.16083900974908,
+   "calls_per_s": 348.1069577254243,
+   "errors": 0,
+   "latency": {
+    "calls": 838,
+    "batches": 792,
+    "batch_rtt_ms": {
+     "median": 8.3021995000081,
+     "p95": 24.01276894992179
+    },
+    "rem_ms_per_call": {
+     "median": 0.18285399994510954,
+     "p95": 0.3838351500917269
+    },
+    "backend_ms_per_executed_call": {
+     "median": 6.1903479999045885,
+     "p95": 19.019528000058017
+    },
+    "episode_wall_ms": {
+     "median": 44.16746399999738,
+     "p95": 85.92853894992909
+    }
+   }
+  },
+  "16": {
+   "episodes": 400,
+   "wall_s": 2.632263361000014,
+   "episodes_per_s": 151.96047854726717,
+   "calls_per_s": 318.3572025565247,
+   "errors": 0,
+   "latency": {
+    "calls": 838,
+    "batches": 792,
+    "batch_rtt_ms": {
+     "median": 13.4169100000463,
+     "p95": 43.845447299895554
+    },
+    "rem_ms_per_call": {
+     "median": 0.18593249990317418,
+     "p95": 0.41828659998373036
+    },
+    "backend_ms_per_executed_call": {
+     "median": 10.295312500034015,
+     "p95": 38.51952800005165
+    },
+    "episode_wall_ms": {
+     "median": 71.43724200000179,
+     "p95": 178.581028749977
+    }
+   }
+  }
+ },
+ "fail_closed_probes": {
+  "unknown_episode_calls": 404,
+  "malformed_json": 400,
+  "unknown_configuration": 400,
+  "backend_open_episodes_after_probes": 0
+ },
+ "gateway_counters": {
+  "episodes_opened": 12002,
+  "calls": 24458,
+  "released": 19814,
+  "withheld": 4644,
+  "fail_closed": 0,
+  "backend_errors": 0
+ },
+ "parity_with_offline_replay": {
+  "B0": {
+   "episodes_compared": 3334,
+   "mismatches": {},
+   "examples": []
+  },
+  "B1": {
+   "episodes_compared": 3334,
+   "mismatches": {},
+   "examples": []
+  },
+  "REM": {
+   "episodes_compared": 3334,
+   "mismatches": {},
+   "examples": []
+  }
+ },
+ "audit_checks": {
+  "episodes": 10002,
+  "withheld_calls": 3234,
+  "released_calls": 17034,
+  "backend_executed_calls": 17034
+ },
+ "outcomes_valid_episodes": {
+  "B0": {
+   "valid_episodes": 3313,
+   "ASR": 0.2255790533736153,
+   "utility_under_attack": 0.49177576367908693,
+   "benign_utility": 0.5239520958083832,
+   "n_attacked": 2979,
+   "n_benign": 334
+  },
+  "B1": {
+   "valid_episodes": 3313,
+   "ASR": 0.055052030882846596,
+   "utility_under_attack": 0.5142665323934206,
+   "benign_utility": 0.5089820359281437,
+   "n_attacked": 2979,
+   "n_benign": 334
+  },
+  "REM": {
+   "valid_episodes": 3313,
+   "ASR": 0.0036925142665323934,
+   "utility_under_attack": 0.3635448136958711,
+   "benign_utility": 0.3143712574850299,
+   "n_attacked": 2979,
+   "n_benign": 334
+  }
+ },
+ "manifest": {
+  "status": "DEPLOYMENT SIMULATION - recorded real-agent traffic (NO-ADAPT); simulated bank; exploratory design values",
+  "rem_commit": "c30ad8ae4dcca1cbd1ab558f737004e2e1b17896",
+  "agentdojo": "0.1.35",
+  "python": "3.11.17",
+  "cpu_count": 4,
+  "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+  "gateway_startup_s": 3.010171413421631,
+  "concurrency_main": 4,
+  "episodes": 3334,
+  "crossfit_pkl_sha256": "27464b4d6c3752b5ad3be62e721b0264671c2ede85190fc611568cfe73b68b2e",
+  "replay_main_pkl_sha256": "71d7b415ec76e8f0b45a986a4e6f7511e5e9969e12b93e2902e6cc94a985be42"
+ }
+}
