@@ -61,7 +61,7 @@ python3 -m pytest -o addopts="" tests/test_deployment_gateway.py       # 6 gatew
 | **Calls evaluated per configuration** | 6,756, withheld: B0 0, B1 1,016, REM 2,218. (The data set counts 6,762 recorded steps; 6 episodes recorded a 16th call beyond AgentDojo's 15-iteration tool loop, which the replay, offline and deployed alike, never reaches.) |
 | **Enforcement** | Backend executed exactly the 17,034 released calls; **none of the 3,234 withheld calls**; 0 episodes where the backend log differs from the released calls |
 | **REM decision time per call** (inside the gateway) | median 0.19 ms, p95 0.40 ms (B0 pass-through: 0.09 / 0.30 ms) |
-| **Agent-turn round trip** (client → gateway → backend → client, 4 concurrent) | median 4.8 ms, p95 12.2 ms (REM); 5.6 / 13.0 ms (B0). REM's own time is a few percent of the round trip; the remaining difference between configurations is noise |
+| **Agent-turn round trip** (client → gateway → backend → client, 4 concurrent) | median 4.8 ms, p95 12.2 ms (REM); 5.6 / 13.0 ms (B0). REM's own time is about 4% of the round trip. REM's round trip is not longer than B0's partly because withheld calls skip the backend |
 | **Throughput** (REM, 1 / 2 / 4 / 8 / 16 concurrent episodes) | 99.7 / 110.6 / 138.4 / 166.2 / 152.0 episodes/s; peak about 348 calls/s at 8, then saturation (Python servers sharing 4 vCPU). p95 round trip rises from 2.8 ms (1) to 43.8 ms (16) |
 | **Errors / fail-closed** | 0 errors; 0 fail-closed events, 0 backend errors. Probes: unknown episode → 404, malformed JSON → 400, unknown configuration → 400, nothing executed |
 
