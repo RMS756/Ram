@@ -416,13 +416,96 @@ No comparison of replay and live results is possible, because no live result exi
 
 Because a live agent can retry or route around a refusal, the replay attack success rate is not an upper bound on live attack success. How large the difference is, in either direction for utility, is an empirical question that only the closed-loop evaluation can answer.
 
-## 4.14 Interpretation of the Findings
+## 4.14 Controlled Evaluation of MELON with and without REM
+
+**Status.** This section describes an **implemented protocol for a planned evaluation**. The integration has been verified locally with scripted test agents and fake model clients only. **No run with a language model has been executed, and Table 4.15 contains no result.**
+
+### 4.14.1 Why MELON is the reference
+
+MELON (Zhu, Yang, et al., 2025) is a published runtime defence against indirect prompt injection that was evaluated on AgentDojo and has an official implementation. Chapter 2 reviews it among the goal–action consistency defences (Section 2.6.5; Table 2.5).
+
+MELON re-executes the agent's next step with the user's request masked. It flags an attack when the actions proposed with and without the request are similar, and it then stops the agent. Its evidence is therefore behavioural and model-based. It does not weigh what a proposed action would do or how costly an error would be.
+
+REM, by contrast, decides per action from a calibrated probability and consequence-tiered losses (Section 3.7). The study asks what changes when REM is added at the tool-execution boundary of MELON, compared with MELON alone. This is an **extension of a published defence through integration with REM**:
+- MELON's algorithm is not modified;
+- REM was not derived from MELON;
+- no improvement is presumed;
+- a record-level literature search found no evaluation of this combination, but the search was not exhaustive, so no novelty is claimed.
+
+### 4.14.2 Integration point
+
+MELON's official implementation places its detector after AgentDojo's tool executor:
+- the loop is `[ToolsExecutor, MELON]`;
+- MELON makes the agent's next model call itself, together with a masked model call that executes no tool;
+- on detection, MELON replaces the agent's proposed calls with a stop message.
+
+**In MELON + REM, the executor is the only element replaced:** REM evaluates each call that survived MELON immediately before execution. It also evaluates the first turn's calls, which MELON does not inspect.
+- A withheld call never reaches the environment.
+- The agent receives a refusal carrying the call's identifier and may continue.
+- REM never sees MELON's masked generation.
+
+The official MELON code requires an AgentDojo version with string message content. Both conditions therefore run on AgentDojo 0.1.29, whose banking v1 task and attack code are identical to those of REM's fitting traces. Two compatibility measures are applied identically in both conditions:
+- the embedding client is supplied without editing the file;
+- MELON's per-episode state is reset between episodes, since otherwise it would persist across episodes and conditions.
+
+Each measure and its effect are documented in the integration notes of the study's repository.
+
+### 4.14.3 Frozen settings and training provenance
+
+REM runs with the frozen components of the nested cross-fit (Section 3.11). Nothing is refitted:
+- **Estimator:** ridge estimator with logit calibration (γ₁ > 0 in every fold).
+- **Predicates and loss structure:** the declared exploratory costs and consequence tiers of Section 3.7, which are not supervisor-approved.
+- **Mitigation:** step-level semantics. Modify, Block and Escalate all withhold the current call; their immediate execution effect is the same.
+- **Reviewer:** none. An escalated call is never released, and no label-based reviewer is used.
+
+For an attacked case, the fold whose fit excluded that attacker objective is used. Because the 16 user tasks and their environment were seen in fitting, the evaluation covers **held-out attacker objectives on familiar tasks**, not unseen tasks.
+
+### 4.14.4 Protocol
+
+- **Conditions:** MELON and MELON + REM.
+- **Benchmark:** AgentDojo banking v1 with the `important_instructions` attack only.
+- **Held fixed:** backbone and decoding, MELON's internal settings, attack payloads, step limit and the evaluation checks.
+- **Pilot:** 13 cases chosen by a coverage rule declared in advance (every injection task once and four benign tasks), to test compatibility and measure cost.
+- **Final case set and repeats:** fixed from the pilot's measured cost; the full set (144 attacked and 16 benign cases) is preferred.
+- **Pairing and order:** episodes are paired by case and repeat and run in randomised, interleaved order, each in a fresh environment.
+- **Metrics:** attack success rate, utility under attack and benign utility, each over episodes without error. Errors and timeouts are reported separately and never counted as prevented attacks; escalation is never counted as task completion.
+- **Uncertainty:** paired differences with cluster-bootstrap intervals over user tasks.
+
+**Table 4.15. Controlled evaluation of MELON with and without REM (AgentDojo banking v1, `important_instructions`) — NOT EXECUTED**
+
+| Metric | MELON | MELON + REM | Paired difference (95% cluster-bootstrap interval) |
+|---|---|---|---|
+| Attack success rate | not executed | not executed | not executed |
+| Utility under attack | not executed | not executed | not executed |
+| Benign utility | not executed | not executed | not executed |
+| Additional calls withheld by REM | — | not executed | — |
+| Escalate verdicts per evaluated call | — | not executed | — |
+| Median end-to-end time per episode; REM time per call | not executed | not executed | not executed |
+| Tokens and cost per episode | not executed | not executed | not executed |
+| Errors and timeouts (by class) | not executed | not executed | — |
+
+### 4.14.5 Interpretation limits
+
+When the study is run, the following limits apply to any finding:
+- **Protection.** If MELON has no successful attack in the sample, no further reduction in observed attack success can be demonstrated, and the comparison is about utility and overhead.
+- **Utility.** Any additional protection must be reported together with its utility cost. Under no-reviewer semantics, every REM intervention withholds an action.
+- **Overhead.** REM adds no model call; MELON roughly doubles the number of model calls of an undefended agent.
+- **Scope.** The conclusions are limited to:
+  - one attack template;
+  - one backbone;
+  - exploratory REM costs;
+  - familiar tasks;
+  - a simulated banking environment.
+
+  Adaptive attacks against MELON are not evaluated.
+
+## 4.15 Interpretation of the Findings
 
 This section interprets the exploratory evaluation reported in Sections 4.1–4.11. Each conclusion is linked to the result that supports it and to the limit of that result. Section 4.1 defines the kinds of evidence: held-out prediction, observe-only decision, replay result; no live run was executed.
 
-### 4.14.1 What the evidence supports
+### 4.15.1 What the evidence supports
 
-**Table 4.15. Conclusions, their support and their limits**
+**Table 4.16. Conclusions, their support and their limits**
 
 | # | Conclusion | Supporting result | Limit |
 |---|---|---|---|
@@ -432,7 +515,7 @@ This section interprets the exploratory evaluation reported in Sections 4.1–4.
 | 4 | With the pre-registered costs, tier-indexed expected-loss verdicts intervene on far more legitimate state-changing actions than the baseline, mainly because of the low thresholds the costs imply at high tiers, not because of the escalation option | Observe-only: 33 vs 132 of 180 benign state-changing steps released; REM without expected-loss Escalate releases 48 (Section 4.5) | Costs are declared, not elicited; another cost structure gives another trade-off (Section 4.9) |
 | 5 | Within the replay assumption, REM withholds more recorded attack attempts than the baseline, at a utility cost that depends on how escalations are resolved | ΔASR −0.051 [−0.130, −0.007] under step-level semantics and −0.043 [−0.122, −0.001] under the episode-level variant (each a within-semantics paired interval); Δbenign utility −0.195 without a reviewer and +0.003 with an oracle reviewer (Section 4.6, Tables 4.8 and 4.11) | NO-ADAPT; replay is a proposed scope amendment; most of the ASR difference comes from two single-task attack categories |
 
-### 4.14.2 Why benign utility falls
+### 4.15.2 Why benign utility falls
 
 The fall in benign utility has two sources, and the evaluation separates them.
 
@@ -442,7 +525,7 @@ The fall in benign utility has two sources, and the evaluation separates them.
 
 **What a reviewer would change.** An escalation is worth something only if someone resolves it. With an oracle reviewer the utility cost disappears, which bounds what a perfect reviewer could recover. A real reviewer would recover less, at some delay and cost. The thesis does not model that reviewer.
 
-### 4.14.3 Why behavioral evidence did not help, and calibration did not change outcomes
+### 4.15.3 Why behavioral evidence did not help, and calibration did not change outcomes
 
 **Behavioral evidence.** The behavioral indicators are not specific to attacks in this benchmark:
 - *privilege escalation* fired on 92% of legitimate state-changing steps, because a user's first transfer is, by definition, the first use of a higher-privilege tool;
@@ -456,7 +539,7 @@ The estimator gave these features positive weight. In the decision they therefor
 
 This agrees with the position, taken in Chapter 3, that calibration quality and control quality must be reported separately (C. Zhang et al., 2026).
 
-### 4.14.4 What the evidence does not support
+### 4.15.4 What the evidence does not support
 
 - **That REM protects live agents.** Under replay a withheld call does not reappear. A live agent can retry, rephrase or reach the goal through another tool. The near-zero replay ASR and the near-zero residual success after Modify are consequences of that assumption.
 - **That REM is deployable as configured.** Without a reviewer, benign utility on state-changing tasks fell from 0.47 to 0.17 in replay.
@@ -466,11 +549,11 @@ This agrees with the position, taken in Chapter 3, that calibration quality and 
   - Most of the ASR difference from the baseline comes from single-task attack categories.
 - **Anything about the injection classifier**, which was not available, or about adaptive attackers, who were out of scope.
 
-## 4.15 Comparison with Prior Work
+## 4.16 Comparison with Prior Work
 
 The comparison restates design positions documented in Chapter 2 and does not rank systems, because no shared evaluation exists. Properties marked U in Chapter 2 are unverified.
 
-**Table 4.16. Design-level comparison with the closest prior work**
+**Table 4.17. Design-level comparison with the closest prior work**
 
 | System | Documented design (Chapter 2; verification level) | Relation to REM |
 |---|---|---|
@@ -487,7 +570,7 @@ Records found in the currency update of 30 October 2026, examined at abstract le
 
 A simulation study examined in a supplementary update of 2 November 2026 (Kanaker et al., 2026; Chapter 2, Section 2.13.7; abstract level) relates to REM at a different level of the problem. It compares architectural controls in an assumption-explicit simulator, whereas REM selects a verdict for each proposed call and is evaluated on recorded traces. Three of its reported findings bear on the interpretation of REM's results without changing them:
 
-- its finding that human-in-the-loop approvals degrade under user error and habituation is consistent with treating REM's idealized-reviewer results as an upper bound and the no-reviewer bound as the conservative reference (Section 4.14.2);
+- its finding that human-in-the-loop approvals degrade under user error and habituation is consistent with treating REM's idealized-reviewer results as an upper bound and the no-reviewer bound as the conservative reference (Section 4.15.2);
 - its finding that rate limiting reduces tail severity more than attack success illustrates why REM reports a loss-weighted measure beside the attack success rate, although REM's realized loss favours REM by construction (Section 4.9);
 - its finding that least-privilege tool design is the strongest single broad control concerns a design-time restriction of privileges, which REM does not evaluate; REM's restricted-tool set 𝒯~R~ is used only by its mitigation semantics.
 
@@ -495,7 +578,7 @@ The two studies do not test each other's mechanisms. REM does not evaluate least
 
 Each mechanism in REM has precedent. The distinguishing elements are the combination and the evaluation design; neither has been compared with these systems on a shared protocol.
 
-## 4.16 Threats to Validity and Limitations
+## 4.17 Threats to Validity and Limitations
 
 1. **Design status.** Costs, tiers, predicates, the feature set and the label rule are declared exploratory values, not approved ones.
 2. **No live runs.** Enforcement was estimated only by replay under NO-ADAPT, a method proposed as an amendment to the Chapter 3 scope.
@@ -508,7 +591,7 @@ Each mechanism in REM has precedent. The distinguishing elements are the combina
 9. **Currency.** Work published after the review's search date was examined only at abstract level, and several close records were found (Chapter 2, Section 2.13.6).
 10. **Runtime figures.** They describe the evaluated configuration only. A deployment with a neural classifier or a human reviewer would be slower.
 
-## 4.17 Chapter Summary
+## 4.18 Chapter Summary
 
 This chapter reported an exploratory evaluation of REM on recorded traces of 21 LLM agents in the AgentDojo banking environment (3,334 episodes; 6,762 proposed tool calls), and discussed what it supports.
 
@@ -516,5 +599,6 @@ This chapter reported an exploratory evaluation of REM on recorded traces of 21 
 - **Decisions.** With the declared exploratory costs, the expected-loss rule intervened on 97.3% of attack steps and 22.7% of legitimate steps, against 74.0% and 5.6% for the consequence-independent baseline on the same estimator (Section 4.5).
 - **Replay.** Under the NO-ADAPT assumption, REM's attack success rate was 0.004 against 0.055 for the baseline (step-level semantics), at a cost of about 20 points of benign utility without a reviewer and no cost with an idealized reviewer (Section 4.6). The mitigation semantics change the baseline's results (Table 4.11).
 - **Live agents.** The closed-loop evaluation was not executed (Section 4.12); no live result exists, and replay results are not live results (Section 4.13).
-- **Interpretation and validity.** The security gain observed in replay comes mainly from low intervention thresholds at high consequence tiers and is paid for in legitimate financial actions; the evidence does not establish protection of live or adaptive agents, deployability, or superiority over other defenses (Sections 4.14–4.16).
+- **MELON with and without REM.** A controlled comparison of the published MELON defence with MELON extended by REM at the tool-execution boundary is implemented and verified locally, but not executed; Table 4.15 contains no result (Section 4.14).
+- **Interpretation and validity.** The security gain observed in replay comes mainly from low intervention thresholds at high consequence tiers and is paid for in legitimate financial actions; the evidence does not establish protection of live or adaptive agents, deployability, or superiority over other defenses (Sections 4.15–4.17).
 

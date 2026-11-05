@@ -1,11 +1,11 @@
 # SCIENTIFIC CLAIM AUDIT — five-chapter thesis
 
-**Scope.** `final_five_chapters/REM_THESIS_5CH_FINAL.docx` / `.pdf` (237 pages), generated from
+**Scope.** `final_five_chapters/REM_THESIS_5CH_FINAL.docx` / `.pdf` (241 pages), generated from
 `final_five_chapters/src/*.md`. Every quantitative claim was carried over from R5 unchanged;
 `audit/qa_logs/content_preservation.txt` confirms that none of the 360 distinct numerical values
 of R5 occurs fewer times in the new text. **No result was added, removed, rounded differently or
 re-computed for this version.** New text adds only: background (§1.1.1–1.1.4), organisation
-(§1.12), the live-harness design and status (§3.17, §4.12, §4.13), chapter summaries (§3.18, §4.17),
+(§1.12), the live-harness design and status (§3.17, §4.12, §4.13), chapter summaries (§3.18, §4.18),
 a Chapter 5 introduction and limitations summary (§5.1, §5.5), and six new figures (four diagrams,
 one plot of declared equations, one chart of existing replay values).
 
@@ -78,7 +78,7 @@ same task pairing are not treated as independent (grouped resampling by attacker
 | C2. Evaluation protocol isolating the decision rule (same estimator, calibration and predicates for REM, B1 and REM-noEsc; nested grouped cross-fitting holding out attacker objectives; all fitting in-fold) | §3.11–3.12; `experiments/pilot/` | E0–E6 pilot; exact re-execution | Strong for internal validity of the comparison on recorded data | One benchmark/suite; label rule automatic (no human audit); user_task_15 collision handled post hoc (§4.10) |
 | C3. Exploratory evidence on 21 real agents: discrimination on unseen objectives (AUC 0.938), no observed calibration benefit, behavioral evidence not attack-specific, quantified protection–utility trade-off and its dependence on reviewer and costs | Ch. 4 §4.3–4.9; `results/pilot_R2/` | Offline, observe-only, NO-ADAPT replay, ablations, loss grid | Moderate as exploratory evidence; reproduced | Replay assumes no adaptation; costs not approved; no per-backbone conclusion; no live enforcement |
 | C4. Closed-loop live-agent harness (B0/B1/REM) with fail-closed runner and analysis code | §3.17; `rem/integration/agentdojo_live.py`; `experiments/live/` | 12 integration tests; scripted ground-truth smoke run (480 episodes, 0 errors) | Strong for harness correctness under scripted agents | **Not executed with an LLM; no live result.** Smoke-run counts are harness checks, not results |
-| C5. Record-level systematic review and comparison with closest prior work | Ch. 2; Appendix 2A; Table 4.16 | — | Record-level (metadata/abstract) | No full texts verified; 2 citation conflicts/withdrawn; 21 partial records (REFERENCES_AUDIT.md) |
+| C5. Record-level systematic review and comparison with closest prior work | Ch. 2; Appendix 2A; Table 4.17 | — | Record-level (metadata/abstract) | No full texts verified; 2 citation conflicts/withdrawn; 21 partial records (REFERENCES_AUDIT.md) |
 
 ## 5. Integrity checks performed in this pass
 

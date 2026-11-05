@@ -5,7 +5,7 @@
 **not modified**. Output: `final_five_chapters/src/*.md` → `REM_THESIS_5CH_FINAL.docx/.pdf`.
 
 **Chapter map (R5 → five-chapter):** Ch1 → Ch1; Ch2 → Ch2; Ch3 → Ch3 (§3.1–3.15);
-Ch4 → Ch3 §3.16; Ch5 → Ch4 (§4.1–4.11) and Ch5 §5.2; Ch6 → Ch4 (§4.14–4.16) and Ch5 (§5.3, 5.4, 5.6, 5.7).
+Ch4 → Ch3 §3.16; Ch5 → Ch4 (§4.1–4.11) and Ch5 §5.2; Ch6 → Ch4 (§4.15–4.17) and Ch5 (§5.3, 5.4, 5.6, 5.7).
 
 **Preservation checks** (`audit/qa_logs/content_preservation.txt`): every one of the 360 distinct
 numerical values in R5 Chapters 1–6 occurs at least as often in the new text (0 with fewer
@@ -74,15 +74,16 @@ listed below); 0 unresolved cross-references (`audit/crossref_check.txt`).
 | 4.11 Distributed Defenses (Recorded Outcomes Only) | R5 Ch 5, §5.11 | Renumbered only; cross-references rewritten to the new numbering. | Exploratory results on recorded traces (offline / observe-only / NO-ADAPT replay). Re-execution: 0 analytical differences. |
 | 4.12 Closed-Loop Evaluation with Live Agents: Status | NEW (no R5 source) | New: live-evaluation status (Table 4.13). States NOT EXECUTED. | NOT EXECUTED. No live result exists. |
 | 4.13 Replay Versus Live Evaluation | NEW (no R5 source) | New: replay versus live comparison of what each can show (Table 4.14). No numbers from a live run. | Methodological comparison only; no live numbers. |
-| 4.14 Interpretation of the Findings | R5 Ch 6, §6.1 | Old Ch6 preamble merged into the start of the section ("This chapter" → "This section"; reference to Sections 4.1–4.11). | Interpretation of exploratory recorded-trace results; comparison with prior work at record level. |
-| 4.15 Comparison with Prior Work | R5 Ch 6, §6.3 | Table 6.1 → 4.15. | Interpretation of exploratory recorded-trace results; comparison with prior work at record level. |
-| 4.16 Threats to Validity and Limitations | R5 Ch 6, §6.5 | Table 6.3 → 4.16; title extended to "Threats to Validity and Limitations". | Interpretation of exploratory recorded-trace results; comparison with prior work at record level. |
-| 4.17 Chapter Summary | NEW (no R5 source) | New chapter summary (restates Chapter 4 findings; no new numbers). | Interpretation of exploratory recorded-trace results; comparison with prior work at record level. |
+| 4.14 Controlled Evaluation of MELON with and without REM | NEW (no R5 source) | New (5 Nov 2026): controlled evaluation of MELON with and without REM: implemented protocol; Table 4.15 (all cells "not executed"). | Implemented protocol, verified locally with scripted agents; NOT EXECUTED; no result. |
+| 4.15 Interpretation of the Findings | R5 Ch 6, §6.1 | Old Ch6 preamble merged into the start of the section ("This chapter" → "This section"; reference to Sections 4.1–4.11). | Interpretation of exploratory recorded-trace results; comparison with prior work at record level. |
+| 4.16 Comparison with Prior Work | R5 Ch 6, §6.3 | Table 6.1 → 4.16. | Interpretation of exploratory recorded-trace results; comparison with prior work at record level. |
+| 4.17 Threats to Validity and Limitations | R5 Ch 6, §6.5 | Table 6.3 → 4.17; title extended to "Threats to Validity and Limitations". | Interpretation of exploratory recorded-trace results; comparison with prior work at record level. |
+| 4.18 Chapter Summary | NEW (no R5 source) | New chapter summary (restates Chapter 4 findings; no new numbers; one bullet on the unexecuted MELON study). | Interpretation of exploratory recorded-trace results; comparison with prior work at record level. |
 | 5.1 Introduction | NEW (no R5 source) | New introduction. | Conclusions limited to the exploratory evidence of Chapter 4. |
 | 5.2 Answers to the Research Questions | R5 Ch 5, §5.12 | Old 5.12; Table 5.13 → 5.1; title "Summary by Research Question" → "Answers to the Research Questions". | Conclusions limited to the exploratory evidence of Chapter 4. |
 | 5.3 Achievement of the Objectives | R5 Ch 6, §6.2 | Table 6.2 → 5.2. | Conclusions limited to the exploratory evidence of Chapter 4. |
 | 5.4 Contributions | R5 Ch 6, §6.4 | Renumbered only; cross-references rewritten to the new numbering. | Conclusions limited to the exploratory evidence of Chapter 4. |
-| 5.5 Limitations | NEW (no R5 source) | New: limitations summary pointing to Section 4.16 (no new limitation invented, none removed). | Conclusions limited to the exploratory evidence of Chapter 4. |
+| 5.5 Limitations | NEW (no R5 source) | New: limitations summary pointing to Section 4.17 (no new limitation invented, none removed). | Conclusions limited to the exploratory evidence of Chapter 4. |
 | 5.6 Recommendations and Future Work, Ordered by Dependency | R5 Ch 6, §6.6 | Title "Future Work, Ordered by Dependency" → "Recommendations and Future Work, Ordered by Dependency". | Conclusions limited to the exploratory evidence of Chapter 4. |
 | 5.7 Conclusion | R5 Ch 6, §6.7 | Renumbered only; cross-references rewritten to the new numbering. | Conclusions limited to the exploratory evidence of Chapter 4. |
 
@@ -111,12 +112,13 @@ listed below); 0 unresolved cross-references (`audit/crossref_check.txt`).
 | Table 5.11 | Table 4.11 |
 | Table 5.12 | Table 4.12 |
 | Table 5.13 | Table 5.1 |
-| Table 6.1 | Table 4.15 |
-| Table 6.3 | Table 4.16 |
+| Table 6.1 | Table 4.16 |
+| Table 6.3 | Table 4.17 |
 | Table 6.2 | Table 5.2 |
 | — | Table 3.26 (new: live-harness components and status) |
 | — | Table 4.13 (new: live-evaluation status) |
 | — | Table 4.14 (new: replay versus live) |
+| — | Table 4.15 (new: MELON with and without REM — not executed) |
 
 ## Figure renumbering and new figures
 
@@ -146,7 +148,7 @@ diagrams show structure only.
 
 Three sentences inserted in the new numbering had been passed through the old→new rewriter and
 were renumbered twice ("Section 4.12" → "Section 3.16.12" in §1.11 and §4.1; "Sections 4.1–4.11" →
-"Sections 3.16.1–3.16.11" in §4.14). `make_5ch.py` now protects inserted text from the rewriter;
+"Sections 3.16.1–3.16.11" in §4.15, then numbered §4.14). `make_5ch.py` now protects inserted text from the rewriter;
 the regenerated text was diffed against the previous output and only these three sentences changed.
 
 ## Wording corrections to R5 text (integrity)

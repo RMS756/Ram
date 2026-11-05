@@ -24,14 +24,15 @@ CHANGES = {
     '4.6': 'New Figure 4.3 (plot of existing replay values from results/pilot_R2/e4_e5_enforcement_replay.json).',
     '4.12': 'New: live-evaluation status (Table 4.13). States NOT EXECUTED.',
     '4.13': 'New: replay versus live comparison of what each can show (Table 4.14). No numbers from a live run.',
-    '4.14': 'Old Ch6 preamble merged into the start of the section ("This chapter" → "This section"; reference to Sections 4.1–4.11).',
-    '4.15': 'Table 6.1 → 4.15.',
-    '4.16': 'Table 6.3 → 4.16; title extended to "Threats to Validity and Limitations".',
-    '4.17': 'New chapter summary (restates Chapter 4 findings; no new numbers).',
+    '4.14': 'New (5 Nov 2026): controlled evaluation of MELON with and without REM: implemented protocol; Table 4.15 (all cells "not executed").',
+    '4.15': 'Old Ch6 preamble merged into the start of the section ("This chapter" → "This section"; reference to Sections 4.1–4.11).',
+    '4.16': 'Table 6.1 → 4.16.',
+    '4.17': 'Table 6.3 → 4.17; title extended to "Threats to Validity and Limitations".',
+    '4.18': 'New chapter summary (restates Chapter 4 findings; no new numbers; one bullet on the unexecuted MELON study).',
     '5.1': 'New introduction.',
     '5.2': 'Old 5.12; Table 5.13 → 5.1; title "Summary by Research Question" → "Answers to the Research Questions".',
     '5.3': 'Table 6.2 → 5.2.',
-    '5.5': 'New: limitations summary pointing to Section 4.16 (no new limitation invented, none removed).',
+    '5.5': 'New: limitations summary pointing to Section 4.17 (no new limitation invented, none removed).',
     '5.6': 'Title "Future Work, Ordered by Dependency" → "Recommendations and Future Work, Ordered by Dependency".',
 }
 
@@ -52,7 +53,9 @@ def evidence(new):
         return 'NOT EXECUTED. No live result exists.'
     if n == '4.13':
         return 'Methodological comparison only; no live numbers.'
-    if n in ('4.14', '4.15', '4.16', '4.17'):
+    if n == '4.14':
+        return 'Implemented protocol, verified locally with scripted agents; NOT EXECUTED; no result.'
+    if n in ('4.15', '4.16', '4.17', '4.18'):
         return 'Interpretation of exploratory recorded-trace results; comparison with prior work at record level.'
     if n.startswith('4.'):
         return 'Exploratory results on recorded traces (offline / observe-only / NO-ADAPT replay). Re-execution: 0 analytical differences.'
@@ -86,7 +89,7 @@ md = f"""# THESIS SOURCE MAP — five-chapter version
 **not modified**. Output: `final_five_chapters/src/*.md` → `REM_THESIS_5CH_FINAL.docx/.pdf`.
 
 **Chapter map (R5 → five-chapter):** Ch1 → Ch1; Ch2 → Ch2; Ch3 → Ch3 (§3.1–3.15);
-Ch4 → Ch3 §3.16; Ch5 → Ch4 (§4.1–4.11) and Ch5 §5.2; Ch6 → Ch4 (§4.14–4.16) and Ch5 (§5.3, 5.4, 5.6, 5.7).
+Ch4 → Ch3 §3.16; Ch5 → Ch4 (§4.1–4.11) and Ch5 §5.2; Ch6 → Ch4 (§4.15–4.17) and Ch5 (§5.3, 5.4, 5.6, 5.7).
 
 **Preservation checks** (`audit/qa_logs/content_preservation.txt`): every one of the 360 distinct
 numerical values in R5 Chapters 1–6 occurs at least as often in the new text (0 with fewer
@@ -107,6 +110,7 @@ listed below); 0 unresolved cross-references (`audit/crossref_check.txt`).
 | — | Table 3.26 (new: live-harness components and status) |
 | — | Table 4.13 (new: live-evaluation status) |
 | — | Table 4.14 (new: replay versus live) |
+| — | Table 4.15 (new: MELON with and without REM — not executed) |
 
 ## Figure renumbering and new figures
 
@@ -135,7 +139,7 @@ diagrams show structure only.
 
 Three sentences inserted in the new numbering had been passed through the old→new rewriter and
 were renumbered twice ("Section 4.12" → "Section 3.16.12" in §1.11 and §4.1; "Sections 4.1–4.11" →
-"Sections 3.16.1–3.16.11" in §4.14). `make_5ch.py` now protects inserted text from the rewriter;
+"Sections 3.16.1–3.16.11" in §4.15, then numbered §4.14). `make_5ch.py` now protects inserted text from the rewriter;
 the regenerated text was diffed against the previous output and only these three sentences changed.
 
 ## Wording corrections to R5 text (integrity)

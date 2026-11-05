@@ -6,7 +6,7 @@ live result exists.**
 
 | Deliverable | File |
 |---|---|
-| Full thesis (Word, PDF; 237 A4 pages; i–xxii + 1–215) | `REM_THESIS_5CH_FINAL.docx`, `REM_THESIS_5CH_FINAL.pdf` |
+| Full thesis (Word, PDF; 241 A4 pages; i–xxii + 1–219) | `REM_THESIS_5CH_FINAL.docx`, `REM_THESIS_5CH_FINAL.pdf` |
 | Chapters | `chapters/CHAPTER1_INTRODUCTION.docx` … `CHAPTER5_CONCLUSIONS.docx`; Markdown sources in `src/` |
 | Appendices | `appendices/EXPERIMENT_REPRODUCTION.md`, `appendices/LIVE_AGENTDOJO_DETAILS.md` |
 | Audits | `audit/THESIS_SOURCE_MAP.md`, `SCIENTIFIC_CLAIM_AUDIT.md`, `REFERENCES_AUDIT.md`, `FORMATTING_AUDIT.md`, `EXPERIMENT_STATUS.md`, `UNRESOLVED_SUPERVISOR_DECISIONS.md`, `FINAL_SUBMISSION_READINESS.md`; QA logs in `audit/qa_logs/` |
@@ -16,7 +16,7 @@ live result exists.**
 | Live-experiment documents (8) | `../../experiments/live/*.md` |
 
 **Source:** R5 (`../chapters_R5/`), read and never modified. Mapping R5 → five chapters:
-Ch1→1, Ch2→2, Ch3→3 (§3.1–3.15), Ch4→§3.16, Ch5→Ch4 (§4.1–4.11) and §5.2, Ch6→§4.14–4.16 and Ch5.
+Ch1→1, Ch2→2, Ch3→3 (§3.1–3.15), Ch4→§3.16, Ch5→Ch4 (§4.1–4.11) and §5.2, Ch6→§4.15–4.17 and Ch5. New §4.14 (5 Nov 2026): MELON with and without REM — implemented protocol, not executed.
 
 Rebuild (from the repository root; needs pandoc, python-docx, lxml, matplotlib, LibreOffice):
 

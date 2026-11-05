@@ -12,7 +12,7 @@
 ## 1. Was the thesis generated?
 
 **Yes.**
-- `final_five_chapters/REM_THESIS_5CH_FINAL.docx` (editable) and `REM_THESIS_5CH_FINAL.pdf`: 237 A4 pages. The preliminary pages run i–xxii; Chapters 1–5 and the References run 1–215.
+- `final_five_chapters/REM_THESIS_5CH_FINAL.docx` (editable) and `REM_THESIS_5CH_FINAL.pdf`: 241 A4 pages. The preliminary pages run i–xxii; Chapters 1–5 and the References run 1–219.
 - `chapters/CHAPTER1…5*.docx`: five separate chapter files.
 - Source text: `final_five_chapters/src/*.md`.
 - Build tools: `tools/make_5ch.py`, `figures_5ch.py`, `build_5ch.py`, `check_5ch.py`, `qa_5ch.py`, `tables_5ch.py`, `source_map_5ch.py`.
@@ -159,3 +159,9 @@ Details are in `UNRESOLVED_SUPERVISOR_DECISIONS.md`.
 6. The formatting has not been checked against the university's rules. The PDF must be re-exported with Times New Roman.
 7. References: no full texts were read; there are 21 PARTIAL entries; the Platt year (D-13) and Kull are unresolved.
 8. The "Status of This Draft" page must be removed from a submission version.
+
+## 10. Addendum (5 Nov 2026): MELON vs MELON + REM
+
+A small extension study is implemented and verified locally, with 30/30 local checks passing. The thesis gains one subsection, §4.14, with Table 4.15 marked "not executed". **No real model call was made and no result exists.**
+
+It adds one more blocker for any claim about the combination: spending authorisation and the design inputs M-1 to M-3. Nothing in the existing results, conclusions or abstract was changed.

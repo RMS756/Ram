@@ -1,0 +1,48 @@
+# MELON vs MELON + REM — run configuration TEMPLATE (fail-closed).
+# The runner refuses to start (exit 2) while any value is REQUIRED_FROM_DESIGN.
+# Values marked FIXED are fixed by the verified upstream code or by the study's instruction, not chosen here.
+
+study: melon_vs_melon_rem
+run_id: REQUIRED_FROM_DESIGN            # e.g. a date-stamped id; written into every record
+
+benchmark:
+  agentdojo_version: "0.1.29"           # FIXED: last release with string message content, required by upstream MELON
+  suite: banking                        # FIXED (study scope)
+  suite_version: v1                     # FIXED: the banking version of REM's recorded fitting traces
+  attack: important_instructions        # FIXED: one predeclared attack; conclusions limited to it
+  case_set: REQUIRED_FROM_DESIGN        # "pilot" (13 cases, predeclared rule) or "full" (144 attacked + 16 benign)
+
+upstream:
+  melon_pi_detector_path: /home/user/upstream/MELON/pi_detector.py   # local clone at the pinned commit
+  melon_commit: 4d3cc9c0175cc26332aac696ac5556c3f85a5e8e             # FIXED (verified)
+
+models:
+  provider: openai                      # FIXED: MELON's detector calls the OpenAI embeddings API
+  backbone: REQUIRED_FROM_DESIGN        # exact dated model id, identical in both conditions (also used by MELON's masked run)
+  embedding_model: text-embedding-3-large   # FIXED in upstream code (informational; checked, not configurable)
+  temperature: REQUIRED_FROM_DESIGN     # NOTE: AgentDojo 0.1.29 sends no temperature when the value is 0.0 (falsy)
+  repeats: REQUIRED_FROM_DESIGN         # repetitions per case and condition (>= 1)
+  max_iters: 15                         # FIXED: AgentDojo / upstream README default
+  request_timeout_s: REQUIRED_FROM_DESIGN
+  max_retries: REQUIRED_FROM_DESIGN     # SDK retries per request (same in both conditions)
+
+conditions: [MELON, MELON_REM]          # FIXED primary pair; NO_DEFENSE may be added for context only
+
+rem:
+  bundle_path: REQUIRED_FROM_DESIGN     # output of experiments/melon_rem/export_frozen_rem.py
+  bundle_sha256: REQUIRED_FROM_DESIGN   # from <bundle>.json; checked before running
+  fitted_parameters_source: REQUIRED_FROM_DESIGN   # "heldout_crossfit_assignment" or "fold:<injection_task_k>"
+  policy: A3                            # FIXED: REM reference algorithm (expected-loss verdict incl. Escalate)
+  costs_and_tiers: pilot_e0_exploratory # only implemented value; NOT supervisor-approved (D-9)
+  mitigation_semantics: step_level      # FIXED: canonical Block/Modify act on the current call (CLAUDE.md)
+  reviewer_model: no_reviewer           # FIXED by the study instruction: Escalate withholds the call; no label-based reviewer
+
+budget:
+  authorization_reference: REQUIRED_FROM_DESIGN   # who authorised the spending, and when
+  cap_usd: REQUIRED_FROM_DESIGN
+  prices_usd_per_1m_tokens: REQUIRED_FROM_DESIGN  # {<backbone>: {input: x, output: y}, text-embedding-3-large: {embedding: z}}
+  chars_per_token_lower_bound: 2.0      # reservation heuristic (conservative); not a price
+  reserve_output_tokens: 2048           # reservation per chat call; not a limit sent to the provider
+
+order:
+  seed: REQUIRED_FROM_DESIGN            # seed of the randomised, interleaved run order

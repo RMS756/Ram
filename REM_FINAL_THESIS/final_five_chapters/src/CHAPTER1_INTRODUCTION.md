@@ -204,6 +204,6 @@ The thesis is organized in five chapters:
 - **Chapter 1** introduces the background, problem, gap, aim, objectives, research questions, approach, scope and contributions.
 - **Chapter 2** reports a record-level systematic review of runtime security for tool-using AI agents, compares the closest prior work and states the research gap it supports.
 - **Chapter 3** specifies the research methodology and the design of REM (architecture, threat model, evidence, estimator, calibration, consequence tiers, expected-loss decision, mitigation, audit), the experimental methodology and metrics, the software implementation and its verification (Section 3.16), and the design and implementation status of a closed-loop evaluation with live agents (Section 3.17).
-- **Chapter 4** reports the exploratory evaluation on recorded agent traces, states the status of the live-agent evaluation, and discusses the findings, the comparison with prior work and the threats to validity.
+- **Chapter 4** reports the exploratory evaluation on recorded agent traces, states the status of the live-agent evaluation and of a planned controlled evaluation of MELON with and without REM (Section 4.14), and discusses the findings, the comparison with prior work and the threats to validity.
 - **Chapter 5** answers the research questions, assesses the objectives and contributions, summarises the limitations, and concludes with recommendations and future work ordered by dependency.
 
