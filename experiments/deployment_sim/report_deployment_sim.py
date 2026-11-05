@@ -13,7 +13,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-KEY = {"B0": "B0", "B1": "B1_step_level_no_reviewer", "REM": "REM_step_level_no_reviewer"}
+KEY = {"B0": "B0", "B1": "B1_step_level_no_reviewer", "REM": "REM_step_level_no_reviewer", "REMLITE": "B1_step_level_no_reviewer"}
 
 
 def f(x, n=3):

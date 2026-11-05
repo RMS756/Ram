@@ -13,6 +13,7 @@ Configurations served (mitigation semantics step_level; reviewer model no_review
   B0   allow-all (REM disabled; latency and outcome reference)
   B1   consequence-independent operating-point baseline on the same estimator
   REM  A3 expected-loss verdict
+  REMLITE  REM-Lite ablation: uncalibrated p~ + fixed development-data thresholds (experiments/rem_lite)
 EXPLORATORY design values (pilot_e0, not supervisor-approved).
 """
 from __future__ import annotations
@@ -39,7 +40,7 @@ from rem.evaluation.crossfit import assign_round_robin  # noqa: E402
 from rem.integration.agentdojo_replay import GuardConfig, RemGuard  # noqa: E402
 from rem.integration.agentdojo_traces import Episode, Message  # noqa: E402
 
-CONFIGS = ("B0", "B1", "REM")
+CONFIGS = ("B0", "B1", "REM", "REMLITE")
 VARIANT, REVIEWER = "step_level", "no_reviewer"
 
 
@@ -58,6 +59,10 @@ def build_provider():
     folds = sorted(set(data.fold.tolist()), key=str)
     refs = {f: reference_from_mask(data, data.fold != f) for f in folds}
     scorers = {f: rm.scorer_of(fits["label_nll_primary"].fits[f], FEATURE_ORDER) for f in folds}
+    raw_scorers = {f: rm.scorer_of(fits["label_nll_primary"].fits[f], FEATURE_ORDER, calibrated=False) for f in folds}
+    sys.path.insert(0, os.path.join(REPO, "experiments", "rem_lite"))
+    from run_rem_lite import lite_policies                      # REM-Lite: raw p~ + development-data thresholds
+    lite, _ = lite_policies(fits)
     inj = sorted({e.injection_task_id for e in data.episodes.values() if e.injection_task_id}, key=str)
     users = sorted({e.user_task_id for e in data.episodes.values()}, key=str)
     rr = assign_round_robin(users, len(inj))
@@ -67,7 +72,7 @@ def build_provider():
     def decider(conf, f):
         if conf == "B0":
             return lambda c: (Verdict.ALLOW, "allow_all", {})
-        P = pol[f]["B1" if conf == "B1" else f"A3_{VARIANT}"]
+        P = lite[f] if conf == "REMLITE" else pol[f]["B1" if conf == "B1" else f"A3_{VARIANT}"]
 
         def decide(c):
             d = P.decide(c.p, c.tier, c.tool, c.available)                 # the label is never passed
@@ -85,7 +90,8 @@ def build_provider():
                      messages=(Message("system", meta["system_prompt"]), Message("user", meta["user_prompt"])),
                      utility=False, security=False, error=None, benchmark_version="v1")
         gc = GuardConfig(st.spec, st.detector, refs[f], st.tier_map, st.restricted, VARIANT, REVIEWER)
-        g = RemGuard(gc, None if conf == "B0" else scorers[f], decider(conf, f), st.labeler, ep)
+        sc = None if conf == "B0" else (raw_scorers[f] if conf == "REMLITE" else scorers[f])
+        g = RemGuard(gc, sc, decider(conf, f), st.labeler, ep)
         return g, tool_names
 
     prov = {"crossfit_pkl_sha256": sha256(os.path.join(state, "crossfit.pkl")),

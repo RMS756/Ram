@@ -39,7 +39,8 @@ sys.path.insert(0, REPO)
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(REPO, "experiments", "pilot"))
 
-REPLAY_KEY = {"B0": "B0", "B1": "B1_step_level_no_reviewer", "REM": "REM_step_level_no_reviewer"}
+REPLAY_KEY = {"B0": "B0", "B1": "B1_step_level_no_reviewer", "REM": "REM_step_level_no_reviewer",
+              "REMLITE": "B1_step_level_no_reviewer"}   # REM-Lite is verdict-equivalent to B1 (verified offline)
 
 
 def free_port():
@@ -102,6 +103,7 @@ def main():
     ap.add_argument("--sweep", default="1,2,4,8,16")
     ap.add_argument("--sweep-episodes", type=int, default=400)
     ap.add_argument("--limit", type=int, default=0, help="debug: only the first N episodes")
+    ap.add_argument("--configs", default="B0,B1,REM")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
 
@@ -145,7 +147,8 @@ def main():
         results["fail_closed_probes"] = p
         # ---------------- main run: all episodes x B0, B1, REM ----------------
         all_recs = []
-        for conf in ("B0", "B1", "REM"):
+        CONFS = [c for c in a.configs.split(",") if c]
+        for conf in CONFS:
             recs, secs = run_batch(episodes, conf, base, suite, a.concurrency)
             all_recs += recs
             results["configs"][conf] = {"episodes": len(recs), "wall_s": secs, "episodes_per_s": len(recs) / secs,
@@ -175,7 +178,7 @@ def main():
 
     # ---------------- parity with the in-process replay ----------------
     par = {}
-    for conf in ("B0", "B1", "REM"):
+    for conf in CONFS:
         mism = collections.Counter()
         examples = []
         for r in (x for x in all_recs if x["configuration"] == conf):
@@ -207,7 +210,7 @@ def main():
 
     # ---------------- outcome metrics (valid episodes, as in Section 4.6) ----------------
     met = {}
-    for conf in ("B0", "B1", "REM"):
+    for conf in CONFS:
         rs = [r for r in all_recs if r["configuration"] == conf and agree.get(r["episode_id"], False)]
         att = [r for r in rs if data.episodes[r["episode_id"]].attacked]
         ben = [r for r in rs if not data.episodes[r["episode_id"]].attacked]
