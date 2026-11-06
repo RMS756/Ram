@@ -29,7 +29,9 @@ from docx.shared import Cm, Pt, RGBColor
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 TOOLS = os.path.dirname(os.path.abspath(__file__))
-FIN = os.path.join(ROOT, 'REM_FINAL_THESIS', 'final_five_chapters')
+FIN = os.environ.get('REM_5CH_DIR') or os.path.join(ROOT, 'REM_FINAL_THESIS', 'final_five_chapters')   # override: review copies
+TEXT = os.environ.get('REM_5CH_TEXT') or os.path.join(TOOLS, 'text_5ch')
+OUTNAME = os.environ.get('REM_5CH_NAME') or 'REM_THESIS_5CH_FINAL'
 SRC = os.path.join(FIN, 'src')
 BUILD = os.path.join(FIN, 'build')
 CHDIR = os.path.join(FIN, 'chapters')
@@ -234,14 +236,14 @@ def marker(name):
     return '```{=openxml}\n<w:p><w:r><w:t>@@' + name + '@@</w:t></w:r></w:p>\n```\n'
 
 
-fm = open(os.path.join(TOOLS, 'text_5ch', 'front_matter_5ch.md'), encoding='utf-8').read()
+fm = open(os.path.join(TEXT, 'front_matter_5ch.md'), encoding='utf-8').read()
 r5fm = open(os.path.join(ROOT, 'REM_FINAL_THESIS', 'chapters_R5', 'FRONT_MATTER_R5.md'), encoding='utf-8').read()
 abbr = r5fm[r5fm.index('# List of Abbreviations'):].strip()
 abbr = abbr.replace('| AUC | Area under the curve |', '| AUC | Area under the curve |\n| API | Application programming interface |')
 for k, v in {'@@TITLE_PAGE@@': TITLE_PAGE, '@@TOC@@': TOC, '@@LOT@@': marker('LOT'), '@@LOF@@': marker('LOF'),
              '@@ABBREVIATIONS@@': abbr, '@@SECTION_BREAK@@': marker('SECTION_BREAK'),
-             '@@ABSTRACT_EN@@': open(os.path.join(TOOLS, 'text_5ch', 'abstract_en.md'), encoding='utf-8').read().strip(),
-             '@@ABSTRACT_AR@@': open(os.path.join(TOOLS, 'text_5ch', 'abstract_ar.md'), encoding='utf-8').read().strip()}.items():
+             '@@ABSTRACT_EN@@': open(os.path.join(TEXT, 'abstract_en.md'), encoding='utf-8').read().strip(),
+             '@@ABSTRACT_AR@@': open(os.path.join(TEXT, 'abstract_ar.md'), encoding='utf-8').read().strip()}.items():
     assert k in fm, k
     fm = fm.replace(k, v)
 tmp = os.path.join(BUILD, 'src')
@@ -265,7 +267,7 @@ for c, s in zip(CHAPTERS, srcs[1:6]):
     out = os.path.join(CHDIR, c + '.docx')
     pandoc([s, srcs[-1]], out)
     process_docx(out)
-FULL = os.path.join(FIN, 'REM_THESIS_5CH_FINAL.docx')
+FULL = os.path.join(FIN, OUTNAME + '.docx')
 PDF = FULL[:-5] + '.pdf'
 pandoc(srcs, FULL)
 process_docx(FULL)

@@ -21,13 +21,13 @@ or spacing value is claimed to be the university's requirement.
 | Property | Value in the build | Verified how | University conformance |
 |---|---|---|---|
 | Page size | A4 (21.0 × 29.7 cm) | `pdfinfo`: 595.3 × 841.9 pt (A4) | Assumed |
-| Margins | left 3.0 cm; right, top, bottom 2.5 cm; header/footer 1.25 cm | set in `build_5ch.py` (lines 108–115); margin scan: no ink in the outer 2.2 cm of any of 237 pages | Assumed |
+| Margins | left 3.0 cm; right, top, bottom 2.5 cm; header/footer 1.25 cm | set in `build_5ch.py` (lines 108–115); margin scan: no ink in the outer 2.2 cm of any of 241 pages | Assumed |
 | Body font | Times New Roman 12 pt (style definition in the DOCX) | DOCX styles. **In the PDF, Times New Roman is substituted by Liberation Serif** (metric-compatible) because Times New Roman is not installed in the build container; `pdffonts` lists LiberationSerif and no Times | Assumed; re-export from Word on a machine with Times New Roman before submission |
 | Line spacing | 1.5 (body); 1.15 in compact table text | DOCX paragraph styles | Assumed |
 | Alignment | justified body; centred chapter titles and captions | visual inspection (title page, front matter, Chapter 1 opening, sample body pages) | Assumed |
 | Table text | 10 pt | `docx_structure.txt`: 0 table runs not 10 pt (3,515 table runs) | Assumed |
 | Captions | "Table N.M." above tables; "Figure N.M." below figures | List of Tables / List of Figures: every caption has a page number (build log: `captions without page {'LOF': 0, 'LOT': 0}`) | Assumed convention |
-| Page numbering | lower-case Roman for preliminary pages (i–xxii); Arabic from Chapter One (1–215); title page counted but not numbered | `pdf_properties.txt`: physical page 2 → "ii", 20 → "xx", 23 → "1", 237 → "215" | Assumed convention (common) |
+| Page numbering | lower-case Roman for preliminary pages (i–xxii); Arabic from Chapter One (1–219); title page counted but not numbered | `pdf_properties.txt`: physical page 2 → "ii", 20 → "xx", 23 → "1", 241 → "219" | Assumed convention (common) |
 | Chapter starts | each chapter on a new page; "CHAPTER ONE: INTRODUCTION" style headings | visual inspection | Assumed |
 | Equations | 25 native Word (OMML) equations, numbered (Ch2: 3; Ch3: 22) | structure log (`math_nor_and_sty` 0); content check: 25 = R5 | — |
 | Tables / figures | 57 tables in the DOCX = 57 table captions (the content check counts 58 because one body sentence in §2.11 begins with "**Table 2.8**" when pointing to Appendix 2A); 10 figures at 300 dpi | build log; content check | — |

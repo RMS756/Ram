@@ -1,4 +1,4 @@
-The limitations are discussed in full in Section 4.16. In summary, the conclusions of this thesis are bounded by:
+The limitations are discussed in full in Section 4.17. In summary, the conclusions of this thesis are bounded by:
 
 1. **Design status.** Costs, tiers, predicates, the feature set and the label rule are declared exploratory values, not approved ones.
 2. **No live evaluation.** Enforcement was estimated only by replay under NO-ADAPT. The closed-loop harness is implemented and tested but was not executed with a language model (Section 4.12).

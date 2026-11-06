@@ -87,3 +87,15 @@ python3 experiments/live/analyze_live.py results/live_<date>/episodes.jsonl resu
 - Repeated runs of the same task pairing (the recorded traces contain one run per pairing per agent).
 - Confirmatory evaluation under supervisor-approved design values.
 - Optional CUSUM scenarios beyond the observe-only analysis.
+
+## 6. Extension study: original MELON vs MELON + REM (added 5 Nov 2026; thesis §4.14)
+
+| Item | Status |
+|---|---|
+| Upstream MELON | Pinned at `kaijiezhu11/MELON@4d3cc9c`; `pi_detector.py` sha256-checked; not vendored (no licence file) |
+| Environment | AgentDojo 0.1.29 (required by the upstream code); separate virtual environment |
+| Integration (`rem/integration/melon_rem.py`) | IMPLEMENTED. REM replaces only the tool executor inside MELON's loop |
+| Frozen REM bundle | EXPORTED (`experiments/melon_rem/frozen/`, sha256 `983c5b0d…`); deterministic |
+| Local verification | **30/30 pass** in the MELON environment (scripted agents, fake embeddings, fake provider); 225 passed + 1 skipped in the main environment |
+| Pilot (26 episodes) and final run (up to 320 × repeats) | **NOT EXECUTED.** No spending authorisation or cap and no credential in this session; design inputs open (`MELON_REM_EXPERIMENT_PROTOCOL.md` §7) |
+| Results | **None.** Table 4.15 reads "not executed" in every cell |

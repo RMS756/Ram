@@ -31,7 +31,7 @@ codes); this file carries those items forward and adds the items raised by the f
 | SD-5 | Banking-only scope vs O1 (financial and task-automation agents) | O1 achieved for banking only (Table 5.2) |
 | Repeats | ≥ 3 repeated runs (Ch. 3 §3.11.9) | Recorded traces contain one run per configuration |
 | RG-1 | Authoritative equation registry | Missing; no EQUATION_ID created |
-| OI-01–OI-06 | NEXUS claims based on a Stage 1 reading | Marked U in Table 4.16 |
+| OI-01–OI-06 | NEXUS claims based on a Stage 1 reading | Marked U in Table 4.17 |
 | OI-10–OI-13 | Printed formulations of le Cessie & van Houwelingen, Elkan, Cox, Chow not read | Record-level only |
 | Full texts | No full text read for any reference | All of Chapter 2 |
 | AM-1–AM-4 | Pilot amendments committed before held-out predictions | Disclosed |
@@ -53,8 +53,8 @@ frozen version), CF-01–CF-09.
 | **N-2** | Faculty, department and degree on the title page ("Faculty of Artificial Intelligence — Department of Intelligent Systems"; "Master of Science in Cybersecurity") | Carried over from earlier drafts; **not verified** | Confirm against official records | Student |
 | **N-3** | Arabic abstract and Arabic spellings of names (روان اللحام; أ.د. عمر أحمد الزعبي; د. حسام فاخوري) | AI-assisted draft translation; flagged on the Status page | Review the wording and the official Arabic spellings | Student |
 | **N-4** | **Five chapters instead of six (D-11).** D-11 had recorded six chapters as the author's choice; the latest instruction requires five | Restructured into five chapters; no content removed; mapping in THESIS_SOURCE_MAP.md. Chapter locations inside the text (e.g. Table 3.1: demonstration → Section 3.16, evaluation → Chapter 4, communication → Chapter 5) were renumbered accordingly | Supervisor acknowledgement of the five-chapter structure | Supervisor |
-| **N-5** | Placement choices within the five chapters: implementation as §3.16 (demoted, not rewritten); discussion, comparison with prior work and threats to validity in Chapter 4 (§4.14–4.16); Chapter 5 limitations as a summary (§5.5) pointing to §4.16 | As instructed (Ch. 3 merges old Ch. 3–4; Ch. 4 = results + discussion; Ch. 5 = conclusions and recommendations) | Confirm, or request another arrangement | Supervisor |
-| **N-6** | **Potential conflict of interest / self-citation.** The named Co-Supervisor is a co-author of Kanaker et al. (2026), which the thesis cites and compares with (§2.13.7, §4.15) | Cited as a source and critical comparison only; evidence level stated | Decide whether a disclosure statement is required by the university | Supervisor / student |
+| **N-5** | Placement choices within the five chapters: implementation as §3.16 (demoted, not rewritten); discussion, comparison with prior work and threats to validity in Chapter 4 (§4.15–4.17); Chapter 5 limitations as a summary (§5.5) pointing to §4.17 | As instructed (Ch. 3 merges old Ch. 3–4; Ch. 4 = results + discussion; Ch. 5 = conclusions and recommendations) | Confirm, or request another arrangement | Supervisor |
+| **N-6** | **Potential conflict of interest / self-citation.** The named Co-Supervisor is a co-author of Kanaker et al. (2026), which the thesis cites and compares with (§2.13.7, §4.16) | Cited as a source and critical comparison only; evidence level stated | Decide whether a disclosure statement is required by the university | Supervisor / student |
 | **N-7** | "Independent re-execution" wording in R5 | **Corrected** to "re-execution … in a fresh environment (by this project, not an external replication)" in §3.16.2 (Table 3.18), §3.16.11.2, §4.2, §4.6 and both abstracts | Confirm the wording; an external replication would be needed to claim independence | Supervisor |
 | **N-8** | Front-matter placeholders: committee decision, declaration (including any AI-use declaration), dedication, acknowledgement | Placeholders only; nothing signed or affirmed; a factual note on AI assistance (not a declaration) | Complete with the university's wording | Student / university |
 | **N-9** | Formatting rules and the layout reference (`enas-thesis_2026 (1).pdf`) | Not available; assumed A4 style (FORMATTING_AUDIT.md) | Provide the rules or the reference PDF; re-check the layout | Student |
@@ -72,3 +72,15 @@ frozen version), CF-01–CF-09.
 | Budget and authorisation | UNDECIDED |
 | Pre-registered primary metric and analysis | UNDECIDED (draft protocol in `experiments/live/LIVE_EXPERIMENT_PROTOCOL.md`) |
 | Adaptive-attack scope | UNDECIDED |
+
+## F. MELON vs MELON + REM extension study (added 5 Nov 2026; thesis §4.14)
+
+| ID | Item | Status |
+|---|---|---|
+| **M-1** | **Spending authorisation and cap** for the pilot and the final run; provider prices on the day | Required before any paid call; the runner refuses without it |
+| **M-2** | Backbone model id (e.g. whether to match MELON's main GPT-4o setting), temperature, repeats, timeout and retry policy | Open (`REQUIRED_FROM_DESIGN`) |
+| **M-3** | REM fitted-parameter source: `heldout_crossfit_assignment` (recommended [PD]; held-out attacker objective per case) or a single fold | Open |
+| **M-4** | Whether to report the optional undefended context condition | Optional; not required for the comparison |
+| **M-5** | Acceptance of compatibility measure C-2 (MELON's masked-call bank reset per episode; upstream code would carry it across episodes in one process) | Recorded; applied identically to both conditions |
+| **M-6** | Use of AgentDojo 0.1.29 for this study (REM's main environment is 0.1.35; banking v1 task and attack code identical) | Recorded |
+| **M-7** | The study inherits D-9 (exploratory costs), D-4 (tie rule), D-3 (calibration target) and D-8 (no injection classifier) | Inherited, not resolved |

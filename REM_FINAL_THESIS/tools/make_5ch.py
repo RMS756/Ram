@@ -12,7 +12,7 @@ Structure (old R5 -> new):
          + 3.17 Closed-loop live-agent evaluation (new: design and implementation status)
          + 3.18 Chapter Summary (old 3.16 and old 4.15 merged)
   Ch4 <- old Ch5 5.1-5.11 -> 4.1-4.11 + 4.12 live status (new) + 4.13 replay vs live (new)
-         + 4.14 old 6.1 + 4.15 old 6.3 + 4.16 old 6.5 + 4.17 summary (new)
+         + 4.14 MELON vs MELON+REM protocol (new) + 4.15 old 6.1 + 4.16 old 6.3 + 4.17 old 6.5 + 4.18 summary (new)
   Ch5 <- 5.1 intro (new) + 5.2 old 5.12 + 5.3 old 6.2 + 5.4 old 6.4 + 5.5 limitations summary (new)
          + 5.6 old 6.6 + 5.7 old 6.7
 Every cross-reference to a section, table, figure or chapter is rewritten in one pass through explicit
@@ -77,7 +77,7 @@ for n, t, b in S[5]:
         SEC[n] = '4.' + n.split('.', 1)[1] if n != '5.12' else '5.2'
         for m in re.findall(r'^#{3,4} (\d+(?:\.\d+)+)\s', b, flags=re.M):
             SEC[m] = '4.' + m.split('.', 1)[1]
-C6 = {'6.1': '4.14', '6.2': '5.3', '6.3': '4.15', '6.4': '5.4', '6.5': '4.16', '6.6': '5.6', '6.7': '5.7'}
+C6 = {'6.1': '4.15', '6.2': '5.3', '6.3': '4.16', '6.4': '5.4', '6.5': '4.17', '6.6': '5.6', '6.7': '5.7'}   # 4.14 = MELON study (new)
 for n, t, b in S[6]:
     if n:
         SEC[n] = C6[n]
@@ -89,7 +89,7 @@ for ch in (1, 2, 3):
         TAB[m] = m
 TAB.update({f'4.{i}': f'3.{17 + i}' for i in range(1, 9)})          # 4.1-4.8 -> 3.18-3.25
 TAB.update({f'5.{i}': f'4.{i}' for i in range(1, 13)})              # 5.1-5.12 -> 4.1-4.12
-TAB.update({'5.13': '5.1', '6.1': '4.15', '6.3': '4.16', '6.2': '5.2'})
+TAB.update({'5.13': '5.1', '6.1': '4.16', '6.3': '4.17', '6.2': '5.2'})   # Table 4.15 = MELON study (new)
 FIGM = {'2.1': '2.1', '3.1': '3.1', '5.1': '4.1', '5.2': '4.2',
         '1.1': '1.1', '3.2': '3.2', '3.3': '3.3', '3.4': '3.4', '3.5': '3.5', '4.3': '4.3'}   # new figures keep their numbers
 CHMAP = {1: 1, 2: 2, 3: 3, 4: 3, 5: 4, 6: 5}
@@ -256,7 +256,7 @@ ch1 += new('1.12', 'Thesis Organization', '''The thesis is organized in five cha
 - **Chapter 1** introduces the background, problem, gap, aim, objectives, research questions, approach, scope and contributions.
 - **Chapter 2** reports a record-level systematic review of runtime security for tool-using AI agents, compares the closest prior work and states the research gap it supports.
 - **Chapter 3** specifies the research methodology and the design of REM (architecture, threat model, evidence, estimator, calibration, consequence tiers, expected-loss decision, mitigation, audit), the experimental methodology and metrics, the software implementation and its verification (Section 3.16), and the design and implementation status of a closed-loop evaluation with live agents (Section 3.17).
-- **Chapter 4** reports the exploratory evaluation on recorded agent traces, states the status of the live-agent evaluation, and discusses the findings, the comparison with prior work and the threats to validity.
+- **Chapter 4** reports the exploratory evaluation on recorded agent traces, states the status of the live-agent evaluation and of a planned controlled evaluation of MELON with and without REM (Section 4.14), and discusses the findings, the comparison with prior work and the threats to validity.
 - **Chapter 5** answers the research questions, assesses the objectives and contributions, summarises the limitations, and concludes with recommendations and future work ordered by dependency.''')
 
 # ================================================================== CHAPTER 2 (unchanged numbering)
@@ -311,10 +311,11 @@ if PRE6_OLD not in pre6:
 pre6 = pre6.replace(PRE6_OLD, '@@PRE6@@')
 pre6 = rewrite(pre6, 4, 6, 'old Ch6 preamble').replace(
     '@@PRE6@@', 'This section interprets the exploratory evaluation reported in Sections 4.1–4.11.')  # new numbering, not rewritten
-ch4 += block(6, '6.1', 4).replace('## 4.14 Interpretation of the Findings\n', '## 4.14 Interpretation of the Findings\n\n' + pre6 + '\n', 1)
+ch4 += new('4.14', 'Controlled Evaluation of MELON with and without REM', open(os.path.join(os.path.dirname(__file__), 'text_5ch', 'ch4_melon_rem.md'), encoding='utf-8').read())
+ch4 += block(6, '6.1', 4).replace('## 4.15 Interpretation of the Findings\n', '## 4.15 Interpretation of the Findings\n\n' + pre6 + '\n', 1)
 ch4 += block(6, '6.3', 4)
 ch4 += block(6, '6.5', 4, new_title='Threats to Validity and Limitations')
-ch4 += new('4.17', 'Chapter Summary', open(os.path.join(os.path.dirname(__file__), 'text_5ch', 'ch4_summary.md'), encoding='utf-8').read())
+ch4 += new('4.18', 'Chapter Summary', open(os.path.join(os.path.dirname(__file__), 'text_5ch', 'ch4_summary.md'), encoding='utf-8').read())
 
 # ================================================================== CHAPTER 5
 ch5 = '# CHAPTER FIVE\n\n# CONCLUSIONS AND RECOMMENDATIONS\n\n'

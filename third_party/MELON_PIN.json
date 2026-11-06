@@ -1,0 +1,13 @@
+{
+  "_note": "Pinned reference to the official MELON implementation. The upstream code is NOT vendored in this repository: neither upstream repository contains a licence file. Fetch it with scripts/fetch_melon_upstream.sh; rem/integration/melon_rem.py refuses to load a file whose sha256 differs.",
+  "paper": "Zhu, K., Yang, X., Wang, J., Guo, W., & Wang, W. Y. (2025). MELON: Provable defense against indirect prompt injection attacks in AI agents. ICML 2025 (PMLR 267). arXiv:2502.05174",
+  "file": "pi_detector.py",
+  "sha256": "5a7f6b28228545e0d4ad9e98c9080ad819bb1cf471a67a31c8c4466b199a9017",
+  "repositories": [
+    {"url": "https://github.com/ucsb-mlsec/MELON", "commit": "06014c7c72d3e9a1f9a27b8742e8bf711689caad", "role": "official repository named by the supervisors"},
+    {"url": "https://github.com/kaijiezhu11/MELON", "commit": "4d3cc9c0175cc26332aac696ac5556c3f85a5e8e", "role": "author repository; identical pi_detector.py"}
+  ],
+  "license": "none found in either repository (checked 5-6 Nov 2026); do not redistribute the file",
+  "agentdojo_required": "0.1.29 (string message content)",
+  "readme_discrepancy": "ucsb-mlsec README integration snippet constructs ContrastPIDetector(...), which does not exist in pi_detector.py (the class is MELON)"
+}

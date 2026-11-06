@@ -73,7 +73,7 @@ internally consistent (year 2000 in all 7 year-bearing citations: Chapter 1 ×1,
   reject option respectively; the thesis does not present either as the source of REM's four-action
   architecture (§1.8, §3.7, §3.13).
 - Kanaker et al. (2026) is cited only as a source and comparison (§2.9.1, §2.13.7, §3.7.3, §3.7.5,
-  §4.15). A co-author of that paper (Dr. Husam Fakhouri) is named on the title page as
+  §4.16). A co-author of that paper (Dr. Husam Fakhouri) is named on the title page as
   Co-Supervisor; the potential conflict of interest is noted for the supervisor
   (UNRESOLVED_SUPERVISOR_DECISIONS.md, N-6).
 
