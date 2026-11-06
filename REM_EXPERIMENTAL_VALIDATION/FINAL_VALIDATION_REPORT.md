@@ -22,8 +22,8 @@
 | Full REM | 0.004 | 0.314 | 0.18 ms |
 | MELON | Not executed | Not executed | Not executed |
 
-- **REM-Lite ≡ the thesis's B1**, verdict for verdict, so calibration does not drive the difference.
-- **Full REM against REM-Lite:**
+- **B1 is retained as the named internal baseline.** Calibration-sensitivity finding (evaluated data only): REM-Lite, B1 with uncalibrated probabilities and re-selected thresholds, reproduces B1 verdict for verdict.
+- **Full REM against B1 (= REM-Lite); difference attributed to the decision policy as a whole:**
   - lower attack success: ΔASR −0.051 [−0.130, −0.007]; 153 vs 0 discordant episodes;
   - lower utility: Δ benign utility −0.195 [−0.341, −0.074].
 - **Calibration:** no improvement (ECE 0.0438 calibrated against 0.0415 uncalibrated).

@@ -64,6 +64,9 @@ __all__ = [
 
 UPSTREAM_MELON_URL = "https://github.com/kaijiezhu11/MELON"
 UPSTREAM_MELON_COMMIT = "4d3cc9c0175cc26332aac696ac5556c3f85a5e8e"
+# Both official repositories carry the identical pi_detector.py (same sha256); see third_party/MELON_PIN.json.
+UPSTREAM_MELON_COMMITS = {"kaijiezhu11/MELON": "4d3cc9c0175cc26332aac696ac5556c3f85a5e8e",
+                          "ucsb-mlsec/MELON": "06014c7c72d3e9a1f9a27b8742e8bf711689caad"}
 UPSTREAM_MELON_SHA256 = "5a7f6b28228545e0d4ad9e98c9080ad819bb1cf471a67a31c8c4466b199a9017"
 MELON_STOP_TEXT = "The tool outputs contain potential prompt injection, stopping execution."
 MELON_README_THRESHOLD = 0.1            # passed as in the upstream README; unused by upstream detect()

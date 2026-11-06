@@ -36,10 +36,10 @@
    - The matrix weights a missed tier-4 attack at 20 and a false alarm at 1, so the comparison favours protection by construction.
    - With equal weights for both errors the conclusion could change (cost-grid sensitivity: thesis §4.9).
    - The costs are not supervisor-approved and are not a measurement of financial loss.
-5. **Does the calibrated, cost-sensitive decision mechanism improve on the simpler REM-Lite?**
+5. **Does the full decision policy improve on the internal baseline B1 (and its uncalibrated variant REM-Lite)?**
    - **Security:** yes. ΔASR −0.051 [−0.130, −0.007]. In 153 attacked episodes REM-Lite was breached and Full REM was not; never the reverse.
    - **Utility:** at a cost. Δ benign utility −0.195 [−0.341, −0.074]; Δ utility under attack −0.151 [−0.172, −0.126].
-   - **Where the difference comes from:** REM-Lite's verdicts are **identical to the thesis's B1**, which keeps calibration, because calibration cannot change rank-selected thresholds. So the difference comes from the **expected-loss decision with consequence tiers and the Escalate option**, not from calibration. Calibration itself showed no benefit: ECE 0.0438 calibrated against 0.0415 uncalibrated; Brier 0.0603 against 0.0598.
+   - **Attribution:** B1 and Full REM share estimator, calibration and predicates; the difference is attributed to the **decision policy as a whole**. **Calibration sensitivity (evaluated data only):** REM-Lite's verdicts are identical to B1's (6,762/6,762 steps; 3,334/3,334 episodes), because rank-selected thresholds are unaffected by a strictly increasing calibration map. On this dataset and these metrics calibration showed no improvement: ECE 0.0438 calibrated against 0.0415 uncalibrated; Brier 0.0603 against 0.0598.
 6. **Runtime and computational cost** (deployment simulation, same run, localhost):
    - **Defence time per call (median):** No Defense allow-all 0.09 ms; REM-Lite 0.17 ms; Full REM 0.18 ms.
    - **Episode time (median):** 30.0–31.5 ms in every configuration; the differences are within run-to-run noise.

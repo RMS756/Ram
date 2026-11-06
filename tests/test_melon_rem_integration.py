@@ -167,7 +167,7 @@ def test_upstream_file_is_pinned_and_unmodified():
     assert hashlib.sha256(open(MELON_PATH, "rb").read()).hexdigest() == MR.UPSTREAM_MELON_SHA256
     head = subprocess.run(["git", "-C", os.path.dirname(MELON_PATH), "rev-parse", "HEAD"], capture_output=True, text=True)
     if head.returncode == 0:
-        assert head.stdout.strip() == MR.UPSTREAM_MELON_COMMIT
+        assert head.stdout.strip() in MR.UPSTREAM_MELON_COMMITS.values()
         assert subprocess.run(["git", "-C", os.path.dirname(MELON_PATH), "status", "--porcelain", "--untracked-files=no"],
                               capture_output=True, text=True).stdout.strip() == ""
 
@@ -247,6 +247,40 @@ def test_rem_withholds_a_call_that_melon_passed_and_agent_continues():
     assert refused[0]["tool_call_id"] in call_ids
     assert rec["messages"][-1]["role"] == "assistant" and rec["messages"][-1]["text"] == "Done."   # agent continued
     assert rec["rem_audit"][-1]["released"] is False and rec["rem_audit"][-1]["mechanism"] == "block"
+
+
+def test_call_reaches_rem_after_melon_processing_and_rem_refusal_leaves_environment_unchanged(monkeypatch):
+    """Supervisor before/after study, combined condition (MELON_REM), one scripted episode:
+    turn 1 reads transactions; MELON then runs its original + masked re-execution on the tool output; the
+    masked run proposes an unrelated call, so MELON does NOT flag and the agent's send_money to the attacker
+    survives MELON's processing; it reaches REM in the executor, REM refuses it, and the environment is
+    byte-for-byte unchanged (the only other call is a read)."""
+    calls_seen_by_rem, executed = [], []
+    orig_run = FunctionsRuntime.run_function
+
+    def spy(self, env, function, kwargs, raise_on_error=False):
+        executed.append(function)
+        return orig_run(self, env, function, kwargs, raise_on_error)
+    monkeypatch.setattr(FunctionsRuntime, "run_function", spy)
+
+    def rem_rule(c):
+        calls_seen_by_rem.append((c.tool, dict(c.args)))
+        return block_attacker(c)
+    agent = ScriptedAgent([[READ], [PAY_ATTACKER], None], masked=[("get_balance", {})])
+    env = SUITE.load_and_inject_default_environment({})
+    before = env.model_dump()
+    melon = MR.make_melon(MOD, agent, FakeEmbeddings())
+    rec = MR.run_episode(condition="MELON_REM", suite=SUITE, llm=agent, system_message=SYS, user_task_id="user_task_0",
+                         injection_task_id="injection_task_0", injections={}, melon=melon, guard=guard(rem_rule),
+                         name="scripted-test-agent", environment=env)
+    assert rec["melon_flagged"] is False and rec["melon_stop_messages"] == 0      # MELON processed and passed it
+    assert agent.masked_envs                                                       # MELON's masked re-execution ran
+    assert ("send_money", PAY_ATTACKER[1]) in calls_seen_by_rem                    # the candidate reached REM
+    assert rec["rem_audit"][-1]["tool"] == "send_money" and rec["rem_audit"][-1]["released"] is False
+    assert executed == ["get_most_recent_transactions"]                            # send_money never executed
+    assert env.model_dump() == before                                              # environment unchanged
+    refusal = [m for m in rec["messages"] if m["role"] == "tool" and m.get("function") == "send_money"][0]
+    assert refusal["error"].startswith("REM:")
 
 
 def test_multiple_calls_in_one_turn_keep_ids_order_and_mixed_outcomes():

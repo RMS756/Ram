@@ -12,10 +12,10 @@
 | Financial domain, inline per-step monitoring | FinHarness [P] | Not a gap |
 | Calibrated risk score with loss-optimal thresholds | NEXUS [P, partly verified] | Not a gap in isolation |
 | Graded verdicts including escalation | FinHarness (to an LLM judge), AgentTrust, LATTICE (to a human) [P] | Not a gap in isolation |
-| **The combination**, on an **open** banking benchmark, with a **same-estimator** comparison isolating the decision rule | None found at record level (systematic review plus two searches on 5 Nov 2026) | **Plausible but narrow.** Not exhaustive; no full texts read |
+| **The combination**, on an **open** banking benchmark, with a **same-estimator** comparison isolating the decision policy | None found at record level (systematic review plus two searches on 5 Nov 2026) | **Plausible but narrow.** Not exhaustive; no full texts read |
 
 **Conclusion.** The defensible gap is a *combination and evaluation* gap, as the thesis already states. It is not a mechanism gap and not a "first framework" gap. The new evidence of 5 Nov 2026 strengthens the internal part of the claim:
-- the decision rule, not calibration, drives REM's difference from a threshold policy on the same estimator (REM-Lite ≡ B1);
+- on the evaluated data, REM's difference from the same-estimator baseline B1 is attributable to the decision policy as a whole; removing calibration did not change B1's verdicts (calibration-sensitivity finding, dataset-specific);
 - REM runs as a separate service without changing any decision.
 
 It does not strengthen the external part (comparison with published defences), because MELON was not executed.

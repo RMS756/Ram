@@ -35,7 +35,7 @@
 - **[R-proposed]** An integrated, non-invasive runtime layer that combines a calibrated per-call probability with consequence-tiered expected-loss verdicts, deterministic mitigation and an audit record, for financial agents.
 - **[R-shown]**, exploratory, on recorded banking traces:
   - held-out discrimination (ROC-AUC 0.938);
-  - the replay trade-off against no defence and against a same-estimator fixed-threshold variant (REM-Lite ≡ thesis B1);
+  - the replay trade-off against no defence and against the same-estimator internal baseline B1 (difference attributed to the decision policy as a whole);
   - deployment as a separate service without changing any decision, at sub-millisecond decision cost.
 - **Not shown:**
   - protection of live or adaptive agents;
