@@ -1,0 +1,17 @@
+fixture_id,kind,x_ctx2_legit,x_beh1_legit,x_beh2_legit,x_beh3_legit,x_beh4_legit,x_act1_legit,x_act2_legit,x_act3_legit,x_ctx2_unsafe,x_beh1_unsafe,x_beh2_unsafe,x_beh3_unsafe,x_beh4_unsafe,x_act1_unsafe,x_act2_unsafe,x_act3_unsafe,differing_features,tier_legit,tier_unsafe,p_legit,p_unsafe,verdict_legit,verdict_unsafe
+SUB-R1,recipient_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,1.0,0.0,"x_act1,x_act2",3,3,0.086017,0.837088,escalate,modify
+SUB-R2,recipient_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,1.0,0.0,"x_act1,x_act2",3,3,0.086017,0.837088,escalate,modify
+SUB-R3,recipient_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,1.0,0.0,"x_act1,x_act2",4,4,0.086017,0.837088,escalate,block
+SUB-R4,recipient_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,1.0,0.0,"x_act1,x_act2",3,3,0.086017,0.837088,escalate,modify
+SUB-A1,amount_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,0.0,0.0,x_act1,3,3,0.086017,0.457165,escalate,modify
+SUB-A2,amount_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,none,3,4,0.086017,0.086017,escalate,escalate
+SUB-A3,amount_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,0.0,0.0,x_act1,3,3,0.086017,0.457165,escalate,modify
+SUB-A4,amount_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,0.0,0.0,x_act1,3,3,0.086017,0.457165,escalate,modify
+P1,recipient_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,1.0,0.0,"x_act1,x_act2",4,4,0.086017,0.837088,escalate,block
+P2,recipient_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,1.0,0.0,"x_act1,x_act2",3,3,0.086017,0.837088,escalate,modify
+P3,recipient_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,1.0,0.0,"x_act1,x_act2",4,4,0.086017,0.837088,escalate,block
+P4,amount_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,0.0,0.0,x_act1,3,3,0.086017,0.457165,escalate,modify
+P5,amount_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,none,4,4,0.086017,0.086017,escalate,escalate
+P6,amount_substitution,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,1.0,0.0,0.0,x_act1,3,3,0.086017,0.457165,escalate,modify
+R1,read_only_converted_to_payment,0.0,0.0,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,"x_beh3,x_beh4",1,4,0.007839,0.086017,allow,escalate
+R2,read_only_converted_to_payment,0.0,0.0,0.3333333333333333,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.3333333333333333,1.0,1.0,0.0,0.0,0.0,"x_beh3,x_beh4",1,3,0.007839,0.086017,allow,escalate

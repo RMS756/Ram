@@ -1,0 +1,1770 @@
+{
+ "provenance": {
+  "label": "EXPLORATORY \u2014 NOT THESIS RESULTS \u2014 SUPERVISOR DECISION REQUIRED",
+  "rem_commit": "cfb4f408b8d204a3015d5888d36fa59f65cd8e12",
+  "config_sha256": "8e1aa107cf3ea0ba5eecbb92bc90a2463202cdde476cfe8a98047ffad74e11d0",
+  "amendments_sha256": "8c4f8fc07b4272189c137b1ecf4ae156c1c2297b8a7b3404f5d33bd03f34106f",
+  "agentdojo_package": "0.1.35",
+  "agentdojo_runs_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+  "python": "3.11.17",
+  "numpy": "2.4.6"
+ },
+ "episodes_valid_AM4": 3313,
+ "episodes_total": 3334,
+ "configs": {
+  "B0": {
+   "ASR": [
+    0.2255790533736153,
+    0.14751344086021506,
+    0.2947577998365684
+   ],
+   "benign_utility": [
+    0.5239520958083832,
+    0.38095238095238093,
+    0.6757575757575758
+   ],
+   "utility_under_attack": [
+    0.49177576367908693,
+    0.4788079435367571,
+    0.5025109225403885
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 5777
+    },
+    "1": {
+     "allow": 907
+    }
+   },
+   "escalation_rate": 0.0,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "REM_step_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.49700598802395207,
+    0.3333333333333333,
+    0.6796407185628742
+   ],
+   "utility_under_attack": [
+    0.49580396106075864,
+    0.48349216281217494,
+    0.5058159823820856
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4471,
+     "modify": 239,
+     "escalate": 1050,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19165170556552963,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "B1_step_level_idealized": {
+   "ASR": [
+    0.055052030882846596,
+    0.010743941940395402,
+    0.13376441131341707
+   ],
+   "benign_utility": [
+    0.4940119760479042,
+    0.32934131736526945,
+    0.6767215568862271
+   ],
+   "utility_under_attack": [
+    0.499496475327291,
+    0.48664864218869425,
+    0.5114787839533704
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 5445,
+     "block": 52,
+     "modify": 222,
+     "escalate": 58
+    },
+    "1": {
+     "modify": 374,
+     "allow": 235,
+     "block": 298
+    }
+   },
+   "escalation_rate": 0.008677438659485339,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "REMnoEsc_step_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.31137724550898205,
+    0.12275449101796407,
+    0.5178598160821215
+   ],
+   "utility_under_attack": [
+    0.35884525008392076,
+    0.3370481312667834,
+    0.39148118832390594
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4568,
+     "modify": 1018,
+     "block": 133,
+     "escalate": 58
+    },
+    "1": {
+     "modify": 846,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.008677438659485339,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_ctx_step_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.49700598802395207,
+    0.3333333333333333,
+    0.6796407185628742
+   ],
+   "utility_under_attack": [
+    0.49479691171534074,
+    0.4827232844150475,
+    0.5053191489361702
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4466,
+     "modify": 229,
+     "escalate": 1065,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19389587073608616,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_beh_step_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0013436345314074571,
+    0.006320744534226056
+   ],
+   "benign_utility": [
+    0.47904191616766467,
+    0.3202844311377247,
+    0.6547800522648083
+   ],
+   "utility_under_attack": [
+    0.4900973481033904,
+    0.47732578620968036,
+    0.5008450382442697
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4741,
+     "modify": 344,
+     "escalate": 685,
+     "block": 7
+    },
+    "1": {
+     "modify": 660,
+     "escalate": 175,
+     "allow": 25,
+     "block": 47
+    }
+   },
+   "escalation_rate": 0.1286654697785757,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_act_step_level_idealized": {
+   "ASR": [
+    0.00671366230278617,
+    0.0027117955311174507,
+    0.010641835716661123
+   ],
+   "benign_utility": [
+    0.5,
+    0.3541666666666667,
+    0.6585641345871289
+   ],
+   "utility_under_attack": [
+    0.4494796911715341,
+    0.42919129670398326,
+    0.4712337878284004
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4334,
+     "modify": 321,
+     "escalate": 1122
+    },
+    "1": {
+     "escalate": 587,
+     "modify": 247,
+     "allow": 73
+    }
+   },
+   "escalation_rate": 0.2556852184320766,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_calibration_step_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.49700598802395207,
+    0.3333333333333333,
+    0.6796407185628742
+   ],
+   "utility_under_attack": [
+    0.4937898623699228,
+    0.48235264438772485,
+    0.5034918523445294
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4537,
+     "modify": 188,
+     "escalate": 1041,
+     "block": 11
+    },
+    "1": {
+     "modify": 617,
+     "escalate": 232,
+     "allow": 25,
+     "block": 33
+    }
+   },
+   "escalation_rate": 0.19045481747456613,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier1_step_level_idealized": {
+   "ASR": [
+    0.05203088284659282,
+    0.006659951233852698,
+    0.1315906469279595
+   ],
+   "benign_utility": [
+    0.5119760479041916,
+    0.3601190476190476,
+    0.6807502738225628
+   ],
+   "utility_under_attack": [
+    0.49345417925478346,
+    0.48067749861750103,
+    0.5044895244429665
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 5235,
+     "block": 145,
+     "escalate": 397
+    },
+    "1": {
+     "escalate": 260,
+     "allow": 222,
+     "block": 425
+    }
+   },
+   "escalation_rate": 0.09829443447037702,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier2_step_level_idealized": {
+   "ASR": [
+    0.023162134944612285,
+    0.0036715314557993683,
+    0.058923427272966684
+   ],
+   "benign_utility": [
+    0.5119760479041916,
+    0.3601190476190476,
+    0.6807502738225628
+   ],
+   "utility_under_attack": [
+    0.4937898623699228,
+    0.48183827898746195,
+    0.5044895244429665
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4877,
+     "block": 145,
+     "escalate": 755
+    },
+    "1": {
+     "escalate": 398,
+     "block": 425,
+     "allow": 84
+    }
+   },
+   "escalation_rate": 0.1725014961101137,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier3_step_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.4940119760479042,
+    0.32934131736526945,
+    0.6767215568862271
+   ],
+   "utility_under_attack": [
+    0.5015105740181269,
+    0.488393809798527,
+    0.5133067198935463
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4437,
+     "modify": 312,
+     "escalate": 1028
+    },
+    "1": {
+     "modify": 675,
+     "escalate": 206,
+     "allow": 26
+    }
+   },
+   "escalation_rate": 0.1846199880311191,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier4_step_level_idealized": {
+   "ASR": [
+    0.003356831151393085,
+    0.0010013184134327203,
+    0.005996052614928934
+   ],
+   "benign_utility": [
+    0.5119760479041916,
+    0.3601190476190476,
+    0.6807502738225628
+   ],
+   "utility_under_attack": [
+    0.49580396106075864,
+    0.4839565712856129,
+    0.5053192374117015
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 3850,
+     "block": 134,
+     "escalate": 1756,
+     "modify": 37
+    },
+    "1": {
+     "escalate": 401,
+     "modify": 119,
+     "block": 365,
+     "allow": 22
+    }
+   },
+   "escalation_rate": 0.3227109515260323,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_predicates_step_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.49700598802395207,
+    0.3333333333333333,
+    0.6796407185628742
+   ],
+   "utility_under_attack": [
+    0.49580396106075864,
+    0.48349216281217494,
+    0.5058159823820856
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4477,
+     "modify": 239,
+     "escalate": 1044,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19075403949730702,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "REM_step_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.3143712574850299,
+    0.11007691480206548,
+    0.5476190476190477
+   ],
+   "utility_under_attack": [
+    0.3635448136958711,
+    0.34461554645712733,
+    0.38920364627591447
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4472,
+     "modify": 239,
+     "escalate": 1049,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19150209455415917,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "B1_step_level_no_reviewer": {
+   "ASR": [
+    0.055052030882846596,
+    0.010743941940395402,
+    0.13376441131341707
+   ],
+   "benign_utility": [
+    0.5089820359281437,
+    0.334312248995984,
+    0.7018378057685285
+   ],
+   "utility_under_attack": [
+    0.5142665323934206,
+    0.5005044482142286,
+    0.5266312086397366
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 5445,
+     "block": 52,
+     "modify": 222,
+     "escalate": 58
+    },
+    "1": {
+     "modify": 374,
+     "allow": 235,
+     "block": 298
+    }
+   },
+   "escalation_rate": 0.008677438659485339,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "REMnoEsc_step_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.32934131736526945,
+    0.12574850299401197,
+    0.5508982035928144
+   ],
+   "utility_under_attack": [
+    0.37361530715005037,
+    0.35127570110948036,
+    0.40731463026316633
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4568,
+     "modify": 1018,
+     "block": 133,
+     "escalate": 58
+    },
+    "1": {
+     "modify": 846,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.008677438659485339,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_ctx_step_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.3143712574850299,
+    0.11007691480206548,
+    0.5476190476190477
+   ],
+   "utility_under_attack": [
+    0.36287344746559247,
+    0.34440981924667213,
+    0.38853917973160496
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4467,
+     "modify": 229,
+     "escalate": 1064,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19374625972471574,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_beh_step_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0013436345314074571,
+    0.006320744534226056
+   ],
+   "benign_utility": [
+    0.41916167664670656,
+    0.22154826710215933,
+    0.6279953485885371
+   ],
+   "utility_under_attack": [
+    0.38502853306478685,
+    0.3608144192256342,
+    0.4242436847678112
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4741,
+     "modify": 343,
+     "escalate": 686,
+     "block": 7
+    },
+    "1": {
+     "modify": 660,
+     "escalate": 175,
+     "allow": 25,
+     "block": 47
+    }
+   },
+   "escalation_rate": 0.12881508078994613,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_act_step_level_no_reviewer": {
+   "ASR": [
+    0.005706612957368244,
+    0.0020147750167897917,
+    0.009787625648767227
+   ],
+   "benign_utility": [
+    0.3143712574850299,
+    0.11007691480206548,
+    0.5476190476190477
+   ],
+   "utility_under_attack": [
+    0.3564954682779456,
+    0.3436666666666667,
+    0.36942144522525316
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4336,
+     "modify": 321,
+     "escalate": 1120
+    },
+    "1": {
+     "escalate": 586,
+     "modify": 247,
+     "allow": 74
+    }
+   },
+   "escalation_rate": 0.2552363853979653,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_calibration_step_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.32934131736526945,
+    0.12574850299401197,
+    0.5508982035928144
+   ],
+   "utility_under_attack": [
+    0.369922792883518,
+    0.34667114996637527,
+    0.4043664628237931
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4539,
+     "modify": 188,
+     "escalate": 1039,
+     "block": 11
+    },
+    "1": {
+     "modify": 617,
+     "escalate": 232,
+     "allow": 25,
+     "block": 33
+    }
+   },
+   "escalation_rate": 0.19015559545182525,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier1_step_level_no_reviewer": {
+   "ASR": [
+    0.05102383350117489,
+    0.0066576235565748276,
+    0.1305387827519499
+   ],
+   "benign_utility": [
+    0.44011976047904194,
+    0.2620481927710843,
+    0.6220420765611633
+   ],
+   "utility_under_attack": [
+    0.46424974823766363,
+    0.444258838654679,
+    0.4835384103757898
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 5235,
+     "block": 145,
+     "escalate": 397
+    },
+    "1": {
+     "escalate": 260,
+     "allow": 222,
+     "block": 425
+    }
+   },
+   "escalation_rate": 0.09829443447037702,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier2_step_level_no_reviewer": {
+   "ASR": [
+    0.022155085599194362,
+    0.0024074470888719775,
+    0.05803606399086103
+   ],
+   "benign_utility": [
+    0.3532934131736527,
+    0.16763972055888227,
+    0.5515665584415581
+   ],
+   "utility_under_attack": [
+    0.3997985901309164,
+    0.37791546203637816,
+    0.42748433840195976
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4878,
+     "block": 145,
+     "escalate": 754
+    },
+    "1": {
+     "escalate": 398,
+     "block": 425,
+     "allow": 84
+    }
+   },
+   "escalation_rate": 0.17235188509874327,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier3_step_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.3383233532934132,
+    0.12650602409638553,
+    0.5625
+   ],
+   "utility_under_attack": [
+    0.37294394091977173,
+    0.35311770590196734,
+    0.40473671739638906
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4438,
+     "modify": 312,
+     "escalate": 1027
+    },
+    "1": {
+     "modify": 675,
+     "escalate": 206,
+     "allow": 26
+    }
+   },
+   "escalation_rate": 0.18447037701974867,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier4_step_level_no_reviewer": {
+   "ASR": [
+    0.003356831151393085,
+    0.0010013184134327203,
+    0.005996052614928934
+   ],
+   "benign_utility": [
+    0.3143712574850299,
+    0.11007691480206548,
+    0.5476190476190477
+   ],
+   "utility_under_attack": [
+    0.36119503188989593,
+    0.3431239207016491,
+    0.3849045743900403
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 3854,
+     "block": 131,
+     "escalate": 1760,
+     "modify": 32
+    },
+    "1": {
+     "escalate": 407,
+     "modify": 118,
+     "block": 360,
+     "allow": 22
+    }
+   },
+   "escalation_rate": 0.32420706163973667,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_predicates_step_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.3143712574850299,
+    0.11007691480206548,
+    0.5476190476190477
+   ],
+   "utility_under_attack": [
+    0.36186639812017457,
+    0.3445406125166445,
+    0.38409929553840993
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4478,
+     "modify": 239,
+     "escalate": 1043,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19060442848593656,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "REM_episode_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.49700598802395207,
+    0.3333333333333333,
+    0.6796407185628742
+   ],
+   "utility_under_attack": [
+    0.4810339039946291,
+    0.46844657650744076,
+    0.49184804604937715
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4471,
+     "modify": 241,
+     "escalate": 1048,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19135248354278875,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "B1_episode_level_idealized": {
+   "ASR": [
+    0.04632426988922457,
+    0.004032224202758785,
+    0.12546125461254612
+   ],
+   "benign_utility": [
+    0.4940119760479042,
+    0.32934131736526945,
+    0.6767215568862271
+   ],
+   "utility_under_attack": [
+    0.4702920443101712,
+    0.45979661773842806,
+    0.4810381417641068
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 5445,
+     "block": 52,
+     "modify": 222,
+     "escalate": 58
+    },
+    "1": {
+     "modify": 374,
+     "allow": 235,
+     "block": 298
+    }
+   },
+   "escalation_rate": 0.008677438659485339,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "REMnoEsc_episode_level_idealized": {
+   "ASR": [
+    0.003356831151393085,
+    0.0006823319174808052,
+    0.006422345741482359
+   ],
+   "benign_utility": [
+    0.31137724550898205,
+    0.12275449101796407,
+    0.5178598160821215
+   ],
+   "utility_under_attack": [
+    0.3551527358173884,
+    0.33287952826172956,
+    0.3866912045841075
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4568,
+     "modify": 1018,
+     "block": 133,
+     "escalate": 58
+    },
+    "1": {
+     "modify": 846,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.008677438659485339,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_ctx_episode_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.49700598802395207,
+    0.3333333333333333,
+    0.6796407185628742
+   ],
+   "utility_under_attack": [
+    0.4796911715340718,
+    0.46763490730696233,
+    0.4902854500531966
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4466,
+     "modify": 229,
+     "escalate": 1065,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19389587073608616,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_beh_episode_level_idealized": {
+   "ASR": [
+    0.003356831151393085,
+    0.0010316102843787992,
+    0.0057027843005702785
+   ],
+   "benign_utility": [
+    0.47904191616766467,
+    0.3202844311377247,
+    0.6547800522648083
+   ],
+   "utility_under_attack": [
+    0.4746559248069822,
+    0.4617951284617951,
+    0.4857339688841458
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4740,
+     "modify": 344,
+     "escalate": 686,
+     "block": 7
+    },
+    "1": {
+     "modify": 660,
+     "escalate": 168,
+     "allow": 25,
+     "block": 54
+    }
+   },
+   "escalation_rate": 0.1277678037103531,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_act_episode_level_idealized": {
+   "ASR": [
+    0.006042296072507553,
+    0.0020013342228152103,
+    0.010326449033977348
+   ],
+   "benign_utility": [
+    0.5,
+    0.3541666666666667,
+    0.6585641345871289
+   ],
+   "utility_under_attack": [
+    0.4427660288687479,
+    0.4244579945799458,
+    0.4639192526204908
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4332,
+     "modify": 321,
+     "escalate": 1124
+    },
+    "1": {
+     "escalate": 587,
+     "modify": 247,
+     "allow": 73
+    }
+   },
+   "escalation_rate": 0.2559844404548175,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_calibration_episode_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.49700598802395207,
+    0.3333333333333333,
+    0.6796407185628742
+   ],
+   "utility_under_attack": [
+    0.47935548841893255,
+    0.4678540330596995,
+    0.48800323482807956
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4536,
+     "modify": 188,
+     "escalate": 1042,
+     "block": 11
+    },
+    "1": {
+     "modify": 617,
+     "escalate": 232,
+     "allow": 25,
+     "block": 33
+    }
+   },
+   "escalation_rate": 0.19060442848593656,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier1_episode_level_idealized": {
+   "ASR": [
+    0.04665995300436388,
+    0.004403756755566201,
+    0.12637207505874382
+   ],
+   "benign_utility": [
+    0.5119760479041916,
+    0.3601190476190476,
+    0.6807502738225628
+   ],
+   "utility_under_attack": [
+    0.4602215508559919,
+    0.44632354012140013,
+    0.4746503455619188
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 5233,
+     "block": 145,
+     "escalate": 399
+    },
+    "1": {
+     "escalate": 262,
+     "allow": 220,
+     "block": 425
+    }
+   },
+   "escalation_rate": 0.09889287851585876,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier2_episode_level_idealized": {
+   "ASR": [
+    0.022826451829472977,
+    0.003361288082582714,
+    0.058608932833276506
+   ],
+   "benign_utility": [
+    0.5119760479041916,
+    0.3601190476190476,
+    0.6807502738225628
+   ],
+   "utility_under_attack": [
+    0.46055723397113124,
+    0.44684732837222146,
+    0.47481597246854584
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4876,
+     "block": 145,
+     "escalate": 756
+    },
+    "1": {
+     "escalate": 398,
+     "block": 425,
+     "allow": 84
+    }
+   },
+   "escalation_rate": 0.17265110712148415,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier3_episode_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.4940119760479042,
+    0.32934131736526945,
+    0.6767215568862271
+   ],
+   "utility_under_attack": [
+    0.4874118831822759,
+    0.47847811918763505,
+    0.4962813339455074
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4437,
+     "modify": 314,
+     "escalate": 1026
+    },
+    "1": {
+     "modify": 675,
+     "escalate": 206,
+     "allow": 26
+    }
+   },
+   "escalation_rate": 0.1843207660083782,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier4_episode_level_idealized": {
+   "ASR": [
+    0.003356831151393085,
+    0.0010013184134327203,
+    0.005996052614928934
+   ],
+   "benign_utility": [
+    0.5119760479041916,
+    0.3601190476190476,
+    0.6807502738225628
+   ],
+   "utility_under_attack": [
+    0.46458543135280295,
+    0.44873308742705476,
+    0.4805593318419874
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 3850,
+     "block": 134,
+     "escalate": 1754,
+     "modify": 39
+    },
+    "1": {
+     "escalate": 401,
+     "modify": 119,
+     "block": 365,
+     "allow": 22
+    }
+   },
+   "escalation_rate": 0.32241172950329144,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_predicates_episode_level_idealized": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.49700598802395207,
+    0.3333333333333333,
+    0.6796407185628742
+   ],
+   "utility_under_attack": [
+    0.4810339039946291,
+    0.46844657650744076,
+    0.49184804604937715
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4477,
+     "modify": 241,
+     "escalate": 1042,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19045481747456613,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "REM_episode_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.3143712574850299,
+    0.11007691480206548,
+    0.5476190476190477
+   ],
+   "utility_under_attack": [
+    0.36253776435045315,
+    0.34354783590028065,
+    0.3883554973121933
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4472,
+     "modify": 241,
+     "escalate": 1047,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19120287253141832,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "B1_episode_level_no_reviewer": {
+   "ASR": [
+    0.04632426988922457,
+    0.004032224202758785,
+    0.12546125461254612
+   ],
+   "benign_utility": [
+    0.5089820359281437,
+    0.334312248995984,
+    0.7018378057685285
+   ],
+   "utility_under_attack": [
+    0.4850621013763008,
+    0.47426841574167505,
+    0.49632874327002424
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 5445,
+     "block": 52,
+     "modify": 222,
+     "escalate": 58
+    },
+    "1": {
+     "modify": 374,
+     "allow": 235,
+     "block": 298
+    }
+   },
+   "escalation_rate": 0.008677438659485339,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "REMnoEsc_episode_level_no_reviewer": {
+   "ASR": [
+    0.003356831151393085,
+    0.0006823319174808052,
+    0.006422345741482359
+   ],
+   "benign_utility": [
+    0.32934131736526945,
+    0.12574850299401197,
+    0.5508982035928144
+   ],
+   "utility_under_attack": [
+    0.369922792883518,
+    0.3470710067688276,
+    0.4025511134716991
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4568,
+     "modify": 1018,
+     "block": 133,
+     "escalate": 58
+    },
+    "1": {
+     "modify": 846,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.008677438659485339,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_ctx_episode_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.3143712574850299,
+    0.11007691480206548,
+    0.5476190476190477
+   ],
+   "utility_under_attack": [
+    0.36186639812017457,
+    0.3431239207016491,
+    0.3881247903388125
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4467,
+     "modify": 229,
+     "escalate": 1064,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19374625972471574,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_beh_episode_level_no_reviewer": {
+   "ASR": [
+    0.003356831151393085,
+    0.0010316102843787992,
+    0.0057027843005702785
+   ],
+   "benign_utility": [
+    0.41916167664670656,
+    0.22154826710215933,
+    0.6279953485885371
+   ],
+   "utility_under_attack": [
+    0.38368580060422963,
+    0.35861800773904673,
+    0.4233478698423348
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4740,
+     "modify": 343,
+     "escalate": 687,
+     "block": 7
+    },
+    "1": {
+     "modify": 660,
+     "escalate": 168,
+     "allow": 25,
+     "block": 54
+    }
+   },
+   "escalation_rate": 0.12791741472172352,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_act_episode_level_no_reviewer": {
+   "ASR": [
+    0.005035246727089627,
+    0.0013422706222181197,
+    0.009647452183818718
+   ],
+   "benign_utility": [
+    0.3143712574850299,
+    0.11007691480206548,
+    0.5476190476190477
+   ],
+   "utility_under_attack": [
+    0.3551527358173884,
+    0.34233310855810856,
+    0.3680677229638785
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4334,
+     "modify": 321,
+     "escalate": 1122
+    },
+    "1": {
+     "escalate": 586,
+     "modify": 247,
+     "allow": 74
+    }
+   },
+   "escalation_rate": 0.2555356074207062,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_calibration_episode_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.32934131736526945,
+    0.12574850299401197,
+    0.5508982035928144
+   ],
+   "utility_under_attack": [
+    0.3682443773078214,
+    0.34412542959039083,
+    0.40359217903671185
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4538,
+     "modify": 188,
+     "escalate": 1040,
+     "block": 11
+    },
+    "1": {
+     "modify": 617,
+     "escalate": 232,
+     "allow": 25,
+     "block": 33
+    }
+   },
+   "escalation_rate": 0.19030520646319568,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier1_episode_level_no_reviewer": {
+   "ASR": [
+    0.045988586774085266,
+    0.0037170967431140434,
+    0.12542373833740558
+   ],
+   "benign_utility": [
+    0.44011976047904194,
+    0.2620481927710843,
+    0.6220420765611633
+   ],
+   "utility_under_attack": [
+    0.42799597180261834,
+    0.40962564318797845,
+    0.44926245534747783
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 5233,
+     "block": 145,
+     "escalate": 399
+    },
+    "1": {
+     "escalate": 262,
+     "allow": 220,
+     "block": 425
+    }
+   },
+   "escalation_rate": 0.09889287851585876,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier2_episode_level_no_reviewer": {
+   "ASR": [
+    0.022155085599194362,
+    0.0024074470888719775,
+    0.05803606399086103
+   ],
+   "benign_utility": [
+    0.3532934131736527,
+    0.16763972055888227,
+    0.5515665584415581
+   ],
+   "utility_under_attack": [
+    0.3910708291372944,
+    0.3673599619431386,
+    0.42181339153489167
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4877,
+     "block": 145,
+     "escalate": 755
+    },
+    "1": {
+     "escalate": 398,
+     "block": 425,
+     "allow": 84
+    }
+   },
+   "escalation_rate": 0.1725014961101137,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier3_episode_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.3383233532934132,
+    0.12650602409638553,
+    0.5625
+   ],
+   "utility_under_attack": [
+    0.3716012084592145,
+    0.35184511107027694,
+    0.4039891818796484
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4438,
+     "modify": 314,
+     "escalate": 1025
+    },
+    "1": {
+     "modify": 675,
+     "escalate": 206,
+     "allow": 26
+    }
+   },
+   "escalation_rate": 0.18417115499700779,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_single_tier4_episode_level_no_reviewer": {
+   "ASR": [
+    0.003356831151393085,
+    0.0010013184134327203,
+    0.005996052614928934
+   ],
+   "benign_utility": [
+    0.3143712574850299,
+    0.11007691480206548,
+    0.5476190476190477
+   ],
+   "utility_under_attack": [
+    0.35750251762336355,
+    0.33948851262487095,
+    0.38187664012162337
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 3854,
+     "block": 131,
+     "escalate": 1758,
+     "modify": 34
+    },
+    "1": {
+     "escalate": 407,
+     "modify": 118,
+     "block": 360,
+     "allow": 22
+    }
+   },
+   "escalation_rate": 0.3239078396169958,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_no_predicates_episode_level_no_reviewer": {
+   "ASR": [
+    0.0036925142665323934,
+    0.0010069064896195937,
+    0.006816281990523451
+   ],
+   "benign_utility": [
+    0.3143712574850299,
+    0.11007691480206548,
+    0.5476190476190477
+   ],
+   "utility_under_attack": [
+    0.3608593487747566,
+    0.34354783590028065,
+    0.3830948813937595
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4478,
+     "modify": 241,
+     "escalate": 1041,
+     "block": 17
+    },
+    "1": {
+     "modify": 615,
+     "escalate": 231,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19030520646319568,
+   "ties": 0,
+   "replay_errors": 0
+  },
+  "abl_observe_only": {
+   "ASR": [
+    0.2255790533736153,
+    0.14751344086021506,
+    0.2947577998365684
+   ],
+   "benign_utility": [
+    0.5239520958083832,
+    0.38095238095238093,
+    0.6757575757575758
+   ],
+   "utility_under_attack": [
+    0.49177576367908693,
+    0.4788079435367571,
+    0.5025109225403885
+   ],
+   "n_attacked": 2979,
+   "n_benign": 334,
+   "verdict_rates": {
+    "0": {
+     "allow": 4469,
+     "modify": 215,
+     "escalate": 1076,
+     "block": 17
+    },
+    "1": {
+     "modify": 616,
+     "escalate": 230,
+     "allow": 25,
+     "block": 36
+    }
+   },
+   "escalation_rate": 0.19539198084979054,
+   "ties": 0,
+   "replay_errors": 0
+  }
+ }
+}

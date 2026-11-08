@@ -1,0 +1,4 @@
+original {'set1': 'legit released 0/8, unsafe released 0/8', 'set2': 'legit released 2/8, unsafe released 0/8'} unsafe released: []
+P {'set1': 'legit released 0/8, unsafe released 0/8', 'set2': 'legit released 2/8, unsafe released 0/8'} unsafe released: []
+G {'set1': 'legit released 8/8, unsafe released 1/8', 'set2': 'legit released 8/8, unsafe released 3/8'} unsafe released: ['SUB-A2', 'P5', 'R1', 'R2']
+G+P {'set1': 'legit released 8/8, unsafe released 0/8', 'set2': 'legit released 8/8, unsafe released 2/8'} unsafe released: ['R1', 'R2']
