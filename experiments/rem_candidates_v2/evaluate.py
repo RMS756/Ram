@@ -89,7 +89,7 @@ def metrics(rows,protocol):
  return out
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--raw',type=Path,required=True);ap.add_argument('--oracle-replays',type=Path,required=True);ap.add_argument('--out',type=Path,required=True)
+ ap=argparse.ArgumentParser();ap.add_argument('--raw',type=Path,required=True);ap.add_argument('--oracle-replays',type=Path,required=True);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--complete-trace',action='store_true')
  a=ap.parse_args();out=a.out.resolve()
  if ROOT/'results'==out or ROOT/'results' in out.parents or ROOT/'REM_ALGORITHM_IMPROVEMENT_STUDY'==out or ROOT/'REM_ALGORITHM_IMPROVEMENT_STUDY' in out.parents:
   raise ValueError('original and previous results protected')
@@ -104,7 +104,7 @@ def main():
  protocol=json.loads((HERE/'protocol.json').read_text())
  write(out/'dataset_audit.json',audit)
  setup=replace(original.make_setup(),suite=get_suites('v1.2.1')['banking'])
- rows=[];details=[];fits_manifest={};splits={};agreed=None;fixed_outcomes={};timings={};count_native=0
+ rows=[];details=[];fits_manifest={};splits={};agreed=None;fixed_outcomes={};timings={};count_native=0;horizon_mismatches=[]
  names=BASELINES+CANDIDATES+ABLATIONS
  for grouping in ('injection_task','user_task'):
   start=time.perf_counter()
@@ -143,17 +143,24 @@ def main():
     score=None;dp=None
     if name in {'B1','REM_R4','C1_action_model'}:
      fitted,order=fits['action_only' if name=='C1_action_model' else 'full']
-     ff=fitted.fits[f]
-     if ff.calibration_failed:
+     ff=fitted.fits.get(f)
+     if ff is None and not any(m.tool_calls for m in ep.messages):
+      # Terminal episodes have no supervised step/fold and never invoke a policy.
+      result=replay(ep,setup.suite,name,setup,None,complete_trace=a.complete_trace);count_native+=1
+     elif ff is None:
+      raise RuntimeError('missing fit for an episode containing proposals')
+     elif ff.calibration_failed:
       result={'utility':False,'security':False,'error':'unavailable_calibrated_fold','audit':[],'backend_accesses':0}
      else:
       score=original.scorer_of(ff,order)
       dp=policies[f]['B1' if name=='B1' else 'A3_step_level']
-      result=replay(ep,setup.suite,name,setup,refs[f],scorer=score,decision_policy=dp);count_native+=1
+      result=replay(ep,setup.suite,name,setup,refs[f],scorer=score,decision_policy=dp,complete_trace=a.complete_trace);count_native+=1
     else:
-     result=replay(ep,setup.suite,name,setup,refs[f]);count_native+=1
+     result=replay(ep,setup.suite,name,setup,refs[f],complete_trace=a.complete_trace);count_native+=1
     if grouping=='injection_task' and name=='B0' and (result['error'] or (result['utility'],result['security'])!=(ep.utility,ep.security)):
-     raise RuntimeError('B0 native outcome mismatch; do not silently change comparison cohort')
+     if a.complete_trace:
+      horizon_mismatches.append({'episode_id':eid,'recorded':[ep.utility,ep.security],'full_trace':[result['utility'],result['security']]})
+     else:raise RuntimeError('B0 native outcome mismatch; do not silently change comparison cohort')
     if result['error'] is not None and result['error']!='unavailable_calibrated_fold':
      raise RuntimeError(f'native replay error for {name}: {result["error"]}')
     rec={'grouping':grouping,'policy':name,'episode_id':eid,'task':ep.user_task_id,'objective':ep.injection_task_id,'attacked':ep.attacked,
@@ -181,7 +188,7 @@ def main():
     'source_hashes':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.glob('*.py')},
     'raw_sha256':hashlib.sha256(a.raw.read_bytes()).hexdigest(),'oracle_replays_sha256':hashlib.sha256(a.oracle_replays.read_bytes()).hexdigest(),
     'python':platform.python_version(),'numpy':np.__version__,'native_replays_executed':count_native,
-    'independent_episodes':len(agreed),'timings_seconds':timings,'data_exposure':'previously examined development recordings, no independent final validation',
+    'complete_trace':a.complete_trace,'B0_horizon_outcome_mismatches':horizon_mismatches,'independent_episodes':len(agreed),'timings_seconds':timings,'data_exposure':'previously examined development recordings, no independent final validation',
     'backend_trust_assumption':'C4 receives current native ledger financial fields via narrow independent host adapter; not task solutions or clean pre-injection state'})
  for group,value in result_metrics.items():
   print(group,{n:{k:v['estimate_ci95'][0] if v['estimate_ci95'] else None for k,v in m.items()} for n,m in value['policies'].items()},flush=True)

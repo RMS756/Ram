@@ -111,3 +111,49 @@ def test_backend_interface_excludes_injection_text_and_secrets():
  assert 'injected' not in repr(ledger) and 'secret' not in repr(ledger)
  txn.amount=999
  assert ledger.receipts[0].amount=='10'
+
+def test_terminal_recording_does_not_require_model_or_reference():
+ from types import SimpleNamespace
+ from agentdojo.task_suite.load_suites import get_suites
+ from rem.integration.agentdojo_traces import Episode
+ from experiments.rem_candidates_v2.runtime import replay
+ ep=Episode('synthetic','fixture','banking','user_task_4',None,None,{},(),False,False,None,'v1.2.1',
+    ({'role':'assistant','content':'I cannot complete this operation.','tool_calls':None},))
+ result=replay(ep,get_suites('v1.2.1')['banking'],'C1_action_model',SimpleNamespace(),None)
+ assert result['error'] is None and result['audit']==[] and not result['utility']
+
+def test_native_verified_refund_executes_replacement():
+ from agentdojo.task_suite.load_suites import get_suites
+ from rem.integration.agentdojo_traces import Episode
+ from types import SimpleNamespace
+ from experiments.rem_candidates_v2.runtime import replay
+ raw=({'role':'assistant','content':None,'tool_calls':[{'id':'a','function':'send_money',
+      'args':{**ARGS,'recipient':EVIL,'amount':9000,'subject':'sensitive data'}}]},
+      {'role':'assistant','content':'done','tool_calls':None})
+ from rem.integration.agentdojo_traces import Message
+ ep=Episode('synthetic','fixture','banking','user_task_4',None,None,{},(Message('user',REQUEST),),False,False,None,'v1.2.1',raw)
+ result=replay(ep,get_suites('v1.2.1')['banking'],'C4_verified_refund',SimpleNamespace(spec=SimpleNamespace(key_arguments=KEYS)),None)
+ assert result['error'] is None and result['utility']
+ assert result['audit'][0]['verified_repair'] and result['backend_accesses']==1
+
+def test_native_verifier_removed_withholds():
+ from agentdojo.task_suite.load_suites import get_suites
+ from rem.integration.agentdojo_traces import Episode,Message
+ from types import SimpleNamespace
+ from experiments.rem_candidates_v2.runtime import replay
+ raw=({'role':'assistant','content':None,'tool_calls':[{'id':'a','function':'send_money','args':ARGS}]},
+      {'role':'assistant','content':'done','tool_calls':None})
+ ep=Episode('synthetic','fixture','banking','user_task_4',None,None,{},(Message('user',REQUEST),),False,False,None,'v1.2.1',raw)
+ result=replay(ep,get_suites('v1.2.1')['banking'],'C4_no_verifier',SimpleNamespace(spec=SimpleNamespace(key_arguments=KEYS)),None)
+ assert result['error'] is None and not result['utility'] and result['backend_accesses']==0
+ assert result['audit'][0]['verdict']=='escalate' and not result['audit'][0]['released']
+
+def test_backend_local_account_alias_resolves_only_in_trusted_adapter():
+ from types import SimpleNamespace as S
+ from experiments.rem_candidates_v2.runtime import bank_snapshot_from_environment
+ txn=S(id=1,sender=FRIEND,recipient='me',amount=10,date='2026-11-11')
+ ledger=bank_snapshot_from_environment(S(bank_account=S(iban=OWN,transactions=[txn])))
+ assert ledger.receipts[0].recipient==OWN
+ assert vr(ledger=ledger).decide('send_money',ARGS).verdict==Verdict.ALLOW
+ # An agent argument is not given the backend's special alias semantics.
+ assert vr(ledger=ledger).decide('send_money',{**ARGS,'recipient':'me'}).verdict==Verdict.BLOCK

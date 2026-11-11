@@ -49,11 +49,14 @@ def bank_snapshot_from_environment(env):
     are deliberately excluded from this interface.
     """
     bank=env.bank_account
-    return VerifiedLedger(str(bank.iban),tuple(Receipt(int(t.id),str(t.sender),str(t.recipient),str(t.amount),str(t.date))
+    # Native AgentDojo fixtures use the documented local-account alias 'me'.
+    # Resolve it only in this trusted backend adapter, never in agent arguments.
+    def account_id(value):return str(bank.iban) if value=='me' else str(value)
+    return VerifiedLedger(str(bank.iban),tuple(Receipt(int(t.id),account_id(t.sender),account_id(t.recipient),str(t.amount),str(t.date))
                           for t in bank.transactions),True,'native_banking_backend')
 
 
-def replay(ep,suite,name,setup,reference,*,scorer=None,decision_policy=None):
+def replay(ep,suite,name,setup,reference,*,scorer=None,decision_policy=None,complete_trace=False):
     from agentdojo.agent_pipeline import ToolsExecutor
     from agentdojo.functions_runtime import FunctionCall
     from agentdojo.types import ChatToolResultMessage,text_content_block_from_string
@@ -105,7 +108,11 @@ def replay(ep,suite,name,setup,reference,*,scorer=None,decision_policy=None):
                               'model_probability':getattr(policy,'last_probability',None)})
             return query,runtime,env,[*messages,*results],extra_args
     actor=ReplayLLM(ep)
-    pipe=AgentPipeline([SystemMessage(ep.system_prompt),InitQuery(),actor,ToolsExecutionLoop([Executor(),actor])])
+    # Keep the original 15-round budget for the primary comparison; a
+    # separate sensitivity replays every recorded tool-bearing assistant message.
+    rounds=sum(m.get('role')=='assistant' and bool(m.get('tool_calls')) for m in ep.raw_messages)
+    loop=ToolsExecutionLoop([Executor(),actor],max_iters=max(1,rounds)) if complete_trace else ToolsExecutionLoop([Executor(),actor])
+    pipe=AgentPipeline([SystemMessage(ep.system_prompt),InitQuery(),actor,loop])
     pipe.name='rem_candidates_v2_replay'
     ut=suite.get_user_task_by_id(ep.user_task_id)
     it=suite.get_injection_task_by_id(ep.injection_task_id) if ep.injection_task_id else None
