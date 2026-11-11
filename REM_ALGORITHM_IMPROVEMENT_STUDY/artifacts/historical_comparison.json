@@ -1,0 +1,531 @@
+{
+ "files": {
+  "benign_release_breakdown.json": {
+   "shared": 55,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 3,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "dataset_summary.json": {
+   "shared": 548,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 3,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e0_pilot.json": {
+   "shared": 95,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 3,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e1_crossfit.json": {
+   "shared": 1116,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 3,
+   "diff_analytical": 435,
+   "analytical_diffs": [
+    {
+     "path": "label_nll_primary/per_fold/injection_task_4/brier_binary_SC5",
+     "committed": 0.04502501214240648,
+     "rerun": 0.04502501214240645,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_3/gamma_0",
+     "committed": 0.13738370506453207,
+     "rerun": 0.1373837050645319,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_7/coefficients/x_act2",
+     "committed": 3.972839603918516,
+     "rerun": 3.9728396039185165,
+     "volatile": false
+    },
+    {
+     "path": "grouping_pipeline/per_fold/gemini-1.5-pro-002/ece",
+     "committed": 0.07334327161459647,
+     "rerun": 0.0733432716145966,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_5/brier_two_class_SC5",
+     "committed": 0.09884957075350435,
+     "rerun": 0.0988495707535043,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_2/gamma_0",
+     "committed": 0.14627367368411195,
+     "rerun": 0.14627367368411193,
+     "volatile": false
+    },
+    {
+     "path": "grouping_pipeline/per_fold/gemini-1.5-flash-002/brier_two_class_SC5",
+     "committed": 0.03808969275662123,
+     "rerun": 0.03808969275662125,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/per_fold/injection_task_7/gamma_1",
+     "committed": 0.9804364642406217,
+     "rerun": 0.9804364642406223,
+     "volatile": false
+    },
+    {
+     "path": "grouping_user_task/per_fold/user_task_7/brier_binary_SC5",
+     "committed": 0.027883528820434423,
+     "rerun": 0.027883528820434426,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_4/log_loss",
+     "committed": 0.14867061690421365,
+     "rerun": 0.14867061690421354,
+     "volatile": false
+    },
+    {
+     "path": "grouping_user_task/per_fold/user_task_3/log_loss",
+     "committed": 0.08430346825649453,
+     "rerun": 0.0843034682564945,
+     "volatile": false
+    },
+    {
+     "path": "grouping_user_task/per_fold/user_task_4/brier_binary_SC5",
+     "committed": 0.032698579110182334,
+     "rerun": 0.03269857911018235,
+     "volatile": false
+    },
+    {
+     "path": "grouping_user_task/per_fold/user_task_6/log_loss",
+     "committed": 0.18655799713736002,
+     "rerun": 0.18655799713735996,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/reliability/0/mean_p",
+     "committed": 0.014330496636408754,
+     "rerun": 0.014330496636408762,
+     "volatile": false
+    },
+    {
+     "path": "grouping_pipeline/per_fold/command-r-plus/ece",
+     "committed": 0.06599316038610349,
+     "rerun": 0.0659931603861034,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/per_fold/injection_task_1/brier_binary_SC5",
+     "committed": 0.038172606985833836,
+     "rerun": 0.03817260698583383,
+     "volatile": false
+    },
+    {
+     "path": "grouping_user_task/per_fold/user_task_1/ece",
+     "committed": 0.06270269506672307,
+     "rerun": 0.06270269506672302,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/per_fold/injection_task_8/gamma_0",
+     "committed": 0.14208859748372757,
+     "rerun": 0.1420885974837267,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_5/coefficients/x_beh2",
+     "committed": 1.234571536745313,
+     "rerun": 1.2345715367453074,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_5/coefficients/x_act2",
+     "committed": 1.971015615730329,
+     "rerun": 1.9710156157303318,
+     "volatile": false
+    },
+    {
+     "path": "grouping_user_task/per_fold/user_task_15/log_loss",
+     "committed": 0.2751120002590099,
+     "rerun": 0.27511200025900995,
+     "volatile": false
+    },
+    {
+     "path": "grouping_user_task/per_fold/user_task_2/log_loss",
+     "committed": 0.11568626215433969,
+     "rerun": 0.11568626215433957,
+     "volatile": false
+    },
+    {
+     "path": "grouping_user_task/per_fold/user_task_8/ece",
+     "committed": 0.057071927198287006,
+     "rerun": 0.05707192719828678,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/per_fold/injection_task_5/coefficients/x_act3",
+     "committed": 1.4406748108770429,
+     "rerun": 1.440674810877043,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_7/coefficients/x_beh1",
+     "committed": 0.1817412242987159,
+     "rerun": 0.18174122429871664,
+     "volatile": false
+    },
+    {
+     "path": "grouping_user_task/per_fold/user_task_14/brier_binary_SC5",
+     "committed": 0.023001547362213146,
+     "rerun": 0.023001547362213166,
+     "volatile": false
+    },
+    {
+     "path": "ablation_refits/no_act/pooled_calibrated/ece",
+     "committed": 0.031877033145897564,
+     "rerun": 0.03187703314589758,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/per_fold/injection_task_6/coefficients/x_beh4",
+     "committed": 1.346677544364704,
+     "rerun": 1.3466775443647045,
+     "volatile": false
+    },
+    {
+     "path": "grouping_pipeline/pooled_calibrated/log_loss",
+     "committed": 0.16356062035933575,
+     "rerun": 0.16356062035933572,
+     "volatile": false
+    },
+    {
+     "path": "grouping_pipeline/per_fold/claude-3-sonnet-20240229/brier_two_class_SC5",
+     "committed": 0.09113485055024632,
+     "rerun": 0.09113485055024623,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/per_fold/injection_task_3/coefficients/x_act3",
+     "committed": 1.5049646837560249,
+     "rerun": 1.504964683756025,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_2/coefficients/x_act1",
+     "committed": 2.3476486970886605,
+     "rerun": 2.3476486970886525,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/reliability_uncalibrated/0/mean_p",
+     "committed": 0.010918848035227954,
+     "rerun": 0.010918848035227966,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_7/intercept",
+     "committed": -7.246867402829805,
+     "rerun": -7.246867402829803,
+     "volatile": false
+    },
+    {
+     "path": "grouping_pipeline/per_fold/meta-llama_Llama-3.3-70B-Instruct/brier_binary_SC5",
+     "committed": 0.08318844008853414,
+     "rerun": 0.08318844008853411,
+     "volatile": false
+    },
+    {
+     "path": "grouping_pipeline/per_fold/gemini-1.5-flash-001/brier_binary_SC5",
+     "committed": 0.030275036928827666,
+     "rerun": 0.030275036928827676,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_6/coefficients/x_beh4",
+     "committed": 1.346677544364704,
+     "rerun": 1.3466775443647045,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/per_fold/injection_task_1/gamma_1",
+     "committed": 0.9467520139783778,
+     "rerun": 0.9467520139783777,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_7/coefficients/x_ctx2",
+     "committed": -0.0034939153250123692,
+     "rerun": -0.0034939153250132626,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/reliability/5/mean_p",
+     "committed": 0.5446899351390961,
+     "rerun": 0.544689935139096,
+     "volatile": false
+    },
+    {
+     "path": "ablation_refits/no_ctx/pooled_calibrated/brier_binary_SC5",
+     "committed": 0.060280542643989576,
+     "rerun": 0.06028054264398959,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/per_fold/injection_task_7/coefficients/x_beh1",
+     "committed": 0.1817412242987159,
+     "rerun": 0.18174122429871664,
+     "volatile": false
+    },
+    {
+     "path": "grouping_user_task/per_fold/user_task_12/brier_binary_SC5",
+     "committed": 0.04185759137561351,
+     "rerun": 0.041857591375613554,
+     "volatile": false
+    },
+    {
+     "path": "grouping_pipeline/per_fold/gpt-4-0125-preview/brier_two_class_SC5",
+     "committed": 0.10724559453116382,
+     "rerun": 0.10724559453116385,
+     "volatile": false
+    },
+    {
+     "path": "label_nll_primary/ci_log_loss/0",
+     "committed": 0.2013438642004785,
+     "rerun": 0.2013438642004786,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_7/theta_mod",
+     "committed": 0.38262214912833054,
+     "rerun": 0.3826221491283299,
+     "volatile": false
+    },
+    {
+     "path": "grouping_pipeline/per_fold/claude-3-5-sonnet-20241022/ece",
+     "committed": 0.08036086694218184,
+     "rerun": 0.0803608669421819,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/ci_log_loss/0",
+     "committed": 0.20115474418380785,
+     "rerun": 0.20115474418380788,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_7/ece",
+     "committed": 0.18884723660918812,
+     "rerun": 0.18884723660918806,
+     "volatile": false
+    },
+    {
+     "path": "platt_smoothed_secondary/per_fold/injection_task_5/intercept",
+     "committed": -5.682920981275767,
+     "rerun": -5.682920981275761,
+     "volatile": false
+    }
+   ]
+  },
+  "e2_e5_e6_observe_only.json": {
+   "shared": 1419,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 3,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e3_a2_cusum_observe_only.json": {
+   "shared": 115,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 3,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e4_cross_template_and_defenses.json": {
+   "shared": 129,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 3,
+   "diff_analytical": 15,
+   "analytical_diffs": [
+    {
+     "path": "cross_template/ignore_previous/steps/ece",
+     "committed": 0.05236162813393248,
+     "rerun": 0.0523616281339325,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/direct/steps/ece",
+     "committed": 0.02779689140912171,
+     "rerun": 0.027796891409121737,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/tool_knowledge/steps/log_loss",
+     "committed": 0.1984685483831795,
+     "rerun": 0.19846854838317954,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/injecagent/steps/brier_two_class_SC5",
+     "committed": 0.12639051230510323,
+     "rerun": 0.1263905123051032,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/injecagent/steps/brier_binary_SC5",
+     "committed": 0.06319525615255162,
+     "rerun": 0.0631952561525516,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/tool_knowledge/steps/ece",
+     "committed": 0.07652677861696253,
+     "rerun": 0.07652677861696247,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/direct/steps/brier_two_class_SC5",
+     "committed": 0.07615914514127065,
+     "rerun": 0.0761591451412706,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/direct/steps/brier_binary_SC5",
+     "committed": 0.03807957257063532,
+     "rerun": 0.0380795725706353,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/important_instructions_no_names/steps/log_loss",
+     "committed": 0.2426687883899537,
+     "rerun": 0.24266878838995373,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/tool_knowledge/steps/brier_two_class_SC5",
+     "committed": 0.11784837376273036,
+     "rerun": 0.11784837376273032,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/ignore_previous/steps/brier_two_class_SC5",
+     "committed": 0.08508457358127162,
+     "rerun": 0.08508457358127164,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/ignore_previous/steps/brier_binary_SC5",
+     "committed": 0.04254228679063581,
+     "rerun": 0.04254228679063582,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/ignore_previous/steps/log_loss",
+     "committed": 0.13854560407360852,
+     "rerun": 0.13854560407360858,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/injecagent/steps/ece",
+     "committed": 0.06846091534303415,
+     "rerun": 0.06846091534303411,
+     "volatile": false
+    },
+    {
+     "path": "cross_template/tool_knowledge/steps/brier_binary_SC5",
+     "committed": 0.05892418688136518,
+     "rerun": 0.05892418688136516,
+     "volatile": false
+    }
+   ]
+  },
+  "e4_e5_enforcement_replay.json": {
+   "shared": 1948,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 203,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "e4_rmod_and_replay_validity.json": {
+   "shared": 119,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 3,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "feature_firing_rates.json": {
+   "shared": 28,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 3,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "latency_memory_profile.json": {
+   "shared": 14,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 6,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "r2_breakdowns.json": {
+   "shared": 557,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 4,
+   "diff_analytical": 0,
+   "analytical_diffs": []
+  },
+  "sensitivity_post_hoc_exclude_user_task_15.json": {
+   "shared": 64,
+   "only_committed": 0,
+   "only_rerun": 0,
+   "diff_volatile": 3,
+   "diff_analytical": 4,
+   "analytical_diffs": [
+    {
+     "path": "heldout_metrics_excluding_ut15/ece",
+     "committed": 0.04322740356914206,
+     "rerun": 0.04322740356914204,
+     "volatile": false
+    },
+    {
+     "path": "heldout_metrics_excluding_ut15/log_loss",
+     "committed": 0.19604082518694085,
+     "rerun": 0.19604082518694094,
+     "volatile": false
+    },
+    {
+     "path": "heldout_metrics_all/ece",
+     "committed": 0.04376054184844383,
+     "rerun": 0.04376054184844379,
+     "volatile": false
+    },
+    {
+     "path": "heldout_metrics_all/log_loss",
+     "committed": 0.2013438642004785,
+     "rerun": 0.2013438642004786,
+     "volatile": false
+    }
+   ]
+  }
+ },
+ "totals": {
+  "shared": 6207,
+  "equal": 5510,
+  "diff_volatile": 243,
+  "diff_analytical": 454
+ }
+}

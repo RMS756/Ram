@@ -1,0 +1,78 @@
+{
+  "exit_code": 0,
+  "comparison": "6207 shared fields: 5510 exactly equal, 243 provenance/timing/memory differences, 454 numerical analytical differences",
+  "max_absolute_analytical_difference": 1.1102230246251565e-14,
+  "all_analytical_differences_numeric": true,
+  "headline_replay_outcomes_exactly_match_committed": true,
+  "headlines": {
+    "B0": {
+      "ASR": [
+        0.2255790533736153,
+        0.14751344086021506,
+        0.2947577998365684
+      ],
+      "benign_utility": [
+        0.5239520958083832,
+        0.38095238095238093,
+        0.6757575757575758
+      ]
+    },
+    "B1_step_level_no_reviewer": {
+      "ASR": [
+        0.055052030882846596,
+        0.010743941940395402,
+        0.13376441131341707
+      ],
+      "benign_utility": [
+        0.5089820359281437,
+        0.334312248995984,
+        0.7018378057685285
+      ]
+    },
+    "REM_step_level_no_reviewer": {
+      "ASR": [
+        0.0036925142665323934,
+        0.0010069064896195937,
+        0.006816281990523451
+      ],
+      "benign_utility": [
+        0.3143712574850299,
+        0.11007691480206548,
+        0.5476190476190477
+      ]
+    },
+    "REM_step_level_idealized": {
+      "ASR": [
+        0.0036925142665323934,
+        0.0010069064896195937,
+        0.006816281990523451
+      ],
+      "benign_utility": [
+        0.49700598802395207,
+        0.3333333333333333,
+        0.6796407185628742
+      ]
+    }
+  },
+  "full_cohort_discrimination": {
+    "n": 6762,
+    "positives": 921,
+    "roc_auc": 0.9382882729650245,
+    "average_precision": 0.7188864644606067,
+    "ece": 0.04376054184844379,
+    "log_loss": 0.2013438642004786,
+    "brier_binary_SC5": 0.060330347265890163,
+    "brier_two_class_SC5": 0.12066069453178033
+  },
+  "user_task_heldout_discrimination": {
+    "n": 6762,
+    "positives": 921,
+    "roc_auc": 0.9431236117593982,
+    "average_precision": 0.7281017048515962,
+    "ece": 0.04826865965532911,
+    "log_loss": 0.18352874937891328,
+    "brier_binary_SC5": 0.05547833311898066,
+    "brier_two_class_SC5": 0.11095666623796133
+  },
+  "note": "No tolerance was used in exact comparison. Small numerical differences are disclosed, not called exact identity. Python/NumPy/BLAS differ from historical environment."
+}

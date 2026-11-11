@@ -1,0 +1,94 @@
+{
+  "label_nll_primary": {
+    "calibrated": {
+      "n": 442,
+      "positives": 109,
+      "roc_auc": 0.884563462545114,
+      "average_precision": 0.7463875472539466,
+      "ece": 0.08100405686234088,
+      "log_loss": 0.33844658928078875,
+      "brier_binary_SC5": 0.09990450560884007,
+      "brier_two_class_SC5": 0.19980901121768013
+    },
+    "raw": {
+      "n": 442,
+      "positives": 109,
+      "roc_auc": 0.8832685896906081,
+      "average_precision": 0.7465447383491376,
+      "ece": 0.08245028395259651,
+      "log_loss": 0.3551956320392109,
+      "brier_binary_SC5": 0.09958873572269572,
+      "brier_two_class_SC5": 0.19917747144539144
+    },
+    "calibration_failures": []
+  },
+  "no_ctx": {
+    "calibrated": {
+      "n": 442,
+      "positives": 109,
+      "roc_auc": 0.8831308372592777,
+      "average_precision": 0.7457092556128592,
+      "ece": 0.07916716112494171,
+      "log_loss": 0.3336822959046833,
+      "brier_binary_SC5": 0.09852182465451001,
+      "brier_two_class_SC5": 0.19704364930902002
+    },
+    "raw": {
+      "n": 442,
+      "positives": 109,
+      "roc_auc": 0.8766564729867482,
+      "average_precision": 0.7434572323505713,
+      "ece": 0.07944065520763509,
+      "log_loss": 0.34008414600266756,
+      "brier_binary_SC5": 0.09718791994425444,
+      "brier_two_class_SC5": 0.19437583988850887
+    },
+    "calibration_failures": []
+  },
+  "no_beh": {
+    "calibrated": {
+      "n": 442,
+      "positives": 109,
+      "roc_auc": 0.8484172245640136,
+      "average_precision": 0.6725926993858601,
+      "ece": 0.06924004270624963,
+      "log_loss": 0.32924797957025403,
+      "brier_binary_SC5": 0.09743114510333116,
+      "brier_two_class_SC5": 0.19486229020666232
+    },
+    "raw": {
+      "n": 442,
+      "positives": 109,
+      "roc_auc": 0.8480039672700224,
+      "average_precision": 0.6710617434618668,
+      "ece": 0.06740574058199422,
+      "log_loss": 0.36137074175506884,
+      "brier_binary_SC5": 0.09741693474691214,
+      "brier_two_class_SC5": 0.19483386949382428
+    },
+    "calibration_failures": []
+  },
+  "no_act": {
+    "calibrated": {
+      "n": 442,
+      "positives": 109,
+      "roc_auc": 0.7385734358211422,
+      "average_precision": 0.5078711424986525,
+      "ece": 0.10759336757326028,
+      "log_loss": 0.4548359619403986,
+      "brier_binary_SC5": 0.14082221502072043,
+      "brier_two_class_SC5": 0.28164443004144085
+    },
+    "raw": {
+      "n": 442,
+      "positives": 109,
+      "roc_auc": 0.7883847149902196,
+      "average_precision": 0.5313260124126971,
+      "ece": 0.08625840111624582,
+      "log_loss": 0.43795157411286867,
+      "brier_binary_SC5": 0.13803724892976565,
+      "brier_two_class_SC5": 0.2760744978595313
+    },
+    "calibration_failures": []
+  }
+}

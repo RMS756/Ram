@@ -1,0 +1,6 @@
+  origin/HEAD                                       -> origin/claude/rem-algorithm-implementation-3ktvze
+  origin/claude/rem-algorithm-implementation-3ktvze 181a38cfd521f40a54e0d2492b46edb04eb21a76 R3: examiner review, submission-readiness verdict, AI-assistance disclosure aligned with the review record, interval-coverage caveat in Ch. 5, rebuilt DOCX/PDF, deliverables index
+  origin/claude/rem-r4-corrections-3ktvze           9fddfa748a4eb036f200206e874413147bf237b5 Five-chapter thesis (DOCX/PDF), audits, appendices and QA
+  origin/claude/rem-thesis-lit-review-merge-j1px4f  f13f11302a3807edc79dfd885d6efa6465ff05f8 Commit built thesis files (PDF, DOCX) previously excluded by the build/ ignore rule
+  origin/claude/rem-thesis-revision-r2-j1px4f       7e19265041a2ea481a59fe1e71e62c4ab23c65f6 Record Elicit full-text attempt: no API access on the plan; no full text read
+  origin/codex/rem-ollama-pilot                     fca0319f888a9be2105464496f4c975b6d393738 Add a reproducible local Ollama feasibility pilot for REM banking

@@ -1,0 +1,10 @@
+{
+  "n": 6762,
+  "positives": 921,
+  "positive_without_x_act1": 27,
+  "positive_without_x_act1_by_task": {
+    "user_task_15": 27
+  },
+  "attacker_value_unlabelled": 116,
+  "label_warning": "Reference action attempt labels are not independently adjudicated authorization labels."
+}

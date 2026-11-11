@@ -1,0 +1,7 @@
+commit 6acf2c21d18098f71929408b6a25b0844a722ce5
+Author:     Codex <codex@openai.com>
+AuthorDate: Wed Nov 11 05:11:52 2026 +0000
+Commit:     Codex <codex@openai.com>
+CommitDate: Wed Nov 11 05:11:52 2026 +0000
+
+    Add isolated proposed authorization candidate and freeze evaluation protocol

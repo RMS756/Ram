@@ -1,0 +1,161 @@
+{
+  "B0": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 109,
+    "tn": 333,
+    "precision": null,
+    "recall": 0.0,
+    "false_negative_rate": 1.0,
+    "y0_withheld_proxy": 0.0,
+    "benign_action_approval_proxy": 1.0,
+    "benign_explicit_block_proxy": 0.0,
+    "benign_escalation_proxy": 0.0,
+    "verdicts": {
+      "allow": 442
+    }
+  },
+  "B1": {
+    "tp": 47,
+    "fp": 18,
+    "fn": 62,
+    "tn": 315,
+    "precision": 0.7230769230769231,
+    "recall": 0.43119266055045874,
+    "false_negative_rate": 0.5688073394495413,
+    "y0_withheld_proxy": 0.05405405405405406,
+    "benign_action_approval_proxy": 0.9032258064516129,
+    "benign_explicit_block_proxy": 0.03225806451612903,
+    "benign_escalation_proxy": 0.0,
+    "verdicts": {
+      "allow": 377,
+      "block": 22,
+      "modify": 43
+    }
+  },
+  "REM_R4": {
+    "tp": 103,
+    "fp": 70,
+    "fn": 6,
+    "tn": 263,
+    "precision": 0.5953757225433526,
+    "recall": 0.944954128440367,
+    "false_negative_rate": 0.05504587155963303,
+    "y0_withheld_proxy": 0.21021021021021022,
+    "benign_action_approval_proxy": 0.7419354838709677,
+    "benign_explicit_block_proxy": 0.0,
+    "benign_escalation_proxy": 0.0967741935483871,
+    "verdicts": {
+      "allow": 269,
+      "modify": 136,
+      "escalate": 37
+    }
+  },
+  "x_act1": {
+    "tp": 109,
+    "fp": 63,
+    "fn": 0,
+    "tn": 270,
+    "precision": 0.6337209302325582,
+    "recall": 1.0,
+    "false_negative_rate": 0.0,
+    "y0_withheld_proxy": 0.1891891891891892,
+    "benign_action_approval_proxy": 0.7741935483870968,
+    "benign_explicit_block_proxy": 0.22580645161290322,
+    "benign_escalation_proxy": 0.0,
+    "verdicts": {
+      "allow": 270,
+      "block": 172
+    }
+  },
+  "AA_REM": {
+    "tp": 109,
+    "fp": 78,
+    "fn": 0,
+    "tn": 255,
+    "precision": 0.5828877005347594,
+    "recall": 1.0,
+    "false_negative_rate": 0.0,
+    "y0_withheld_proxy": 0.23423423423423423,
+    "benign_action_approval_proxy": 0.7096774193548387,
+    "benign_explicit_block_proxy": 0.06451612903225806,
+    "benign_escalation_proxy": 0.22580645161290322,
+    "verdicts": {
+      "allow": 255,
+      "escalate": 168,
+      "block": 19
+    }
+  },
+  "AA_no_authorization": {
+    "tp": 109,
+    "fp": 78,
+    "fn": 0,
+    "tn": 255,
+    "precision": 0.5828877005347594,
+    "recall": 1.0,
+    "false_negative_rate": 0.0,
+    "y0_withheld_proxy": 0.23423423423423423,
+    "benign_action_approval_proxy": 0.7096774193548387,
+    "benign_explicit_block_proxy": 0.06451612903225806,
+    "benign_escalation_proxy": 0.22580645161290322,
+    "verdicts": {
+      "allow": 255,
+      "escalate": 168,
+      "block": 19
+    }
+  },
+  "AA_no_provenance": {
+    "tp": 109,
+    "fp": 78,
+    "fn": 0,
+    "tn": 255,
+    "precision": 0.5828877005347594,
+    "recall": 1.0,
+    "false_negative_rate": 0.0,
+    "y0_withheld_proxy": 0.23423423423423423,
+    "benign_action_approval_proxy": 0.7096774193548387,
+    "benign_explicit_block_proxy": 0.06451612903225806,
+    "benign_escalation_proxy": 0.22580645161290322,
+    "verdicts": {
+      "allow": 255,
+      "escalate": 168,
+      "block": 19
+    }
+  },
+  "AA_no_behavior": {
+    "tp": 109,
+    "fp": 78,
+    "fn": 0,
+    "tn": 255,
+    "precision": 0.5828877005347594,
+    "recall": 1.0,
+    "false_negative_rate": 0.0,
+    "y0_withheld_proxy": 0.23423423423423423,
+    "benign_action_approval_proxy": 0.7096774193548387,
+    "benign_explicit_block_proxy": 0.06451612903225806,
+    "benign_escalation_proxy": 0.22580645161290322,
+    "verdicts": {
+      "allow": 255,
+      "escalate": 168,
+      "block": 19
+    }
+  },
+  "AA_no_repair": {
+    "tp": 109,
+    "fp": 78,
+    "fn": 0,
+    "tn": 255,
+    "precision": 0.5828877005347594,
+    "recall": 1.0,
+    "false_negative_rate": 0.0,
+    "y0_withheld_proxy": 0.23423423423423423,
+    "benign_action_approval_proxy": 0.7096774193548387,
+    "benign_explicit_block_proxy": 0.06451612903225806,
+    "benign_escalation_proxy": 0.22580645161290322,
+    "verdicts": {
+      "allow": 255,
+      "escalate": 168,
+      "block": 19
+    }
+  }
+}

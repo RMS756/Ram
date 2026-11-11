@@ -12,11 +12,11 @@ OPTIONS={'AA_REM':{},'AA_no_authorization':{'authorization':False},
          'AA_no_provenance':{'provenance':False},'AA_no_behavior':{'behavior':False},
          'AA_no_repair':{'repair':False}}
 
-def replay_candidate(ep,suite,name):
+def replay_candidate(ep,suite,name, *, contract=None):
     from agentdojo.agent_pipeline import ToolsExecutor
     from agentdojo.types import ChatToolResultMessage,text_content_block_from_string
     AgentPipeline,SystemMessage,InitQuery,ToolsExecutionLoop,ReplayLLM,_ = _agentdojo_elements()
-    policy=AuthorizationPolicy(Contract(),**OPTIONS[name])
+    policy=AuthorizationPolicy(contract if contract is not None else Contract(),**OPTIONS[name])
     audit=[]
     class Executor(ToolsExecutor):
         def query(self,query,runtime,env,messages=[],extra_args={}):

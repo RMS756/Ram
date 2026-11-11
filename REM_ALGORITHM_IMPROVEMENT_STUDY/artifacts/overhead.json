@@ -1,0 +1,7 @@
+{
+  "calls": 300,
+  "latency_instrumented_ms_median": 0.007952,
+  "latency_instrumented_ms_p95": 0.036966500000000006,
+  "python_traced_peak_batch_bytes": 16030,
+  "scope": "decision-only under tracemalloc; excludes agent/tool execution; not comparable to full original pipeline latency"
+}

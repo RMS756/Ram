@@ -1,0 +1,10 @@
+{
+  "legacy_structured_grants": 0,
+  "steps": 442,
+  "evidence_states": {
+    "deployment_permission": 255,
+    "insufficient": 168,
+    "contradiction": 19
+  },
+  "authorization_ground_truth": "unavailable; no true unauthorized-action rate or true authorized-action approval claimed"
+}

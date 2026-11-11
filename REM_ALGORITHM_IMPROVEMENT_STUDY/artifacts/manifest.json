@@ -1,0 +1,19 @@
+{
+  "protocol_sha256": "84316ae01dbb77863873a603ae00710f21074c06cb26ea2c2e66b62c4de9c51d",
+  "baseline": "fca0319f888a9be2105464496f4c975b6d393738",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "actual_native_suite": "v1.2.1",
+  "seed": 20261111,
+  "evaluation": "NO-ADAPT simulated bank; no live LLM",
+  "candidate_source_hashes": {
+    "authorization.py": "ee8768eba511ed9d5ca3e1c64ded7bdbf0bb22425d64e187860ab7d6717574e8",
+    "evaluate.py": "d91b993e76f096de0c5754cb4f062ca69dee361e81ff3653e816f72220c118ad",
+    "provenance.py": "9821c1b32ab61e548e4fcb2cbc54b1ea8ae438634ff4d73c4be94e4536517abe",
+    "baseline_adapters.py": "506ec8299bbce8a2fd32cab03dadbd2ad491b9cbc90bf675aee9b37a507cf66d",
+    "__init__.py": "d9719c4cce3137d93f960ee0d338ef3e2ea3ccf6e94538479e9cbcc75faf45a5",
+    "replay_adapter.py": "307be27ee1e76ab7c7014c812c86f81a052450c4403c23abdbc6c74ed9650a49",
+    "dataset_audit.py": "1cdad320f4aeac7d9436aeceabb7c1bf8a673ba0c5fdeae5cf9c125bdc8afe81",
+    "candidate_policy.py": "c6de1f2daeea8c544a8b8509bdb97dfafe9cbd77e5778109974118bd65ddc487"
+  }
+}

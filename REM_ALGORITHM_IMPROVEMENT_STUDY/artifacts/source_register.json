@@ -1,0 +1,82 @@
+[
+  {
+    "name": "2610.27115v1.html",
+    "url": "https://arxiv.org/html/2610.27115v1",
+    "retrieved": true,
+    "sha256": "186fe36685bffd9326d5836b067b5ee053834c86575609384300a2a9d1203674",
+    "accessed": "2026-11-11",
+    "verification": "Full text retrieved; methodology/assumptions/limitations checked. Not an independent replication or complete equation-by-equation certification."
+  },
+  {
+    "name": "2609.33658v1.html",
+    "url": "https://arxiv.org/html/2609.33658v1",
+    "retrieved": true,
+    "sha256": "49e21db14f2b55b6fab130ee0d155c62e6988f13037812ea3f44579b1bd9c40e",
+    "accessed": "2026-11-11",
+    "verification": "Full text retrieved; methodology/assumptions/limitations checked. Not an independent replication or complete equation-by-equation certification."
+  },
+  {
+    "name": "2606.21399v2.html",
+    "url": "https://arxiv.org/html/2606.21399v2",
+    "retrieved": true,
+    "sha256": "b50f58a2818a098af94d934719b4978d580185c0a8cae4372e229c9d81c1cfda",
+    "accessed": "2026-11-11",
+    "verification": "Full text retrieved; methodology/assumptions/limitations checked. Not an independent replication or complete equation-by-equation certification."
+  },
+  {
+    "name": "2610.36570v1.html",
+    "url": "https://arxiv.org/html/2610.36570v1",
+    "retrieved": true,
+    "sha256": "b6ad8ae35ffcdab32e10b76010bac4d828e666be799f1e12192272c39e70934a",
+    "accessed": "2026-11-11",
+    "verification": "Full text retrieved; methodology/assumptions/limitations checked. Not an independent replication or complete equation-by-equation certification."
+  },
+  {
+    "name": "TaskShield.pdf",
+    "url": "https://aclanthology.org/2025.acl-long.1435.pdf",
+    "retrieved": true,
+    "sha256": "057ff02152c0bb61892b08abdc80f7af22416c03819e526878091ee87d3bf1e6",
+    "accessed": "2026-11-11",
+    "verification": "Full text retrieved; methodology/assumptions/limitations checked. Not an independent replication or complete equation-by-equation certification."
+  },
+  {
+    "name": "MELON.pdf",
+    "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhu25z/zhu25z.pdf",
+    "retrieved": true,
+    "sha256": "5b1ae66b933f722c981710e5782d3dfd80977ff8ac3566b108b7de1b88a99f8d",
+    "accessed": "2026-11-11",
+    "verification": "Full text retrieved; methodology/assumptions/limitations checked. Not an independent replication or complete equation-by-equation certification."
+  },
+  {
+    "name": "CaMeL.html",
+    "url": "https://arxiv.org/html/2503.18813",
+    "retrieved": true,
+    "sha256": "b862d8afed17e5274ee7faa217a77040e5928d05128c9319c6971bdea0f17b0d",
+    "accessed": "2026-11-11",
+    "verification": "Full text retrieved; methodology/assumptions/limitations checked. Not an independent replication or complete equation-by-equation certification."
+  },
+  {
+    "name": "NEXUS.html",
+    "url": "https://arxiv.org/html/2607.19356",
+    "retrieved": true,
+    "sha256": "4a4c9003e4bda8fb84ce1b97290636aac8f91407b8044fea4ffced27adb86cb5",
+    "accessed": "2026-11-11",
+    "verification": "Full text retrieved; methodology/assumptions/limitations checked. Not an independent replication or complete equation-by-equation certification."
+  },
+  {
+    "name": "Kairos.html",
+    "url": "https://arxiv.org/html/2610.18457v1",
+    "retrieved": true,
+    "sha256": "b2a93c60608e7f4700ee126441ce59c61de11346649d4dcc35e28e056489de2e",
+    "accessed": "2026-11-11",
+    "verification": "Full text retrieved; methodology/assumptions/limitations checked. Not an independent replication or complete equation-by-equation certification."
+  },
+  {
+    "name": "ProvenanceGuard.html",
+    "url": "https://arxiv.org/html/2607.01236v2",
+    "retrieved": true,
+    "sha256": "384c6ebdb4039993951bcef79f0b96e00063087bc5b1ba6fb309c8a9e6393679",
+    "accessed": "2026-11-11",
+    "verification": "Full text retrieved; methodology/assumptions/limitations checked. Not an independent replication or complete equation-by-equation certification."
+  }
+]
