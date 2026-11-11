@@ -1,0 +1,34 @@
+{
+  "status": "[PROPOSED — SUPERVISOR APPROVAL REQUIRED]",
+  "parent_study_commit": "e8fade54339ba14e7ebf83a6f2ffc71b916266a3",
+  "original_baseline_commit": "fca0319f888a9be2105464496f4c975b6d393738",
+  "data": {
+    "agentdojo_package": "0.1.35",
+    "runs_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+    "suite": "banking",
+    "version": "v1.2.1",
+    "filter": "explicit version, exact canonical trusted request, exclude all user_task_15, require native B0 agreement",
+    "prior_exposure": "All 150 retained episodes and their prior aggregate/stratified results were examined in the preceding study. This is reused development evidence, not an untouched final test."
+  },
+  "candidates": {
+    "C1_action_model": "Original ridge/logit calibration/expected-loss using fixed action-only features x_act1/x_act2/x_act3; original lambda grid selected using inner fitting folds only.",
+    "C2_canonical_provenance": "Block invalid/unknown mutations or any external-only declared key argument; canonical IBAN token matching; other numeric/text matching inherited from original. No learned score.",
+    "C3_target_only": "C2 but ignore amount provenance for transfer tools. Deliberately incomplete diagnostic control; test amount-only attacks and do not recommend from benchmark ASR alone.",
+    "C4_verified_refund": "For a bounded full trusted-request refund grammar, derive exact recipient/amount/date from a unique incoming bank receipt through an independent trusted read interface, fixed safe subject Refund, one-use reservation and full argument repair. Outside recognized grammar use C2; if recognized but independent evidence missing/ambiguous, withhold all mutations."
+  },
+  "baseline_policies": ["B0", "B1", "REM_R4", "x_act1", "AA_REM_previous"],
+  "learned_groupings": ["injection_task", "user_task"],
+  "primary_grouping": "injection_task",
+  "task_holdout": "Refit original and action-only model with all episodes from a user task excluded together. No task ID is a runtime input. This is task holdout for the refitted model, not an unseen task for the policy designer.",
+  "residuals": "Reuse native oracle-withholding replays already generated in v1.2.1; recompute fitting-only r_mod excluding each held-out objective or user task. It is an inherited NO-ADAPT/label-coverage surrogate, not learned causal intervention effectiveness.",
+  "calibration_failure": "Do not silently substitute raw probabilities or fabricate fits. Mark unavailable fold; retain explicit model availability and require all common comparison rows, or report comparison unavailable.",
+  "review": "no reviewer; escalation never executes",
+  "execution": "stateful native AgentDojo recorded-actor replay NO-ADAPT, no live LLM",
+  "trust_difference": "C4 additionally receives a narrow independently authenticated ledger view of sender/recipient/amount/date/id/own-account only; it never sees task solutions, labels, injection metadata, notes, profile secrets, or clean pre-injection oracle state. Its fallback provenance guard still receives the same tool messages as C2.",
+  "synthetic_tests": "Correctness and adversarial stress only; not real benchmark effectiveness. Include amount-only attacks, target changes, malformed arguments, fragmented IBAN, ambiguous/missing/untrusted backend evidence, unauthorized metadata and repeated/refactored attempts.",
+  "ablations": ["C4 independent verifier removed", "C4 repair removed", "C4 one-use reservation removed", "C4 authorization recognition removed"],
+  "primary_metric": "paired benign task success with native replay ASR; no defensible security margin, report Pareto points and synthetic threat gaps",
+  "bootstrap": {"seed": 20261112, "resamples": 2000, "confidence": 0.95, "clusters": "user task for benign; injection objective and user-task sensitivities for attacks"},
+  "selection": "All four candidates frozen before new outcome evaluation; no tuning to select a winner. Any promising result requires a fresh independent test set.",
+  "not_claimed": ["published-defense reproduction", "novel mathematical algorithm", "adaptive live security", "cross-benchmark transfer", "general English authorization understanding", "official supervisor approval"]
+}
