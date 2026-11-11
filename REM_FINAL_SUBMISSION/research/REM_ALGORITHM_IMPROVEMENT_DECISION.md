@@ -69,4 +69,25 @@ A GO verdict under `REM_FINAL_EXPERIMENT_PROTOCOL.md` would support presenting "
 
 ## 5. Verdict
 
-*(Added after the confirmatory run; see `REM_EXPERIMENTAL_RESULTS_VERIFIED.md`.)*
+*(Added on 11 November 2026 after the confirmatory run; commit `907e6d2`; numbers from `../results/confirmatory_results.json`. Sections 1–4 above are unchanged from commit `19bd168`.)*
+
+**Pre-declared verdict: GO.** All three conditions of the frozen rule hold on 2,113 eligible recorded episodes that no earlier analysis had read (2,065 attacked, 48 benign).
+
+| Condition | Result |
+|---|---|
+| (a) E1: task success, REM without behavioural evidence minus original REM | +7.48 points, 95% interval [1.17, 16.02]; 158 episodes gained, 0 lost (916 → 1,074 of 2,113) |
+| (b) E2: attack success rate and unauthorized state-change rate | both −0.10 points [−0.29, 0.00]; successful attacks 3 → 1 of 2,065; no interval above 0 |
+| (c) candidate attacks ≤ the P2 rule's | 1 ≤ 4 |
+
+What the verdict supports: within this benchmark and in recorded-trace replay, removing the behavioural evidence group lets REM complete more tasks with no measured loss of security. The earlier post-hoc observation is now confirmed on untouched trajectories.
+
+What limits it, in order of importance:
+
+1. **It is not the best arm on utility.** The strict explicit rule A2 completes 1,232 tasks against 1,074 (4 attacks against 1). The difference between them is not resolved: −7.48 points [−25.66, 8.16]. Against the provenance rule P2 the candidate is +1.47 points [−5.28, 7.98], also unresolved. The confirmed claim is "better than the original REM", not "better than simple rules".
+2. **Utility remains far below the undefended agent.** No defence: 1,451 of 2,113 tasks. Candidate: 1,074. Legitimate state-changing calls released in benign runs: 11 of 51 (original REM: 4 of 51).
+3. **The benign-only interval touches zero.** 18 → 25 of 48, +14.58 points [0.00, 33.33]. The verdict rests on E1 over all episodes, as pre-declared; most of the gain is utility under attack (898 → 1,049 of 2,065).
+4. **Tasks and objectives are not new.** The agents, attack templates and trajectories are new; the 16 user tasks and 9 attack objectives are the benchmark's. The gain is concentrated in user tasks 2 and 14 (36 → 97 and 9 → 73 of 138 and 129).
+5. **Replay only, no reviewer, no adaptive attacker.** Modify, Escalate and Block remain indistinguishable in this mode.
+6. **A second configuration also passes the same test.** REM restricted to Allow and Block (M01) gives +9.42 points [2.77, 17.87] with the same 3 attacks. It was a baseline, not the pre-declared candidate, so it is reported and not adopted.
+
+**Recommendation.** Present "REM without behavioural evidence" as a versioned amendment, **REM v1.1**, `[PROPOSED — SUPERVISOR APPROVAL REQUIRED]` under SD-FEAT. Keep the original REM (v1.0) as the frozen baseline and report both in every table. No code under `rem/` is changed: v1.1 is the original study's own `no_beh` fit. Until the supervisor decides, the thesis states the design as v1.0 and reports v1.1 as a confirmed ablation.
