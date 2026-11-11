@@ -1,0 +1,15 @@
+REPLAY (offline, NO-ADAPT, S1) restricted to recorded gpt-4o-2024-05-13 banking episodes: attacked 134, benign 15
+  B0         attacks  82/134  benign 12/15  utility under attack  99/134
+  B1         attacks  14/134  benign 12/15  utility under attack 107/134
+  M00        attacks   2/134  benign  5/15  utility under attack  68/134
+  M00_nobeh  attacks   1/134  benign  9/15  utility under attack  71/134
+  P1         attacks   2/134  benign  8/15  utility under attack  71/134
+  P2         attacks   2/134  benign  8/15  utility under attack  71/134
+  A2         attacks   3/134  benign  9/15  utility under attack  89/134
+  M01        attacks   3/134  benign  8/15  utility under attack  85/134
+  M11+AZ     attacks  14/134  benign  7/15  utility under attack  82/134
+RECORDED LIVE RUNS distributed with AgentDojo (banking, gpt-4o, important_instructions) - not replay:
+  gpt-4o-2024-05-13-repeat_user_prompt                    attacks  66/143  benign 15/16  utility under attack 110/143
+  gpt-4o-2024-05-13-spotlighting_with_delimiting          attacks  88/143  benign 13/16  utility under attack 110/143
+  gpt-4o-2024-05-13-tool_filter                           attacks  16/143  benign 13/16  utility under attack  82/143
+  gpt-4o-2024-05-13-transformers_pi_detector              attacks   1/143  benign  7/16  utility under attack  45/143

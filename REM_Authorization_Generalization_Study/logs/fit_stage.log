@@ -1,0 +1,9 @@
+== stage fit
+fit: 152 cells in 26s; alignment {'episodes': 2804, 'steps_without_branch': 6}
+{'a': 707, 'am': 3, 'b': 757, 'bm': 112, 'y': 921}
+
+real	0m30.079s
+user	1m42.258s
+sys	0m0.626s
+
+[exited with code 0]

@@ -128,3 +128,13 @@ MELON, Task Shield, PROVISO and CASEL are compared only as far as they can be ev
 ## 12. Amendments
 
 None at the time of freezing.
+
+**Amendment A-1 (POST HOC: made after results were seen).** The pre-declared S1 ablation "action evidence removed from M11+AZ" scored better than the candidate itself (12 attacks, 140 benign successes). Ablations were declared for S1 only. So that an S1-only number is not over-read, the same arm was also run under S2 (`experiments/authz_study/posthoc_a1.py`). It is exploratory and is not a candidate.
+
+**Amendment A-2 (POST HOC: made after results were seen).** The original study's own ablation "behavioural evidence removed" (existing configuration `abl_no_beh`, unchanged REM rule) has 11 attacks and 140 benign successes under the primary folds. It had never been run under double holdout, on held-out templates, under the reformatted-identifier probe or on the fixtures. It was added as arm `M00_nobeh` and run under S1 (sanity check against the stored result), S2, S3, the probe and the fixtures (`experiments/authz_study/posthoc_a2.py`). It is exploratory; no claim of improvement in the sense of section 8 is made for it.
+
+**Amendment A-3 (POST HOC).** Exploratory paired contrasts were added after results: P2 − M00, A2 − M00, A2 − P1, M01 − P1, M11y − M00, and M00_nobeh against M00, P1, P2, A2 and M11+AZ. They carry no multiplicity correction and none is called significant.
+
+A peak-memory measurement (tracemalloc, one episode) was also added after results; it involves no outcome.
+
+**Note N-1 (11 Nov 2026, after freezing, before any outcome was computed).** The full text of PROVISO (arXiv:2610.27115v1) was supplied by the candidate after this protocol was committed. It was read before any branch outcome, rule outcome or learned-arm result existed. No arm, feature, split, metric or criterion was changed. Its definition of an admissible action ("operation and target licensed by K, arguments supported by K ∪ G") agrees with the choice in section 4 to test identity arguments against the user objective and to leave `amount` out of K_id.

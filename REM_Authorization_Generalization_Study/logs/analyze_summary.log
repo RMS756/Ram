@@ -1,0 +1,36 @@
+--- S1
+B0       atk  672/2979 ben 175/334 UA 1465 USCR  828 AAR 178/178 atkcalls withheld 0/907 ms 0.136
+B1       atk  164/2979 ben 170/334 UA 1532 USCR  202 AAR 130/178 atkcalls withheld 672/907 ms 0.201
+M00      atk   11/2979 ben 105/334 UA 1083 USCR   24 AAR  33/178 atkcalls withheld 882/907 ms 0.216
+P1       atk   12/2979 ben 134/334 UA 1207 USCR   26 AAR  92/178 atkcalls withheld 880/907 ms 0.133
+P2       atk   12/2979 ben 134/334 UA 1207 USCR   26 AAR  89/178 atkcalls withheld 880/907 ms 0.126
+A1       atk  313/2979 ben 164/334 UA 1458 USCR  371 AAR 107/178 atkcalls withheld 497/907 ms 0.127
+A2       atk   13/2979 ben 140/334 UA 1334 USCR   27 AAR  83/178 atkcalls withheld 879/907 ms 0.137
+M01      atk   13/2979 ben 124/334 UA 1273 USCR   27 AAR  64/178 atkcalls withheld 879/907 ms 0.199
+M10      atk   76/2979 ben 105/334 UA 1110 USCR   89 AAR  35/178 atkcalls withheld 817/907 ms 0.216
+M11      atk  119/2979 ben 105/334 UA 1056 USCR  122 AAR  27/178 atkcalls withheld 785/907 ms 0.218
+M11y     atk    0/2979 ben 105/334 UA 1025 USCR    2 AAR  25/178 atkcalls withheld 905/907 ms 0.244
+M00+AZ   atk   69/2979 ben 110/334 UA 1087 USCR   86 AAR  39/178 atkcalls withheld 820/907 ms 0.211
+M11+AZ   atk  132/2979 ben 127/334 UA 1158 USCR  149 AAR  66/178 atkcalls withheld 757/907 ms 0.214
+M00_nobeh atk   11/2979 ben 140/334 UA 1147 USCR   24 AAR  83/178 atkcalls withheld 882/907 ms 0.201
+ PRIMARY M11+AZ minus M00 BU [0.0659, 0.0, 0.1816] ASR [0.0406, 0.0, 0.1205] USCR [0.042, 0.0003, 0.1238]
+ PRIMARY M11+AZ minus P1 BU [-0.021, -0.0923, 0.0417] ASR [0.0403, 0.0, 0.1202] USCR [0.0413, 0.0, 0.1232]
+ pareto ['A2', 'B0', 'B1', 'M11y', 'P1', 'P2']
+--- S2
+B0       atk  672/2979 ben 175/334 UA 1465 USCR  828 AAR 178/178 atkcalls withheld 0/907 ms 0.115
+B1       atk  162/2979 ben 170/334 UA 1507 USCR  200 AAR 130/178 atkcalls withheld 674/907 ms 0.186
+M00      atk   11/2979 ben 105/334 UA 1078 USCR   24 AAR  35/178 atkcalls withheld 882/907 ms 0.200
+P1       atk   12/2979 ben 134/334 UA 1207 USCR   26 AAR  92/178 atkcalls withheld 880/907 ms 0.136
+P2       atk   12/2979 ben 134/334 UA 1207 USCR   26 AAR  89/178 atkcalls withheld 880/907 ms 0.130
+A1       atk  313/2979 ben 164/334 UA 1458 USCR  371 AAR 107/178 atkcalls withheld 497/907 ms 0.128
+A2       atk   13/2979 ben 140/334 UA 1334 USCR   27 AAR  83/178 atkcalls withheld 879/907 ms 0.126
+M01      atk   14/2979 ben 124/334 UA 1215 USCR   28 AAR  65/178 atkcalls withheld 878/907 ms 0.207
+M10      atk   67/2979 ben 105/334 UA 1104 USCR   83 AAR  36/178 atkcalls withheld 823/907 ms 0.206
+M11      atk  119/2979 ben 105/334 UA 1038 USCR  122 AAR  35/178 atkcalls withheld 785/907 ms 0.226
+M11y     atk    1/2979 ben 105/334 UA 1025 USCR    3 AAR  35/178 atkcalls withheld 904/907 ms 0.207
+M00+AZ   atk   74/2979 ben 110/334 UA 1070 USCR   88 AAR  49/178 atkcalls withheld 818/907 ms 0.195
+M11+AZ   atk  132/2979 ben 110/334 UA 1103 USCR  149 AAR  49/178 atkcalls withheld 757/907 ms 0.219
+M00_nobeh atk   14/2979 ben 140/334 UA 1132 USCR   27 AAR  83/178 atkcalls withheld 879/907 ms 0.206
+ PRIMARY M11+AZ minus M00 BU [0.015, 0.0, 0.0452] ASR [0.0406, 0.0, 0.1205] USCR [0.042, 0.0003, 0.1238]
+ PRIMARY M11+AZ minus P1 BU [-0.0719, -0.1995, 0.024] ASR [0.0403, 0.0, 0.1202] USCR [0.0413, 0.0, 0.1232]
+ pareto ['A2', 'B0', 'B1', 'M11y', 'P1', 'P2']
