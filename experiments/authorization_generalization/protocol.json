@@ -1,0 +1,48 @@
+{
+  "status": "[PROPOSED \u2014 SUPERVISOR APPROVAL REQUIRED]",
+  "baseline_commit": "fca0319f888a9be2105464496f4c975b6d393738",
+  "benchmark_repository_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+  "agentdojo_package": "0.1.35",
+  "replay_suite": "v1.2.1",
+  "seed": 20261111,
+  "bootstrap_resamples": 2000,
+  "ci_level": 0.95,
+  "primary_analysis": "Only explicitly versioned v1.2.1 primary traces, excluding all user_task_15 episodes; require exact request match and all-Allow replay outcome agreement",
+  "historical_reproduction": "unaltered original mixed-version protocol retained separately",
+  "version_verification": "Require explicit benchmark_version == v1.2.1. Unknown versions are excluded, not inferred.",
+  "candidate": "A deterministic exact-grant policy; no learned parameters; empty Contract for legacy traces without independently verified structured grants",
+  "contract_population_warning": "This evaluates missing-evidence behavior. It cannot estimate performance with supplied authorization contracts.",
+  "primary_metric": "paired benign task success rate difference",
+  "security_constraint": null,
+  "decision_rule": "report Pareto points; no defensible noninferiority margin is available",
+  "baseline_policies": [
+    "B0",
+    "B1",
+    "REM_R4",
+    "x_act1"
+  ],
+  "candidate_policies": [
+    "AA_REM",
+    "AA_no_authorization",
+    "AA_no_provenance",
+    "AA_no_behavior",
+    "AA_no_repair"
+  ],
+  "review": "no reviewer; escalate withholds current call",
+  "analysis_types": [
+    "offline reference-label decision diagnostics",
+    "stateful recorded-trace replay NO-ADAPT",
+    "synthetic specification tests"
+  ],
+  "uncertainty": "paired percentile cluster bootstrap by user task for benign utility, injection objective for ASR; also report user-task clustering ASR sensitivity",
+  "generalization": "Fixed-rule per-task and per-objective strata in the explicit-version cohort; original R4 full-cohort held-out-task and cross-template diagnostics reported separately. No cross-template traces have explicit version, so controlled cross-template candidate replay unavailable.",
+  "not_available": [
+    "cross-benchmark transfer",
+    "causal live adaptive security",
+    "human authorization labels",
+    "paired intervention outcomes for trained candidates B/C"
+  ],
+  "selection": "No policy selection or tuning from test results; A is the feasible nonlearned candidate. B/C not approximated under published names. D not adopted.",
+  "disclosure": "Historical data and aggregate results were known before this protocol. This is an analysis freeze, not an independent prospective preregistration.",
+  "baseline_training": "Refit original feature set, ridge grid and OOF logit calibration solely on the consistent-version cohort, holding out injection objectives; estimate original replay residuals within fitting folds."
+}
