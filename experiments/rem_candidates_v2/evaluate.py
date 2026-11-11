@@ -188,7 +188,7 @@ def main():
     'source_hashes':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.glob('*.py')},
     'raw_sha256':hashlib.sha256(a.raw.read_bytes()).hexdigest(),'oracle_replays_sha256':hashlib.sha256(a.oracle_replays.read_bytes()).hexdigest(),
     'python':platform.python_version(),'numpy':np.__version__,'native_replays_executed':count_native,
-    'complete_trace':a.complete_trace,'B0_horizon_outcome_mismatches':horizon_mismatches,'independent_episodes':len(agreed),'timings_seconds':timings,'data_exposure':'previously examined development recordings, no independent final validation',
+    'complete_trace':a.complete_trace,'B0_horizon_outcome_mismatches':horizon_mismatches,'distinct_episodes':len(agreed),'timings_seconds':timings,'data_exposure':'previously examined development recordings, no independent final validation',
     'backend_trust_assumption':'C4 receives current native ledger financial fields via narrow independent host adapter; not task solutions or clean pre-injection state'})
  for group,value in result_metrics.items():
   print(group,{n:{k:v['estimate_ci95'][0] if v['estimate_ci95'] else None for k,v in m.items()} for n,m in value['policies'].items()},flush=True)

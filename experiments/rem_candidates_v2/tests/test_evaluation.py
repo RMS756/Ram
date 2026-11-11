@@ -53,3 +53,18 @@ def test_reported_events_recomputed_from_raw_outcomes():
     xs=[r for r in rows if r['grouping']==g and r['policy']==p and r['attacked']==attack]
     assert values[name]['n']==len(xs)
     assert values[name]['events']==sum(r[key] for r in xs)
+
+def test_complete_trace_sensitivity_executes_all_recorded_proposals():
+ import pickle,gzip
+ rawpath=Path(os.environ.get('REM_STUDY_RAW','/workspace/work/reproduction/steps.pkl'))
+ full=Path(os.environ.get('REM_V2_FULL_RESULTS','/workspace/work/v2_eval_full_trace'))
+ if not rawpath.exists() or not (full/'decision_audits.json.gz').exists():pytest.skip('generate full-trace sensitivity first')
+ raw=pickle.load(rawpath.open('rb'))
+ lengths={eid:len(ss) for role,eid,ss in raw['steps'] if role=='primary'}
+ records=json.loads(gzip.decompress((full/'decision_audits.json.gz').read_bytes()))
+ for r in records:
+  assert len(r['audit'])==lengths[r['episode_id']]
+ # Repeated rows remain paired sensitivities on the same 150 episodes.
+ primary=result('episode_outcomes.json');other=json.loads((full/'episode_outcomes.json').read_text())
+ by={(r['grouping'],r['policy'],r['episode_id']):(r['utility'],r['security']) for r in primary}
+ assert all((r['utility'],r['security'])==by[(r['grouping'],r['policy'],r['episode_id'])] for r in other)

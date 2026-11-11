@@ -1,0 +1,7 @@
+{
+  "paired_rows": 3900,
+  "outcome_differences": [],
+  "primary_round_limit": 15,
+  "sensitivity_round_limit": "count of recorded tool-bearing assistant messages",
+  "B0_outcome_mismatches": []
+}

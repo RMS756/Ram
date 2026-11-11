@@ -1,0 +1,11 @@
+injection_task replay complete 150 10.534228209000048
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/work/Ram/experiments/rem_candidates_v2/evaluate.py", line 188, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/work/Ram/experiments/rem_candidates_v2/evaluate.py", line 146, in main
+    ff=fitted.fits[f]
+       ~~~~~~~~~~~^^^
+KeyError: 'user_task_4'

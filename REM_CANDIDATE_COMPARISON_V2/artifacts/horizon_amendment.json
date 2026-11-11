@@ -1,0 +1,8 @@
+{
+ "status": "[PROPOSED — SUPERVISOR APPROVAL REQUIRED]",
+ "reason": "A diagnostic join found 16 recorded proposals but 15 native policy evaluations in one trajectory. AgentDojo ToolsExecutionLoop defaults to 15 rounds. Outcome agreement alone does not establish complete trace execution.",
+ "primary": "Keep existing primary results unchanged with original 15-round harness for direct comparability.",
+ "sensitivity": "Re-execute the same frozen policies and same 150 primary episodes with round budget derived from the count of recorded tool-bearing assistant messages. Retain all paired episodes; record B0 outcome mismatches rather than silently filtering them.",
+ "fitting": "Same cohort, splits, original grid and 15-round oracle r_mod fitting artifacts as primary. This isolates execution horizon under a frozen fitted policy rather than redefining r_mod as measured full-horizon effectiveness.",
+ "selection": "Declared after primary outcomes, before sensitivity outcomes. It is a post-hoc implementation-validity sensitivity, not a new independent test or policy optimization."
+}

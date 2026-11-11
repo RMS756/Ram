@@ -49,7 +49,7 @@ def bank_snapshot_from_environment(env):
     are deliberately excluded from this interface.
     """
     bank=env.bank_account
-    # Native AgentDojo fixtures use the documented local-account alias 'me'.
+    # Native AgentDojo fixtures use the local-account alias 'me'.
     # Resolve it only in this trusted backend adapter, never in agent arguments.
     def account_id(value):return str(bank.iban) if value=='me' else str(value)
     return VerifiedLedger(str(bank.iban),tuple(Receipt(int(t.id),account_id(t.sender),account_id(t.recipient),str(t.amount),str(t.date))

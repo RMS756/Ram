@@ -1,0 +1,25 @@
+{
+  "study_protocol_sha256": "3c9663fc6ac2e12761bef14544eacd3cd36a1c2c4eba7830f790b54b422cb948",
+  "source_hashes": {
+    "refund_policy.py": "83e24ca01621bf4df36022a1aa46ad8564c6dddc3542eb3b9e106ec28ef9b6a1",
+    "runtime.py": "d751b844cb7bd4859191ae7ed5cbbf03262470a36b2a93cf2fb1350ae8bbd17a",
+    "provenance_policy.py": "47b988973d767751d89dedc1dcade66bf463ae73348525122c9327240a394656",
+    "evaluate.py": "5ac42d1c253678c1b7595f1fb7e24430c6acbf0e13658845721f0ebe4f400574",
+    "__init__.py": "9768fc2f1fc1e3d48f64f32bc0c5cf6b622f2b3b986b041308fb27a7de305646"
+  },
+  "raw_sha256": "2dc26c2041302c9c0f22fb7b17b25e22de6dbb2ec1400d6d8768bd72b024ac6e",
+  "oracle_replays_sha256": "e0b534a1aec68b9d90337dfbc7cd1574a95bca2e1c1ca33debbbc585c96bdc49",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "native_replays_executed": 2400,
+  "complete_trace": true,
+  "B0_horizon_outcome_mismatches": [],
+  "timings_seconds": {
+    "injection_task": 10.51303354799984,
+    "user_task": 2.6616319380000277
+  },
+  "data_exposure": "previously examined development recordings, no independent final validation",
+  "backend_trust_assumption": "C4 receives current native ledger financial fields via narrow independent host adapter; not task solutions or clean pre-injection state",
+  "distinct_episodes": 150,
+  "sample_unit_note": "Distinct trajectory IDs, not statistically independent observations; task/objective clustering required."
+}

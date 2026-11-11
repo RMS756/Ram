@@ -1,0 +1,14 @@
+{
+  "experiments/rem_candidates_v2/README.md": "a9d4332760596698f893ee079a02d2bc4753f1cd88e62d3413e27e74d2dc131c",
+  "experiments/rem_candidates_v2/__init__.py": "9768fc2f1fc1e3d48f64f32bc0c5cf6b622f2b3b986b041308fb27a7de305646",
+  "experiments/rem_candidates_v2/diagnostics.py": "eb03aa6a0c3ecdad88d596cca37e5a9c15af5670f9644332c8bf7a50a4062885",
+  "experiments/rem_candidates_v2/evaluate.py": "433dfef96c287bd4f78b16f6585434cb70737421a4e9bd319e0e004ddc8dea39",
+  "experiments/rem_candidates_v2/figures.py": "b0c250800e2b78305bde5f2dff97af5c2677110eec7e1b54afcea545e2f83382",
+  "experiments/rem_candidates_v2/horizon_amendment.json": "990418885230bff344346109fdc7b4a3a5cebc38de6faa98f8b588cca39f0628",
+  "experiments/rem_candidates_v2/protocol.json": "3c9663fc6ac2e12761bef14544eacd3cd36a1c2c4eba7830f790b54b422cb948",
+  "experiments/rem_candidates_v2/provenance_policy.py": "47b988973d767751d89dedc1dcade66bf463ae73348525122c9327240a394656",
+  "experiments/rem_candidates_v2/refund_policy.py": "83e24ca01621bf4df36022a1aa46ad8564c6dddc3542eb3b9e106ec28ef9b6a1",
+  "experiments/rem_candidates_v2/runtime.py": "d0e64e5f9429abd50a66ad6f8f025504d8c62af3b2db54955a4c8ad88060a6b2",
+  "experiments/rem_candidates_v2/tests/test_evaluation.py": "cd38d70122f0ae64aad38bb1935748500dde64c60af4aab880046836e7a76f12",
+  "experiments/rem_candidates_v2/tests/test_policies.py": "3abe0c5db173b86dd9e4ca4ae41155d600c6aeaeaebe688196c9f96a14e4b211"
+}

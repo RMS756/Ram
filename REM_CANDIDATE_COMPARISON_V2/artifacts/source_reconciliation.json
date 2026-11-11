@@ -1,0 +1,27 @@
+{
+  "prior_primary_sources": "REM_ALGORITHM_IMPROVEMENT_STUDY/artifacts/source_register.json (repository-relative)",
+  "Kanaker_2026": {
+    "url": "https://doi.org/10.3390/computation14050098",
+    "verified": "Publisher full-text sections 3,4,6.2,6.3; no numerical simulator coefficients adopted."
+  },
+  "PROVISO": {
+    "url": "https://arxiv.org/html/2610.27115v1",
+    "location": "Section 6 Limitations; explicitly no attacks adapted to controller"
+  },
+  "CASEL": {
+    "url": "https://arxiv.org/html/2610.36570v1",
+    "location": "Abstract and simulation limitations; intervention effectiveness assumed"
+  },
+  "private_review": {
+    "type": "user-pasted Claude discussion",
+    "used_as": "claims to verify, not authority to change frozen specification",
+    "transcript_published": false
+  },
+  "not_used_or_certified": [
+    "Shavit arXiv 2611.11305",
+    "Kadyrbek and Mansurova claim",
+    "FinVault withdrawal date",
+    "unprovided November 10 G3 results",
+    "unprovided Opey experiment"
+  ]
+}
