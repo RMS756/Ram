@@ -7,7 +7,8 @@
 | Source | Reading level |
 |---|---|
 | PROVISO, AgentBoundary, Calibration Is Not Control, CASEL, Task Shield, MELON | **Full text** (PDFs supplied by the candidate; hashes in `REM_Authorization_Generalization_Study/papers_provided/SHA256SUMS.txt`) |
-| NEXUS (Findings of AACL 2026), aiAuthZ (arXiv:2607.05518), Kairos (arXiv:2610.18457), "Approve What, Exactly?" (arXiv:2610.21063), SentryBench (arXiv:2610.34535), DelegationBench (arXiv:2610.05532) | **Abstract and index record only.** `arxiv.org` and `aclanthology.org` are blocked in this session. No claim about their equations, algorithms or limitations is made beyond their abstracts. |
+| NEXUS (Findings of AACL 2026) | **Abstract and the authors' repository README** (stored copy, retrieved 1 November); paper not read |
+| aiAuthZ (arXiv:2607.05518), Kairos (arXiv:2610.18457), "Approve What, Exactly?" (arXiv:2610.21063), SentryBench (arXiv:2610.34535), DelegationBench (arXiv:2610.05532) | **Abstract and index record only.** `arxiv.org` and `aclanthology.org` are blocked in this session. No claim about their equations, algorithms or limitations is made beyond their abstracts. |
 | Original systematic review (search closed October 2026) | Record level, as documented in Chapter 2 |
 
 No systematic search to 11 November was possible. Newer competing work may exist.
