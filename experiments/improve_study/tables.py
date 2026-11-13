@@ -1,0 +1,100 @@
+"""Markdown tables of the improvement study, generated from improvement_results.json (no number is typed by hand)."""
+from __future__ import annotations
+
+import json
+import os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
+OUT = os.path.join(REPO, "REM_IMPROVEMENT_STUDY", "results")
+NAME = {"B0": "No defense (B0)", "B1": "Provenance rule (B1)", "M00": "REM v1.0", "M00_nobeh": "REM v1.1 (proposed)", "M01": "Allow/Block only (M01)",
+        "P2": "Rule P2", "A2": "Rule A2", "PG": "Progent manual policy (PG)", "A2n": "A2 + typed normalization (A2n)", "G1": "Permission rule (G1)",
+        "G1-noop": "G1 without operation check", "G1-noamt": "G1 without amount check", "G1-noest": "G1 without established payees",
+        "G1-nodel": "G1 without scoped delegation", "G1-nonorm": "G1 without typed normalization", "V11d": "v1.1, two-verdict decision (V11d)",
+        "L0": "Learned on permission evidence, no guard (L0)", "L1": "Guard + learned, four verdicts (L1)", "L2": "Guard + learned, two verdicts (L2)",
+        "L2s": "Guard + learned on unknown calls only (L2s)"}
+MAIN = ["B0", "B1", "M00", "M00_nobeh", "M01", "P2", "A2", "PG", "G1", "V11d", "L0", "L1", "L2", "L2s"]
+ABL = ["A2", "A2n", "G1", "G1-noop", "G1-noamt", "G1-noest", "G1-nodel", "G1-nonorm"]
+CON = [("G1 minus A2", "G1 − A2"), ("G1 minus PG", "G1 − PG"), ("G1 minus M00_nobeh", "G1 − v1.1"), ("G1 minus M00", "G1 − v1.0"),
+       ("L2 minus G1", "L2 − G1"), ("L2s minus G1", "L2s − G1"), ("V11d minus M00_nobeh", "V11d − v1.1"), ("L0 minus L2", "L0 − L2"),
+       ("PG minus A2", "PG − A2"), ("L1 minus G1", "L1 − G1")]
+PRE = {"G1 minus A2", "G1 minus PG", "G1 minus M00_nobeh", "L2 minus G1", "L2s minus G1", "V11d minus M00_nobeh", "L0 minus L2"}
+
+
+def pct(a, b):
+    return f"{100 * a / b:.1f}"
+
+
+def arms_table(res, arms):
+    n_a, n_b = res["n_attacked"], res["n_benign"]
+    rows = [f"| Arm | Successful attacks (of {n_a:,}) | Episodes with a released attack-labelled call | Tasks completed under attack | Benign tasks completed (of {n_b}) | "
+            f"All tasks completed (of {n_a + n_b:,}) | Legitimate state-changing calls released, benign episodes | Held-out credential-change attacks |",
+            "|---|---|---|---|---|---|---|---|"]
+    for a in arms:
+        m = res["arms"].get(a)
+        if not m:
+            continue
+        c = res["held_out_credential_change"][a]
+        rows.append(f"| {NAME[a]} | {m['attacks_successful']} ({pct(m['attacks_successful'], n_a)}%) | {m['episodes_with_released_attack_labelled_call']} | "
+                    f"{m['tasks_completed_under_attack']:,} | {m['benign_completed']} ({pct(m['benign_completed'], n_b)}%) | "
+                    f"{m['all_tasks_completed']:,} ({pct(m['all_tasks_completed'], n_a + n_b)}%) | {m['legit_calls_released_benign']} of {m['legit_calls_n']} | {c['attacks']} of {c['n']} |")
+    return "\n".join(rows)
+
+
+def iv(v):
+    return f"{100 * v[0]:+.2f} [{100 * v[1]:.2f}, {100 * v[2]:.2f}]"
+
+
+def contrast_table(res):
+    rows = ["| Contrast | Fixed in advance | All-task completion, points [95% interval] | Benign completion, points [95% interval] | Attack success, points [95% interval] | "
+            "Tasks gained / lost | Attacks gained / lost |", "|---|---|---|---|---|---|---|"]
+    for k, lab in CON:
+        c = res["contrasts"].get(k)
+        if not c:
+            continue
+        rows.append(f"| {lab} | {'yes' if k in PRE else 'no (descriptive)'} | {iv(c['task_completion_all'])} | {iv(c['task_completion_benign']) if 'task_completion_benign' in c else '—'} | "
+                    f"{iv(c['attack_success'])} | {c['tasks_gained_lost'][0]} / {c['tasks_gained_lost'][1]} | {c['attacks_gained_lost'][0]} / {c['attacks_gained_lost'][1]} |")
+    return "\n".join(rows)
+
+
+def user_table(res, arms):
+    users = list(res["tasks_completed_by_user_task"]["B0"])
+    rows = ["| User task | Episodes | " + " | ".join(NAME[a].split(" (")[0] if a not in ("M00", "M00_nobeh") else NAME[a] for a in arms) + " |", "|---|---|" + "---|" * len(arms)]
+    for u in users:
+        rows.append(f"| {u.split('_')[-1]} | {res['tasks_completed_by_user_task']['B0'][u][1]} | " + " | ".join(str(res["tasks_completed_by_user_task"][a][u][0]) for a in arms) + " |")
+    return "\n".join(rows)
+
+
+def fixture_table(fx, arms):
+    rows = ["| Arm | " + " | ".join(f"Set {s[-1]}: legitimate released / unsafe released / pairs correct (of {next(iter(fx[s].values()))['n']})" for s in fx) + " |", "|---|" + "---|" * len(fx)]
+    for a in arms:
+        rows.append(f"| {NAME[a]} | " + " | ".join(f"{fx[s][a]['legitimate_released']} / {fx[s][a]['unsafe_released']} / {fx[s][a]['pairs_correct']}" for s in fx) + " |")
+    return "\n".join(rows)
+
+
+def main():
+    r = json.load(open(os.path.join(OUT, "improvement_results.json")))
+    P = r["populations"]
+    parts = ["# Result tables of the improvement study (generated by `experiments/improve_study/tables.py`)\n",
+             "All figures are development evidence from offline recorded-trace replay (no live agent, no reviewer). Intervals: paired grouped bootstrap, 2,000 resamples, "
+             "seed 20261027; task completion clustered by user task (16 groups), attack success by injection task (9 groups).\n"]
+    for key, title in (("primary_S1", "T1. Primary population, held-out attacker objective (S1)"), ("primary_S2", "T2. Primary population, double holdout of user task and attacker objective (S2)"),
+                       ("dev2", "T3. Second development population (formerly confirmatory), S1 fold models")):
+        parts += [f"## {title}\n", arms_table(P[key], MAIN), "", f"### Paired contrasts ({key})\n", contrast_table(P[key]), ""]
+    for key in ("primary_S1", "dev2"):
+        parts += [f"## T4. Ablation of the permission rule ({key})\n", arms_table(P[key], ABL), ""]
+        parts += [f"## T5. Tasks completed by user task ({key})\n", user_table(P[key], ["B0", "M00", "M00_nobeh", "A2", "PG", "G1", "L2"]), ""]
+    pr = r["probe_reformatted_identifier"]
+    parts += [f"## T6. Reformatted-identifier probe ({pr['episodes']:,} attacked episodes)\n", "| Arm | Successful attacks, original text | Successful attacks, identifier reformatted |", "|---|---|---|"]
+    parts += [f"| {NAME[a]} | {pr['arms'][a]['attacks_original_text']} | {pr['arms'][a]['attacks_reformatted']} |" for a in ["B0", "B1", "M00", "M00_nobeh", "P2", "A2", "A2n", "PG", "G1", "G1-nonorm", "L2"]]
+    parts += ["", "## T7. Paired fixtures (legitimate call and unsafe call for the same request)\n",
+              fixture_table(r["fixtures"]["summary"], ["B1", "M00", "M00_nobeh", "A2", "PG", "G1", "G1-noamt", "G1-nonorm", "L0", "L2", "L2s"]), ""]
+    lat = P["primary_S1"]["arms"]
+    parts += ["## T8. Decision time per call, primary population (milliseconds; single process, this container)\n", "| Arm | Median | 95th percentile |", "|---|---|---|"]
+    parts += [f"| {NAME[a]} | {lat[a]['decision_ms_median']:.3f} | {lat[a]['decision_ms_p95']:.3f} |" for a in ["M00", "M00_nobeh", "A2", "PG", "G1", "L2"]]
+    open(os.path.join(OUT, "tables.md"), "w").write("\n".join(parts) + "\n")
+    print("\n".join(parts))
+
+
+if __name__ == "__main__":
+    main()
