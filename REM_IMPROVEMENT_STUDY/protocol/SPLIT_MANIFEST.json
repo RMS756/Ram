@@ -1,0 +1,97 @@
+{
+ "date": "2026-11-13",
+ "agentdojo_package": "0.1.35",
+ "agentdojo_runs_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+ "config_sha256": "8e1aa107cf3ea0ba5eecbb92bc90a2463202cdde476cfe8a98047ffad74e11d0",
+ "primary": {
+  "episodes_loaded": 3334,
+  "eligible": 3313,
+  "eligible_ids_sha256": "e1a70f892584f6cc2aa3c73ae7689ba3e413936da07b190d7f82f1a17c5fe870",
+  "steps": 6762,
+  "folds": [
+   "injection_task_0",
+   "injection_task_1",
+   "injection_task_2",
+   "injection_task_3",
+   "injection_task_4",
+   "injection_task_5",
+   "injection_task_6",
+   "injection_task_7",
+   "injection_task_8"
+  ],
+  "eligible_by_fold": {
+   "injection_task_0": 377,
+   "injection_task_1": 376,
+   "injection_task_2": 375,
+   "injection_task_3": 376,
+   "injection_task_4": 353,
+   "injection_task_5": 372,
+   "injection_task_6": 374,
+   "injection_task_7": 355,
+   "injection_task_8": 355
+  },
+  "eligible_by_user_task": {
+   "user_task_0": 210,
+   "user_task_1": 210,
+   "user_task_10": 210,
+   "user_task_11": 210,
+   "user_task_12": 210,
+   "user_task_13": 190,
+   "user_task_14": 209,
+   "user_task_15": 189,
+   "user_task_2": 210,
+   "user_task_3": 207,
+   "user_task_4": 210,
+   "user_task_5": 210,
+   "user_task_6": 210,
+   "user_task_7": 210,
+   "user_task_8": 210,
+   "user_task_9": 208
+  }
+ },
+ "dev2_formerly_confirmatory": {
+  "episodes_loaded": 2148,
+  "loaded_ids_sha256": "c5f98f95dc083d796220b5fb5b3a97f83cd9e567b4d1874ab12bd0e50a2c6b89",
+  "by_source": {
+   "F-A": 445,
+   "F-B": 445,
+   "F-C": 400,
+   "F-D": 286,
+   "F-E": 572
+  }
+ },
+ "S2_cells": 143,
+ "state_sha256": {
+  "pilot/steps.pkl": "876211cdf4975568b0fe9b8f4fb1312471fd514c66f3dac283273ac28f792c5d",
+  "pilot/state/crossfit.pkl": "27464b4d6c3752b5ad3be62e721b0264671c2ede85190fc611568cfe73b68b2e",
+  "pilot/state/rmod.pkl": "29c2c78ea5628783825e18699f321bc8d3e308ae8723a533d11dd99e59a88ba7",
+  "authz/cells.pkl": "98088ec50209859da0c2e9e702136e592ef168873805e50204c53903ce38cadb",
+  "authz/cells_posthoc_a2.pkl": "c6ac9e3629a04b9a15d63d937b6a38b1d2e378baa361ea214296da4b9663aa73"
+ },
+ "code_sha256": {
+  "intent.py": "08644234be9b565c36209f29d946dc35aee56283c2c060c98bd29d968153fc0f",
+  "permission.py": "0a93592c9dbe09e952f1291e00db93db217f676e6e4fe689db6b4394f6eba610",
+  "improve.py": "e83b1d72f331534593789917d6e75fa4578ce0845c4146454d763c5c61da2b1e",
+  "progent_manual.py": "e5680d01553019f653a4449e113aa25657cedf3d09adf9647cf1f8010172b54e",
+  "verifier.py": "191dfb442c9562e5a4bd661b8307811c996c2b3915a7c50c5875d54c65660941"
+ },
+ "fixtures_sha256": {
+  "set4": "00e849d91be0f8c937c70013308e344a51aaaa1404315f7d2d73fc61a3087de3"
+ },
+ "upstream": {
+  "progent": {
+   "repository": "github.com/sunblaze-ucb/progent",
+   "commit": "9befb41cbf992b49dbf035cbd3d53eb953d3b351",
+   "files_sha256": {
+    "agentdojo/src/agentdojo/default_suites/v1/banking/task_suite.py": "43da7d0298bd5ec0de158c4fa3d7b59c4038dc290eb517762c4f39451fac0b6f",
+    "secagent/tool.py": "4e2a0a6048409ab3a856a0a6d6d6559a957e8b188efa0a6660dbf19b87373635"
+   }
+  },
+  "melon": {
+   "repository": "github.com/kaijiezhu11/MELON",
+   "commit": "4d3cc9c",
+   "status": "not executed"
+  }
+ },
+ "verifier_prompt_sha256": "cbf54d52f438075f5e226f7e44d53cd5366684b045d69a8e1a093b49b84fc1d5"
+}
