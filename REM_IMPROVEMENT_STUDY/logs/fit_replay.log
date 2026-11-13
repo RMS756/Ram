@@ -1,0 +1,5 @@
+== stage fit
+fit: 152 cells in 6s; max |difference| of the refitted v1.1 fits from the stored ones: 0.00e+00
+fold injection_task_0 F2 coefficients: {'x_ctx2': 0.984, 'x_act1': 3.106, 'x_act2': 0.767, 'x_act3': 5.084, 'q_sup': 1.749, 'q_den': 5.137, 'q_op': 2.264, 'q_rec': -4.473, 'q_amt': -0.402} b0 -6.334 lam 0.1
+== stage replay
+replay: 161506 replays in 338s; primary 3313, dev2 2148, probe 2645
