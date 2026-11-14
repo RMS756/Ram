@@ -1,0 +1,7 @@
+== stage evidence
+v2 permission evidence on primary restricted-tool calls: {('attack', 'denied'): 650, ('legit', 'supported'): 1010, ('legit', 'unknown'): 557, ('attack', 'unknown'): 269, ('legit', 'denied'): 98, ('attack', 'supported'): 2}
+agreement with frozen provenance on primary steps: x_act1 0.9963, x_act2 1.0000
+== stage fit
+fit: 152 cells in 9s; refit of the stored F2 models: max |difference| 0.00e+00
+F2v2 fold injection_task_0: {'x_ctx2': 1.46, 'x_act1': 6.055, 'x_act2': -0.437, 'x_act3': 3.996, 'q2_sup': -0.95, 'q2_den': 5.305, 'q2_op': 2.451, 'q2_rec': -4.866, 'q2_amt': -0.968} b0 -8.146
+F3 fold injection_task_0: {'x_ctx2': 1.489, 'c_act1': 5.921, 'c_act2': -0.289, 'x_act3': 4.005, 'q2_sup': -0.819, 'q2_den': 5.291, 'q2_op': 2.45, 'q2_rec': -4.898, 'q2_amt': -0.981} b0 -8.162
