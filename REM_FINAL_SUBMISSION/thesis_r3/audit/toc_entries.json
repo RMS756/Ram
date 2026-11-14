@@ -1,0 +1,1030 @@
+{
+ "entries": [
+  [
+   "Committee Decision",
+   "ii"
+  ],
+  [
+   "Declaration of Authorship and Originality",
+   "iii"
+  ],
+  [
+   "Dedication",
+   "iv"
+  ],
+  [
+   "Acknowledgement",
+   "v"
+  ],
+  [
+   "List of Tables",
+   "xvii"
+  ],
+  [
+   "List of Figures",
+   "xxi"
+  ],
+  [
+   "List of Abbreviations",
+   "xxii"
+  ],
+  [
+   "Abstract",
+   "xxiii"
+  ],
+  [
+   "الملخص",
+   "xxv"
+  ],
+  [
+   "Status of This Draft",
+   "xxvii"
+  ],
+  [
+   "CHAPTER ONE: INTRODUCTION",
+   "1"
+  ],
+  [
+   "1.1 Background",
+   "1"
+  ],
+  [
+   "1.1.1 Language models and AI agents",
+   "1"
+  ],
+  [
+   "1.1.2 Tool-using and financial AI agents",
+   "1"
+  ],
+  [
+   "1.1.3 Indirect prompt injection",
+   "1"
+  ],
+  [
+   "1.1.4 Runtime security at the tool-execution boundary",
+   "2"
+  ],
+  [
+   "1.2 Problem Statement",
+   "2"
+  ],
+  [
+   "1.3 Motivation",
+   "3"
+  ],
+  [
+   "1.4 Research Gap",
+   "4"
+  ],
+  [
+   "1.5 Research Aim",
+   "5"
+  ],
+  [
+   "1.6 Research Objectives",
+   "6"
+  ],
+  [
+   "1.7 Research Questions",
+   "6"
+  ],
+  [
+   "1.8 Proposed Approach",
+   "7"
+  ],
+  [
+   "1.9 Research Methodology",
+   "8"
+  ],
+  [
+   "1.10 Scope",
+   "9"
+  ],
+  [
+   "1.11 Contributions: Proposed and Demonstrated",
+   "9"
+  ],
+  [
+   "1.12 Thesis Organization",
+   "11"
+  ],
+  [
+   "CHAPTER TWO: LITERATURE REVIEW: A RECORD-LEVEL SYSTEMATIC REVIEW OF RUNTIME SECURITY FOR TOOL-USING AI AGENTS",
+   "13"
+  ],
+  [
+   "2.1 Introduction",
+   "13"
+  ],
+  [
+   "2.2 Systematic Review Methodology",
+   "14"
+  ],
+  [
+   "2.2.1 Review objectives and research questions",
+   "14"
+  ],
+  [
+   "2.2.2 Information sources",
+   "15"
+  ],
+  [
+   "2.2.3 Search strategy",
+   "16"
+  ],
+  [
+   "2.2.4 Study selection",
+   "17"
+  ],
+  [
+   "2.2.5 Quality appraisal, data extraction and synthesis",
+   "20"
+  ],
+  [
+   "2.3 Threats Against AI Agents",
+   "21"
+  ],
+  [
+   "2.3.1 Direct and indirect prompt injection",
+   "21"
+  ],
+  [
+   "2.3.2 Adaptive attackers",
+   "22"
+  ],
+  [
+   "2.4 Benchmarks and Threat Models",
+   "22"
+  ],
+  [
+   "2.5 Defensive Approaches",
+   "23"
+  ],
+  [
+   "2.5.1 Policy enforcement and tool restriction",
+   "24"
+  ],
+  [
+   "2.5.2 Goal–action consistency and provenance",
+   "25"
+  ],
+  [
+   "2.6 Runtime Monitoring and Behavioral Analysis",
+   "26"
+  ],
+  [
+   "2.6.1 Provenance and cross-step information flow as evidence",
+   "26"
+  ],
+  [
+   "2.6.2 What is known about the empirical value of behavioral and provenance evidence",
+   "27"
+  ],
+  [
+   "2.7 Statistical and Algorithmic Foundations Relevant to REM",
+   "28"
+  ],
+  [
+   "2.7.1 Why calibration matters, and its limits",
+   "28"
+  ],
+  [
+   "2.7.2 Why expected-loss decisions are relevant",
+   "29"
+  ],
+  [
+   "2.8 Runtime Decision and Mitigation",
+   "30"
+  ],
+  [
+   "2.8.1 The space of runtime responses",
+   "31"
+  ],
+  [
+   "2.8.2 AgentTrust: runtime interception with graduated verdicts",
+   "31"
+  ],
+  [
+   "2.8.3 NEXUS: calibrated risk scoring with a four-way intervention set",
+   "32"
+  ],
+  [
+   "2.8.4 Other decision mechanisms",
+   "34"
+  ],
+  [
+   "2.9 Financial AI-Agent Security",
+   "35"
+  ],
+  [
+   "2.9.1 General agent-security evidence with a financial component",
+   "35"
+  ],
+  [
+   "2.9.2 Financial-agent evidence",
+   "36"
+  ],
+  [
+   "2.9.3 Why financial execution raises the requirements",
+   "37"
+  ],
+  [
+   "2.9.4 Requirements derived for a runtime layer protecting a financial agent",
+   "37"
+  ],
+  [
+   "2.10 Comparative Evidence Synthesis",
+   "38"
+  ],
+  [
+   "2.11 Critical Synthesis",
+   "39"
+  ],
+  [
+   "2.12 Research Gap and REM Positioning",
+   "41"
+  ],
+  [
+   "2.12.1 Assessment of candidate gaps",
+   "41"
+  ],
+  [
+   "2.12.2 Research gap supported by the systematic review (September 2026)",
+   "41"
+  ],
+  [
+   "2.12.3 REM positioning: established by prior research versus proposed by this thesis",
+   "42"
+  ],
+  [
+   "2.12.4 Limitations of this review",
+   "44"
+  ],
+  [
+   "2.12.5 Dated literature updates of 30 October and 2 November 2026 (outside the PRISMA flow)",
+   "45"
+  ],
+  [
+   "2.12.6 Literature update of 11 November 2026: full-text readings (outside the PRISMA flow)",
+   "46"
+  ],
+  [
+   "2.12.7 Revised statement of the research gap",
+   "50"
+  ],
+  [
+   "2.13 Chapter Summary",
+   "51"
+  ],
+  [
+   "CHAPTER THREE: RESEARCH METHODOLOGY, DESIGN AND IMPLEMENTATION OF THE REM FRAMEWORK",
+   "53"
+  ],
+  [
+   "3.1 Research Methodology and System Scope",
+   "53"
+  ],
+  [
+   "3.1.1 Design science research",
+   "53"
+  ],
+  [
+   "3.1.2 Research objectives",
+   "53"
+  ],
+  [
+   "3.1.3 Research questions",
+   "54"
+  ],
+  [
+   "3.1.4 Scope",
+   "54"
+  ],
+  [
+   "3.1.5 Assumptions",
+   "55"
+  ],
+  [
+   "3.2 REM Architecture",
+   "56"
+  ],
+  [
+   "3.2.1 Five layers",
+   "56"
+  ],
+  [
+   "3.2.2 Topology and information flow",
+   "56"
+  ],
+  [
+   "3.3 Threat Model and Financial Action Boundary",
+   "57"
+  ],
+  [
+   "3.3.1 Protected system",
+   "57"
+  ],
+  [
+   "3.3.2 Episodes and steps",
+   "58"
+  ],
+  [
+   "3.3.3 Trust boundaries and untrusted content",
+   "58"
+  ],
+  [
+   "3.3.4 Adversary model",
+   "58"
+  ],
+  [
+   "3.3.5 Indirect injection and adversarially induced actions",
+   "59"
+  ],
+  [
+   "3.3.6 Sensitive financial actions",
+   "59"
+  ],
+  [
+   "3.3.7 Security objectives",
+   "60"
+  ],
+  [
+   "3.4 Input & Context Layer",
+   "60"
+  ],
+  [
+   "3.4.1 Context capture",
+   "60"
+  ],
+  [
+   "3.4.2 Provenance labeling",
+   "61"
+  ],
+  [
+   "3.4.3 Entity extraction",
+   "61"
+  ],
+  [
+   "3.5 Detection Layer",
+   "61"
+  ],
+  [
+   "3.6 Behavioral Analysis Layer",
+   "62"
+  ],
+  [
+   "3.6.1 Step tracking",
+   "62"
+  ],
+  [
+   "3.6.2 Behavioral and action evidence",
+   "62"
+  ],
+  [
+   "3.7 Decision Engine Layer",
+   "63"
+  ],
+  [
+   "3.7.1 Ridge logistic estimation",
+   "64"
+  ],
+  [
+   "3.7.2 Calibration on the logit",
+   "65"
+  ],
+  [
+   "3.7.3 Consequence tiers",
+   "66"
+  ],
+  [
+   "3.7.4 Policy predicates",
+   "68"
+  ],
+  [
+   "3.7.5 Expected-loss verdict selection",
+   "68"
+  ],
+  [
+   "3.7.6 Explainability and audit record",
+   "72"
+  ],
+  [
+   "3.7.7 Consequence-independent baseline policy",
+   "74"
+  ],
+  [
+   "3.8 Mitigation Layer",
+   "75"
+  ],
+  [
+   "3.9 Offline Fitting and Recalibration",
+   "76"
+  ],
+  [
+   "3.10 Algorithm 1: REM Runtime Evaluation and Mitigation",
+   "77"
+  ],
+  [
+   "3.11 Experimental Methodology",
+   "79"
+  ],
+  [
+   "3.11.1 Environment and instrumentation",
+   "79"
+  ],
+  [
+   "3.11.2 Dataset",
+   "80"
+  ],
+  [
+   "3.11.3 Label construction",
+   "81"
+  ],
+  [
+   "3.11.4 Data limitations",
+   "82"
+  ],
+  [
+   "3.11.5 Grouping and cross-fitting",
+   "82"
+  ],
+  [
+   "3.11.6 Leakage controls",
+   "84"
+  ],
+  [
+   "3.11.7 Configurations, baselines, and ablations",
+   "84"
+  ],
+  [
+   "3.11.8 Pilot E0",
+   "86"
+  ],
+  [
+   "3.11.9 Repeated runs and uncertainty",
+   "86"
+  ],
+  [
+   "3.11.10 Recorded-trace replay sensitivity analysis [proposed scope amendment, pending supervisor approval]",
+   "87"
+  ],
+  [
+   "3.11.11 Rule baselines and additional policy arms (added November 2026)",
+   "87"
+  ],
+  [
+   "3.11.12 Generalization schemes",
+   "89"
+  ],
+  [
+   "3.11.13 Robustness probes and paired call fixtures",
+   "90"
+  ],
+  [
+   "3.11.14 Confirmatory protocol for one modification",
+   "90"
+  ],
+  [
+   "3.12 Evaluation Metrics",
+   "92"
+  ],
+  [
+   "3.12.1 Primary metrics",
+   "92"
+  ],
+  [
+   "3.12.2 Secondary metrics",
+   "93"
+  ],
+  [
+   "3.12.3 Realized loss across a declared grid",
+   "94"
+  ],
+  [
+   "3.12.4 Outcome layers and additional metrics",
+   "94"
+  ],
+  [
+   "3.13 Versioned Amendment: REM v1.1 (Proposed)",
+   "95"
+  ],
+  [
+   "3.14 Exploratory Extension: Task-Permission Evidence (Proposed, Not Adopted)",
+   "96"
+  ],
+  [
+   "3.15 System Implementation",
+   "100"
+  ],
+  [
+   "3.16 Threats to Validity",
+   "102"
+  ],
+  [
+   "3.17 Chapter Summary",
+   "103"
+  ],
+  [
+   "CHAPTER FOUR: EXPERIMENTAL RESULTS AND DISCUSSION",
+   "105"
+  ],
+  [
+   "4.1 Implementation Tools and Environment",
+   "106"
+  ],
+  [
+   "4.1.1 Software, Hardware and Benchmark Environment",
+   "106"
+  ],
+  [
+   "4.1.2 Implemented Components",
+   "107"
+  ],
+  [
+   "4.1.3 Reproducibility and Software Verification",
+   "107"
+  ],
+  [
+   "4.1.4 Kinds of Evidence and Evaluation Modes",
+   "108"
+  ],
+  [
+   "4.2 Dataset Preparation and Training",
+   "109"
+  ],
+  [
+   "4.2.1 Recorded Data, Fitting Protocol and Chronology",
+   "110"
+  ],
+  [
+   "4.2.2 Labels, the user_task_15 Collision and Benchmark Versions",
+   "114"
+  ],
+  [
+   "4.2.3 Pilot E0: Feasibility and Feature Retention",
+   "115"
+  ],
+  [
+   "4.2.4 Training of the Risk Estimator",
+   "116"
+  ],
+  [
+   "4.3 Experimental Setup and Evaluation Metrics",
+   "117"
+  ],
+  [
+   "4.3.1 Compared Arms",
+   "117"
+  ],
+  [
+   "4.3.2 Populations and Generalization Schemes",
+   "119"
+  ],
+  [
+   "4.3.3 Evaluation Metrics",
+   "119"
+  ],
+  [
+   "4.3.4 Statistical Procedure and Comparisons Fixed in Advance",
+   "120"
+  ],
+  [
+   "4.4 Comparisons with Existing Models and Defense Frameworks",
+   "121"
+  ],
+  [
+   "4.4.1 Rule Baselines and an Audit of REM’s Interventions",
+   "121"
+  ],
+  [
+   "4.4.2 Distributed Defenses (Recorded Outcomes Only)",
+   "124"
+  ],
+  [
+   "4.4.3 A Published Policy and a Request-Derived Permission Rule in the Same Harness",
+   "124"
+  ],
+  [
+   "4.4.4 Live-Agent and Published-Defense Experiments: Status",
+   "128"
+  ],
+  [
+   "4.4.5 Comparison with Prior Work",
+   "129"
+  ],
+  [
+   "4.5 Ablation Studies",
+   "131"
+  ],
+  [
+   "4.5.1 Ablations of the Components of REM v1.0",
+   "131"
+  ],
+  [
+   "4.5.2 Ablation of the Behavioral Evidence Group and of the Verdict Set",
+   "132"
+  ],
+  [
+   "4.5.3 Ablations of the Task-Permission Extension",
+   "133"
+  ],
+  [
+   "4.5.4 Ablations of the Repaired Rule and of the Authority Guard",
+   "136"
+  ],
+  [
+   "4.6 Results and Discussion",
+   "138"
+  ],
+  [
+   "4.6.1 RQ1 — Offline Classification (Held-Out Predictions)",
+   "138"
+  ],
+  [
+   "4.6.2 RQ2 — Observe-Only Decisions",
+   "140"
+  ],
+  [
+   "4.6.3 RQ2 and RQ3 — Replay Sensitivity Analysis",
+   "142"
+  ],
+  [
+   "4.6.4 Optional Sequential Analysis (CUSUM, observe-only)",
+   "147"
+  ],
+  [
+   "4.6.5 Realized Loss across the Declared Grid",
+   "147"
+  ],
+  [
+   "4.6.6 Generalization to Unseen Tasks and Objectives, and a Rejected Candidate",
+   "148"
+  ],
+  [
+   "4.6.7 Robustness Probes: Reformatted Identifiers and Paired Call Fixtures",
+   "150"
+  ],
+  [
+   "4.6.8 Confirmatory Evaluation of REM v1.1 (Run of 11 November 2026)",
+   "153"
+  ],
+  [
+   "4.6.9 Exploratory Extension: Task-Permission Evidence",
+   "157"
+  ],
+  [
+   "4.6.10 Follow-up: Defects of the Permission Rule and a Call-Level Audit of User Task 15",
+   "161"
+  ],
+  [
+   "4.6.11 Interpretation of the Findings",
+   "163"
+  ],
+  [
+   "4.6.12 Threats to Validity and Limitations",
+   "168"
+  ],
+  [
+   "4.6.13 Chapter Summary",
+   "170"
+  ],
+  [
+   "CHAPTER FIVE: CONCLUSIONS AND FUTURE WORK",
+   "172"
+  ],
+  [
+   "5.1 Introduction",
+   "172"
+  ],
+  [
+   "5.2 Answers to the Research Questions",
+   "172"
+  ],
+  [
+   "5.3 Achievement of the Objectives",
+   "174"
+  ],
+  [
+   "5.4 Contributions",
+   "175"
+  ],
+  [
+   "5.5 What Was Not Confirmed, What Was Rejected, and Why It Matters",
+   "178"
+  ],
+  [
+   "5.6 Limitations and Threats to Validity",
+   "180"
+  ],
+  [
+   "5.7 Future Work, in Order of Priority",
+   "181"
+  ],
+  [
+   "5.8 Conclusion",
+   "182"
+  ],
+  [
+   "References",
+   "184"
+  ],
+  [
+   "Appendix A: Systematic Review: Search Strings, Supporting Tables and Evidence Matrix",
+   "199"
+  ],
+  [
+   "A.1 Database searches",
+   "199"
+  ],
+  [
+   "A.2 Benchmarks used by included studies",
+   "200"
+  ],
+  [
+   "A.3 Where included defenses intervene and what they observe",
+   "202"
+  ],
+  [
+   "A.4 Runtime responses reported by included systems",
+   "203"
+  ],
+  [
+   "A.5 Comparative evidence matrix of defense and design studies",
+   "205"
+  ],
+  [
+   "A.6 Eligibility criteria",
+   "217"
+  ],
+  [
+   "A.7 Exclusions at screening and at eligibility",
+   "219"
+  ],
+  [
+   "A.8 Quality appraisal",
+   "219"
+  ],
+  [
+   "A.9 Data extraction",
+   "221"
+  ],
+  [
+   "A.10 Evidence synthesis",
+   "222"
+  ],
+  [
+   "A.11 Threat classes and the included evidence",
+   "223"
+  ],
+  [
+   "A.12 Learned and LLM-based guardrails",
+   "224"
+  ],
+  [
+   "A.13 Step-level, sequence-level and accumulating monitors",
+   "225"
+  ],
+  [
+   "A.14 Foundations: behavioral anomaly detection and its cautions",
+   "226"
+  ],
+  [
+   "A.15 What attribution contributes to auditability",
+   "227"
+  ],
+  [
+   "A.16 Decision mechanisms of the runtime systems closest to REM",
+   "230"
+  ],
+  [
+   "A.17 Thematic synthesis of the included evidence",
+   "233"
+  ],
+  [
+   "A.18 Assessment of candidate research gaps",
+   "236"
+  ],
+  [
+   "A.19 AI agents and emerging security risks",
+   "237"
+  ],
+  [
+   "A.19.1 From language models to agents",
+   "237"
+  ],
+  [
+   "A.19.2 Why agent architecture changes the security problem",
+   "237"
+  ],
+  [
+   "A.19.3 Implication",
+   "238"
+  ],
+  [
+   "A.20 Tool misuse, action manipulation and new tool channels",
+   "238"
+  ],
+  [
+   "A.21 Context and memory manipulation",
+   "239"
+  ],
+  [
+   "A.22 Multi-step propagation, goal drift and abnormal execution",
+   "240"
+  ],
+  [
+   "A.23 Input-, context- and model-level protection",
+   "240"
+  ],
+  [
+   "A.24 System-level and information-flow defenses",
+   "241"
+  ],
+  [
+   "A.25 Why logistic regression",
+   "241"
+  ],
+  [
+   "A.26 Why sequential evidence matters",
+   "242"
+  ],
+  [
+   "A.27 Currency update of 30 October 2026 (outside the PRISMA flow)",
+   "243"
+  ],
+  [
+   "A.28 Supplementary literature update of 2 November 2026: Kanaker et al. (2026) (outside the PRISMA flow)",
+   "245"
+  ],
+  [
+   "Appendix B: System Implementation: Details",
+   "249"
+  ],
+  [
+   "B.1 Implementation of the REM framework",
+   "249"
+  ],
+  [
+   "B.1.1 Purpose and Scope",
+   "249"
+  ],
+  [
+   "B.1.2 Software Environment",
+   "250"
+  ],
+  [
+   "B.1.3 Code Organization and Execution Paths",
+   "251"
+  ],
+  [
+   "B.1.4 Layer 1 — Input and Context",
+   "253"
+  ],
+  [
+   "B.1.5 Layer 2 — Detection",
+   "254"
+  ],
+  [
+   "B.1.6 Layer 3 — Behavioral and Action Evidence",
+   "254"
+  ],
+  [
+   "B.1.7 Layer 4 — Decision Engine",
+   "255"
+  ],
+  [
+   "B.1.8 Layer 5 — Mitigation, and What Happens at the Tool Boundary",
+   "256"
+  ],
+  [
+   "B.1.9 Non-Invasive Placement and Its Limits",
+   "257"
+  ],
+  [
+   "B.1.10 Optional Sequential Analysis (A2)",
+   "258"
+  ],
+  [
+   "B.1.11 Verification",
+   "258"
+  ],
+  [
+   "B.1.12 Correspondence Between Requirements, Equations, Code, Tests and Results",
+   "261"
+  ],
+  [
+   "B.1.13 Logging of Sensitive Values",
+   "263"
+  ],
+  [
+   "B.1.14 Runtime Measurement",
+   "263"
+  ],
+  [
+   "Appendix C: Notation, Optional Sequential Analysis and Equation Provenance",
+   "266"
+  ],
+  [
+   "C.1 Notation",
+   "266"
+  ],
+  [
+   "C.2 Layer interfaces",
+   "267"
+  ],
+  [
+   "C.3 Optional observe-only sequential analysis",
+   "267"
+  ],
+  [
+   "C.4 Provenance of the equations of Chapter 3",
+   "269"
+  ],
+  [
+   "Appendix D: Live-Agent and MELON Evaluations: Design and Status (Not Executed)",
+   "271"
+  ],
+  [
+   "D.1 Closed-loop evaluation with live agents: design and implementation status",
+   "271"
+  ],
+  [
+   "D.1.1 Purpose",
+   "271"
+  ],
+  [
+   "D.1.2 Defended agent pipeline",
+   "271"
+  ],
+  [
+   "D.1.3 Conditions and controlled variables",
+   "273"
+  ],
+  [
+   "D.1.4 Frozen parameters",
+   "273"
+  ],
+  [
+   "D.1.5 Design inputs required before execution",
+   "273"
+  ],
+  [
+   "D.1.6 Metrics, statistics and logging",
+   "274"
+  ],
+  [
+   "D.1.7 Safety precautions",
+   "274"
+  ],
+  [
+   "D.1.8 Implementation and verification status",
+   "275"
+  ],
+  [
+   "D.2 Closed-loop evaluation with live agents: status on 3 November 2026",
+   "275"
+  ],
+  [
+   "D.3 Replay versus live evaluation",
+   "276"
+  ],
+  [
+   "D.4 Controlled evaluation of MELON with and without REM: protocol",
+   "277"
+  ],
+  [
+   "D.4.1 Why MELON is the reference",
+   "277"
+  ],
+  [
+   "D.4.2 Integration point",
+   "278"
+  ],
+  [
+   "D.4.3 Frozen settings and training provenance",
+   "278"
+  ],
+  [
+   "D.4.4 Protocol",
+   "279"
+  ],
+  [
+   "D.4.5 Interpretation limits",
+   "280"
+  ],
+  [
+   "Appendix E: Sensitivity of the Replay Results to the Mitigation Semantics",
+   "282"
+  ],
+  [
+   "E.1 Replay results under the two mitigation semantics",
+   "282"
+  ],
+  [
+   "Appendix F: Register of Open Supervisor Decisions",
+   "285"
+  ]
+ ],
+ "headings_levels_1_to_3": 256,
+ "entries_without_matching_heading": []
+}

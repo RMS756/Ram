@@ -1,0 +1,30 @@
+{
+ "pinned": {
+  "libreoffice": "24.2.7.2",
+  "pandoc": "3.9",
+  "serif_font_file": "LiberationSerif-Regular.ttf",
+  "serif_font_sha256": "705903ae1382f0150f115d6f10a30f5b2f3d6ade649c474afe6366c39174fb65"
+ },
+ "observed": {
+  "libreoffice": "24.2.7.2",
+  "pandoc": "3.9",
+  "serif_font_file": "LiberationSerif-Regular.ttf",
+  "serif_font_sha256": "705903ae1382f0150f115d6f10a30f5b2f3d6ade649c474afe6366c39174fb65"
+ },
+ "pdf_fonts": [
+  "LiberationSerif-Bold",
+  "LiberationSerif",
+  "LiberationSerif-Italic",
+  "DejaVuSans",
+  "FreeSerif",
+  "FreeSerifBold",
+  "OpenSymbol",
+  "LiberationMono",
+  "DejaVuSansMono",
+  "DejaVuSerif",
+  "FreeMono",
+  "DejaVuSansMono-Oblique",
+  "LiberationSerif-BoldItalic",
+  "DejaVuSansMono-Bold"
+ ]
+}

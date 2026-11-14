@@ -22,3 +22,5 @@
 An external review reported three defects of the frozen matcher (multi-payment binding, unenforced conditions, duplicate payments) and a robustness failure of L2. They were reproduced (`followup/DEFECT_REPORT.md`), a revised protocol was frozen before scoring (`followup/PROTOCOL_V2.md`, commit `ae3f923`), and the repaired arms were run (`followup/RESULTS_V2.md`). The development study above and its counts are unchanged.
 
 In short: the binding check removes 9 of G1's 10 successful attacks (all in user task 15) at no task cost, while refusing to treat the subjective condition of user task 14 as satisfied costs 167 tasks; G2 is a trade-off against A2 and is not resolved against Progent's manual policy; the authority guard removes L2's reformatting failure (38 → 10 attacks) at almost no cost; the learned model's gain over the repaired rule has intervals whose lower bound is exactly zero (not established); typed provenance in the learner has no measured effect.
+
+Thesis: third edition in `REM_FINAL_SUBMISSION/thesis_r3/` (`REM_THESIS_FINAL_R3.docx/.pdf`, `CHANGE_LOG_R3.md`, `audit/CLAIM_AUDIT_R3.md`); the first and second editions are unchanged.

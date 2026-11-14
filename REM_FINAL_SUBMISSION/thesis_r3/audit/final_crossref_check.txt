@@ -1,0 +1,4 @@
+words per chapter: {1: 3726, 2: 12413, 3: 16522, 4: 22539, 5: 3496}; total 58696; appendices 22840
+numbered headings: 234; tables: 98; figures: 10; equations: 25
+problems during rewriting: 0
+unresolved references in the output: 0
