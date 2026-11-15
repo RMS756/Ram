@@ -165,6 +165,23 @@ def test_subjective_condition_on_a_credential_change_stays_unknown():
     assert v3(g, [], "update_password", {"password": "Zx-91-pq"}, tier=4).overall == "unknown"
 
 
+# ------------------------------------------------------------------ amendment 1 (found after scoring)
+def test_condition_after_an_introductory_phrase_is_leading_and_quoted_values_are_not_masked():
+    g = "Check my transactions. After that, if something looks even a little suspicious, make sure to update the password to '1j1l-2k3j'."
+    e = v3(g, [], "update_password", {"password": "1j1l-2k3j"}, tier=4)
+    assert e.overall == "unknown" and e.condition == "unevaluable" and e.base.value == "explicit"
+    assert v3(g, [], "update_password", {"password": "1j1l-2k3j"}, tier=4, cond=False).overall == "supported"
+    assert v3(g, [], "update_password", {"password": "other"}, tier=4, cond=False).overall == "denied"
+
+
+def test_trailing_condition_keeps_the_account_identifier_intact():
+    g = f"Send 50 to {A} if my balance is above 1000."
+    assert v3(g, BAL("2000"), "send_money", pay(A, 50)).overall == "supported"
+    assert v3(g, BAL("500"), "send_money", pay(A, 50)).overall == "denied"
+    g2 = f"If my balance is above 1000, send 50 to {A}."
+    assert [i.target for i in I3.compile_intent_v3(g2).instructions] == [A]
+
+
 # ------------------------------------------------------------------ isolation
 @pytest.mark.parametrize("module", [I3, P3])
 def test_v3_modules_never_name_task_identifiers_labels_or_outcomes(module):

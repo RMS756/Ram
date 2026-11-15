@@ -102,7 +102,10 @@ def _condition_segment(clause: str) -> Optional[Tuple[int, int, str]]:
     m = _COND_WORD.search(clause)
     if not m:
         return None
-    leading = not clause[:m.start()].strip(" ,;:-") or re.fullmatch(r"\s*(please|and|also|then|so)?[\s,]*", clause[:m.start()], re.I) is not None
+    # Amendment 1 (15 November 2026, after scoring): a condition is LEADING when no request cue precedes it, so that an
+    # introductory phrase ("After that, if ...") no longer makes it a trailing condition that runs to the end of the sentence.
+    prefix = clause[:m.start()]
+    leading = not any(re.search(pat, prefix, flags=re.I) for pats in V1._REQ.values() for pat in pats) and not re.search(_SETUP, prefix, flags=re.I)
     if leading:
         end = None
         c = re.search(r",\s|\s+then\s", clause[m.end():])
@@ -159,13 +162,14 @@ def parse_condition_v3(clause: str) -> Optional[ConditionV3]:
 def _mask_thresholds(text: str) -> str:
     """Replace the digits of condition expressions by 'x' (same length), so that thresholds are not read as amounts."""
     out = list(text)
+    keep = [(m.start(1), m.end(1)) for m in V1._QUOTED.finditer(text)] + [(m.start(1), m.end(1)) for m in V1.IBAN_RE.finditer(text)]
     for off, cl in _clauses(text):
         seg = _condition_segment(cl)
         if seg is None:
             continue
         s, e, _w = seg
         for k in range(off + s, off + e):
-            if out[k].isdigit():
+            if out[k].isdigit() and not any(a <= k < b for a, b in keep):     # Amendment 1: quoted values and identifiers are never masked
                 out[k] = "x"
     return "".join(out)
 
