@@ -1,0 +1,426 @@
+{
+ "entries": [
+  [
+   "Committee Decision",
+   "ii"
+  ],
+  [
+   "Declaration of Authorship and Originality",
+   "iii"
+  ],
+  [
+   "Dedication",
+   "iv"
+  ],
+  [
+   "Acknowledgement",
+   "v"
+  ],
+  [
+   "List of Tables",
+   "xi"
+  ],
+  [
+   "List of Figures",
+   "xiv"
+  ],
+  [
+   "List of Abbreviations",
+   "xv"
+  ],
+  [
+   "Abstract",
+   "xvi"
+  ],
+  [
+   "الملخص",
+   "xviii"
+  ],
+  [
+   "Status of This Draft",
+   "xx"
+  ],
+  [
+   "CHAPTER ONE: INTRODUCTION",
+   "1"
+  ],
+  [
+   "1.1 Background",
+   "1"
+  ],
+  [
+   "1.2 Problem Statement",
+   "2"
+  ],
+  [
+   "1.3 Motivation",
+   "3"
+  ],
+  [
+   "1.4 Research Gap",
+   "4"
+  ],
+  [
+   "1.5 Research Aim",
+   "5"
+  ],
+  [
+   "1.6 Research Objectives",
+   "6"
+  ],
+  [
+   "1.7 Research Questions",
+   "6"
+  ],
+  [
+   "1.8 Proposed Approach",
+   "7"
+  ],
+  [
+   "1.9 Research Methodology",
+   "8"
+  ],
+  [
+   "1.10 Scope",
+   "9"
+  ],
+  [
+   "1.11 Contributions: Proposed and Demonstrated",
+   "9"
+  ],
+  [
+   "1.12 Thesis Organization",
+   "11"
+  ],
+  [
+   "CHAPTER TWO: LITERATURE REVIEW: A RECORD-LEVEL SYSTEMATIC REVIEW OF RUNTIME SECURITY FOR TOOL-USING AI AGENTS",
+   "13"
+  ],
+  [
+   "2.1 Introduction",
+   "13"
+  ],
+  [
+   "2.2 Systematic Review Methodology",
+   "14"
+  ],
+  [
+   "2.3 Threats Against AI Agents",
+   "21"
+  ],
+  [
+   "2.4 Benchmarks and Threat Models",
+   "22"
+  ],
+  [
+   "2.5 Defensive Approaches",
+   "23"
+  ],
+  [
+   "2.6 Runtime Monitoring and Behavioral Analysis",
+   "26"
+  ],
+  [
+   "2.7 Statistical and Algorithmic Foundations Relevant to REM",
+   "28"
+  ],
+  [
+   "2.8 Runtime Decision and Mitigation",
+   "30"
+  ],
+  [
+   "2.9 Financial AI-Agent Security",
+   "35"
+  ],
+  [
+   "2.10 Comparative Evidence Synthesis",
+   "38"
+  ],
+  [
+   "2.11 Critical Synthesis",
+   "39"
+  ],
+  [
+   "2.12 Research Gap and REM Positioning",
+   "41"
+  ],
+  [
+   "2.13 Chapter Summary",
+   "51"
+  ],
+  [
+   "CHAPTER THREE: RESEARCH METHODOLOGY, DESIGN AND IMPLEMENTATION OF THE REM FRAMEWORK",
+   "53"
+  ],
+  [
+   "3.1 Research Methodology and System Scope",
+   "53"
+  ],
+  [
+   "3.2 REM Architecture",
+   "56"
+  ],
+  [
+   "3.3 Threat Model and Financial Action Boundary",
+   "57"
+  ],
+  [
+   "3.4 Input & Context Layer",
+   "60"
+  ],
+  [
+   "3.5 Detection Layer",
+   "61"
+  ],
+  [
+   "3.6 Behavioral Analysis Layer",
+   "62"
+  ],
+  [
+   "3.7 Decision Engine Layer",
+   "63"
+  ],
+  [
+   "3.8 Mitigation Layer",
+   "74"
+  ],
+  [
+   "3.9 Offline Fitting and Recalibration",
+   "76"
+  ],
+  [
+   "3.10 Algorithm 1: REM Runtime Evaluation and Mitigation",
+   "77"
+  ],
+  [
+   "3.11 Experimental Methodology",
+   "79"
+  ],
+  [
+   "3.12 Evaluation Metrics",
+   "91"
+  ],
+  [
+   "3.13 Versioned Amendment: REM v1.1 (Proposed)",
+   "94"
+  ],
+  [
+   "3.14 Exploratory Extension: Task-Permission Evidence (Proposed, Not Adopted)",
+   "95"
+  ],
+  [
+   "3.15 System Implementation",
+   "98"
+  ],
+  [
+   "3.16 Threats to Validity",
+   "100"
+  ],
+  [
+   "3.17 Chapter Summary",
+   "102"
+  ],
+  [
+   "CHAPTER FOUR: EXPERIMENTAL RESULTS AND DISCUSSION",
+   "104"
+  ],
+  [
+   "4.1 Implementation Tools and Environment",
+   "104"
+  ],
+  [
+   "4.2 Dataset Preparation and Training",
+   "108"
+  ],
+  [
+   "4.3 Experimental Setup and Evaluation Metrics",
+   "115"
+  ],
+  [
+   "4.4 Comparisons with Existing Models and Defense Frameworks",
+   "118"
+  ],
+  [
+   "4.5 Ablation Studies",
+   "127"
+  ],
+  [
+   "4.6 Results and Discussion",
+   "131"
+  ],
+  [
+   "CHAPTER FIVE: CONCLUSIONS AND FUTURE WORK",
+   "163"
+  ],
+  [
+   "5.1 Introduction",
+   "163"
+  ],
+  [
+   "5.2 Answers to the Research Questions",
+   "163"
+  ],
+  [
+   "5.3 Achievement of the Objectives",
+   "165"
+  ],
+  [
+   "5.4 Contributions",
+   "166"
+  ],
+  [
+   "5.5 What Was Not Confirmed, What Was Rejected, and Why It Matters",
+   "169"
+  ],
+  [
+   "5.6 Limitations and Threats to Validity",
+   "171"
+  ],
+  [
+   "5.7 Future Work, in Order of Priority",
+   "172"
+  ],
+  [
+   "5.8 Conclusion",
+   "173"
+  ],
+  [
+   "References",
+   "175"
+  ],
+  [
+   "Appendix A: Systematic Review: Search Strings, Supporting Tables and Evidence Matrix",
+   "189"
+  ],
+  [
+   "A.1 Database searches",
+   "189"
+  ],
+  [
+   "A.2 Benchmarks used by included studies",
+   "190"
+  ],
+  [
+   "A.3 Where included defenses intervene and what they observe",
+   "192"
+  ],
+  [
+   "A.4 Runtime responses reported by included systems",
+   "193"
+  ],
+  [
+   "A.5 Comparative evidence matrix of defense and design studies",
+   "195"
+  ],
+  [
+   "A.6 Eligibility criteria",
+   "207"
+  ],
+  [
+   "A.7 Exclusions at screening and at eligibility",
+   "209"
+  ],
+  [
+   "A.8 Quality appraisal",
+   "209"
+  ],
+  [
+   "A.9 Data extraction",
+   "211"
+  ],
+  [
+   "A.10 Evidence synthesis",
+   "212"
+  ],
+  [
+   "A.11 Threat classes and the included evidence",
+   "213"
+  ],
+  [
+   "A.12 Learned and LLM-based guardrails",
+   "214"
+  ],
+  [
+   "A.13 Step-level, sequence-level and accumulating monitors",
+   "215"
+  ],
+  [
+   "A.14 Foundations: behavioral anomaly detection and its cautions",
+   "216"
+  ],
+  [
+   "A.15 Why logistic regression",
+   "217"
+  ],
+  [
+   "A.16 What attribution contributes to auditability",
+   "218"
+  ],
+  [
+   "A.17 Decision mechanisms of the runtime systems closest to REM",
+   "220"
+  ],
+  [
+   "A.18 Thematic synthesis of the included evidence",
+   "224"
+  ],
+  [
+   "A.19 Assessment of candidate research gaps",
+   "226"
+  ],
+  [
+   "A.20 Currency update of 30 October 2026 (outside the PRISMA flow)",
+   "227"
+  ],
+  [
+   "A.21 Supplementary literature update of 2 November 2026: Kanaker et al. (2026) (outside the PRISMA flow)",
+   "229"
+  ],
+  [
+   "Appendix B: System Implementation: Details",
+   "233"
+  ],
+  [
+   "B.1 Implementation of the REM framework",
+   "233"
+  ],
+  [
+   "Appendix C: Notation, Optional Sequential Analysis and Equation Provenance",
+   "250"
+  ],
+  [
+   "C.1 Notation",
+   "250"
+  ],
+  [
+   "C.2 Layer interfaces",
+   "251"
+  ],
+  [
+   "C.3 Optional observe-only sequential analysis",
+   "251"
+  ],
+  [
+   "C.4 Provenance of the equations of Chapter 3",
+   "253"
+  ],
+  [
+   "Appendix D: Live-Agent and MELON Evaluations: Status (Not Executed)",
+   "255"
+  ],
+  [
+   "Appendix E: Sensitivity of the Replay Results to the Mitigation Semantics",
+   "256"
+  ],
+  [
+   "E.1 Replay results under the two mitigation semantics",
+   "256"
+  ],
+  [
+   "Appendix F: Register of Open Supervisor Decisions",
+   "259"
+  ]
+ ],
+ "headings_levels_1_to_3": 227,
+ "entries_without_matching_heading": []
+}
