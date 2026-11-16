@@ -1,0 +1,5 @@
+replay done 16212 34 s; errors 0
+primary_S1 {'GV': (0, 147, 1532), 'HV': (0, 147, 1532), 'G3': (0, 132, 1407), 'PG': (0, 154, 1450), 'GVc': (0, 147, 1532), 'GVp': (0, 144, 1530)}
+dev2 {'GV': (0, 32, 1386), 'HV': (0, 32, 1386), 'G3': (0, 29, 1239), 'PG': (0, 35, 1305), 'GVc': (0, 32, 1386), 'GVp': (0, 33, 1389)}
+parity {'replays_compared': 8106, 'restricted_calls_compared': 7098, 'release_decision_differences': 0, 'outcome_differences': 0, 'cedar_decisions': {'Deny': 4265, 'Allow': 2833}, 'cedar_errors': 0, 'decision_ms_median_restricted_calls_GVc': 2.3319000000014967, 'decision_ms_p95_restricted_calls_GVc': 3.8971379999651377}
+fixtures {'GVc': (36, 0, 36), 'GVp': (36, 0, 36)}
