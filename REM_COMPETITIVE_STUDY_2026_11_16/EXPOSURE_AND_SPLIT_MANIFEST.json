@@ -1,0 +1,110 @@
+{
+ "date": "2026-11-16",
+ "status": "all populations are exposed development or regression material; no untouched set exists",
+ "sources": {
+  "agentdojo_package": "0.1.35 (banking suite v1)",
+  "recorded_runs_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+  "config_sha256": "8e1aa107cf3ea0ba5eecbb92bc90a2463202cdde476cfe8a98047ffad74e11d0",
+  "progent_manual_policy_commit": "9befb41cbf992b49dbf035cbd3d53eb953d3b351",
+  "review_package_zip_sha256": "da4eca6f5daf72d0db508fc1ec6272b51047b92b5c0ae528bda108fb60c2f40f",
+  "review_package_base_commit": "ed1ea397fa736fb40e9da91869d85dedd8465fb4",
+  "review_package_head_commit_as_delivered": "4a6679676128820ea10eabb9ab1fa1e70af9eb73",
+  "progent_paper_pdf_sha256": "cd38f8f70cd172572b01d9d15a9c4fd87751692e155f0e1d9c003b4903520e62",
+  "python": "3.11.17",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "scikit_learn": "1.9.1",
+  "nproc_package": "2.1.5, read-only mirror github.com/cran/nproc at 79ae465ef7b47e6ddd557c8e15dd603cfbd3fd6f; R/npfuns.R sha256 92513d9d2ce1ec7a20c5e97500733d22ef5c2b294ed9031efe4b565547a08100 (read as data, not executed)",
+  "conformal_risk_repository": "github.com/aangelopoulos/conformal-risk at 3eff946390a8f188b1e5ab700fce21a66a215e7c; core/get_lhat.py sha256 ddf93c30cc703aa782c1d4f0201ca1360616b510000662cfbd0a506e91cc7546 (read as data, not executed)"
+ },
+ "populations": {
+  "primary": {
+   "episodes_loaded": 3334,
+   "eligible": 3313,
+   "eligible_ids_sha256": "e1a70f892584f6cc2aa3c73ae7689ba3e413936da07b190d7f82f1a17c5fe870",
+   "steps": 6762,
+   "attack_labelled_steps": 921,
+   "eligible_by_fold": {
+    "injection_task_0": 377,
+    "injection_task_1": 376,
+    "injection_task_2": 375,
+    "injection_task_3": 376,
+    "injection_task_4": 353,
+    "injection_task_5": 372,
+    "injection_task_6": 374,
+    "injection_task_7": 355,
+    "injection_task_8": 355
+   },
+   "eligible_by_user_task": {
+    "user_task_0": 210,
+    "user_task_1": 210,
+    "user_task_10": 210,
+    "user_task_11": 210,
+    "user_task_12": 210,
+    "user_task_13": 190,
+    "user_task_14": 209,
+    "user_task_15": 189,
+    "user_task_2": 210,
+    "user_task_3": 207,
+    "user_task_4": 210,
+    "user_task_5": 210,
+    "user_task_6": 210,
+    "user_task_7": 210,
+    "user_task_8": 210,
+    "user_task_9": 208
+   }
+  },
+  "second_formerly_confirmatory": {
+   "episodes_loaded": 2148,
+   "loaded_ids_sha256": "c5f98f95dc083d796220b5fb5b3a97f83cd9e567b4d1874ab12bd0e50a2c6b89",
+   "eligible": 2113
+  },
+  "probe_reformatted_identifier": {
+   "episodes": 2645
+  },
+  "fixtures": {
+   "pairs": 43,
+   "sets": [
+    8,
+    8,
+    7,
+    20
+   ],
+   "status": "author-written, previously inspected"
+  }
+ },
+ "independent_groups": {
+  "user_tasks": 16,
+  "attacker_objectives": 9
+ },
+ "exposure_history": [
+  {
+   "date": "2026-10/11",
+   "what": "primary recordings: pilot, authorization study, generalization study; every analysis"
+  },
+  {
+   "date": "2026-11-11",
+   "what": "second population opened once for the confirmatory run of REM v1.1; since then development data"
+  },
+  {
+   "date": "2026-11-13 to 15",
+   "what": "improvement study revisions 1 to 3: all populations, probe, fixtures"
+  },
+  {
+   "date": "2026-11-16",
+   "what": "integration package (H10, H11, H11D, HR, HV): all populations, probe, fixtures; re-run and reproduced before this protocol"
+  },
+  {
+   "date": "2026-11-16",
+   "what": "this study: design-time label counts per attacker objective and tool were read; no candidate fit or outcome before the freeze"
+  }
+ ],
+ "roles": {
+  "fit": "training portion of each cell (S1: 9 cells; S2: 143 cells)",
+  "calibration": "calibration half of the training portion (NP, CRC); inner out-of-fold scores (ridge and GB calibration map)",
+  "tuning": "GB configuration by inner out-of-fold log loss inside the training portion; nothing else is tuned",
+  "selection": "none after scoring",
+  "evaluation": "held-out cell; second population and probe with the S1 models"
+ },
+ "cell_split_rule": "training groups (data.inner_group) assigned to fit half (0) and calibration half (1) by rem.evaluation.crossfit.assign_round_robin over sorted names, separately for attacked and benign groups"
+}
