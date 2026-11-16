@@ -12,6 +12,8 @@ Where all same-target/effect licensing instructions have such direct numeric bin
 
 This is an implementation repair for a limited supported syntax, not proof of authorization for arbitrary language and not a new mathematical method. It is motivated by known failures; no independence or confirmatory claim is made.
 
+Pre-scoring implementation clarification: the frozen compiler marks SUB-A4's directly stated 27.35 as a calculation input because of the earlier word half, leaving its instruction amount empty. Recover a direct numeric binding from the instruction's raw clause only when that clause has exactly one recognized direct numeric payment and exactly one distinct account identifier equal to the instruction target. Do not recover such a binding from a multi-target or multi-payment clause. This was established in regression tests before any HV replay; no HV outcome was available.
+
 ## Fixed evaluation
 
 Run HV on the identical eligible primary S1/S2 populations, the identical eligible second development population S1, the same identifier probe and fixture sets 1-4. Reuse unchanged fit cells, never refit or select a model. Execute sequential replay, not an intersection of stored outcomes. Paired comparisons: HV-L4, HV-PG, HV-G3, HV-REM11, with the original clustered bootstrap settings and prior interpretation rules. Report benign completion separately, all observed unsafe fixture releases, all replay errors and limitations. Preserve the first-stage outputs. No further repairs after HV scoring during this task.
