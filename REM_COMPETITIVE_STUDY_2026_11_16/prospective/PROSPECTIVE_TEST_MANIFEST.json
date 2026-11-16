@@ -1,0 +1,23 @@
+{
+ "status": "NOT EXECUTED",
+ "date_defined": "2026-11-16",
+ "request_file": null,
+ "request_file_sha256": null,
+ "author_pseudonym": null,
+ "reviewer_pseudonym": null,
+ "label_schema": "prospective/authorization_label_schema.json",
+ "arms_to_score": [
+  "A2",
+  "PG",
+  "G3",
+  "GV",
+  "HV",
+  "the arm named 'best supported on development data' in 10_FINAL_DECISION_TABLE.md"
+ ],
+ "models": "S1 cell injection_task_0 of the stored fits (as for the fixtures); no refit",
+ "code_hashes": "FROZEN_INPUT_HASHES.json plus the hashes of experiments/competitive_study/*.py at the commit that records the results",
+ "scorer": "experiments/competitive_study/cs_run.py (function fixtures) applied to the request file after conversion of each labelled call into one judged call; to be wrapped in a sealed script before use",
+ "run_count_allowed": 1,
+ "executed_on": null,
+ "result_file": null
+}
