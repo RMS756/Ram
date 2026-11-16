@@ -4,7 +4,7 @@ Stages: prepare, fit, replay, report. No model API calls. See frozen PROTOCOL.md
 Environment: AGENTDOJO_RUNS, PILOT_RESULTS_DIR, INTEGRATION_STATE, PROGENT_UPSTREAM.
 """
 from __future__ import annotations
-import collections, dataclasses, hashlib, json, multiprocessing as mp, os, pickle, sys, time
+import collections, dataclasses, gzip, hashlib, json, multiprocessing as mp, os, pickle, sys, time
 from pathlib import Path
 from types import SimpleNamespace
 import numpy as np
@@ -169,7 +169,7 @@ def stage_report():
     probe=by[('S1','probe')]
     out={'status':'EXPLORATORY DEVELOPMENT: offline recorded-trace replay; no live agent or model API','protocol_commits':['0ff1cea','cafc41c','394fccc'],'populations':pops,'reference_reproduction_differences':eq,'probe':{'n':len(probe),'arms':{a:{'attacks':sum(v[a][1] for v in probe.values()),'replay_errors':sum(v[a][2] is not None for v in probe.values())} for a in ARMS}},'fixtures':fixtures(load('cells'))}
     write('results.json',out)
-    with (OUT/'episode_outcomes.jsonl').open('w') as f:
+    with gzip.open(OUT/'episode_outcomes.jsonl.gz','wt',encoding='utf-8') as f:
         for scheme,role,e,a,u,s,err,aud in sorted(rows,key=lambda z:z[:4]):f.write(json.dumps({'scheme':scheme,'population':role,'episode_id':e,'arm':a,'utility':u,'security':s,'error':err})+'\n')
     assert all(v==0 for pop in eq.values() for a in pop.values() for v in a.values()),eq
     print('all old arm aggregate outcomes reproduced exactly',flush=True)

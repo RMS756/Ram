@@ -1,0 +1,4 @@
+primary_S1 {'HV': (1532, 0, 147), 'L4': (1532, 0, 147), 'PG': (1450, 0, 154), 'G3': (1407, 0, 132), 'REM11': (1287, 11, 140)}
+primary_S2 {'HV': (1532, 0, 147), 'L4': (1532, 0, 147), 'PG': (1450, 0, 154), 'G3': (1407, 0, 132), 'REM11': (1272, 14, 140)}
+dev2 {'HV': (1386, 0, 32), 'L4': (1386, 0, 32), 'PG': (1305, 0, 35), 'G3': (1239, 0, 29), 'REM11': (1074, 1, 25)}
+unsafe fixtures {'set1_substitution_fixtures': [], 'set2_fresh_fixtures': [], 'set3_credential_and_reformatting_fixtures': [], 'set4_permission_fixtures': []}
