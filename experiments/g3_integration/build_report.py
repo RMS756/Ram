@@ -124,7 +124,7 @@ arabic=f'''# تصميم دمج G3 وL4 داخل REM ومقارنته مع Progen
 
 الخطوة التي تقوّي المساهمة البحثية هي تثبيت HV ثم اختباره على طلبات مالية يكتبها أشخاص آخرون ويراجعون تفويضها، مع حالات صحيحة ومهاجمة، وبالمعلومات نفسها المتاحة لكل دفاع. بعدها تُجرى مقارنة الإطار الكامل تحت ميزانية وإعدادات متكافئة. لا يكفي تكرار تحسينات على المهام الست عشرة المعروفة لإثبات التعميم.
 
-المستودع: [فرع التجربة](https://github.com/RMS756/Ram/tree/codex/rem-g3-integration-20261116). النتائج التفصيلية والبروتوكولان والكود والاختبارات في REM_G3_INTEGRATION/ وexperiments/g3_integration/. ملفات الرسالة السابقة لم تُعدّل.
+الكود والنتائج ضمن حزمة المراجعة المرفقة REM_G3_L4_Integration_Review_Package_2026-11-16.zip. تحتوي ملفات الإضافة وفرق التغييرات وسجل الالتزامات المحلية، وتُطبق على نسخة المستودع عند ed1ea397fa736fb40e9da91869d85dedd8465fb4. النتائج التفصيلية والبروتوكولان والكود والاختبارات في REM_G3_INTEGRATION/ وexperiments/g3_integration/. ملفات الرسالة السابقة لم تُعدّل. منعت المراجعة التلقائية نشر الفرع إلى GitHub لعدم وجود تفويض صريح بالنشر الخارجي؛ لم أعد محاولة الرفع.
 '''
 ar.write_text(arabic,encoding='utf-8')
 print(json.dumps({'arabic_path':str(ar),'passed':passed,'skipped':skip,'xfail':xf,'HV_fixtures':hv,'primary_difference':c1['task_completion_all'],'second_difference':c2['task_completion_all']},ensure_ascii=False))
