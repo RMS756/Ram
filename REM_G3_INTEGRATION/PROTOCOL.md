@@ -47,6 +47,10 @@ Fixed contrasts: H10-REM10, H11-REM11, H11D-REM11, each hybrid-G3, L4-G3, L4-H11
 
 No superiority from equal attack counts or intervals including zero. A strict full-support G3 gate may lower utility; this is an expected possibility, not a protocol defect. Claim learned added value only if task-completion interval lower bounds are strictly positive against G3 under S1 and S2, with no more successful attacks on primary, second population or probe. Otherwise say not established, not proved absent. A gain over REM alone does not establish a gain over G3, A2 or PG. Zero observed attacks is not a general security guarantee. No post-scoring repair, threshold adjustment, task exclusion, arm selection or result replacement without a dated amendment retaining original results.
 
+### Pre-scoring clarification: Progent is the principal comparator
+
+The user subsequently requested a design competitive with Progent, before any candidate scoring. Add H10-PG, H11-PG, H11D-PG and L4-PG to the fixed contrasts. Report completion and attack success together on both populations and the primary double holdout. A point estimate above PG does not establish superiority. A superiority claim requires strictly positive completion-difference interval lower bounds on primary S1, S2 and the second population, with no greater observed attack success on either population or the identifier probe. This is an exploratory decision criterion, not a formal non-inferiority test or an assertion of general safety. The comparator remains the pinned manual banking policy adaptation, not the complete generated/dynamically updated Progent framework or its paper's reported results. New independently authored requests and a full-framework comparison are separate future validation.
+
 ## Deliverables
 
 Isolated adapter and regression tests; reproducible runner; machine-readable fits, per-episode outcomes and report; Arabic explanation of architecture and verdict; no thesis rewriting or adoption of a new design during this experiment.
