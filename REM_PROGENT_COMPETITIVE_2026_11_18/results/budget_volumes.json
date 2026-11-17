@@ -1,0 +1,152 @@
+{
+ "status": "ESTIMATE (approximate tokens; prices from the operator's file); not a measured cost",
+ "trace_proxy": {
+  "pipeline": "gpt-4o-2024-05-13",
+  "episodes_read": 1536,
+  "mean_per_episode": {
+   "agent_in": 21517.692708333332,
+   "agent_out": 611.0299479166666,
+   "query": 119.125,
+   "tool_results": 2.56640625,
+   "tool_call_chars": 339.919921875,
+   "tool_result_chars": 1015.0169270833334,
+   "assistant_turns": 3.365234375
+  }
+ },
+ "upstream_prompt_chars": {
+  "get_SYS_PROMPT": 3056,
+  "get_SYS_PROMPT_2": 4322,
+  "SYS_PROMPT_UPDATE": 2045
+ },
+ "episodes_per_arm": 160,
+ "arms": {
+  "P0_manual": {
+   "agent_input_chars": 3442831,
+   "agent_output_chars": 97765,
+   "policy_input_chars": 0,
+   "policy_calls": 0,
+   "tokens_at_3_chars_per_token": {
+    "agent_in": 1147610,
+    "agent_out": 32588,
+    "policy_in": 0
+   },
+   "tokens_at_4_chars_per_token": {
+    "agent_in": 860708,
+    "agent_out": 24441,
+    "policy_in": 0
+   }
+  },
+  "P0_generated": {
+   "agent_input_chars": 3442831,
+   "agent_output_chars": 97765,
+   "policy_input_chars": 1284660,
+   "policy_calls": 160,
+   "tokens_at_3_chars_per_token": {
+    "agent_in": 1147610,
+    "agent_out": 32588,
+    "policy_in": 428220
+   },
+   "tokens_at_4_chars_per_token": {
+    "agent_in": 860708,
+    "agent_out": 24441,
+    "policy_in": 321165
+   }
+  },
+  "P0_update_autodeny": {
+   "agent_input_chars": 3442831,
+   "agent_output_chars": 97765,
+   "policy_input_chars": 8261644,
+   "policy_calls": 981,
+   "tokens_at_3_chars_per_token": {
+    "agent_in": 1147610,
+    "agent_out": 32588,
+    "policy_in": 2753881
+   },
+   "tokens_at_4_chars_per_token": {
+    "agent_in": 860708,
+    "agent_out": 24441,
+    "policy_in": 2065411
+   }
+  },
+  "P0_update_autoapprove": {
+   "agent_input_chars": 3442831,
+   "agent_output_chars": 97765,
+   "policy_input_chars": 8261644,
+   "policy_calls": 981,
+   "tokens_at_3_chars_per_token": {
+    "agent_in": 1147610,
+    "agent_out": 32588,
+    "policy_in": 2753881
+   },
+   "tokens_at_4_chars_per_token": {
+    "agent_in": 860708,
+    "agent_out": 24441,
+    "policy_in": 2065411
+   }
+  },
+  "C1": {
+   "agent_input_chars": 3442831,
+   "agent_output_chars": 97765,
+   "policy_input_chars": 0,
+   "policy_calls": 0,
+   "tokens_at_3_chars_per_token": {
+    "agent_in": 1147610,
+    "agent_out": 32588,
+    "policy_in": 0
+   },
+   "tokens_at_4_chars_per_token": {
+    "agent_in": 860708,
+    "agent_out": 24441,
+    "policy_in": 0
+   }
+  },
+  "C2gen_P0_generated": {
+   "agent_input_chars": 3442831,
+   "agent_output_chars": 97765,
+   "policy_input_chars": 1284660,
+   "policy_calls": 160,
+   "tokens_at_3_chars_per_token": {
+    "agent_in": 1147610,
+    "agent_out": 32588,
+    "policy_in": 428220
+   },
+   "tokens_at_4_chars_per_token": {
+    "agent_in": 860708,
+    "agent_out": 24441,
+    "policy_in": 321165
+   }
+  },
+  "C2gen_P0_update_autodeny": {
+   "agent_input_chars": 3442831,
+   "agent_output_chars": 97765,
+   "policy_input_chars": 8261644,
+   "policy_calls": 981,
+   "tokens_at_3_chars_per_token": {
+    "agent_in": 1147610,
+    "agent_out": 32588,
+    "policy_in": 2753881
+   },
+   "tokens_at_4_chars_per_token": {
+    "agent_in": 860708,
+    "agent_out": 24441,
+    "policy_in": 2065411
+   }
+  },
+  "C2gen_P0_update_autoapprove": {
+   "agent_input_chars": 3442831,
+   "agent_output_chars": 97765,
+   "policy_input_chars": 8261644,
+   "policy_calls": 981,
+   "tokens_at_3_chars_per_token": {
+    "agent_in": 1147610,
+    "agent_out": 32588,
+    "policy_in": 2753881
+   },
+   "tokens_at_4_chars_per_token": {
+    "agent_in": 860708,
+    "agent_out": 24441,
+    "policy_in": 2065411
+   }
+  }
+ }
+}

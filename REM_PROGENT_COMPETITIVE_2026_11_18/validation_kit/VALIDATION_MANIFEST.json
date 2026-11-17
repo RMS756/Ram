@@ -1,0 +1,34 @@
+{
+ "status": "NOT EXECUTED - sealed kit, no request file",
+ "date_defined": "2026-11-18",
+ "request_file_sha256": null,
+ "author_pseudonym": null,
+ "reviewer_pseudonym": null,
+ "simulated_participants": null,
+ "label_schema": "validation_kit/authorization_label_schema.json (frozen 16 November 2026)",
+ "arms_to_score": [
+  "C1",
+  "C2PG",
+  "C3PG",
+  "GV_math2",
+  "GV_math2x",
+  "HV_math2"
+ ],
+ "models": "S1 cell injection_task_0 of the stored fits (as for the fixtures); no refit",
+ "code_sha256": {
+  "experiments/progent_competitive/contracts.py": "223b1ef59412f3d3011bb4282775895c3be0b419948128f5fa40537f3060c872",
+  "experiments/progent_competitive/contract_arms.py": "e9176ea5c18fda60ad289ddf4e0d97112c450fd5f18b7319d00741ae9a6a2a5b",
+  "experiments/progent_competitive/cp_run.py": "4bfe5bcdd292e0535f825b2ae6081e3c4aeb7538c885a8c458fd86752b6517f2",
+  "experiments/progent_competitive/validation_scorer.py": "87b89a1264e4dc70b86580926e7a09518ddb2cff5a2c719c796ced925ca6bc82",
+  "experiments/improve_study/intent.py": "08644234be9b565c36209f29d946dc35aee56283c2c060c98bd29d968153fc0f",
+  "experiments/improve_study/intent_v3.py": "5f1493b67ffaee7c286278c04598ebabc26e5c9d60d14fcbeaad2d56b2614f6b",
+  "experiments/improve_study/permission_v3.py": "27dd5391c42a851704972412e5b363f3c847b8fb42174aace37afac6b0c80607",
+  "experiments/improve_study/progent_manual.py": "e5680d01553019f653a4449e113aa25657cedf3d09adf9647cf1f8010172b54e",
+  "experiments/repair_study/amount_verifier.py": "32218f107eeda905f545232701d8c62f33473e0a54cabb50977a39261e8063ca",
+  "experiments/repair_study/amount_verifier_v2.py": "d69ba03b558a2f5712be21d196d030611621de2520e818639a853892fb413778",
+  "experiments/repair_study/repaired_arms_v2.py": "79723f716448cde28d5b4aea862b21daf3cc57d42f2aea45469e58728cb233f3",
+  "REM_PROGENT_COMPETITIVE_2026_11_18/validation_kit/authorization_label_schema.json": "a0482f7bd85a39ca746146aa5bf984d46936b9b0417636d4b45f57c2f815c8f3"
+ },
+ "run_count_allowed": 1,
+ "how_to_seal": "the person who receives the reviewed request file sets request_file_sha256, the pseudonyms and simulated_participants=false in one dated commit BEFORE running the scorer"
+}

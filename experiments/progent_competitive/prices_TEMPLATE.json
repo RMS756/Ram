@@ -1,0 +1,7 @@
+{
+ "_note": "Fill from the provider's OFFICIAL pricing page on the day of the run and record the URL and date. No value is pre-filled. Never put a credential here.",
+ "agent_model": {"name": null, "input_usd_per_1m": null, "output_usd_per_1m": null, "source_url": null, "retrieved_on": null},
+ "policy_model": {"name": null, "input_usd_per_1m": null, "output_usd_per_1m": null, "output_tokens_per_call": null,
+                  "output_tokens_per_call_basis": "declare how it was obtained (e.g. a pilot of N episodes); it is not measured offline",
+                  "source_url": null, "retrieved_on": null}
+}
