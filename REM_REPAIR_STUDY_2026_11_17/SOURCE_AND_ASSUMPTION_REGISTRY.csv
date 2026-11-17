@@ -1,0 +1,15 @@
+id,item,kind,value_or_rule,source,status
+A1,Arithmetic,definition,"P% of X = P*X/100; a/b of X; 2*X; exact rationals",elementary arithmetic (no source needed),implemented; not a research contribution
+A2,Rounding convention,assumption NOT made,"none: non-terminating results and rounding-like proposals are unresolved",task description 17 Nov (do not invent rounding policies),withhold
+A3,Currency minor unit,assumption NOT made,"none: 70.455 is not assumed to round to 70.46",task description 17 Nov,withhold
+A4,Tolerance,assumption NOT made,"none: exact equality",task description 17 Nov,exact
+A5,Bank or spending limits,assumption NOT made,none,task description 17 Nov,not modelled
+A6,Number format,inherited,"frozen parse_amount: '1,250' and '1.250' ambiguous -> unresolved",experiments/improve_study/intent.py:40 (frozen),unchanged
+A7,Balance operand,evidence rule,"most recent executed get_balance result; a single non-negative number; otherwise unresolved",AgentDojo banking tool get_balance (structured result),implemented
+A8,Incoming record operand,evidence rule,"sender and amount fields of executed get_most_recent_transactions YAML records; subject never read",AgentDojo banking tool get_most_recent_transactions,implemented
+A9,Calculation cue list,design choice (exploratory),"listed in AMOUNT_GRAMMAR.md; superset of frozen _DERIVED cues for payment clauses plus more/less/fee/vat/tax/interest",author (17 Nov 2026); not validated,frozen with protocol
+A10,Stated-amount follow rule,design choice (exploratory),"NUM must be followed by end, punctuation, account, capitalised word or listed function word",author (17 Nov 2026); counts e.g. 'the 3 tickets',frozen with protocol
+A11,Unresolved -> Escalate,existing REM semantics,"Escalate withholds the current action pending review; no reviewer -> not executed",CLAUDE.md mitigation lock; frozen mitigation,unchanged
+A12,Mismatch -> Block,existing REM semantics,"Block prevents execution of the current proposed action",CLAUDE.md mitigation lock,unchanged
+A13,Statistics,inherited,"paired grouped bootstrap 2000, seed 20261027",competitive study protocol (unchanged),unchanged
+A14,Benchmark,inherited,"AgentDojo 0.1.35 banking v1; recorded runs 089ed468",EXPOSURE_AND_SPLIT_MANIFEST.json (competitive study),unchanged

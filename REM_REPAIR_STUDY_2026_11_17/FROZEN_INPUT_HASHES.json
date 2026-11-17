@@ -1,0 +1,19 @@
+{
+ "experiments/improve_study/intent.py": "08644234be9b565c36209f29d946dc35aee56283c2c060c98bd29d968153fc0f",
+ "experiments/improve_study/intent_v3.py": "5f1493b67ffaee7c286278c04598ebabc26e5c9d60d14fcbeaad2d56b2614f6b",
+ "experiments/improve_study/permission.py": "0a93592c9dbe09e952f1291e00db93db217f676e6e4fe689db6b4394f6eba610",
+ "experiments/improve_study/permission_v2.py": "7a15bc230409c6489c229988260c8423d032da857b3f8fe55f94c4c9c8838688",
+ "experiments/improve_study/permission_v3.py": "27dd5391c42a851704972412e5b363f3c847b8fb42174aace37afac6b0c80607",
+ "experiments/improve_study/improve_v3.py": "3d4207031cc1e82745d223d33b25058df0e06ade67fb0e95ab51568c435854b2",
+ "experiments/g3_integration/value_guard.py": "821421655c83f2dbb6fe6087e320433f097c096f3901d12f93e205a5670fdbd9",
+ "experiments/g3_integration/followup.py": "5df51c9c5189cf66fbe3068c0be9f32c8ce0f3a284f41692039d6ca2aa034d54",
+ "experiments/g3_integration/run.py": "f77e998d1d933a08f3fdb8f1d6a19ed9bad4e6643d2b867ecb53aaa7d4fc6267",
+ "experiments/competitive_study/guards.py": "237aed5226bd27998a46793ac0d66174864d32b501cdd1bb0c41d9a1ad723099",
+ "experiments/competitive_study/guards_s11.py": "bf4ca0e1f8e07392ea486ced5a86dba8094e5698dff6a4eaeec599dbedd91c44",
+ "experiments/competitive_study/cedar_front.py": "d9c5c28539ecd5aa8f07919ebdd33fd075448bfe44c95cf5df1f16f61e0ea925",
+ "experiments/competitive_study/cs_run.py": "0b8645bd72ba216d6e04faa47140030fe56fc6725ce6569abebad92925a5ee04",
+ "REM_COMPETITIVE_STUDY_2026_11_16/results/results.json": "0836c019a0a0ce6f0142ed8ef380d4f624701582080c9f420b85882cbb0cb18a",
+ "REM_COMPETITIVE_STUDY_2026_11_16/results/results_section11.json": "fe1c6263417a4404b3b3341eb1d0eae3af20574775af7481b7678d42541636fb",
+ "REM_FINAL_SUBMISSION/thesis_r5/REM_THESIS_FINAL_R5.pdf": "6e7938686e52ab0a6564e71c1665d7418b73e780fd1080622b754ae464d3f14c",
+ "REM_FINAL_SUBMISSION/thesis_r5/REM_THESIS_FINAL_R5.docx": "4ca073cc176b479094c9dbd1ec23118fa02f5656ad4aa11a90296b7443a37284"
+}
