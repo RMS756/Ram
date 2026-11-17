@@ -13,6 +13,7 @@
 | `07_INDEPENDENT_VALIDATION_KIT.md`, `validation_kit/` | sealed kit and executable scorer (not executed) |
 | `08_STATUS_TABLE.md` | status per item, commands, blockers, test-suite results |
 | `09_ARABIC_SUMMARY_AR.md` | concise Arabic explanation |
+| `10_SCRIPTED_CLOSED_LOOP_PROTOCOL.md`, `11_SCRIPTED_CLOSED_LOOP_RESULTS.md` | amendment 1: closed loop with scripted ground-truth agents (implementation test) |
 | `THIRD_PARTY_NOTICES.md` | Progent MIT licence and how it is used |
 | `results/` | `f_before_v2.json`, `diagnostics.json`, `results.json`, episode and call-level audits, `budget_volumes.json` |
 

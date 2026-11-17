@@ -4,7 +4,9 @@ Branch `claude/rem-progent-competitive-20261118`, created from `d52baa1`.
 
 Commits:
 - `bdde9d0`: design, code, tests and protocol frozen **before** scoring;
-- the following commit: results and documents.
+- `0009d09`: results and documents;
+- `5e91233`: amendment 1 frozen before it was run;
+- the following commit: amendment 1 results.
 
 Environment: the study's `env.sh` (PYTHONHASHSEED=0; stored caches in the session scratchpad). No model call was made.
 
@@ -16,6 +18,7 @@ Environment: the study's `env.sh` (PYTHONHASHSEED=0; stored caches in the sessio
 | C3[PG] | yes | yes | yes (S1, S2) | not executed | not executed | = C2[PG] |
 | P0 (full Progent: manual / generated / Auto-Deny / Auto-Approve) | adapter + configs | config/refusal tests only | – | – | **not executed** | upstream execution refused in session; no model backend; no spending cap |
 | C2[gen], C3[gen] | harness | preflight tests | – | – | **not executed** | same blockers |
+| Scripted closed loop (amendment 1; AgentDojo 0.1.35; ground-truth test doubles; no LLM) | yes (`closed_loop_scripted.py`, frozen in `5e91233`) | yes (`tests/test_progent_competitive_amend1.py`) | – | – | **implementation test only** | benign reference solutions 8/14 (PG 11/14); obedient-agent injection goals: C1 0/144, GV_math2 1/144, PG 0/144 (`11_SCRIPTED_CLOSED_LOOP_RESULTS.md`) |
 | Human-approval configuration | – | – | – | – | **not established** | no reviewer exists |
 | Parity of REM's replay checker with upstream `check_tool_call` | yes (`parity_upstream.py`) | gated test (skipped) | – | – | – | needs `REM_ALLOW_UPSTREAM_EXECUTION=1` where running upstream code is permitted |
 | Validation kit (schema, sealed manifest, executable scorer) | yes | selftest + refusal path | – | **not executed** | – | no independent authors or reviewers |
@@ -35,6 +38,8 @@ python3 experiments/progent_competitive/cp_run.py report
 python3 experiments/progent_competitive/budget.py --runs <agentdojo>/runs --pipeline gpt-4o-2024-05-13 --upstream <progent> --out REM_PROGENT_COMPETITIVE_2026_11_18/results/budget_volumes.json
 python3 experiments/progent_competitive/validation_scorer.py --selftest
 python3 -m pytest -q tests/test_progent_competitive.py   # 57 passed, 1 skipped (gated parity)
+python3 experiments/progent_competitive/closed_loop_scripted.py REM_PROGENT_COMPETITIVE_2026_11_18/results/closed_loop_scripted.json
+python3 -m pytest -q tests/test_progent_competitive_amend1.py   # 2 passed
 sha256sum -c REM_PROGENT_COMPETITIVE_2026_11_18/02_PROTOCOL_HASHES.sha256   # all OK after scoring
 ```
 
