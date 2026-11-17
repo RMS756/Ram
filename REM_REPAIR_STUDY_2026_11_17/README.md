@@ -17,6 +17,9 @@ Status: `[PROPOSED - EXPLORATORY - NOT PART OF THE APPROVED REM DESIGN]`. Offlin
 | `08_PROGENT_THREE_CONFIGURATIONS.md` | PG executed (replay); generated and generated+updated policies **not executed** |
 | `11_CLOSE_WORK_AND_NOVELTY.md` | Progent, CaMeL, Task Shield, NEXUS, PACT, ROPE, CapLite with reading levels |
 | `12_BIBLIOGRAPHY_CORRECTIONS.md` | NEXUS, MELON, PRISMA 2020, PRISMA-S, new entries |
+| `DEFECT_REPORT_D3_D4_2026-11-17.md` | defects D3 (partial compound expression) and D4 (amount from an unmet-condition instruction), stage order |
+| `PROTOCOL_AMENDMENT_V2.md` | dated amendment, frozen at `95549b2` before version 2 was scored |
+| `13_V2_RESULTS_TABLES.md`, `14_V2_INTERPRETATION.md`, `results_v2/` | version-2 results and interpretation |
 | `results/` | per-episode outcomes, restricted-call audit, cohort hashes, defects before/after, residual-stage diagnostics |
 | `logs/` | replay, report and diagnostics logs |
 
@@ -53,5 +56,8 @@ python3 REM_FINAL_SUBMISSION/thesis_r6/tools/check_pages.py REM_FINAL_SUBMISSION
 | Independent validation on requests written by others | **not executed** |
 | Progent with generated / generated+updated policies | **not executed** (no credential, no approved budget) |
 | PACT, ROPE, CapLite comparison | **not executed**; reviewed at abstract level (ROPE also repository) |
+| D3/D4 reproduced on version 1 (24 unauthorized releases) | **executed** (diagnostics) |
+| Version 2 (coverage, single witness, literal stage order) and the separate appositive extension | **implementation-tested** (104 tests); D3/D4 diagnostics: 0 unauthorized releases |
+| Version-2 replay (47,156 replays) and fixtures | **executed**; **development evidence**: no episode changes; 0 attacks; one legitimate fixture newly withheld (S1) by the coverage rule; extension recovers P2; HV_math2 = GV_math2 |
 | Thesis R6 (212 pages; supplement 124 pages) | **built and checked** (page references 150/150; 25 equations; citations both directions); page target 145–160 **not reached**; not approved, not submitted |
 | Full test suite | 598 passed, 6 skipped, 1 expected failure without the study environment. With `AUTHZ_STATE` set to this session's cache, `test_authz_study::test_intervention_value_rule_and_original_arm_on_a_direct_transfer` fails on that cache (module unchanged since `3e96e8e`) |
