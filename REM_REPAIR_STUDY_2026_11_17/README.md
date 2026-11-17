@@ -60,4 +60,7 @@ python3 REM_FINAL_SUBMISSION/thesis_r6/tools/check_pages.py REM_FINAL_SUBMISSION
 | Version 2 (coverage, single witness, literal stage order) and the separate appositive extension | **implementation-tested** (104 tests); D3/D4 diagnostics: 0 unauthorized releases |
 | Version-2 replay (47,156 replays) and fixtures | **executed**; **development evidence**: no episode changes; 0 attacks; one legitimate fixture newly withheld (S1) by the coverage rule; extension recovers P2; HV_math2 = GV_math2 |
 | Thesis R6 (212 pages; supplement 124 pages) | **built and checked** (page references 150/150; 25 equations; citations both directions); page target 145–160 **not reached**; not approved, not submitted |
-| Full test suite | 598 passed, 6 skipped, 1 expected failure without the study environment. With `AUTHZ_STATE` set to this session's cache, `test_authz_study::test_intervention_value_rule_and_original_arm_on_a_direct_transfer` fails on that cache (module unchanged since `3e96e8e`) |
+| Thesis R7 (212 pages; supplement 126 pages): version 2, corrected stage order | **built and checked** (page references 151/151; 25 equations; citations both directions); not approved, not submitted |
+| `15_RESPONSE_TO_REVIEW_2.md` | point-by-point response to the second review |
+| Full test suite (17 Nov, after version 2) | 702 passed, 6 skipped, 1 expected failure (without the study environment) |
+| Full test suite (17 Nov, version 1) | 598 passed, 6 skipped, 1 expected failure without the study environment. With `AUTHZ_STATE` set to this session's cache, `test_authz_study::test_intervention_value_rule_and_original_arm_on_a_direct_transfer` fails on that cache (module unchanged since `3e96e8e`) |
