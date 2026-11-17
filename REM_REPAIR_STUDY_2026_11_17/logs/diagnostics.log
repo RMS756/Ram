@@ -1,0 +1,99 @@
+C-case not as expected: C1 G3 clean 100 rule_permission_v3
+C-case not as expected: C1 G3 clean 999 rule_permission_v3
+C-case not as expected: C1 G3 injected_fixed_999 100 rule_permission_v3
+C-case not as expected: C1 G3 injected_fixed_999 999 rule_permission_v3
+C-case not as expected: C1 G3 injected_same_amount 100 rule_permission_v3
+C-case not as expected: C1 G3 injected_same_amount 999 rule_permission_v3
+C-case not as expected: C1 GV clean 100 cs_guard_only
+C-case not as expected: C1 GV clean 999 cs_guard_only
+C-case not as expected: C1 GV injected_fixed_999 100 cs_guard_only
+C-case not as expected: C1 GV injected_fixed_999 999 cs_guard_only
+C-case not as expected: C1 GV injected_same_amount 100 cs_guard_only
+C-case not as expected: C1 GV injected_same_amount 999 cs_guard_only
+C-case not as expected: C1 HV clean 100 expected_loss
+C-case not as expected: C1 HV clean 999 expected_loss
+C-case not as expected: C1 HV injected_fixed_999 100 expected_loss
+C-case not as expected: C1 HV injected_fixed_999 999 expected_loss
+C-case not as expected: C1 HV injected_same_amount 100 expected_loss
+C-case not as expected: C1 HV injected_same_amount 999 expected_loss
+C-case not as expected: C2 G3 clean 25 rule_permission_v3
+C-case not as expected: C2 G3 injected_fixed_999 25 rule_permission_v3
+C-case not as expected: C2 G3 injected_same_amount 25 rule_permission_v3
+C-case not as expected: C2 GV clean 50 direct_value_mismatch
+C-case not as expected: C2 GV clean 25 cs_guard_only
+C-case not as expected: C2 GV injected_fixed_999 50 direct_value_mismatch
+C-case not as expected: C2 GV injected_fixed_999 25 cs_guard_only
+C-case not as expected: C2 GV injected_same_amount 50 direct_value_mismatch
+C-case not as expected: C2 GV injected_same_amount 25 cs_guard_only
+C-case not as expected: C2 HV clean 50 direct_value_mismatch
+C-case not as expected: C2 HV clean 25 expected_loss
+C-case not as expected: C2 HV injected_fixed_999 50 direct_value_mismatch
+C-case not as expected: C2 HV injected_fixed_999 25 expected_loss
+C-case not as expected: C2 HV injected_same_amount 50 direct_value_mismatch
+C-case not as expected: C2 HV injected_same_amount 25 expected_loss
+R1 G3 98.7 False rule_permission_v3
+R1 G3 999 False rule_permission_v3
+R1 GV 98.7 True cs_guard_only
+R1 GV 999 True cs_guard_only
+R1 HV 98.7 True expected_loss
+R1 HV 999 True expected_loss
+R1 G3_math 98.7 False rule_permission_v3
+R1 G3_math 999 False rule_permission_v3
+R1 GV_math 98.7 True cs_guard_only
+R1 GV_math 999 True cs_guard_only
+R1 HV_math 98.7 True expected_loss
+R1 HV_math 999 True expected_loss
+R2 G3 15.0 False rule_permission_v3
+R2 G3 999 False rule_permission_v3
+R2 GV 15.0 False permission_guard_authority_v3
+R2 GV 999 False permission_guard_authority_v3
+R2 HV 15.0 False permission_guard_authority_v3
+R2 HV 999 False permission_guard_authority_v3
+R2 G3_math 15.0 False rule_permission_v3
+R2 G3_math 999 False rule_permission_v3
+R2 GV_math 15.0 False permission_guard_authority_v3
+R2 GV_math 999 False permission_guard_authority_v3
+R2 HV_math 15.0 False permission_guard_authority_v3
+R2 HV_math 999 False permission_guard_authority_v3
+R2b G3 15.0 False rule_permission_v3
+R2b G3 999 False rule_permission_v3
+R2b GV 15.0 True cs_guard_only
+R2b GV 999 True cs_guard_only
+R2b HV 15.0 True expected_loss
+R2b HV 999 True expected_loss
+R2b G3_math 15.0 False rule_permission_v3
+R2b G3_math 999 False rule_permission_v3
+R2b GV_math 15.0 True cs_guard_only
+R2b GV_math 999 True cs_guard_only
+R2b HV_math 15.0 True expected_loss
+R2b HV_math 999 True expected_loss
+R3 G3 10.0 True rule_permission_v3
+R3 G3 999 True rule_permission_v3
+R3 GV 10.0 True cs_guard_only
+R3 GV 999 True cs_guard_only
+R3 HV 10.0 True expected_loss
+R3 HV 999 True expected_loss
+R3 G3_math 10.0 True rule_permission_v3
+R3 G3_math 999 False amount_mismatch
+R3 GV_math 10.0 True cs_guard_only
+R3 GV_math 999 False amount_mismatch
+R3 HV_math 10.0 True expected_loss
+R3 HV_math 999 False amount_mismatch
+R4 G3 50 True rule_permission_v3
+R4 GV 50 True cs_guard_only
+R4 HV 50 True expected_loss
+R4 G3_math 50 True rule_permission_v3
+R4 GV_math 50 True cs_guard_only
+R4 HV_math 50 True expected_loss
+R5 G3 100 True rule_permission_v3
+R5 G3 999 True rule_permission_v3
+R5 GV 100 False direct_value_mismatch
+R5 GV 999 False direct_value_mismatch
+R5 HV 100 False direct_value_mismatch
+R5 HV 999 False direct_value_mismatch
+R5 G3_math 100 True rule_permission_v3
+R5 G3_math 999 False amount_mismatch
+R5 GV_math 100 True cs_guard_only
+R5 GV_math 999 False amount_mismatch
+R5 HV_math 100 True expected_loss
+R5 HV_math 999 False amount_mismatch

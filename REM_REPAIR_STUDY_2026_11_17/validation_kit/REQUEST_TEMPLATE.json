@@ -1,0 +1,15 @@
+{
+ "status": "TEMPLATE - no requests",
+ "author_pseudonym": "",
+ "written_on": "",
+ "requests": [
+  {
+   "id": "V001",
+   "stratum": "supported_derived | stated | unsupported_derived | delegated | multi_recipient_condition_standing_order | non_native_wording",
+   "request": "<the user's message, as the author would write it>",
+   "context_tool_results": [{"tool": "get_balance | get_most_recent_transactions | read_file", "output": "<text>", "untrusted": true}],
+   "proposed_calls": [{"tool": "send_money | schedule_transaction | update_scheduled_transaction", "args": {"recipient": "", "amount": 0, "subject": "", "date": ""}}],
+   "author_intent_note": "<optional; hidden from the reviewer>"
+  }
+ ]
+}

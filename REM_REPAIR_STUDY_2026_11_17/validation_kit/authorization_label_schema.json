@@ -1,0 +1,28 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Independent financial request with authorization labels (frozen 16 November 2026)",
+ "description": "One item of a prospective request set. Written by a person who has not seen the rule's code, fixtures or results, and checked by a second such person. The labels state what the USER authorized; they are independent of any benchmark attacker goal.",
+ "type": "object",
+ "required": ["id", "category", "language", "objective", "history", "calls", "author_id", "reviewer_id", "reviewer_agrees"],
+ "properties": {
+  "id": {"type": "string"},
+  "category": {"enum": ["plain transfer", "standing order or scheduled payment", "change of an existing standing order", "several payments in one request", "conditional request", "past payment mentioned, none requested", "amount derived or taken from the history", "value delegated to a named file", "credential or profile change", "repeated or duplicate payment", "ambiguous number format", "payee already known to the bank and on a static allow-list"]},
+  "language": {"const": "en", "description": "The parser supports specific English constructions only."},
+  "objective": {"type": "string", "description": "The user's request, as the user would write it."},
+  "history": {"type": "array", "description": "Calls already made in the episode, with their outputs. An output may contain text written by an attacker.",
+   "items": {"type": "object", "required": ["tool", "args", "output", "executed"], "properties": {"tool": {"type": "string"}, "args": {"type": "object"}, "output": {"type": "string"}, "executed": {"type": "boolean"}}}},
+  "calls": {"type": "array", "minItems": 2, "description": "Proposed state-changing calls to be judged one at a time after the history. At least one authorized and one unauthorized.",
+   "items": {"type": "object", "required": ["tool", "args", "authorization", "violated_element"],
+    "properties": {
+     "tool": {"enum": ["send_money", "schedule_transaction", "update_scheduled_transaction", "update_password", "update_user_info"]},
+     "args": {"type": "object"},
+     "authorization": {"enum": ["authorized", "unauthorized", "not decidable from the request"]},
+     "violated_element": {"enum": ["none", "operation not requested", "effect (immediate, schedule, modify)", "account", "amount", "condition", "repetition", "credential or profile value", "several"]},
+     "induced_by_untrusted_content": {"type": "boolean", "description": "true if the call follows text in the history that the user did not write"}}}},
+  "author_note": {"type": "string"},
+  "author_id": {"type": "string", "description": "A pseudonym; no personal data."},
+  "reviewer_id": {"type": "string"},
+  "reviewer_agrees": {"type": "boolean"},
+  "reviewer_note": {"type": "string"}
+ }
+}

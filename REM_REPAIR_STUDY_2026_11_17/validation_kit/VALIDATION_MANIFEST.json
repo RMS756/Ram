@@ -1,0 +1,16 @@
+{
+ "status": "NOT EXECUTED",
+ "date_defined": "2026-11-17",
+ "request_file": null,
+ "request_file_sha256": null,
+ "author_pseudonym": null,
+ "reviewer_pseudonym": null,
+ "simulated_participants": false,
+ "label_schema": "validation_kit/authorization_label_schema.json",
+ "arms_to_score": ["G3", "GV", "HV", "PG", "G3_math", "GV_math", "HV_math"],
+ "models": "S1 cell injection_task_0 of the stored fits (as for the fixtures); no refit",
+ "code_hashes": ["FROZEN_INPUT_HASHES.json", "REPAIR_CODE_HASHES_AT_FREEZE.json"],
+ "run_count_allowed": 1,
+ "executed_on": null,
+ "result_file": null
+}

@@ -1,0 +1,10 @@
+replay 5000 / 27631 elapsed 8 s
+replay 10000 / 27631 elapsed 17 s
+replay 15000 / 27631 elapsed 28 s
+replay 20000 / 27631 elapsed 37 s
+replay 25000 / 27631 elapsed 47 s
+replay done 27631 52 s; errors 0
+
+real	0m56.493s
+user	3m18.637s
+sys	0m1.502s
