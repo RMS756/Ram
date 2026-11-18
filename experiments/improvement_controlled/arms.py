@@ -27,6 +27,7 @@ for _p in ("experiments/improvement_controlled", "experiments/progent_competitiv
     sys.path.insert(0, str(ROOT / _p) if _p else str(ROOT))
 
 import contracts as K  # noqa: E402
+import evidence_resolution as ER  # noqa: E402
 import contract_arms as CA  # noqa: E402
 import amount_verifier_v2 as V2  # noqa: E402
 import repaired_arms_v2 as RA2  # noqa: E402
@@ -37,6 +38,7 @@ from rem.algorithms.decision.loss_matrix import build_loss_grid  # noqa: E402
 from rem.algorithms.detection.ridge_logistic import sigmoid  # noqa: E402
 from rem.core.results import Verdict  # noqa: E402
 from rem.integration.agentdojo_replay import GuardConfig, RemGuard  # noqa: E402
+from amount_verifier import _fmt as V1fmt  # noqa: E402
 
 FROZEN = ("B0", "PG", "GV_math2", "C1", "C2PG", "C3PG")
 
@@ -54,8 +56,10 @@ PARAM = {
     "C3PGp": dict(ledger=True, pg=True, learner=True, compile="frozen"),        # parity copy of C3PG
     "C1_noledger": dict(ledger=False, pg=False, learner=False, compile="frozen"),
     "C1L": dict(ledger=True, pg=False, learner=True, compile="frozen"),
+    "C1I": dict(ledger=True, pg=False, learner=False, compile="e1", e2=True),         # evidence resolution E1 + E2
+    "C1IL": dict(ledger=True, pg=False, learner=True, compile="e1", e2=True),
 }
-COMPILERS = {"frozen": K.compile_contracts}
+COMPILERS = {"frozen": K.compile_contracts, "e1": ER.compile_e1}
 
 
 def register_compiler(name, fn):
@@ -69,6 +73,8 @@ def make_param_guard(cfg, cell, ep, st):
     rp = RuntimePermissionV3(ep.objective, dict(CA.OPTS_C))
     rp_feat = RuntimePermissionV3(ep.objective, dict(DEFAULT_OPTS3)) if cfg["learner"] else None
     contracts = COMPILERS[cfg["compile"]](ep.objective)
+    kdecide = ER.decide if cfg["compile"] == "e1" else K.decide
+    refunds = ER.compile_e2(ep.objective) if cfg.get("e2") else []
     ledger = K.Ledger() if cfg["ledger"] else NoLedger()
     hist = V2.History()
     predicates = S.rm.predicates()
@@ -93,7 +99,21 @@ def make_param_guard(cfg, cell, ep, st):
         info = {"stage": "front"}
         det = {"perm": (ev.overall, ev.base.recipient, ev.base.amount, ev.effect, ev.binding, ev.condition, ev.fulfilment, ev.authority)}
         v, src = Verdict.ALLOW, "candidate_release"
-        if is_r and (ev.overall == "denied" or not ev.authority):
+        rw = None
+        f0, avail0 = guard.tracker.features(c.tool, c.args)
+        if cfg["learner"] and is_r:                       # learned score computed for every restricted call (record only)
+            evf0 = rp_feat.evidence(guard.tracker, c.tool, c.args, c.tier)
+            x0 = dict(f0)
+            x0.update(evf0.features())
+            s0 = CA._linear(ridge, x0)
+            info["p_all"] = float(sigmoid(ridge["g1"] * s0 + ridge["g0"])) if not ridge["failed"] else float(sigmoid(s0))
+        front_block = is_r and (ev.overall == "denied" or not ev.authority)
+        if front_block and refunds:
+            rw = ER.refund_witness(refunds, ledger, hist, c.tool, c.args)
+            if rw is not None:
+                front_block = False
+                info["e2"] = rw.cid
+        if front_block:
             v, src = Verdict.BLOCK, "permission_guard_authority_v3"
         elif pg is not None and not pg.allowed(c.tool, dict(c.args)):
             v, src, info["stage"] = Verdict.BLOCK, "progent_policy", "progent_policy"
@@ -103,7 +123,8 @@ def make_param_guard(cfg, cell, ep, st):
             if forced.verdict is not None:
                 v, src, info["stage"] = forced.verdict, forced.source, "predicate"
             else:
-                k = K.decide(contracts, ledger, hist, c.tool, c.args)
+                k = (K.Decision("verified", rw.cid, (V1fmt(rw.amount),), "refund licence from the single incoming record (E2)")
+                     if rw is not None else kdecide(contracts, ledger, hist, c.tool, c.args))
                 det["contract"] = (k.status, k.expected, k.reason, k.witness)
                 info["stage"] = "contract"
                 if k.status in ("mismatch", "exhausted"):
