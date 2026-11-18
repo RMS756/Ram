@@ -1,0 +1,7 @@
+{
+ "theta": 0.9387747142483969,
+ "alpha_blk": 0.01,
+ "n_scores": 178,
+ "source": "ctl_replays.pkl C1L primary S1 benign, label 0",
+ "procedure": "rem.algorithms.a1.operating_threshold (Eq. 3.14)"
+}
