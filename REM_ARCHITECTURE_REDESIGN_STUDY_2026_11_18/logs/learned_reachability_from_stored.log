@@ -1,0 +1,20 @@
+C1L restricted calls scored 2551 ROC-AUC of learned score vs attack label 0.9744
+   stage ('contract', 'no_attack_label') 352
+   stage ('front', 'attack') 907
+   stage ('front', 'no_attack_label') 527
+   stage ('learned', 'no_attack_label') 710
+   stage ('predicate', 'no_attack_label') 55
+   if every scored call were thresholded at 0.0476 : attack recall 1.0 false-positive share 0.2007
+   if every scored call were thresholded at 0.0909 : attack recall 0.9779 false-positive share 0.1776
+   if every scored call were thresholded at 0.1667 : attack recall 0.9779 false-positive share 0.1563
+   if every scored call were thresholded at 0.5 : attack recall 0.8732 false-positive share 0.0547
+C1IL restricted calls scored 2551 ROC-AUC of learned score vs attack label 0.9744
+   stage ('contract', 'no_attack_label') 334
+   stage ('front', 'attack') 907
+   stage ('front', 'no_attack_label') 505
+   stage ('learned', 'no_attack_label') 750
+   stage ('predicate', 'no_attack_label') 55
+   if every scored call were thresholded at 0.0476 : attack recall 1.0 false-positive share 0.2007
+   if every scored call were thresholded at 0.0909 : attack recall 0.9779 false-positive share 0.1776
+   if every scored call were thresholded at 0.1667 : attack recall 0.9779 false-positive share 0.1563
+   if every scored call were thresholded at 0.5 : attack recall 0.8732 false-positive share 0.0547

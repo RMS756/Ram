@@ -1,0 +1,93 @@
+[
+ {
+  "work": "Progent",
+  "authors": "Shi, He, Wang, Li, Wu, Guo, Song",
+  "venue_and_status": "arXiv:2504.11703 (preprint; v3 May 2026)",
+  "verification_this_session": "OpenAlex W4416541023 (this session); full text v3 and code read earlier (commits 9befb41, 0d7ea07)",
+  "status": "preprint"
+ },
+ {
+  "work": "CaMeL: Defeating prompt injections by design",
+  "authors": "Debenedetti, Shumailov, Fan, Hayes, Carlini, Fabian, Kern, Shi, Terzis, Tramer",
+  "venue_and_status": "arXiv:2503.18813 (preprint)",
+  "verification_this_session": "NOT re-confirmed in OpenAlex this session (search did not return it); verified earlier from arXiv and the official repository README (google-research/camel-prompt-injection, commit f083b6b) per R7 bibliography",
+  "status": "preprint"
+ },
+ {
+  "work": "AgentDojo",
+  "authors": "Debenedetti, Zhang, Balunovic, Beurer-Kellner, Fischer, Tramer",
+  "venue_and_status": "NeurIPS 2024 Datasets and Benchmarks; DOI 10.52202/079017-2636",
+  "verification_this_session": "OpenAlex W4415796822 (this session); code used (installed 0.1.35)",
+  "status": "peer-reviewed"
+ },
+ {
+  "work": "MELON",
+  "authors": "Zhu, Yang, Wang, Guo, Wang",
+  "venue_and_status": "ICML 2025, PMLR 267, pp. 80310-80329 (arXiv:2502.05174)",
+  "verification_this_session": "OpenAlex W4407310643 (this session, arXiv record); PMLR pages verified earlier",
+  "status": "peer-reviewed"
+ },
+ {
+  "work": "The Task Shield",
+  "authors": "Jia, Wu, Qin, Squicciarini",
+  "venue_and_status": "ACL 2025 Long Papers, pp. 29680-29697, DOI 10.18653/v1/2025.acl-long.1435",
+  "verification_this_session": "Crossref (this session)",
+  "status": "peer-reviewed"
+ },
+ {
+  "work": "AgentSpec",
+  "authors": "Wang, Poskitt, Sun",
+  "venue_and_status": "ICSE 2026, pp. 2938-2950, DOI 10.1145/3744916.3764546",
+  "verification_this_session": "Crossref (this session)",
+  "status": "peer-reviewed"
+ },
+ {
+  "work": "ShieldAgent",
+  "authors": "Chen, Kang, Li",
+  "venue_and_status": "ICML 2025, PMLR 267, pp. 8313-8344 (arXiv:2503.22738)",
+  "verification_this_session": "OpenAlex W4417068164 (this session, arXiv record); PMLR pages per R7 bibliography",
+  "status": "peer-reviewed"
+ },
+ {
+  "work": "ProvenanceGuard: Safeguarding LLM agents from misalignment through provenance analysis",
+  "authors": "She, Liang, Kang",
+  "venue_and_status": "ASE 2026, pp. 3036-3048, DOI 10.1145/3832783.3837535",
+  "verification_this_session": "Crossref (this session)",
+  "status": "peer-reviewed"
+ },
+ {
+  "work": "LlamaFirewall",
+  "authors": "Chennabasappa et al. (19 authors)",
+  "venue_and_status": "arXiv:2505.03574 (preprint)",
+  "verification_this_session": "OpenAlex W4415248419 (this session)",
+  "status": "preprint"
+ },
+ {
+  "work": "The protection of information in computer systems",
+  "authors": "Saltzer, Schroeder",
+  "venue_and_status": "Proceedings of the IEEE 63(9):1278-1308, 1975, DOI 10.1109/PROC.1975.9939",
+  "verification_this_session": "Crossref (this session)",
+  "status": "peer-reviewed"
+ },
+ {
+  "work": "Programming semantics for multiprogrammed computations",
+  "authors": "Dennis, Van Horn",
+  "venue_and_status": "Communications of the ACM 9(3):143-155, 1966, DOI 10.1145/365230.365252",
+  "verification_this_session": "Crossref (this session)",
+  "status": "peer-reviewed"
+ },
+ {
+  "work": "The Confused Deputy",
+  "authors": "Hardy",
+  "venue_and_status": "ACM SIGOPS Operating Systems Review 22(4):36-38, 1988, DOI 10.1145/54289.871709",
+  "verification_this_session": "Crossref (this session)",
+  "status": "peer-reviewed"
+ },
+ {
+  "work": "Adaptive Attacks Break Defenses Against Indirect Prompt Injection Attacks on LLM Agents",
+  "authors": "Zhan, Fang, Panchal, Kang",
+  "venue_and_status": "Findings of NAACL 2025, pp. 7101-7117, DOI 10.18653/v1/2025.findings-naacl.395",
+  "verification_this_session": "Crossref (this session)",
+  "status": "peer-reviewed"
+ }
+]
