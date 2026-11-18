@@ -1,0 +1,5 @@
+replay done 90999 214 s; errors 0 | vs stored: {'B0|same': 8106, 'C1|same': 8106, 'C2PG|same': 8106, 'C3PG|same': 11419, 'GV_math2|same': 8106, 'PG|same': 8106}
+
+real	3m41.197s
+user	13m58.054s
+sys	0m3.181s

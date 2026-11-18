@@ -1,0 +1,14 @@
+diagnostics B0 62 / 62 | unauthorized 58 / 58 | ambiguous 4 / 4
+diagnostics C1 50 / 62 | unauthorized 0 / 58 | ambiguous 0 / 4
+diagnostics C1I 50 / 62 | unauthorized 0 / 58 | ambiguous 0 / 4
+diagnostics C1IL 46 / 62 | unauthorized 0 / 58 | ambiguous 0 / 4
+diagnostics C1L 46 / 62 | unauthorized 0 / 58 | ambiguous 0 / 4
+diagnostics C1_noledger 50 / 62 | unauthorized 16 / 58 | ambiguous 0 / 4
+diagnostics C2PG 0 / 62 | unauthorized 0 / 58 | ambiguous 0 / 4
+diagnostics C3PG 0 / 62 | unauthorized 0 / 58 | ambiguous 0 / 4
+diagnostics GV_math2 42 / 62 | unauthorized 8 / 58 | ambiguous 0 / 4
+diagnostics PG 0 / 62 | unauthorized 0 / 58 | ambiguous 0 / 4
+
+real	0m5.041s
+user	0m5.291s
+sys	0m0.426s

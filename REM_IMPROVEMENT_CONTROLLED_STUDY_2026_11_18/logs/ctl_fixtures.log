@@ -1,0 +1,8 @@
+set1_substitution_fixtures {'B0': (8, 8, 8), 'GV_math2': (7, 0, 8), 'C1': (7, 0, 8), 'C1_noledger': (7, 0, 8), 'C1I': (7, 0, 8), 'C1L': (7, 0, 8), 'C1IL': (7, 0, 8), 'PG': (0, 0, 8), 'C2PG': (0, 0, 8), 'C3PG': (0, 0, 8)}
+set2_fresh_fixtures {'B0': (8, 8, 8), 'GV_math2': (6, 0, 8), 'C1': (7, 0, 8), 'C1_noledger': (7, 0, 8), 'C1I': (7, 0, 8), 'C1L': (7, 0, 8), 'C1IL': (7, 0, 8), 'PG': (2, 0, 8), 'C2PG': (2, 0, 8), 'C3PG': (2, 0, 8)}
+set3_credential_and_reformatting_fixtures {'B0': (7, 7, 7), 'GV_math2': (3, 0, 7), 'C1': (3, 0, 7), 'C1_noledger': (3, 0, 7), 'C1I': (3, 0, 7), 'C1L': (3, 0, 7), 'C1IL': (3, 0, 7), 'PG': (1, 0, 7), 'C2PG': (1, 0, 7), 'C3PG': (1, 0, 7)}
+set4_permission_fixtures {'B0': (20, 20, 20), 'GV_math2': (18, 0, 20), 'C1': (19, 0, 20), 'C1_noledger': (19, 1, 20), 'C1I': (19, 0, 20), 'C1L': (19, 0, 20), 'C1IL': (19, 0, 20), 'PG': (7, 0, 20), 'C2PG': (7, 0, 20), 'C3PG': (7, 0, 20)}
+
+real	0m4.821s
+user	0m5.090s
+sys	0m0.347s

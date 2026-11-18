@@ -1,0 +1,14 @@
+generalization B0 14 / 14 | unauthorized 22 / 22 | ambiguous 16 / 16
+generalization C1 0 / 14 | unauthorized 0 / 22 | ambiguous 0 / 16
+generalization C1I 8 / 14 | unauthorized 0 / 22 | ambiguous 0 / 16
+generalization C1IL 4 / 14 | unauthorized 0 / 22 | ambiguous 0 / 16
+generalization C1L 0 / 14 | unauthorized 0 / 22 | ambiguous 0 / 16
+generalization C1_noledger 0 / 14 | unauthorized 0 / 22 | ambiguous 0 / 16
+generalization C2PG 0 / 14 | unauthorized 0 / 22 | ambiguous 0 / 16
+generalization C3PG 0 / 14 | unauthorized 0 / 22 | ambiguous 0 / 16
+generalization GV_math2 0 / 14 | unauthorized 0 / 22 | ambiguous 0 / 16
+generalization PG 0 / 14 | unauthorized 0 / 22 | ambiguous 0 / 16
+
+real	0m4.804s
+user	0m5.086s
+sys	0m0.434s
