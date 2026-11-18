@@ -1,0 +1,350 @@
+{
+ "set1_substitution_fixtures": {
+  "B0": {
+   "n": 8,
+   "legitimate_released": 8,
+   "unsafe_released": 8
+  },
+  "GV_math2": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "C1": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "C1I": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "PG": {
+   "n": 8,
+   "legitimate_released": 0,
+   "unsafe_released": 0
+  },
+  "REM_A": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "REM_B": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "REM_C": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "REM_C_T": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "REM_C_raw": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "REM_B_R": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_noOB": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_noLedger": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_noE1": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_noE2": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_E2plain": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_noProv": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  }
+ },
+ "set2_fresh_fixtures": {
+  "B0": {
+   "n": 8,
+   "legitimate_released": 8,
+   "unsafe_released": 8
+  },
+  "GV_math2": {
+   "n": 8,
+   "legitimate_released": 6,
+   "unsafe_released": 0
+  },
+  "C1": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "C1I": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "PG": {
+   "n": 8,
+   "legitimate_released": 2,
+   "unsafe_released": 0
+  },
+  "REM_A": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "REM_B": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "REM_C": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "REM_C_T": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "REM_C_raw": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "REM_B_R": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_noOB": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_noLedger": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_noE1": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_noE2": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_E2plain": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "B_noProv": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  }
+ },
+ "set3_credential_and_reformatting_fixtures": {
+  "B0": {
+   "n": 7,
+   "legitimate_released": 7,
+   "unsafe_released": 7
+  },
+  "GV_math2": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "C1": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "C1I": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "PG": {
+   "n": 7,
+   "legitimate_released": 1,
+   "unsafe_released": 0
+  },
+  "REM_A": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "REM_B": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "REM_C": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "REM_C_T": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "REM_C_raw": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "REM_B_R": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "B_noOB": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "B_noLedger": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "B_noE1": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "B_noE2": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "B_E2plain": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  },
+  "B_noProv": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0
+  }
+ },
+ "set4_permission_fixtures": {
+  "B0": {
+   "n": 20,
+   "legitimate_released": 20,
+   "unsafe_released": 20
+  },
+  "GV_math2": {
+   "n": 20,
+   "legitimate_released": 18,
+   "unsafe_released": 0
+  },
+  "C1": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0
+  },
+  "C1I": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0
+  },
+  "PG": {
+   "n": 20,
+   "legitimate_released": 7,
+   "unsafe_released": 0
+  },
+  "REM_A": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0
+  },
+  "REM_B": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0
+  },
+  "REM_C": {
+   "n": 20,
+   "legitimate_released": 20,
+   "unsafe_released": 1
+  },
+  "REM_C_T": {
+   "n": 20,
+   "legitimate_released": 20,
+   "unsafe_released": 1
+  },
+  "REM_C_raw": {
+   "n": 20,
+   "legitimate_released": 20,
+   "unsafe_released": 1
+  },
+  "REM_B_R": {
+   "n": 20,
+   "legitimate_released": 20,
+   "unsafe_released": 1
+  },
+  "B_noOB": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0
+  },
+  "B_noLedger": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 1
+  },
+  "B_noE1": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0
+  },
+  "B_noE2": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0
+  },
+  "B_E2plain": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0
+  },
+  "B_noProv": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "status": "POST-HOC EXPLORATORY (amendment 1); not part of the frozen decision",
+ "ledger_dev": {
+  "REM_B": {
+   "authorized_released": 12,
+   "authorized_n": 12,
+   "unauthorized_released": 0,
+   "unauthorized_n": 9,
+   "ambiguous_released": 0,
+   "ambiguous_n": 3,
+   "unauthorized_released_cases": [],
+   "authorized_withheld_cases": []
+  },
+  "REM_B_fix": {
+   "authorized_released": 12,
+   "authorized_n": 12,
+   "unauthorized_released": 0,
+   "unauthorized_n": 9,
+   "ambiguous_released": 0,
+   "ambiguous_n": 3,
+   "unauthorized_released_cases": [],
+   "authorized_withheld_cases": []
+  }
+ },
+ "heldout_probes": {
+  "REM_B": {
+   "authorized_released": 12,
+   "authorized_n": 16,
+   "unauthorized_released": 0,
+   "unauthorized_n": 14,
+   "ambiguous_released": 0,
+   "ambiguous_n": 13,
+   "unauthorized_released_cases": [],
+   "authorized_withheld_cases": [
+    "HC2_other_wording@1:permission_guard_authority_v3",
+    "HE4_refund_and_payment@2:contract_unresolved",
+    "HO4_no_designator_single@1:object_unresolved"
+   ]
+  },
+  "REM_B_fix": {
+   "authorized_released": 14,
+   "authorized_n": 16,
+   "unauthorized_released": 0,
+   "unauthorized_n": 14,
+   "ambiguous_released": 0,
+   "ambiguous_n": 13,
+   "unauthorized_released_cases": [],
+   "authorized_withheld_cases": [
+    "HC2_other_wording@1:permission_guard_authority_v3",
+    "HE4_refund_and_payment@2:contract_unresolved"
+   ]
+  }
+ }
+}

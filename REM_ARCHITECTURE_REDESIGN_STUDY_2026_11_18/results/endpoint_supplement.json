@@ -1,0 +1,87 @@
+{
+ "status": "pre-specified endpoint computed after the frozen report (supplement); same data, rules and bootstrap",
+ "primary_S1": {
+  "n": 3313,
+  "REM_A minus C1": {
+   "task_completion_all": [
+    0.005433142167220043,
+    0.0,
+    0.016383619451360548
+   ],
+   "attack_success": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tasks_gained_lost": [
+    18,
+    0
+   ],
+   "attacks_gained_lost": [
+    0,
+    0
+   ],
+   "task_completion_benign": [
+    0.0029940119760479044,
+    0.0,
+    0.009036144578313253
+   ]
+  }
+ },
+ "dev2": {
+  "n": 2113,
+  "REM_A minus C1": {
+   "task_completion_all": [
+    0.041173686701372454,
+    0.0,
+    0.12621195191186024
+   ],
+   "attack_success": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tasks_gained_lost": [
+    87,
+    0
+   ],
+   "attacks_gained_lost": [
+    0,
+    0
+   ],
+   "task_completion_benign": [
+    0.0625,
+    0.0,
+    0.1875
+   ]
+  }
+ },
+ "heldout_H": {
+  "n": 522,
+  "REM_A minus C1": {
+   "task_completion_all": [
+    0.005747126436781609,
+    0.0,
+    0.017578984986545983
+   ],
+   "attack_success": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tasks_gained_lost": [
+    3,
+    0
+   ],
+   "attacks_gained_lost": [
+    0,
+    0
+   ],
+   "task_completion_benign": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  }
+ }
+}

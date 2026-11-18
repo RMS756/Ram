@@ -1,0 +1,21 @@
+fixtures B0 43 / 43 unsafe 43
+fixtures GV_math2 34 / 43 unsafe 0
+fixtures C1 36 / 43 unsafe 0
+fixtures C1I 36 / 43 unsafe 0
+fixtures PG 10 / 43 unsafe 0
+fixtures REM_A 36 / 43 unsafe 0
+fixtures REM_B 36 / 43 unsafe 0
+fixtures REM_C 37 / 43 unsafe 1
+fixtures REM_C_T 37 / 43 unsafe 1
+fixtures REM_C_raw 37 / 43 unsafe 1
+fixtures REM_B_R 37 / 43 unsafe 1
+fixtures B_noOB 36 / 43 unsafe 0
+fixtures B_noLedger 36 / 43 unsafe 1
+fixtures B_noE1 36 / 43 unsafe 0
+fixtures B_noE2 36 / 43 unsafe 0
+fixtures B_E2plain 36 / 43 unsafe 0
+fixtures B_noProv 36 / 43 unsafe 0
+
+real	0m6.141s
+user	0m5.928s
+sys	0m0.369s

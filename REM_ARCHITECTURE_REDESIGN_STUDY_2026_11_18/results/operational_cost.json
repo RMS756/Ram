@@ -1,0 +1,172 @@
+{
+ "B0": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 9.221490844000073,
+  "peak_traced_MiB": 0.5920143127441406,
+  "latency_ms_mean": 0.3781620889808784,
+  "latency_ms_median": 0.26373699995474453,
+  "latency_ms_p95": 0.8665149999501409,
+  "model_calls": 0
+ },
+ "GV_math2": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 11.159087683000052,
+  "peak_traced_MiB": 0.6582155227661133,
+  "latency_ms_mean": 2.941261726689718,
+  "latency_ms_median": 0.4545775000224239,
+  "latency_ms_p95": 12.742202649894807,
+  "model_calls": 0
+ },
+ "C1": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 11.309320563000028,
+  "peak_traced_MiB": 0.6572694778442383,
+  "latency_ms_mean": 3.0006468093254903,
+  "latency_ms_median": 0.4801045000704107,
+  "latency_ms_p95": 13.94670130007398,
+  "model_calls": 0
+ },
+ "C1I": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 11.105337295000027,
+  "peak_traced_MiB": 0.6224088668823242,
+  "latency_ms_mean": 3.01270454449625,
+  "latency_ms_median": 0.49690049991113483,
+  "latency_ms_p95": 13.120021250017544,
+  "model_calls": 0
+ },
+ "PG": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 8.756601197000009,
+  "peak_traced_MiB": 0.2420501708984375,
+  "latency_ms_mean": 0.3670131292393554,
+  "latency_ms_median": 0.2655480000157695,
+  "latency_ms_p95": 0.859280099894022,
+  "model_calls": 0
+ },
+ "REM_A": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 12.916700955000124,
+  "peak_traced_MiB": 0.7912569046020508,
+  "latency_ms_mean": 5.3652736016940095,
+  "latency_ms_median": 0.47503099995083176,
+  "latency_ms_p95": 24.916440350102675,
+  "model_calls": 0
+ },
+ "REM_B": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 11.184377737999966,
+  "peak_traced_MiB": 0.6521463394165039,
+  "latency_ms_mean": 3.1293166228773757,
+  "latency_ms_median": 0.4394650001131595,
+  "latency_ms_p95": 13.16051950008159,
+  "model_calls": 0
+ },
+ "REM_C": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 12.745655491999969,
+  "peak_traced_MiB": 0.8156232833862305,
+  "latency_ms_mean": 5.377383595338746,
+  "latency_ms_median": 0.47175399993193423,
+  "latency_ms_p95": 26.3361572499889,
+  "model_calls": 0
+ },
+ "REM_C_T": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 12.17572871199991,
+  "peak_traced_MiB": 0.7776060104370117,
+  "latency_ms_mean": 5.004287745755796,
+  "latency_ms_median": 0.41319000001749373,
+  "latency_ms_p95": 23.63823050004612,
+  "model_calls": 0
+ },
+ "REM_C_raw": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 12.696764083000062,
+  "peak_traced_MiB": 0.797393798828125,
+  "latency_ms_mean": 5.07191432839078,
+  "latency_ms_median": 0.4852010000604423,
+  "latency_ms_p95": 23.834881850041253,
+  "model_calls": 0
+ },
+ "REM_B_R": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 11.498268893000159,
+  "peak_traced_MiB": 4.363224983215332,
+  "latency_ms_mean": 3.142012777543815,
+  "latency_ms_median": 0.4471954999871741,
+  "latency_ms_p95": 13.615832900063648,
+  "model_calls": 0
+ },
+ "B_noOB": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 11.010175574999948,
+  "peak_traced_MiB": 0.7057218551635742,
+  "latency_ms_mean": 2.875414213983789,
+  "latency_ms_median": 0.4341134999776841,
+  "latency_ms_p95": 12.882069500062695,
+  "model_calls": 0
+ },
+ "B_noLedger": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 11.293620378000014,
+  "peak_traced_MiB": 0.6906070709228516,
+  "latency_ms_mean": 3.293533161018146,
+  "latency_ms_median": 0.4844410001396682,
+  "latency_ms_p95": 14.209326049967775,
+  "model_calls": 0
+ },
+ "B_noE1": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 11.63013740600013,
+  "peak_traced_MiB": 0.665069580078125,
+  "latency_ms_mean": 3.263695514831243,
+  "latency_ms_median": 0.49156299996866437,
+  "latency_ms_p95": 14.71074770003042,
+  "model_calls": 0
+ },
+ "B_noE2": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 11.310048747999872,
+  "peak_traced_MiB": 0.6725835800170898,
+  "latency_ms_mean": 3.1794037182139117,
+  "latency_ms_median": 0.4506759999003407,
+  "latency_ms_p95": 14.045959650013621,
+  "model_calls": 0
+ },
+ "B_E2plain": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 11.080404146000092,
+  "peak_traced_MiB": 0.6976556777954102,
+  "latency_ms_mean": 3.1555829724514766,
+  "latency_ms_median": 0.449478499945144,
+  "latency_ms_p95": 13.497158799918905,
+  "model_calls": 0
+ },
+ "B_noProv": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 11.71905410599993,
+  "peak_traced_MiB": 0.7059497833251953,
+  "latency_ms_mean": 3.231910669486659,
+  "latency_ms_median": 0.5108589999736068,
+  "latency_ms_p95": 14.239113899941458,
+  "model_calls": 0
+ }
+}
