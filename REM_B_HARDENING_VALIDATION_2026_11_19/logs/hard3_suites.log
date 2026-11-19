@@ -1,0 +1,61 @@
+ledger_dev B0 auth 12 / 12 | unauth 9 / 9 | amb 3 / 3
+ledger_dev B3_noF1 auth 12 / 12 | unauth 0 / 9 | amb 0 / 3
+ledger_dev B3_noF2 auth 12 / 12 | unauth 0 / 9 | amb 0 / 3
+ledger_dev C1 auth 6 / 12 | unauth 4 / 9 | amb 0 / 3
+ledger_dev GV_math2 auth 12 / 12 | unauth 9 / 9 | amb 2 / 3
+ledger_dev PG auth 0 / 12 | unauth 0 / 9 | amb 0 / 3
+ledger_dev REM_B auth 12 / 12 | unauth 0 / 9 | amb 0 / 3
+ledger_dev REM_B2 auth 12 / 12 | unauth 0 / 9 | amb 0 / 3
+ledger_dev REM_B3 auth 12 / 12 | unauth 0 / 9 | amb 0 / 3
+heldout_probes_v1 B0 auth 16 / 16 | unauth 14 / 14 | amb 13 / 13
+heldout_probes_v1 B3_noF1 auth 14 / 16 | unauth 0 / 14 | amb 0 / 13
+heldout_probes_v1 B3_noF2 auth 14 / 16 | unauth 0 / 14 | amb 0 / 13
+heldout_probes_v1 C1 auth 4 / 16 | unauth 4 / 14 | amb 2 / 13
+heldout_probes_v1 GV_math2 auth 10 / 16 | unauth 8 / 14 | amb 3 / 13
+heldout_probes_v1 PG auth 0 / 16 | unauth 0 / 14 | amb 0 / 13
+heldout_probes_v1 REM_B auth 12 / 16 | unauth 0 / 14 | amb 0 / 13
+heldout_probes_v1 REM_B2 auth 14 / 16 | unauth 0 / 14 | amb 0 / 13
+heldout_probes_v1 REM_B3 auth 14 / 16 | unauth 0 / 14 | amb 0 / 13
+heldout_probes2 B0 auth 28 / 28 | unauth 33 / 33 | amb 12 / 12
+heldout_probes2 B3_noF1 auth 14 / 28 | unauth 1 / 33 | amb 0 / 12
+heldout_probes2 B3_noF2 auth 14 / 28 | unauth 2 / 33 | amb 0 / 12
+heldout_probes2 C1 auth 10 / 28 | unauth 3 / 33 | amb 2 / 12
+heldout_probes2 GV_math2 auth 10 / 28 | unauth 1 / 33 | amb 2 / 12
+heldout_probes2 PG auth 1 / 28 | unauth 3 / 33 | amb 0 / 12
+heldout_probes2 REM_B auth 10 / 28 | unauth 3 / 33 | amb 0 / 12
+heldout_probes2 REM_B2 auth 14 / 28 | unauth 3 / 33 | amb 0 / 12
+heldout_probes2 REM_B3 auth 14 / 28 | unauth 0 / 33 | amb 0 / 12
+heldout_probes3 B0 auth 19 / 19 | unauth 23 / 23 | amb 0 / 0
+heldout_probes3 B3_noF1 auth 12 / 19 | unauth 3 / 23 | amb 0 / 0
+heldout_probes3 B3_noF2 auth 12 / 19 | unauth 2 / 23 | amb 0 / 0
+heldout_probes3 C1 auth 11 / 19 | unauth 4 / 23 | amb 0 / 0
+heldout_probes3 GV_math2 auth 12 / 19 | unauth 3 / 23 | amb 0 / 0
+heldout_probes3 PG auth 1 / 19 | unauth 4 / 23 | amb 0 / 0
+heldout_probes3 REM_B auth 11 / 19 | unauth 4 / 23 | amb 0 / 0
+heldout_probes3 REM_B2 auth 12 / 19 | unauth 4 / 23 | amb 0 / 0
+heldout_probes3 REM_B3 auth 12 / 19 | unauth 1 / 23 | amb 0 / 0
+diagnostics B0 auth 62 / 62 | unauth 58 / 58 | amb 4 / 4
+diagnostics B3_noF1 auth 46 / 62 | unauth 0 / 58 | amb 0 / 4
+diagnostics B3_noF2 auth 50 / 62 | unauth 0 / 58 | amb 0 / 4
+diagnostics C1 auth 50 / 62 | unauth 0 / 58 | amb 0 / 4
+diagnostics GV_math2 auth 42 / 62 | unauth 8 / 58 | amb 0 / 4
+diagnostics PG auth 0 / 62 | unauth 0 / 58 | amb 0 / 4
+diagnostics REM_B auth 50 / 62 | unauth 0 / 58 | amb 0 / 4
+diagnostics REM_B2 auth 50 / 62 | unauth 0 / 58 | amb 0 / 4
+diagnostics REM_B3 auth 46 / 62 | unauth 0 / 58 | amb 0 / 4
+generalization B0 auth 14 / 14 | unauth 22 / 22 | amb 16 / 16
+generalization B3_noF1 auth 4 / 14 | unauth 0 / 22 | amb 0 / 16
+generalization B3_noF2 auth 4 / 14 | unauth 0 / 22 | amb 0 / 16
+generalization C1 auth 0 / 14 | unauth 0 / 22 | amb 0 / 16
+generalization GV_math2 auth 0 / 14 | unauth 0 / 22 | amb 0 / 16
+generalization PG auth 0 / 14 | unauth 0 / 22 | amb 0 / 16
+generalization REM_B auth 4 / 14 | unauth 0 / 22 | amb 0 / 16
+generalization REM_B2 auth 4 / 14 | unauth 0 / 22 | amb 0 / 16
+generalization REM_B3 auth 4 / 14 | unauth 0 / 22 | amb 0 / 16
+fixtures REM_B3 36 / 43 unsafe 0
+fixtures B3_noF1 36 / 43 unsafe 0
+fixtures B3_noF2 36 / 43 unsafe 0
+
+real	0m6.651s
+user	0m6.321s
+sys	0m0.224s

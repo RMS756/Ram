@@ -1,0 +1,18 @@
+cost B0 {'episodes': 300, 'calls': 472, 'wall_s': 6.465, 'peak_traced_MiB': 1.046, 'latency_ms_mean': 0.237, 'latency_ms_median': 0.163, 'latency_ms_p95': 0.648, 'model_calls': 0}
+cost GV_math2 {'episodes': 300, 'calls': 472, 'wall_s': 8.799, 'peak_traced_MiB': 1.137, 'latency_ms_mean': 2.344, 'latency_ms_median': 0.348, 'latency_ms_p95': 10.569, 'model_calls': 0}
+cost C1 {'episodes': 300, 'calls': 472, 'wall_s': 8.645, 'peak_traced_MiB': 1.077, 'latency_ms_mean': 2.229, 'latency_ms_median': 0.316, 'latency_ms_p95': 10.117, 'model_calls': 0}
+cost PG {'episodes': 300, 'calls': 472, 'wall_s': 6.971, 'peak_traced_MiB': 0.707, 'latency_ms_mean': 0.284, 'latency_ms_median': 0.198, 'latency_ms_p95': 0.691, 'model_calls': 0}
+cost REM_B {'episodes': 300, 'calls': 472, 'wall_s': 8.735, 'peak_traced_MiB': 1.099, 'latency_ms_mean': 2.428, 'latency_ms_median': 0.314, 'latency_ms_p95': 10.072, 'model_calls': 0}
+cost REM_B2 {'episodes': 300, 'calls': 472, 'wall_s': 8.412, 'peak_traced_MiB': 1.096, 'latency_ms_mean': 2.596, 'latency_ms_median': 0.281, 'latency_ms_p95': 10.829, 'model_calls': 0}
+cost REM_B2_HR {'episodes': 300, 'calls': 472, 'wall_s': 9.356, 'peak_traced_MiB': 1.153, 'latency_ms_mean': 4.198, 'latency_ms_median': 0.282, 'latency_ms_p95': 19.668, 'model_calls': 0}
+cost REM_B2_HW {'episodes': 300, 'calls': 472, 'wall_s': 9.467, 'peak_traced_MiB': 1.188, 'latency_ms_mean': 4.183, 'latency_ms_median': 0.301, 'latency_ms_p95': 19.987, 'model_calls': 0}
+cost B2_noR1 {'episodes': 300, 'calls': 472, 'wall_s': 8.828, 'peak_traced_MiB': 1.074, 'latency_ms_mean': 2.688, 'latency_ms_median': 0.322, 'latency_ms_p95': 11.511, 'model_calls': 0}
+cost B2_noR2 {'episodes': 300, 'calls': 472, 'wall_s': 8.362, 'peak_traced_MiB': 1.105, 'latency_ms_mean': 2.325, 'latency_ms_median': 0.305, 'latency_ms_p95': 9.895, 'model_calls': 0}
+cost B2_noR3 {'episodes': 300, 'calls': 472, 'wall_s': 8.591, 'peak_traced_MiB': 4.751, 'latency_ms_mean': 2.675, 'latency_ms_median': 0.301, 'latency_ms_p95': 11.124, 'model_calls': 0}
+cost B2_noOB {'episodes': 300, 'calls': 472, 'wall_s': 8.676, 'peak_traced_MiB': 1.096, 'latency_ms_mean': 2.677, 'latency_ms_median': 0.306, 'latency_ms_p95': 11.219, 'model_calls': 0}
+cost B2_noLedger {'episodes': 300, 'calls': 472, 'wall_s': 8.49, 'peak_traced_MiB': 1.085, 'latency_ms_mean': 2.622, 'latency_ms_median': 0.301, 'latency_ms_p95': 11.158, 'model_calls': 0}
+cost B2_E2plain {'episodes': 300, 'calls': 472, 'wall_s': 8.636, 'peak_traced_MiB': 1.138, 'latency_ms_mean': 2.665, 'latency_ms_median': 0.301, 'latency_ms_p95': 11.399, 'model_calls': 0}
+
+real	2m2.950s
+user	2m2.859s
+sys	0m0.401s

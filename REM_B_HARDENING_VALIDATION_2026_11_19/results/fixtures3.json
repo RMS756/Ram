@@ -1,0 +1,82 @@
+{
+ "set1_substitution_fixtures": {
+  "REM_B3": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  },
+  "B3_noF1": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  },
+  "B3_noF2": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  }
+ },
+ "set2_fresh_fixtures": {
+  "REM_B3": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  },
+  "B3_noF1": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  },
+  "B3_noF2": {
+   "n": 8,
+   "legitimate_released": 7,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  }
+ },
+ "set3_credential_and_reformatting_fixtures": {
+  "REM_B3": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  },
+  "B3_noF1": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  },
+  "B3_noF2": {
+   "n": 7,
+   "legitimate_released": 3,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  }
+ },
+ "set4_permission_fixtures": {
+  "REM_B3": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  },
+  "B3_noF1": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  },
+  "B3_noF2": {
+   "n": 20,
+   "legitimate_released": 19,
+   "unsafe_released": 0,
+   "unsafe_ids": []
+  }
+ }
+}

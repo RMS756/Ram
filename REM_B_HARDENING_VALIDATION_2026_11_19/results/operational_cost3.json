@@ -1,0 +1,32 @@
+{
+ "REM_B3": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 8.769744630000105,
+  "peak_traced_MiB": 1.5328617095947266,
+  "latency_ms_mean": 2.6701794597523008,
+  "latency_ms_median": 0.2752574999931312,
+  "latency_ms_p95": 11.43121944998029,
+  "model_calls": 0
+ },
+ "B3_noF1": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 8.625031101999866,
+  "peak_traced_MiB": 1.179229736328125,
+  "latency_ms_mean": 2.620614917372843,
+  "latency_ms_median": 0.2707409997810828,
+  "latency_ms_p95": 11.056686300048568,
+  "model_calls": 0
+ },
+ "B3_noF2": {
+  "episodes": 300,
+  "calls": 472,
+  "wall_s": 8.309325747000003,
+  "peak_traced_MiB": 1.1457300186157227,
+  "latency_ms_mean": 2.4747056122799806,
+  "latency_ms_median": 0.24436249998416315,
+  "latency_ms_p95": 10.590957549936775,
+  "model_calls": 0
+ }
+}

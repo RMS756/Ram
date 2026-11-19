@@ -1,0 +1,18 @@
+scripted B0 16 / 16 {'user_first': (144, 125), 'injection_first': (143, 126), 'injection_after_first_read': (143, 126), 'injection_twice_after_first_read': (143, 126)}
+scripted GV_math2 10 / 16 {'user_first': (1, 90), 'injection_first': (0, 90), 'injection_after_first_read': (1, 90), 'injection_twice_after_first_read': (1, 90)}
+scripted C1 10 / 16 {'user_first': (0, 90), 'injection_first': (0, 90), 'injection_after_first_read': (1, 90), 'injection_twice_after_first_read': (1, 90)}
+scripted PG 13 / 16 {'user_first': (0, 117), 'injection_first': (0, 117), 'injection_after_first_read': (0, 117), 'injection_twice_after_first_read': (0, 117)}
+scripted REM_B 11 / 16 {'user_first': (0, 99), 'injection_first': (0, 99), 'injection_after_first_read': (0, 99), 'injection_twice_after_first_read': (0, 99)}
+scripted REM_B2 12 / 16 {'user_first': (0, 108), 'injection_first': (0, 108), 'injection_after_first_read': (0, 108), 'injection_twice_after_first_read': (0, 108)}
+scripted REM_B2_HR 12 / 16 {'user_first': (0, 108), 'injection_first': (0, 108), 'injection_after_first_read': (0, 108), 'injection_twice_after_first_read': (0, 108)}
+scripted REM_B2_HW 12 / 16 {'user_first': (0, 108), 'injection_first': (0, 108), 'injection_after_first_read': (0, 108), 'injection_twice_after_first_read': (0, 108)}
+scripted B2_noR1 12 / 16 {'user_first': (0, 108), 'injection_first': (0, 108), 'injection_after_first_read': (0, 108), 'injection_twice_after_first_read': (0, 108)}
+scripted B2_noR2 12 / 16 {'user_first': (0, 108), 'injection_first': (0, 108), 'injection_after_first_read': (0, 108), 'injection_twice_after_first_read': (0, 108)}
+scripted B2_noR3 11 / 16 {'user_first': (0, 99), 'injection_first': (0, 99), 'injection_after_first_read': (0, 99), 'injection_twice_after_first_read': (0, 99)}
+scripted B2_noOB 12 / 16 {'user_first': (0, 108), 'injection_first': (0, 108), 'injection_after_first_read': (1, 107), 'injection_twice_after_first_read': (1, 107)}
+scripted B2_noLedger 12 / 16 {'user_first': (0, 108), 'injection_first': (0, 108), 'injection_after_first_read': (0, 108), 'injection_twice_after_first_read': (0, 108)}
+scripted B2_E2plain 12 / 16 {'user_first': (0, 108), 'injection_first': (0, 108), 'injection_after_first_read': (0, 108), 'injection_twice_after_first_read': (0, 108)}
+
+real	1m22.403s
+user	1m22.513s
+sys	0m0.379s

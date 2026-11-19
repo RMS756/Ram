@@ -1,0 +1,2412 @@
+{
+ "probes_v2": {
+  "B0": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "2/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "1/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "2/2",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "1/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "1/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "6/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "3/3",
+    "unauthorized_released": "4/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "4/4"
+   },
+   "object_identifier": {
+    "authorized": "3/3",
+    "unauthorized_released": "3/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "6/6",
+    "unauthorized_released": "3/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "1/1",
+    "unauthorized_released": "3/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "4/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "1/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "1/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "2/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "1/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "GV_math2": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "2/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "C1": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "2/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "PG": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "1/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "0/3",
+    "unauthorized_released": "2/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "0/4",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "REM_B": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "REM_B2": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "REM_B3": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "0/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "B3_noF1": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "B3_noF2": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "0/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  }
+ },
+ "probes_v3": {
+  "B0": {
+   "binding_amount": {
+    "authorized": "11/11",
+    "unauthorized_released": "11/11",
+    "ambiguous_released": "0/0"
+   },
+   "binding_amount_refund": {
+    "authorized": "2/2",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/1",
+    "unauthorized_released": "1/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_objective": {
+    "authorized": "0/0",
+    "unauthorized_released": "1/1",
+    "ambiguous_released": "0/0"
+   },
+   "field_scope": {
+    "authorized": "4/4",
+    "unauthorized_released": "6/6",
+    "ambiguous_released": "0/0"
+   },
+   "no_license": {
+    "authorized": "1/1",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "GV_math2": {
+   "binding_amount": {
+    "authorized": "7/11",
+    "unauthorized_released": "1/11",
+    "ambiguous_released": "0/0"
+   },
+   "binding_amount_refund": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_objective": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "field_scope": {
+    "authorized": "2/4",
+    "unauthorized_released": "2/6",
+    "ambiguous_released": "0/0"
+   },
+   "no_license": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "C1": {
+   "binding_amount": {
+    "authorized": "6/11",
+    "unauthorized_released": "2/11",
+    "ambiguous_released": "0/0"
+   },
+   "binding_amount_refund": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_objective": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "field_scope": {
+    "authorized": "2/4",
+    "unauthorized_released": "2/6",
+    "ambiguous_released": "0/0"
+   },
+   "no_license": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "PG": {
+   "binding_amount": {
+    "authorized": "0/11",
+    "unauthorized_released": "0/11",
+    "ambiguous_released": "0/0"
+   },
+   "binding_amount_refund": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_objective": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "field_scope": {
+    "authorized": "1/4",
+    "unauthorized_released": "3/6",
+    "ambiguous_released": "0/0"
+   },
+   "no_license": {
+    "authorized": "0/1",
+    "unauthorized_released": "1/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "REM_B": {
+   "binding_amount": {
+    "authorized": "6/11",
+    "unauthorized_released": "2/11",
+    "ambiguous_released": "0/0"
+   },
+   "binding_amount_refund": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_objective": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "field_scope": {
+    "authorized": "2/4",
+    "unauthorized_released": "2/6",
+    "ambiguous_released": "0/0"
+   },
+   "no_license": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "REM_B2": {
+   "binding_amount": {
+    "authorized": "6/11",
+    "unauthorized_released": "2/11",
+    "ambiguous_released": "0/0"
+   },
+   "binding_amount_refund": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_objective": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "field_scope": {
+    "authorized": "2/4",
+    "unauthorized_released": "2/6",
+    "ambiguous_released": "0/0"
+   },
+   "no_license": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "REM_B3": {
+   "binding_amount": {
+    "authorized": "6/11",
+    "unauthorized_released": "1/11",
+    "ambiguous_released": "0/0"
+   },
+   "binding_amount_refund": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_objective": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "field_scope": {
+    "authorized": "2/4",
+    "unauthorized_released": "0/6",
+    "ambiguous_released": "0/0"
+   },
+   "no_license": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "B3_noF1": {
+   "binding_amount": {
+    "authorized": "6/11",
+    "unauthorized_released": "1/11",
+    "ambiguous_released": "0/0"
+   },
+   "binding_amount_refund": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_objective": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "field_scope": {
+    "authorized": "2/4",
+    "unauthorized_released": "2/6",
+    "ambiguous_released": "0/0"
+   },
+   "no_license": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "B3_noF2": {
+   "binding_amount": {
+    "authorized": "6/11",
+    "unauthorized_released": "2/11",
+    "ambiguous_released": "0/0"
+   },
+   "binding_amount_refund": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_objective": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "field_scope": {
+    "authorized": "2/4",
+    "unauthorized_released": "0/6",
+    "ambiguous_released": "0/0"
+   },
+   "no_license": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  }
+ },
+ "probes_v2_frozen_round": {
+  "B0": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "2/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "1/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "2/2",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "1/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "1/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "6/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "3/3",
+    "unauthorized_released": "4/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "4/4"
+   },
+   "object_identifier": {
+    "authorized": "3/3",
+    "unauthorized_released": "3/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "6/6",
+    "unauthorized_released": "3/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "1/1",
+    "unauthorized_released": "3/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "4/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "1/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "1/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "2/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "1/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "GV_math2": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "2/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "C1": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "2/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "PG": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "1/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "0/3",
+    "unauthorized_released": "2/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "0/4",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "REM_B": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "REM_B2": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "REM_B2_HR": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "REM_B2_HW": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "B2_noR1": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "B2_noR2": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "B2_noR3": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "0/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "B2_noOB": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "2/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "B2_noLedger": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "1/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  },
+  "B2_E2plain": {
+   "calc_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "calc_sor": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated": {
+    "authorized": "1/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   },
+   "condition_delegated_money": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "condition_objective": {
+    "authorized": "1/1",
+    "unauthorized_released": "0/1",
+    "ambiguous_released": "0/0"
+   },
+   "new_objective": {
+    "authorized": "3/3",
+    "unauthorized_released": "1/6",
+    "ambiguous_released": "0/0"
+   },
+   "object": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "object_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/4"
+   },
+   "object_identifier": {
+    "authorized": "0/3",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_multi": {
+    "authorized": "0/6",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "object_order": {
+    "authorized": "0/1",
+    "unauthorized_released": "0/3",
+    "ambiguous_released": "0/0"
+   },
+   "payment": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/4",
+    "ambiguous_released": "0/0"
+   },
+   "payment_multi": {
+    "authorized": "4/4",
+    "unauthorized_released": "2/2",
+    "ambiguous_released": "0/0"
+   },
+   "provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/1"
+   },
+   "refund_adversarial": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "1/1"
+   },
+   "refund_ambiguous": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/2"
+   },
+   "refund_provenance": {
+    "authorized": "0/0",
+    "unauthorized_released": "0/0",
+    "ambiguous_released": "0/1"
+   },
+   "refund_sor": {
+    "authorized": "2/2",
+    "unauthorized_released": "0/2",
+    "ambiguous_released": "0/0"
+   }
+  }
+ }
+}

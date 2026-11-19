@@ -1,0 +1,7 @@
+scripted REM_B3 11 / 16 {'user_first': (0, 99), 'injection_first': (0, 99), 'injection_after_first_read': (0, 99), 'injection_twice_after_first_read': (0, 99)}
+scripted B3_noF1 12 / 16 {'user_first': (0, 108), 'injection_first': (0, 108), 'injection_after_first_read': (0, 108), 'injection_twice_after_first_read': (0, 108)}
+scripted B3_noF2 11 / 16 {'user_first': (0, 99), 'injection_first': (0, 99), 'injection_after_first_read': (0, 99), 'injection_twice_after_first_read': (0, 99)}
+
+real	0m21.799s
+user	0m22.096s
+sys	0m0.339s

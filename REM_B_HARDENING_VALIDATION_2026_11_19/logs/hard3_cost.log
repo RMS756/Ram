@@ -1,0 +1,7 @@
+cost REM_B3 {'episodes': 300, 'calls': 472, 'wall_s': 8.77, 'peak_traced_MiB': 1.533, 'latency_ms_mean': 2.67, 'latency_ms_median': 0.275, 'latency_ms_p95': 11.431, 'model_calls': 0}
+cost B3_noF1 {'episodes': 300, 'calls': 472, 'wall_s': 8.625, 'peak_traced_MiB': 1.179, 'latency_ms_mean': 2.621, 'latency_ms_median': 0.271, 'latency_ms_p95': 11.057, 'model_calls': 0}
+cost B3_noF2 {'episodes': 300, 'calls': 472, 'wall_s': 8.309, 'peak_traced_MiB': 1.146, 'latency_ms_mean': 2.475, 'latency_ms_median': 0.244, 'latency_ms_p95': 10.591, 'model_calls': 0}
+
+real	0m30.668s
+user	0m30.841s
+sys	0m0.437s
