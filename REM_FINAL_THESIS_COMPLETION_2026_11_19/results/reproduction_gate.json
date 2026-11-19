@@ -1,0 +1,5 @@
+{"date": "2026-11-19", "command": "experiments/pilot: build_dataset.py; e0_pilot.py; run_main.py crossfit rmod replay (PILOT_RESULTS_DIR=fresh state, PYTHONHASHSEED=0)",
+ "base_commit": "bf36381c42a4669043d5b30072744fcc3024d66d", "wall_time": "7m46s",
+ "REM_step_level_no_reviewer": {"attack_successes": 11, "n_attacked": 2979, "benign_completed": 105, "n_benign": 334, "tasks_under_attack": 1083},
+ "published_R7_Table_4_10": {"attack_successes": 11, "benign_completed": 105, "tasks_under_attack": 1083},
+ "gate": "PASSED"}
