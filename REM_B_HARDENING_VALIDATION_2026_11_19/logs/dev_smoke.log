@@ -1,0 +1,30 @@
+{
+ "status": "DEVELOPMENT (primary S1)",
+ "errors": 0,
+ "rem_b_parity_mismatches": 0,
+ "tasks": {
+  "REM_B": 1457,
+  "REM_B2": 1640
+ },
+ "attacks": {
+  "REM_B": 0,
+  "REM_B2": 0
+ },
+ "gained_by_task": {
+  "user_task_14": 167,
+  "user_task_15": 16
+ },
+ "lost_by_task": {},
+ "sources_REM_B2_released_changed": {
+  "delegated_condition": 167,
+  "candidate_release": 19
+ },
+ "violations": {
+  "REM_B": 11,
+  "REM_B2": 11
+ }
+}
+
+real	0m16.256s
+user	0m48.067s
+sys	0m0.706s
