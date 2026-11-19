@@ -1,0 +1,11 @@
+replay 20000 / 132398 32 s
+replay 40000 / 132398 68 s
+replay 60000 / 132398 105 s
+replay 80000 / 132398 149 s
+replay 100000 / 132398 182 s
+replay 120000 / 132398 215 s
+replay done 132398 237 s; errors 0 {'primary': 3313, 'dev2': 2148, 'probe': 2645, 'heldout': 636, 'heldout2': 715}
+
+real	4m1.776s
+user	15m28.616s
+sys	0m2.805s
