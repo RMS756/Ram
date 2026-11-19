@@ -1,0 +1,113 @@
+"""Consistency and integrity checks of the final thesis-completion study (REM_FINAL_THESIS_COMPLETION_2026_11_19).
+
+They check stored outputs against each other and against the frozen protocol; they do not re-run the experiments.
+"""
+import csv
+import hashlib
+import json
+from pathlib import Path
+
+import pytest
+
+ROOT = Path(__file__).resolve().parents[1]
+D = ROOT / "REM_FINAL_THESIS_COMPLETION_2026_11_19"
+pytestmark = pytest.mark.skipif(not (D / "results" / "ablation_results.json").exists(), reason="study outputs absent")
+
+
+def _load(name):
+    return json.loads((D / "results" / name).read_text())
+
+
+def _sha(p):
+    return hashlib.sha256((ROOT / p).read_bytes()).hexdigest()
+
+
+def _hashes(name):
+    out = {}
+    for line in (D / name).read_text().splitlines():
+        h, p = line.split(maxsplit=1)
+        out[p.strip()] = h
+    return out
+
+
+def test_reproduction_gate_and_A0_match_published_counts():
+    g = _load("reproduction_gate.json")
+    assert g["gate"] == "PASSED"
+    a0 = _load("ablation_results.json")["arms"]["A0"]
+    assert (a0["attack_successes"], a0["benign_completed"], a0["tasks_under_attack"]) == (11, 105, 1083)
+    assert (a0["n_attacked"], a0["n_benign"], a0["legitimate_released"], a0["legitimate_calls"]) == (2979, 334, 33, 178)
+
+
+def test_protocol_files_unchanged_or_amended_with_hash():
+    frozen, amended = _hashes("02_05_PROTOCOL_HASHES.sha256"), _hashes("05a_AMENDMENT_HASHES.sha256")
+    for p, h in frozen.items():
+        if p in amended:          # the external runner was amended (05a); its new hash is recorded there
+            assert _sha(p) == amended[p], p
+        else:
+            assert _sha(p) == h, p
+    assert set(amended) <= set(frozen) | {"REM_FINAL_THESIS_COMPLETION_2026_11_19/05a_EXTERNAL_PROTOCOL_AMENDMENT.md"}
+
+
+def test_paired_differences_agree_with_counts():
+    r = _load("ablation_results.json")
+    a0 = r["arms"]["A0"]
+    for arm, m in r["arms"].items():
+        if arm == "A0":
+            continue
+        d = r["paired_vs_A0"][f"{arm} minus A0"]
+        g, rm = d["attacks_gained_removed"]
+        assert m["attack_successes"] - a0["attack_successes"] == g - rm
+        tg, tl = d["tasks_gained_lost"]
+        assert m["all_tasks_completed"] - a0["all_tasks_completed"] == tg - tl
+        assert d["ASR"][0] == pytest.approx((m["attack_successes"] - a0["attack_successes"]) / a0["n_attacked"])
+        lo, hi = d["ASR"][1], d["ASR"][2]
+        assert lo <= d["ASR"][0] + 1e-12 and d["ASR"][0] <= hi + 1e-12
+
+
+def test_reachability_partitions_the_calls():
+    r = _load("ablation_results.json")
+    R = r["decision_reachability_A0_vs_A6"]
+    assert R["calls_total"] == R["calls_scored_by_estimator"]
+    assert R["forced_by_predicates_before_expected_loss"] + R["reached_expected_loss"] == R["calls_total"]
+    withheld = sum(v for k, v in R.items() if k.startswith("ml_withheld_"))
+    assert R["unchanged_release"] + withheld == R["reached_expected_loss"]
+    E = r["episode_level_ml_effect"]
+    a0, a6 = r["arms"]["A0"], r["arms"]["A6"]
+    assert a6["attack_successes"] - a0["attack_successes"] == E["attacks_prevented_due_to_ml"] - E["attacks_admitted_due_to_ml"]
+
+
+def test_modify_removed_changes_no_release_under_step_level_no_reviewer():
+    r = _load("ablation_results.json")
+    a0, a5 = r["arms"]["A0"], r["arms"]["A5"]
+    assert a5["n_modify"] == 0
+    assert a5["n_allow"] == a0["n_allow"]
+    assert a5["n_escalate"] + a5["n_block"] == a0["n_modify"] + a0["n_escalate"] + a0["n_block"]
+    assert r["paired_vs_A0"]["A5 minus A0"]["tasks_gained_lost"] == [0, 0]
+
+
+def test_csv_matches_json():
+    r = _load("ablation_results.json")
+    with (D / "03_ABLATION_RESULTS.csv").open() as fh:
+        rows = {row["arm"]: row for row in csv.DictReader(fh)}
+    for arm, m in r["arms"].items():
+        assert int(rows[arm]["attack_successes"]) == m["attack_successes"]
+        assert int(rows[arm]["benign_completed"]) == m["benign_completed"]
+
+
+def test_external_recorded_completeness_and_tool_filter_status():
+    x = _load("external_results.json")
+    for k, v in x["recorded"].items():
+        assert (v["n_attacked"], v["n_benign"], v["errors"]) == (144, 16, 0), k
+    assert "D3" in x["replay_not_reported"] and x["replay_not_reported"]["D3"]["rem_evaluated_calls"] == 0
+    assert not any(k.startswith("D3|") for k in x["replay"])
+    for k in ("D0", "D1", "D2", "D4"):
+        b, rem = x["replay"][f"{k}|B0"], x["replay"][f"{k}|REM"]
+        assert b["n_attacked"] == rem["n_attacked"]
+        p = [v for kk, v in x["paired"].items() if kk.startswith(f"{k}: REM replay minus")][0]
+        assert p["ASR"][0] == pytest.approx((rem["attack_successes"] - b["attack_successes"]) / b["n_attacked"])
+
+
+def test_generated_tables_carry_the_json_values():
+    t = (D / "results" / "tables_ablation.md").read_text()
+    assert "| A0 | REM v1.0 (frozen) | 11 | 0.37 [0.10, 0.68] | 105 |" in t
+    assert "generated by experiments/final_thesis/make_tables.py" in t

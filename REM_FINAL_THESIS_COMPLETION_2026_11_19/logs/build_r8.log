@@ -1,0 +1,4 @@
+/home/user/Ram/REM_FINAL_SUBMISSION/thesis_r8/tools/build_final.py:117: UserWarning: style lookup by style_id is deprecated. Use style name as key instead.
+  font(st[n], 11, bold=(n == 'Table Caption'), italic=(n != 'Table Caption'))
+table of contents stored in the DOCX: 76 entries; 175 headings of levels 1-3; unmatched 0
+built: /home/user/Ram/REM_FINAL_SUBMISSION/thesis_r8/REM_THESIS_EDITORIAL_R8.docx 2980590 bytes; PDF 5026638 bytes; figures 13 tables 74 captions without page {'LOF': 0, 'LOT': 0}

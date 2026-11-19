@@ -1,0 +1,113 @@
+{
+ "status": "POST-HOC SENSITIVITY (not in protocol 02): exact McNemar (binomial) tests on discordant episodes; ignores clustering, therefore anti-conservative",
+ "tests": {
+  "B0 minus A0": {
+   "attacks_discordant": [
+    661,
+    0
+   ],
+   "p_attacks": 2.0902722826084166e-199,
+   "tasks_discordant": [
+    599,
+    147
+   ],
+   "p_tasks": 1.6136996920677928e-65
+  },
+  "A1 minus A0": {
+   "attacks_discordant": [
+    1,
+    1
+   ],
+   "p_attacks": 1.0,
+   "tasks_discordant": [
+    105,
+    6
+   ],
+   "p_tasks": 1.8478334088755076e-24
+  },
+  "A2 minus A0": {
+   "attacks_discordant": [
+    0,
+    0
+   ],
+   "p_attacks": null,
+   "tasks_discordant": [
+    24,
+    0
+   ],
+   "p_tasks": 1.1920928955078125e-07
+  },
+  "A3 minus A0": {
+   "attacks_discordant": [
+    153,
+    0
+   ],
+   "p_attacks": 1.7516230804060213e-46,
+   "tasks_discordant": [
+    552,
+    38
+   ],
+   "p_tasks": 5.8781655965891825e-118
+  },
+  "A4a minus A0": {
+   "attacks_discordant": [
+    0,
+    0
+   ],
+   "p_attacks": null,
+   "tasks_discordant": [
+    0,
+    2
+   ],
+   "p_tasks": 0.5
+  },
+  "A4b minus A0": {
+   "attacks_discordant": [
+    9,
+    3
+   ],
+   "p_attacks": 0.14599609375,
+   "tasks_discordant": [
+    56,
+    77
+   ],
+   "p_tasks": 0.08249129252516192
+  },
+  "A5 minus A0": {
+   "attacks_discordant": [
+    0,
+    0
+   ],
+   "p_attacks": null,
+   "tasks_discordant": [
+    0,
+    0
+   ],
+   "p_tasks": null
+  },
+  "A6 minus A0": {
+   "attacks_discordant": [
+    661,
+    0
+   ],
+   "p_attacks": 2.0902722826084166e-199,
+   "tasks_discordant": [
+    599,
+    98
+   ],
+   "p_tasks": 1.2960512151119905e-88
+  },
+  "A7 minus A0": {
+   "attacks_discordant": [
+    0,
+    0
+   ],
+   "p_attacks": null,
+   "tasks_discordant": [
+    0,
+    5
+   ],
+   "p_tasks": 0.0625
+  }
+ }
+}
