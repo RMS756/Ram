@@ -1,0 +1,46 @@
+# REM v1.0 vs MELON vs no defence — run configuration TEMPLATE (fail-closed).
+# The runner exits 2 while any value is REQUIRED_FROM_DESIGN. FIXED values come from the verified upstream code,
+# the frozen REM v1.0 design, or the protocol (06_FROZEN_EVALUATION_PROTOCOL.md); they are checked, not chosen.
+run_id: REQUIRED_FROM_DESIGN
+
+benchmark:
+  agentdojo_version: "0.1.29"          # FIXED: last release with string message content (upstream MELON requires it)
+  suite: banking                       # FIXED
+  suite_version: v1                    # FIXED (identical banking task code to 0.1.35; verified 5 Nov 2026)
+  attack: important_instructions       # FIXED
+  case_set: REQUIRED_FROM_DESIGN       # "pilot" (9 attacked + 4 benign, predeclared) then "full" (144 attacked + 16 benign)
+
+upstream:
+  melon_pi_detector_path: /home/user/ucsb-mlsec/melon/pi_detector.py   # sha256 5a7f6b28…a9017 (checked)
+
+models:
+  provider: REQUIRED_FROM_DESIGN       # "openai" (paid; needs authorisation) or "openai_compatible" (local server)
+  base_url: REQUIRED_FROM_DESIGN       # only for openai_compatible, e.g. http://127.0.0.1:8000/v1
+  backbone: REQUIRED_FROM_DESIGN       # exact model id/version; the same model also runs MELON's masked re-execution
+  attack_target_name: null             # optional: model name used inside the attack text (default = backbone)
+  temperature: REQUIRED_FROM_DESIGN    # NOTE: AgentDojo 0.1.29 sends no temperature when 0.0 (provider default)
+  repeats: REQUIRED_FROM_DESIGN
+  request_timeout_s: REQUIRED_FROM_DESIGN
+  max_retries: REQUIRED_FROM_DESIGN
+  max_iters: 15                        # FIXED (AgentDojo default, upstream README)
+  melon_embeddings: REQUIRED_FROM_DESIGN   # "original_openai" (text-embedding-3-large, as published) or
+                                           # "local_openai_compatible" (reported as MELON-ADAPTED-EMBEDDINGS, not MELON)
+  embedding_base_url: null             # only for local_openai_compatible
+  embedding_model: null                # only for local_openai_compatible
+
+rem:
+  bundle_path: experiments/melon_rem/frozen/frozen_rem_bundle.pkl   # sha256 983c5b0d…e2c5 (checked)
+  policy: A3_step_level                # FIXED: frozen REM v1.0 expected-loss decision, step-level mitigation
+  reviewer_model: no_reviewer          # FIXED: Escalate withholds the call
+  fitted_parameters_source: heldout_crossfit_assignment   # FIXED: attacked case -> fold of its injection task;
+                                                          # benign case -> bundle's predeclared fold assignment
+
+budget:                                # required whenever an OpenAI (paid) model or embedding is used
+  authorization_reference: REQUIRED_FROM_DESIGN
+  cap_usd: REQUIRED_FROM_DESIGN
+  prices_usd_per_1m_tokens: REQUIRED_FROM_DESIGN   # operator-supplied from the provider's price list on the run day
+  chars_per_token_lower_bound: 2.0
+  reserve_output_tokens: 2048
+
+order:
+  seed: REQUIRED_FROM_DESIGN

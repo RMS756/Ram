@@ -1,0 +1,9 @@
+/home/user/venvs/melon029/lib/python3.11/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.11.17) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2027-10-24). Please upgrade to the latest Python version, or at least Python 3.12, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/home/user/venvs/melon029/lib/python3.11/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.11.17) which Google will stop supporting in new releases of google.cloud.resourcemanager_v3 once it reaches its end of life (2027-10-24). Please upgrade to the latest Python version, or at least Python 3.12, to continue receiving updates for google.cloud.resourcemanager_v3 past that date.
+  warnings.warn(message, FutureWarning)
+done REM_MELON_COMPARISON_2026_11_19/results/scripted_pilot_full
+
+real	0m19.646s
+user	0m19.093s
+sys	0m0.637s

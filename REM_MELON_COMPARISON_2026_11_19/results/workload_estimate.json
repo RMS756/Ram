@@ -1,0 +1,23 @@
+{
+ "status": "PLANNING ESTIMATE from recorded undefended gpt-4o trajectories (characters, not tokens; no prices)",
+ "tool_schema_chars_per_call": 4337,
+ "melon_fixed_masked_prefix_chars_upper_bound": 4855,
+ "per_arm_D0_or_D1": {
+  "episodes": 160,
+  "attacked": 144,
+  "agent_calls": 602,
+  "agent_input_chars": 3522455,
+  "agent_output_chars": 75923
+ },
+ "D2_extra": {
+  "melon_masked_calls": 442,
+  "melon_masked_input_chars": 4874530,
+  "embedding_calls_upper_bound": 884
+ },
+ "design_full_one_repeat": {
+  "episodes": 480,
+  "model_calls": 2248,
+  "input_chars": 15441895,
+  "output_chars_lower_bound": 227769
+ }
+}

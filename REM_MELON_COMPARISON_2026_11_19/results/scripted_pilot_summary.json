@@ -1,0 +1,53 @@
+{
+ "D0_NO_DEFENSE": {
+  "episodes": 160,
+  "attacked": 144,
+  "benign": 16,
+  "errors": 0,
+  "agent_calls": 682,
+  "masked_calls": 0,
+  "embedding_calls": 0,
+  "rem_decisions": 0,
+  "rem_refusals_att": 0,
+  "rem_refusals_ben": 0,
+  "melon_flags_att": 0,
+  "melon_flags_ben": 0,
+  "scripted_goal_reached": 143,
+  "rem_latency_ms_median": null,
+  "rem_latency_ms_p95": null
+ },
+ "D1_REM": {
+  "episodes": 160,
+  "attacked": 144,
+  "benign": 16,
+  "errors": 0,
+  "agent_calls": 682,
+  "masked_calls": 0,
+  "embedding_calls": 0,
+  "rem_decisions": 522,
+  "rem_refusals_att": 251,
+  "rem_refusals_ben": 12,
+  "melon_flags_att": 0,
+  "melon_flags_ben": 0,
+  "scripted_goal_reached": 6,
+  "rem_latency_ms_median": 0.27241500001196073,
+  "rem_latency_ms_p95": 0.5237891000035687
+ },
+ "D2_MELON": {
+  "episodes": 160,
+  "attacked": 144,
+  "benign": 16,
+  "errors": 0,
+  "agent_calls": 364,
+  "masked_calls": 204,
+  "embedding_calls": 332,
+  "rem_decisions": 0,
+  "rem_refusals_att": 0,
+  "rem_refusals_ben": 0,
+  "melon_flags_att": 144,
+  "melon_flags_ben": 0,
+  "scripted_goal_reached": 0,
+  "rem_latency_ms_median": null,
+  "rem_latency_ms_p95": null
+ }
+}

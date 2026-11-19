@@ -1,0 +1,14 @@
+{
+ "status": "SCRIPTED INTEGRATION PILOT",
+ "cases": 160,
+ "arms": [
+  "D0_NO_DEFENSE",
+  "D1_REM",
+  "D2_MELON"
+ ],
+ "agentdojo": "0.1.29",
+ "melon_file": "/home/user/ucsb-mlsec/melon/pi_detector.py",
+ "melon_sha256": "5a7f6b28228545e0d4ad9e98c9080ad819bb1cf471a67a31c8c4466b199a9017",
+ "rem_bundle_sha256": "983c5b0d54de01cdb37467526f3aea2c4065f888f59c140ea6714ec1b0d3e2c5",
+ "seconds": 14.102989912033081
+}
