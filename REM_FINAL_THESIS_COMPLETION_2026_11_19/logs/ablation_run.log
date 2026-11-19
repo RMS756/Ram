@@ -1,0 +1,16 @@
+33340 replays in 54.1s
+B0 672 175 1640 178 / 178 0.068
+A0 11 105 1188 33 / 178 0.149
+A1 11 140 1287 83 / 178 0.138
+A2 11 110 1212 48 / 178 0.141
+A3 164 170 1702 130 / 178 0.128
+A4a 11 105 1186 33 / 178 0.137
+A4b 17 105 1167 4 / 178 0.143
+A5 11 105 1188 33 / 178 0.142
+A6 672 180 1689 172 / 178 0.119
+A7 11 105 1183 33 / 178 0.142
+reach {'calls_total': 6684, 'calls_scored_by_estimator': 6684, 'reached_expected_loss': 6626, 'unchanged_release': 4497, 'reached_expected_loss_restricted': 2493, 'ml_withheld_legit_benign_episode': 139, 'ml_withheld_attack_labelled': 882, 'ml_withheld_unlabelled_attacked_episode': 1108, 'forced_by_predicates_before_expected_loss': 58} {'tasks_lost_due_to_ml': 599, 'tasks_gained_due_to_ml': 98, 'attacks_prevented_due_to_ml': 661, 'attacks_admitted_due_to_ml': 0}
+
+real	1m34.990s
+user	4m13.457s
+sys	0m0.566s

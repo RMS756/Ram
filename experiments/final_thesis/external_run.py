@@ -85,17 +85,23 @@ def main():
     sets = {"D0": (prim, [e for e in prim.episodes if prim.episodes[e].pipeline == GPT])}
     for k in ("D1", "D2", "D3", "D4"):
         sets[k] = (dfn, [e for e in dfn.episodes if dfn.episodes[e].pipeline == DEF[k]])
-    rep = {}
+    rep, not_replayable = {}, {}
     for k, (data, eids) in sets.items():
         res = RM.run_replays(C, sorted(eids), st, data, refs)
         by = collections.defaultdict(dict)
         for eid, c, u, s, err, aud in res:
             by[eid][c] = (u, s, err, aud)
+        n_calls = sum(len(by[e]["B0"][3]) for e in by)
+        if n_calls == 0:      # amendment 05a E1: the frozen harness evaluated no call (tool_filter traces)
+            not_replayable[k] = {"status": "NOT REPLAYABLE WITH THE FROZEN HARNESS (amendment 05a E1)", "episodes": len(by),
+                                 "rem_evaluated_calls": 0}
+            continue
         rep[k] = (data, by)
     with open(os.path.join(RM.STATE, "final_external_replays.pkl"), "wb") as fh:
         pickle.dump({k: dict(v[1]) for k, v in rep.items()}, fh)
     out = {"status": "two evidence kinds: recorded closed loop (AgentDojo authors' runs) and offline replay of REM v1.0 (NO-ADAPT); "
-                     "not pooled; no model call in this study", "recorded": {}, "replay": {}, "paired": {}}
+                     "not pooled; no model call in this study", "amendment": "05a (E1, E2)", "recorded": {}, "replay": {},
+           "replay_not_reported": not_replayable, "paired": {}}
     rows_csv = []
     recs = {k: recorded(p) for k, p in DEF.items()}
     for k in DEF:
@@ -110,6 +116,7 @@ def main():
         valid = [e for e in by if by[e]["B0"][2] is None and (bool(by[e]["B0"][0]), bool(by[e]["B0"][1])) == (bool(eps[e].utility), bool(eps[e].security))]
         att = [e for e in valid if eps[e].attacked]
         ben = [e for e in valid if not eps[e].attacked]
+        lat_ok = any(by[e][a][3] for e in valid for a in ("B0", "REM"))      # amendment 05a E2
         for arm in ("B0", "REM"):
             label = f"{k} {NAMES[k]} + REM v1.0 (replay)" if arm == "REM" else f"{k} {NAMES[k]} replayed without REM"
             m = {"loaded": len(by), "eligible": len(valid), "n_attacked": len(att), "n_benign": len(ben),
@@ -118,8 +125,8 @@ def main():
                  "ASR": grouped_bootstrap(att, lambda e: eps[e].injection_task_id, lambda s: float(np.mean([by[e][arm][1] for e in s])), **KW),
                  "benign_utility": (grouped_bootstrap(ben, lambda e: eps[e].user_task_id, lambda s: float(np.mean([by[e][arm][0] for e in s])), **KW)
                                     if ben else [None, None, None]),
-                 "latency_ms_median": float(np.median([x[8] for e in valid for x in by[e][arm][3]])) if valid else None,
-                 "latency_ms_p95": float(np.percentile([x[8] for e in valid for x in by[e][arm][3]], 95)) if valid else None}
+                 "latency_ms_median": float(np.median([x[8] for e in valid for x in by[e][arm][3]])) if lat_ok else None,
+                 "latency_ms_p95": float(np.percentile([x[8] for e in valid for x in by[e][arm][3]], 95)) if lat_ok else None}
             out["replay"][f"{k}|{arm}"] = {"name": label, **m}
             rows_csv.append({"evidence": "offline_replay_NO_ADAPT", "arm": label, "n_attacked": len(att), "n_benign": len(ben),
                              "attack_successes": m["attack_successes"], "ASR": m["ASR"][0], "ASR_lo": m["ASR"][1], "ASR_hi": m["ASR"][2],

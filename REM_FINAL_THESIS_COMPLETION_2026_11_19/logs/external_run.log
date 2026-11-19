@@ -1,0 +1,35 @@
+318 replays in 1.0s
+318 replays in 0.9s
+318 replays in 0.9s
+318 replays in 0.6s
+318 replays in 1.0s
+/usr/local/lib/python3.11/dist-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/usr/local/lib/python3.11/dist-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Traceback (most recent call last):
+  File "/home/user/Ram/experiments/final_thesis/external_run.py", line 155, in <module>
+    main()
+  File "/home/user/Ram/experiments/final_thesis/external_run.py", line 122, in main
+    "latency_ms_p95": float(np.percentile([x[8] for e in valid for x in by[e][arm][3]], 95)) if valid else None}
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/_function_base_impl.py", line 4246, in percentile
+    return _quantile_unchecked(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/_function_base_impl.py", line 4510, in _quantile_unchecked
+    return _ureduce(a,
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/_function_base_impl.py", line 3880, in _ureduce
+    r = func(a, **kwargs)
+        ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/_function_base_impl.py", line 4669, in _quantile_ureduce_func
+    result = _quantile(arr,
+             ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/numpy/lib/_function_base_impl.py", line 4793, in _quantile
+    slices_having_nans = np.isnan(arr[-1, ...])
+                                  ~~~^^^^^^^^^
+IndexError: index -1 is out of bounds for axis 0 with size 0
+
+real	0m9.498s
+user	0m15.793s
+sys	0m0.554s
