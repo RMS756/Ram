@@ -1,0 +1,10 @@
+29817 replays in 41.6s
+P1_primary valid 3313 of 3313 {'B0': 0, 'A0': 882, 'A1a': 882, 'A1b': 882, 'A2': 882, 'AIC': 833, 'A3': 0, 'A3P': 882, 'A4': 0}
+6435 replays in 9.3s
+P2_cross_template valid 681 of 715 {'B0': 0, 'A0': 200, 'A1a': 200, 'A1b': 200, 'A2': 200, 'AIC': 191, 'A3': 0, 'A3P': 200, 'A4': 0}
+19332 replays in 33.3s
+P3_second_population valid 2113 of 2148 {'B0': 0, 'A0': 556, 'A1a': 556, 'A1b': 556, 'A2': 558, 'AIC': 505, 'A3': 0, 'A3P': 556, 'A4': 0}
+
+real	7m11.645s
+user	11m13.311s
+sys	0m1.703s
