@@ -1,0 +1,47 @@
+{
+ "D3:S1_detector_finds_nothing_judge_no": {
+  "episodes": 160,
+  "errors": 0,
+  "tool_calls_executed": 330,
+  "drift_refusals": 77,
+  "model_calls_by_module_total": {
+   "privilege": 1760,
+   "constraints": 160,
+   "detector": 330,
+   "agent": 567,
+   "checklist_json": 490,
+   "judge": 77
+  },
+  "model_calls_per_episode_mean": 21.15
+ },
+ "D3:S2_detector_echoes_goal_judge_yes": {
+  "episodes": 160,
+  "errors": 0,
+  "tool_calls_executed": 330,
+  "drift_refusals": 0,
+  "model_calls_by_module_total": {
+   "privilege": 1760,
+   "constraints": 160,
+   "detector": 330,
+   "agent": 490,
+   "checklist_json": 490,
+   "judge": 0
+  },
+  "model_calls_per_episode_mean": 20.19
+ },
+ "D4:modules_off": {
+  "episodes": 160,
+  "errors": 0,
+  "tool_calls_executed": 396,
+  "drift_refusals": 0,
+  "model_calls_by_module_total": {
+   "privilege": 0,
+   "constraints": 0,
+   "detector": 0,
+   "agent": 556,
+   "checklist_json": 0,
+   "judge": 0
+  },
+  "model_calls_per_episode_mean": 3.48
+ }
+}

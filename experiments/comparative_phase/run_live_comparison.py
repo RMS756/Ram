@@ -96,7 +96,7 @@ def run_episode(arm, suite, pg_suite, st, pol, scorer, ref, llm_factory, u, i, s
         g = RemGuard(GuardConfig(st.spec, st.detector, ref, st.tier_map, st.restricted, "step_level", "no_reviewer"), scorer, decide, st.labeler, ep)
         o = run_defended_episode(suite=suite, llm=llm, guard=g, user_task_id=u, injection_task_id=i, injections=inj,
                                  system_prompt=sysmsg, pipeline_name=getattr(llm, "name", "agent"))
-        executed = [m["tool_call"]["function"] for m in o.messages if m.get("role") == "tool" and not m.get("error")]
+        executed = [m["function"] for m in o.messages if m.get("role") == "tool" and not m.get("error")]
         return {"utility": o.utility, "security": o.security if i else None, "error": o.error, "executed": executed,
                 "refused": sum(1 for a in o.audit if not a["released"]), "wall_s": o.wall_time_s}
     s = pg_suite if arm == "D2" else suite
