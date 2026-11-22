@@ -1,0 +1,15 @@
+# Comparative live evaluation (D0-D4), AgentDojo banking v1. STATUS: NOT EXECUTED.
+# Every REQUIRED_FROM_SUPERVISOR value must be replaced by a recorded decision; both runners refuse otherwise.
+protocol_freeze_commit: REQUIRED_FROM_SUPERVISOR     # commit that froze 01_EXPERIMENTAL_PROTOCOL.md (after approval)
+grouping_confirmed: REQUIRED_FROM_SUPERVISOR         # confirmation of the clustering scheme (protocol section S)
+model:
+  provider: REQUIRED_FROM_SUPERVISOR                 # openai | anthropic | google (D3/D4: openai | google | openrouter)
+  id: REQUIRED_FROM_SUPERVISOR                       # exact model version string, identical for every arm
+  decoding: REQUIRED_FROM_SUPERVISOR                 # e.g. {temperature: ...}; DRIFT's OpenAI client sends none (documented)
+repeats: REQUIRED_FROM_SUPERVISOR                    # Chapter 3 Sec. 3.11.9: "at least three, pending approval"
+rem:
+  fitted_parameters_source: REQUIRED_FROM_SUPERVISOR # fold:<injection_task_k> of the frozen cross-fit state
+authorisation:
+  record: REQUIRED_FROM_SUPERVISOR                   # reference to the written spending authorisation
+  budget_cap_usd: REQUIRED_FROM_SUPERVISOR
+  provider_side_hard_cap_usd: REQUIRED_FROM_SUPERVISOR   # DRIFT cannot be capped from outside its own client
