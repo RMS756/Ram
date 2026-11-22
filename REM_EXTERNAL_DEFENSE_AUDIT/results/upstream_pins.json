@@ -1,0 +1,62 @@
+{
+ "DRIFT": {
+  "url": "https://github.com/SaFo-Lab/DRIFT",
+  "commit": "6fd3df4763fad77398c3c273c2a4fe14dd50f7ea",
+  "commit_date": "2026-07-15T23:24:21-07:00",
+  "license": "MIT (LICENSE added in 6fd3df4)",
+  "local_path": "/home/user/upstream/SaFo-Lab_DRIFT",
+  "sha256": {
+   "DRIFTLLM.py": "03e1cc6d8868bbdad76ca49efc2a9359c6d6bc321511df04560dfcf286e79b35",
+   "DRIFTTaskSuite.py": "46fab39f94e82674fa682af510ee356d7c0ed84f694f0128913f332a6142c6b2",
+   "DRIFTToolsExecutionLoop.py": "25318a9f917cff8b6f5031877aa17419bc0a91ad822227ef11c9f62aaac3d82d",
+   "client.py": "e2b49f878681dbadf65c26b1a8c43ad32857392d2defa5542e96caae47e4479f",
+   "prompts.py": "c988dded8daf8ec03e5286b0e9299729b8568aac8e208fb5ac7d210ad59fb122",
+   "pipeline_main.py": "33712d953da3790d23c6dc8ae908bd670567b68754c4c63f574269aab1249e16",
+   "utils.py": "56bb79a99f2eee1b1eb03b1d6b1503d6c4297c5ab5c85e052cdb953bf0c83559",
+   "import_lib.py": "ead7843170fd4c32d307b724035f72dac4c47b0146be815e54edd2e13a7551dd",
+   "requirements.txt": "b285b2ff0ba07f09b04c57676901fd691c0eaf915f65d7ae386ab308e0f2682c"
+  }
+ },
+ "Progent_official": {
+  "url": "https://github.com/sunblaze-ucb/progent",
+  "commit": "3e797539fbcd55b92459d627e29fdaef16b9089a",
+  "commit_date": "2026-11-18T03:05:08-08:00",
+  "previous_project_pin": "0d7ea074d5e4b106997ebd56dfa1104c39945c03",
+  "manual_banking_policy_commit": "9befb41cbf992b49dbf035cbd3d53eb953d3b351",
+  "license": "MIT (added 5be7b63)",
+  "local_export": "/home/user/upstream/progent_3e79753",
+  "sha256": {
+   "tool.py": "59b2cd642a9c29f2459e919720fae935a5f6f99a2a5fa0c17f1ea95e9efbcd52",
+   "policy_analysis.py": "a7e06282634ee5dc080b7802ad0b381e410534bf45a6fa6a75463b04ea15681e",
+   "policy_type_check.py": "96204e413ed982a723ca171f1bd545fce16a33302c659536f1fc2cce929d4b02",
+   "utils.py": "6b185684f5255acc33fcbaa615ec408368981f2a1f2902b4b28803fa188338e1",
+   "__init__.py": "edd5b4df72a48e671a89aad5365a90aaf21b828802434bc79a2d1f5fe4f70cf9"
+  }
+ },
+ "Progent_third_party": {
+  "url": "https://github.com/Agentic-AI-Risk-Mitigation/progent",
+  "commit": "7e2c32e4cf6ef09c92d5364972de60aed21042d1",
+  "commit_date": "2026-03-07T13:46:29-05:00",
+  "first_commit": "7e2c32e 2026-03-07T13:46:29-05:00 furiosa",
+  "license_file": "none found",
+  "note": "independent re-implementation; not the paper authors' code"
+ },
+ "AgentDyn": {
+  "url": "https://github.com/SaFo-Lab/AgentDyn",
+  "commit": "5353cf7615b135cace8d07c8f12dac53a16b6db3",
+  "commit_date": "2026-05-19T14:56:30-07:00",
+  "license": "MIT (AgentDojo's licence text)",
+  "package": "agentdojo 0.1.35 (fork)"
+ },
+ "MELON": {
+  "url": "https://github.com/ucsb-mlsec/MELON",
+  "commit": "06014c7c72d3e9a1f9a27b8742e8bf711689caad",
+  "pi_detector.py_sha256": "5a7f6b28228545e0d4ad9e98c9080ad819bb1cf471a67a31c8c4466b199a9017",
+  "author_repo": "https://github.com/kaijiezhu11/MELON@4d3cc9c0175cc26332aac696ac5556c3f85a5e8e",
+  "license": "none found"
+ },
+ "AgentDojo_recorded_runs": {
+  "url": "https://github.com/ethz-spylab/agentdojo",
+  "commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60"
+ }
+}

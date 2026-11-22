@@ -1,0 +1,10 @@
+None True gpt-4o-2024-05-13
+repeat_user_prompt True gpt-4o-2024-05-13-repeat_user_prompt
+spotlighting_with_delimiting True gpt-4o-2024-05-13-spotlighting_with_delimiting
+tool_filter True gpt-4o-2024-05-13-tool_filter
+transformers_pi_detector False ImportError: TransformersBasedPIDetector requires the 'transformers' and 'torch' libraries to be installed. Please install them using 'pip install agentdojo[transformers]'.
+piguard_detector False ImportError: TransformersBasedPIDetector requires the 'transformers' and 'torch' libraries to be installed. Please install them using 'pip install agentdojo[transformers]'.
+prompt_guard_2_detector False ImportError: TransformersBasedPIDetector requires the 'transformers' and 'torch' libraries to be installed. Please install them using 'pip install agentdojo[transformers]'.
+drift True gpt-4o-2024-05-13-drift
+progent True gpt-4o-2024-05-13-progent
+camel True gpt-4o-2024-05-13-camel

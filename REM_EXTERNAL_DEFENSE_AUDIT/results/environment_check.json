@@ -1,0 +1,32 @@
+{
+ "checked_utc": "2026-11-22T09:18:27Z",
+ "http_status": {
+  "https://github.com": "400",
+  "https://pypi.org/simple/agentdojo/": "200",
+  "https://arxiv.org/abs/2506.12104": "000",
+  "https://huggingface.co": "000",
+  "https://api.openai.com/v1/models": "000",
+  "https://openrouter.ai/api/v1/models": "000",
+  "https://generativelanguage.googleapis.com": "404",
+  "https://aiplatform.googleapis.com": "404",
+  "https://api.anthropic.com": "404",
+  "https://api.together.xyz": "000"
+ },
+ "provider_key_variables_set": {
+  "OPENAI_API_KEY": false,
+  "GOOGLE_API_KEY": false,
+  "GEMINI_API_KEY": false,
+  "OPENROUTER_API_KEY": false,
+  "TOGETHER_API_KEY": false,
+  "HF_TOKEN": false,
+  "GOOGLE_APPLICATION_CREDENTIALS": false
+ },
+ "local_endpoints_listening": {
+  "8000": false,
+  "8080": false,
+  "11434": false
+ },
+ "gpu": false,
+ "cpu_cores": 4,
+ "note": "HTTP 000 = no response through the session proxy (blocked or unreachable). 404 from a provider root = reachable host, not an authorised account. No spending authorisation exists for any provider."
+}

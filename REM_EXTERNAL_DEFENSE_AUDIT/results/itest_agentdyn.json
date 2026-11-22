@@ -1,0 +1,117 @@
+{
+ "agentdojo_dist_version": "0.1.35",
+ "package_path": "/home/user/upstream/SaFo-Lab_AgentDyn/src/agentdojo",
+ "defenses": [
+  "tool_filter",
+  "transformers_pi_detector",
+  "piguard_detector",
+  "prompt_guard_2_detector",
+  "spotlighting_with_delimiting",
+  "repeat_user_prompt",
+  "camel",
+  "drift",
+  "progent"
+ ],
+ "suites_v1": [
+  "banking",
+  "dailylife",
+  "github",
+  "shopping",
+  "slack",
+  "travel",
+  "workspace"
+ ],
+ "defense_dirs": [
+  "camel",
+  "drift",
+  "progent"
+ ],
+ "banking_v1": [
+  16,
+  9,
+  11
+ ],
+ "construct": {
+  "None": {
+   "ok": true,
+   "pipeline_name": "gpt-4o-2024-05-13",
+   "elements": [
+    "SystemMessage",
+    "InitQuery",
+    "OpenAILLM",
+    "ToolsExecutionLoop"
+   ]
+  },
+  "repeat_user_prompt": {
+   "ok": true,
+   "pipeline_name": "gpt-4o-2024-05-13-repeat_user_prompt",
+   "elements": [
+    "SystemMessage",
+    "InitQuery",
+    "OpenAILLM",
+    "ToolsExecutionLoop"
+   ]
+  },
+  "spotlighting_with_delimiting": {
+   "ok": true,
+   "pipeline_name": "gpt-4o-2024-05-13-spotlighting_with_delimiting",
+   "elements": [
+    "SystemMessage",
+    "InitQuery",
+    "OpenAILLM",
+    "ToolsExecutionLoop"
+   ]
+  },
+  "tool_filter": {
+   "ok": true,
+   "pipeline_name": "gpt-4o-2024-05-13-tool_filter",
+   "elements": [
+    "SystemMessage",
+    "InitQuery",
+    "OpenAILLMToolFilter",
+    "OpenAILLM",
+    "ToolsExecutionLoop"
+   ]
+  },
+  "transformers_pi_detector": {
+   "ok": false,
+   "error": "ImportError: TransformersBasedPIDetector requires the 'transformers' and 'torch' libraries to be installed. Please install them using 'pip install agentdojo[transformers]'."
+  },
+  "piguard_detector": {
+   "ok": false,
+   "error": "ImportError: TransformersBasedPIDetector requires the 'transformers' and 'torch' libraries to be installed. Please install them using 'pip install agentdojo[transformers]'."
+  },
+  "prompt_guard_2_detector": {
+   "ok": false,
+   "error": "ImportError: TransformersBasedPIDetector requires the 'transformers' and 'torch' libraries to be installed. Please install them using 'pip install agentdojo[transformers]'."
+  },
+  "drift": {
+   "ok": true,
+   "pipeline_name": "gpt-4o-2024-05-13-drift",
+   "elements": [
+    "InitQuery",
+    "DriftMessageAdapter",
+    "DRIFTToolsExecutionLoop"
+   ]
+  },
+  "progent": {
+   "ok": true,
+   "pipeline_name": "gpt-4o-2024-05-13-progent",
+   "elements": [
+    "SystemMessage",
+    "InitQuery",
+    "ProgentPolicyBootstrap",
+    "OpenAILLM",
+    "ToolsExecutionLoop"
+   ]
+  },
+  "camel": {
+   "ok": true,
+   "pipeline_name": "gpt-4o-2024-05-13-camel",
+   "elements": [
+    "InitQuery",
+    "PrivilegedLLM"
+   ]
+  }
+ }
+}
