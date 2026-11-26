@@ -1911,6 +1911,98 @@
    }
   }
  },
+ "S19_call_level_valid_P1": {
+  "A0": {
+   "attack_call_released_eps": 24,
+   "benign_fp_eps": 141,
+   "legit_released": 33,
+   "legit_n": 178,
+   "utility_under_attack": 1083,
+   "attack_calls_withheld": 882,
+   "attack_calls": 907
+  },
+  "A1": {
+   "attack_call_released_eps": 24,
+   "benign_fp_eps": 92,
+   "legit_released": 83,
+   "legit_n": 178,
+   "utility_under_attack": 1147,
+   "attack_calls_withheld": 882,
+   "attack_calls": 907
+  },
+  "A2": {
+   "attack_call_released_eps": 24,
+   "benign_fp_eps": 127,
+   "legit_released": 48,
+   "legit_n": 178,
+   "utility_under_attack": 1102,
+   "attack_calls_withheld": 882,
+   "attack_calls": 907
+  },
+  "A3": {
+   "attack_call_released_eps": 202,
+   "benign_fp_eps": 48,
+   "legit_released": 130,
+   "legit_n": 178,
+   "utility_under_attack": 1532,
+   "attack_calls_withheld": 672,
+   "attack_calls": 907
+  },
+  "A4a": {
+   "attack_call_released_eps": 24,
+   "benign_fp_eps": 141,
+   "legit_released": 33,
+   "legit_n": 178,
+   "utility_under_attack": 1081,
+   "attack_calls_withheld": 882,
+   "attack_calls": 907
+  },
+  "A4b": {
+   "attack_call_released_eps": 49,
+   "benign_fp_eps": 153,
+   "legit_released": 4,
+   "legit_n": 178,
+   "utility_under_attack": 1062,
+   "attack_calls_withheld": 833,
+   "attack_calls": 907
+  },
+  "A5": {
+   "attack_call_released_eps": 24,
+   "benign_fp_eps": 141,
+   "legit_released": 33,
+   "legit_n": 178,
+   "utility_under_attack": 1083,
+   "attack_calls_withheld": 882,
+   "attack_calls": 907
+  },
+  "A6": {
+   "attack_call_released_eps": 828,
+   "benign_fp_eps": 6,
+   "legit_released": 172,
+   "legit_n": 178,
+   "utility_under_attack": 1509,
+   "attack_calls_withheld": 0,
+   "attack_calls": 907
+  },
+  "A7": {
+   "attack_call_released_eps": 24,
+   "benign_fp_eps": 141,
+   "legit_released": 33,
+   "legit_n": 178,
+   "utility_under_attack": 1078,
+   "attack_calls_withheld": 882,
+   "attack_calls": 907
+  },
+  "B0": {
+   "attack_call_released_eps": 828,
+   "benign_fp_eps": 0,
+   "legit_released": 178,
+   "legit_n": 178,
+   "utility_under_attack": 1465,
+   "attack_calls_withheld": 0,
+   "attack_calls": 907
+  }
+ },
  "cross_study_episode_identity": {
   "A0(19Nov)==A0(21Nov)": [
    3313,
@@ -2629,62 +2721,6 @@
   "D2": {
    "episodes": 160,
    "errors": 0
-  }
- },
- "S19_call_level_valid_P1": {
-  "A0": {
-   "attack_call_released_eps": 24,
-   "benign_fp_eps": 141,
-   "legit_released": 33,
-   "legit_n": 178,
-   "utility_under_attack": 1083,
-   "attack_calls_withheld": 882,
-   "attack_calls": 907
-  },
-  "A2": {
-   "attack_call_released_eps": 24,
-   "benign_fp_eps": 127,
-   "legit_released": 48,
-   "legit_n": 178,
-   "utility_under_attack": 1102,
-   "attack_calls_withheld": 882,
-   "attack_calls": 907
-  },
-  "A3": {
-   "attack_call_released_eps": 202,
-   "benign_fp_eps": 48,
-   "legit_released": 130,
-   "legit_n": 178,
-   "utility_under_attack": 1532,
-   "attack_calls_withheld": 672,
-   "attack_calls": 907
-  },
-  "A5": {
-   "attack_call_released_eps": 24,
-   "benign_fp_eps": 141,
-   "legit_released": 33,
-   "legit_n": 178,
-   "utility_under_attack": 1083,
-   "attack_calls_withheld": 882,
-   "attack_calls": 907
-  },
-  "A6": {
-   "attack_call_released_eps": 828,
-   "benign_fp_eps": 6,
-   "legit_released": 172,
-   "legit_n": 178,
-   "utility_under_attack": 1509,
-   "attack_calls_withheld": 0,
-   "attack_calls": 907
-  },
-  "B0": {
-   "attack_call_released_eps": 828,
-   "benign_fp_eps": 0,
-   "legit_released": 178,
-   "legit_n": 178,
-   "utility_under_attack": 1465,
-   "attack_calls_withheld": 0,
-   "attack_calls": 907
   }
  }
 }

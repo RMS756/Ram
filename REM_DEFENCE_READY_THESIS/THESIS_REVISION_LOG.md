@@ -5,7 +5,7 @@
 | Item | Value |
 |---|---|
 | Source (not modified) | `REM_FINAL_SUBMISSION/thesis_r8/REM_THESIS_EDITORIAL_R8.docx` / `.pdf` (eighth edition, 19 November 2026, 230 pages). Its sources `thesis_r8/src/`, `text_front/`, `references/` are only read. |
-| Output | `REM_DEFENCE_READY_THESIS/REM_Master_Thesis_Defence_Ready.docx` and `.pdf` (270 pages: 24 preliminary pages and 246 numbered pages; A4) |
+| Output | `REM_DEFENCE_READY_THESIS/REM_Master_Thesis_Defence_Ready.docx` and `.pdf` (272 pages after the final compliance audit: 24 preliminary pages and 248 numbered pages; A4) |
 | Chapter files | `REM_DEFENCE_READY_THESIS/docx/*.docx` |
 | Assembly | `tools/make_r9.py` + `tools/spec_r9.py` (every edit is an exact, logged replacement); new text in `text/ch4_44.md` and `text/ch4_45.md` |
 | Build | `tools/build_r9.py`: the R8 builder with new paths, output name, title-page edition line, abbreviations, and one column-width fix. Same pinned environment: LibreOffice 24.2.7.2, pandoc 3.9, Liberation Serif (sha256 `705903ae…`) substituted for Times New Roman. |
@@ -79,7 +79,7 @@ python3 REM_DEFENCE_READY_THESIS/tools/check_thesis_numbers.py
 - **Table 5.2, O3:** official-checker comparison, 15-dimension comparison and DRIFT integration added. The "Not achieved" column states that DRIFT and MELON were not run with a model.
 - **Table 5.3:**
   - rows ordered 1–10; R8 printed 1–7, 9, 8;
-  - contribution 10 added (layer-wise ablation and framework comparison);
+  - contribution 10 added (component-level ablation of the five layers and framework comparison);
   - printed with three columns instead of six (cell text unchanged, columns joined).
 - **5.6:** item 10 rewritten; item 12 added.
 - **5.7:** item 4 adds DRIFT.
@@ -246,6 +246,17 @@ The printed supplement (`thesis_r7/supplement/`) uses fifth-edition numbers with
 | Printed numbers against raw-record recomputation | 191 cells, 0 mismatches |
 | Citations | 105 of 105 entries cited; no citation without an entry |
 | Table of contents, list of tables and list of figures | 179 page references checked. One reported mismatch is a false positive of the checker: "5.1 Introduction" also matches the text "4.5.1 Introduction". Chapter Five starts on the page that the TOC states (210). |
-| Layout | Chapters start on new pages; no page ends with a caption. One short page (page 184) holds a table and a figure. |
+| Layout | Chapters start on new pages; no page ends with a caption. One short page (page 185) holds a table and a figure. |
 | Visual inspection | Rendered pages of the title page, status page, abbreviations, both abstracts, every new table and figure, Tables 4.3, 4.7, 4.59 and 5.3. Three over-wide tables were restructured, with fewer columns and the same content, after the first inspection. |
 | Tests | `tests/test_defence_ready_thesis.py` (4 tests: printed numbers against recomputation, assembly clean, section titles and the no-live statement, no approval claimed) passed; full repository suite **827 passed, 27 skipped, 1 xfailed, 0 failed** (26 November 2026) |
+
+## Final compliance audit (26 November 2026)
+
+Seventeen corrections were made after the audit of commit `5f9682e`; they are listed with their evidence in `FINAL_ACADEMIC_COMPLIANCE_AUDIT.md`, Section 3. In brief:
+- "661 of the 672 prevented attacks" (R8 wording, six places, including both abstracts) now reads "all 661 attacks that REM prevents (of 672 reached without defense)".
+- The ablation is described as component-level wherever "complete" or "layer-wise" overstated it. The Decision Engine is no longer called ablated "as a whole".
+- Four factual refinements in Section 4.4: Table 4.12 rows 10 and 15, the Progent zero-task statement, and "at least the same protection".
+- One R8 sentence about MELON updated, and the 4.3.4 arm count corrected.
+- DRIFT, AgentDyn and Progent reference notes updated from Crossref, OpenAlex and the authors' repositories (DRIFT pages added).
+- `verify_numbers.py` now computes the 19-November call-level block itself.
+- `check_thesis_numbers.py` now also checks the paired tables: 466 cells in total, 0 mismatches.

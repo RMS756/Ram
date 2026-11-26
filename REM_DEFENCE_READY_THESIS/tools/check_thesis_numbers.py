@@ -104,6 +104,88 @@ for r in table('**Table 4.14.'):
         eq(f'4.14 {r[0]} {r[1]} benign', n(r[5]), a['benign_completed'])
         eq(f'4.14 {r[0]} {r[1]} FP eps', n(r[6]), a['benign_fp_eps'])
 
+# ---------------------------------------------------------------- paired tables: point, interval, discordant counts, p
+NUM = r'([+−-]?\d+\.\d+)'
+PCELL = re.compile(NUM + r'(?: \[' + NUM + r', ' + NUM + r'\])?(?:; (\d+) / (\d+))?(?:; p (?:= ([\d.]+)|< ([\d.]+)))?$')
+
+
+def f(x):
+    return float(x.replace('−', '-'))
+
+
+def paired_cell(where, cell, d, cmp_ci=True):
+    cell = cell.replace('**', '').strip()
+    m = PCELL.match(cell)
+    if not m:
+        bad.append((where, cell, 'unparsed'))
+        return
+    pt, lo, hi, a, b, peq, plt = m.groups()
+    def close(where2, printed, stored):     # printed to 1 or 2 decimals from a value stored to 2 decimals
+        checks.append(where2)
+        if abs(printed - stored) > 0.05 + 1e-9:
+            bad.append((where2, printed, stored))
+    close(where + ' point', f(pt), d['diff_pp'][0])
+    if lo is not None and cmp_ci:
+        close(where + ' ci lo', f(lo), d['diff_pp'][1])
+        close(where + ' ci hi', f(hi), d['diff_pp'][2])
+    if a is not None:
+        eq(where + ' discordant', (int(a), int(b)), (d['arm_only'], d['ref_only']))
+    if peq is not None:
+        pr = d['mcnemar_p']
+        nd = len(peq.split('.')[1]) if '.' in peq else 0
+        checks.append(where + ' p')
+        if pr is None or abs(round(pr, nd) - float(peq)) > 10 ** -nd + 1e-12:
+            bad.append((where + ' p', peq, pr))
+    if plt is not None:
+        checks.append(where + ' p<')
+        if d['mcnemar_p'] is None or d['mcnemar_p'] >= float(plt):
+            bad.append((where + ' p<', plt, d['mcnemar_p']))
+
+
+S21P = S21['P1_primary']['paired_vs_A0']
+S19P = V['S19_decision_engine_subablations']['paired_vs_A0']
+V2S21 = {'A2a': 'A1a', 'A2b': 'A1b', 'A3a': 'A2', 'A3b': 'AIC', 'A4a': 'A3', 'A4b': 'A3P', 'A5': 'A4'}
+V2S19 = {'A4c': 'A2', 'A4d': 'A3', 'A4e': 'A5'}
+COLS = ['attack', 'attack_call_released', 'utility_under_attack', 'benign_completion', 'benign_fp']
+for r in table('**Table 4.27.'):
+    v = r[0]
+    for k, key in enumerate(COLS, 1):
+        cell = r[k].replace('**', '').strip()
+        if v in V2S21:
+            paired_cell(f'4.27 {v} {key}', cell, S21P[V2S21[v]][key])
+        elif key in ('attack', 'benign_completion') and cell != '–':
+            paired_cell(f'4.27 {v} {key}', cell, S19P[V2S19[v]][key])
+        elif 'against' in cell:
+            x, y = re.findall(r'(\d+) against (\d+)', cell)[0]
+            CL = V['S19_call_level_valid_P1']
+            k19 = {'attack_call_released': 'attack_call_released_eps', 'benign_fp': 'benign_fp_eps'}[key]
+            eq(f'4.27 {v} {key}', (int(x), int(y)), (CL[V2S19[v]][k19], CL['A0'][k19]))
+
+# REM minus Progent
+POPS = {'Primary': 'P1_primary', 'Held-out templates': 'P2_cross_template', 'Second population': 'P3_second_population'}
+for r in table('**Table 4.15.'):
+    d = S22[POPS[r[0]]]['paired']['A0-PG']
+    for k, key in ((1, 'attack'), (2, 'utility_under_attack'), (3, 'benign_completion')):
+        if r[k].strip() != '–':
+            paired_cell(f'4.15 {r[0]} {key}', r[k], d[key])
+
+# 19-Nov tables (relabelled): counts, rate intervals and paired differences
+R19 = {'no defense': 'B0', 'A0 REM v1.0': 'A0', 'A0': 'A0', 'A3a': 'A1', 'A4c': 'A2', 'A4d': 'A3', 'A2a': 'A4a', 'A3b': 'A4b', 'A4e': 'A5', 'A4a': 'A6', 'A4b': 'A7'}
+S19A = V['S19_decision_engine_subablations']['arms']
+for r in table('**Table 4.30.'):
+    a = R19[r[0].split(' −')[0].split(' thresholds')[0].strip()]
+    eq(f'4.30 {a} attacks', n(r[1]), S19A[a]['attacks'])
+    eq(f'4.30 {a} benign', n(r[3]), S19A[a]['benign_completed'])
+    eq(f'4.30 {a} all tasks', n(r[5]), S19A[a]['all_tasks'])
+    if a in V['S19_call_level_valid_P1']:
+        eq(f'4.30 {a} legit calls', n(r[6]), V['S19_call_level_valid_P1'][a]['legit_released'])
+for r in table('**Table 4.31.'):
+    a = R19[r[0]]
+    # no defense minus A0 is taken from the 21-Nov records, whose episodes are identical (cross-study identity)
+    d = S19P[a] if a != 'B0' else S21P['B0']
+    paired_cell(f'4.31 {a} attack', r[1] + '; ' + r[2].replace('/', ' / ').replace('  ', ' '), d['attack'], cmp_ci=True)
+    paired_cell(f'4.31 {a} benign', r[3].replace('**', ''), d['benign_completion'])
+
 out = {'cells_checked': len(checks), 'mismatches': bad}
 (D / 'audit' / 'thesis_number_check.json').write_text(json.dumps(out, indent=1))
 print('cells checked:', len(checks), '| mismatches:', len(bad))

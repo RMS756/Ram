@@ -18,8 +18,8 @@ None of these issues blocks discussion of the thesis. Each needs a decision or a
 
 | Reference | What was verified | What was not |
 |---|---|---|
-| H. Li et al. (2025), DRIFT, NeurIPS 2025, DOI 10.52202/085713-2791 | Bibliographic record and abstract (OpenAlex W4415110937); official code `SaFo-Lab/DRIFT@6fd3df4` read and executed with a scripted agent | **Full text not read** (not reachable from the working environment). Check the author list, title capitalisation and proceedings volume against the published PDF. |
-| H. Li et al. (2026), AgentDyn, arXiv:2602.03117 | Bibliographic record (OpenAlex W7127632747); repository read | Full text not read; check authors and title |
+| H. Li et al. (2025), DRIFT, NeurIPS 2025, DOI 10.52202/085713-2791 | DOI, title, venue, pages 92825–92853 and six authors re-checked with Crossref and OpenAlex on 26 November 2026; author names from the official README; official code `SaFo-Lab/DRIFT@6fd3df4` read and executed with a scripted agent | **Full text not read** (not reachable from the working environment). Crossref registers the third author as "CHIU Chun" and the README as "Hung-Chun Chiu"; check against the published PDF. |
+| H. Li et al. (2026), AgentDyn, arXiv:2602.03117 | OpenAlex (W7127632747: title, year, identifier, six authors, first three shown); full author list from the authors' repository README | Full text not read. The arXiv DOI is a DataCite DOI, and DataCite was not reachable. Check the author list against the PDF. |
 | NEXUS, aiAuthZ, Kairos | Abstracts; repositories for NEXUS and aiAuthZ | Full texts not read (Section 4.6.11, threat 15) |
 | PACT, ROPE, CapLite (November 2026) | Abstracts; ROPE repository | Full texts not read (threat 20) |
 | CaMeL | Official repository and arXiv record | Not read in full |
@@ -52,7 +52,7 @@ The citation checkers found every reference cited and every citation listed (105
 | Item | Status |
 |---|---|
 | Page-reference checker | Reports one mismatch for "5.1 Introduction". It is a false positive: the string also matches "4.5.1 Introduction". The TOC page, 210, is correct (`audit/qc_checks.txt`). |
-| Page 184 | Holds only a table and a figure, as in R8's layout of that unit |
+| Page 185 | Holds only a table and a figure, as in R8's layout of that unit |
 | Wide tables | Some inherited R8 tables with many numeric columns still wrap cell contents onto several lines; they are readable. Table 5.3 is printed with three columns instead of six, with the same cell text. |
 | Supplement | Keeps its fifth-edition numbers ("S-"). The R8→R9 numbering correspondence is in THESIS_REVISION_LOG.md. |
 | Fonts | Times New Roman is not installed in the build environment; the metric-compatible Liberation Serif is used. Before submission, open the DOCX in Word with Times New Roman and update all fields (TOC, LoT, LoF); page numbers may shift slightly. |

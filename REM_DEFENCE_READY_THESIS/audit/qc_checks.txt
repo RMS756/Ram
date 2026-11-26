@@ -1,20 +1,20 @@
 ## check_layout
-pages 270 | preliminary pages 24
-{'CHAPTER ONE:': 1, 'CHAPTER TWO:': 14, 'CHAPTER THREE:': 48, 'CHAPTER FOUR:': 94, 'CHAPTER FIVE:': 210, 'References': 224, 'Appendix A:': 237, 'Appendix B:': 243}
-near-empty pages inside the text (pdf page, page number, words): [(208, 184, 73)]
+pages 272 | preliminary pages 24
+{'CHAPTER ONE:': 1, 'CHAPTER TWO:': 14, 'CHAPTER THREE:': 48, 'CHAPTER FOUR:': 94, 'CHAPTER FIVE:': 211, 'References': 225, 'Appendix A:': 239, 'Appendix B:': 245}
+near-empty pages inside the text (pdf page, page number, words): [(209, 185, 73)]
 pages that end with a caption (pdf page, page number, caption): []
-## check_pages (the one mismatch is a checker false positive: '5.1 Introduction' also matches the heading '4.5.1 Introduction'; Chapter Five starts on the page the TOC states)
+## check_pages (one known false positive: '5.1 Introduction' also matches '4.5.1 Introduction')
 page references checked: 179; mismatches: 1
-   ('toc', '5.1 Introduction', '210', '141')
+   ('toc', '5.1 Introduction', '211', '141')
 ## check_citations
 reference entries: 105 cited: 105 not cited: 0
 ## check_citations_reverse
 citations found 84 | known surname, year missing: []
 surnames not in the reference list (inspect; most are not citations): [('Cedar Policy', '2026'), ('Houwelingen', '1992'), ('NeurIPS', '2025'), ('November', '2026'), ('September', '2025'), ('September', '2026')]
 ## check_thesis_numbers
-cells checked: 191 | mismatches: 0
+cells checked: 466 | mismatches: 0
 ## make_r9 problems
 no problems
 ## pages
-Pages:           270
+Pages:           272
 Page size:       595.304 x 841.89 pts (A4)

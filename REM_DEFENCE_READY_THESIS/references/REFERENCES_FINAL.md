@@ -98,9 +98,9 @@ Li, E., Mallick, T., Rose, E., Robertson, W., Oprea, A., & Nita-Rotaru, C. (2026
 
 Li, F. (2026). *OpenClaw PRISM: A zero-fork, defense-in-depth runtime security layer for tool-augmented LLM agents* (arXiv:2603.11853) [Preprint]. arXiv. https://arxiv.org/abs/2603.11853
 
-Li, H., Liu, X., Chiu, H.-C., Li, D., Zhang, N., & Xiao, C. (2025). DRIFT: Dynamic rule-based defense with injection isolation for securing LLM agents. In *Advances in Neural Information Processing Systems 38* (NeurIPS 2025). https://doi.org/10.52202/085713-2791 [Bibliographic record and abstract verified through OpenAlex (W4415110937); full text not read; the official code, SaFo-Lab/DRIFT at commit 6fd3df4, was read and executed with a scripted agent]
+Li, H., Liu, X., Chiu, H.-C., Li, D., Zhang, N., & Xiao, C. (2025). DRIFT: Dynamic rule-based defense with injection isolation for securing LLM agents. In *Advances in Neural Information Processing Systems 38* (NeurIPS 2025) (pp. 92825–92853). https://doi.org/10.52202/085713-2791 [DOI, title, venue and pages verified with Crossref and OpenAlex (W4415110937) on 26 November 2026; author names as in the official repository, where Crossref registers the third author as "CHIU Chun"; abstract read; full text not read; the official code, SaFo-Lab/DRIFT at commit 6fd3df4, was read and executed with a scripted agent]
 
-Li, H., Wen, R., Shi, S., Zhang, N., Vorobeychik, Y., & Xiao, C. (2026). *AgentDyn: Are your agent security defenses deployable in real-world dynamic environments?* (arXiv:2602.03117) [Preprint]. arXiv. https://arxiv.org/abs/2602.03117 [Bibliographic record verified through OpenAlex (W7127632747); full text not read; repository read]
+Li, H., Wen, R., Shi, S., Zhang, N., Vorobeychik, Y., & Xiao, C. (2026). *AgentDyn: Are your agent security defenses deployable in real-world dynamic environments?* (arXiv:2602.03117) [Preprint]. arXiv. https://arxiv.org/abs/2602.03117 [Title, year, arXiv identifier and first three authors verified through OpenAlex (W7127632747), which lists six authors; the full author list as in the repository of its authors (SaFo-Lab/AgentDyn); abstract read; full text not read]
 
 Li, M. Q., Fung, B. C. M., Li, B., Ismail, H., & Iqbal, F. (2026). *Taxonomy and consistency analysis of safety benchmarks for AI agents* (arXiv:2605.16282) [Preprint]. arXiv. https://arxiv.org/abs/2605.16282
 
@@ -148,7 +148,7 @@ She, Y., Liang, Y., & Kang, E. (2026). Safeguarding LLM agents from misalignment
 
 Shi, J., Yuan, Z., Tie, G., Zhou, P., Gong, N., & Sun, L. (2026). Prompt injection attack to tool selection in LLM agents. In *Proceedings of the 2026 Network and Distributed System Security Symposium (NDSS)*. Internet Society. https://doi.org/10.14722/ndss.2026.230675
 
-Shi, T., He, J., Wang, Z., Li, H., Wu, L., Guo, W., & Song, D. (2026). *Progent: Securing AI agents with privilege control* (arXiv:2504.11703v3) [Preprint]. arXiv. https://arxiv.org/abs/2504.11703 [Version 3 of 14 May 2026 read in full on 16 November 2026. Official code repository read, not executed (github.com/sunblaze-ucb/progent, commits 9befb41, 8a8eb89 and 0d7ea07); the manual banking policy of commit 9befb41 is used in Chapter 4]
+Shi, T., He, J., Wang, Z., Li, H., Wu, L., Guo, W., & Song, D. (2026). *Progent: Securing AI agents with privilege control* (arXiv:2504.11703v3) [Preprint]. arXiv. https://arxiv.org/abs/2504.11703 [Version 3 of 14 May 2026 read in full on 16 November 2026. Official code repository read (github.com/sunblaze-ucb/progent, commits 9befb41, 8a8eb89 and 0d7ea07); the manual banking policy of commit 9befb41 is used in Chapter 4, and since 22 November 2026 it is decided by the enforcement code of the repository at commit 3e79753, executed as a decision rule in offline replay (the Progent framework with generated policies was not run)]
 
 Sommer, R., & Paxson, V. (2010). Outside the closed world: On using machine learning for network intrusion detection. In *2010 IEEE Symposium on Security and Privacy* (pp. 305–316). IEEE. https://doi.org/10.1109/SP.2010.25
 

@@ -118,6 +118,28 @@ def s19(valid_p1):
     return out, E
 
 
+def s19_calls(valid_p1, E19):
+    """Call-level quantities of the 19-Nov arms on the valid primary episodes (from ablation_calls.csv.gz)."""
+    C = collections.defaultdict(lambda: collections.defaultdict(list))
+    for r in csv.DictReader(io.TextIOWrapper(gzip.open(ROOT / "REM_FINAL_THESIS_COMPLETION_2026_11_19/results/raw/ablation_calls.csv.gz"))):
+        if r["set"] == "primary" and r["episode_id"] in valid_p1:
+            C[r["arm"]][r["episode_id"]].append((r["tool"], r["label"] == "1", r["released"] == "True"))
+    att = [e for e in valid_p1 if e.split("|")[2] != "none"]
+    ben = [e for e in valid_p1 if e.split("|")[2] == "none"]
+    out = {}
+    for a in sorted(C):
+        ce = C[a]
+        rc = lambda e: [c for c in ce.get(e, []) if c[0] in RESTRICTED]  # noqa: E731
+        out[a] = {"attack_call_released_eps": sum(any(c[1] and c[2] for c in rc(e)) for e in att),
+                  "benign_fp_eps": sum(any(not c[2] for c in rc(e)) for e in ben),
+                  "legit_released": sum(sum(1 for c in rc(e) if c[2]) for e in ben),
+                  "legit_n": sum(len(rc(e)) for e in ben),
+                  "utility_under_attack": sum(E19[e][a][0] for e in att),
+                  "attack_calls_withheld": sum(sum(1 for c in rc(e) if c[1] and not c[2]) for e in att),
+                  "attack_calls": sum(sum(1 for c in rc(e) if c[1]) for e in att)}
+    return out
+
+
 def recorded():
     res = {}
     for name in ["", "-repeat_user_prompt", "-spotlighting_with_delimiting", "-tool_filter", "-transformers_pi_detector"]:
@@ -168,6 +190,7 @@ def main():
     res["S21_episode_level_ablation"], E21, meta21 = s21()
     valid_p1 = {e for (p, e) in E21 if p == "P1_primary"}
     res["S19_decision_engine_subablations"], E19 = s19(valid_p1)
+    res["S19_call_level_valid_P1"] = s19_calls(valid_p1, E19)
     # cross-study per-episode identity (same frozen state; same definitions)
     pairs = {"A0": "A0", "A6": "A3", "A1": "A2", "A4a": "A1a", "A4b": "AIC", "A7": "A3P", "B0": "B0"}
     cross = {}

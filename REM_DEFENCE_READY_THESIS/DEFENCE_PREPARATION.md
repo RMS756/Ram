@@ -9,7 +9,7 @@ These notes are for the student's preparation. Every number below is in the thes
    - REM reduces attack outcomes from 672 to 11 of 2,979;
    - benign task completion falls from 175 to 105 of 334;
    - only 33 of 178 legitimate state-changing calls are released.
-3. The layer ablation shows that every outcome effect comes from the Decision Engine's learned decision acting through the Mitigation layer's enforcement:
+3. The ablation of the components of the five layers shows that every outcome effect comes from the Decision Engine's learned decision acting through the Mitigation layer's enforcement:
    - in shadow mode the same verdicts protect nothing;
    - the action/provenance evidence carries the discrimination;
    - behavioral evidence lowers completion;

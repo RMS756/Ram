@@ -277,7 +277,7 @@ Nine sets of comparisons were fixed before their outcomes were computed, each by
 - 14 November 2026, after an external review reported three defects of the permission rule: revision 2 against revision 1, A2 and the published policy; the authority guard; and a call-level audit of user task 15 with criteria written before it was run (Sections 4.5.8 and 4.6.9);
 - 15 November 2026, after a second review reported two further defects: revision 3 against revision 2, A2 and the published policy; the learned model against revision 3 under identical splits; and two ablations (Sections 4.4.7 and 4.5.8);
 - 16 November 2026: every decision method behind the authority guard against GV, HV, G3, the published policy and REM v1.0, with the rule that a learned method adds value only if it is not matched by GV (Section 4.5.8);
-- 19 November 2026: the final ablation of REM v1.0, nine arms against the full framework (Section 4.5.7);
+- 19 November 2026: the final ablation of REM v1.0, eight ablation arms and the no-defense reference against the full framework (Section 4.5.7);
 - 21 November 2026: the layer ablation, including the Detection-layer, predicate and enforcement arms, on three populations (Section 4.5.7);
 - 22 November 2026: REM v1.0 against Progent's banking policy decided by Progent's own code, on three populations, and the scripted integration of DRIFT's official code (Section 4.4.7).
 
@@ -451,12 +451,12 @@ Table 4.12 compares the frameworks on the fifteen dimensions requested.
 | 7 Behavioral evidence | Episode features x^beh^~1~–x^beh^~4~ (I) | None in the rules; generated policies may be updated from the history (P) | Deviation from the planned trajectory (I) | Similarity of the current calls to masked-run calls (I) |
 | 8 Policy-based enforcement | Predicates D1 and D2 as hard rules; the rest is learned (I) | The whole mechanism (I) | Plan, checklist and privilege labels produced by a language model (I) | None (I) |
 | 9 Model dependence | No language model; a 9-parameter logistic model fitted offline (I) | Manual policy: none. Generated policy: a policy model (I) | A language model in every component (I) | The agent's model and an embedding model (I) |
-| 10 Additional model calls | 0 (M) | Manual policy: 0 (I). Generated: at least one per task plus updates (I); not measured here | About 9–10 per two-step episode in a scripted run, plus 11 per agent instance for privileges (M, Section 4.4.7) | One masked re-execution per step plus embeddings (I); not measured here |
+| 10 Additional model calls | 0 (M) | Manual policy: 0 (I). Generated: at least one per task plus updates (I); not measured here | About 9–10 per episode in a scripted run (about two tool calls per episode), plus 11 per agent instance for privileges (M, Section 4.4.7) | One masked re-execution per step plus embeddings (I); not measured here |
 | 11 Runtime overhead | Median 0.15 ms per call, no model call (M) | Policy check: median 0.22 ms per call (M) | Dominated by extra model calls; not measured in time here | Dominated by extra model and embedding calls; not measured here |
 | 12 Benign task preservation | 105 of 334 benign episodes in replay (M) | 154 of 334 with the published manual policy in replay (M); the paper reports high utility with generated policies (P) | Not measured here; the authors' banking runs (v1.2) report utility under attack only | Not measured here |
 | 13 Financial-agent applicability | Designed for financial actions; consequence tiers by action (Chapter 3) | Banking policy available; recipient allow-list (I) | General; evaluated on AgentDojo suites including banking (P abstract, I) | General; evaluated on AgentDojo (P) |
 | 14 Deployment assumptions | Offline fitted model; declared costs and tiers; a reviewer for Escalate (absent here) | A trusted policy author, or a trusted policy model and an approver (P) | A capable language model for every component; access to the agent's prompts | Access to the agent's model and an embedding service; extra latency per step |
-| 15 Known limitations | Withholds most legitimate state-changing calls; detection and behavioral evidence add nothing measurable here (Section 4.5) | A manual policy encodes known recipients; generated policies depend on the model; the paper's guarantee concerns the current policy only (P) | Language-model judgements can err; its agent differs from the native agent (I) | Fixed threshold and embedding model; stops the whole episode (I) |
+| 15 Known limitations | Withholds most legitimate state-changing calls; the detection indicator has no measurable effect here, and behavioral evidence lowers task completion (Section 4.5) | A manual policy encodes known recipients; generated policies depend on the model; the paper's guarantee concerns the current policy only (P) | Language-model judgements can err; its agent differs from the native agent (I) | Fixed threshold and embedding model; stops the whole episode (I) |
 
 ![Figure 4.1. Where each framework acts in the execution of a tool-using agent. REM and Progent act on each proposed call before the tool executes; DRIFT replaces the agent element and validates its calls; MELON re-executes the agent's step with the user request masked and stops the episode on a detection.](REM_DEFENCE_READY_THESIS/figures/fig_integration_points.png){width=100%}
 
@@ -469,7 +469,7 @@ Table 4.12 compares the frameworks on the fifteen dimensions requested.
 | Progent | Decision Engine (a deterministic rule) and Mitigation (refusal) | Input & Context; Detection; Behavioral Analysis. It needs no evidence about where a value came from, because its policy states which values are allowed. |
 | DRIFT | Input & Context and Detection (isolation); Behavioral Analysis (deviation from the plan); Decision Engine (privilege rule and judge); Mitigation (refusal and masking) | — |
 | MELON | Detection only, with its own Mitigation (stopping the episode) | Decision Engine: no verdict between allow and stop |
-| REM | All five layers | — |
+| REM | All five layers, as designed (the Detection layer's classifier is not implemented) | — |
 
 **How REM and DRIFT realise its layers.** REM realises every layer with deterministic features and one small learned model. DRIFT realises its layers with a language model.
 
@@ -563,7 +563,7 @@ Table 4.12 compares the frameworks on the fifteen dimensions requested.
    - This breakdown was made after the results were seen.
 3. **They lose different tasks.**
    - REM completes no recorded benign episode of ten user tasks (user tasks 0, 2, 3, 4, 6, 11, 12, 13, 14 and 15), because it withholds the payments, scheduled-transaction updates and password changes those tasks need.
-   - The policy completes none of user task 14 (password change: no rule) or user task 15, and otherwise completes about as many as the undefended agent.
+   - The policy completes no benign episode of user tasks 14 (password change: no rule) and 15 on the primary recordings, and of user tasks 9 and 14 on the second population; otherwise it completes about as many as the undefended agent.
 4. **The policy's security is informed by the benchmark (Section 4.4.8).**
 5. **The cost of a decision is small for both.** On the same machine, Progent's check took a median of 0.22 ms (95th percentile 0.68 ms) over 25,000 checks of recorded calls. REM's complete per-call evaluation took a median of 0.15 ms (95th percentile 0.41 ms). Neither calls a model. These are replay timings, not deployment latency.
 
@@ -630,7 +630,7 @@ REM v1.0 withholds almost every legitimate payment and every legitimate password
 
 *Protocol.* The analysis was committed before any arm was scored on 19 November 2026 (`REM_FINAL_THESIS_COMPLETION_2026_11_19/05_EXTERNAL_BASELINE_PROTOCOL.md`). One amendment (05a) was committed after the first run stopped with an error and before any outcome was read.
 
-*What was not run.* No language model was called. REM v1.0 was therefore not run in a closed loop, and MELON was not executed (Section S-4.4.4).
+*What was not run.* No language model was called. REM v1.0 was therefore not run in a closed loop, and MELON was not executed with a language model; its official code ran only with a scripted agent (Sections S-4.4.4 and 4.4.7).
 
 **The defenses.** They were checked against the installed package's source, AgentDojo 0.1.35, `agent_pipeline.py`:
 
@@ -789,14 +789,14 @@ The comparison with MELON is therefore architectural (Sections 4.4.4 and 4.4.5).
 The finding has a definite scope. A deterministic allow-list is strong when the deployment knows its legitimate counterparties in advance, and the benchmark's single attacker account makes that knowledge sufficient. REM is designed for the case in which no such list exists: it estimates from evidence available at the boundary whether a call was induced. That design advantage is not demonstrated by these data, which contain no attacker whose account is unknown. It is therefore an argument for future evaluation, not a result.
 
 **Against DRIFT and MELON, the comparison is architectural.**
-- **Both buy flexibility with model calls.** DRIFT adds several language-model calls to each step; MELON adds one masked re-execution and embedding calls. REM adds none and decides in well under a millisecond.
+- **Both buy flexibility with model calls.** DRIFT adds several language-model calls to each episode (about six to seven more than its own agent without modules in the scripted run); MELON adds one masked re-execution and embedding calls. REM adds none and decides in well under a millisecond.
 - **Both act on the agent rather than only on its calls.** DRIFT rewrites the agent; MELON stops the episode. REM can be added to an existing agent without changing it.
 
 These are properties of the designs. Whether they translate into better or worse protection and utility was not measured.
 
 **Against the defenses distributed with the benchmark**, REM's replayed decisions leave fewer successful attacks than three of the four recorded runs and about as many as the injection classifier, with lower benign completion. The comparison is descriptive.
 
-**What the comparison adds to the evidence.** The ablation of Section 4.5 shows that REM's protection comes from its learned decision and that the same decision causes most of its false blocking. The comparison shows that a deterministic, benchmark-informed policy reaches the same protection with fewer false blocks. Together they locate REM's main weakness in the separation of legitimate from induced state-changing calls, not in its enforcement or its speed.
+**What the comparison adds to the evidence.** The ablation of Section 4.5 shows that REM's protection comes from its learned decision and that the same decision causes most of its false blocking. The comparison shows that a deterministic, benchmark-informed policy reaches at least the same protection with fewer false blocks. Together they locate REM's main weakness in the separation of legitimate from induced state-changing calls, not in its enforcement or its speed.
 
 ### 4.4.10 Limitations of the Comparison
 
@@ -828,6 +828,15 @@ These are properties of the designs. Whether they translate into better or worse
 ### 4.5.1 Introduction
 
 The supervisors asked for an ablation study of the individual contribution of the layers of the proposed REM design. This section reports it.
+
+**What can be isolated.** The five layers are design units, not five independently removable software modules (Section 4.5.4). The study therefore removes components, not always whole layers:
+- **Mitigation:** removed as a whole (shadow mode).
+- **Decision Engine:** every component removed separately.
+- **Detection:** its one implemented indicator removed, alone and with the behavioral feature built on it; its injection classifier was never implemented.
+- **Behavioral Analysis:** each of its two evidence groups removed separately.
+- **Input & Context:** not removable on its own, because it computes no evidence and every later layer depends on its labels; it is assessed only indirectly.
+
+These limits are part of the result and are not hidden by the layer-level labels used below.
 
 **Variants.** Each variant removes or disables one component of REM v1.0 and leaves everything else unchanged:
 - the fitted state;
@@ -950,7 +959,7 @@ Variants are numbered by layer: A1 for Input & Context, A2 for Detection, A3 for
 | A5 | Mitigation | Enforcement: every verdict computed and logged, every call released (shadow mode) | None | E | 21 Nov A4 |
 | – | Audit | Linear Shapley attribution | – | Not ablated: audit only, cannot change a verdict | – |
 
-**Coverage of the five layers.** Four of the five layers have at least one evaluated variant; the Input & Context layer has none of its own, because it computes no evidence and everything downstream depends on its labels. Only the Decision Engine and Mitigation are ablated as whole functional units: A4a removes the whole learned decision, and A5 removes all enforcement.
+**Coverage of the five layers.** Four of the five layers have at least one evaluated variant; the Input & Context layer has none of its own, because it computes no evidence and everything downstream depends on its labels. Only the Mitigation layer is ablated as a whole: A5 removes all enforcement. The Decision Engine is ablated component by component, and every one of its components is covered (A4a–A4e); A4a removes the whole learned decision but keeps the predicates, and removing the layer entirely would leave no verdict at all, which is the no-defense reference by construction. The Detection and Behavioral Analysis layers are ablated at the level of their evidence: A2b removes all of the Detection signal that is implemented, and the two Behavioral Analysis evidence groups are removed one at a time, never together.
 
 | Layer | What its variants remove | What stays in place |
 |---|---|---|
@@ -1224,7 +1233,7 @@ REM calls no model, so there is no inference cost. These are replay timings, not
 **The learned decision is reached, and it decides.** A reader of the later, exploratory studies (Section 4.5.8) could conclude that the learned component of REM changes no decision. That conclusion holds for the deterministic guards of those studies, where an attack-labelled call never reached the learned stage. **It does not hold for REM v1.0.** Here the learned decision:
 - decides 6,626 of 6,684 calls;
 - changes 2,129 releases;
-- carries 661 of the 672 prevented attacks.
+- accounts for all 661 attacks that REM v1.0 prevents (of 672 reached without defense).
 
 What it does not do is separate legitimate from adversarial state-changing calls well enough: 81.5% of legitimate state-changing calls in benign episodes are withheld. That is the cost recorded in every comparison of this chapter.
 
@@ -2033,7 +2042,7 @@ This chapter reported an evaluation of REM on recorded trajectories of real agen
 - **Confirmatory run.** On 2,113 episodes unread before that run, REM without behavioral evidence completes 7.5 percentage points more tasks than REM v1.0 (95% interval 1.2 to 16.0) with 1 successful attack against 3. The pre-declared decision rule gives GO; this is not a test of non-inferiority on security. Neither version is distinguishable from the rules.
 - **Published policy.** A manual banking policy from Progent's repository, replayed on the same episodes, has no successful attack and completes more tasks than either REM version; it permits no password change. It is not a configuration evaluated in the current version of the paper. Decided by Progent's own enforcement code (22 November 2026), it gives the same counts on all three populations and completes 7.2, 16.9 and 18.0 percentage points more tasks under attack than REM v1.0; its list of permitted recipients contains values specific to the benchmark.
 - **Exploratory extension.** A deterministic rule compiles the user's request into instructions and releases a state-changing call only if it matches one. In its current revision it has no successful attack on either population and completes more benign tasks than REM v1.0 in point estimate (development evidence). Against the strongest simple rule it has fewer successful attacks and an unresolved difference in completed tasks; against the published policy nothing is resolved. Two of its three revisions repair defects found by external reviews. The guard used alone (GV; 147 and 32 benign tasks, against G3's 132 and 29) has the outcomes of every learned or calibrated decision tested behind it, except a Neyman-Pearson threshold at 0.01, which loses tasks. An external review found that the guard accepted unverified computed amounts; a typed amount verifier repairs this with no successful attack and 95 and 159 fewer completed tasks, all in requests whose amount it cannot verify, and the learned decision behind it again changes nothing. A second version repairs two further acceptance defects with no change on the recordings (Section 4.5.8). The measured change belongs to the rule, not to the learned core, and every security difference among the restrictive arms arises in one user task.
-- **Ablation of the five layers (19 and 21 November 2026, pre-registered).** The learned decision of the Decision Engine prevents 661 of the 672 attacks that REM v1.0 prevents and admits none, at a cost of 22.5 points of benign utility, and only enforcement by the Mitigation layer turns its verdicts into outcomes: in shadow mode the same verdicts protect nothing. The action/provenance evidence carries the estimator's discrimination; without it 49 instead of 24 attacked episodes execute an attack call. Behavioral evidence lowers task completion with no security effect. The Detection layer's indicator, the predicates, calibration and Modify have no measurable effect, and the Input & Context layer cannot be removed on its own. The consequence-aware rule admits 153 fewer attacks than consequence-independent thresholds and completes fewer tasks.
+- **Ablation of the five layers (19 and 21 November 2026, pre-registered).** The learned decision of the Decision Engine accounts for all 661 attacks that REM v1.0 prevents (of 672 reached without defense) and admits none, at a cost of 22.5 points of benign utility, and only enforcement by the Mitigation layer turns its verdicts into outcomes: in shadow mode the same verdicts protect nothing. The action/provenance evidence carries the estimator's discrimination; without it 49 instead of 24 attacked episodes execute an attack call. Behavioral evidence lowers task completion with no security effect. The Detection layer's indicator, the predicates, calibration and Modify have no measurable effect, and the Input & Context layer cannot be removed on its own. The consequence-aware rule admits 153 fewer attacks than consequence-independent thresholds and completes fewer tasks.
 - **DRIFT and MELON.** Both need a language model in their decision path and are compared at the level of architecture and code. DRIFT's official code runs on the benchmark version used here; with a scripted agent it makes about three times as many model calls per episode as its own agent without its modules. No security or utility result was obtained for either.
 - **Distributed defenses.** On the same task pairs REM v1.0's replayed decisions leave fewer successful attacks than the recorded runs of repeat_user_prompt, spotlighting_with_delimiting and tool_filter and about as many as transformers_pi_detector, with lower benign completion; the comparison is descriptive because the defenses' runs are closed-loop and REM's is a replay. Added to a defense's own traces, REM removes almost every remaining success.
 - **Limit.** The provenance features of REM do not represent what the user asked for; the request parser of the extension was developed on the benchmark's own requests.

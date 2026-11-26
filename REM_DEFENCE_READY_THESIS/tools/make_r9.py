@@ -267,6 +267,8 @@ for after, entry in SP.REF_ADD:
     k = refs.index(after)
     e = refs.index('\n', k)
     refs = refs[:e] + '\n\n' + entry + refs[e:]
+for old, new in getattr(SP, 'REF_EDITS', []):
+    refs = edit_one(refs, old, new, 'REF_EDIT', 'REFERENCES_FINAL.md')
 open(os.path.join(D, 'references', 'REFERENCES_FINAL.md'), 'w', encoding='utf-8').write(refs)
 json.dump({'tables': maps['Table'], 'figures': maps['Figure'], 'sections_R8_to_R9': SEC,
            'arm_relabel_19_Nov_to_variant': {('A' + k): v for k, v in ARM_MAP.items()},

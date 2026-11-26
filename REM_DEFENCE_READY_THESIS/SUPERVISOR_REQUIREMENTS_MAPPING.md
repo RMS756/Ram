@@ -8,8 +8,8 @@ This document maps requirements to text. It does not record any approval: the th
 
 | Requirement | Where | Status |
 |---|---|---|
-| **1. Ablation study of the individual contribution of REM's layers** | Section 4.5 (4.5.1–4.5.12) | Done with recorded episodes (offline replay); no live experiment was needed or claimed |
-| **2. Comparison of REM with existing security frameworks (Progent, DRIFT, MELON and other relevant frameworks)** | Section 4.4 (4.4.1–4.4.11) | Done: quantitative for Progent's published policy and the defenses distributed with AgentDojo; architectural and code-level for DRIFT and MELON; literature-level for the rest |
+| **1. Ablation study of the individual contribution of REM's layers** | Section 4.5 (4.5.1–4.5.12) | **Addressed as a component-level ablation of the five-layer design**, with recorded episodes (offline replay). Mitigation is removed whole; every Decision Engine component is removed separately; the implemented Detection and Behavioral Analysis evidence is removed by group; Input & Context is assessed only indirectly. The limits are stated in 4.5.1 and in `ABLATION_LAYER_COVERAGE_MATRIX.md`. No live experiment was needed or claimed. |
+| **2. Comparison of REM with existing security frameworks (Progent, DRIFT, MELON and other relevant frameworks)** | Section 4.4 (4.4.1–4.4.11) | Addressed: quantitative for Progent's published policy and the defenses distributed with AgentDojo; architectural and code-level for DRIFT and MELON; literature-level for the rest |
 | No live-model experiments or real-world deployment required | Throughout: every result is labelled as replay or as recorded runs (Section 4.1.4, Table 4.3) | No live run was executed or claimed. Live evaluation is future work (Section 5.7), not a blocking limitation. |
 
 ## Ablation study (Part 3)
@@ -70,7 +70,7 @@ This document maps requirements to text. It does not record any approval: the th
 | 9. Limitations | 4.4.10, 4.5.11, 4.6.11 (threats 1–22), 5.6 (items 1–12) | Not called a real-world deployment. Live experiments are future work, not a blocking limitation. |
 | 10. Conclusions and future work without overstatement | 5.8, 5.7 | 5.8 says the findings do not rank REM against any published defense |
 | 11. Deliverables | `REM_Master_Thesis_Defence_Ready.docx` and `.pdf`; THESIS_REVISION_LOG.md; this file; UNRESOLVED_ISSUES.md; DEFENCE_PREPARATION.md | The original R8 files are not overwritten. No approval is claimed. |
-| 12. QC | `audit/qc_checks.txt`, `audit/thesis_number_check.json` | 191 printed cells match the raw records. Citations two-way complete. Page references checked. Rendered pages inspected. |
+| 12. QC | `audit/qc_checks.txt`, `audit/thesis_number_check.json` | 466 printed cells (counts, intervals, discordant counts, p-values) match the raw records. Citations two-way complete. Page references checked. Rendered pages inspected. |
 
 ## Design lock (CLAUDE.md)
 

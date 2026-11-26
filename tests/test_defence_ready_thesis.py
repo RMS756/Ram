@@ -34,3 +34,12 @@ def test_five_layers_and_no_live_claim():
 def test_status_page_claims_no_approval():
     fm = (D / 'text_front' / 'front_matter.md').read_text(encoding='utf-8')
     assert 'It has not been formally approved, and no approval is implied.' in fm
+
+
+def test_no_prevented_672_misstatement_and_no_22_backbones():
+    import re
+    texts = [p.read_text(encoding='utf-8') for p in list((D / 'src').glob('*.md')) + list((D / 'text_front').glob('*.md'))]
+    joined = '\n'.join(texts)
+    assert '672 prevented' not in joined and '661 of the 672 attacks that REM' not in joined
+    assert not re.search(r'\b22 (recorded )?backbones', joined)
+    assert 'ablated as whole functional units' not in joined
