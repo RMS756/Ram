@@ -1,0 +1,120 @@
+{
+ "amendment": "50a_AMENDMENT_DID3_COVERAGE.md",
+ "gate_X0_success_counts": {
+  "POP-P": [
+   0,
+   0
+  ],
+  "POP-R": [
+   0,
+   0
+  ],
+  "POP-X": [
+   0,
+   0
+  ]
+ },
+ "coverage": {
+  "POP-P": {
+   "attack_sc_calls": 907,
+   "covered_by_any": 907,
+   "uncovered": 0,
+   "covered_by_two_or_more": 888,
+   "by_control": {
+    "PROV": 879,
+    "DET": 888,
+    "BEH": 783,
+    "LEARN": 882
+   },
+   "covered_by_exactly_one": {
+    "PROV": 0,
+    "DET": 0,
+    "BEH": 17,
+    "LEARN": 2
+   },
+   "jaccard": {
+    "PROV~DET": 0.9899,
+    "PROV~BEH": 0.8365,
+    "PROV~LEARN": 0.9966,
+    "DET~BEH": 0.8464,
+    "DET~LEARN": 0.9888,
+    "BEH~LEARN": 0.8357
+   },
+   "pattern_counts": {
+    "BEH+DET+LEARN+PROV": 757,
+    "DET+LEARN+PROV": 122,
+    "BEH": 17,
+    "BEH+DET": 8,
+    "LEARN": 2,
+    "BEH+DET+LEARN": 1
+   }
+  },
+  "POP-R": {
+   "attack_sc_calls": 785,
+   "covered_by_any": 785,
+   "uncovered": 0,
+   "covered_by_two_or_more": 766,
+   "by_control": {
+    "PROV": 757,
+    "DET": 766,
+    "BEH": 783,
+    "LEARN": 760
+   },
+   "covered_by_exactly_one": {
+    "PROV": 0,
+    "DET": 0,
+    "BEH": 17,
+    "LEARN": 2
+   },
+   "jaccard": {
+    "PROV~DET": 0.9883,
+    "PROV~BEH": 0.9668,
+    "PROV~LEARN": 0.9961,
+    "DET~BEH": 0.9783,
+    "DET~LEARN": 0.987,
+    "BEH~LEARN": 0.9656
+   },
+   "pattern_counts": {
+    "BEH+DET+LEARN+PROV": 757,
+    "BEH": 17,
+    "BEH+DET": 8,
+    "LEARN": 2,
+    "BEH+DET+LEARN": 1
+   }
+  },
+  "POP-X": {
+   "attack_sc_calls": 907,
+   "covered_by_any": 907,
+   "uncovered": 0,
+   "covered_by_two_or_more": 888,
+   "by_control": {
+    "PROV": 879,
+    "DET": 888,
+    "BEH": 783,
+    "LEARN": 882
+   },
+   "covered_by_exactly_one": {
+    "PROV": 0,
+    "DET": 0,
+    "BEH": 17,
+    "LEARN": 2
+   },
+   "jaccard": {
+    "PROV~DET": 0.9899,
+    "PROV~BEH": 0.8365,
+    "PROV~LEARN": 0.9966,
+    "DET~BEH": 0.8464,
+    "DET~LEARN": 0.9888,
+    "BEH~LEARN": 0.8357
+   },
+   "pattern_counts": {
+    "BEH+DET+LEARN+PROV": 757,
+    "DET+LEARN+PROV": 122,
+    "BEH": 17,
+    "BEH+DET": 8,
+    "LEARN": 2,
+    "BEH+DET+LEARN": 1
+   }
+  }
+ }
+}

@@ -1,0 +1,466 @@
+{
+ "segments": 52001,
+ "by_variant": {
+  "original": {
+   "n": 14394,
+   "positives": 3112,
+   "detectors": {
+    "D_pattern": {
+     "TP": 2862,
+     "FP": 0,
+     "FN": 250,
+     "TN": 11282,
+     "precision": 1.0,
+     "recall": 0.9197,
+     "FPR": 0.0,
+     "FNR": 0.0803
+    },
+    "D_role": {
+     "TP": 2736,
+     "FP": 0,
+     "FN": 376,
+     "TN": 11282,
+     "precision": 1.0,
+     "recall": 0.8792,
+     "FPR": 0.0,
+     "FNR": 0.1208
+    },
+    "D_override": {
+     "TP": 2978,
+     "FP": 0,
+     "FN": 134,
+     "TN": 11282,
+     "precision": 1.0,
+     "recall": 0.9569,
+     "FPR": 0.0,
+     "FNR": 0.0431
+    },
+    "D_fin": {
+     "TP": 3112,
+     "FP": 19,
+     "FN": 0,
+     "TN": 11263,
+     "precision": 0.9939,
+     "recall": 1.0,
+     "FPR": 0.0017,
+     "FNR": 0.0
+    },
+    "union": {
+     "TP": 3112,
+     "FP": 19,
+     "FN": 0,
+     "TN": 11263,
+     "precision": 0.9939,
+     "recall": 1.0,
+     "FPR": 0.0017,
+     "FNR": 0.0
+    },
+    "union_without_pattern": {
+     "TP": 3112,
+     "FP": 19,
+     "FN": 0,
+     "TN": 11263,
+     "precision": 0.9939,
+     "recall": 1.0,
+     "FPR": 0.0017,
+     "FNR": 0.0
+    }
+   },
+   "recall_by_template": {
+    "direct": {
+     "positives": 125,
+     "D_pattern": 0.0,
+     "D_role": 0.0,
+     "D_override": 0.0,
+     "D_fin": 1.0,
+     "union": 1.0
+    },
+    "ignore_previous": {
+     "positives": 125,
+     "D_pattern": 0.0,
+     "D_role": 0.0,
+     "D_override": 0.928,
+     "D_fin": 1.0,
+     "union": 1.0
+    },
+    "important_instructions": {
+     "positives": 2475,
+     "D_pattern": 1.0,
+     "D_role": 1.0,
+     "D_override": 1.0,
+     "D_fin": 1.0,
+     "union": 1.0
+    },
+    "important_instructions_no_names": {
+     "positives": 133,
+     "D_pattern": 1.0,
+     "D_role": 1.0,
+     "D_override": 1.0,
+     "D_fin": 1.0,
+     "union": 1.0
+    },
+    "injecagent": {
+     "positives": 126,
+     "D_pattern": 1.0,
+     "D_role": 0.0,
+     "D_override": 1.0,
+     "D_fin": 1.0,
+     "union": 1.0
+    },
+    "tool_knowledge": {
+     "positives": 128,
+     "D_pattern": 1.0,
+     "D_role": 1.0,
+     "D_override": 1.0,
+     "D_fin": 1.0,
+     "union": 1.0
+    }
+   }
+  },
+  "paraphrase": {
+   "n": 10655,
+   "positives": 2475,
+   "detectors": {
+    "D_pattern": {
+     "TP": 0,
+     "FP": 0,
+     "FN": 2475,
+     "TN": 8180,
+     "precision": null,
+     "recall": 0.0,
+     "FPR": 0.0,
+     "FNR": 1.0
+    },
+    "D_role": {
+     "TP": 0,
+     "FP": 0,
+     "FN": 2475,
+     "TN": 8180,
+     "precision": null,
+     "recall": 0.0,
+     "FPR": 0.0,
+     "FNR": 1.0
+    },
+    "D_override": {
+     "TP": 0,
+     "FP": 0,
+     "FN": 2475,
+     "TN": 8180,
+     "precision": null,
+     "recall": 0.0,
+     "FPR": 0.0,
+     "FNR": 1.0
+    },
+    "D_fin": {
+     "TP": 2475,
+     "FP": 0,
+     "FN": 0,
+     "TN": 8180,
+     "precision": 1.0,
+     "recall": 1.0,
+     "FPR": 0.0,
+     "FNR": 0.0
+    },
+    "union": {
+     "TP": 2475,
+     "FP": 0,
+     "FN": 0,
+     "TN": 8180,
+     "precision": 1.0,
+     "recall": 1.0,
+     "FPR": 0.0,
+     "FNR": 0.0
+    },
+    "union_without_pattern": {
+     "TP": 2475,
+     "FP": 0,
+     "FN": 0,
+     "TN": 8180,
+     "precision": 1.0,
+     "recall": 1.0,
+     "FPR": 0.0,
+     "FNR": 0.0
+    }
+   },
+   "recall_by_template": {
+    "important_instructions": {
+     "positives": 2475,
+     "D_pattern": 0.0,
+     "D_role": 0.0,
+     "D_override": 0.0,
+     "D_fin": 1.0,
+     "union": 1.0
+    }
+   }
+  },
+  "zero_width": {
+   "n": 13476,
+   "positives": 3112,
+   "detectors": {
+    "D_pattern": {
+     "TP": 0,
+     "FP": 0,
+     "FN": 3112,
+     "TN": 10364,
+     "precision": null,
+     "recall": 0.0,
+     "FPR": 0.0,
+     "FNR": 1.0
+    },
+    "D_role": {
+     "TP": 0,
+     "FP": 0,
+     "FN": 3112,
+     "TN": 10364,
+     "precision": null,
+     "recall": 0.0,
+     "FPR": 0.0,
+     "FNR": 1.0
+    },
+    "D_override": {
+     "TP": 0,
+     "FP": 0,
+     "FN": 3112,
+     "TN": 10364,
+     "precision": null,
+     "recall": 0.0,
+     "FPR": 0.0,
+     "FNR": 1.0
+    },
+    "D_fin": {
+     "TP": 17,
+     "FP": 0,
+     "FN": 3095,
+     "TN": 10364,
+     "precision": 1.0,
+     "recall": 0.0055,
+     "FPR": 0.0,
+     "FNR": 0.9945
+    },
+    "union": {
+     "TP": 17,
+     "FP": 0,
+     "FN": 3095,
+     "TN": 10364,
+     "precision": 1.0,
+     "recall": 0.0055,
+     "FPR": 0.0,
+     "FNR": 0.9945
+    },
+    "union_without_pattern": {
+     "TP": 17,
+     "FP": 0,
+     "FN": 3095,
+     "TN": 10364,
+     "precision": 1.0,
+     "recall": 0.0055,
+     "FPR": 0.0,
+     "FNR": 0.9945
+    }
+   },
+   "recall_by_template": {
+    "direct": {
+     "positives": 125,
+     "D_pattern": 0.0,
+     "D_role": 0.0,
+     "D_override": 0.0,
+     "D_fin": 0.008,
+     "union": 0.008
+    },
+    "ignore_previous": {
+     "positives": 125,
+     "D_pattern": 0.0,
+     "D_role": 0.0,
+     "D_override": 0.0,
+     "D_fin": 0.008,
+     "union": 0.008
+    },
+    "important_instructions": {
+     "positives": 2475,
+     "D_pattern": 0.0,
+     "D_role": 0.0,
+     "D_override": 0.0,
+     "D_fin": 0.0053,
+     "union": 0.0053
+    },
+    "important_instructions_no_names": {
+     "positives": 133,
+     "D_pattern": 0.0,
+     "D_role": 0.0,
+     "D_override": 0.0,
+     "D_fin": 0.0,
+     "union": 0.0
+    },
+    "injecagent": {
+     "positives": 126,
+     "D_pattern": 0.0,
+     "D_role": 0.0,
+     "D_override": 0.0,
+     "D_fin": 0.0079,
+     "union": 0.0079
+    },
+    "tool_knowledge": {
+     "positives": 128,
+     "D_pattern": 0.0,
+     "D_role": 0.0,
+     "D_override": 0.0,
+     "D_fin": 0.0078,
+     "union": 0.0078
+    }
+   }
+  },
+  "upper": {
+   "n": 13476,
+   "positives": 3112,
+   "detectors": {
+    "D_pattern": {
+     "TP": 2862,
+     "FP": 0,
+     "FN": 250,
+     "TN": 10364,
+     "precision": 1.0,
+     "recall": 0.9197,
+     "FPR": 0.0,
+     "FNR": 0.0803
+    },
+    "D_role": {
+     "TP": 2736,
+     "FP": 0,
+     "FN": 376,
+     "TN": 10364,
+     "precision": 1.0,
+     "recall": 0.8792,
+     "FPR": 0.0,
+     "FNR": 0.1208
+    },
+    "D_override": {
+     "TP": 2978,
+     "FP": 0,
+     "FN": 134,
+     "TN": 10364,
+     "precision": 1.0,
+     "recall": 0.9569,
+     "FPR": 0.0,
+     "FNR": 0.0431
+    },
+    "D_fin": {
+     "TP": 3112,
+     "FP": 0,
+     "FN": 0,
+     "TN": 10364,
+     "precision": 1.0,
+     "recall": 1.0,
+     "FPR": 0.0,
+     "FNR": 0.0
+    },
+    "union": {
+     "TP": 3112,
+     "FP": 0,
+     "FN": 0,
+     "TN": 10364,
+     "precision": 1.0,
+     "recall": 1.0,
+     "FPR": 0.0,
+     "FNR": 0.0
+    },
+    "union_without_pattern": {
+     "TP": 3112,
+     "FP": 0,
+     "FN": 0,
+     "TN": 10364,
+     "precision": 1.0,
+     "recall": 1.0,
+     "FPR": 0.0,
+     "FNR": 0.0
+    }
+   },
+   "recall_by_template": {
+    "direct": {
+     "positives": 125,
+     "D_pattern": 0.0,
+     "D_role": 0.0,
+     "D_override": 0.0,
+     "D_fin": 1.0,
+     "union": 1.0
+    },
+    "ignore_previous": {
+     "positives": 125,
+     "D_pattern": 0.0,
+     "D_role": 0.0,
+     "D_override": 0.928,
+     "D_fin": 1.0,
+     "union": 1.0
+    },
+    "important_instructions": {
+     "positives": 2475,
+     "D_pattern": 1.0,
+     "D_role": 1.0,
+     "D_override": 1.0,
+     "D_fin": 1.0,
+     "union": 1.0
+    },
+    "important_instructions_no_names": {
+     "positives": 133,
+     "D_pattern": 1.0,
+     "D_role": 1.0,
+     "D_override": 1.0,
+     "D_fin": 1.0,
+     "union": 1.0
+    },
+    "injecagent": {
+     "positives": 126,
+     "D_pattern": 1.0,
+     "D_role": 0.0,
+     "D_override": 1.0,
+     "D_fin": 1.0,
+     "union": 1.0
+    },
+    "tool_knowledge": {
+     "positives": 128,
+     "D_pattern": 1.0,
+     "D_role": 1.0,
+     "D_override": 1.0,
+     "D_fin": 1.0,
+     "union": 1.0
+    }
+   }
+  }
+ },
+ "latency_ms": {
+  "D_pattern": {
+   "mean": 0.0154,
+   "p95": 0.0832
+  },
+  "D_role": {
+   "mean": 0.005,
+   "p95": 0.0343
+  },
+  "D_override": {
+   "mean": 0.006,
+   "p95": 0.0488
+  },
+  "D_fin": {
+   "mean": 0.0074,
+   "p95": 0.0402
+  }
+ },
+ "phi": {
+  "D_pattern~D_role": 0.9724,
+  "D_pattern~D_override": 0.9754,
+  "D_pattern~D_fin": 0.9449,
+  "D_role~D_override": 0.9485,
+  "D_role~D_fin": 0.9188,
+  "D_override~D_fin": 0.9687
+ },
+ "legit_documents": {
+  "n_segments": 81,
+  "D_pattern": 0,
+  "D_role": 0,
+  "D_override": 0,
+  "D_fin": 19,
+  "union": 19
+ },
+ "transform_failures": {},
+ "token_cost": 0,
+ "all_available": true
+}

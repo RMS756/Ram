@@ -97,3 +97,59 @@ if __name__ == "__main__":
     draw(PROPOSED, "REM-DiD (proposed): same five layers, strengthened controls",
          d / "fig_rem_did_proposed.png", True)
     print("ok")
+
+
+# ---- REM-DiD as implemented (DiD-3), three statuses ----
+EVAL, TEST, PROP = "eval", "test", "prop"
+STYLE = {EVAL: dict(fc="#e8f4ec", ec="#2f6b45", ls="-"), TEST: dict(fc="#ffffff", ec="#2f6b45", ls=":"),
+         PROP: dict(fc=PROP_FILL, ec=PROP_EDGE, ls="--")}
+IMPL = [
+    [("Segment + field-level provenance; canonical lineage", EVAL), ("TAE: HMAC, session, expiry, uses, budget (oracle issuer)", EVAL),
+     ("Trusted approval interface", PROP)],
+    [("x_ctx2 (v1.0) + D_role, D_override, D_fin; call-linked evidence", EVAL), ("Explicit unavailability (fail-safe)", EVAL),
+     ("Injection classifier x_ctx1 (D-8)", PROP)],
+    [("R_newpayee, R_redirect, R_repeat, R_switch", EVAL), ("R_retry (needs adaptive agent)", TEST),
+     ("Sequence model of legitimate workflows", PROP)],
+    [("4A non-compensatory authorization (Block / Escalate)", EVAL), ("4B = REM v1.0 expected loss (unchanged)", EVAL),
+     ("Precedence: most restrictive wins", EVAL)],
+    [("Gateway: argument-bound single-use permits; fail-closed", EVAL), ("Attenuation", TEST),
+     ("Reviewer channel; declared Modify; recovery", PROP)],
+]
+
+
+def draw_impl(out):
+    fig, ax = plt.subplots(figsize=(11, 7.6), dpi=200)
+    ax.set_xlim(0, 100); ax.set_ylim(0, 100); ax.axis("off")
+    fig.patch.set_facecolor(SURF)
+    ax.text(2, 97, "REM-DiD (research candidate, as implemented): same five layers", fontsize=13, weight="bold", color=INK, va="top")
+    top, h, gap = 89, 13.2, 1.8
+    for i, (name, items) in enumerate(zip(LAYERS, IMPL)):
+        y = top - i * (h + gap) - h
+        ax.add_patch(FancyBboxPatch((2, y), 76, h, boxstyle="round,pad=0,rounding_size=1.2", fc=LAYER_FILL, ec=LAYER_EDGE, lw=1.2))
+        ax.text(3.2, y + h - 1.6, name, fontsize=10.5, weight="bold", color=INK, va="top")
+        n = len(items); w = (73.5 - (n - 1) * 1.2) / n
+        for j, (txt, st) in enumerate(items):
+            x = 3.2 + j * (w + 1.2)
+            s = STYLE[st]
+            ax.add_patch(FancyBboxPatch((x, y + 1.0), w, h - 6.2, boxstyle="round,pad=0,rounding_size=0.8",
+                                        fc=s["fc"], ec=s["ec"], lw=1.2, ls=s["ls"]))
+            ax.text(x + w / 2, y + 1.0 + (h - 6.2) / 2, _wrap(txt, int(w * 1.05)), fontsize=7.4, color=INK, ha="center", va="center")
+        if i < 4:
+            ax.annotate("", xy=(40, y - gap + 0.15), xytext=(40, y - 0.15), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.0))
+    yb = top - 5 * (h + gap) + gap
+    ax.add_patch(FancyBboxPatch((81, yb), 17, top - yb, boxstyle="round,pad=0,rounding_size=1.2", fc=BAND, ec=MUTED, lw=1.0))
+    ax.text(89.5, top - 1.5, "Cross-cutting\n(not a layer)", fontsize=9, weight="bold", color=INK, ha="center", va="top")
+    for k, t in enumerate(["Hash-chained audit\nrecord per decision\n(rules, lineage, auth)", "Monitoring: CUSUM\nobserve-only (v1.0)",
+                           "Offline fitting and\nrecalibration (v1.0;\nunchanged)"]):
+        ax.text(89.5, top - 14 - k * 22, t, fontsize=7.6, color=INK, ha="center", va="top")
+    for k, (st, lab) in enumerate([(EVAL, "implemented, unit-tested, evaluated in DiD-3 replay (exploratory, NO-ADAPT)"),
+                                   (TEST, "implemented and unit/scenario-tested only"),
+                                   (PROP, "proposed, not implemented")]):
+        s = STYLE[st]
+        ax.add_patch(FancyBboxPatch((2 + k * 33, 0.8), 3, 2.2, boxstyle="round,pad=0,rounding_size=0.4", fc=s["fc"], ec=s["ec"], ls=s["ls"]))
+        ax.text(5.8 + k * 33, 1.9, _wrap(lab, 40), fontsize=6.8, color=INK, va="center")
+    fig.savefig(out, bbox_inches="tight", facecolor=SURF); plt.close(fig)
+
+
+if __name__ == "__main__":
+    draw_impl(Path(__file__).resolve().parents[1] / "figures" / "fig_rem_did_implemented.png")

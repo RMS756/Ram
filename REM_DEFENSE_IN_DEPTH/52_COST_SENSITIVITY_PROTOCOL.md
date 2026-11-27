@@ -74,3 +74,10 @@ This gives 36 cells. The grid's `alpha_blk` axis belongs to baseline B1 of the p
 ## 5. Split note
 
 **There is no development / validation / confirmatory split.** All data was used before. The grid analysis is therefore descriptive sensitivity analysis, not model selection, and **no cost setting is recommended from it**.
+
+## 6. Results (added after the run, 357,804 replays, 0 errors)
+
+See `51_DID3_RESULTS.md` §9 and `figures/fig_did3_cost_grid.png`. In summary:
+- REM v1.0: 0–13 attacks and 105–124 benign tasks across cells.
+- B9: 0 attacks in all cells, 105–124 benign tasks (B9n, which does not depend on costs, completes 173).
+- X0: 0–1 attacks.
