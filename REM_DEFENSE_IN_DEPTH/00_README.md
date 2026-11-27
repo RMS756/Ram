@@ -9,8 +9,20 @@
 | `04_DID_CONTROL_MODEL.md` | Threat and control model (attack chain × controls × layers) |
 | `05_DID_RESULTS.md` | Results of DiD-1 and DiD-2 |
 | `06_IMPLICATIONS_AND_PLAN.md` | Thesis implications (not applied), decisions required, proposed enhancements, next experiments, journal track |
-| `code/did1_coverage.py`, `code/did2_replay.py` | Analysis code; `rem/` and `experiments/` unchanged |
-| `results/did1_results.json`, `results/did2_results.json` | Raw outputs |
+| `07_PROTOCOL_SIGNALS.md` (+ `.sha256`) | Protocol SIG-1 (detection signals and feature correlation), committed before the run |
+| `08_SIG1_RESULTS.md` | SIG-1 results |
+| **Task 2: strengthened architecture (proposals; nothing below is implemented)** | |
+| `20_ARCHITECTURE_CURRENT_V1_0.md` | Specification A: REM v1.0 as implemented |
+| `21_ARCHITECTURE_PROPOSED_DID.md` | Specification B: proposed REM-DiD (layer responsibilities, 4A/4B, decision flow) |
+| `22_CURRENT_VS_PROPOSED.md` | Comparison, with the status of each proposal |
+| `23_TRUSTED_AUTHORIZATION_ENVELOPE.md` | TAE specification |
+| `24_CROSS_LAYER_PROPERTIES.md` | Cross-layer properties: implementation, assumptions, test, acceptance criterion |
+| `25_ASSUMPTIONS_AND_LIMITATIONS.md` | Security assumptions and limitations |
+| `26_IMPLEMENTATION_REQUIREMENTS_AND_COMPATIBILITY.md` | Requirements and fit with the existing `rem/` code |
+| `27_PRIORITIZED_PLAN.md` | Feasibility-first plan with decision gates |
+| `figures/fig_rem_v1_0_current.png`, `figures/fig_rem_did_proposed.png` | Five-layer diagrams (`code/fig_architecture.py`) |
+| `code/did1_coverage.py`, `code/did2_replay.py`, `code/sig1_signals.py` | Analysis code; `rem/` and `experiments/` unchanged |
+| `results/did1_results.json`, `results/did2_results.json`, `results/sig1_results.json` | Raw outputs |
 
 **Reproduce**, from the repository root. AgentDojo 0.1.35 must be installed, and the AgentDojo runs must be at commit 089ed468 in `/home/user/ethz-spylab/agentdojo/runs`.
 
