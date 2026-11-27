@@ -43,3 +43,12 @@ def test_no_prevented_672_misstatement_and_no_22_backbones():
     assert '672 prevented' not in joined and '661 of the 672 attacks that REM' not in joined
     assert not re.search(r'\b22 (recorded )?backbones', joined)
     assert 'ablated as whole functional units' not in joined
+
+
+def test_final_review_corrections_present():
+    fm = (D / 'text_front' / 'front_matter.md').read_text(encoding='utf-8')
+    assert 'This thesis has not yet been defended.' in fm and 'successfully defended' not in fm
+    assert 'Claude' not in fm
+    ch4 = (D / 'src' / 'CHAPTER_04_FINAL.md').read_text(encoding='utf-8')
+    assert 'fig_19nov_security_utility.png' in ch4 and 'fig_ablation_paired_differences.png' not in ch4
+    assert ' against 141 episodes' not in ch4 and '202 against 24 episodes' not in ch4

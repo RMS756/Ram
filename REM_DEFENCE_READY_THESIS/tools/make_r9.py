@@ -248,6 +248,36 @@ for f in FILES:
             if m.group(1) not in heads:
                 PROBLEMS.append(f'section {m.group(1)} referenced in {f} but no such heading')
 
+# ---------------------------------------------------------------- US spelling (the body is in US English; R8 mixed a few British forms)
+US = [(r'\bbehaviour', 'behavior'), (r'\bBehaviour', 'Behavior'), (r'\blabelled\b', 'labeled'), (r'\blabelling\b', 'labeling'),
+      (r'\bLabelled\b', 'Labeled'), (r'\bLabelling\b', 'Labeling'), (r'\banalysed\b', 'analyzed'), (r'\banalyse\b', 'analyze'), (r'\banalysing\b', 'analyzing'),
+      (r'\boptimis(e|ed|es|ing|ation)\b', r'optimiz\1'), (r'\brecognis(e|ed|es|ing)\b', r'recogniz\1'), (r'\blicence\b', 'license'),
+      (r'\bartefact(s?)\b', r'artifact\1'), (r'\bjudgement(s?)\b', r'judgment\1'), (r'\brealis(e|ed|es|ing)\b', r'realiz\1')]
+PROTECT = re.compile(r'`[^`]*`|https?://\S+|\]\([^)]*\)|\$[^$]*\$')
+us_changes = {}
+
+
+def us_spelling(t):
+    parts, last = [], 0
+    for m in PROTECT.finditer(t):
+        parts.append((t[last:m.start()], True))
+        parts.append((m.group(0), False))
+        last = m.end()
+    parts.append((t[last:], True))
+    out = []
+    for seg, edit in parts:
+        if edit:
+            for pat, rep in US:
+                seg, n = re.subn(pat, rep, seg)
+                if n:
+                    us_changes[pat] = us_changes.get(pat, 0) + n
+        out.append(seg)
+    return ''.join(out)
+
+
+for f in FILES:
+    text[f] = us_spelling(text[f])
+
 # ---------------------------------------------------------------- write
 for sub_dir in ('src', 'text_front', 'references', 'audit'):
     os.makedirs(os.path.join(D, sub_dir), exist_ok=True)
@@ -258,6 +288,8 @@ for name in ('front_matter.md', 'abstract_en.md', 'abstract_ar.md'):
     for fn, old, new in SP.FRONT_EDITS:
         if fn == name:
             t = edit_one(t, old, new, 'FRONT_EDIT', name)
+    if name != 'abstract_ar.md':
+        t = us_spelling(t)
     open(os.path.join(D, 'text_front', name), 'w', encoding='utf-8').write(t)
 refs = open(os.path.join(R8, 'references', 'REFERENCES_FINAL.md'), encoding='utf-8').read()
 for after, entry in SP.REF_ADD:
@@ -272,7 +304,7 @@ for old, new in getattr(SP, 'REF_EDITS', []):
 open(os.path.join(D, 'references', 'REFERENCES_FINAL.md'), 'w', encoding='utf-8').write(refs)
 json.dump({'tables': maps['Table'], 'figures': maps['Figure'], 'sections_R8_to_R9': SEC,
            'arm_relabel_19_Nov_to_variant': {('A' + k): v for k, v in ARM_MAP.items()},
-           'arm_labels_relabelled_in_old_4_5_5': relabel_count, 'section_references_remapped': remapped['n'],
+           'arm_labels_relabelled_in_old_4_5_5': relabel_count, 'us_spelling_changes': us_changes, 'section_references_remapped': remapped['n'],
            'reference_lists_merged': merged},
           open(os.path.join(D, 'audit', 'r9_renumbering.json'), 'w'), indent=1, ensure_ascii=False)
 open(os.path.join(D, 'audit', 'r9_check.txt'), 'w').write('\n'.join(PROBLEMS) + ('\n' if PROBLEMS else 'no problems\n'))

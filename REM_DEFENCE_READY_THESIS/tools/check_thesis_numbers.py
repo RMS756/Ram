@@ -153,8 +153,10 @@ for r in table('**Table 4.27.'):
         cell = r[k].replace('**', '').strip()
         if v in V2S21:
             paired_cell(f'4.27 {v} {key}', cell, S21P[V2S21[v]][key])
-        elif key in ('attack', 'benign_completion') and cell != '–':
+        elif key in ('attack', 'benign_completion'):
             paired_cell(f'4.27 {v} {key}', cell, S19P[V2S19[v]][key])
+        elif 'paired_vs_A0' in V['S19_call_level_valid_P1'][V2S19[v]]:
+            paired_cell(f'4.27 {v} {key}', cell, V['S19_call_level_valid_P1'][V2S19[v]]['paired_vs_A0'][key])
         elif 'against' in cell:
             x, y = re.findall(r'(\d+) against (\d+)', cell)[0]
             CL = V['S19_call_level_valid_P1']

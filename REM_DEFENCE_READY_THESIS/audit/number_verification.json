@@ -1928,7 +1928,39 @@
    "legit_n": 178,
    "utility_under_attack": 1147,
    "attack_calls_withheld": 882,
-   "attack_calls": 907
+   "attack_calls": 907,
+   "paired_vs_A0": {
+    "attack_call_released": {
+     "arm_only": 2,
+     "ref_only": 2,
+     "mcnemar_p": 1.0,
+     "diff_pp": [
+      0.0,
+      -0.1,
+      0.1
+     ]
+    },
+    "utility_under_attack": {
+     "arm_only": 69,
+     "ref_only": 5,
+     "mcnemar_p": 1.8345664258432237e-15,
+     "diff_pp": [
+      2.15,
+      1.15,
+      3.6
+     ]
+    },
+    "benign_fp": {
+     "arm_only": 0,
+     "ref_only": 49,
+     "mcnemar_p": 3.552713678800501e-15,
+     "diff_pp": [
+      -14.67,
+      -28.74,
+      -4.17
+     ]
+    }
+   }
   },
   "A2": {
    "attack_call_released_eps": 24,
@@ -1937,7 +1969,39 @@
    "legit_n": 178,
    "utility_under_attack": 1102,
    "attack_calls_withheld": 882,
-   "attack_calls": 907
+   "attack_calls": 907,
+   "paired_vs_A0": {
+    "attack_call_released": {
+     "arm_only": 0,
+     "ref_only": 0,
+     "mcnemar_p": null,
+     "diff_pp": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "utility_under_attack": {
+     "arm_only": 19,
+     "ref_only": 0,
+     "mcnemar_p": 3.814697265625e-06,
+     "diff_pp": [
+      0.64,
+      0.1,
+      1.57
+     ]
+    },
+    "benign_fp": {
+     "arm_only": 0,
+     "ref_only": 14,
+     "mcnemar_p": 0.0001220703125,
+     "diff_pp": [
+      -4.19,
+      -11.61,
+      0.0
+     ]
+    }
+   }
   },
   "A3": {
    "attack_call_released_eps": 202,
@@ -1946,7 +2010,39 @@
    "legit_n": 178,
    "utility_under_attack": 1532,
    "attack_calls_withheld": 672,
-   "attack_calls": 907
+   "attack_calls": 907,
+   "paired_vs_A0": {
+    "attack_call_released": {
+     "arm_only": 178,
+     "ref_only": 0,
+     "mcnemar_p": 5.22024357439882e-54,
+     "diff_pp": [
+      5.98,
+      1.14,
+      13.99
+     ]
+    },
+    "utility_under_attack": {
+     "arm_only": 485,
+     "ref_only": 36,
+     "mcnemar_p": 1.5698590641644326e-101,
+     "diff_pp": [
+      15.07,
+      12.65,
+      17.19
+     ]
+    },
+    "benign_fp": {
+     "arm_only": 0,
+     "ref_only": 93,
+     "mcnemar_p": 2.0194839173657902e-28,
+     "diff_pp": [
+      -27.84,
+      -45.19,
+      -12.8
+     ]
+    }
+   }
   },
   "A4a": {
    "attack_call_released_eps": 24,
@@ -1955,7 +2051,39 @@
    "legit_n": 178,
    "utility_under_attack": 1081,
    "attack_calls_withheld": 882,
-   "attack_calls": 907
+   "attack_calls": 907,
+   "paired_vs_A0": {
+    "attack_call_released": {
+     "arm_only": 0,
+     "ref_only": 0,
+     "mcnemar_p": null,
+     "diff_pp": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "utility_under_attack": {
+     "arm_only": 0,
+     "ref_only": 2,
+     "mcnemar_p": 0.5,
+     "diff_pp": [
+      -0.07,
+      -0.2,
+      0.0
+     ]
+    },
+    "benign_fp": {
+     "arm_only": 0,
+     "ref_only": 0,
+     "mcnemar_p": null,
+     "diff_pp": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   }
   },
   "A4b": {
    "attack_call_released_eps": 49,
@@ -1964,7 +2092,39 @@
    "legit_n": 178,
    "utility_under_attack": 1062,
    "attack_calls_withheld": 833,
-   "attack_calls": 907
+   "attack_calls": 907,
+   "paired_vs_A0": {
+    "attack_call_released": {
+     "arm_only": 29,
+     "ref_only": 4,
+     "mcnemar_p": 1.0928604751825333e-05,
+     "diff_pp": [
+      0.84,
+      0.0,
+      2.17
+     ]
+    },
+    "utility_under_attack": {
+     "arm_only": 56,
+     "ref_only": 77,
+     "mcnemar_p": 0.08249129252516202,
+     "diff_pp": [
+      -0.7,
+      -2.46,
+      0.96
+     ]
+    },
+    "benign_fp": {
+     "arm_only": 12,
+     "ref_only": 0,
+     "mcnemar_p": 0.00048828125,
+     "diff_pp": [
+      3.59,
+      0.0,
+      10.84
+     ]
+    }
+   }
   },
   "A5": {
    "attack_call_released_eps": 24,
@@ -1973,7 +2133,39 @@
    "legit_n": 178,
    "utility_under_attack": 1083,
    "attack_calls_withheld": 882,
-   "attack_calls": 907
+   "attack_calls": 907,
+   "paired_vs_A0": {
+    "attack_call_released": {
+     "arm_only": 0,
+     "ref_only": 0,
+     "mcnemar_p": null,
+     "diff_pp": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "utility_under_attack": {
+     "arm_only": 0,
+     "ref_only": 0,
+     "mcnemar_p": null,
+     "diff_pp": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "benign_fp": {
+     "arm_only": 0,
+     "ref_only": 0,
+     "mcnemar_p": null,
+     "diff_pp": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   }
   },
   "A6": {
    "attack_call_released_eps": 828,
@@ -1982,7 +2174,39 @@
    "legit_n": 178,
    "utility_under_attack": 1509,
    "attack_calls_withheld": 0,
-   "attack_calls": 907
+   "attack_calls": 907,
+   "paired_vs_A0": {
+    "attack_call_released": {
+     "arm_only": 804,
+     "ref_only": 0,
+     "mcnemar_p": 1.8746210173695387e-242,
+     "diff_pp": [
+      26.99,
+      18.78,
+      33.48
+     ]
+    },
+    "utility_under_attack": {
+     "arm_only": 516,
+     "ref_only": 90,
+     "mcnemar_p": 1.5391894998134094e-73,
+     "diff_pp": [
+      14.3,
+      11.7,
+      16.54
+     ]
+    },
+    "benign_fp": {
+     "arm_only": 0,
+     "ref_only": 135,
+     "mcnemar_p": 4.591774807899561e-41,
+     "diff_pp": [
+      -40.42,
+      -55.15,
+      -26.94
+     ]
+    }
+   }
   },
   "A7": {
    "attack_call_released_eps": 24,
@@ -1991,7 +2215,39 @@
    "legit_n": 178,
    "utility_under_attack": 1078,
    "attack_calls_withheld": 882,
-   "attack_calls": 907
+   "attack_calls": 907,
+   "paired_vs_A0": {
+    "attack_call_released": {
+     "arm_only": 0,
+     "ref_only": 0,
+     "mcnemar_p": null,
+     "diff_pp": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "utility_under_attack": {
+     "arm_only": 0,
+     "ref_only": 5,
+     "mcnemar_p": 0.0625,
+     "diff_pp": [
+      -0.17,
+      -0.5,
+      0.0
+     ]
+    },
+    "benign_fp": {
+     "arm_only": 0,
+     "ref_only": 0,
+     "mcnemar_p": null,
+     "diff_pp": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   }
   },
   "B0": {
    "attack_call_released_eps": 828,
@@ -2000,7 +2256,39 @@
    "legit_n": 178,
    "utility_under_attack": 1465,
    "attack_calls_withheld": 0,
-   "attack_calls": 907
+   "attack_calls": 907,
+   "paired_vs_A0": {
+    "attack_call_released": {
+     "arm_only": 804,
+     "ref_only": 0,
+     "mcnemar_p": 1.8746210173695387e-242,
+     "diff_pp": [
+      26.99,
+      18.78,
+      33.48
+     ]
+    },
+    "utility_under_attack": {
+     "arm_only": 516,
+     "ref_only": 134,
+     "mcnemar_p": 9.614551121458302e-54,
+     "diff_pp": [
+      12.82,
+      10.18,
+      15.07
+     ]
+    },
+    "benign_fp": {
+     "arm_only": 0,
+     "ref_only": 141,
+     "mcnemar_p": 7.174648137343064e-43,
+     "diff_pp": [
+      -42.22,
+      -55.99,
+      -29.34
+     ]
+    }
+   }
   }
  },
  "cross_study_episode_identity": {

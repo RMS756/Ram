@@ -124,8 +124,8 @@ def s19_calls(valid_p1, E19):
     for r in csv.DictReader(io.TextIOWrapper(gzip.open(ROOT / "REM_FINAL_THESIS_COMPLETION_2026_11_19/results/raw/ablation_calls.csv.gz"))):
         if r["set"] == "primary" and r["episode_id"] in valid_p1:
             C[r["arm"]][r["episode_id"]].append((r["tool"], r["label"] == "1", r["released"] == "True"))
-    att = [e for e in valid_p1 if e.split("|")[2] != "none"]
-    ben = [e for e in valid_p1 if e.split("|")[2] == "none"]
+    att = sorted(e for e in valid_p1 if e.split("|")[2] != "none")
+    ben = sorted(e for e in valid_p1 if e.split("|")[2] == "none")
     out = {}
     for a in sorted(C):
         ce = C[a]
@@ -137,6 +137,18 @@ def s19_calls(valid_p1, E19):
                   "utility_under_attack": sum(E19[e][a][0] for e in att),
                   "attack_calls_withheld": sum(sum(1 for c in rc(e) if c[1] and not c[2]) for e in att),
                   "attack_calls": sum(sum(1 for c in rc(e) if c[1]) for e in att)}
+    # paired episode-level differences from A0 for the call-derived outcomes (same definitions as in s21)
+    inj = lambda e: e.split("|")[2]  # noqa: E731
+    usr = lambda e: e.split("|")[1]  # noqa: E731
+    acr = {a: {e: any(c[1] and c[2] for c in C[a].get(e, []) if c[0] in RESTRICTED) for e in att} for a in C}
+    fp = {a: {e: any(not c[2] for c in C[a].get(e, []) if c[0] in RESTRICTED) for e in ben} for a in C}
+    for a in sorted(C):
+        if a == "A0":
+            continue
+        out[a]["paired_vs_A0"] = {
+            "attack_call_released": paired(att, inj, lambda e, a=a: acr[a][e], lambda e: acr["A0"][e]),
+            "utility_under_attack": paired(att, inj, lambda e, a=a: E19[e][a][0], lambda e: E19[e]["A0"][0]),
+            "benign_fp": paired(ben, usr, lambda e, a=a: fp[a][e], lambda e: fp["A0"][e])}
     return out
 
 

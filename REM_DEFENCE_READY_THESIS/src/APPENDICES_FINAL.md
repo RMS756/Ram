@@ -151,7 +151,7 @@ $$\Pr(y = 1 \mid x) = \frac{1}{1 + \exp\!\big(-(\beta_0 + \beta^\top x)\big)} \q
 
 # Appendix B: Register of Open Supervisor Decisions
 
-**No supervisor decision is recorded in the project repository.** Every item below is open. Where the thesis needed a wording, it uses the option marked "handling", labelled as pending. The full register, with options and effects, is kept with the project records (`SUPERVISOR_DECISIONS_REQUIRED.md` and the register of the five-chapter draft).
+**No supervisor decision is recorded in the project repository.** Every item below is open. Where the thesis needed a wording, it uses the option marked "handling", labeled as pending. The full register, with options and effects, is kept with the project records (`SUPERVISOR_DECISIONS_REQUIRED.md` and the register of the five-chapter draft).
 
 **Table B.1. Open decisions that determine what the thesis may claim**
 
@@ -161,7 +161,7 @@ $$\Pr(y = 1 \mid x) = \frac{1}{1 + \exp\!\big(-(\beta_0 + \beta^\top x)\big)} \q
 | SD-FEAT | Feature set; **proposed amendment REM v1.1** (behavioral evidence removed) | v1.0 is the design; v1.1 is reported beside it as an ablation whose gain in task completion met the pre-declared decision rule; its effect on security is not resolved | Approve v1.1, or keep v1.0 |
 | SD-PERM | **Exploratory extension: task-permission evidence** (request compiler, instruction matching, two-verdict decision and authority guard, in three revisions; Chapter 3, Section 3.14) | Reported as proposed and exploratory, with development results only; not part of REM v1.0 or v1.1. The guard used alone (GV) is reported as the arm best supported on development data, because every learned or calibrated decision behind it gave the same outcomes | Keep in the thesis as an exploratory result, move to future work, or authorize a prospective evaluation with independently written requests; confirm GV as the reported arm |
 | SD-AMT | Typed verification of request-derived amounts (GV_math; Chapter 4, Section 4.5.8) | Reported as proposed and exploratory in two versions (version 2 repairs defects D3 and D4); the frozen GV keeps its defects | Adopt the verifier, extend its grammar after independent validation, or keep GV |
-| SD-D2 | Whether the declared predicate D2 (required evidence unavailable at a high tier) applies to calls that the permission guard supports | Applied as declared; it withholds 55 and 62 request-supported updates of a scheduled transaction (Chapter 4, Section 4.5.8) | Keep D2 behind the guard, or exempt request-supported calls in a separately labelled variant |
+| SD-D2 | Whether the declared predicate D2 (required evidence unavailable at a high tier) applies to calls that the permission guard supports | Applied as declared; it withholds 55 and 62 request-supported updates of a scheduled transaction (Chapter 4, Section 4.5.8) | Keep D2 behind the guard, or exempt request-supported calls in a separately labeled variant |
 | SD-COND | Whether a subjective condition in a request ("if something looks suspicious") may ever license an action | Never treated as satisfied; the call stays unknown and is withheld without a reviewer. This costs user task 14 (167 and 119 completed tasks) | Confirm, send such calls to a reviewer, or specify a verification mechanism |
 | D-9 | Costs, tier map and predicates | Declared exploratory values | Approve, or elicit new values |
 | SC-1 / D-2 | Mitigation semantics: step-level or episode-level | Step-level reference; episode-level in Appendix S-E | Confirm |
@@ -170,14 +170,16 @@ $$\Pr(y = 1 \mid x) = \frac{1}{1 + \exp\!\big(-(\beta_0 + \beta^\top x)\big)} \q
 | SC-4 / D-3 | Calibration fitting target: labels or Platt's smoothed targets | Both implemented; label fit is the reference | Confirm |
 | SC-5 | Brier score convention | Binary convention reported, with the convention stated | Confirm |
 | SC-6 | Layer label of the estimator in code comments | Decision Engine in the thesis; code comment differs | Confirm |
-| SC-7 / D-1 | Recorded-trace replay against the original scope, which excluded replay-based estimation | Kept as a labelled NO-ADAPT analysis | Keep, drop, or replace by live runs |
+| SC-7 / D-1 | Recorded-trace replay against the original scope, which excluded replay-based estimation | Kept as a labeled NO-ADAPT analysis | Keep, drop, or replace by live runs |
 | D-6 | Label rule; the user_task_15 collision; no human label audit | Rule kept; collision reported; audit package prepared, not annotated | Keep or redefine; audit |
 | D-7 | Reviewer model for Escalate | Two bounds; headline results use no reviewer | Confirm |
 | D-8 / SD-DET | Injection classifier of the Detection Layer | Absent; not replaced | Choose a classifier, or record its absence as final |
 | D-10 | Wording of the research questions | Marked proposed | Confirm |
 | SD-ARCH | Whether an authorization-first deterministic design (REM-B family, Chapter 4, Section 4.5.8) should replace or extend the approved REM v1.0 | Reported as exploratory and NO-GO under its own pre-registered rules; REM v1.0 unchanged | Keep REM v1.0 as the thesis design; or authorize a new, independently validated study |
+| SD-ABL | Whether the component-level ablation of Chapter 4, Section 4.5 answers the request for an ablation of the five layers (the Mitigation layer removed whole; every Decision Engine component; the implemented Detection and Behavioral Analysis evidence; the Input & Context layer only indirectly, because it computes no evidence) | Reported as a component-level ablation with its isolation limits stated | Accept, or specify a substitute input for an Input & Context ablation (a design decision) |
+| SD-CMP | Scope of the comparison with existing frameworks: Progent's published manual banking policy in offline replay; DRIFT and MELON at the level of architecture and code, with scripted integration tests only | Reported with the kind of evidence of each comparison stated (Chapter 4, Section 4.4) | Accept, or authorize live runs under D-15 |
 | D-12 | Thesis title | As supplied by the author | Confirm |
-| D-15 | Live closed-loop experiment and the comparisons that need a language model (MELON, Task Shield, Progent with generated policies, the semantic verifier): backbone, decoding, repeats, budget, credentials | Not run; a sealed prospective protocol exists | Authorize with a spending limit, or accept submission without them |
+| D-15 | Live closed-loop experiment and the comparisons that need a language model (MELON, DRIFT, Task Shield, Progent with generated policies, the semantic verifier): backbone, decoding, repeats, budget, credentials | Not run; a sealed prospective protocol exists | Authorize with a spending limit, or accept submission without them |
 | SD-5 | Banking-only evaluation against objective O1, which also names task-automation agents | O1 achieved for banking only | Accept or extend |
 | GAP | Research-gap wording of Chapter 2, Section 2.11.5 | Proposed wording | Confirm |
 | RULES | Rule baselines P1, P2 and A2 as mandatory comparators; Progent's manual banking policy as a published comparator in replay | Included | Confirm |

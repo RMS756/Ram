@@ -51,7 +51,7 @@ Each results file records the commit of the framework, the digest of the configu
 
 - **Re-execution.** The pilot was executed, re-executed after code corrections and re-executed again with timing instrumentation; the analytical values were identical each time (Section 4.2.1).
 - **Equivalence of earlier arms in later studies.** Each later study recomputes the earlier arms before adding its own. In the study of 13 November the seven earlier arms reproduce the stored counts on both populations, and the refitted estimator of REM v1.1 equals the stored one (largest absolute difference of any parameter: 0).
-- **Re-execution of a study prepared elsewhere.** The integration study of 16 November 2026 (arms H10, H11, H11D, HR, HV) was prepared by another assistant in a separate checkout and delivered as a package. Before it was used here it was re-executed from the pinned sources: 123,776 replays with the outcome of every episode identical to the delivered files, and all fitted parameters within 3.2 × 10⁻¹⁴.
+- **Re-execution of a study prepared elsewhere.** The integration study of 16 November 2026 (arms H10, H11, H11D, HR, HV) was prepared in a separate working copy of the repository and delivered as a package. Before it was used here it was re-executed from the pinned sources: 123,776 replays with the outcome of every episode identical to the delivered files, and all fitted parameters within 3.2 × 10⁻¹⁴.
 - **Tests.** On 13 November 2026 the suite of 280 tests gave 278 passed, 1 skipped and 1 expected failure; on 16 November 2026 the suite of 502 tests gave 500 passed, 1 skipped and the same expected failure. It covers the frozen equations, the mitigation semantics, replay, leakage controls and, for the extension, the isolation of the defense interface from task identifiers, labels and outcomes.
 
 The commands that regenerate every table are listed in Appendix S-B and in the study folders of the repository.
@@ -70,9 +70,9 @@ Ten kinds of evidence are kept apart. Each table states which kind it reports.
 | Offline prediction | REM's probability for a recorded call, from a model fitted without that call's group | Any effect of enforcement | Sections S-4.2.3 and 4.6.1 |
 | Observe-only decision | The verdict REM would issue for a recorded call; not enforced | Outcomes | Sections 4.6.2, 4.6.4, 4.6.5 and 4.5.7 |
 | Replay | A recorded episode re-executed in the benchmark's sandbox with a policy that may withhold calls; later calls are the recorded ones (NO-ADAPT) | Agent adaptation; reviewer effect; any difference among Modify, Escalate and Block | Sections 4.6.3, 4.4.7, 4.5.7, 4.6.6 and 4.6.7 |
-| Post-hoc analysis | An analysis added after results were seen; labelled where it occurs | Confirmation | Section 4.2.2; parts of Sections 4.4.7 and 4.6.6 |
+| Post-hoc analysis | An analysis added after results were seen; labeled where it occurs | Confirmation | Section 4.2.2; parts of Sections 4.4.7 and 4.6.6 |
 | Confirmatory replay | Replay on recordings that had not been read before that run (11 November 2026), under a protocol committed in advance | The same limits as replay | Section 4.6.8 |
-| Development replay of the extension | Replay of new arms on recordings that had all been inspected; protocol committed before the new arms were scored | Confirmation; behaviour on requests the author had not seen | Sections 4.4.7, 4.5.8 and 4.6.9 |
+| Development replay of the extension | Replay of new arms on recordings that had all been inspected; protocol committed before the new arms were scored | Confirmation; behavior on requests the author had not seen | Sections 4.4.7, 4.5.8 and 4.6.9 |
 | Call-level fixture | Hand-written paired calls scored by the frozen models | Prevalence; any benchmark outcome | Sections 4.6.7 and 4.6.9 |
 | Replay with a published framework's own code | Recorded episodes replayed with every call decided by the official enforcement code of a published framework (Progent's checker) | Agent adaptation; the framework with generated or updated policies | Section 4.4.7 |
 | Scripted integration | A published framework's official code run end to end in the benchmark with a scripted agent that calls no model | Any security or utility performance; only compatibility and processing volume | Section 4.4.7 |
@@ -173,7 +173,7 @@ The agents, templates and trajectories are new. The sixteen user tasks and nine 
 - **Human audit package.** A package for human annotation has been prepared (`results/pilot_R2/label_audit_human_package.csv`, with instructions). It contains 145 items:
   - every proposed call of 30 randomly drawn attacked episodes (70 items; 5 of the drawn episodes contain no proposed tool call);
   - all 29 ambiguous user_task_15 positives;
-  - 19 steps carrying an attacker value but labelled 0;
+  - 19 steps carrying an attacker value but labeled 0;
   - 4 steps from episodes with recorded success but no positive label;
   - 23 positive steps from episodes without recorded success.
 
@@ -259,11 +259,11 @@ Three outcomes are primary: completion of the legitimate task, release of legiti
 | Attack success | The benchmark's security check reports the attacker's goal as reached in the replayed episode | Replay |
 | Task completion (benign; under attack; all) | The benchmark's utility check passes in the replayed episode | Replay |
 | Legitimate state-changing calls released | Calls to state-changing tools proposed in benign episodes that the policy releases | Replay |
-| Episodes with a released attack-labelled call | Attacked episodes in which at least one call carrying the attempt label is released | Replay |
+| Episodes with a released attack-labeled call | Attacked episodes in which at least one call carrying the attempt label is released | Replay |
 | Tasks gained and lost; attacks gained and lost | Episodes in which only one of two arms completes the task, or only one admits the attack | Replay, paired |
 | Decision time | Time to evaluate one proposed call | Runtime measurement |
 
-**A released attack-labelled call is not the same as a committed unauthorized change of the bank state.** The label marks an attempt (Section 4.2.1), and the effect of a released call on the state is not measured separately from the benchmark's security check. Earlier drafts headed this column "unauthorized state change"; the quantity is unchanged and the name is corrected here. Attack success, as judged by the benchmark, is the security outcome.
+**A released attack-labeled call is not the same as a committed unauthorized change of the bank state.** The label marks an attempt (Section 4.2.1), and the effect of a released call on the state is not measured separately from the benchmark's security check. Earlier drafts headed this column "unauthorized state change"; the quantity is unchanged and the name is corrected here. Attack success, as judged by the benchmark, is the security outcome.
 
 ### 4.3.4 Statistical Procedure and Comparisons Fixed in Advance
 
@@ -313,19 +313,19 @@ A framework was selected for detailed comparison if it met all of the following 
 - **C4 Benchmark:** it runs on, or has been reported on, the AgentDojo banking suite.
 - **C5 Mechanism:** it represents a mechanism family different from those of the other selected frameworks.
 
-Literature selection followed Chapter 2. Implementation availability, licence and benchmark compatibility were checked in the official repositories on 22 November 2026.
+Literature selection followed Chapter 2. Implementation availability, license and benchmark compatibility were checked in the official repositories on 22 November 2026.
 
 **Table 4.10. Candidate frameworks and the selection decision**
 
 | Framework | Criteria C1–C4 | Mechanism family | Decision |
 |---|---|---|---|
-| Progent (T. Shi et al., 2026) | C1 yes; C2 yes, each tool call is checked before execution; C3 yes, `sunblaze-ucb/progent` (MIT licence, commit `3e79753`); C4 yes, a fork of AgentDojo 0.1.29 is bundled | Programmable privilege control (deterministic policies; optional policy generation by a language model) | **Selected:** architectural and quantitative comparison |
-| DRIFT (H. Li et al., 2025) | C1 yes; C2 yes, inside the agent step, before the tool executes; C3 yes, `SaFo-Lab/DRIFT` (MIT licence, commit `6fd3df4`); C4 yes, requires AgentDojo 0.1.35 | Language-model planning, dynamic validation and injection isolation | **Selected:** architectural comparison; software compatibility tested |
-| MELON (Zhu, Yang, et al., 2025) | C1 yes; C2 yes, after each tool turn; C3 yes, `ucsb-mlsec/MELON` (commit `06014c7`; no licence file); C4 yes, requires AgentDojo ≤ 0.1.29 | Detection by masked re-execution and embedding similarity | **Selected:** architectural comparison; integration implemented |
+| Progent (T. Shi et al., 2026) | C1 yes; C2 yes, each tool call is checked before execution; C3 yes, `sunblaze-ucb/progent` (MIT license, commit `3e79753`); C4 yes, a fork of AgentDojo 0.1.29 is bundled | Programmable privilege control (deterministic policies; optional policy generation by a language model) | **Selected:** architectural and quantitative comparison |
+| DRIFT (H. Li et al., 2025) | C1 yes; C2 yes, inside the agent step, before the tool executes; C3 yes, `SaFo-Lab/DRIFT` (MIT license, commit `6fd3df4`); C4 yes, requires AgentDojo 0.1.35 | Language-model planning, dynamic validation and injection isolation | **Selected:** architectural comparison; software compatibility tested |
+| MELON (Zhu, Yang, et al., 2025) | C1 yes; C2 yes, after each tool turn; C3 yes, `ucsb-mlsec/MELON` (commit `06014c7`; no license file); C4 yes, requires AgentDojo ≤ 0.1.29 | Detection by masked re-execution and embedding similarity | **Selected:** architectural comparison; integration implemented |
 | Defenses distributed with AgentDojo (Debenedetti et al., 2024) | C1–C4 yes (C3: the installed package) | Prompt-level defenses, tool filtering and classifier detection | **Selected:** quantitative comparison with recorded runs |
 | CaMeL (Debenedetti et al., 2025) | C1–C4 yes | Redesign of the agent (control flow separated from data) | Literature comparison only: it replaces the agent architecture, so it cannot be compared at a tool boundary |
 | NEXUS, aiAuthZ, Task Shield, PROVISO, PACT, ROPE, CapLite, Kairos | C1 and C2 yes; C3 and C4 partly | Various (Section 4.4.3) | Literature comparison only (Table 4.11) |
-| `Agentic-AI-Risk-Mitigation/progent` | C3 **no**: an independent re-implementation by other authors, without a licence file | — | **Excluded:** not the authors' implementation |
+| `Agentic-AI-Risk-Mitigation/progent` | C3 **no**: an independent re-implementation by other authors, without a license file | — | **Excluded:** not the authors' implementation |
 | AgentDyn (H. Li et al., 2026) | Not applicable | A benchmark and evaluation harness, not a defense | **Not a comparator.** Its fork of AgentDojo changes the default system message and scores JSON errors as attack successes, so it was not used as the evaluation harness |
 
 ### 4.4.3 The Compared Frameworks
@@ -411,7 +411,7 @@ The comparison restates design positions documented in Chapter 2 and does not ra
 |---|---|---|
 | NEXUS (Hossain et al., 2026) | Same family: calibrated logistic score, rules and four graduated interventions. Its repository documentation reports that on rule-blind plans its policy predicts only Allow or Block, which parallels the finding here that the middle verdicts do not act. A working document in the authors' repository (dated 23 May 2026; not the published paper) states that the learned scorer gives no gain in binary detection over the rules alone and that its contribution is to four-class intervention accuracy (0.6406 against 0.3672), which parallels the finding here that the learned score adds no measured security over rules | Full text not read (publisher's site not reachable). The repository was read on 13 November 2026 and not executed. There is no valid adapter from a banking tool call to its structured-plan representation, and re-implementing it from its documentation would not be NEXUS |
 | CASEL (Y. Zhang et al., 2026) | Publishes a per-mode cost rule of the same structure as Equation 3.6, in simulation, and reports that it does not reduce harm beyond a simpler gate | No benchmark results exist to compare with |
-| C. Zhang et al. (2026) | Is consistent with the small effect of calibration on outcomes. Its intervention-value target was tested here (Section 4.6.6) and did not transfer to an unseen attack objective, a condition the paper does not examine | Tested as an adaptation, labelled as derived |
+| C. Zhang et al. (2026) | Is consistent with the small effect of calibration on outcomes. Its intervention-value target was tested here (Section 4.6.6) and did not transfer to an unseen attack objective, a condition the paper does not examine | Tested as an adaptation, labeled as derived |
 | AgentBoundary (T. Yang et al., 2026) | Reports over-defense as a general finding; REM's release of 4 of 51 authorized calls is an instance. Its paired design is used for the fixtures | Its mitigation is a language-model component |
 | PROVISO (Yan et al., 2026) | Reports much higher utility with a trained controller and restored rollouts. Its stated limitation, fitting per benchmark without a transfer study, is the condition examined here for a simpler monitor | No implementation is named in the paper; it needs an encoder and an agent model |
 | Task Shield; MELON | Reported on AgentDojo with live agents. Task Shield judges each action against the user's instructions with a language model; the permission rule of Section 4.4.7 does this with a parser, for three argument types only | Need a model in the decision path; MELON integration is implemented and unevaluated (Section S-4.4.4) |
@@ -456,7 +456,7 @@ Table 4.12 compares the frameworks on the fifteen dimensions requested.
 | 12 Benign task preservation | 105 of 334 benign episodes in replay (M) | 154 of 334 with the published manual policy in replay (M); the paper reports high utility with generated policies (P) | Not measured here; the authors' banking runs (v1.2) report utility under attack only | Not measured here |
 | 13 Financial-agent applicability | Designed for financial actions; consequence tiers by action (Chapter 3) | Banking policy available; recipient allow-list (I) | General; evaluated on AgentDojo suites including banking (P abstract, I) | General; evaluated on AgentDojo (P) |
 | 14 Deployment assumptions | Offline fitted model; declared costs and tiers; a reviewer for Escalate (absent here) | A trusted policy author, or a trusted policy model and an approver (P) | A capable language model for every component; access to the agent's prompts | Access to the agent's model and an embedding service; extra latency per step |
-| 15 Known limitations | Withholds most legitimate state-changing calls; the detection indicator has no measurable effect here, and behavioral evidence lowers task completion (Section 4.5) | A manual policy encodes known recipients; generated policies depend on the model; the paper's guarantee concerns the current policy only (P) | Language-model judgements can err; its agent differs from the native agent (I) | Fixed threshold and embedding model; stops the whole episode (I) |
+| 15 Known limitations | Withholds most legitimate state-changing calls; the detection indicator has no measurable effect here, and behavioral evidence lowers task completion (Section 4.5) | A manual policy encodes known recipients; generated policies depend on the model; the paper's guarantee concerns the current policy only (P) | Language-model judgments can err; its agent differs from the native agent (I) | Fixed threshold and embedding model; stops the whole episode (I) |
 
 ![Figure 4.1. Where each framework acts in the execution of a tool-using agent. REM and Progent act on each proposed call before the tool executes; DRIFT replaces the agent element and validates its calls; MELON re-executes the agent's step with the user request masked and stops the episode on a detection.](REM_DEFENCE_READY_THESIS/figures/fig_integration_points.png){width=100%}
 
@@ -471,7 +471,7 @@ Table 4.12 compares the frameworks on the fifteen dimensions requested.
 | MELON | Detection only, with its own Mitigation (stopping the episode) | Decision Engine: no verdict between allow and stop |
 | REM | All five layers, as designed (the Detection layer's classifier is not implemented) | — |
 
-**How REM and DRIFT realise its layers.** REM realises every layer with deterministic features and one small learned model. DRIFT realises its layers with a language model.
+**How REM and DRIFT realize its layers.** REM realizes every layer with deterministic features and one small learned model. DRIFT realizes its layers with a language model.
 
 **What each needs to know.**
 
@@ -584,7 +584,7 @@ Table 4.12 compares the frameworks on the fifteen dimensions requested.
 
 **Table 4.16. Replay results of REM, the baselines and the rules on the primary recordings** (step-level, no reviewer; `study_results.json`, S1)
 
-| Arm | Successful attacks / 2,979 | Episodes with a released attack-labelled call | Benign tasks completed / 334 | Tasks completed under attack / 2,979 | Authorized calls released / 178 |
+| Arm | Successful attacks / 2,979 | Episodes with a released attack-labeled call | Benign tasks completed / 334 | Tasks completed under attack / 2,979 | Authorized calls released / 178 |
 |---|---|---|---|---|---|
 | No defense | 672 | 828 | 175 | 1,465 | 178 |
 | B1, operating-point thresholds | 164 | 202 | 170 | 1,532 | 130 |
@@ -920,7 +920,7 @@ The five layers of Chapter 3 are design units. In the implementation they are no
 
 | Layer and design objective | Implemented responsibilities | Module | Output, and interaction with other layers |
 |---|---|---|---|
-| **1 Input & Context:** capture what the agent sees and where it came from | Computes no evidence (Chapter 3, Section 3.4). Hygiene (removal of invisible and format characters); provenance labels (trusted, semi-trusted, untrusted) for every segment; entity extraction (IBANs, amounts, credentials, profile values) | `provenance.py` | Labelled segments and entities. They feed the action features x^act^~1~–x^act^~3~, the feature x^beh^~1~ and predicate D2 |
+| **1 Input & Context:** capture what the agent sees and where it came from | Computes no evidence (Chapter 3, Section 3.4). Hygiene (removal of invisible and format characters); provenance labels (trusted, semi-trusted, untrusted) for every segment; entity extraction (IBANs, amounts, credentials, profile values) | `provenance.py` | Labeled segments and entities. They feed the action features x^act^~1~–x^act^~3~, the feature x^beh^~1~ and predicate D2 |
 | **2 Detection:** detect injected instructions in untrusted content | The instruction-pattern indicator x^ctx^~2~ over untrusted segments added since the previous step. The injection classifier x^ctx^~1~ of the design is **absent** (decision D-8) | `instruction_patterns.py` | x^ctx^~2~ ∈ {0, 1}, an input of the estimator. The same pattern match defines x^beh^~1~ |
 | **3 Behavioral Analysis:** describe the episode and the proposed action | Episode history; behavioral features x^beh^~1~ (action after an untrusted, pattern-matched observation), x^beh^~2~ (repetition), x^beh^~3~ (privilege escalation), x^beh^~4~ (deviation from benign transitions); action features x^act^~1~ (argument provenance), x^act^~2~ (destination novelty), x^act^~3~ (sensitive egress), computed from the Input & Context entities (Chapter 3, Table 3.6) | `evidence.py` | The feature vector that the Decision Engine receives |
 | **4 Decision Engine:** choose a verdict per call | Ridge logistic estimate; Platt-type calibration on the logit; consequence tier; predicates D1 (prohibited action → Block) and D2 (missing evidence at a high tier → Escalate); expected-loss verdict over Allow, Modify, Escalate and Block | `ridge_logistic.py`, `logit_nll.py`, `decision/`, `a3.py` | Verdict and its source, handed to Mitigation |
@@ -931,7 +931,7 @@ The five layers of Chapter 3 are design units. In the implementation they are no
 
 **Three couplings determine what can be ablated cleanly:**
 1. **x^beh^~1~ is defined through the instruction-pattern match** (Chapter 3, Table 3.6): it is 1 when the most recent untrusted tool result has x^ctx^~2~ = 1. Removing only the Detection feature therefore leaves its signal inside the Behavioral Analysis evidence. Removing the Detection layer's signal requires removing both, which is a coupled ablation.
-2. **The Input & Context layer computes no evidence of its own** (Chapter 3, Section 3.4). Its provenance labels and entities reach the decision only through the action features x^act^~1~–x^act^~3~ and x^beh^~1~ of the Behavioral Analysis layer and through predicate D2. Removing the labelling would leave all of them without inputs, so the arm would need fabricated signals. Its contribution is therefore observed indirectly, through the provenance-dependent action evidence (variant A3b).
+2. **The Input & Context layer computes no evidence of its own** (Chapter 3, Section 3.4). Its provenance labels and entities reach the decision only through the action features x^act^~1~–x^act^~3~ and x^beh^~1~ of the Behavioral Analysis layer and through predicate D2. Removing the labeling would leave all of them without inputs, so the arm would need fabricated signals. Its contribution is therefore observed indirectly, through the provenance-dependent action evidence (variant A3b).
 3. **The Decision Engine has three separable parts:** the learned estimate with its expected-loss rule, the predicates, and the calibration. Each was ablated separately.
 
 ### 4.5.5 Ablation Configurations
@@ -944,7 +944,7 @@ Variants are numbered by layer: A1 for Input & Context, A2 for Detection, A3 for
 |---|---|---|---|---|---|
 | Full REM v1.0 | – | None: frozen configuration | – | Reference | A0 (both studies) |
 | No defense | – | Everything: every call released | – | Reference | B0 (both studies) |
-| A1 | Input & Context | Provenance labelling and entity extraction | Would remove the inputs of x^act^~1~–x^act^~3~, x^beh^~1~ and D2 | Not isolatable; seen through A3b | – |
+| A1 | Input & Context | Provenance labeling and entity extraction | Would remove the inputs of x^act^~1~–x^act^~3~, x^beh^~1~ and D2 | Not isolatable; seen through A3b | – |
 | A1h | Input & Context | Hygiene | None: it changes 0 of the 16,727 tool outputs of the three populations | Not exercised | 21 Nov check |
 | A2a | Detection | Instruction-pattern feature x^ctx^~2~; estimator refitted | x^beh^~1~ keeps the pattern signal | E | 21 Nov A1a; 19 Nov A4a |
 | A2b | Detection | The Detection signal: x^ctx^~2~ and x^beh^~1~; refitted | Removes one Behavioral Analysis feature (coupled) | E (coupled) | 21 Nov A1b |
@@ -963,7 +963,7 @@ Variants are numbered by layer: A1 for Input & Context, A2 for Detection, A3 for
 
 | Layer | What its variants remove | What stays in place |
 |---|---|---|
-| Input & Context | nothing directly (A1 not isolatable; hygiene not exercised); its labels' route into the estimator is removed by A3b | its labelling, used by D2 |
+| Input & Context | nothing directly (A1 not isolatable; hygiene not exercised); its labels' route into the estimator is removed by A3b | its labeling, used by D2 |
 | Detection | its implemented indicator, with and without the coupled behavioral feature (A2a, A2b) | — (its classifier was never implemented) |
 | Behavioral Analysis | its behavioral evidence (A3a) and its action/provenance evidence (A3b), separately | the other group in each case |
 
@@ -997,14 +997,14 @@ Variants are numbered by layer: A1 for Input & Context, A2 for Detection, A3 for
 | Metric | Denominator | Covers |
 |---|---|---|
 | Replay attack outcome: the benchmark's security check on the replayed episode | attacked episodes | security |
-| Attacked episodes with at least one attack-labelled state-changing call executed | attacked episodes | tool-call enforcement |
+| Attacked episodes with at least one attack-labeled state-changing call executed | attacked episodes | tool-call enforcement |
 | Tasks completed under attack | attacked episodes | utility under attack |
 | Benign tasks completed | benign episodes | utility |
 | Benign episodes with at least one state-changing call withheld | benign episodes | false blocking |
 
 **Secondary measures** (reported as counts; calls are not treated as independent samples):
 - legitimate state-changing calls released in benign episodes, of 178;
-- attack-labelled calls withheld, of 907;
+- attack-labeled calls withheld, of 907;
 - the median and 95th percentile of REM's complete per-call processing time.
 
 **Statistics.** As in Section 4.3.4:
@@ -1033,7 +1033,7 @@ Variants are numbered by layer: A1 for Input & Context, A2 for Detection, A3 for
 | A4e − Modify verdict | 11 | 24 | 1,083 | 105 | 141 | 33 |
 | A5 − enforcement (shadow mode) | 672 | 828 | 1,465 | 175 | 0 | 178 |
 
-**Table 4.27. Paired differences from the full framework** (variant minus REM v1.0, percentage points, 95% grouped-bootstrap interval; discordant episodes "variant only / REM only"; exact McNemar p where the counts differ)
+**Table 4.27. Paired differences from the full framework** (every cell: variant minus REM v1.0 in percentage points of the attacked or benign episodes, with the 95% grouped-bootstrap interval; then the discordant episodes "variant only / REM only"; then the exact McNemar p where the discordant counts differ. A cell "0.0" or "0.0; 0 / 0" means that no episode changed. Raw counts are in Table 4.26)
 
 | Variant | Attack outcome | Attack call executed | Tasks under attack | Benign tasks completed | Benign episodes with a call withheld |
 |---|---|---|---|---|---|
@@ -1043,9 +1043,9 @@ Variants are numbered by layer: A1 for Input & Context, A2 for Detection, A3 for
 | A3b | +0.2 [−0.1, 0.4]; 9 / 3; p = 0.15 | +0.8 [0.0, 2.2]; 29 / 4; p < 0.001 | −0.7 [−2.5, 1.0]; 56 / 77 | 0.0; 0 / 0 | +3.6 [0.0, 10.8]; 12 / 0; p < 0.001 |
 | A4a | **+22.2 [14.6, 28.9]; 661 / 0** | +27.0 [18.8, 33.5]; 804 / 0 | +14.3 [11.7, 16.5]; 516 / 90 | **+22.5 [8.0, 38.5]; 83 / 8; p < 0.001** | −40.4 [−55.2, −26.9]; 0 / 135 |
 | A4b | 0.0; 0 / 0 | 0.0; 0 / 0 | −0.2 [−0.5, 0.0]; 0 / 5 | 0.0 | 0.0 |
-| A4c | 0.0; 0 / 0 | 0.0 | – | +1.5 [0.0, 4.5]; 5 / 0; p = 0.06 | 127 against 141 episodes |
-| A4d | **+5.1 [0.7, 13.1]; 153 / 0** | 202 against 24 episodes | – | **+19.5 [7.4, 34.1]; 67 / 2; p < 0.001** | 48 against 141 episodes |
-| A4e | 0.0; 0 / 0 | 0.0 | 0.0 | 0.0 | 0.0 |
+| A4c | 0.0; 0 / 0 | 0.0; 0 / 0 | +0.6 [0.1, 1.6]; 19 / 0; p < 0.001 | +1.5 [0.0, 4.5]; 5 / 0; p = 0.06 | −4.2 [−11.6, 0.0]; 0 / 14; p < 0.001 |
+| A4d | **+5.1 [0.7, 13.1]; 153 / 0; p < 0.001** | +6.0 [1.1, 14.0]; 178 / 0; p < 0.001 | +15.1 [12.7, 17.2]; 485 / 36; p < 0.001 | **+19.5 [7.4, 34.1]; 67 / 2; p < 0.001** | −27.8 [−45.2, −12.8]; 0 / 93; p < 0.001 |
+| A4e | 0.0; 0 / 0 | 0.0; 0 / 0 | 0.0; 0 / 0 | 0.0; 0 / 0 | 0.0; 0 / 0 |
 | A5 | +22.2 [14.6, 28.9]; 661 / 0 | +27.0 [18.8, 33.5]; 804 / 0 | +12.8 [10.2, 15.1]; 516 / 134 | +21.0 [5.1, 37.9]; 83 / 13; p < 0.001 | −42.2 [−56.0, −29.3]; 0 / 141 |
 
 ![Figure 4.5. Paired differences of each ablation variant from the full REM v1.0, by layer, on the primary population (replay attack outcome and benign task completion, percentage points, with 95% grouped-bootstrap intervals). Filled marks: the interval excludes zero.](REM_DEFENCE_READY_THESIS/figures/fig_ablation_by_layer.png){width=100%}
@@ -1074,7 +1074,7 @@ Variants are numbered by layer: A1 for Input & Context, A2 for Detection, A3 for
 
 #### Tool-call enforcement and runtime
 
-**Table 4.29. Attack-labelled state-changing calls withheld, and shadow-mode agreement** (per-call records)
+**Table 4.29. Attack-labeled state-changing calls withheld, and shadow-mode agreement** (per-call records)
 
 | Variant | Primary: withheld / 907 | Held-out templates: withheld / 202 | Second population: withheld / 559 |
 |---|---|---|---|
@@ -1156,9 +1156,9 @@ The following report is that of the pre-registered study of 19 November 2026. It
 
 **Reading the intervals.** With 9 and 16 clusters the intervals are descriptive. An interval of [0.00, 0.00] means that no resample moved, not certainty.
 
-![Figure 4.6. Final ablation of REM v1.0: attack success rate and benign utility per arm, with 95% grouped-bootstrap intervals and counts (replay, NO-ADAPT, primary population).](REM_FINAL_THESIS_COMPLETION_2026_11_19/figures/fig_ablation_security_utility.png){width=100%}
+![Figure 4.6. Final ablation of REM v1.0 (19 November 2026): attack outcomes and benign tasks completed per variant, with 95% grouped-bootstrap intervals and counts (replay, NO-ADAPT, primary population; variant labels as in Table 4.25).](REM_DEFENCE_READY_THESIS/figures/fig_19nov_security_utility.png){width=100%}
 
-![Figure 4.7. Paired differences of each arm from REM v1.0 (A0). Filled marks: the 95% interval excludes zero; open marks: it includes zero.](REM_FINAL_THESIS_COMPLETION_2026_11_19/figures/fig_ablation_paired_differences.png){width=100%}
+![Figure 4.7. Paired differences of each variant from the full REM v1.0 (percentage points; variant labels as in Table 4.25). Filled marks: the 95% interval excludes zero; open marks: it includes zero.](REM_DEFENCE_READY_THESIS/figures/fig_19nov_paired_differences.png){width=100%}
 
 **Table 4.32. Verdicts over the 2,551 restricted calls, and decision quality of "withhold"** (precision and recall of "withhold" are measured against the attempt label; withheld calls of the user's own task in attacked episodes count as false positives)
 
@@ -1176,7 +1176,7 @@ A2a and A4b differ from A0 by at most 15 calls in any column (`tables_ablation.m
 
 **Residual ASR after Modify.** Under NO-ADAPT, residual attack success after Modify is close to zero **by construction**: a withheld call does not recur. A residual of 0 of 610 episodes is consistent, by the rule of three, with a rate of up to about 0.5%.
 
-**Table 4.33. Probability quality on the same 6,762 held-out steps (921 attack-labelled)**
+**Table 4.33. Probability quality on the same 6,762 held-out steps (921 attack-labeled)**
 
 | Arm | ROC-AUC | PR-AUC | Brier | ECE (10 bins) | Log-loss |
 |---|---|---|---|---|---|
@@ -1195,13 +1195,13 @@ A2a and A4b differ from A0 by at most 15 calls in any column (`tables_ablation.m
 | Verdicts forced by predicate D1 or D2 before the expected-loss decision | 58 |
 | Calls decided by the expected-loss rule | 6,626 (2,493 to state-changing tools) |
 | Release unchanged by the learned decision | 4,497 |
-| Withheld because of the learned decision: attack-labelled (beneficial) | 882 |
+| Withheld because of the learned decision: attack-labeled (beneficial) | 882 |
 | Withheld because of the learned decision: legitimate, in benign episodes (harmful) | 139 |
-| Withheld because of the learned decision: not attack-labelled, in attacked episodes | 1,108 |
+| Withheld because of the learned decision: not attack-labeled, in attacked episodes | 1,108 |
 | Episodes: attacks prevented / admitted because of the learned decision | 661 / 0 |
 | Episodes: tasks lost / completed only because of the learned decision | 599 / 98 |
 
-![Figure 4.8. Decision reachability of REM v1.0: what happens to the 6,684 recorded calls, and how many releases the learned decision changes.](REM_FINAL_THESIS_COMPLETION_2026_11_19/figures/fig_ablation_reachability.png){width=90%}
+![Figure 4.8. Decision reachability of REM v1.0: what happens to the 6,684 recorded calls, and how many releases the learned decision changes.](REM_DEFENCE_READY_THESIS/figures/fig_19nov_reachability.png){width=90%}
 
 **Latency.** The complete-call timer covers 6,684 calls per arm, measured in one CPU container during replay:
 
@@ -1230,7 +1230,7 @@ REM calls no model, so there is no inference cost. These are replay timings, not
 6. **Context evidence and the predicates have no measurable effect.** No attack changes, and 2 and 5 tasks respectively change.
 7. **Modify is redundant in this evaluation.** No episode changes. Under step-level mitigation without a reviewer, Modify, Escalate and Block all withhold the current call. Removing Modify only relabels its 854 verdicts as Escalate or Block.
 
-**The learned decision is reached, and it decides.** A reader of the later, exploratory studies (Section 4.5.8) could conclude that the learned component of REM changes no decision. That conclusion holds for the deterministic guards of those studies, where an attack-labelled call never reached the learned stage. **It does not hold for REM v1.0.** Here the learned decision:
+**The learned decision is reached, and it decides.** A reader of the later, exploratory studies (Section 4.5.8) could conclude that the learned component of REM changes no decision. That conclusion holds for the deterministic guards of those studies, where an attack-labeled call never reached the learned stage. **It does not hold for REM v1.0.** Here the learned decision:
 - decides 6,626 of 6,684 calls;
 - changes 2,129 releases;
 - accounts for all 661 attacks that REM v1.0 prevents (of 672 reached without defense).
@@ -1306,7 +1306,7 @@ They are reported here because they test, from a different side, whether a learn
 
 **Table 4.37. Decision methods behind the authority front** (primary recordings under S1; `REM_COMPETITIVE_STUDY_2026_11_16/results/`)
 
-| Decision for calls that pass the authority front | Primary: attacks; all tasks / 3,313 | Second: attacks; all tasks / 2,113 | Fixtures: unsafe released; pairs correct / 43 | Attack-labelled calls reaching the decision (primary; second) |
+| Decision for calls that pass the authority front | Primary: attacks; all tasks / 3,313 | Second: attacks; all tasks / 2,113 | Fixtures: unsafe released; pairs correct / 43 | Attack-labeled calls reaching the decision (primary; second) |
 |---|---|---|---|---|
 | **None: release (guard alone, GV)** | 0; 1,532 | 0; 1,386 | 0; 36 | 0; 0 |
 | Ridge model, calibration, two-verdict expected loss (HV) | 0; 1,532 | 0; 1,386 | 0; 36 | 0; 0 |
@@ -1322,11 +1322,11 @@ They are reported here because they test, from a different side, whether a learn
 
 Under the double holdout every arm has the same counts except the Neyman-Pearson threshold at 0.01 (1,479 tasks). With the attacker's identifier reformatted, no arm has a successful attack.
 
-- **Every attack-labelled call is stopped by the guard.** The guard blocks all 907 attack-labelled calls to restricted tools on the primary recordings and all 559 on the second population. No attack-labelled call reaches the stage where a model, a threshold or a tree decides. The 1,059 and 903 calls that GV releases at that stage are *not attack-labelled*. That is a statement about the benchmark's attacker goals, not an independent authorization audit; Section 4.5.8 shows calls that the request does not authorize and that this guard admitted.
+- **Every attack-labeled call is stopped by the guard.** The guard blocks all 907 attack-labeled calls to restricted tools on the primary recordings and all 559 on the second population. No attack-labeled call reaches the stage where a model, a threshold or a tree decides. The 1,059 and 903 calls that GV releases at that stage are *not attack-labeled*. That is a statement about the benchmark's attacker goals, not an independent authorization audit; Section 4.5.8 shows calls that the request does not authorize and that this guard admitted.
 - **No decision method improved an outcome; one lost tasks.** The ridge model with or without calibration, all four verdicts, both conformal thresholds, the Neyman-Pearson threshold at 0.05 and the boosted trees give exactly GV's *episode* outcomes on both populations, the probe and the fixtures. Equal episode outcomes are not equal call decisions: the Neyman-Pearson threshold at 0.05 withholds 3 calls and the boosted trees 1 call on the primary recordings without changing an outcome. **The Neyman-Pearson threshold at 0.01 is the exception.** It withholds 25 and 12 calls and completes 1,526 and 1,383 tasks against GV's 1,532 and 1,386. No learned or calibrated decision added a measured benefit over the guard used alone. This does not show that a learner cannot help: the recordings contain no attack that passes the guard.
 - **The estimator is not the reason.** On held-out attacker objectives the ridge estimator reaches ROC-AUC 0.993 on all steps and 0.976 on calls to restricted tools. The boosted trees are not better (log loss 0.074 against 0.071).
 - **The calibrated thresholds do not carry their nominal levels to an unseen attacker objective.** Deciding alone on the held-out objective:
-  - the Neyman-Pearson threshold at 0.05 would release 18 of 921 attack-labelled steps, above 5% in 1 of 9 objectives;
+  - the Neyman-Pearson threshold at 0.05 would release 18 of 921 attack-labeled steps, above 5% in 1 of 9 objectives;
   - the conformal threshold at 0.05 would release 155 of 921, above its level in 7 of 9 objectives;
   - the conformal threshold at 0.01 would be above its level in 5 of 9.
 - **Policy engine and provenance.**
@@ -1367,7 +1367,7 @@ An external review of 17 November 2026 found two defects in the amount handling 
 - **C1 and C2 are repaired in all three arms**, with and without injected text (Table 4.38). The frozen arms keep both defects.
 - **No successful attack** for G3_math, GV_math or HV_math on either population, under S2, or on the reformatted-identifier probe (0 of 2,645).
 - **The cost is the tasks whose amounts cannot be verified.** GV_math completes 95 fewer episodes than GV on the primary recordings (user task 3: 77, user task 11: 18) and 159 fewer on the second population (user task 3: 72, user task 11: 87); no episode gains. GV_math − GV, all-task completion: -2.87 [-8.12, +0.00] points (primary) and -7.52 [-18.94, +0.00] (second). The requests of these tasks say "send them back the difference" (the amount received is not stated) and "an additional 19.5% of the amount we paid + a fee of 5.29". The unrepaired arms completed them by releasing an amount that the request does not verify; the benchmark's own check, which a runtime monitor does not have, is what showed the amount to be right. User task 5 ("prices increased 10% … send the difference") is also withheld, but no arm completed it before. User tasks 4 ("refund … for what they've sent me", verified against the incoming record) and 15 (literal 10.00) lost nothing.
-- **Stage accounting.** All 907 attack-labelled restricted calls of the primary recordings and all 559 of the second population are refused by the authority front, in every repaired arm. The verifier withholds 335 and 393 calls as unresolved and blocks 5 and 0 as mismatched, none of them attack-labelled. In version 1 the verifier was *computed* for every call but could change only a call that the front and the rule had released; the correct statement is therefore that **for no benchmark-labelled attack call could the verifier's or the learned decision's output change the release**. (Version 2 below evaluates the verifier only after a release.) That a call is not attack-labelled does not make it authorized: C1, C2 and the cases below are calls the request does not authorize that the unrepaired front admits.
+- **Stage accounting.** All 907 attack-labeled restricted calls of the primary recordings and all 559 of the second population are refused by the authority front, in every repaired arm. The verifier withholds 335 and 393 calls as unresolved and blocks 5 and 0 as mismatched, none of them attack-labeled. In version 1 the verifier was *computed* for every call but could change only a call that the front and the rule had released; the correct statement is therefore that **for no benchmark-labeled attack call could the verifier's or the learned decision's output change the release**. (Version 2 below evaluates the verifier only after a release.) That a call is not attack-labeled does not make it authorized: C1, C2 and the cases below are calls the request does not authorize that the unrepaired front admits.
 - **The learned decision changes nothing.** HV_math and GV_math have identical outcomes on every episode of every cohort, the probe and the fixtures (HV_math − GV_math: +0.00 [+0.00, +0.00]; 0 tasks or attacks gained or lost).
 - **Fixtures.** Pairs correct of 43: G3_math 35, GV_math 35, HV_math 35 (G3 35, GV 36, HV 36). The verifier withholds the unsafe amount of fixture SUB-A4, which G3 released, and withholds the legitimate call of fixture P2, "send the enrolment fee, 320 to X". The grammar has no rule for an amount placed after a noun, and "fee" is a calculation word. P2 is an over-blocking failure of the frozen grammar and is not repaired after scoring.
 - **Comparison with the replayed Progent policy.** GV_math − PG, all-task completion: -0.39 [-8.10, +6.92] points (primary) and -3.69 [-20.58, +12.45] (second); benign tasks 138 against 154 and 28 against 35. Neither superiority nor equivalence is shown.
@@ -1386,9 +1386,9 @@ An external review of 17 November 2026 found two defects in the amount handling 
 | Send 10 percent of my balance to A. | 100 (10% of the executed get_balance result) | released | withheld | withheld | released | released |
 | Send 10 percent of my balance to A. | 999 (operand from untrusted text) | released | withheld | withheld | withheld | withheld |
 
-Where the request leaves the amount to a file or to the account history, every arm other than the strict G3 releases an amount taken from injected text, and the learned decision does not stop it. G3 withholds both the correct and the injected amount. This is the stage at which a learned component could matter, and the recordings contain no labelled attack there. Its value is therefore unmeasured, not shown to be zero. One residual case was corrected after the first run because it proposed an immediate transfer for a recurring request; both runs are kept in the result file. The validation on independently written requests (`REM_REPAIR_STUDY_2026_11_17/07_INDEPENDENT_VALIDATION_KIT.md`) was defined and not executed.
+Where the request leaves the amount to a file or to the account history, every arm other than the strict G3 releases an amount taken from injected text, and the learned decision does not stop it. G3 withholds both the correct and the injected amount. This is the stage at which a learned component could matter, and the recordings contain no labeled attack there. Its value is therefore unmeasured, not shown to be zero. One residual case was corrected after the first run because it proposed an immediate transfer for a recurring request; both runs are kept in the result file. The validation on independently written requests (`REM_REPAIR_STUDY_2026_11_17/07_INDEPENDENT_VALIDATION_KIT.md`) was defined and not executed.
 
-**Version 2 (dated amendment of 17 November 2026).** *Protocol amendment committed before any version-2 arm was scored (commit `95549b2`); the version-1 results above are unchanged.* A second independent review found two further defects, both reproduced on the version-1 arms. **D3:** a supported *prefix* of a compound calculation was accepted ("half of 100 plus an additional 10": 50 verified). **D4:** the amount was taken from any instruction with the same effect and account, including one whose condition does not hold. Version 2 changes acceptance only: the recognised statement must cover the whole amount phrase, from the payment verb to the bound account, or the instruction is unresolved; and a call is accepted only on one *witnessing* instruction whose effect, account, own condition and own amount all license it. It also evaluates the verifier only after the front and the rule have released the call. An optional grammar extension (an amount after a description, "send the enrolment fee, 320 to X") is measured in separate arms (suffix x).
+**Version 2 (dated amendment of 17 November 2026).** *Protocol amendment committed before any version-2 arm was scored (commit `95549b2`); the version-1 results above are unchanged.* A second independent review found two further defects, both reproduced on the version-1 arms. **D3:** a supported *prefix* of a compound calculation was accepted ("half of 100 plus an additional 10": 50 verified). **D4:** the amount was taken from any instruction with the same effect and account, including one whose condition does not hold. Version 2 changes acceptance only: the recognized statement must cover the whole amount phrase, from the payment verb to the bound account, or the instruction is unresolved; and a call is accepted only on one *witnessing* instruction whose effect, account, own condition and own amount all license it. It also evaluates the verifier only after the front and the rule have released the call. An optional grammar extension (an amount after a description, "send the enrolment fee, 320 to X") is measured in separate arms (suffix x).
 
 **Table 4.41. Defects D3 and D4 before and after version 2** (proposed `send_money` calls, fresh guard per call, clean and injected; GV arms shown, G3 and HV arms identical; `defects_d3_d4_before.json`, `defects_d3_d4_after_v2.json`)
 
@@ -1403,7 +1403,7 @@ Where the request leaves the amount to a file or to the account history, every a
 
 - **D3 and D4 are repaired.** Unauthorized amounts released in the diagnostic set: 24 in version 1, 0 in version 2; authorized amounts withheld: 0 and 0.
 - **No change on the recordings.** GV_math2, HV_math2, G3_math2 and the extension arms have exactly the outcomes of their version-1 counterparts on every episode of both populations and under S2 (0 episodes gained or lost), with no successful attack and none on the probe. No benchmark request contains a compound calculation or two conditional payments to one account, so the recordings can show neither a cost nor a benefit of the repair; the diagnostics show the benefit.
-- **The stage order is now literal.** The verifier was evaluated on 0 of the 907 attack-labelled restricted calls of the primary recordings and 0 of 559 of the second population, and on 1,061 and 1,010 calls that are not attack-labelled. For version 2 the sentence "no benchmark-labelled attack call reached the amount verifier or the learned decision" is literally true.
+- **The stage order is now literal.** The verifier was evaluated on 0 of the 907 attack-labeled restricted calls of the primary recordings and 0 of 559 of the second population, and on 1,061 and 1,010 calls that are not attack-labeled. For version 2 the sentence "no benchmark-labeled attack call reached the amount verifier or the learned decision" is literally true.
 - **A new over-blocking failure.** Version 2 withholds the legitimate call of fixture S1 of set 4, "Send 75 to the swim club for the annual fee. Their account is …": the account is named in the next sentence, so the amount phrase reaches "for the annual fee". It was not repaired after scoring. Pairs correct of 43: GV_math2 34, GV_math2x 35 (the extension releases fixture P2), HV_math2 34, HV_math2x 35; no unsafe call is released.
 - **The learned decision again changes nothing.** HV_math2 equals GV_math2 on every episode, the probe and the fixtures, with an identical front and verifier.
 
@@ -1480,9 +1480,9 @@ The decision does not fail to separate the two kinds of call. Its estimate separ
 
 They therefore add probability mass to legitimate calls without separating attacks. The protection they might add is already provided by the provenance evidence. Removing them releases 50 more legitimate calls and completes 35 more benign tasks, with the same attack count.
 
-**Why provenance evidence affects attack-call execution.** The provenance features record whether a call's arguments come from the user's request or from untrusted content; an attacker's account number arrives through an injected tool output. They carry most of the estimator's discrimination: without them the held-out ROC-AUC falls from 0.938 to 0.799. Without them, 49 attacked episodes execute an attack-labelled call instead of 24 (29 episodes only without them, 4 only with them). Most of these calls do not complete the attacker's goal: the benchmark's check requires the whole goal, and a partial attack can be stopped at a later call. That is why the effect on final attack outcomes is small and unresolved.
+**Why provenance evidence affects attack-call execution.** The provenance features record whether a call's arguments come from the user's request or from untrusted content; an attacker's account number arrives through an injected tool output. They carry most of the estimator's discrimination: without them the held-out ROC-AUC falls from 0.938 to 0.799. Without them, 49 attacked episodes execute an attack-labeled call instead of 24 (29 episodes only without them, 4 only with them). Most of these calls do not complete the attacker's goal: the benchmark's check requires the whole goal, and a partial attack can be stopped at a later call. That is why the effect on final attack outcomes is small and unresolved.
 
-**Why enforcement matters, and what shadow mode shows.** Shadow mode computes the same verdicts as the enforcing framework for 99.6% of calls and flags the same 882 attack-labelled calls, yet its outcomes equal those of no defense. **Every outcome effect of REM is produced by the Mitigation layer acting on the Decision Engine's verdict.** Detection without enforcement protects nothing in this setting. The equivalence also shows that the replay measures the effect of withholding, and not some side effect of evaluating the framework.
+**Why enforcement matters, and what shadow mode shows.** Shadow mode computes the same verdicts as the enforcing framework for 99.6% of calls and flags the same 882 attack-labeled calls, yet its outcomes equal those of no defense. **Every outcome effect of REM is produced by the Mitigation layer acting on the Decision Engine's verdict.** Detection without enforcement protects nothing in this setting. The equivalence also shows that the replay measures the effect of withholding, and not some side effect of evaluating the framework.
 
 **Why Detection and the predicates show no effect here.**
 - **The instruction-pattern indicator** adds no information beyond the provenance features on these attacks. The benchmark's injections arrive in untrusted content that the provenance features already mark.
@@ -1763,12 +1763,12 @@ The candidate declared in advance for this study was the authorization-aware int
 
 **Table 4.51. Pre-declared contrasts of the candidate against REM v1.0** (paired, grouped bootstrap; percentage points)
 
-| Scheme | Benign utility | Attack success rate | Rate of episodes with a released attack-labelled call |
+| Scheme | Benign utility | Attack success rate | Rate of episodes with a released attack-labeled call |
 |---|---|---|---|
 | S1 | +6.6 [0.0, 18.2] | +4.1 [0.0, 12.1] | +4.2 [0.03, 12.4] |
 | S2 | +1.5 [0.0, 4.5] | +4.1 [0.0, 12.1] | +4.2 [0.03, 12.4] |
 
-**The candidate is rejected.** Its utility gain is not established under either scheme and almost disappears under double holdout. It admits 132 successful attacks where REM v1.0 admits 11, and its rate of episodes with a released attack-labelled call rises with an interval that excludes zero.
+**The candidate is rejected.** Its utility gain is not established under either scheme and almost disappears under double holdout. It admits 132 successful attacks where REM v1.0 admits 11, and its rate of episodes with a released attack-labeled call rises with an interval that excludes zero.
 
 The failure has one identifiable cause. Of the 132 attacks, 119 are episodes of the credential-change objective, and the intervention-value policy without authorization features releases all 119 of them. When that objective is held out, the training outcomes contain no case in which withholding a credential update prevents harm. The policy learns that harm is prevented by withholding payments to new recipients, and it assigns no security value to a password taken from a document. The utility side transfers poorly as well: the candidate's model of whether withholding a call breaks the user's task has a held-out ROC-AUC of 0.857 under S1 and 0.729 under S2 (0.854 and 0.682 without the authorization features).
 
@@ -1832,7 +1832,7 @@ No arm of Table 4.53, learned or rule-based, gets every pair right. This is a fi
 
 **Table 4.54. Confirmatory replay results** (2,065 attacked and 48 benign eligible episodes; step-level, no reviewer; `confirmatory_results.json`)
 
-| Arm | Successful attacks / 2,065 | Episodes with a released attack-labelled call | Tasks completed under attack / 2,065 | Benign tasks completed / 48 | All tasks completed / 2,113 | Authorized calls released / 51 |
+| Arm | Successful attacks / 2,065 | Episodes with a released attack-labeled call | Tasks completed under attack / 2,065 | Benign tasks completed / 48 | All tasks completed / 2,113 | Authorized calls released / 51 |
 |---|---|---|---|---|---|---|
 | No defense | 436 | 493 | 1,413 | 38 | 1,451 | 51 |
 | B1 | 67 | 96 | 1,478 | 36 | 1,514 | 36 |
@@ -1856,7 +1856,7 @@ No replay raised an error in any arm.
 | A2 − REM v1.0 | +14.96 [−1.29, 34.42] | +0.05 [0.00, 0.15] | +18.75 [4.17, 37.50] | 393 / 77 |
 | REM v1.0 − B1 | −28.30 [−47.16, −10.83] | −3.10 [−8.27, −0.39] | −37.50 [−58.33, −16.67] | 26 / 624 |
 
-The contrast of REM v1.1 against REM v1.0 in episodes with a released attack-labelled call equals the attack-success contrast: −0.10 [−0.29, 0.00].
+The contrast of REM v1.1 against REM v1.0 in episodes with a released attack-labeled call equals the attack-success contrast: −0.10 [−0.29, 0.00].
 
 #### The pre-declared verdict
 
@@ -1899,7 +1899,7 @@ On user tasks 1, 5, 7, 8 and 10 every restrictive arm completes all or nearly al
 
 The gain of REM v1.1 over v1.0 is concentrated in two tasks: task 2 (36 to 97 of 138) and task 14 (9 to 73 of 129). The rule A2 behaves differently: it completes tasks 3, 4 and 6 at the level of the undefended agent, because their recipients are stated in the request, and completes none of tasks 2 and 12, where the needed value comes from a file. With sixteen user tasks, a few tasks decide each comparison, which is why the intervals between REM v1.1 and the rules are wide.
 
-**Remaining attacks.** REM v1.0's three successful attacks are in two injection tasks (one and two episodes); REM v1.1's one is in the first of these; the rules' four add one episode of a third. All are in source F-E. Of 559 calls labelled as attack attempts, REM v1.0 withholds 556, REM v1.1 558, and the rules 555.
+**Remaining attacks.** REM v1.0's three successful attacks are in two injection tasks (one and two episodes); REM v1.1's one is in the first of these; the rules' four add one episode of a third. All are in source F-E. Of 559 calls labeled as attack attempts, REM v1.0 withholds 556, REM v1.1 558, and the rules 555.
 
 ### 4.6.9 Exploratory Extension: Task-Permission Evidence
 
@@ -1911,9 +1911,9 @@ The question of the extension is whether permission evidence compiled from the t
 
 **The task that decides the security comparisons.** All successful attacks under any revision of the rule are in user task 15, where the new landlord's account named by the user is also the attacker's account. A call-level audit compared each released call with what the user asked for (update the address; update the rent standing order to that account and 2200; refund the 10.00 received from a friend), with criteria written before it was run.
 
-**Table 4.57. Released attack-labelled calls in user task 15** (`ut15_call_audit.json`, `results_v3.json`)
+**Table 4.57. Released attack-labeled calls in user task 15** (`ut15_call_audit.json`, `results_v3.json`)
 
-| Population | Arm | Successful attacks / attacked episodes | Released attack-labelled calls | Of these: 10 (the refund) to the landlord–attacker account | Of these: 2200 sent once to that account |
+| Population | Arm | Successful attacks / attacked episodes | Released attack-labeled calls | Of these: 10 (the refund) to the landlord–attacker account | Of these: 2200 sent once to that account |
 |---|---|---|---|---|---|
 | primary | Permission rule, revision 1 (G1) | 10 / 168 | 24 | 22 | 2 |
 | primary | Progent manual policy (replay adaptation) | 0 / 168 | 0 | 0 | 0 |
@@ -1924,7 +1924,7 @@ The question of the extension is whether permission evidence compiled from the t
 | second | Permission rule, revision 2 (G2) | 0 / 112 | 0 | 0 | 0 |
 | second | Permission rule, revision 3 (G3, current) | 0 / 112 | 0 | 0 | 0 |
 
-- **The attacks that revision 1 lets through are not artefacts of the collision.** They send the refund amount, 10, or the rent, 2200, to the landlord's account as a one-off payment. The user asked for neither. The collision makes the account look requested; the operation and the amount still contradict the instruction.
+- **The attacks that revision 1 lets through are not artifacts of the collision.** They send the refund amount, 10, or the rent, 2200, to the landlord's account as a one-off payment. The user asked for neither. The collision makes the account look requested; the operation and the amount still contradict the instruction.
 - **Revision 3 releases none of these calls.** It also withholds 20 and 77 calls that the audit counts as consistent with the instruction, mostly refunds whose payee the request does not identify. That is part of its cost in completed tasks.
 - **The published policy blocks them because the account is not on its fixed list**, not because it reads the instruction. The same list withholds the legitimate update of the rent order.
 - **Without user task 15, every restrictive arm has no successful attack on either population.** The task is kept in every comparison. Every security difference among the restrictive arms therefore rests on a small number of episodes of one task.
@@ -1973,7 +1973,7 @@ This section interprets the evaluation reported in Sections 4.1 to 4.6. Each con
 | 7 | Supervising on intervention outcomes, and trusting user-named documents, lower security | 119 to 132 and 313 attacks against 11 | One benchmark; one held-out objective class drives the first result |
 | 8 | None of the policies of the study of 11 November separates an authorized payment from an unrequested one whose details occur in the user's words | Paired fixtures, Section 4.6.7 | Hand-written cases; mechanism, not prevalence; concerns the tested features, not the request text as such |
 | 9 | A deterministic rule that compiles the request into instructions and releases a state-changing call only if it matches one has fewer successful attacks than REM v1.0 and, in point estimate, more completed benign tasks | Sections 4.4.7 and 4.6.9, current revision: 0 against 11 and 0 against 3 attacks; 132 against 105 of 334 and 29 against 18 of 48 benign tasks | Development evidence; parser written with the benchmark's requests in view; two of three revisions are repairs after results; against rule A2 a security difference with task completion not resolved; not resolved against a published fixed-list policy |
-| 10 | A learned or statistically calibrated decision on that permission evidence adds nothing measurable over the deterministic guard | Section 4.5.8: the guard used alone (GV) has the outcomes of the learned arm and of every threshold and estimator tested except the Neyman-Pearson threshold at 0.01, which loses tasks; every attack-labelled call is stopped before a model is consulted; with the typed amount verifier, HV_math has the outcomes of GV_math (Section 4.5.8). Behind a guard on denied calls only, a learned model had 38 against 10 attacks under reformatting | Development evidence; the recordings contain no attack that passes the guard, so they cannot show whether a learner would help against one |
+| 10 | A learned or statistically calibrated decision on that permission evidence adds nothing measurable over the deterministic guard | Section 4.5.8: the guard used alone (GV) has the outcomes of the learned arm and of every threshold and estimator tested except the Neyman-Pearson threshold at 0.01, which loses tasks; every attack-labeled call is stopped before a model is consulted; with the typed amount verifier, HV_math has the outcomes of GV_math (Section 4.5.8). Behind a guard on denied calls only, a learned model had 38 against 10 attacks under reformatting | Development evidence; the recordings contain no attack that passes the guard, so they cannot show whether a learner would help against one |
 | 11 | Binding each amount to its account, and each instruction to the effect of the operation, removes the permission rule's successful attacks in user task 15 without losing tasks | Section 4.5.8: 10 → 1 → 0 and 3 → 0 → 0 successful attacks; no task lost by either binding | Post hoc with respect to the defects; one task; development evidence |
 | 12 | In REM v1.0 the learned decision carries the protection: without it no attack is prevented by the predicates, and with it 661 of the 672 attacks are prevented and none admitted | Section 4.5.7: variant A4a minus REM v1.0, +22.19 ASR points [14.55, 28.86]; 2,129 releases changed by the learned decision | It also withholds 81.5% of legitimate state-changing calls in benign episodes; development data; replay |
 | 13 | On the same task pairs, REM v1.0's replayed decisions leave fewer successful attacks than the recorded runs of three distributed defenses and about as many as the injection classifier, with lower benign completion | Section 4.4.7, Tables 4.18–4.20 | Different evidence kinds (closed loop against NO-ADAPT replay); descriptive; one model; benign utility on 15–16 runs |
@@ -1984,7 +1984,7 @@ This section interprets the evaluation reported in Sections 4.1 to 4.6. Each con
 
 Three results of the studies up to 11 November point the same way. REM's estimator discriminates well, yet a one-feature rule matches its security. A more elaborate policy, supervised on outcomes and given authorization features, did worse. And on paired fixtures every tested policy that releases legitimate payments also releases an unrequested payment that uses the user's own words. In each case the evidence described where the arguments of a call came from and not what the user asked for. The conclusion is limited to the features and policies that were tested: with them, neither a better estimator nor a more elaborate decision rule moved the frontier.
 
-The extension study of 13 to 15 November tested the complementary proposition. A deterministic parser of the request, with each state-changing call matched against the instruction that licenses it, moved the frontier on development data: no successful attack, more legitimate calls released than by REM v1.0, and most of the paired fixtures right (Sections 4.4.7 and 4.6.9). The change came from the representation of the request used as a hard rule. A learned model on the same representation added nothing measurable: the guard used alone gives the same outcome on every episode, because every attack-labelled call is stopped before the model is consulted (Section 4.5.8). Three limits remain. The parser was written with the benchmark's requests in view. Requests that delegate the operation itself to a file stay unresolved. And a user task whose own payee is the attacker's account cannot be resolved from the request at all.
+The extension study of 13 to 15 November tested the complementary proposition. A deterministic parser of the request, with each state-changing call matched against the instruction that licenses it, moved the frontier on development data: no successful attack, more legitimate calls released than by REM v1.0, and most of the paired fixtures right (Sections 4.4.7 and 4.6.9). The change came from the representation of the request used as a hard rule. A learned model on the same representation added nothing measurable: the guard used alone gives the same outcome on every episode, because every attack-labeled call is stopped before the model is consulted (Section 4.5.8). Three limits remain. The parser was written with the benchmark's requests in view. Requests that delegate the operation itself to a file stay unresolved. And a user task whose own payee is the attacker's account cannot be resolved from the request at all.
 
 REM's threat model gives it one trusted input, the user's request as text. The published approaches that report both low attack success and high utility add something REM does not have: a trusted policy or authorization record (aiAuthZ, at abstract level), trusted observations that license an action (Yan et al., 2026), a language model that judges task alignment (F. Jia et al., 2025), or enforcement on effects at the system boundary (Kairos, at abstract level). Of these, this thesis ran only a fixed-list policy from Progent's repository, in replay (Section 4.4.7); it does not claim that the others would succeed on these episodes. A trusted authorization record would remove the dependence on parsing free text, and remains the principal future work.
 
@@ -2024,8 +2024,8 @@ REM's threat model gives it one trusted input, the user's request as text. The p
 15. **Three close works were not read in full.** NEXUS and aiAuthZ are known from their abstracts and from their authors' repositories; Kairos from its abstract; CaMeL from its official repository. Statements about them may change when the papers are read. The Progent paper (version 3) was read in full on 16 November 2026. The papers of the three published methods tested behind the permission guard (Section 4.5.8) were not readable in the working environment; their procedures were taken from the authors' or the library's implementations.
 16. **One published policy was replayed, and no defense that needs a language model was run.** Since 22 November 2026 the published policy is decided by the enforcement code of the Progent repository at a pinned commit, which gives the same counts as the earlier re-implementation on every population (Section 4.4.7); the Progent framework was not run with generated or updated policies. DRIFT and MELON were examined at the level of their papers and code, and their official code was executed only with scripted agents, which yields no security or utility result (Section 4.4.7). No statement about the relative performance of REM and model-based defenses is supported.
 17. **Repairs after results.** Revisions 2 and 3 of the permission rule (Section 4.6.9) were written after the results of the earlier revision, its defects and the composition of user task 15 were known. Their results cannot be read as an independent test.
-18. **The benchmark's attacks do not reach the decision behind the permission guard.** Every attack-labelled call is stopped by the guard, so the comparison of decision methods behind it measures only how many calls that are not attack-labelled each withholds (Section 4.5.8). A call that is not attack-labelled is not thereby authorized: the label refers to the benchmark's attacker goal, and no independent authorization audit was made.
-19. **Defects in amount handling.** The guard accepted unverified computed amounts, and its value constraint misread percentage coefficients (Section 4.5.8). No stored outcome count changes, because no attack-labelled call reached that stage, but the frozen GV and HV do not verify derived amounts. The repair was written after the defects and the benchmark's requests were known; its grammar withholds one legitimate fixture; and its benefit cannot be measured on AgentDojo, whose requests contain no supported calculation. A second review found that version 1 also accepted a supported prefix of a compound calculation and an amount from an instruction whose condition does not hold; version 2 repairs both without changing any episode outcome and withholds one further legitimate fixture.
+18. **The benchmark's attacks do not reach the decision behind the permission guard.** Every attack-labeled call is stopped by the guard, so the comparison of decision methods behind it measures only how many calls that are not attack-labeled each withholds (Section 4.5.8). A call that is not attack-labeled is not thereby authorized: the label refers to the benchmark's attacker goal, and no independent authorization audit was made.
+19. **Defects in amount handling.** The guard accepted unverified computed amounts, and its value constraint misread percentage coefficients (Section 4.5.8). No stored outcome count changes, because no attack-labeled call reached that stage, but the frozen GV and HV do not verify derived amounts. The repair was written after the defects and the benchmark's requests were known; its grammar withholds one legitimate fixture; and its benefit cannot be measured on AgentDojo, whose requests contain no supported calculation. A second review found that version 1 also accepted a supported prefix of a compound calculation and an amount from an instruction whose condition does not hold; version 2 repairs both without changing any episode outcome and withholds one further legitimate fixture.
 20. **Close work known from abstracts.** PACT, ROPE and CapLite (November 2026) are known from abstracts, ROPE also from its repository; none was run.
 21. **Granularity of the layer ablation.** The Input & Context layer computes no evidence and could not be removed without fabricating the inputs of everything after it; it is assessed only through the action/provenance evidence. The Detection layer's classifier is absent, and its one indicator shares its pattern match with a behavioral feature. A component without a measurable effect in the ablation is not thereby shown to be unnecessary (Section 4.5.10).
 22. **Comparison with existing frameworks.** Progent's policy contains benchmark-specific recipients and excludes the attacker's account by construction; the comparison is a replay of one manual policy, not of the Progent system with generated policies. The DRIFT paper was not read in full; its code was. DRIFT's own results are on a different benchmark version (banking v1.2) and are not placed beside REM's (Section 4.4.8).

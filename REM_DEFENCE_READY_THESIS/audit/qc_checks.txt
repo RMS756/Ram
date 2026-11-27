@@ -1,20 +1,22 @@
 ## check_layout
-pages 272 | preliminary pages 24
-{'CHAPTER ONE:': 1, 'CHAPTER TWO:': 14, 'CHAPTER THREE:': 48, 'CHAPTER FOUR:': 94, 'CHAPTER FIVE:': 211, 'References': 225, 'Appendix A:': 239, 'Appendix B:': 245}
-near-empty pages inside the text (pdf page, page number, words): [(209, 185, 73)]
-pages that end with a caption (pdf page, page number, caption): []
-## check_pages (one known false positive: '5.1 Introduction' also matches '4.5.1 Introduction')
+pages 271 | preliminary pages 22
+{'CHAPTER ONE:': 1, 'CHAPTER TWO:': 14, 'CHAPTER THREE:': 48, 'CHAPTER FOUR:': 95, 'CHAPTER FIVE:': 212, 'References': 226, 'Appendix A:': 240, 'Appendix B:': 246}
+near-empty pages inside the text (pdf page, page number, words): [(208, 186, 73)]
+pages that end with a caption (pdf page, page number, caption): [(84, 62, 'Table 3.10.')]
+## check_pages
 page references checked: 179; mismatches: 1
-   ('toc', '5.1 Introduction', '211', '141')
+   ('toc', '5.1 Introduction', '212', '142')
 ## check_citations
 reference entries: 105 cited: 105 not cited: 0
 ## check_citations_reverse
 citations found 84 | known surname, year missing: []
 surnames not in the reference list (inspect; most are not citations): [('Cedar Policy', '2026'), ('Houwelingen', '1992'), ('NeurIPS', '2025'), ('November', '2026'), ('September', '2025'), ('September', '2026')]
 ## check_thesis_numbers
-cells checked: 466 | mismatches: 0
-## make_r9 problems
+cells checked: 498 | mismatches: 0
+## make_r9
 no problems
+## DOCX re-export (plain soffice --convert-to pdf) vs delivered PDF
+271 = 271 pages; 0 pages with different text; TOC, LoT and LoF start on the same pages
 ## pages
-Pages:           272
+Pages:           271
 Page size:       595.304 x 841.89 pts (A4)

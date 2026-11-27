@@ -60,7 +60,7 @@ Three concept blocks (agents; security; runtime, behavior and mitigation) and a 
 
 ### 2.2.3 Study selection
 
-Selection had two stages, both carried out by a single reviewer: the thesis author, assisted by an AI coding assistant (Claude Code), as recorded in the search-strategy file (`CHAPTER2_SYSTEMATIC_SEARCH_STRATEGY.md`).
+Selection had two stages, both carried out by a single reviewer: the thesis author, assisted by an AI coding assistant, as recorded in the search-strategy file (`CHAPTER2_SYSTEMATIC_SEARCH_STRATEGY.md`).
 
 1. **Title and abstract screening** of the 219 records that remained after automated deduplication. Records counted as duplicates when they shared a DOI or their normalized titles matched; this removed 101 of the 320 hits.
 2. **Eligibility assessment** of the records that passed screening.
@@ -132,7 +132,7 @@ Benchmarks operationalize threat models, and they bound what a defense can be sh
 **Audits of benchmark validity.** Two included meta-research studies qualify how far any of these scores can be read as measurements of safety:
 
 - M. Q. Li et al. (2026; preprint) catalogued 40 agent-safety benchmarks and found no ranking concordance across evaluation dimensions (Kendall's *W*). Benchmark choice alone can therefore change which system appears safest.
-- Y. Wang et al. (2026; preprint) found that on one binary trace-judgment benchmark an "always positive" baseline outranked five models under F1. They also found that a cross-benchmark correlation moved from −0.64 with seven models to +0.02 with eighteen, an artefact of small panels.
+- Y. Wang et al. (2026; preprint) found that on one binary trace-judgment benchmark an "always positive" baseline outranked five models under F1. They also found that a cross-benchmark correlation moved from −0.64 with seven models to +0.02 with eighteen, an artifact of small panels.
 
 **Benchmarks built with the defense.** Two further observations come from the extraction. First, six included defense or benchmark studies introduce the benchmark on which their own method is evaluated: SIREN, TS-Bench, SciSafetyBench, NEXUS-Bench, PromptShield and the MCP policy-enforcement point's controlled dataset. Second, most of these report no evaluation on an independent benchmark in the verified record. NEXUS is an exception: it reports out-of-distribution results on R-Judge.
 
@@ -181,7 +181,7 @@ Two families that act before the action boundary are summarized here. *Input- an
 - **The question is binary.** An enforcer answers whether an action is permitted. It does not estimate how likely a *permitted* action is to have been induced by an adversary.
 - **Policy coverage bounds protection.** The policy-enforcement point's residual 16.7% attack success on one backend is a rule-coverage gap in its authors' own words.
 
-**Learned and LLM-based guardrails.** A further family uses learned models or language models to judge actions or trajectories: generated guardrail code, verification against rule circuits, adaptive checks kept in memory, step-level guardrail models and verify-before-commit designs (reviewed in Appendix S-A). These cover a broad range of semantic violations without a hand-written policy for each. Their limits recur: judgement by a language model adds latency and can vary between runs, accuracies are measured on the authors' own benchmarks, and the verified records do not report calibrated probabilities that could be combined with the consequence of an action, with the single exception of NEXUS (Section 2.8.3).
+**Learned and LLM-based guardrails.** A further family uses learned models or language models to judge actions or trajectories: generated guardrail code, verification against rule circuits, adaptive checks kept in memory, step-level guardrail models and verify-before-commit designs (reviewed in Appendix S-A). These cover a broad range of semantic violations without a hand-written policy for each. Their limits recur: judgment by a language model adds latency and can vary between runs, accuracies are measured on the authors' own benchmarks, and the verified records do not report calibrated probabilities that could be combined with the consequence of an action, with the single exception of NEXUS (Section 2.8.3).
 
 ### 2.5.2 Goal–action consistency and provenance
 

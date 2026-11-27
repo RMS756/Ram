@@ -97,6 +97,17 @@
   "A0": "A0"
  },
  "arm_labels_relabelled_in_old_4_5_5": 52,
+ "us_spelling_changes": {
+  "\\bartefact(s?)\\b": 2,
+  "\\bjudgement(s?)\\b": 2,
+  "\\blabelled\\b": 52,
+  "\\brecognis(e|ed|es|ing)\\b": 2,
+  "\\bbehaviour": 1,
+  "\\blicence\\b": 5,
+  "\\brealis(e|ed|es|ing)\\b": 3,
+  "\\bLabelled\\b": 1,
+  "\\blabelling\\b": 3
+ },
  "section_references_remapped": 99,
  "reference_lists_merged": [
   "Sections 4.4.7, 4.5.8, 4.5.8 and 4.6.9",

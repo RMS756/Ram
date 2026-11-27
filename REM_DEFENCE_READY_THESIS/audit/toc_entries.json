@@ -18,27 +18,27 @@
   ],
   [
    "List of Tables",
-   "x"
+   "viii"
   ],
   [
    "List of Figures",
-   "xiv"
+   "xii"
   ],
   [
    "List of Abbreviations",
-   "xvi"
+   "xiv"
   ],
   [
    "Abstract",
-   "xvii"
+   "xv"
   ],
   [
    "الملخص",
-   "xx"
+   "xviii"
   ],
   [
    "Status of This Draft",
-   "xxiii"
+   "xxi"
   ],
   [
    "CHAPTER ONE: INTRODUCTION",
@@ -174,11 +174,11 @@
   ],
   [
    "3.7 Decision Engine Layer",
-   "57"
+   "58"
   ],
   [
    "3.8 Mitigation Layer",
-   "68"
+   "69"
   ],
   [
    "3.9 Offline Fitting and Recalibration",
@@ -194,115 +194,115 @@
   ],
   [
    "3.12 Evaluation Metrics",
-   "85"
+   "86"
   ],
   [
    "3.13 Versioned Amendment: REM v1.1 (Proposed)",
-   "87"
-  ],
-  [
-   "3.14 Exploratory Extension: Task-Permission Evidence (Proposed, Not Adopted)",
    "88"
   ],
   [
+   "3.14 Exploratory Extension: Task-Permission Evidence (Proposed, Not Adopted)",
+   "89"
+  ],
+  [
    "3.15 Chapter Summary",
-   "92"
+   "93"
   ],
   [
    "CHAPTER FOUR: EXPERIMENTAL RESULTS AND DISCUSSION",
-   "94"
+   "95"
   ],
   [
    "4.1 Implementation Tools and Environment",
-   "94"
+   "95"
   ],
   [
    "4.2 Dataset Preparation and Training",
-   "99"
+   "100"
   ],
   [
    "4.3 Experimental Setup and Evaluation Metrics",
-   "105"
+   "106"
   ],
   [
    "4.4 Comparison with Existing Security Frameworks",
-   "109"
+   "110"
   ],
   [
    "4.5 Ablation Study of the REM Layers",
-   "141"
+   "142"
   ],
   [
    "4.6 Results and Discussion",
-   "179"
+   "180"
   ],
   [
    "CHAPTER FIVE: CONCLUSIONS AND FUTURE WORK",
-   "211"
+   "212"
   ],
   [
    "5.1 Introduction",
-   "211"
+   "212"
   ],
   [
    "5.2 Answers to the Research Questions",
-   "211"
+   "212"
   ],
   [
    "5.3 Achievement of the Objectives",
-   "213"
-  ],
-  [
-   "5.4 Contributions",
    "214"
   ],
   [
+   "5.4 Contributions",
+   "215"
+  ],
+  [
    "5.5 What Was Not Confirmed, What Was Rejected, and Why It Matters",
-   "218"
+   "219"
   ],
   [
    "5.6 Limitations and Threats to Validity",
-   "220"
-  ],
-  [
-   "5.7 Future Work, in Order of Priority",
    "221"
   ],
   [
-   "5.8 Conclusion",
+   "5.7 Future Work, in Order of Priority",
    "222"
   ],
   [
+   "5.8 Conclusion",
+   "223"
+  ],
+  [
    "References",
-   "225"
+   "226"
   ],
   [
    "Appendix A: Notation, Optional Sequential Analysis and Equation Provenance",
-   "239"
+   "240"
   ],
   [
    "A.1 Notation",
-   "239"
+   "240"
   ],
   [
    "A.2 Layer interfaces",
-   "240"
+   "241"
   ],
   [
    "A.3 Optional observe-only sequential analysis",
-   "240"
+   "241"
   ],
   [
    "A.4 Provenance of the equations of Chapter 3",
-   "242"
+   "243"
   ],
   [
    "A.5 Why logistic regression",
-   "244"
+   "245"
   ],
   [
    "Appendix B: Register of Open Supervisor Decisions",
-   "245"
+   "246"
   ]
  ],
  "headings_levels_1_to_3": 188,

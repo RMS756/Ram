@@ -168,10 +168,10 @@ The Detection Layer computes context evidence from untrusted segments. It issues
 
 | Feature | Definition | Type | Availability |
 |---|---|---|---|
-| x^ctx^~1~ | Maximum score of a fixed, pre-trained prompt-injection classifier over untrusted segments added since the previous step | [0, 1] | Derived (classifier choice pending supervisor approval) |
+| x^ctx^~1~ | Maximum score of a fixed, pre-trained prompt-injection classifier over untrusted segments added since the previous step | [0, 1] | Derived (classifier choice pending supervisor approval); **not implemented in REM v1.0** (decision D-8) |
 | x^ctx^~2~ | 1 if an untrusted segment added since the previous step matches the declared instruction-pattern set; otherwise 0 | Binary | Derived (pattern set declared before evaluation) |
 
-The classifier is used with fixed inference and is not retrained. A classifier distributed with an existing guardrail system, such as PromptGuard 2 in LlamaFirewall (Chennabasappa et al., 2025), is a candidate. The instruction-pattern set contains declared indicators such as imperative instructions addressed to an assistant, references to tool names, and role or delimiter markers.
+In the design, the classifier is used with fixed inference and is not retrained; a classifier distributed with an existing guardrail system, such as PromptGuard 2 in LlamaFirewall (Chennabasappa et al., 2025), is a candidate. **No classifier was available for the implementation, so in REM v1.0 the Detection Layer consists of x^ctx^~2~ alone** (decision D-8; Chapter 4, Section 4.5.5). The instruction-pattern set contains declared indicators such as imperative instructions addressed to an assistant, references to tool names, and role or delimiter markers.
 
 Both features are individually evadable, and benchmark-based scores of detectors are fragile (Arp et al., 2022; M. Q. Li et al., 2026). The Detection Layer is therefore not relied upon to be decisive. Its evidence is combined with behavioral and action evidence in the Decision Engine, and its contribution is measured by ablation (Section 3.11.7).
 
@@ -664,7 +664,7 @@ Because the injection tasks in the banking suite share a small number of templat
 
 **Final ablation (added 19 November 2026).** A separately pre-registered study (Chapter 4, Section 4.5.7) repeats ablations 1–4 and 6 in replay with paired intervals and adds two arms, each changing only the decision: Modify removed from the verdict set, so that the expected loss is minimized over Allow, Escalate and Block; and the learned decision removed, so that only the predicates D1 and D2 act and every other call is allowed. The consequence-independent baseline B1 serves as the arm with the expected-loss decision replaced by thresholds. Linear SHAP attribution is not ablated, because it cannot change a verdict.
 
-**Mitigation-effectiveness runs.** Enforcing-mode runs in which Modify is applied to adversarial steps estimate r~mod~(k) per tier and the utility impact of Modify on benign steps. These estimates feed Equation 3.5 and are fitted within the outer folds so that no held-out episode informs its own loss values. In this thesis, live enforcing-mode runs were not available. r~mod~(k) was therefore estimated by replaying recorded attack episodes with Modify applied to every labelled attack step (Section 3.11.9). Under the no-adaptation assumption these estimates are close to zero by construction, and they are reported as such. The utility impact of Modify on benign steps was not estimated separately.
+**Mitigation-effectiveness runs.** Enforcing-mode runs in which Modify is applied to adversarial steps estimate r~mod~(k) per tier and the utility impact of Modify on benign steps. These estimates feed Equation 3.5 and are fitted within the outer folds so that no held-out episode informs its own loss values. In this thesis, live enforcing-mode runs were not available. r~mod~(k) was therefore estimated by replaying recorded attack episodes with Modify applied to every labeled attack step (Section 3.11.9). Under the no-adaptation assumption these estimates are close to zero by construction, and they are reported as such. The utility impact of Modify on benign steps was not estimated separately.
 
 **Escalation in experiments.** No human reviewer is available in the benchmark. Escalation is resolved in two ways:
 - by an idealized reviewer who releases the action if y~t~ = 0 and prevents it if y~t~ = 1;
@@ -761,7 +761,7 @@ The analyses above reuse the recordings on which REM was fitted, cross-validated
 
 Nothing is fitted, tuned or selected on the new recordings.
 
-**Endpoints.** E1 is the paired difference in user-task success, candidate minus REM v1.0, over all eligible episodes, with a bootstrap clustered by user task. E2 is the paired difference in attack success rate and in the rate of episodes with a released attack-labelled call (Section S-3.12.4) over attacked episodes, clustered by injection task. Intervals are 95% percentile intervals from 2,000 resamples.
+**Endpoints.** E1 is the paired difference in user-task success, candidate minus REM v1.0, over all eligible episodes, with a bootstrap clustered by user task. E2 is the paired difference in attack success rate and in the rate of episodes with a released attack-labeled call (Section S-3.12.4) over attacked episodes, clustered by injection task. Intervals are 95% percentile intervals from 2,000 resamples.
 
 **Verdict rule.**
 
@@ -907,7 +907,7 @@ Both defects are kept in the frozen modules and are documented in Chapter 4 (Sec
 
 A separate verifier gives each payment instruction of the request one typed binding: a stated amount, an amount derived by a supported expression, an amount based on the balance, the amount of an incoming record to be refunded, *unresolved*, or *none*. It parses a finite, declared grammar and computes with exact rationals. No rounding, currency or tolerance rule is assumed. An unresolved amount is withheld (Escalate, with no reviewer); a computed amount that differs is blocked. The verifier can only turn a release into a refusal.
 
-The grammar, its evidence rules and its known limits are specified in `REM_REPAIR_STUDY_2026_11_17/AMOUNT_GRAMMAR.md`. The arithmetic is elementary and is not presented as a contribution. **GV_math** is GV with this verifier in place of the lexical constraint of paragraph E. **HV_math** adds HV's stored learned decision behind it, so the two differ only in that decision. A second review found that this first version accepted a supported prefix of a compound calculation and could take the amount from an instruction whose condition does not hold. **Version 2** requires the recognised expression to cover the whole amount phrase and accepts a call only on one instruction whose effect, account, own condition and own amount all license it; it evaluates the verifier only after the front and the rule release the call (`PROTOCOL_AMENDMENT_V2.md`).
+The grammar, its evidence rules and its known limits are specified in `REM_REPAIR_STUDY_2026_11_17/AMOUNT_GRAMMAR.md`. The arithmetic is elementary and is not presented as a contribution. **GV_math** is GV with this verifier in place of the lexical constraint of paragraph E. **HV_math** adds HV's stored learned decision behind it, so the two differ only in that decision. A second review found that this first version accepted a supported prefix of a compound calculation and could take the amount from an instruction whose condition does not hold. **Version 2** requires the recognized expression to cover the whole amount phrase and accepts a call only on one instruction whose effect, account, own condition and own amount all license it; it evaluates the verifier only after the front and the rule release the call (`PROTOCOL_AMENDMENT_V2.md`).
 
 ## 3.15 Chapter Summary
 
