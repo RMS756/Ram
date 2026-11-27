@@ -138,7 +138,7 @@ def run_episode(cfg: DidConfig, ep, cell=None):
     g = make_guard(cfg, ep, with_v1=True, cell=cell)
     out = replay_episode_did(ep, G["setup"].suite, g)
     calls = [(a["label"], a["released"], a["state_changing"], a["verdict"], tuple(a["decisive"]),
-              tuple(r[0] for r in a["rules"])) for a in out.audit]
+              tuple(r[0] for r in a["rules"]), tuple((r[0], r[1]) for r in a["rules"])) for a in out.audit]
     gw = g.gateway
     return {"utility": bool(out.utility), "security": bool(out.security), "error": out.error, "calls": calls,
             "gateway": None if gw is None else {"exec": gw.executions, "refuse": gw.refusals, "chain_ok": gw.verify_chain()},
