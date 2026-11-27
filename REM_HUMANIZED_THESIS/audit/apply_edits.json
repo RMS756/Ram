@@ -1,0 +1,18 @@
+{
+ "edits_per_file": {
+  "text_front/front_matter.md": 5,
+  "text_front/abstract_en.md": 9,
+  "src/CHAPTER_01_FINAL.md": 9,
+  "src/CHAPTER_02_FINAL.md": 11,
+  "text_front/abstract_ar.md": 4,
+  "src/CHAPTER_03_FINAL.md": 14,
+  "src/CHAPTER_05_FINAL.md": 10,
+  "src/APPENDICES_FINAL.md": 6,
+  "src/CHAPTER_04_FINAL.md": 50
+ },
+ "edits_per_category": {
+  "A": 117,
+  "B": 1
+ },
+ "problems": []
+}

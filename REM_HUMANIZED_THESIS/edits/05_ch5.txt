@@ -1,0 +1,71 @@
+Chapter 5. Tables 5.1-5.3 are not edited (cell text locked by the preservation check).
+
+@@@ src/CHAPTER_05_FINAL.md | A
+<<<
+One published deterministic policy was replayed on the recorded episodes, decided by its authors' own code; its list of recipients is informed by the benchmark.
+===
+One published deterministic policy was replayed on the recorded episodes, decided by its authors' own code. Its list of recipients is informed by the benchmark.
+>>>
+
+@@@ src/CHAPTER_05_FINAL.md | A
+<<<
+The exploratory permission rule of Chapter 4, Section 4.6.9, is a first step that compiles such a statement from the request text; it needs requests written and reviewed by other people (the authoring instructions and a sealed scorer are in the repository), a decision on subjective conditions, and a live-agent evaluation.
+===
+The exploratory permission rule of Chapter 4, Section 4.6.9, is a first step that compiles such a statement from the request text. It needs requests written and reviewed by other people (the authoring instructions and a sealed scorer are in the repository), a decision on subjective conditions, and a live-agent evaluation.
+>>>
+
+@@@ src/CHAPTER_05_FINAL.md | A
+<<<
+DRIFT's official code already runs on the benchmark version used here with a scripted agent; a live run needs a model credential, an approved budget and a decision on the benchmark version, because DRIFT's defaults and its authors' runs use banking v1.2.
+===
+DRIFT's official code already runs on the benchmark version used here with a scripted agent. A live run needs a model credential, an approved budget and a decision on the benchmark version, because DRIFT's defaults and its authors' runs use banking v1.2.
+>>>
+
+@@@ src/CHAPTER_05_FINAL.md | A
+<<<
+Against the strongest simple rule it had fewer successful attacks, with completed tasks not resolved; a published fixed list of payees also had no successful attack.
+===
+Against the strongest simple rule it had fewer successful attacks, with the difference in completed tasks not resolved. A published fixed list of payees also had no successful attack.
+>>>
+
+@@@ src/CHAPTER_05_FINAL.md | A
+<<<
+gave exactly the outcomes of the guard used alone (GV), except one threshold that lost tasks, because every attack-labeled call was stopped before any of them was consulted.
+===
+gave exactly the outcomes of the guard used alone (GV), except one threshold that lost tasks. The reason is that the guard stopped every attack-labeled call before any of these components was consulted.
+>>>
+
+@@@ src/CHAPTER_05_FINAL.md | A
+<<<
+An external review then showed that the guard accepted computed amounts it never computed; a typed verifier repairs this, and the price is that payments whose amount the request does not determine are withheld.
+===
+An external review then showed that the guard accepted computed amounts it never computed. A typed verifier repairs this; the price is that payments whose amount the request does not determine are withheld.
+>>>
+
+@@@ src/CHAPTER_05_FINAL.md | A
+<<<
+It does so by withholding broadly, and calibration, Modify, the predicates and context evidence change no attack outcome. Across the five layers, every measured outcome effect comes from that decision acting through enforcement: in shadow mode the same verdicts protect nothing, and the Input & Context layer's labels matter through the action/provenance evidence built on them.
+===
+It does so by withholding broadly. Calibration, Modify, the predicates and context evidence change no attack outcome. Across the five layers, every measured outcome effect comes from that decision acting through enforcement. In shadow mode the same verdicts protect nothing, and the Input & Context layer's labels matter through the action/provenance evidence built on them.
+>>>
+
+@@@ src/CHAPTER_05_FINAL.md | A
+<<<
+at a lower completion of benign tasks; because their runs are closed-loop and REM's is a replay, this places REM among them without ranking it.
+===
+at a lower completion of benign tasks. Because their runs are closed-loop and REM's is a replay, this places REM among them without ranking it.
+>>>
+
+@@@ src/CHAPTER_05_FINAL.md | A
+<<<
+admits no attack and completes more tasks under attack than REM on all three populations; its list of permitted recipients is informed by the benchmark, so this, too, is not a ranking.
+===
+admits no attack and completes more tasks under attack than REM on all three populations. Its list of permitted recipients is informed by the benchmark, so this, too, is not a ranking.
+>>>
+
+@@@ src/CHAPTER_05_FINAL.md | A
+<<<
+- **That behavioral evidence helps.** It did not; removing it raised task completion, and that gain met the pre-declared decision rule.
+===
+- **That behavioral evidence helps.** It did not. Removing it raised task completion, and that gain met the pre-declared decision rule.
+>>>

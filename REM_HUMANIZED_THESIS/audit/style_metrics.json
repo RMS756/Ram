@@ -1,0 +1,204 @@
+{
+ "references/REFERENCES_FINAL.md": {
+  "original": {
+   "words": 4571,
+   "sentences": 177,
+   "sentences_over_30_words": 34,
+   "sentences_over_40_words": 24,
+   "em_dashes": 1,
+   "ai_vocabulary": {}
+  },
+  "humanized": {
+   "words": 4571,
+   "sentences": 177,
+   "sentences_over_30_words": 34,
+   "sentences_over_40_words": 24,
+   "em_dashes": 1,
+   "ai_vocabulary": {}
+  }
+ },
+ "src/APPENDICES_FINAL.md": {
+  "original": {
+   "words": 969,
+   "sentences": 32,
+   "sentences_over_30_words": 12,
+   "sentences_over_40_words": 7,
+   "em_dashes": 5,
+   "ai_vocabulary": {
+    "prove": 1
+   }
+  },
+  "humanized": {
+   "words": 972,
+   "sentences": 34,
+   "sentences_over_30_words": 11,
+   "sentences_over_40_words": 7,
+   "em_dashes": 0,
+   "ai_vocabulary": {
+    "prove": 1
+   }
+  }
+ },
+ "src/CHAPTER_01_FINAL.md": {
+  "original": {
+   "words": 4161,
+   "sentences": 107,
+   "sentences_over_30_words": 41,
+   "sentences_over_40_words": 23,
+   "em_dashes": 0,
+   "ai_vocabulary": {
+    "demonstrate": 2
+   }
+  },
+  "humanized": {
+   "words": 4175,
+   "sentences": 118,
+   "sentences_over_30_words": 44,
+   "sentences_over_40_words": 26,
+   "em_dashes": 0,
+   "ai_vocabulary": {
+    "demonstrate": 2
+   }
+  }
+ },
+ "src/CHAPTER_02_FINAL.md": {
+  "original": {
+   "words": 8743,
+   "sentences": 307,
+   "sentences_over_30_words": 99,
+   "sentences_over_40_words": 64,
+   "em_dashes": 0,
+   "ai_vocabulary": {}
+  },
+  "humanized": {
+   "words": 8737,
+   "sentences": 321,
+   "sentences_over_30_words": 93,
+   "sentences_over_40_words": 57,
+   "em_dashes": 0,
+   "ai_vocabulary": {}
+  }
+ },
+ "src/CHAPTER_03_FINAL.md": {
+  "original": {
+   "words": 12836,
+   "sentences": 442,
+   "sentences_over_30_words": 126,
+   "sentences_over_40_words": 74,
+   "em_dashes": 2,
+   "ai_vocabulary": {
+    "demonstrate": 1,
+    "prove": 1
+   }
+  },
+  "humanized": {
+   "words": 12843,
+   "sentences": 458,
+   "sentences_over_30_words": 121,
+   "sentences_over_40_words": 67,
+   "em_dashes": 0,
+   "ai_vocabulary": {
+    "demonstrate": 1,
+    "prove": 1
+   }
+  }
+ },
+ "src/CHAPTER_04_FINAL.md": {
+  "original": {
+   "words": 24223,
+   "sentences": 654,
+   "sentences_over_30_words": 277,
+   "sentences_over_40_words": 191,
+   "em_dashes": 0,
+   "ai_vocabulary": {
+    "robust": 1,
+    "demonstrate": 1,
+    "prove": 1
+   }
+  },
+  "humanized": {
+   "words": 24286,
+   "sentences": 699,
+   "sentences_over_30_words": 271,
+   "sentences_over_40_words": 179,
+   "em_dashes": 0,
+   "ai_vocabulary": {
+    "robust": 1,
+    "demonstrate": 1,
+    "prove": 1
+   }
+  }
+ },
+ "src/CHAPTER_05_FINAL.md": {
+  "original": {
+   "words": 2618,
+   "sentences": 84,
+   "sentences_over_30_words": 30,
+   "sentences_over_40_words": 21,
+   "em_dashes": 0,
+   "ai_vocabulary": {}
+  },
+  "humanized": {
+   "words": 2624,
+   "sentences": 95,
+   "sentences_over_30_words": 25,
+   "sentences_over_40_words": 18,
+   "em_dashes": 0,
+   "ai_vocabulary": {}
+  }
+ },
+ "text_front/abstract_ar.md": {
+  "original": {
+   "words": 1238,
+   "sentences": 1,
+   "sentences_over_30_words": 1,
+   "sentences_over_40_words": 1,
+   "em_dashes": 2,
+   "ai_vocabulary": {}
+  },
+  "humanized": {
+   "words": 1240,
+   "sentences": 1,
+   "sentences_over_30_words": 1,
+   "sentences_over_40_words": 1,
+   "em_dashes": 2,
+   "ai_vocabulary": {}
+  }
+ },
+ "text_front/abstract_en.md": {
+  "original": {
+   "words": 1200,
+   "sentences": 41,
+   "sentences_over_30_words": 15,
+   "sentences_over_40_words": 8,
+   "em_dashes": 0,
+   "ai_vocabulary": {}
+  },
+  "humanized": {
+   "words": 1206,
+   "sentences": 51,
+   "sentences_over_30_words": 9,
+   "sentences_over_40_words": 3,
+   "em_dashes": 0,
+   "ai_vocabulary": {}
+  }
+ },
+ "text_front/front_matter.md": {
+  "original": {
+   "words": 1143,
+   "sentences": 26,
+   "sentences_over_30_words": 14,
+   "sentences_over_40_words": 9,
+   "em_dashes": 0,
+   "ai_vocabulary": {}
+  },
+  "humanized": {
+   "words": 1165,
+   "sentences": 34,
+   "sentences_over_30_words": 16,
+   "sentences_over_40_words": 10,
+   "em_dashes": 0,
+   "ai_vocabulary": {}
+  }
+ }
+}

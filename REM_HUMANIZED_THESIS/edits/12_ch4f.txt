@@ -1,0 +1,15 @@
+Chapter 4, second pass on two remaining clause-stacked sentences.
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+Removing the two verdicts from the decision rule, so that Allow is chosen up to the Allow–Block threshold of Equation 3.9, gives more released calls with 13 against 11 successful attacks
+===
+Removing the two verdicts from the decision rule, so that Allow is chosen up to the Allow–Block threshold of Equation 3.9, releases more calls. It gives 13 against 11 successful attacks
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+Binding amounts to accounts takes the rule from 10 and 3 successful attacks to 1 and 0, and binding instructions to the effect of the operation removes the remaining one (paired contrast
+===
+Binding amounts to accounts takes the rule from 10 and 3 successful attacks to 1 and 0. Binding instructions to the effect of the operation removes the remaining one (paired contrast
+>>>

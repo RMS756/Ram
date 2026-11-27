@@ -1,0 +1,16 @@
+{
+ "files": {
+  "references/REFERENCES_FINAL.md": {},
+  "src/APPENDICES_FINAL.md": {},
+  "src/CHAPTER_01_FINAL.md": {},
+  "src/CHAPTER_02_FINAL.md": {},
+  "src/CHAPTER_03_FINAL.md": {},
+  "src/CHAPTER_04_FINAL.md": {},
+  "src/CHAPTER_05_FINAL.md": {},
+  "text_front/abstract_ar.md": {},
+  "text_front/abstract_en.md": {},
+  "text_front/front_matter.md": {}
+ },
+ "allowed_exceptions": [],
+ "pass": true
+}

@@ -1,0 +1,68 @@
+Chapter 4, Section 4.5.8 (repair study) to 4.5.12. Tables locked.
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+The repair is a separate, versioned component. It assigns each payment instruction of the request one typed binding (*literal*, *derived*, *balance-based*, *record refund*, *unresolved* or *none*), parses a finite grammar (stated amounts; percentages, the fractions a/b, half, thirds and quarters, and doubling, of a stated number or of "my balance"), and computes with exact rationals.
+===
+The repair is a separate, versioned component. It assigns each payment instruction of the request one typed binding (*literal*, *derived*, *balance-based*, *record refund*, *unresolved* or *none*). It parses a finite grammar (stated amounts; percentages, the fractions a/b, half, thirds and quarters, and doubling, of a stated number or of "my balance") and computes with exact rationals.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+The verifier can only turn a release into a refusal. Three repaired arms were run: G3_math (G3 plus the verifier), GV_math (the GV front, with the verifier in place of the lexical constraint) and HV_math (the same front and verifier, followed by HV's stored ridge model and calibration). GV_math and HV_math differ only in the learned decision.
+===
+The verifier can only turn a release into a refusal. Three repaired arms were run:
+
+- G3_math: G3 plus the verifier;
+- GV_math: the GV front, with the verifier in place of the lexical constraint;
+- HV_math: the same front and verifier, followed by HV's stored ridge model and calibration.
+
+GV_math and HV_math differ only in the learned decision.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+The unrepaired arms completed them by releasing an amount that the request does not verify; the benchmark's own check, which a runtime monitor does not have, is what showed the amount to be right.
+===
+The unrepaired arms completed them by releasing an amount that the request does not verify. Only the benchmark's own check, which a runtime monitor does not have, showed the amount to be right.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+In version 1 the verifier was *computed* for every call but could change only a call that the front and the rule had released; the correct statement is therefore that **for no benchmark-labeled attack call could the verifier's or the learned decision's output change the release**.
+===
+In version 1 the verifier was *computed* for every call, but it could change only a call that the front and the rule had released. The correct statement is therefore that **for no benchmark-labeled attack call could the verifier's or the learned decision's output change the release**.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+Version 2 changes acceptance only: the recognized statement must cover the whole amount phrase, from the payment verb to the bound account, or the instruction is unresolved; and a call is accepted only on one *witnessing* instruction whose effect, account, own condition and own amount all license it. It also evaluates the verifier only after the front and the rule have released the call.
+===
+Version 2 changes acceptance only:
+
+- the recognized statement must cover the whole amount phrase, from the payment verb to the bound account, or the instruction is unresolved;
+- a call is accepted only on one *witnessing* instruction whose effect, account, own condition and own amount all license it.
+
+It also evaluates the verifier only after the front and the rule have released the call.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+No benchmark request contains a compound calculation or two conditional payments to one account, so the recordings can show neither a cost nor a benefit of the repair; the diagnostics show the benefit.
+===
+No benchmark request contains a compound calculation or two conditional payments to one account, so the recordings can show neither a cost nor a benefit of the repair. The diagnostics show the benefit.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+**Why provenance evidence affects attack-call execution.** The provenance features record whether a call's arguments come from the user's request or from untrusted content; an attacker's account number arrives through an injected tool output.
+===
+**Why provenance evidence affects attack-call execution.** The provenance features record whether a call's arguments come from the user's request or from untrusted content. An attacker's account number arrives through an injected tool output.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+- **A new over-blocking failure.** Version 2 withholds the legitimate call of fixture S1 of set 4, "Send 75 to the swim club for the annual fee. Their account is …": the account is named in the next sentence, so the amount phrase reaches "for the annual fee". It was not repaired after scoring.
+===
+- **A new over-blocking failure.** Version 2 withholds the legitimate call of fixture S1 of set 4, "Send 75 to the swim club for the annual fee. Their account is …". Because the account is named in the next sentence, the amount phrase extends to "for the annual fee". It was not repaired after scoring.
+>>>

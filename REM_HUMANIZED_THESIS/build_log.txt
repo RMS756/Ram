@@ -1,0 +1,5 @@
+/home/user/Ram/REM_HUMANIZED_THESIS/tools/build_h.py:119: UserWarning: style lookup by style_id is deprecated. Use style name as key instead.
+  font(st[n], 11, bold=(n == 'Table Caption'), italic=(n != 'Table Caption'))
+table of contents stored in the DOCX: 76 entries; 188 headings of levels 1-3; unmatched 0
+built: /home/user/Ram/REM_HUMANIZED_THESIS/REM_Master_Thesis_Humanized.docx 4214996 bytes; PDF 6459502 bytes; figures 17 tables 86 captions without page {'LOF': 0, 'LOT': 0}
+EXIT 0

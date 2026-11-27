@@ -1,0 +1,77 @@
+Chapter 4, Section 4.4. Tables locked.
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+Whether a framework that needs a language model in its decision path can be measured under these conditions decides whether its comparison is quantitative or architectural; that is stated for each framework below.
+===
+Whether a framework that needs a language model in its decision path can be measured under these conditions decides whether its comparison is quantitative or architectural. This is stated for each framework below.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+The property concerns the current policy, not whether the first policy matches what the user asked for, which the authors state themselves (Section 9); in the paper's main results the approver accepts every expansion.
+===
+The property concerns the current policy, not whether the first policy matches what the user asked for, as the authors state themselves (Section 9). In the paper's main results, the approver accepts every expansion.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+   - The policy completes no benign episode of user tasks 14 (password change: no rule) and 15 on the primary recordings, and of user tasks 9 and 14 on the second population; otherwise it completes about as many as the undefended agent.
+===
+   - The policy completes no benign episode of user tasks 14 (password change: no rule) and 15 on the primary recordings, and of user tasks 9 and 14 on the second population. Otherwise it completes about as many as the undefended agent.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+**Main cost.** REM v1.0's replayed benign utility on these traces (5 of 15) is below that of every recorded defense in point estimate; the injection classifier's 7 of 16 is the closest, and their intervals overlap.
+===
+**Main cost.** REM v1.0's replayed benign utility on these traces (5 of 15) is below that of every recorded defense in point estimate. The injection classifier's 7 of 16 is the closest, and their intervals overlap.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+In version 3 of the paper, which was read in full, a language model writes the initial policy from the user's query and updates it during execution; a solver classifies each update as a narrowing, applied automatically, or an expansion, which needs approval (pp. 6-7). The official repository contained, at the commit of 10 September 2025, a hand-written policy for the AgentDojo banking suite: `send_money`, `schedule_transaction` and `update_scheduled_transaction` are permitted only for five listed recipients; `update_password` has no policy entry and is therefore not permitted; the remaining tools are permitted. That policy was removed
+===
+In version 3 of the paper, which was read in full, a language model writes the initial policy from the user's query and updates it during execution. A solver classifies each update as a narrowing, applied automatically, or an expansion, which needs approval (pp. 6-7). At the commit of 10 September 2025, the official repository contained a hand-written policy for the AgentDojo banking suite:
+
+- `send_money`, `schedule_transaction` and `update_scheduled_transaction` are permitted only for five listed recipients;
+- `update_password` has no policy entry and is therefore not permitted;
+- the remaining tools are permitted.
+
+That policy was removed
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | B
+<<<
+The upstream checking code was not executed; an independent review of 14 November 2026 reported a differential check on 468 argument cases that found no difference, which was not repeated here.
+===
+In that study the upstream checking code was not executed. An independent review of 14 November 2026 reported a differential check on 468 argument cases that found no difference, which was not repeated here. The authors' checker was executed later, for the comparison at the start of this section, and gave the same counts (see the paragraph on the independent confirmation of the earlier replay).
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+- **Against REM v1.0** the current rule has fewer successful attacks on the primary recordings and more completed benign tasks on the second population; the other intervals include zero. This contrast was not fixed in advance.
+===
+- **Against REM v1.0** the current rule has fewer successful attacks on the primary recordings and more completed benign tasks on the second population. The other intervals include zero. This contrast was not fixed in advance.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+- **The two policies fail in different places.** The published policy completes no password-change task (user task 14), because the tool is not permitted, and its five recipients are payees of the benchmark's initial state: on twenty paired fixtures whose payees are not on the list it withholds 13 of 20 legitimate calls (Table 4.58).
+===
+- **The two policies fail in different places.** The published policy completes no password-change task (user task 14), because the tool is not permitted. Its five recipients are payees of the benchmark's initial state, and on twenty paired fixtures whose payees are not on the list it withholds 13 of 20 legitimate calls (Table 4.58).
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+4. **Replay.** Under NO-ADAPT a withheld call does not lead the recorded agent to retry or replan. This affects both REM and Progent in the same way, because both withhold calls; it would not apply in the same way to DRIFT or MELON, which change the agent's subsequent behavior.
+===
+4. **Replay.** Under NO-ADAPT a withheld call does not lead the recorded agent to retry or replan. This affects REM and Progent in the same way, because both withhold calls. It would not apply in the same way to DRIFT or MELON, which change the agent's subsequent behavior.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+**The supported conclusion is not that REM outperforms or underperforms these frameworks in general.** On this benchmark a deterministic policy with knowledge of the legitimate payees matches REM's protection with less false blocking, and REM's claimed advantage, independence from such knowledge, remains to be tested.
+===
+**The supported conclusion is not that REM outperforms or underperforms these frameworks in general.** On this benchmark, a deterministic policy with knowledge of the legitimate payees matches REM's protection with less false blocking. REM's claimed advantage, independence from such knowledge, remains to be tested.
+>>>

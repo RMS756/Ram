@@ -1,0 +1,8 @@
+Appendix A.4 legend: em-dashes after the verification codes replaced by colons.
+
+@@@ src/APPENDICES_FINAL.md | A
+<<<
+*Verification codes:* FV — formulation checked against the source; IV — source identity confirmed, formulation to be checked against the full text; NC — source not accessible during this revision; DER — derived in this chapter; DEF — design definition. The codes are retained until final reference verification is complete.
+===
+*Verification codes:* FV: formulation checked against the source; IV: source identity confirmed, formulation to be checked against the full text; NC: source not accessible during this revision; DER: derived in this chapter; DEF: design definition. The codes are retained until final reference verification is complete.
+>>>

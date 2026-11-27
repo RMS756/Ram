@@ -1,0 +1,37 @@
+Appendices. Tables and equations are not edited. Two captions said "this chapter" although they stand in an appendix;
+they now name the methodology chapter.
+
+@@@ src/APPENDICES_FINAL.md | A
+<<<
+**Table A.1. Notation used in this chapter**
+===
+**Table A.1. Notation used in the methodology chapter**
+>>>
+
+@@@ src/APPENDICES_FINAL.md | A
+<<<
+are defined where they are used. Each symbol has one meaning throughout the chapter.
+===
+are defined where they are used. Each symbol has one meaning throughout the methodology chapter.
+>>>
+
+@@@ src/APPENDICES_FINAL.md | A
+<<<
+**Table A.3. Provenance of the equations in this chapter**
+===
+**Table A.3. Provenance of the equations in the methodology chapter**
+>>>
+
+@@@ src/APPENDICES_FINAL.md | A
+<<<
+The procedure has known optimality properties in sequential change detection: Lorden (1971) proposed stopping rules that are asymptotically optimal in a defined sense, and Moustakides (1986) showed Page's stopping time to be optimal in a stronger sense.
+===
+The procedure has known optimality properties in sequential change detection. Lorden (1971) proposed stopping rules that are asymptotically optimal in a defined sense, and Moustakides (1986) showed Page's stopping time to be optimal in a stronger sense.
+>>>
+
+@@@ src/APPENDICES_FINAL.md | A
+<<<
+**Implementation conventions.** Four conventions in the implementation differ in form from the equations as printed; none changes their meaning:
+===
+**Implementation conventions.** Four conventions in the implementation differ in form from the equations as printed. None changes their meaning:
+>>>

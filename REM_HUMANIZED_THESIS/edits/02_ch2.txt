@@ -1,0 +1,85 @@
+Chapter 2. Not edited: the two research-gap statements (Sections 2.11.1 and 2.11.5), which are proposed wording
+pending the supervisor's decision, and the tables.
+
+@@@ src/CHAPTER_02_FINAL.md | A
+<<<
+All 104 reports sought for retrieval (45 database, 59 other-methods) were therefore *not retrieved*, and eligibility was assessed on **records**:
+===
+All 104 reports sought for retrieval (45 database, 59 other-methods) were therefore *not retrieved*. Eligibility was assessed on **records**:
+>>>
+
+@@@ src/CHAPTER_02_FINAL.md | A
+<<<
+No meta-analysis was possible, because the studies differ in agents, attacks, benchmarks, success definitions and metrics; the synthesis is qualitative and structured by theme, and author-reported figures
+===
+No meta-analysis was possible, because the studies differ in agents, attacks, benchmarks, success definitions and metrics. The synthesis is qualitative and structured by theme, and author-reported figures
+>>>
+
+@@@ src/CHAPTER_02_FINAL.md | A
+<<<
+**Why agents change the problem.** Three structural properties distinguish agent security from the security of a stand-alone model: several input channels of different trustworthiness enter the same context; state persists across a trajectory, so content read at one step can shape an action several steps later; and outputs include tool calls with external effects. Benchmark studies show that these properties matter empirically (Wei et al., 2026; Ruan et al., 2024). Tool-channel threats, memory poisoning and multi-step drift lie outside the threat model evaluated in this thesis and are not reviewed further here; the included studies that address them are listed in the evidence matrix of Appendix S-A.
+===
+**Why agents change the problem.** Three structural properties distinguish agent security from the security of a stand-alone model:
+
+- several input channels of different trustworthiness enter the same context;
+- state persists across a trajectory, so content read at one step can shape an action several steps later;
+- outputs include tool calls with external effects.
+
+Benchmark studies show that these properties matter empirically (Wei et al., 2026; Ruan et al., 2024). Tool-channel threats, memory poisoning and multi-step drift lie outside the threat model evaluated in this thesis and are not reviewed further here. The included studies that address them are listed in the evidence matrix of Appendix S-A.
+>>>
+
+@@@ src/CHAPTER_02_FINAL.md | A
+<<<
+*Input- and model-level protection* (detectors of embedded instructions, input transformation, and training the model to follow only the prompt channel) reports strong in-distribution results but acts on text, not on actions, and has been bypassed by adaptive attacks (J. Shi et al., 2026; Y. Zhang et al., 2024). *System-level and information-flow defenses* change the architecture so that untrusted data cannot steer control flow; their guarantees hold for the threat models their authors formalized, and one such design was later defeated by new attacks (Y. Wu et al., 2025; E. Li et al., 2026).
+===
+*Input- and model-level protection* includes detectors of embedded instructions, input transformation, and training the model to follow only the prompt channel. It reports strong in-distribution results, but it acts on text rather than on actions, and adaptive attacks have bypassed it (J. Shi et al., 2026; Y. Zhang et al., 2024). *System-level and information-flow defenses* change the architecture so that untrusted data cannot steer control flow. Their guarantees hold for the threat models their authors formalized, and new attacks later defeated one such design (Y. Wu et al., 2025; E. Li et al., 2026).
+>>>
+
+@@@ src/CHAPTER_02_FINAL.md | A
+<<<
+Their limits recur: judgment by a language model adds latency and can vary between runs, accuracies are measured on the authors' own benchmarks, and the verified records do not report calibrated probabilities that could be combined with the consequence of an action, with the single exception of NEXUS (Section 2.8.3).
+===
+Their limits recur. Judgment by a language model adds latency and can vary between runs, and accuracies are measured on the authors' own benchmarks. Apart from NEXUS (Section 2.8.3), the verified records do not report calibrated probabilities that could be combined with the consequence of an action.
+>>>
+
+@@@ src/CHAPTER_02_FINAL.md | A
+<<<
+**Attribution for audit.** For a linear model under feature independence, the Shapley attribution of a feature is its coefficient times the feature's deviation from a reference, and on the log-odds of a logistic model the decomposition is exact (Lundberg & Lee, 2017).
+===
+**Attribution for audit.** For a linear model under feature independence, the Shapley attribution of a feature is its coefficient times the feature's deviation from a reference. On the log-odds of a logistic model, the decomposition is exact (Lundberg & Lee, 2017).
+>>>
+
+@@@ src/CHAPTER_02_FINAL.md | A
+<<<
+with a comment citing legal, intellectual-property and affiliation reasons rather than an error in the benchmark; its OpenAlex record carries no retraction flag, and the withdrawal notice could not be re-checked on 28 October 2026 because arXiv was unreachable.
+===
+with a comment citing legal, intellectual-property and affiliation reasons rather than an error in the benchmark. Its OpenAlex record carries no retraction flag. The withdrawal notice could not be re-checked on 28 October 2026, because arXiv was unreachable.
+>>>
+
+@@@ src/CHAPTER_02_FINAL.md | A
+<<<
+The specific combination that REM implements (Gap A) was not found in the examined records, but the thesis does not rest its originality on that absence: a combination this specific is easy to miss in a record-level review, and closely related designs exist (NEXUS, AgentTrust, SafeAgent).
+===
+The specific combination that REM implements (Gap A) was not found in the examined records. The thesis does not, however, rest its originality on that absence. A combination this specific is easy to miss in a record-level review, and closely related designs exist (NEXUS, AgentTrust, SafeAgent).
+>>>
+
+@@@ src/CHAPTER_02_FINAL.md | A
+<<<
+At abstract level none of them compares a learned decision behind such a check with the check used alone, so the evidence gap stands; request-derived argument checking is not itself a gap.
+===
+At abstract level, none of them compares a learned decision behind such a check with the check used alone, so the evidence gap stands. Request-derived argument checking is not itself a gap.
+>>>
+
+@@@ src/CHAPTER_02_FINAL.md | A
+<<<
+**Selection.** The search of OpenAlex on 25 September 2026 identified 320 records. (A simulation study added in a supplementary update of 2 November 2026 is discussed separately at abstract level in Section 2.11.3; it does not change these counts.) After deduplication, 219 were screened, and 45 were assessed for eligibility at record level.
+===
+**Selection.** The search of OpenAlex on 25 September 2026 identified 320 records. After deduplication, 219 were screened, and 45 were assessed for eligibility at record level.
+>>>
+
+@@@ src/CHAPTER_02_FINAL.md | A
+<<<
+Of these, 10 are HIGH, 36 MODERATE and 25 LIMITED record-visible evidence.
+===
+Of these, 10 are HIGH, 36 MODERATE and 25 LIMITED record-visible evidence. A simulation study added in a supplementary update of 2 November 2026 is discussed separately, at abstract level, in Section 2.11.3; it does not change these counts.
+>>>

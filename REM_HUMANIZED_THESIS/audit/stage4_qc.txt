@@ -1,0 +1,9 @@
+Humanized PDF pages: 272 | independent re-export of the DOCX: 272 | identical pages: 272
+Original PDF pages: 272
+TOC/LoT/LoF entries original: 63 humanized: 63 | same entry titles: True
+entries whose page number moved: 0 []
+original/REM_Master_Thesis_Defence_Ready.docx tables 108 images 17 TOC fields 3 True
+REM_Master_Thesis_Humanized.docx tables 108 images 17 TOC fields 3 True
+Note: the TOC comparison above covers the table of contents (chapter and section headings, 63 entries). In the list of
+tables, the captions of Tables A.1 and A.3 changed by design ("this chapter" -> "the methodology chapter"); all other
+list entries and every page number are unchanged. REM_DEFENCE_READY_THESIS/ is unchanged (git status clean).

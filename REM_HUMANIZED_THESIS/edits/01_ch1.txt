@@ -1,0 +1,76 @@
+Chapter 1. Not edited: the research-gap statement (Section 1.4) and RQ1-RQ4 (Section 1.7), because their wording is a
+pending supervisor decision (D-10); a wording suggestion for the gap statement is recorded as Category C.
+
+@@@ src/CHAPTER_01_FINAL.md | A
+<<<
+The thesis designs a decision layer at the action boundary, and evaluates it on recorded agent behavior in a banking environment against threshold and rule baselines.
+===
+The thesis designs a decision layer at the action boundary and evaluates it on recorded agent behavior in a banking environment, against threshold and rule baselines.
+>>>
+
+@@@ src/CHAPTER_01_FINAL.md | A
+<<<
+**One versioned amendment is proposed.** The evaluation found that the behavioral evidence group lowers legitimate task completion without a measured security benefit, and a confirmatory run on recordings unread until then supported removing it for task completion; its effect on security is not resolved (Chapter 4, Section 4.6.8).
+===
+**One versioned amendment is proposed.** The evaluation found that the behavioral evidence group lowers legitimate task completion without a measured security benefit. A confirmatory run on recordings unread until then supported removing it for task completion, but its effect on security is not resolved (Chapter 4, Section 4.6.8).
+>>>
+
+@@@ src/CHAPTER_01_FINAL.md | A
+<<<
+**Proposed contribution.** The contribution proposed at the design stage was empirical and integrative: the design and evaluation, on an open and executable banking benchmark under indirect prompt injection, of a non-invasive five-layer runtime layer that combines provenance-based action evidence, a calibrated per-step probability of adversarial inducement, verdict selection by minimum conditional risk with losses declared per consequence tier, and deterministic mitigation.
+===
+**Proposed contribution.** The contribution proposed at the design stage was empirical and integrative. It was the design and evaluation of a non-invasive runtime framework of five layers that combines provenance-based action evidence, a calibrated per-step probability of adversarial inducement, verdict selection by minimum conditional risk with losses declared per consequence tier, and deterministic mitigation. The framework was to be evaluated on an open and executable banking benchmark under indirect prompt injection.
+>>>
+
+@@@ src/CHAPTER_01_FINAL.md | A
+<<<
+2. **A controlled evaluation protocol.** It isolates the decision rule from the estimator, holds out whole attack objectives, adds a double holdout of user task and attack objective, compares the learned policy with rules that use no model and with one published policy replayed in the same harness, and includes one confirmatory run under a pre-committed protocol. *Evidence:* Chapters 3 and 4.
+===
+2. **A controlled evaluation protocol.** The protocol isolates the decision rule from the estimator and holds out whole attack objectives, with a double holdout of user task and attack objective. It compares the learned policy with rules that use no model and with one published policy replayed in the same harness. It also includes one confirmatory run under a pre-committed protocol. *Evidence:* Chapters 3 and 4.
+>>>
+
+@@@ src/CHAPTER_01_FINAL.md | A
+<<<
+Against the strongest simple rule it has fewer successful attacks, while the difference in completed tasks is not resolved; against a fixed-list policy from Progent's repository nothing is resolved.
+===
+Against the strongest simple rule it has fewer successful attacks, while the difference in completed tasks is not resolved. Against a fixed-list policy from Progent's repository, no difference is resolved.
+>>>
+
+@@@ src/CHAPTER_01_FINAL.md | A
+<<<
+An external review then found that the guard accepted computed amounts it never computed and read a percentage coefficient as an amount; a typed amount verifier repairs both, at the cost of the tasks whose amounts the request does not determine.
+===
+An external review then found that the guard accepted computed amounts it never computed and read a percentage coefficient as an amount. A typed amount verifier repairs both defects, at the cost of the tasks whose amounts the request does not determine.
+>>>
+
+@@@ src/CHAPTER_01_FINAL.md | A
+<<<
+The four defenses distributed with the benchmark are compared through their authors' recorded runs and REM's replay on the same task pairs; the comparison is descriptive.
+===
+The four defenses distributed with the benchmark are compared through their authors' recorded runs and REM's replay on the same task pairs. This comparison is descriptive.
+>>>
+
+@@@ src/CHAPTER_01_FINAL.md | A
+<<<
+- any closed-loop comparison with a published defense: the four distributed defenses are compared through their authors' recorded runs against REM's replay, which is descriptive (Chapter 4, Section 4.4.7); MELON and DRIFT were not run with a language model (their official code was executed only with scripted agents); the one published policy that was replayed, decided by its authors' own code, has no successful attack and completes more tasks than REM (Chapter 4, Section 4.4.7).
+===
+- any closed-loop comparison with a published defense. The four distributed defenses are compared through their authors' recorded runs against REM's replay, which is descriptive (Chapter 4, Section 4.4.7). MELON and DRIFT were not run with a language model; their official code was executed only with scripted agents. The one published policy that was replayed, decided by its authors' own code, has no successful attack and completes more tasks than REM (Chapter 4, Section 4.4.7).
+>>>
+
+@@@ src/CHAPTER_01_FINAL.md | A
+<<<
+**What the thesis does not claim:** a new algorithm; the first runtime guardrail, calibrated agent risk score or consequence-aware controller; that calibration improves control; robustness against adaptive adversaries; any prevention guarantee; that the tested features establish what the user authorized; that the permission rule of the extension generalizes beyond the benchmark's requests; or validity in production financial deployment. Each constituent mechanism is established and attributed to its source (Chapter 2, Table 2.2).
+===
+**What the thesis does not claim:**
+
+- a new algorithm;
+- the first runtime guardrail, calibrated agent risk score or consequence-aware controller;
+- that calibration improves control;
+- robustness against adaptive adversaries;
+- any prevention guarantee;
+- that the tested features establish what the user authorized;
+- that the permission rule of the extension generalizes beyond the benchmark's requests;
+- validity in production financial deployment.
+
+Each constituent mechanism is established and attributed to its source (Chapter 2, Table 2.2).
+>>>

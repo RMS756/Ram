@@ -1,0 +1,97 @@
+Chapter 4, Section 4.6. Tables locked.
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+After a refusal, a live agent could retry, rephrase, use another tool, or abandon the task. Replay therefore cannot show how often a live agent would achieve the attacker's goal by another route, and **a near-zero replay ASR is not evidence of protection against a live or adaptive agent.**
+===
+After a refusal, a live agent could retry, rephrase, use another tool, or abandon the task. Replay therefore cannot show how often a live agent would achieve the attacker's goal by another route. **A near-zero replay ASR is not evidence of protection against a live or adaptive agent.**
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+The same replays under the episode-level variant are reported in Appendix S-E. In summary: REM's ASR is identical under both semantics (0.004); B1's is lower under the episode-level variant (0.055 against 0.046), because the restriction set left by an earlier Block or Modify refuses later state-changing calls; utility under attack is lower or equal under the episode-level variant in every configuration; and benign utility coincides.
+===
+The same replays under the episode-level variant are reported in Appendix S-E. In summary:
+
+- REM's ASR is identical under both semantics (0.004);
+- B1's is lower under the episode-level variant (0.055 against 0.046), because the restriction set left by an earlier Block or Modify refuses later state-changing calls;
+- utility under attack is lower or equal under the episode-level variant in every configuration;
+- benign utility coincides.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+S3 uses 681 attacked episodes of one backbone under five attack templates not used in fitting (of 715 recorded, 34 are not reproduced by the all-allow replay and are excluded); it has no benign episodes.
+===
+S3 uses 681 attacked episodes of one backbone under five attack templates not used in fitting (of 715 recorded, 34 are not reproduced by the all-allow replay and are excluded). It has no benign episodes.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+Both REM versions are also unchanged, which is consistent with their narrow Allow region; the contribution of each feature to that result was not examined separately.
+===
+Both REM versions are also unchanged, which is consistent with their narrow Allow region. The contribution of each feature to that result was not examined separately.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+- **REM v1.0 is not shown to be better than the rules either.** P2 and A2 complete more tasks in point estimate with one more successful attack; the intervals of their differences from REM v1.0 include zero, except for A2 on benign episodes.
+===
+- **REM v1.0 is not shown to be better than the rules either.** P2 and A2 complete more tasks in point estimate, with one more successful attack. The intervals of their differences from REM v1.0 include zero, except for A2 on benign episodes.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+REM's threat model gives it one trusted input, the user's request as text. The published approaches that report both low attack success and high utility add something REM does not have: a trusted policy or authorization record (aiAuthZ, at abstract level), trusted observations that license an action (Yan et al., 2026), a language model that judges task alignment (F. Jia et al., 2025), or enforcement on effects at the system boundary (Kairos, at abstract level). Of these, this thesis ran only a fixed-list policy from Progent's repository, in replay (Section 4.4.7); it does not claim that the others would succeed on these episodes.
+===
+REM's threat model gives it one trusted input, the user's request as text. The published approaches that report both low attack success and high utility add something REM does not have:
+
+- a trusted policy or authorization record (aiAuthZ, at abstract level);
+- trusted observations that license an action (Yan et al., 2026);
+- a language model that judges task alignment (F. Jia et al., 2025);
+- enforcement on effects at the system boundary (Kairos, at abstract level).
+
+Of these approaches, this thesis ran only a fixed-list policy from Progent's repository, in replay (Section 4.4.7). It does not claim that the others would succeed on these episodes.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+16. **One published policy was replayed, and no defense that needs a language model was run.** Since 22 November 2026 the published policy is decided by the enforcement code of the Progent repository at a pinned commit, which gives the same counts as the earlier re-implementation on every population (Section 4.4.7); the Progent framework was not run with generated or updated policies.
+===
+16. **One published policy was replayed, and no defense that needs a language model was run.** Since 22 November 2026 the published policy is decided by the enforcement code of the Progent repository at a pinned commit, which gives the same counts as the earlier re-implementation on every population (Section 4.4.7). The Progent framework was not run with generated or updated policies.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+A second review found that version 1 also accepted a supported prefix of a compound calculation and an amount from an instruction whose condition does not hold; version 2 repairs both without changing any episode outcome and withholds one further legitimate fixture.
+===
+A second review found that version 1 also accepted a supported prefix of a compound calculation and an amount from an instruction whose condition does not hold. Version 2 repairs both without changing any episode outcome and withholds one further legitimate fixture.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+Decided by Progent's own enforcement code (22 November 2026), it gives the same counts on all three populations and completes 7.2, 16.9 and 18.0 percentage points more tasks under attack than REM v1.0; its list of permitted recipients contains values specific to the benchmark.
+===
+Decided by Progent's own enforcement code (22 November 2026), it gives the same counts on all three populations and completes 7.2, 16.9 and 18.0 percentage points more tasks under attack than REM v1.0. Its list of permitted recipients contains values specific to the benchmark.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+An external review found that the guard accepted unverified computed amounts; a typed amount verifier repairs this with no successful attack and 95 and 159 fewer completed tasks, all in requests whose amount it cannot verify, and the learned decision behind it again changes nothing.
+===
+An external review found that the guard accepted unverified computed amounts. A typed amount verifier repairs this with no successful attack and 95 and 159 fewer completed tasks, all in requests whose amount it cannot verify; the learned decision behind it again changes nothing.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+at a cost of 22.5 points of benign utility, and only enforcement by the Mitigation layer turns its verdicts into outcomes: in shadow mode the same verdicts protect nothing.
+===
+at a cost of 22.5 points of benign utility. Only enforcement by the Mitigation layer turns its verdicts into outcomes: in shadow mode the same verdicts protect nothing.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+and about as many as transformers_pi_detector, with lower benign completion; the comparison is descriptive because the defenses' runs are closed-loop and REM's is a replay.
+===
+and about as many as transformers_pi_detector, with lower benign completion. The comparison is descriptive, because the defenses' runs are closed-loop and REM's is a replay.
+>>>

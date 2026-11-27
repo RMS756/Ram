@@ -1,0 +1,84 @@
+Chapter 4, Sections 4.1-4.3 and chapter introduction. Tables locked.
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+Section 4.5 reports the ablation study of REM's five layers: a layer-to-implementation mapping, the pre-registered ablations of 19 and 21 November 2026 with every variant compared with the full framework on the same episodes, and the ablations of exploratory extensions that are not part of REM v1.0.
+===
+Section 4.5 reports the ablation study of REM's five layers. It gives a layer-to-implementation mapping and the pre-registered ablations of 19 and 21 November 2026, in which every variant is compared with the full framework on the same episodes, followed by the ablations of exploratory extensions that are not part of REM v1.0.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+- **Tests.** On 13 November 2026 the suite of 280 tests gave 278 passed, 1 skipped and 1 expected failure; on 16 November 2026 the suite of 502 tests gave 500 passed, 1 skipped and the same expected failure.
+===
+- **Tests.** On 13 November 2026 the suite of 280 tests gave 278 passed, 1 skipped and 1 expected failure. On 16 November 2026 the suite of 502 tests gave 500 passed, 1 skipped and the same expected failure.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+are in `REM_FINAL_THESIS_COMPLETION_2026_11_19/results/`; their protocols and code hashes were committed before any arm was scored, and a fresh run of the frozen pilot pipeline first reproduced the published counts of REM v1.0 exactly.
+===
+are in `REM_FINAL_THESIS_COMPLETION_2026_11_19/results/`. Their protocols and code hashes were committed before any arm was scored, and a fresh run of the frozen pilot pipeline first reproduced the published counts of REM v1.0 exactly.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+Bootstrap coverage is an asymptotic property, and with so few groups the intervals are not guaranteed to reach their nominal 95% coverage; a narrow interval, such as that of REM's replay ASR, is not evidence of precision.
+===
+Bootstrap coverage is an asymptotic property, and with so few groups the intervals are not guaranteed to reach their nominal 95% coverage. A narrow interval, such as that of REM's replay ASR, is therefore not evidence of precision.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+- **AI inspection only so far.** A sample of 30 attacked episodes was inspected by the AI assistant that assisted this work, not by a human: 29 labels agreed with the trace, and one was a likely false negative (an attacker-directed transfer through a tool other than the reference tool).
+===
+- **AI inspection only so far.** A sample of 30 attacked episodes was inspected by the AI assistant that assisted this work, not by a human. In 29 the label agreed with the trace; one was a likely false negative (an attacker-directed transfer through a tool other than the reference tool).
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+It is trained once per fold, on the fitting portion of that fold only, by the nested procedure of Chapter 3 (Procedure 3.1): the ridge penalty is selected from five values by four grouped inner folds; the calibration map is fitted on the inner out-of-fold logits; the model is then refitted on the whole fitting portion.
+===
+It is trained once per fold, on the fitting portion of that fold only, by the nested procedure of Chapter 3 (Procedure 3.1):
+
+- the ridge penalty is selected from five values by four grouped inner folds;
+- the calibration map is fitted on the inner out-of-fold logits;
+- the model is then refitted on the whole fitting portion.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+Three further sets of models were trained by the same procedure and are used later in the chapter: the models of REM v1.1, which omit the four behavioral features (nine folds); the models of the double holdout, one for each of 143 combinations of user task and attacker objective (Chapter 3, Section 3.11.11); and, for the exploratory extension, models on the four non-behavioral features plus five permission indicators (nine folds and 143 double-holdout cells; Chapter 3, Section 3.14). The study of 16 November 2026 trained, inside each training portion, two further ridge models on half of it (for the Neyman-Pearson and conformal thresholds, whose calibration half is split by attacker objective, never by step) and gradient-boosted trees selected among twelve configurations by the same grouped inner folds.
+===
+Three further sets of models were trained by the same procedure and are used later in the chapter:
+
+- the models of REM v1.1, which omit the four behavioral features (nine folds);
+- the models of the double holdout, one for each of 143 combinations of user task and attacker objective (Chapter 3, Section 3.11.11);
+- for the exploratory extension, models on the four non-behavioral features plus five permission indicators (nine folds and 143 double-holdout cells; Chapter 3, Section 3.14).
+
+The study of 16 November 2026 trained two further kinds of model inside each training portion. Two ridge models were fitted on half of the portion, for the Neyman-Pearson and conformal thresholds; their calibration half is split by attacker objective, never by step. Gradient-boosted trees were selected among twelve configurations by the same grouped inner folds.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+**A released attack-labeled call is not the same as a committed unauthorized change of the bank state.** The label marks an attempt (Section 4.2.1), and the effect of a released call on the state is not measured separately from the benchmark's security check.
+===
+**A released attack-labeled call is not the same as a committed unauthorized change of the bank state.** The label marks an attempt (Section 4.2.1). The effect of a released call on the state is not measured separately from the benchmark's security check.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+**No margin of non-inferiority on security was approved, and none was invented.** An interval of an attack-success difference that includes zero is reported as unresolved. The studies of 13 to 15 November also fixed their wording in advance. "Added value over simple rules" may be stated only if the task-completion interval against A2 lies above zero on both populations and the number of successful attacks does not exceed A2's. "The learned model adds value" may be stated only if the lower bound of its task-completion interval against the rule is strictly above zero under S1 and S2, with no more successful attacks on the original text and on the reformatted-identifier probe.
+===
+**No margin of non-inferiority on security was approved, and none was invented.** An interval of an attack-success difference that includes zero is reported as unresolved. The studies of 13 to 15 November also fixed their wording in advance:
+
+- "Added value over simple rules" may be stated only if the task-completion interval against A2 lies above zero on both populations and the number of successful attacks does not exceed A2's.
+- "The learned model adds value" may be stated only if the lower bound of its task-completion interval against the rule is strictly above zero under S1 and S2, with no more successful attacks on the original text and on the reformatted-identifier probe.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+Of these, 2,113 are eligible under amendment AM-4, meaning that the replay with every call allowed reproduces the recorded outcome; the 35 that are not (34 in F-E, 1 in F-C) are excluded from every metric.
+===
+Of these, 2,113 are eligible under amendment AM-4: the replay with every call allowed reproduces the recorded outcome. The 35 that are not eligible (34 in F-E, 1 in F-C) are excluded from every metric.
+>>>

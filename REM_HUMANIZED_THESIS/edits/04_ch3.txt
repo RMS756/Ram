@@ -1,0 +1,114 @@
+Chapter 3. Equations, symbol definitions ("where ..." clauses), tables, procedures and the algorithm listing are not
+edited; prose around them is.
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+At each step, REM executes Layer 1; then Layers 2 and 3, each computing its evidence from Layer 1's output without using the other's; then Layer 4; then Layer 5, before the proposed action is released to the environment. Layers 2 and 3 are independent computations, not concurrent ones: the implementation evaluates them one after the other in the same process (Section S-3.15). They share the declared instruction-pattern set as a resource, not each other's output. The Detection and Behavioral Analysis Layers compute their evidence independently; they are combined only in the Decision Engine. This independence allows an evidence group to be removed in ablation without changing the computation of the other.
+===
+At each step, REM executes the layers in this order, before the proposed action is released to the environment:
+
+- Layer 1;
+- Layers 2 and 3, each computing its evidence from Layer 1's output without using the other's;
+- Layer 4;
+- Layer 5.
+
+Layers 2 and 3 are independent computations, not concurrent ones: the implementation evaluates them one after the other in the same process (Section S-3.15). They share the declared instruction-pattern set as a resource, but neither uses the other's output. The Detection and Behavioral Analysis Layers compute their evidence independently, and it is combined only in the Decision Engine. This independence allows an evidence group to be removed in ablation without changing the computation of the other.
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+Because λ is selected from a *finite* grid, the two scales are equivalent only under this conversion: the declared grid λ~impl~ ∈ {0.01, 0.1, 1, 10, 100} is the grid λ ∈ {0.005, 0.05, 0.5, 5, 50} on the scale of Equation 3.2.
+===
+Because λ is selected from a *finite* grid, the two scales are equivalent only under this conversion. The declared grid λ~impl~ ∈ {0.01, 0.1, 1, 10, 100} is the grid λ ∈ {0.005, 0.05, 0.5, 5, 50} on the scale of Equation 3.2.
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+- **A predicate fixes the verdict.** s~t~ and p~t~ may still be computed and stored for audit, but they are marked as not used, and the audit record contains no risk table: the field is recorded as *not applicable* (Section 3.7.6).
+===
+- **A predicate fixes the verdict.** s~t~ and p~t~ may still be computed and stored for audit, but they are marked as not used. The audit record then contains no risk table; the field is recorded as *not applicable* (Section 3.7.6).
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+The direction of the effect of this imputation on the estimated probability is that of minus the indicator's fitted coefficient; it is not fixed by the definition, and fitted coefficients of REM can be negative (for example x^beh^~2~ in one fold of the pilot).
+===
+The imputation moves the estimated probability in the direction of minus the indicator's fitted coefficient. That direction is not fixed by the definition, because fitted coefficients of REM can be negative (for example x^beh^~2~ in one fold of the pilot).
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+It has the form of the standard two-class cost-sensitive threshold for zero-cost correct decisions, which Elkan (2001) obtains from the same expected-cost criterion; the printed threshold expression in that paper could not be inspected directly during verification, so the derivation above stands on Equation 3.8 alone.
+===
+It has the form of the standard two-class cost-sensitive threshold for zero-cost correct decisions, which Elkan (2001) obtains from the same expected-cost criterion. The printed threshold expression in that paper could not be inspected directly during verification, so the derivation above stands on Equation 3.8 alone.
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+The adversarial Modify entry is a derivation. Under the stated assumption A-Mod — whether Modify neutralizes an adversarially induced action is independent of x~t~ given the tier, and the attack fails with probability 1 − r~mod~(k) — the law of total expectation gives:
+===
+The adversarial Modify entry is a derivation. It rests on assumption A-Mod: whether Modify neutralizes an adversarially induced action is independent of x~t~ given the tier, and the attack fails with probability 1 − r~mod~(k). Under A-Mod, the law of total expectation gives:
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+The two semantics can release different actions even when the agent never retries a call or adapts: under the episode-level variant, Block adds every tool of 𝒯~R~ to the restriction set S, and Modify adds the tool class of a~t~, so a later, *different* state-changing call is refused even when its own verdict is Allow.
+===
+The two semantics can release different actions even when the agent never retries a call or adapts. Under the episode-level variant, Block adds every tool of 𝒯~R~ to the restriction set S, and Modify adds the tool class of a~t~. A later, *different* state-changing call is then refused even when its own verdict is Allow.
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+**Final ablation (added 19 November 2026).** A separately pre-registered study (Chapter 4, Section 4.5.7) repeats ablations 1–4 and 6 in replay with paired intervals and adds two arms, each changing only the decision: Modify removed from the verdict set, so that the expected loss is minimized over Allow, Escalate and Block; and the learned decision removed, so that only the predicates D1 and D2 act and every other call is allowed.
+===
+**Final ablation (added 19 November 2026).** A separately pre-registered study (Chapter 4, Section 4.5.7) repeats ablations 1–4 and 6 in replay with paired intervals. It adds two arms, each changing only the decision:
+
+- Modify removed from the verdict set, so that the expected loss is minimized over Allow, Escalate and Block;
+- the learned decision removed, so that only the predicates D1 and D2 act and every other call is allowed.
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+The training targets of the last three arms were obtained by *prefix branching*: each recorded episode was replayed once with every call released and once with one call withheld and all others released, and the benchmark's attack and task outcomes of the two replays were compared. The intervention-value rule is **derived, not quoted**: C. Zhang et al. (2026) define the value of an intervention as the difference between the expected utility of intervening and of continuing and select the action with the highest expected utility; the rule above writes those two utilities in REM's declared costs for the two actions release and withhold.
+===
+The training targets of the last three arms were obtained by *prefix branching*. Each recorded episode was replayed once with every call released and once with one call withheld and all others released, and the benchmark's attack and task outcomes of the two replays were compared. The intervention-value rule is **derived, not quoted**. C. Zhang et al. (2026) define the value of an intervention as the difference between the expected utility of intervening and of continuing, and select the action with the highest expected utility. The rule above writes those two utilities in REM's declared costs for the two actions, release and withhold.
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+**Definition.** REM v1.1 is REM v1.0 with the behavioral evidence group removed from the evidence vector: x~t~ = [x^ctx^; x^act^], without x^beh^~1~ to x^beh^~4~. Nothing else changes. The estimator is the ridge logistic regression of Equations 3.1 and 3.2, refitted on the reduced vector by Procedure 3.1; the calibration is that of Equations 3.3 and 3.4; the consequence tiers, the predicates, the loss structure of Table 3.10, the verdict rule of Equations 3.6 and 3.7, the mitigation semantics and the audit record are those of v1.0.
+===
+**Definition.** REM v1.1 is REM v1.0 with the behavioral evidence group removed from the evidence vector: x~t~ = [x^ctx^; x^act^], without x^beh^~1~ to x^beh^~4~. Nothing else changes:
+
+- the estimator is the ridge logistic regression of Equations 3.1 and 3.2, refitted on the reduced vector by Procedure 3.1;
+- the calibration is that of Equations 3.3 and 3.4;
+- the consequence tiers, the predicates, the loss structure of Table 3.10, the verdict rule of Equations 3.6 and 3.7, the mitigation semantics and the audit record are those of v1.0.
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+**E. Direct-value constraint and the guard used alone.** On 16 November 2026 a constraint was added after two fixture failures: when the request states an amount directly for an account and an operation ("send 27.35 to A"), only that amount is accepted for that call, and a number whose format is ambiguous ("1,250") is not resolved, so the call is withheld.
+===
+**E. Direct-value constraint and the guard used alone.** On 16 November 2026 a constraint was added after two fixture failures. When the request states an amount directly for an account and an operation ("send 27.35 to A"), only that amount is accepted for that call. A number whose format is ambiguous ("1,250") is not resolved, so the call is withheld.
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+**Version 2** requires the recognized expression to cover the whole amount phrase and accepts a call only on one instruction whose effect, account, own condition and own amount all license it; it evaluates the verifier only after the front and the rule release the call (`PROTOCOL_AMENDMENT_V2.md`).
+===
+**Version 2** requires the recognized expression to cover the whole amount phrase. It accepts a call only on one instruction whose effect, account, own condition and own amount all license it, and it evaluates the verifier only after the front and the rule release the call (`PROTOCOL_AMENDMENT_V2.md`).
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+The Decision Engine estimates a calibrated probability of adversarial inducement by ridge logistic regression with a logistic calibration on the logit, assigns a declared consequence tier, applies policy predicates, selects a verdict by minimizing conditional risk under tier-indexed losses, and writes an audit record whose linear attribution never influences the verdict.
+===
+The Decision Engine estimates a calibrated probability of adversarial inducement by ridge logistic regression with a logistic calibration on the logit. It then assigns a declared consequence tier, applies policy predicates and selects a verdict by minimizing conditional risk under tier-indexed losses. It also writes an audit record whose linear attribution never influences the verdict.
+>>>
+
+@@@ src/CHAPTER_03_FINAL.md | A
+<<<
+**What the comparison isolates.** REM and the baseline share the estimator, the calibration and the predicates. They differ in two respects: REM's losses depend on the consequence tier, and REM's expected-loss rule can choose Escalate, whereas the baseline can escalate only through D2.
+===
+**What the comparison isolates.** REM and the baseline share the estimator, the calibration and the predicates. They differ in two respects. REM's losses depend on the consequence tier, and REM's expected-loss rule can choose Escalate, whereas the baseline can escalate only through D2.
+>>>

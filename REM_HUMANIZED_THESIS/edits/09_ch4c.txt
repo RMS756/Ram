@@ -1,0 +1,57 @@
+Chapter 4, Section 4.5.1-4.5.8 (first part). Tables locked.
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+The five layers of Chapter 3 are design units. In the implementation they are not five independently removable modules: the features that the Decision Engine consumes are computed by the Behavioral Analysis code from labels and entities made by the Input & Context code, as Chapter 3 specifies (Table 3.6), and one behavioral feature is defined through the same instruction-pattern match as the Detection layer's indicator.
+===
+The five layers of Chapter 3 are design units. In the implementation they are not five independently removable modules. The features that the Decision Engine consumes are computed by the Behavioral Analysis code from labels and entities made by the Input & Context code, as Chapter 3 specifies (Table 3.6). In addition, one behavioral feature is defined through the same instruction-pattern match as the Detection layer's indicator.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+No variant is called A2 without a suffix, and the bare label A1 denotes a variant only in Table 4.25 and the coverage summary below it; everywhere else, a bare A1 or A2 is one of those rules.
+===
+No variant is called A2 without a suffix, and the bare label A1 denotes a variant only in Table 4.25 and the coverage summary below it. Everywhere else, a bare A1 or A2 is one of those rules.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+**Coverage of the five layers.** Four of the five layers have at least one evaluated variant; the Input & Context layer has none of its own, because it computes no evidence and everything downstream depends on its labels. Only the Mitigation layer is ablated as a whole: A5 removes all enforcement. The Decision Engine is ablated component by component, and every one of its components is covered (A4a–A4e); A4a removes the whole learned decision but keeps the predicates, and removing the layer entirely would leave no verdict at all, which is the no-defense reference by construction.
+===
+**Coverage of the five layers.** Four of the five layers have at least one evaluated variant. The Input & Context layer has none of its own, because it computes no evidence and everything downstream depends on its labels. Only the Mitigation layer is ablated as a whole: A5 removes all enforcement. The Decision Engine is ablated component by component, and every one of its components is covered (A4a–A4e). A4a removes the whole learned decision but keeps the predicates; removing the layer entirely would leave no verdict at all, which is the no-defense reference by construction.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+Two ablations of Table 4.35 were followed up in later studies, and their results are reported where those studies are described.
+===
+Two ablations of Table 4.35, behavioral evidence and calibration, and one change of the verdict set were followed up in later studies. Their results are reported where those studies are described.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+That is a statement about the benchmark's attacker goals, not an independent authorization audit; Section 4.5.8 shows calls that the request does not authorize and that this guard admitted.
+===
+That is a statement about the benchmark's attacker goals, not an independent authorization audit. The repair study later in Section 4.5.8 shows calls that the request does not authorize and that this guard admitted.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+The outcomes in Table 4.37 are those of the frozen guard, which accepted unverified computed amounts and misread percentage coefficients. Section 4.5.8 reports the repair and its cost.
+===
+The outcomes in Table 4.37 are those of the frozen guard, which accepted unverified computed amounts and misread percentage coefficients. The repair study that follows in Section 4.5.8 reports the repair and its cost.
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+- **The two-verdict decision alone is unsafe.** Applied to REM v1.1 without a guard (V11d), it releases every held-out credential-change attack (131 and 58 successful attacks).
+===
+- **The two-verdict decision is unsafe on its own.** Applied to REM v1.1 without a guard (V11d), it releases every held-out credential-change attack (131 and 58 successful attacks).
+>>>
+
+@@@ src/CHAPTER_04_FINAL.md | A
+<<<
+**Residual ASR after Modify.** Under NO-ADAPT, residual attack success after Modify is close to zero **by construction**: a withheld call does not recur.
+===
+**Residual ASR after Modify.** Under NO-ADAPT, residual attack success after Modify is close to zero **by construction**, because a withheld call does not recur.
+>>>
