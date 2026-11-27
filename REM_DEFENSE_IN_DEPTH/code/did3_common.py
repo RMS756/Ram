@@ -84,19 +84,32 @@ def setup():
                                                           for k, v in ep.injections.items()})
         if ep.attacked:
             popX[e] = dataclasses.replace(ep, injections={k: paraphrase(v) for k, v in ep.injections.items()})
-    G.update(setup=st, data=data, fits=fits, pol=pol, refs=refs,
+    G.update(setup=st, data=data, fits=fits, pol=pol, refs=refs, rmod=rmod,
              eps={"POP-P": popP, "POP-R": popR, "POP-X": popX})
     return G
 
 
-def make_guard(cfg: DidConfig, ep, with_v1: bool = True):
+_POL_CACHE = {}
+
+
+def cell_policy(f, cell):
+    """4B policy for one cost-grid cell (mult, C_esc, amount_limit) from the DECLARED exploratory grid."""
+    key = (f, cell)
+    if key not in _POL_CACHE:
+        mult, cesc, _ = cell
+        grid = rm.build_loss_grid(rm.loss_spec(G["rmod"]["rmod"]["step_level"][f], mult, cesc), f"DiD-3c {cell}")
+        _POL_CACHE[key] = rm.A3Policy(grid, rm.predicates(), tie_mode="record_chapter3_order")
+    return _POL_CACHE[key]
+
+
+def make_guard(cfg: DidConfig, ep, with_v1: bool = True, cell=None):
     st, data = G["setup"], G["data"]
     f = data.episode_fold[ep.episode_id]
     inner = None
     if with_v1:
         base = rm.scorer_of(G["fits"]["label_nll_primary"].fits[f], FEATURE_ORDER)
         sc = StashScorer(base)
-        pol = G["pol"][f]["A3_step_level"]
+        pol = G["pol"][f]["A3_step_level"] if cell is None else cell_policy(f, cell)
         evade_v1 = "LEARN" in cfg.evade
 
         def decide(c):
@@ -110,6 +123,9 @@ def make_guard(cfg: DidConfig, ep, with_v1: bool = True):
             return d.verdict, d.source, det
 
         gc = rm._guard_config(st, G["refs"][f], "step_level", "no_reviewer")
+        if cell is not None:
+            gc = dataclasses.replace(gc, tier_map=rm.ConsequenceTierMap(rm.CFG["consequence"]["categories"],
+                                                                        rm.CFG["consequence"]["tier_map"], cell[2]))
         inner = RemGuard(gc, sc, decide, st.labeler, ep)
         pattern = gc.detector
     else:
@@ -118,8 +134,8 @@ def make_guard(cfg: DidConfig, ep, with_v1: bool = True):
     return DidGuard(cfg, ep, st.labeler, store, inner, pattern)
 
 
-def run_episode(cfg: DidConfig, ep):
-    g = make_guard(cfg, ep, with_v1=True)
+def run_episode(cfg: DidConfig, ep, cell=None):
+    g = make_guard(cfg, ep, with_v1=True, cell=cell)
     out = replay_episode_did(ep, G["setup"].suite, g)
     calls = [(a["label"], a["released"], a["state_changing"], a["verdict"], tuple(a["decisive"]),
               tuple(r[0] for r in a["rules"])) for a in out.audit]
