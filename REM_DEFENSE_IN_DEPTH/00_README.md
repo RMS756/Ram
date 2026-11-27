@@ -40,3 +40,31 @@
     python3 REM_DEFENSE_IN_DEPTH/code/did2_replay.py
 
 `work/` holds regenerated intermediate files. It is not committed; it is rebuilt by the commands above.
+
+## Task 3: REM-DiD research development (27 November 2026)
+
+**REM-DiD is an exploratory research candidate. REM v1.0 is unchanged.**
+
+| File | Deliverable |
+|---|---|
+| `40_PRIOR_ART_COMPARATIVE_MATRIX.md` | 1 Prior-art comparison (code-level for CaMeL, Progent, Fides, AgentDojo, ASB); origin of every mechanism |
+| `48_REM_V1_0_AUDIT.md` | 2 REM v1.0 audit |
+| `47_REM_DID_ARCHITECTURE.md` | 3 Strengthened five-layer architecture |
+| `42_TAE_SPEC_IMPLEMENTED.md` | 4 TAE specification (as implemented) |
+| `41_DATA_PROVENANCE_AND_LINEAGE_SPEC.md` | 5 Provenance and lineage |
+| `43_DETECTION_SPEC.md` | 6 Detection (with SIG-2 results) |
+| `45_BEHAVIOR_SPEC.md` | 7 Behavioral Analysis |
+| `44_DECISION_SPEC.md` | 8 Authorization and learned-risk decision |
+| `46_MITIGATION_ENFORCEMENT_SPEC.md` | 9 Mitigation and enforcement |
+| `49_THREAT_CONTROL_MATRIX_AND_PROPERTIES.md` | 10 Threat/control matrix; 11 properties and test criteria |
+| `figures/fig_rem_v1_0_current.png`, `fig_rem_did_implemented.png`, `fig_rem_did_proposed.png`, `fig_did3_cost_grid.png` | 12 Diagrams |
+| `55_IMPLEMENTATION_AND_TEST_REPORT.md`, `tests/`, `code/did3_scenarios.py` | 13 Bypass and failure-injection suite; 18 implementation and tests |
+| `50_PROTOCOL_DID3.md` (+ `.sha256`), `50a_AMENDMENT_DID3_COVERAGE.md`, `51_DID3_RESULTS.md` | 14 Individual and combined-control protocol and results |
+| `52_COST_SENSITIVITY_PROTOCOL.md` | 15 Cost sensitivity (protocol and results) |
+| `53_HUMAN_LABEL_AUDIT_PACKAGE.md`, `label_audit/` | 16 Human label-audit package (not performed) |
+| `54_STATISTICAL_ANALYSIS_REPORT.md` | 17 Statistics |
+| `56_REPRODUCIBILITY_PACKAGE.md`, `results/did3_manifest.sha256` | 19 Reproducibility |
+| `../REM_DID_THESIS_EDITION/` | 20 Revised thesis DOCX/PDF (tenth edition) |
+| `58_JOURNAL_MANUSCRIPT_PACKAGE.md` | 21 Journal package |
+| `57_LIMITATIONS_AND_MISSING_RESOURCES.md` | 22 Limitations and missing resources |
+| `remdid/` | Code (L1–L5) |

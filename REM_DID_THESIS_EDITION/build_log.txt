@@ -1,0 +1,4 @@
+/home/user/Ram/REM_DID_THESIS_EDITION/tools/build_r9.py:118: UserWarning: style lookup by style_id is deprecated. Use style name as key instead.
+  font(st[n], 11, bold=(n == 'Table Caption'), italic=(n != 'Table Caption'))
+table of contents stored in the DOCX: 77 entries; 191 headings of levels 1-3; unmatched 0
+built: /home/user/Ram/REM_DID_THESIS_EDITION/REM_Master_Thesis_DiD_Edition.docx 4526334 bytes; PDF 6775052 bytes; figures 18 tables 90 captions without page {'LOF': 0, 'LOT': 0}
