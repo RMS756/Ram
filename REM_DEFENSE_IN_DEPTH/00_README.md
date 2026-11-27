@@ -21,6 +21,14 @@
 | `26_IMPLEMENTATION_REQUIREMENTS_AND_COMPATIBILITY.md` | Requirements and fit with the existing `rem/` code |
 | `27_PRIORITIZED_PLAN.md` | Feasibility-first plan with decision gates |
 | `figures/fig_rem_v1_0_current.png`, `figures/fig_rem_did_proposed.png` | Five-layer diagrams (`code/fig_architecture.py`) |
+| **Prior-art investigation (27 Nov 2026; full texts not reachable in this session, so every entry carries an evidence level)** | |
+| `30_PUBLICATION_STATUS_AND_EVIDENCE_LEVELS.md` | Access limits, evidence levels, publication-status verification |
+| `31_PRIOR_ART_LITERATURE_MATRIX.md` | Literature matrix (mandatory works and related work) |
+| `32_SYSTEM_ARCHITECTURE_COMPARISON.md` | 18-attribute comparison: RTBAS, CaMeL, Progent, AgentCap, Fides, REM |
+| `33_REM_FIVE_LAYER_MAPPING.md` | Mapping of prior mechanisms to REM's five layers |
+| `34_FINANCIAL_DOMAIN_EVIDENCE.md` | Financial evidence categories; beneficiary, amount, limits, approvals, repetition |
+| `35_GAP_OVERLAP_NOVELTY.md` | Established vs untested; overlap; revised contribution statement [PD] |
+| `36_CHAPTER_REFERENCES_AND_EXPERIMENTS.md` | References per chapter; experiments E0–E8 with decision gates |
 | `code/did1_coverage.py`, `code/did2_replay.py`, `code/sig1_signals.py` | Analysis code; `rem/` and `experiments/` unchanged |
 | `results/did1_results.json`, `results/did2_results.json`, `results/sig1_results.json` | Raw outputs |
 

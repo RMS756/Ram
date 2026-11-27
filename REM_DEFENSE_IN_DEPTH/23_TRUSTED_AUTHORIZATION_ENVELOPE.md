@@ -80,6 +80,16 @@ The TAE combines:
 
 It is not a contribution in itself. **What is new is REM's evaluation of whether the learned decision adds anything once such a record exists.**
 
+**Prior-art update (27 November 2026; see `35_GAP_OVERLAP_NOVELTY.md`).** The search for the prior-art task found that most of the TAE's individual mechanisms are already published. All of the following are at abstract level, except where stated:
+
+- **AGATE** (Zhang et al., 2026; preprint): grants bound to exact parameters that expire and allow a limited number of uses; an effect ledger for repeated requests; authorization grounded in operator declarations and host approval events.
+- **AIS** (Gong, Samawi & Medda, 2026; *Systems* 14(10), 1329, peer reviewed): a typed financial action intent checked against mandate, policy, state, approvals and exact economic terms before single-use authority is issued.
+- **GuardRail** (Karnawat et al., 2026; Zenodo report): semantic risk signals "can never override a deterministic refusal" (REM-DiD's ordering invariant), and an approval bound to the hash of the exact action (REM-DiD's parameter-bound permit). It reports no quantitative results.
+- **AgentCap** (Suresh & Gao, 2026; preprint): short-lived, budget-bounded capability tokens validated at the tool boundary.
+- **ScopeGate** (Mellafe Zuvic, 2026; preprint): money ceiling and idempotency checks before a payment call.
+
+The TAE, A1–A9, the ordering invariant and parameter-bound permits are therefore **adopted designs**, and the thesis must cite them as such. The evaluation question in the paragraph above is unchanged. It must also be checked against the full texts of AIS and AGATE, which could not be read here.
+
 ## 7. Evaluation feasibility in AgentDojo
 
 AgentDojo has no trusted authorization channel. Two evaluations are possible offline, and both are proposed (`27_PRIORITIZED_PLAN.md`, F1):
