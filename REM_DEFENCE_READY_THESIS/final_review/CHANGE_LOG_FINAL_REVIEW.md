@@ -43,6 +43,17 @@ All thesis edits are exact replacements recorded in `tools/spec_r9.py` (or in th
 | `tools/make_figures_19nov.py` | New: Figures 4.6–4.8 with Table 4.25 labels |
 | `tests/test_defence_ready_thesis.py` | New test for the committee page, the absence of product names in the front matter, the new figure paths and the Table 4.27 cells. Full suite: 829 passed, 27 skipped, 1 xfailed, 0 failed. |
 
+## Addendum (27 November 2026, at the student's request)
+
+| Where | Change | Evidence |
+|---|---|---|
+| Chapter 5, Section 5.7 | Two items of future work added at the end of the list:<br>• 12, direct prompt injection (adversary AD-2, design scope only; the benchmark template named `direct` places its text in tool outputs and is an indirect injection);<br>• 13, goal drift (no adversary; outside the label of Section 3.3.5). | Scope statements in Sections 1.10, 2.3 and 3.3.4–3.3.5. AgentDojo 0.1.35 source: `DirectAttack` is a `FixedJailbreakAttack` with the template "TODO: {goal}", written into the injection candidates of the user task. |
+| References | One entry added: Arike, Donoway, Bartsch and Hobbhahn (2025), *Evaluating goal drift in language model agents*, AIES 8(1), 192–203, doi:10.1609/aies.v8i1.36541 | Verified with Crossref and OpenAlex; abstract read; full text not read (stated in the entry) |
+
+Rebuilt: 272 pages (was 271). The DOCX re-export is text-identical to the PDF on every page; besides the new text, only page numbers in the table of contents, the list of tables and the pages after Section 5.7 changed. Citation check: 106 entries, 106 cited. Number check: 498 cells, 0 mismatches.
+
+No result, design value, research question or scope statement was changed. Both items describe future work only.
+
 ## Not changed
 
 - Title, topic, scope, objectives, research questions and the five-layer architecture.

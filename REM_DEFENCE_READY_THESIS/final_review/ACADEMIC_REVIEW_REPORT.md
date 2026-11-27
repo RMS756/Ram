@@ -4,7 +4,7 @@
 |---|---|
 | Thesis | *Runtime Evaluation and Mitigation (REM): A Security Framework for Financial AI Agents* |
 | Files reviewed | `REM_Master_Thesis_Defence_Ready.docx` / `.pdf` at commit `06843a0` |
-| Files corrected | Same names, in `REM_DEFENCE_READY_THESIS/`; now 271 pages |
+| Files corrected | Same names, in `REM_DEFENCE_READY_THESIS/`; 271 pages after this review; 272 after the Future Work addendum of 27 November (`CHANGE_LOG_FINAL_REVIEW.md`) |
 | Approach | Every edit is an exact, logged replacement in `tools/spec_r9.py`, applied to the unchanged R8 sources and the new Sections 4.4 and 4.5. The thesis was not rewritten from scratch. |
 | Preserved | Title, topic, scope, five-layer architecture and every verified result. No layer, objective, research question or experiment was added. |
 

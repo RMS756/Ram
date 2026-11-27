@@ -151,6 +151,9 @@ POST_EDITS = [
      "comparison with existing security frameworks (Progent, DRIFT, MELON and the defenses distributed with the benchmark); an ablation study of REM's five layers; and results and discussion. It states that no live-agent experiment was executed, that the one published policy evaluated was replayed on recorded episodes, and that DRIFT and MELON were compared at the level of architecture and code."),
     # ---------------------------------------------------------------- Chapter 2
     (C2, 'ToolSafe, DRIFT and FinHarness', 'ToolSafe, DRIFT (H. Li et al., 2025) and FinHarness'),
+    # ---------------------------------------------------------------- Chapter 5: two further items of future work (27 Nov 2026)
+    (C5, "LINE:11. **Independent validation of the amount verifier** on payment requests written and reviewed by others, with half of the accounts taken from Progent's list so that the comparison tests amounts and not recipients (`REM_REPAIR_STUDY_2026_11_17/07_INDEPENDENT_VALIDATION_KIT.md`).",
+     "11. **Independent validation of the amount verifier** on payment requests written and reviewed by others, with half of the accounts taken from Progent's list so that the comparison tests amounts and not recipients (`REM_REPAIR_STUDY_2026_11_17/07_INDEPENDENT_VALIDATION_KIT.md`).\n12. **Direct prompt injection.** Evaluate the prompt-channel adversary AD-2 (Chapter 3, Section 3.3.4), which is in the design scope but is not exercised by the evaluated banking attacks. The benchmark's attack template named `direct` places its text in tool outputs and is therefore an indirect injection. REM's provenance labeling ranks the user's input above tool outputs (Section 3.4.2), so an adversary who controls the user channel needs other evidence, such as an authorization statement captured outside that channel (item 2), together with an amended threat model, a label rule for attacks that originate in the user channel, and a benchmark that contains such attacks.\n13. **Goal drift.** Evaluate an agent's tendency to deviate from its original objective over time (Arike et al., 2025), which can occur without an adversary. The label of Section 3.3.5 covers only adversarially induced actions and excludes the agent's own errors, so this needs a new label definition (a supervisor decision), behavioral features fitted to drift labels, and an environment that records such labels."),
 ]
 
 # Contribution rows of Table 5.3 were printed in the order 1-7, 9, 8; restore 8 before 9.
@@ -194,6 +197,8 @@ FRONT_EDITS = [
 ]
 
 REF_ADD = [
+    ('*APA 7th edition. One consolidated list',
+     'Arike, R., Donoway, E., Bartsch, H., & Hobbhahn, M. (2025). Evaluating goal drift in language model agents. *Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society*, *8*(1), 192–203. https://doi.org/10.1609/aies.v8i1.36541 [Title, authors, venue, volume, pages and DOI verified with Crossref and OpenAlex (W4415230474) on 27 November 2026; abstract read; full text not read]'),
     ('Li, F. (2026). *OpenClaw PRISM',
      'Li, H., Liu, X., Chiu, H.-C., Li, D., Zhang, N., & Xiao, C. (2025). DRIFT: Dynamic rule-based defense with injection isolation for securing LLM agents. In *Advances in Neural Information Processing Systems 38* (NeurIPS 2025) (pp. 92825–92853). https://doi.org/10.52202/085713-2791 [DOI, title, venue and pages verified with Crossref and OpenAlex (W4415110937) on 26 November 2026; author names as in the official repository, where Crossref registers the third author as "CHIU Chun"; abstract read; full text not read; the official code, SaFo-Lab/DRIFT at commit 6fd3df4, was read and executed with a scripted agent]'),
     ('Li, H., Liu, X., Chiu, H.-C.',

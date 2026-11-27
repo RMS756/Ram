@@ -20,5 +20,6 @@ Each item needs a decision or confirmation by the student, the supervisor or the
 | U-14 | University thesis template (N-9): not available; an assumed A4 layout is used | Template | University |
 | U-15 | Co-supervisor co-authorship of one cited study (N-6) | Decide whether a disclosure is required | Supervisor |
 | U-16 | Open items carried over unchanged in Appendix B: D-7, D-8, D-12, SD-PERM, SD-AMT, SD-D2, SD-COND, SD-5, GAP, RULES, RG-1, FULLTEXT, SC-2 to SC-6 | As listed in Appendix B | Supervisor |
+| U-17 | Future-work items 12 (direct prompt injection) and 13 (goal drift), added at the student's request on 27 November 2026 | Keep, reword or remove | Supervisor |
 
 **Source data:** nothing was found missing for the corrections requested. Figures 4.6–4.8 and Table 4.27 were regenerated from existing per-episode records.

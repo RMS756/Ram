@@ -13,7 +13,7 @@
 | Committee page no longer claims a defense or approval | Corrected | Rendered page ii: "This thesis has not yet been defended." Test `test_final_review_corrections_present`. |
 | Figures 4.6–4.8 use the labels of Tables 4.25–4.31 | Corrected | Regenerated from stored results; counts asserted against raw records; rendered pages inspected |
 | Table 4.27 contains only percentage-point differences (with intervals, discordant counts, p) | Corrected | 498 cells checked, 0 mismatches; rendered page inspected |
-| DOCX and PDF consistent | Corrected | Independent re-export of the DOCX: 271 = 271 pages, identical text on every page, TOC, LoT and LoF on the same pages |
+| DOCX and PDF consistent | Corrected | Independent re-export of the DOCX: 272 = 272 pages (rebuilt 27 November after the Future Work addition), identical text on every page, TOC, LoT and LoF on the same pages |
 | LoT and LoF updatable in Word | Corrected | Word TOC fields on the caption styles; `updateFields` set in the DOCX |
 | Ablation described as component-level, with limits stated | Verified | Sections 4.5.1, 4.5.4, 4.5.5, 4.5.11; threat 21; abstract |
 | Framework comparison fair; kinds of evidence distinguished | Verified | Section 4.4; `FRAMEWORK_COMPARISON_VALIDATION.md` |
@@ -37,7 +37,7 @@
 
 | Item | Status |
 |---|---|
-| 105 entries, all cited; no citation without an entry | Verified |
+| 106 entries (Arike et al., 2025, added with Future Work item 13), all cited; no citation without an entry | Verified |
 | DRIFT and AgentDyn bibliographic data | Verified with Crossref, OpenAlex and repositories; author names need a final PDF check (U-12: Pending) |
 | Full re-verification of all other entries | Not repeated in this round (U-13) |
 
@@ -61,7 +61,7 @@
 
 ## Files to send
 
-1. `REM_Master_Thesis_Defence_Ready.pdf`: the corrected thesis, 271 pages.
+1. `REM_Master_Thesis_Defence_Ready.pdf`: the corrected thesis, 272 pages.
 2. `REM_Master_Thesis_Defence_Ready.docx`: the editable source.
 3. Optional companions:
    - `SUPERVISOR_REQUIREMENTS_MAPPING.md`

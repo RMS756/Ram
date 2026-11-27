@@ -58,7 +58,7 @@ Each agrees with the raw counts already printed in Table 4.26, e.g. A4d: 202 −
 
 - No reference was invented or replaced.
 - New entries (DRIFT, AgentDyn) were checked against Crossref, OpenAlex and the authors' repositories. Their full texts were not read; this is stated in the entries.
-- All 105 entries are cited, and every citation has an entry.
+- All 106 entries are cited (105 before the addendum of 27 November), and every citation has an entry.
 - See `UNRESOLVED_ISSUES_REPORT.md` for the entries that need manual checking.
 
 ## 6. Authorship and AI-tool references

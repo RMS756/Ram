@@ -4,6 +4,8 @@ Angelopoulos, A. N., Bates, S., Fisch, A., Lei, L., & Schuster, T. (2022). *Conf
 
 *APA 7th edition. One consolidated list for all chapters and appendices. Preprints are marked. Official and regulatory sources are marked and are not treated as research literature. Where an author list is abbreviated in the index record, this is stated. The reading level of the works closest to this thesis is stated at the end of their entries: "full text read" (six papers, read from author-supplied PDFs on 11 November 2026) or "abstract only". All other entries were verified at record level, as recorded in `REM_FINAL_THESIS/REFERENCES_VERIFIED.md`.*
 
+Arike, R., Donoway, E., Bartsch, H., & Hobbhahn, M. (2025). Evaluating goal drift in language model agents. *Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society*, *8*(1), 192–203. https://doi.org/10.1609/aies.v8i1.36541 [Title, authors, venue, volume, pages and DOI verified with Crossref and OpenAlex (W4415230474) on 27 November 2026; abstract read; full text not read]
+
 Arp, D., Quiring, E., Pendlebury, F., Warnecke, A., Pierazzi, F., Wressnegger, C., Cavallaro, L., & Rieck, K. (2022). Dos and don'ts of machine learning in computer security. In *31st USENIX Security Symposium* (pp. 3971–3988). USENIX Association.
 
 Basseville, M., & Nikiforov, I. V. (1993). *Detection of abrupt changes: Theory and application*. Prentice Hall.

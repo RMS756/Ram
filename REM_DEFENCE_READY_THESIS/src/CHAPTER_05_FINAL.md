@@ -116,6 +116,8 @@ The limitations are discussed in Chapter 4, Section 4.6.11. In summary:
 9. **Full-text literature review,** including the three works known only from abstracts, and a search of the named databases.
 10. **Further benchmarks,** with new user tasks, reported per benchmark.
 11. **Independent validation of the amount verifier** on payment requests written and reviewed by others, with half of the accounts taken from Progent's list so that the comparison tests amounts and not recipients (`REM_REPAIR_STUDY_2026_11_17/07_INDEPENDENT_VALIDATION_KIT.md`).
+12. **Direct prompt injection.** Evaluate the prompt-channel adversary AD-2 (Chapter 3, Section 3.3.4), which is in the design scope but is not exercised by the evaluated banking attacks. The benchmark's attack template named `direct` places its text in tool outputs and is therefore an indirect injection. REM's provenance labeling ranks the user's input above tool outputs (Section 3.4.2), so an adversary who controls the user channel needs other evidence, such as an authorization statement captured outside that channel (item 2), together with an amended threat model, a label rule for attacks that originate in the user channel, and a benchmark that contains such attacks.
+13. **Goal drift.** Evaluate an agent's tendency to deviate from its original objective over time (Arike et al., 2025), which can occur without an adversary. The label of Section 3.3.5 covers only adversarially induced actions and excludes the agent's own errors, so this needs a new label definition (a supervisor decision), behavioral features fitted to drift labels, and an environment that records such labels.
 
 ## 5.8 Conclusion
 
