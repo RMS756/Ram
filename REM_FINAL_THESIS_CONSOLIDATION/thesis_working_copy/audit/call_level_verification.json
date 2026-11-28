@@ -1,0 +1,119 @@
+{
+ "P1_primary": {
+  "A0": {
+   "attack_labelled_calls": 907,
+   "withheld": 882
+  },
+  "A3": {
+   "attack_labelled_calls": 907,
+   "withheld": 0
+  },
+  "A4": {
+   "attack_labelled_calls": 907,
+   "withheld": 0
+  },
+  "AIC": {
+   "attack_labelled_calls": 907,
+   "withheld": 833
+  },
+  "A2": {
+   "attack_labelled_calls": 907,
+   "withheld": 882
+  },
+  "A1a": {
+   "attack_labelled_calls": 907,
+   "withheld": 882
+  },
+  "A1b": {
+   "attack_labelled_calls": 907,
+   "withheld": 882
+  },
+  "A3P": {
+   "attack_labelled_calls": 907,
+   "withheld": 882
+  },
+  "shadow_agreement": [
+   6654,
+   6684
+  ],
+  "shadow_flagged_attack_calls": 882
+ },
+ "P2_cross_template": {
+  "A0": {
+   "attack_labelled_calls": 202,
+   "withheld": 200
+  },
+  "A3": {
+   "attack_labelled_calls": 202,
+   "withheld": 0
+  },
+  "A4": {
+   "attack_labelled_calls": 202,
+   "withheld": 0
+  },
+  "AIC": {
+   "attack_labelled_calls": 202,
+   "withheld": 191
+  },
+  "A2": {
+   "attack_labelled_calls": 202,
+   "withheld": 200
+  },
+  "A1a": {
+   "attack_labelled_calls": 202,
+   "withheld": 200
+  },
+  "A1b": {
+   "attack_labelled_calls": 202,
+   "withheld": 200
+  },
+  "A3P": {
+   "attack_labelled_calls": 202,
+   "withheld": 200
+  },
+  "shadow_agreement": [
+   1592,
+   1597
+  ],
+  "shadow_flagged_attack_calls": 200
+ },
+ "P3_second_population": {
+  "A0": {
+   "attack_labelled_calls": 559,
+   "withheld": 556
+  },
+  "A3": {
+   "attack_labelled_calls": 559,
+   "withheld": 0
+  },
+  "A4": {
+   "attack_labelled_calls": 559,
+   "withheld": 0
+  },
+  "AIC": {
+   "attack_labelled_calls": 559,
+   "withheld": 505
+  },
+  "A2": {
+   "attack_labelled_calls": 559,
+   "withheld": 558
+  },
+  "A1a": {
+   "attack_labelled_calls": 559,
+   "withheld": 556
+  },
+  "A1b": {
+   "attack_labelled_calls": 559,
+   "withheld": 556
+  },
+  "A3P": {
+   "attack_labelled_calls": 559,
+   "withheld": 556
+  },
+  "shadow_agreement": [
+   8198,
+   8221
+  ],
+  "shadow_flagged_attack_calls": 556
+ }
+}

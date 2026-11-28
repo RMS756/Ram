@@ -1,0 +1,314 @@
+{
+ "entries": [
+  [
+   "Committee Decision",
+   "ii"
+  ],
+  [
+   "Declaration of Authorship and Originality",
+   "iii"
+  ],
+  [
+   "Dedication",
+   "iv"
+  ],
+  [
+   "Acknowledgement",
+   "v"
+  ],
+  [
+   "List of Tables",
+   "viii"
+  ],
+  [
+   "List of Figures",
+   "xii"
+  ],
+  [
+   "List of Abbreviations",
+   "xiv"
+  ],
+  [
+   "Abstract",
+   "xv"
+  ],
+  [
+   "الملخص",
+   "xviii"
+  ],
+  [
+   "Status of This Draft",
+   "xxi"
+  ],
+  [
+   "CHAPTER ONE: INTRODUCTION",
+   "1"
+  ],
+  [
+   "1.1 Background",
+   "1"
+  ],
+  [
+   "1.2 Problem Statement",
+   "2"
+  ],
+  [
+   "1.3 Motivation",
+   "4"
+  ],
+  [
+   "1.4 Research Gap",
+   "4"
+  ],
+  [
+   "1.5 Research Aim",
+   "6"
+  ],
+  [
+   "1.6 Research Objectives",
+   "6"
+  ],
+  [
+   "1.7 Research Questions",
+   "7"
+  ],
+  [
+   "1.8 Proposed Approach",
+   "7"
+  ],
+  [
+   "1.9 Research Methodology",
+   "9"
+  ],
+  [
+   "1.10 Scope",
+   "9"
+  ],
+  [
+   "1.11 Contributions: Proposed and Demonstrated",
+   "10"
+  ],
+  [
+   "1.12 Thesis Organization",
+   "14"
+  ],
+  [
+   "CHAPTER TWO: LITERATURE REVIEW: A RECORD-LEVEL SYSTEMATIC REVIEW OF RUNTIME SECURITY FOR TOOL-USING AI AGENTS",
+   "16"
+  ],
+  [
+   "2.1 Introduction",
+   "16"
+  ],
+  [
+   "2.2 Systematic Review Methodology",
+   "17"
+  ],
+  [
+   "2.3 Threats Against AI Agents",
+   "22"
+  ],
+  [
+   "2.4 Benchmarks and Threat Models",
+   "23"
+  ],
+  [
+   "2.5 Defensive Approaches",
+   "24"
+  ],
+  [
+   "2.6 Runtime Monitoring and Behavioral Analysis",
+   "27"
+  ],
+  [
+   "2.7 Statistical and Algorithmic Foundations Relevant to REM",
+   "29"
+  ],
+  [
+   "2.8 Runtime Decision and Mitigation",
+   "31"
+  ],
+  [
+   "2.9 Financial AI-Agent Security",
+   "34"
+  ],
+  [
+   "2.10 Critical Synthesis",
+   "36"
+  ],
+  [
+   "2.11 Research Gap and REM Positioning",
+   "37"
+  ],
+  [
+   "2.12 Chapter Summary",
+   "51"
+  ],
+  [
+   "CHAPTER THREE: RESEARCH METHODOLOGY, DESIGN AND IMPLEMENTATION OF THE REM FRAMEWORK",
+   "54"
+  ],
+  [
+   "3.1 Research Methodology and System Scope",
+   "54"
+  ],
+  [
+   "3.2 REM Architecture",
+   "56"
+  ],
+  [
+   "3.3 Threat Model and Financial Action Boundary",
+   "58"
+  ],
+  [
+   "3.4 Input & Context Layer",
+   "60"
+  ],
+  [
+   "3.5 Detection Layer",
+   "62"
+  ],
+  [
+   "3.6 Behavioral Analysis Layer",
+   "63"
+  ],
+  [
+   "3.7 Decision Engine Layer",
+   "65"
+  ],
+  [
+   "3.8 Mitigation Layer",
+   "75"
+  ],
+  [
+   "3.9 Offline Fitting and Recalibration",
+   "77"
+  ],
+  [
+   "3.10 Algorithm 1: REM Runtime Evaluation and Mitigation",
+   "78"
+  ],
+  [
+   "3.11 Experimental Methodology",
+   "81"
+  ],
+  [
+   "3.12 Evaluation Metrics",
+   "93"
+  ],
+  [
+   "3.13 Versioned Amendment: REM v1.1 (Proposed)",
+   "95"
+  ],
+  [
+   "3.14 Exploratory Extension: Task-Permission Evidence (Proposed, Not Adopted)",
+   "96"
+  ],
+  [
+   "3.15 Exploratory Extension: REM-DiD, a Defense-in-Depth Candidate (Proposed, Not Adopted)",
+   "100"
+  ],
+  [
+   "3.16 Chapter Summary",
+   "102"
+  ],
+  [
+   "CHAPTER FOUR: EXPERIMENTAL RESULTS AND DISCUSSION",
+   "106"
+  ],
+  [
+   "4.1 Implementation Tools and Environment",
+   "106"
+  ],
+  [
+   "4.2 Dataset Preparation and Training",
+   "111"
+  ],
+  [
+   "4.3 Experimental Setup and Evaluation Metrics",
+   "117"
+  ],
+  [
+   "4.4 Comparison with Existing Security Frameworks",
+   "122"
+  ],
+  [
+   "4.5 Ablation Study of the REM Layers",
+   "153"
+  ],
+  [
+   "4.6 Results and Discussion",
+   "193"
+  ],
+  [
+   "CHAPTER FIVE: CONCLUSIONS AND FUTURE WORK",
+   "228"
+  ],
+  [
+   "5.1 Introduction",
+   "228"
+  ],
+  [
+   "5.2 Answers to the Research Questions",
+   "228"
+  ],
+  [
+   "5.3 Achievement of the Objectives",
+   "231"
+  ],
+  [
+   "5.4 Contributions",
+   "232"
+  ],
+  [
+   "5.5 What Was Not Confirmed, What Was Rejected, and Why It Matters",
+   "235"
+  ],
+  [
+   "5.6 Limitations and Threats to Validity",
+   "238"
+  ],
+  [
+   "5.7 Future Work, in Order of Priority",
+   "239"
+  ],
+  [
+   "5.8 Conclusion",
+   "241"
+  ],
+  [
+   "References",
+   "244"
+  ],
+  [
+   "Appendix A: Notation, Optional Sequential Analysis and Equation Provenance",
+   "260"
+  ],
+  [
+   "A.1 Notation",
+   "260"
+  ],
+  [
+   "A.2 Layer interfaces",
+   "261"
+  ],
+  [
+   "A.3 Optional observe-only sequential analysis",
+   "261"
+  ],
+  [
+   "A.4 Provenance of the equations of Chapter 3",
+   "263"
+  ],
+  [
+   "A.5 Why logistic regression",
+   "264"
+  ],
+  [
+   "Appendix B: Register of Open Supervisor Decisions",
+   "266"
+  ]
+ ],
+ "headings_levels_1_to_3": 192,
+ "entries_without_matching_heading": []
+}
